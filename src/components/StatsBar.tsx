@@ -12,7 +12,7 @@ export default function StatsBar() {
   return (
     <section className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <motion.div ref={ref} initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="max-w-5xl">
-        <h2 className="text-xl md:text-2xl font-medium mb-12">Results</h2>
+        <h2 className="text-xl md:text-2xl font-medium mb-12">The builder equation</h2>
         <div className="flex flex-col md:flex-row gap-16 md:gap-24">
           {STATS.map((stat) => (
             <div key={stat.label}>

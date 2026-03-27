@@ -12,7 +12,7 @@ export default function UseCasesGrid() {
     <section id="philosophy" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <div className="max-w-5xl" ref={ref}>
         <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">
-          Here&apos;s what 100x looks like in practice
+          The foundation: build knowledge bases your AI peers can reason from
         </motion.h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--border-subtle)] rounded-xl overflow-hidden border border-[var(--border-subtle)]">
           {USE_CASES.map((item, i) => (
@@ -26,7 +26,7 @@ export default function UseCasesGrid() {
               </div>
               <h3 className="text-[15px] font-medium mb-2 leading-snug" style={{ color: "var(--text-primary)" }}>{item.title}</h3>
               <p className="text-[13px] leading-relaxed mb-5 flex-1" style={{ color: "var(--text-secondary)" }}>{item.description}</p>
-              <span className="text-[13px] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ color: "var(--text-secondary)" }}>See it work &rarr;</span>
+              <span className="text-[13px] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ color: "var(--text-secondary)" }}>Build this &rarr;</span>
             </motion.a>
           ))}
         </div>

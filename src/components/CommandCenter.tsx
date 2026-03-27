@@ -37,9 +37,9 @@ export default function CommandCenter() {
   const active = COMMAND_TABS.find((t) => t.id === activeTab)!;
 
   return (
-    <section id="framework" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+    <section id="surfaces" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <div className="max-w-5xl" ref={ref}>
-        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">Your command center for leveling up</motion.h2>
+        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">Collaboration surfaces for your robots and colleagues</motion.h2>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }}>
           <div className="flex gap-3 mb-8">
             {COMMAND_TABS.map((tab) => (

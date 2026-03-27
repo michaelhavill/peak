@@ -10,24 +10,24 @@ export default function InteractiveDemo() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="roles" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+    <section id="agents" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <div className="max-w-5xl" ref={ref}>
-        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-4">Good morning, Builder</motion.h2>
+        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-4">Unleash agentic workflows</motion.h2>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.05 }} className="text-[15px] mb-12" style={{ color: "var(--text-secondary)" }}>
-          Frameworks and mental models for your next career leap — described in plain language, executed with precision.
+          Describe the outcome. Agents spawn agents across your knowledge base — researching, drafting, designing, and building in parallel.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="grid md:grid-cols-2 gap-5">
           <div className="rounded-xl p-6" style={{ border: "1px solid var(--border-subtle)" }}>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "var(--text-primary)" }} />
-              <span className="text-[11px] font-medium uppercase tracking-widest" style={{ color: "var(--text-secondary)" }}>Your Prompt</span>
+              <span className="text-[11px] font-medium uppercase tracking-widest" style={{ color: "var(--text-secondary)" }}>Your Intent</span>
             </div>
             <p className="text-[15px] leading-relaxed" style={{ color: "var(--text-primary)" }}>&ldquo;<TypingAnimation text={DEMO_PROMPT} speed={40} />&rdquo;</p>
           </div>
           <div className="rounded-xl p-6" style={{ border: "1px solid var(--border-subtle)" }}>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: "var(--text-secondary)" }} />
-              <span className="text-[11px] font-medium uppercase tracking-widest" style={{ color: "var(--text-secondary)" }}>Building Path</span>
+              <span className="text-[11px] font-medium uppercase tracking-widest" style={{ color: "var(--text-secondary)" }}>Agent Swarm</span>
             </div>
             <div className="space-y-4">
               {DEMO_STEPS.map((step, i) => (
