@@ -1,6 +1,7 @@
 import Sidebar from "@/components/Sidebar";
 import HeroSection from "@/components/HeroSection";
 import UseCasesGrid from "@/components/UseCasesGrid";
+import KnowledgeMoat from "@/components/KnowledgeMoat";
 import InteractiveDemo from "@/components/InteractiveDemo";
 import CommandCenter from "@/components/CommandCenter";
 import RolePaths from "@/components/RolePaths";
@@ -21,6 +22,7 @@ export default function Home() {
         <div className="pt-16 lg:pt-0">
           <HeroSection />
           <UseCasesGrid />
+          <KnowledgeMoat />
           <InteractiveDemo />
           <CommandCenter />
           <RolePaths />
