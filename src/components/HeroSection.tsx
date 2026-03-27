@@ -1,19 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import RoleRotator from "./RoleRotator";
 
 export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center px-8 md:px-16 lg:px-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/hero.png"
           alt="Pixel art landscape"
-          fill
-          priority
-          className="object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(250,250,248,0.85) 0%, rgba(250,250,248,0.7) 40%, rgba(250,250,248,0.9) 100%)" }} />
       </div>
