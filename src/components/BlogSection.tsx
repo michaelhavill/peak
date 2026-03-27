@@ -11,7 +11,7 @@ export default function BlogSection() {
   return (
     <section id="writing" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <div className="max-w-5xl" ref={ref}>
-        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">Latest thinking</motion.h2>
+        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">The moat builder&apos;s playbook</motion.h2>
         <div className="space-y-0">
           {BLOG_POSTS.map((post, i) => (
             <motion.a key={post.title} href="#" initial={{ opacity: 0, y: 12 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: i * 0.1 }} className="flex items-center justify-between py-5 group cursor-pointer" style={{ borderBottom: "1px solid var(--border-subtle)" }}>
