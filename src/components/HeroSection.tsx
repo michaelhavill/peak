@@ -5,17 +5,9 @@ import RoleRotator from "./RoleRotator";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center px-8 md:px-16 lg:px-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/hero.png"
-          alt="Pixel art landscape"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(250,250,248,0.85) 0%, rgba(250,250,248,0.7) 40%, rgba(250,250,248,0.9) 100%)" }} />
-      </div>
-      <div className="max-w-3xl relative z-10">
+    <section id="hero" className="min-h-screen flex items-center px-8 md:px-16 lg:px-20 overflow-hidden">
+      <div className="flex items-center w-full gap-12 lg:gap-16">
+      <div className="max-w-xl flex-shrink-0">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,6 +40,20 @@ export default function HeroSection() {
             <path d="M6 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </motion.a>
+      </div>
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="hidden lg:block flex-1 min-w-0"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/hero.png"
+          alt="Pixel art landscape"
+          className="w-full h-[70vh] object-cover rounded-2xl"
+        />
+      </motion.div>
       </div>
     </section>
   );
