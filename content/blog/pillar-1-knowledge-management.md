@@ -81,6 +81,24 @@ Knowledge management isn't one idea among five. It's the foundation the other fo
 
 ---
 
+## Ask Yourself
+
+Before you move on, sit with these. They'll tell you exactly where you stand — and where the leverage is hiding.
+
+1. **Where does your expertise actually live right now?** Is it in your head, scattered across Slack threads, buried in old docs — or structured in a place AI can access? If your AI can't draw from your best thinking, it's working with one hand tied behind its back. [See how the knowledge moat works →](/#moat)
+
+2. **What's your current AI-accessible knowledge store?** Open Claude right now and ask it something domain-specific about your work. Does it nail it — or does it give you the median internet answer? That gap is the measure of how much of your expertise is still invisible. [Explore how agents use your knowledge →](/#agents)
+
+3. **How much time do you spend re-teaching AI what you already know?** Every prompt where you re-explain your context, your constraints, your preferences — that's the tax on undocumented expertise. Document once, compound forever.
+
+4. **Can your team's AI access each other's knowledge?** When the PM prompts, does the AI know about engineering's constraints? When the designer prompts, does it reference the user research? If everyone's AI starts from zero, you've got individual tools — not a system. [See how shared surfaces connect teams →](/#surfaces)
+
+5. **What would a new hire's AI know on day one?** If the answer is "nothing about how we actually work here" — you don't have institutional memory. You have institutional amnesia with good intentions. [Explore the full framework →](/#philosophy)
+
+6. **What's your 20-minute investment?** Pick one domain of your expertise right now. What would you document first? That's the one that's costing you the most every time you prompt without it.
+
+---
+
 **Want to see how building your knowledge moat applies to your specific situation?** [Book a 30-minute strategy call →](/book)
 
 **We help founders, product leaders, and builders turn their expertise into AI infrastructure.** [Let's talk →](/book)

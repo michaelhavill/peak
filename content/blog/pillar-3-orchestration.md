@@ -82,6 +82,24 @@ Orchestration is the engine connecting everything. Your knowledge base provides 
 
 ---
 
+## Ask Yourself
+
+These questions reveal whether you're using AI for the easy parts and still doing the hard parts by hand.
+
+1. **Are you at Level 1 or Level 2?** Level 1: AI does tasks you assign (summarize this, draft that). Level 2: AI prepares you for decisions before you sit down. If you're still assigning tasks instead of receiving pre-assembled context, you're leaving the real leverage untouched. [See what Level 2 orchestration looks like →](/#agents)
+
+2. **What context do you manually assemble before every recurring decision?** Sprint planning. Design reviews. Patient encounters. Pipeline meetings. List the ritual. Now ask: could AI have assembled 80% of that context overnight? If yes, that's dead time waiting to be eliminated.
+
+3. **Are your automations connected — or are they a patchwork?** Task A is automated. Task B is automated. But does A's output feed B automatically? Or do you still manually route between them? Disconnected automations are duct tape, not orchestration. [See how the hub connects everything →](/#surfaces)
+
+4. **Where are the human checkpoints in your workflows?** If the answer is "nowhere" — you're trusting AI alone, and you shouldn't be. If the answer is "everywhere" — you're bottlenecking on human review. The right design has checkpoints at the 3-5 most critical decision points. Not more, not fewer.
+
+5. **Can multiple agents and team members work on the same thing seamlessly?** When your PM's AI finishes a brief, does it flow to the designer's AI with full context? Or does someone copy-paste between tools? Orchestration means the machine routes work — not the humans. [Explore how shared surfaces dissolve walls between tools →](/#surfaces)
+
+6. **What's the dead time between your biggest recurring decisions?** Measure it. That's the orchestration opportunity. Every minute of context assembly before a decision is a minute AI should have handled. [See the full framework →](/#philosophy)
+
+---
+
 **Want to see how building your orchestration layer applies to your specific work?** [Book a 30-minute strategy call →](/book)
 
 **We help builders, operations leaders, and product teams design the machine — not just the tasks.** [Let's talk →](/book)

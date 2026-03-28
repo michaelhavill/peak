@@ -78,6 +78,24 @@ A **product manager** linked specs to the engineering knowledge base. Requiremen
 
 ---
 
+## Ask Yourself
+
+These questions reveal whether your AI is coding in your reality — or in a textbook that doesn't know your codebase exists.
+
+1. **Does your AI know about the shared utilities that already exist in your codebase?** If it keeps reinventing functions you already have, it's working blind. That's not bad AI — it's missing context. How much duplicate code has your team accepted because fixing it felt faster than teaching?
+
+2. **What's your code review acceptance rate on AI-generated code?** If it's below 80%, the gap is context — not capability. The AI doesn't know your naming conventions, your deprecated patterns, your "never do this" list. [See how knowledge bases change the math →](/#moat)
+
+3. **Where do your architecture decisions live?** In ADRs nobody reads? In a senior engineer's head? In the git blame history? If a new hire asked "why did we build it this way?" — would the AI know the answer? [Explore how agents carry your context →](/#agents)
+
+4. **Can your AI access your anti-patterns — the scars?** Every codebase has them. The things you tried that broke production. The patterns that looked elegant but didn't scale. If your AI doesn't know about the scars, it will reopen every healed wound.
+
+5. **How long does it take a new engineer to write idiomatic code on your team?** If the answer is "months" — that's the gap between your team's knowledge and what's documented. An engineering context package closes it in days. [See how the stack connects →](/#stack)
+
+6. **Do your designers and PMs have access to engineering constraints before they spec?** If the "we can't do it that way" feedback loop takes days, your tools aren't sharing context. Connected tools eliminate impossible proposals before they waste anyone's time. [Explore shared surfaces →](/#surfaces)
+
+---
+
 **Want help building your engineering context package?** [Book a 30-minute strategy call →](/book)
 
 **This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)

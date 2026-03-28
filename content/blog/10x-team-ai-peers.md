@@ -66,6 +66,24 @@ A **founder** runs 12 simultaneous projects without coordination overhead. Each 
 
 ---
 
+## Ask Yourself
+
+These questions reveal whether your AI is an assistant you prompt — or a peer that carries your context.
+
+1. **How many workstreams are you neglecting because you're one person?** List everything on your plate. Now circle the ones that only get attention in crisis mode. Those are the domains where an AI peer — grounded in your knowledge base — could be running research, synthesis, and drafts while you sleep. [See how agents scale your output →](/#agents)
+
+2. **Does your AI have enough context to produce work you'd actually use?** Try this: give AI a real task from your backlog with zero extra context. Is the output usable — or garbage? The gap between those two is the context gap. Your knowledge base is what closes it. [See how the knowledge moat works →](/#moat)
+
+3. **What's the review loop on your AI output?** If you're spending 20 minutes refining each AI output — that's the quality layer working correctly. If you're spending 2 hours rewriting from scratch — the AI doesn't have your context. One is collaboration. The other is wasted time.
+
+4. **Are your AI peers coworking with your team — or isolated in separate tabs?** Can the PM's AI peer see what the designer's AI peer produced? Can the engineer's AI peer reference the product brief? If every AI peer starts from zero, you have tools — not team members. [Explore how collaborative spaces connect them →](/#surfaces)
+
+5. **What are you hiring for — throughput or judgment?** If you're hiring junior people to do volume work, AI peers already do that better. The leverage hire is someone with taste, judgment, and domain expertise who can direct 5 AI peers. That's the 10x math.
+
+6. **What would your team look like with 2-5 AI peers per person?** Not theoretically — specifically. Which domains would each peer handle? What context would they need? What review process would keep quality high? If you can't answer this, you haven't designed the system yet. [See the full framework →](/#philosophy)
+
+---
+
 **Want to see how AI peers apply to your team's specific workload?** [Book a 30-minute strategy call →](/book)
 
 **This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)

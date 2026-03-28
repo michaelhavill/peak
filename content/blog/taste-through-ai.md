@@ -97,6 +97,24 @@ Taste documentation is how your knowledge base gets personal. Raw knowledge is f
 
 ---
 
+## Ask Yourself
+
+These questions will expose exactly how much of your judgment is locked in your head — and how much leverage you're leaving on the table.
+
+1. **Can you articulate 10 specific rules for your domain right now?** Not vague principles like "I value quality." Specific, actionable rules — the kind you'd give a sharp new hire on their first day. If you can't write them down in 15 minutes, your AI definitely can't access them. [See how knowledge becomes career capital →](/#moat)
+
+2. **When AI drafts something for you, how much time do you spend rewriting it to sound like you?** That rewrite time is the tax on undocumented taste. 45 minutes fixing tone, framing, and judgment calls — every single time. That's not AI's fault. It's a documentation problem.
+
+3. **Does your team have a shared definition of "good"?** When the PM says "this brief is done" and the designer says "this mockup is done" — are they measuring against the same bar? Or does quality only exist in the head of whoever reviews it? [Explore how teams share context →](/#surfaces)
+
+4. **Where is your organization's taste documented — if anywhere?** Brand voice guidelines that say "be clear and professional" are useless. Taste docs that say "we always frame opportunities as customer pain points first, TAM second" are powerful. Which kind do you have?
+
+5. **How many layers does your taste system have?** Company taste, team taste, individual taste — each layer makes AI output more specific. If you only have one (or zero), every AI interaction starts from the same generic baseline. [See how the full framework connects →](/#philosophy)
+
+6. **What domain of your judgment would you encode first?** Strategy? Hiring? Design? Pricing? Product quality? The one that makes you cringe most when AI gets it wrong — that's where you start.
+
+---
+
 **Want help documenting your taste and connecting it to AI?** [Book a 30-minute strategy call →](/book)
 
 **This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)

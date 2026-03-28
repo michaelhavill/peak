@@ -150,6 +150,24 @@ Your workflow orchestration gets smarter when it knows your quality thresholds, 
 
 ---
 
+## Ask Yourself
+
+These questions reveal where you sit on the specificity spectrum — and what it would take to move up a level.
+
+1. **Where are you on the specificity spectrum right now?** Level 0: generic prompting. Level 1: better prompts. Level 2: domain context. Level 3: taste and craft encoded. Level 4: compounding daily. Be honest. Most people are at 0 or 1 — fighting over prompt tips while the real leverage sits untouched. [See how the 1% vs 99% gap works →](/#philosophy)
+
+2. **What's the rewrite tax on your AI output?** Time yourself. When AI drafts something for you, how many minutes do you spend rewriting it to sound like you? That number — multiplied by every interaction, every day — is the cost of keeping your specificity locked in your head. Every minute of it.
+
+3. **Where is your knowledge about your craft stored right now?** In your head? In scattered docs? In old Slack threads nobody will ever search? If your judgment isn't structured and connected to AI, it's invisible to the very tools that could amplify it. [See how knowledge bases become career capital →](/#moat)
+
+4. **Can you write 10 specific rules about your domain in 15 minutes?** Not "I value quality." Rules like: "We always frame opportunities as customer pain points first, TAM second." If you can't articulate your own judgment, AI definitely can't carry it. The articulation is the work — and it transforms your relationship with every AI tool you touch.
+
+5. **What does your AI know about you that a generic prompt wouldn't reveal?** Open Claude. Ask it something specific about how you work. Does it know your quality bar, your framing preferences, your decision frameworks? Or does it give you the same answer it would give anyone? That delta is your specificity gap.
+
+6. **What's compounding for you — and what's starting from zero every morning?** After 6 months of documented specificity, your AI has context that would take a new hire a year to absorb. After 6 months of generic prompting, you're exactly where you started. Which path are you on? [Explore the full framework →](/#philosophy) | [See how agents compound your judgment →](/#agents)
+
+---
+
 **Ready to make your specificity available to AI?** [Book a 30-minute strategy call →](/book)
 
 **This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)

@@ -79,6 +79,24 @@ Architecture is the container that holds everything else. Your knowledge base ne
 
 ---
 
+## Ask Yourself
+
+These questions reveal whether you own your infrastructure — or your vendors own you.
+
+1. **If your AI provider disappeared tomorrow, what breaks?** Run the exercise seriously. Your workflows, your prompts, your integrations — how much is entangled with one vendor's data model? If the answer is "everything" — you don't have architecture. You have a dependency. [See how the hub protects you →](/#philosophy)
+
+2. **Where does your core knowledge actually live?** In Notion? In your AI vendor's system? In a platform you don't control? Your knowledge base, orchestration logic, and business rules should live in systems you own. Everything else is a spoke you can swap. [See how the knowledge moat stays yours →](/#moat)
+
+3. **How fast can you swap a tool?** Pick any tool in your stack. How long would it take to replace it — an afternoon, a week, or 6 months of migration? That migration timeline is the measure of your lock-in. The builder who can swap in an afternoon is antifragile. [Explore the integrations stack →](/#stack)
+
+4. **Are your workflows built on vendor features or on your own logic?** If your automation depends on a specific vendor's proprietary workflow engine, you've given away control. If your orchestration logic lives in your hub and the vendor is just a spoke — you're free to move.
+
+5. **Can multiple agents across different providers access the same knowledge?** Your hub should feed context to Claude, to your coding tools, to your design tools — regardless of provider. If your knowledge only works with one AI, that's lock-in disguised as integration. [See how agents connect to the hub →](/#agents)
+
+6. **What's your "speed to integrate" test for new tools?** When something better launches, can you pilot it in a day? Or does evaluation take 6 months and procurement another 6? The team that can adopt new tools on day one compounds advantages that locked-in competitors can never close.
+
+---
+
 **Want to see how hub-and-spoke architecture applies to your specific stack?** [Book a 30-minute strategy call →](/book)
 
 **We help founders, CTOs, and technical leaders design for replaceability from day one.** [Let's talk →](/book)

@@ -79,6 +79,24 @@ Teams are the layer where the other pillars compound or collapse. Your knowledge
 
 ---
 
+## Ask Yourself
+
+These questions reveal whether your team is AI-native — or just AI-equipped.
+
+1. **What's your real adoption rate?** Not "how many people have licenses." How many people use AI daily on real work, with iterative refinement? If it's under 30%, the tools aren't the problem. The culture is. And throwing more training at it won't fix a culture gap.
+
+2. **Does your team ship to production weekly?** Not "made progress." Not "explored options." Shipped. Deployed. Live. With AI tools available, weekly shipping isn't aspirational — it's the minimum bar. If your team can't hit it, the bottleneck isn't technology. [See how the 1% vs 99% gap works →](/#philosophy)
+
+3. **Are you hiring doers or talkers?** Run the filter: look at your last 3 hires. Did they produce shipped output in their first 2 weeks? Or did they spend a month "getting up to speed"? AI amplifies whatever's already there. Doers become 10x. Talkers produce 10x more slide decks.
+
+4. **How are you actually training people on AI?** Webinars and documentation don't work. One-on-one sessions where someone guides a team member through a real task with real iteration — that's what produces permanent behavior change. At $20/hour, it's the highest-ROI investment in your org. Are you doing it?
+
+5. **Is your team storing knowledge about their craft in a place AI can access?** Every team member's taste, domain expertise, and quality standards — is it documented? Or is it locked in heads that walk out the door? When someone leaves, does the AI lose their judgment? [See how the knowledge moat prevents that →](/#moat)
+
+6. **Does your performance system reward speed or penalize it?** If someone ships excellent work in 20 minutes and gets questioned because "that was fast" — your culture is punishing your best people. The irreplaceable builders will leave for organizations that measure impact, not hours. [Read about performance standards →](/blog/pillar-5-performance-standards)
+
+---
+
 **Want to see how AI-native team building applies to your organization?** [Book a 30-minute strategy call →](/book)
 
 **We help founders, CTOs, and operations leaders build teams that ship — not teams that meet.** [Let's talk →](/book)

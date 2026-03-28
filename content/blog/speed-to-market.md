@@ -66,6 +66,24 @@ A **design engineer** generates 5 directions in a morning and presents the stron
 
 ---
 
+## Ask Yourself
+
+These questions will expose exactly where your dead time lives — and whether your speed problems are people problems or architecture problems.
+
+1. **What's your honest assembly-to-judgment ratio?** Track one full day. How many hours did you spend gathering context, pulling up dashboards, re-reading threads — vs. actually making decisions? If it's 70/30 assembly, you're doing the hard part by hand. [See how orchestration eliminates dead time →](/#agents)
+
+2. **How many handoffs does a feature touch between idea and production?** Count them. Now count how many of those handoffs lose context. Every "wait, what was the rationale again?" is dead time that compounds across every feature, every sprint, every quarter.
+
+3. **Does your team start Monday with context — or spend Monday assembling it?** If sprint planning doesn't begin until after lunch because everyone needs to catch up, that's half a day of building time evaporated. Every week. [Explore how shared knowledge changes the morning →](/#moat)
+
+4. **Can your AI pre-assemble context for your next decision?** Not just summarize what happened — surface the data, flag the anomalies, map the patterns, and have it ready before you sit down. If your AI only responds when prompted, you're at Level 1. [See what Level 2 looks like →](/#agents)
+
+5. **How fast does your team learn from what it ships?** A team shipping weekly runs 12 experiments per quarter. A team shipping monthly runs 3. Speed isn't just about time to market — it's about time to insight. Which pace are you running?
+
+6. **Where's the longest "wait for" in your pipeline?** Brief waits for design review. Design waits for engineering review. Engineering waits for QA. Find the longest wait. That's your highest-leverage fix. [See the full framework →](/#philosophy)
+
+---
+
 **Want to find the dead time in your shipping process?** [Book a 30-minute strategy call →](/book)
 
 **This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)

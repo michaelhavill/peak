@@ -66,6 +66,24 @@ An **operations team** encoded not just procedures but the reasoning behind them
 
 ---
 
+## Ask Yourself
+
+These questions reveal whether your team's knowledge is compounding — or evaporating with every resignation.
+
+1. **Does your team's normal work automatically enrich the knowledge base?** If people have to "remember to add to the knowledge base" — they won't. The system must capture knowledge as a byproduct of normal work. Customer calls, design decisions, engineering choices, clinical encounters — does this flow in automatically? Or does it require extra effort nobody has time for? [See how the knowledge moat compounds →](/#moat)
+
+2. **What's your compound math?** Count your team. Multiply by knowledge artifacts per week. That's your accumulation rate. After a year, is that number enough to be inimitable — or is your competitor building the same base at the same pace? 20 people x 5 artifacts/week = 5,200/year. Can anyone replicate that by signing an enterprise contract?
+
+3. **Can a new hire's AI access the team's collective judgment on day one?** Not just procedures and docs — but the reasoning behind decisions, the patterns from customer calls, the design principles, the clinical protocols. If onboarding still takes 3 months of shadowing, your knowledge isn't accessible. It's just stored. [See how agents carry institutional memory →](/#agents)
+
+4. **Is your knowledge base structured for synthesis — or is it a document graveyard?** Raw call transcripts aren't useful. Extracted insights mapped to personas, tagged by theme, connected to patterns — that's useful. Does your system do the synthesis? Or is it just storing unprocessed data?
+
+5. **Do your individual moats feed the organizational moat?** When the PM captures a customer insight, does it enrich the base the designer's AI draws from? When the engineer documents an architecture decision, can the new hire's AI reference it? The compound loop only works if contributions flow across the organization. [Explore how shared surfaces connect everyone →](/#surfaces)
+
+6. **What walks out the door when someone leaves?** List your team's top 3 people. If they left tomorrow, what knowledge goes with them? That gap is the measure of your institutional memory — or lack of it. [See the full framework →](/#philosophy)
+
+---
+
 **Want to scale your knowledge moat across your organization?** [Book a 30-minute strategy call →](/book)
 
 **This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)

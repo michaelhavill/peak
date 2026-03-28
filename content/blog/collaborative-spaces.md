@@ -64,6 +64,24 @@ A **design team** connected Figma, GitHub, Notion, and Linear through shared con
 
 ---
 
+## Ask Yourself
+
+These questions reveal whether your team is actually collaborating with AI — or just using AI next to each other.
+
+1. **Do your AI tools share a brain — or are they all silos?** When your designer prompts AI, does it know about the PM's customer research? When your engineer prompts, does it reference the design system? If every tool starts from zero context, you have parallel monologues — not collaboration. [See how shared surfaces dissolve walls →](/#surfaces)
+
+2. **Where are your coworking spaces for AI and teams?** Not Slack channels. Not meeting rooms. Shared digital surfaces where both humans and AI contribute with full context. Where a PM's insight enriches the designer's AI automatically. Where an engineer's constraint flows to product without a meeting. Do you have these spaces? Or is information still flowing through copy-paste?
+
+3. **Can multiple agents and team members all work on the same thing seamlessly?** The real test: start a product brief. Can the PM's AI draft it, the designer's AI reference it with full context, and the engineer's AI flag constraints — without anyone manually bridging between them? If not, your tools are disconnected. [Explore how the stack connects →](/#stack)
+
+4. **How many meetings exist solely to share context that should already be shared?** Every standup where someone explains "what the AI said." Every sync where someone re-establishes context. Those meetings are symptoms of disconnected tools, not collaboration needs. What percentage of your meetings would vanish if context flowed automatically?
+
+5. **What's your team's knowledge contribution loop?** When someone learns something — from a customer call, a design decision, a code review, a clinical encounter — does that knowledge enrich the system? Or does it stay in their head until someone asks? [See how the knowledge moat compounds →](/#moat)
+
+6. **Which 3 tools would you connect first?** Pick the three your team uses most. Now imagine they share the same context layer via MCP. What changes? That's your starting point. [Explore the integrations →](/#stack)
+
+---
+
 **Want to design collaborative spaces for your team?** [Book a 30-minute strategy call →](/book)
 
 **This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)

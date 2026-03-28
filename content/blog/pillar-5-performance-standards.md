@@ -84,6 +84,24 @@ Performance standards are the feedback signal for the entire system. Measure the
 
 ---
 
+## Ask Yourself
+
+These questions reveal whether your culture accelerates your best people — or punishes them for being fast.
+
+1. **Has anyone on your team been questioned for delivering too quickly?** If excellent work gets met with "that was suspiciously fast" instead of "that was excellent" — your performance system is broken. You're penalizing the exact behavior you should be rewarding. That's cultural debt with compounding interest.
+
+2. **What do you actually measure — effort or impact?** Look at your last round of reviews. Were people praised for "dedication" and "thoroughness" (time invested) — or for shipped outcomes and measurable results (impact delivered)? If you're still measuring effort, your best people are managing perception instead of shipping. [See how the 1% vs 99% gap works →](/#philosophy)
+
+3. **Is AI-assisted work your baseline expectation — or a bonus?** A junior PM with a knowledge base should produce brief quality matching what a senior PM did manually 18 months ago. Is that your expectation? Or are you still giving credit for the old pace? The bar has moved. Has yours?
+
+4. **How many "shipped outcomes per week" does each team member produce?** Not "worked on." Not "in progress." Shipped. Deployed. Live. If you can't answer this number for every person, you're measuring the wrong thing. [See how teams that ship weekly learn 4x faster →](/blog/speed-to-market)
+
+5. **Would your best builder leave over how you evaluate work?** High-agency builders don't slow down to match cultural expectations about effort. They leave for cultures that recognize speed + quality. The talent war isn't about compensation — it's about which culture lets fast, excellent work be celebrated as fast, excellent work.
+
+6. **Can you say this out loud to your team: "If the output is excellent and it took 20 minutes, that's excellent work"?** If you can't — or it would feel awkward — your performance thermostat is set wrong. Every other pillar underperforms when speed gets questioned. [See the full framework →](/#philosophy) | [Learn how to build the knowledge foundation →](/blog/pillar-1-knowledge-management)
+
+---
+
 **Want to see how AI-native performance standards apply to your organization?** [Book a 30-minute strategy call →](/book)
 
 **We help founders, builders, and team leads redefine what great work looks like.** [Let's talk →](/book)
