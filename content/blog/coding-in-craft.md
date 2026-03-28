@@ -1,5 +1,5 @@
 ---
-title: "Code That Carries Your Craft: Making AI Ship Work That's Actually Yours"
+title: "Walk the Path to Code That Carries Your Craft"
 slug: coding-in-craft
 theme: ["craft-and-taste", "ship-faster"]
 description: "Generic AI ships generic code. AI with your stack constraints, patterns, and quality bar ships code that works in your reality."

@@ -1,5 +1,5 @@
 ---
-title: "Commoditized vs. Irreplaceable: Redefining What Great Work Looks Like"
+title: "The Path from Commoditized to Irreplaceable"
 slug: pillar-5-performance-standards
 pillar: 5
 theme: ["craft-and-taste", "build-your-moat"]

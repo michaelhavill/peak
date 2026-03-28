@@ -25,7 +25,7 @@ export default function HeroSection() {
           className="text-[15px] max-w-md mb-8 leading-[140%]"
           style={{ color: "var(--text-secondary)" }}
         >
-          Frameworks, mental models, and curated resources to 100x your craft — no matter where you are on the journey.
+          Frameworks, mental models, and real resources to 100x your craft. No matter where you are on the journey. Let&apos;s go.
         </motion.p>
         <motion.a
           href="#philosophy"
@@ -35,7 +35,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 text-[15px] font-medium group"
           style={{ color: "var(--text-secondary)" }}
         >
-          See what 100x looks like
+          See the framework
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-200 group-hover:translate-x-1">
             <path d="M6 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

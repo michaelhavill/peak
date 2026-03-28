@@ -1,5 +1,5 @@
 ---
-title: "The 1% Who Built Their Moat: Why Knowledge Bases Are the New Career Capital"
+title: "The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital"
 slug: pillar-1-knowledge-management
 pillar: 1
 theme: ["build-your-moat", "craft-and-taste"]

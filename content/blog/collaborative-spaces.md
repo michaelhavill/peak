@@ -1,5 +1,5 @@
 ---
-title: "Build Workspaces Where Humans and AI Actually Collaborate"
+title: "Build the Path to Workspaces Where Humans and AI Actually Collaborate"
 slug: collaborative-spaces
 theme: ["ai-teams", "scale"]
 description: "Your AI tools live in one tab. Your team lives in another. Here's how to build the shared space between them."

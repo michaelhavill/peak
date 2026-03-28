@@ -1,5 +1,5 @@
 ---
-title: "Own the Center, Rent the Edges: The Architecture That Makes You Antifragile"
+title: "See the Path to Owning the Center and Renting the Edges"
 slug: pillar-2-hub-and-spoke
 pillar: 2
 theme: ["scale", "ship-faster"]

@@ -1,5 +1,5 @@
 ---
-title: "The Builder Who Runs the Machine: From AI Tasks to AI Workflows"
+title: "Map the Path from AI Tasks to AI Workflows"
 slug: pillar-3-orchestration
 pillar: 3
 theme: ["ship-faster", "ai-teams"]

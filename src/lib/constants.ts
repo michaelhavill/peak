@@ -19,51 +19,51 @@ export const ROTATING_ROLES = [
 
 export const USE_CASES = [
   {
-    title: "Document your taste and craft",
+    title: "Write down your taste",
     description:
-      "Your instincts about strategy, hiring, product direction, design, pricing, and positioning are years of pattern recognition no one else has. Codify them, and your AI produces work that carries your judgment — not the same generic output everyone else gets.",
+      "Here's what's actually happening: you've spent years building instincts about strategy, hiring, design, pricing, positioning — and none of it reaches your AI. Write it down. Now your AI carries your judgment instead of guessing.",
     badge: "Career Moat",
     tools: ["Claude", "Notion", "Figma"],
   },
   {
-    title: "Map your personas and KPIs",
+    title: "Encode who you're building for",
     description:
-      "Deep customer context is what separates strategy from guesswork. Encode who you're building for and what success looks like — your AI peers will make decisions competitors can't replicate.",
+      "The hard truth? Most AI output is generic because it has zero customer context. Encode your personas, your KPIs, what success actually looks like — and suddenly your AI makes decisions your competitors literally cannot.",
     badge: "Company Moat",
     tools: ["Linear", "Notion", "Amplitude"],
   },
   {
-    title: "Capture your domain knowledge",
+    title: "Capture the domain knowledge",
     description:
-      "Regulatory constraints, business dynamics, institutional knowledge — the context that took years to accumulate. This is the moat that makes your company's AI work inimitable.",
+      "Regulatory constraints, business dynamics, the stuff that took you years to learn. This is the context that makes your AI work inimitable. Your competitors can buy the same tools. They can't buy your context.",
     badge: "Domain Moat",
     tools: ["Obsidian", "Notion", "GitHub"],
   },
   {
-    title: "Build an ideas backlog AI can reason over",
+    title: "Give your AI a backlog to reason over",
     description:
-      "While others prompt from scratch, your agents draw on a structured universe of hypotheses, experiments, and insights. The compounding advantage of a curated mind.",
+      "Everyone else prompts from scratch every single time. Your agents draw on a structured universe of hypotheses, experiments, and insights. That's the compounding advantage of a curated mind.",
     badge: "Ideas Moat",
     tools: ["Notion", "Linear", "Claude"],
   },
   {
-    title: "Define your engineering capabilities",
+    title: "Define your real engineering constraints",
     description:
-      "Your stack, its seams, its strengths — AI that understands your real constraints ships code that actually works. Generic AI ships generic code that breaks on contact with your reality.",
+      "Generic AI ships generic code. It breaks the moment it hits your reality. AI that knows your stack, its seams, its actual constraints? That ships code that works. That's the difference.",
     badge: "Technical Moat",
     tools: ["GitHub", "Cursor", "Claude"],
   },
   {
-    title: "Codify your unique knowledge",
+    title: "Get your knowledge out of your head",
     description:
-      "Mental models, hard-won insights, pattern recognition built over a career. Most people leave this locked in their heads. You'll compound it across every AI interaction, every day.",
+      "Mental models, hard-won insights, pattern recognition built over a career — most people leave this locked up. You're going to compound it across every AI interaction, every single day.",
     badge: "Knowledge Moat",
     tools: ["Claude", "Obsidian", "Notion"],
   },
 ];
 
 export const DEMO_PROMPT =
-  "Analyze our persona research and KPI targets, then spawn agents to draft the product brief using our strategy taste docs, generate three design directions from our brand and UI principles, and outline the technical architecture within our stack constraints.";
+  "Pull our persona research and KPI targets, spawn agents to draft the product brief from our strategy taste docs, generate three design directions using our brand principles, and outline the architecture within our actual stack constraints.";
 
 export const DEMO_STEPS = [
   { label: "Loading knowledge base context", progress: 85 },
@@ -78,22 +78,22 @@ export const COMMAND_TABS = [
     id: "human-ai",
     title: "Human + AI",
     description:
-      "Shared workspaces where your team and AI agents collaborate with full context from your knowledge base. Every interaction deepens your moat — the AI gets sharper, the output gets more defensible, the gap widens.",
+      "Shared workspaces where your team and AI actually work together with full context. Every interaction makes the AI sharper, the output more defensible, the gap wider. This is how moats compound.",
   },
   {
     id: "agent-orchestration",
     title: "Agent Orchestration",
     description:
-      "A command layer for managing agentic workflows grounded in your taste, craft, and domain knowledge. Your competitors get generic agents. You get agents that think like your best people.",
+      "A command layer for running agentic workflows grounded in your taste, craft, and domain knowledge. Your competitors get generic agents. You get agents that think like your best people. That's the whole game.",
   },
 ];
 
 export const ROLE_TASKS = [
-  "Map your taste and craft into a knowledge base",
-  "Build domain context your competitors can't copy",
+  "Write your taste and craft into a knowledge base",
+  "Build domain context nobody else can copy",
   "Design agentic workflows that compound daily",
-  "Create collaboration surfaces for your team + AI",
-  "Encode personas, KPIs, and strategic context",
+  "Create shared surfaces for your team + AI",
+  "Encode your personas, KPIs, and strategic context",
   "Ship the moat that makes you irreplaceable",
 ];
 
@@ -117,7 +117,7 @@ export const INTEGRATIONS = [
 ];
 
 export const STATS = [
-  { value: 1, suffix: "%", label: "of builders who've built their moat" },
+  { value: 1, suffix: "%", label: "have actually built their moat" },
   { value: 99, suffix: "%", label: "still using AI like everyone else" },
   { value: 100, suffix: "x", label: "the gap between them" },
 ];
@@ -125,7 +125,7 @@ export const STATS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "I documented my design taste and engineering constraints in a knowledge base. Now Claude ships work that's unmistakably mine. My competitors are all getting the same generic output.",
+      "I wrote down my design taste and engineering constraints. That's it. Now Claude ships work that's unmistakably mine. Everyone else is getting the same generic output. Pretty wild.",
     name: "Sarah Chen",
     role: "Solo Founder, Design Engineer",
     initials: "SC",
@@ -133,7 +133,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "We encoded our domain knowledge — regulatory constraints, customer personas, technical debt map — into our AI stack. Our competitors can copy our tools. They can't copy our context.",
+      "We encoded our domain knowledge — regulatory constraints, customer personas, the whole technical debt map. Our competitors can copy our tools. They literally cannot copy our context. That's the moat.",
     name: "Marcus Rivera",
     role: "CTO at a Series B startup",
     initials: "MR",
@@ -141,7 +141,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "The moat isn't the AI. The moat is what you feed it. Our knowledge base means every agent we spawn makes decisions with 10 years of institutional knowledge behind it.",
+      "The moat isn't the AI. The moat is what you feed it. Every agent we spawn now makes decisions with 10 years of institutional knowledge behind it. You can't buy that. You have to build it.",
     name: "Priya Sharma",
     role: "VP Product, Fintech",
     initials: "PS",
@@ -149,7 +149,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "I went from 'using ChatGPT like everyone else' to having AI coworkers that understand my craft, my taste, and my constraints. That's the difference between commoditized and irreplaceable.",
+      "I went from using ChatGPT like everyone else to having AI coworkers that understand my craft, my taste, my constraints. That's the difference between commoditized and irreplaceable. It's night and day.",
     name: "James Okafor",
     role: "Indie Builder & Vibe Coder",
     initials: "JO",
@@ -161,104 +161,104 @@ export const LEARN_THEMES = [
   {
     id: "build-your-moat",
     label: "Build Your Moat",
-    heading: "Build the moat: knowledge that can't be copied",
+    heading: "Build the moat. Knowledge that can't be copied.",
     description:
-      "Your taste, craft, and domain expertise are years of accumulated judgment. Codify them into a knowledge base and your AI becomes inimitable — not just useful.",
+      "Here's the thing — your taste, craft, and domain expertise are years of accumulated judgment. Codify them into a knowledge base and your AI becomes inimitable. Not just useful. Inimitable.",
   },
   {
     id: "craft-and-taste",
     label: "Craft & Taste",
-    heading: "Make AI carry your craft, not flatten it",
+    heading: "Make AI carry your craft. Not flatten it.",
     description:
-      "Your judgment about strategy, design, hiring, pricing, voice, and product direction is what makes your work yours. Here's how to make every AI interaction reflect it.",
+      "Your judgment about strategy, design, hiring, pricing, voice, product direction — that's what makes your work yours. Here's how to make every AI interaction actually reflect it.",
   },
   {
     id: "ship-faster",
     label: "Ship Faster",
-    heading: "Eliminate the dead time between decisions",
+    heading: "Kill the dead time between decisions",
     description:
-      "Speed comes from removing context assembly, manual handoffs, and workflow gaps — not from working harder.",
+      "Speed doesn't come from working harder. It comes from eliminating context assembly, manual handoffs, and the workflow gaps where days just disappear. That's the real unlock.",
   },
   {
     id: "ai-teams",
     label: "AI + Human Teams",
     heading: "Build teams of humans and AI that actually ship",
     description:
-      "AI peers aren't assistants. They're team members with your context, your constraints, and your quality bar. Here's how to collaborate.",
+      "Let's be honest — AI peers aren't assistants. They're team members with your context, your constraints, your quality bar. Here's how to collaborate with them like you mean it.",
   },
   {
     id: "scale",
     label: "Scale",
-    heading: "Take what works for one and make it work for everyone",
+    heading: "What works for one needs to work for everyone",
     description:
-      "Individual moats become company moats when the knowledge compounds across people. Architecture and culture that scales.",
+      "Individual moats become company moats when the knowledge compounds across people. That's the architecture and culture piece. That's how you scale what can't be copied.",
   },
 ];
 
 export const LEARN_PATHS = [
   {
-    title: "The 1% Who Built Their Moat: Why Knowledge Bases Are the New Career Capital",
-    description: "Your taste, craft, and domain expertise are career capital AI can't replicate — unless you feed it to them.",
+    title: "The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital",
+    description: "Your taste, craft, and domain expertise are career capital AI can't replicate — unless you actually feed it to them. Most people don't. That's the gap.",
     themes: ["build-your-moat", "craft-and-taste"],
     slug: "pillar-1-knowledge-management",
   },
   {
-    title: "Make Your Taste Flow Through Every AI Interaction",
-    description: "Your aesthetic instincts took years to develop. Here's how to make AI produce work that's unmistakably yours.",
+    title: "Find the Path to Making AI Carry Your Taste",
+    description: "Your aesthetic instincts took years to develop. Here's how to stop letting AI flatten them and start making it produce work that's unmistakably yours.",
     themes: ["craft-and-taste", "build-your-moat"],
     slug: "taste-through-ai",
   },
   {
-    title: "Code That Carries Your Craft: Making AI Ship Work That's Actually Yours",
-    description: "Generic AI ships generic code. AI with your stack constraints, patterns, and quality bar ships code that works in your reality.",
+    title: "Walk the Path to Code That Carries Your Craft",
+    description: "Generic AI ships generic code that breaks on contact with your reality. Give it your stack constraints, your patterns, your quality bar — and watch what happens.",
     themes: ["craft-and-taste", "ship-faster"],
     slug: "coding-in-craft",
   },
   {
-    title: "Ship in Weeks What Used to Take Quarters",
-    description: "The teams shipping fastest aren't using better AI. They've eliminated the dead time between decisions.",
+    title: "The Path to Shipping in Weeks What Used to Take Quarters",
+    description: "The teams shipping fastest aren't using better AI. They've killed the dead time between decisions. That's the whole trick.",
     themes: ["ship-faster", "build-your-moat"],
     slug: "speed-to-market",
   },
   {
-    title: "The Builder Who Runs the Machine: From AI Tasks to AI Workflows",
-    description: "You're using AI for the easy parts and doing the hard parts by hand. The real 100x is in the orchestration.",
+    title: "Map the Path from AI Tasks to AI Workflows",
+    description: "You're using AI for the easy parts and doing the hard parts by hand. That's backwards. The real 100x is in the orchestration.",
     themes: ["ship-faster", "ai-teams"],
     slug: "pillar-3-orchestration",
   },
   {
-    title: "Add 10 Team Members Tomorrow — Without a Single Hire",
-    description: "AI peers aren't assistants. They're team members with your context, your constraints, and your quality bar.",
+    title: "Follow the Path to Adding 10 Team Members — Without a Single Hire",
+    description: "AI peers aren't assistants. They're team members with your context, your constraints, your quality bar. You just have to set them up right.",
     themes: ["ai-teams", "ship-faster"],
     slug: "10x-team-ai-peers",
   },
   {
-    title: "Build Workspaces Where Humans and AI Actually Collaborate",
-    description: "Your AI tools live in one tab. Your team lives in another. Here's how to build the shared space between them.",
+    title: "Build the Path to Workspaces Where Humans and AI Actually Collaborate",
+    description: "Your AI tools live in one tab. Your team lives in another. That's not collaboration. Here's how to build the shared space between them.",
     themes: ["ai-teams", "scale"],
     slug: "collaborative-spaces",
   },
   {
-    title: "Doers Over Talkers: Building the Team That Actually Ships with AI",
-    description: "AI amplifies what's already there. Give it to doers and they ship 10x. Give it to talkers and you get 10x more slide decks.",
+    title: "Learn the Path to Hiring Doers Over Talkers",
+    description: "AI amplifies what's already there. Give it to doers and they ship 10x. Give it to talkers and you get 10x more slide decks. Hire accordingly.",
     themes: ["ai-teams", "scale"],
     slug: "pillar-4-ai-native-teams",
   },
   {
-    title: "Own the Center, Rent the Edges: The Architecture That Makes You Antifragile",
-    description: "The builders who own their orchestration layer can swap any tool overnight. Everyone else is locked in.",
+    title: "See the Path to Owning the Center and Renting the Edges",
+    description: "The builders who own their orchestration layer can swap any tool overnight. Everyone else is locked in and praying their vendor doesn't change the pricing.",
     themes: ["scale", "ship-faster"],
     slug: "pillar-2-hub-and-spoke",
   },
   {
-    title: "From Individual Moat to Company Moat: Scaling What Can't Be Copied",
-    description: "Your personal knowledge base is a career moat. Your company's knowledge base is a competitive moat.",
+    title: "Chart the Path from Individual Moat to Company Moat",
+    description: "Your personal knowledge base is a career moat. Your company's knowledge base is a competitive moat. Here's how to bridge the gap.",
     themes: ["build-your-moat", "scale"],
     slug: "building-moat-at-scale",
   },
   {
-    title: "Commoditized vs. Irreplaceable: Redefining What Great Work Looks Like",
-    description: "AI-assisted work is the new baseline. The builders who measure impact over effort are pulling away.",
+    title: "The Path from Commoditized to Irreplaceable",
+    description: "AI-assisted work is the new baseline. The builders who measure impact over effort are pulling away from everyone else. Which side are you on?",
     themes: ["craft-and-taste", "build-your-moat"],
     slug: "pillar-5-performance-standards",
   },
