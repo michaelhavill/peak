@@ -6,9 +6,9 @@ import { motion, useInView } from "framer-motion";
 const MOAT_PILLARS = [
   {
     title: "Taste",
-    subtitle: "Your aesthetic is inimitable",
+    subtitle: "Your judgment is inimitable",
     description:
-      "Every decision you've made about what's good, what's right, what feels off — that's years of pattern recognition AI can't replicate on its own. Document it, and your AI peers produce work that feels like yours.",
+      "Every decision you've made about what's good — a product direction, a hiring call, a pricing model, a design choice, a brand position — that's years of pattern recognition AI can't replicate on its own. Document it, and your AI produces work that carries your judgment.",
   },
   {
     title: "Craft",

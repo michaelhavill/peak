@@ -21,7 +21,7 @@ export const USE_CASES = [
   {
     title: "Document your taste and craft",
     description:
-      "Your aesthetic instincts and quality bar are years of pattern recognition no one else has. Codify them, and your AI produces work that's unmistakably yours — not the same generic output everyone else gets.",
+      "Your instincts about strategy, hiring, product direction, design, pricing, and positioning are years of pattern recognition no one else has. Codify them, and your AI produces work that carries your judgment — not the same generic output everyone else gets.",
     badge: "Career Moat",
     tools: ["Claude", "Notion", "Figma"],
   },
@@ -63,7 +63,7 @@ export const USE_CASES = [
 ];
 
 export const DEMO_PROMPT =
-  "Analyze our persona research and KPI targets, then spawn agents to draft the product brief, generate three design directions based on our taste docs, and outline the technical architecture within our stack constraints.";
+  "Analyze our persona research and KPI targets, then spawn agents to draft the product brief using our strategy taste docs, generate three design directions from our brand and UI principles, and outline the technical architecture within our stack constraints.";
 
 export const DEMO_STEPS = [
   { label: "Loading knowledge base context", progress: 85 },
@@ -170,7 +170,7 @@ export const LEARN_THEMES = [
     label: "Craft & Taste",
     heading: "Make AI carry your craft, not flatten it",
     description:
-      "Your aesthetic instincts and quality bar are what make your work yours. Here's how to make every AI interaction reflect them.",
+      "Your judgment about strategy, design, hiring, pricing, voice, and product direction is what makes your work yours. Here's how to make every AI interaction reflect it.",
   },
   {
     id: "ship-faster",

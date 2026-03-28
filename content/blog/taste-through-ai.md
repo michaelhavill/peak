@@ -2,55 +2,75 @@
 title: "Make Your Taste Flow Through Every AI Interaction"
 slug: taste-through-ai
 theme: ["craft-and-taste", "build-your-moat"]
-description: "Your aesthetic instincts took years to develop. Here's how to make AI produce work that's unmistakably yours."
+description: "Your judgment about strategy, design, hiring, and positioning took years to develop. Here's how to make AI carry it."
 date: 2026-03-28
 author: "100xpath"
-tags: ["taste", "craft", "design", "knowledge base", "AI quality"]
+tags: ["taste", "craft", "judgment", "knowledge base", "AI quality"]
 ---
 
-You ask AI to draft a landing page. It returns something that looks like every other AI-generated landing page. Clean, competent, generic. It doesn't know that you hate centered hero text. It doesn't know your brand avoids blue gradients. It doesn't know that your spacing system uses 8px increments, not 4. It has no access to the decade of aesthetic judgment that makes your work yours.
+You ask AI to draft a product strategy memo. It returns something that sounds like a McKinsey intern's first attempt — structurally competent, generically correct, missing every opinion that makes your thinking valuable. It doesn't know you always lead with the customer problem before the business case. It doesn't know your pricing philosophy. It doesn't know how you evaluate trade-offs between speed and quality. It has zero access to the decades of judgment that make your work yours.
 
-**Your taste is the most valuable thing you own. And right now, none of it reaches your AI.**
+**Your taste isn't just about aesthetics. It's about every domain where you have opinions that took years to form — strategy, hiring, product direction, brand voice, pricing, org design, UI, and positioning.** Right now, none of it reaches your AI.
 
 <!-- toggle: individual -->
 
 ## The 100x Individual
 
-Taste isn't subjective preference. It's years of pattern recognition compressed into instinct. The product sense that says "this headline is wrong" before you can explain why. The design eye that catches a weight mismatch across the page. The engineering judgment that knows when an interface is trying too hard.
+Taste is accumulated judgment compressed into instinct. The product sense that says "this positioning is wrong" before you can articulate why. The hiring instinct that spots a culture mismatch in the first 5 minutes. The strategy eye that sees a pricing model won't survive the next market shift. The design judgment that catches a weight mismatch across the page.
 
-You can transfer this to AI. Not by writing better prompts — by documenting what you already know.
+You can transfer all of this to AI. Not by writing better prompts — by documenting what you already know.
 
-A designer we work with created a taste doc: 40 specific principles covering typography relationships, spacing ratios, color temperature preferences, and interaction patterns she'd refined over 12 years. She connected it to Claude via MCP. The first output that came back matching her aesthetic — without a single correction — changed how she thought about AI permanently.
+**The format is simple.** Pick one domain of your judgment. Write 10–15 specific rules. Not "I prefer clear communication." That's useless. Instead:
 
-**The format is simple.** Pick one domain of your taste. Write 10–15 specific rules. Not "I prefer clean design." That's useless. Instead: "Body text never exceeds 18px. Line height is always 1.5x font size. Primary CTAs use high-contrast fills, never outlines. Section padding is 80px minimum on desktop." Specificity is what makes AI useful.
+- **Strategy taste:** "We always frame market opportunities as customer pain points first, TAM second. We never pursue a segment without 5+ customer conversations. Competitive positioning leads with differentiation, not feature comparison."
+- **Hiring taste:** "Culture fit is assessed by how someone describes past failures, not past wins. We value people who've shipped over people who've planned. Reference checks focus on collaboration under ambiguity."
+- **Product taste:** "Every feature brief starts with the user's current workaround. Success metrics are behavioral, not engagement-based. We kill features that don't move retention within 2 sprints."
+- **Design taste:** "Body text never exceeds 18px. Primary CTAs use high-contrast fills, never outlines. Section padding is 80px minimum on desktop."
+- **Brand voice:** "We write like we're briefing a peer, not presenting to a board. We lead with the uncomfortable truth, then the opportunity. No corporate hedging — if we believe it, we say it directly."
 
-Connect it. Test it. Iterate on the rules when the output surprises you. Within a week, you'll have an AI collaborator that produces work carrying your judgment. Everyone else is still editing generic output into something passable.
+A founder we work with encoded his fundraising judgment: investor preferences from 200+ pitch meetings, objection patterns, how he frames challenges as opportunities without sugarcoating, and the metrics he always leads with. His AI now drafts investor updates that reference the right context for each recipient. What took 3 hours per update now takes 20 minutes — more personalized than before.
 
-The compound effect: every time you refine a rule, every future interaction improves. Your taste doc becomes a living system that gets sharper with use.
+A product manager documented her brief-writing craft: how she structures problem statements, what customer evidence she considers sufficient, how she frames success metrics that actually drive behavior. AI briefs now match her quality bar on the first draft.
+
+**The compound effect is what matters.** Every rule you refine, every judgment call you record, every "here's how I think about this" you document — these make every future interaction better. Your taste doc becomes a living system that gets sharper with use. After 6 months, your AI carries judgment that would take a new hire a year to absorb.
 
 <!-- toggle: team -->
 
 ## The 100x Team & Business
 
-At the team level, taste docs solve the consistency problem that plagues every growing organization. Your senior designer's instincts live in her head. Your founder's quality bar lives in feedback that arrives too late. Your brand guidelines exist but nobody reads them — and they're too vague for AI to use anyway.
+At the team level, taste docs solve the consistency problem that plagues every growing organization. Your CEO's strategic judgment lives in her head. Your VP Product's quality bar arrives as feedback that's too late to incorporate. Your brand voice guidelines exist but they're too vague for anyone — human or AI — to actually follow.
 
-A shared taste infrastructure changes this. When the entire team's AI draws from the same documented principles — typography rules, voice guidelines, quality thresholds, interaction patterns — every output starts from the same baseline. Junior designers produce work that matches senior standards. New hires onboard in days, not months. The founder's quality bar is encoded, not just enforced.
+A shared taste infrastructure changes this. When the team's AI draws from documented principles — strategic frameworks, hiring rubrics, product quality bars, design standards, voice guidelines, pricing philosophy — every output starts from the same baseline.
 
-One team we work with created three layers: a company taste doc (brand-level), team taste docs (design, engineering, content), and individual taste docs (personal preferences that layer on top). The AI applies all three. A junior designer's first AI-assisted mockup matched the team's quality bar because the context did the heavy lifting.
+One team we work with created three layers: a company taste doc (brand, strategy, and quality standards), team taste docs (product, engineering, design, marketing), and individual taste docs (personal judgment that layers on top). The AI applies all three. A new PM's first AI-assisted brief matched the team's quality bar because the context carried the organization's collective judgment.
 
-**The result: taste scales without meetings.** No more "run it by Sarah first." Sarah's judgment is in the system. The team produces consistent work at 3x the speed because the quality bar is built into the tools, not bottlenecked through one person's calendar.
+**The result: taste scales without bottlenecks.** No more "run it by the founder first." The founder's strategic judgment is in the system. No more "check with brand." Brand voice is encoded. The team produces consistent work at 3x the speed because the quality bar is built into the tools, not locked in one person's calendar.
+
+The breadth matters. When a startup encodes only design taste, they get consistent UI and inconsistent everything else. When they encode strategy taste, product taste, hiring taste, voice, and design taste — every function produces work that carries the organization's judgment. That's the difference between an AI-equipped team and an AI-native one.
 
 ---
 
 ## Where This Applies
 
-A **product manager** documented her brief-writing taste: how she structures problem statements, what level of customer evidence she considers sufficient, how she frames success metrics. Her AI now drafts briefs that sound like her — not like a template.
+A **founder** encoded his strategic decision-making framework: how he evaluates market opportunities, how he sizes bets, his philosophy on when to pivot vs. persevere. His AI now drafts board materials that reflect his actual strategic thinking — not consultant-speak.
 
-A **founder** encoded his investor communication style: the level of candor he uses, how he frames challenges as opportunities without sugarcoating, the metrics he always leads with. Investor updates that took 3 hours now take 20 minutes.
+A **product manager** documented her prioritization taste: how she weighs customer pain against business value, her threshold for "enough evidence," and how she frames trade-offs for engineering. Sprint planning briefs now start 80% of the way to final.
 
-A **content strategist** documented voice and tone rules at a granularity no brand guide ever achieves: sentence rhythm preferences, headline structures that perform, the exact ratio of evidence to opinion in thought leadership. Every AI draft now starts 80% of the way to final.
+An **operations leader** documented her process evaluation judgment: what "good enough" means for different process types, when to automate vs. keep manual, and her escalation philosophy. AI process recommendations now match her standards without a round of corrections.
 
-**The pattern: the more specific your taste documentation, the more your AI output diverges from generic.** Specificity is the moat.
+A **hiring manager** encoded his interview evaluation framework: the questions that reveal agency, the answers that signal culture fit, and his calibration between teams. Interview debriefs now reference consistent standards instead of subjective impressions.
+
+A **marketing lead** encoded her positioning craft: headline structures that perform, the ratio of evidence to opinion in thought leadership, and the tone that resonates with their specific audience. Every AI-drafted piece starts from her quality bar instead of generic content patterns.
+
+**The pattern: the more specific your taste documentation, the more your AI output diverges from generic — in any domain.** This applies to strategy, hiring, product, design, voice, pricing, and every other area where your judgment matters. Specificity is the moat.
+
+---
+
+## Where This Connects
+
+Taste documentation is how Pillar 1 (your knowledge base) gets personal. Raw knowledge is facts and data. Taste is your interpretation of what those facts mean and how they should influence decisions. Your knowledge base provides context. Your taste docs provide judgment. Together, they produce AI output that's not just informed but opinionated — in the way that makes your work defensible.
+
+Your architecture (Pillar 2) needs taste docs to know what "good" looks like for your specific system. Your orchestration engine (Pillar 3) routes better when it understands your quality thresholds. Your team (Pillar 4) adopts AI faster when the output already matches the bar. And your performance standards (Pillar 5) become achievable when AI carries the judgment that used to live in one person's head.
 
 ---
 

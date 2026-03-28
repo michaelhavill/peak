@@ -9,7 +9,7 @@ author: "100xpath"
 tags: ["knowledge management", "career moat", "knowledge base", "AI context", "competitive advantage"]
 ---
 
-You've spent years developing instincts that no job description captures. The product sense that says "this positioning is wrong before you can articulate why." The design eye that catches a 2px spacing issue across the room. The engineering judgment that knows which abstraction will haunt you in 6 months. All of it locked in your head, invisible to every AI tool you use.
+You've spent years developing instincts that no job description captures. The strategic sense that says "this market positioning is wrong" before you can articulate why. The hiring judgment that spots a culture mismatch in 5 minutes. The product instinct that knows which feature will move retention and which is a vanity metric. The design eye that catches a 2px spacing issue across the room. All of it locked in your head, invisible to every AI tool you use.
 
 So you prompt Claude and get back something that reads like it was written for everyone and no one. You tweak. You retry. You wonder if the tool is overhyped. **It's not the tool. It's that your AI has zero access to the thing that makes you, you.**
 
