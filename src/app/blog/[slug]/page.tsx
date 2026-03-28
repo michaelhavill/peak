@@ -87,6 +87,14 @@ export default async function BlogPostPage({
         />
 
         <PersonaPathway slug={slug} />
+
+        {post.htmlCtas && (
+          <div
+            className="prose-100x mt-10 pt-8"
+            style={{ borderTop: "1px solid var(--border-subtle)" }}
+            dangerouslySetInnerHTML={{ __html: post.htmlCtas }}
+          />
+        )}
       </div>
     </main>
   );

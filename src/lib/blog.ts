@@ -15,6 +15,7 @@ export interface BlogPost {
   themes: string[];
   content: string;
   htmlContent: string;
+  htmlCtas: string;
 }
 
 export function getAllSlugs(): string[] {
@@ -34,7 +35,23 @@ export function getPostBySlug(slug: string): BlogPost {
     .replace(/<!-- toggle: \w+ -->/g, "")
     .replace(/\[([^\]]+)\]\([^)]+\)\{\.cta-\w+\}/g, "$1");
 
-  const htmlContent = marked.parse(cleaned) as string;
+  // Split off trailing CTA section (everything after the last --- divider that
+  // contains only paragraph-level links / bold+link combos and no headings)
+  const lastHrIndex = cleaned.lastIndexOf("\n---\n");
+  let body = cleaned;
+  let ctaSection = "";
+
+  if (lastHrIndex !== -1) {
+    const candidate = cleaned.slice(lastHrIndex + 5).trim();
+    // If the candidate contains no headings (##), treat it as CTAs
+    if (!/^#{1,6}\s/m.test(candidate)) {
+      body = cleaned.slice(0, lastHrIndex);
+      ctaSection = candidate;
+    }
+  }
+
+  const htmlContent = marked.parse(body) as string;
+  const htmlCtas = ctaSection ? (marked.parse(ctaSection) as string) : "";
 
   return {
     slug,
@@ -46,5 +63,6 @@ export function getPostBySlug(slug: string): BlogPost {
     themes: data.theme ?? [],
     content,
     htmlContent,
+    htmlCtas,
   };
 }
