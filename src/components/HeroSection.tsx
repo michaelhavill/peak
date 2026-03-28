@@ -1,9 +1,26 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import RoleRotator from "./RoleRotator";
 
+const HERO_IMAGES = [
+  { src: "/hero/founder.png",          alt: "A founder sketching plans in an empty studio" },
+  { src: "/hero/product-builder.png",  alt: "A product builder assembling pieces at a workbench" },
+  { src: "/hero/design-engineer.png",  alt: "A design engineer bridging sketch and structure" },
+  { src: "/hero/solo-operator.png",    alt: "A solo operator running everything from one desk" },
+  { src: "/hero/technical-leader.png", alt: "A technical leader at the whiteboard with their team" },
+  { src: "/hero/creative-director.png",alt: "A creative director surveying a wall of work" },
+  { src: "/hero/vibe-coder.png",       alt: "A vibe coder deep in flow on a cosy afternoon" },
+];
+
 export default function HeroSection() {
+  const [heroImage, setHeroImage] = useState(HERO_IMAGES[0]);
+
+  useEffect(() => {
+    setHeroImage(HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)]);
+  }, []);
+
   return (
     <section id="hero" className="min-h-screen flex items-center px-8 md:px-16 lg:px-20 overflow-hidden">
       <div className="flex items-center w-full gap-12 lg:gap-16">
@@ -49,8 +66,8 @@ export default function HeroSection() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/hero.png"
-          alt="Pixel art landscape"
+          src={heroImage.src}
+          alt={heroImage.alt}
           className="w-full h-[70vh] object-cover rounded-2xl"
         />
       </motion.div>
