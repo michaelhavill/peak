@@ -78,7 +78,7 @@ A **clinical leader** connected care protocols, patient population data, and out
 
 ## The 100x Team & Business
 
-Look — at the team level, collaborative spaces mean shared surfaces where humans and AI contribute with full context. The economics here are staggering.
+Think about it — at the team level, collaborative spaces mean shared surfaces where humans and AI contribute with full context. The economics here are staggering.
 
 Most teams run two parallel worlds: the human world (Slack, meetings, docs) and the AI world (individual prompt sessions). Information flows between them through copy-paste, manual summaries, and meetings where someone explains "what the AI said." Net-net, this doubles communication overhead instead of cutting it. You are paying for AI and then paying again to manually distribute its output. That is like buying a dishwasher and then hand-washing every plate before you load it.
 

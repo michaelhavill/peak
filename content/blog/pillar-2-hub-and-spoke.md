@@ -74,7 +74,7 @@ A **product manager** made her research corpus and persona data the hub. Analyti
 
 A **clinical leader** built care coordination logic as the hub. The EHR is a spoke. When the EHR falls short, she builds extensions. When a better scheduling tool launched, she swapped it without disrupting a single clinical workflow.
 
-Look — this matters more for AI tools than any other category. The landscape reshapes itself every 90 days. Models improve by 40% per generation. New providers emerge monthly. Pricing drops 10x in 18 months. The builder who can swap AI tools without rebuilding workflows has a structural speed advantage that compounds with every market shift. That is the moat no vendor can take from you.
+Consider this — it matters more for AI tools than any other category. The landscape reshapes itself every 90 days. Models improve by 40% per generation. New providers emerge monthly. Pricing drops 10x in 18 months. The builder who can swap AI tools without rebuilding workflows has a structural speed advantage that compounds with every market shift. That is the moat no vendor can take from you.
 
 <!-- toggle: team -->
 

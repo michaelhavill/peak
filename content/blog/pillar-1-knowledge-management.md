@@ -53,7 +53,7 @@ That is insanity.
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-Look — you prompt Claude and get back something written for everyone and no one. You tweak. You retry. You start wondering if the $20/month is justified. **It's not the tool. It's that your AI has zero access to the thing that makes you, you.** The incentive structure is broken — you're paying for a Formula 1 engine and feeding it regular unleaded. Once you see it, the fix takes 20 minutes.
+Think about it — you prompt Claude and get back something written for everyone and no one. You tweak. You retry. You start wondering if the $20/month is justified. **It's not the tool. It's that your AI has zero access to the thing that makes you, you.** The incentive structure is broken — you're paying for a Formula 1 engine and feeding it regular unleaded. Once you see it, the fix takes 20 minutes.
 
 <!-- toggle: individual -->
 

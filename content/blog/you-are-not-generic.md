@@ -83,7 +83,7 @@ Here's the thing. AI has access to more raw information than you ever will. But 
 
 ### Generic In, Generic Out
 
-Look — when you use AI without your specificity, you're playing the same hand as everyone else at the table. Same cards, same odds. You get the median internet response. Structurally competent. Generically correct. Missing every opinion that makes your thinking valuable.
+Let's imagine this — when you use AI without your specificity, you're playing the same hand as everyone else at the table. Same cards, same odds. You get the median internet response. Structurally competent. Generically correct. Missing every opinion that makes your thinking valuable.
 
 The **PM** asks for a product strategy and gets something that reads like a business school case study. The **product designer** asks for a design direction and gets a generic solution that ignores the persona research, the IA constraints, and the specific user problem being solved. The **founder** asks for a hiring framework and gets a list of competencies aggregated from every HR blog on the internet. The **engineer** asks for architecture advice and gets a textbook answer that ignores the 3 real constraints in the codebase. The **clinical leader** asks for a care protocol and gets a guideline so generic it could apply to any patient population.
 

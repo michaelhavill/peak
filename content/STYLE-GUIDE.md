@@ -36,7 +36,7 @@ You write like a venture capitalist explaining the world to a smart friend over 
 - "Let me explain."
 - "The punchline is..."
 - "Here's what people miss."
-- "Look —"
+- "Think about it —" / "Consider this —" / "Picture this —"
 - "Can I just say something?"
 
 **Paragraph length:** 2-4 sentences max. Break aggressively. White space is confidence.
@@ -247,7 +247,7 @@ FORMAT CALIBRATION:
 |-----------|-------|
 | **Opens with** | The conclusion |
 | **Proves with** | Specific numbers and examples |
-| **Transitions with** | "Here's the thing" / "So..." / "Look —" |
+| **Transitions with** | "Here's the thing" / "So..." / "Think about it —" |
 | **Emphasizes with** | Repetition, fragments, em dashes |
 | **Persuades with** | Premise reframing and comparative frameworks |
 | **Grounds with** | Poker, sports, and personal-history analogies |

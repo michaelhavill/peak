@@ -71,7 +71,7 @@ Taste is judgment compressed into instinct. Three components, each one a form of
 
 The **product sense** that flags wrong positioning before you can articulate why. The **hiring instinct** that spots a culture mismatch in 5 minutes flat. The **strategy eye** that sees a pricing model won't survive the next market shift. The **design judgment** that catches a weight mismatch across the page. The **clinical sensibility** that knows a protocol will create friction for clinicians before it's deployed.
 
-Look — all of this transfers to AI. Not through better prompts. Through documentation. You're financializing judgment that currently lives rent-free in your head, doing nothing at scale.
+Here's the exciting part — all of this transfers to AI. Not through better prompts. Through documentation. You're financializing judgment that currently lives rent-free in your head, doing nothing at scale.
 
 **The format is dead simple.** Pick one domain. Write 10-15 specific rules. Not "I prefer clear communication" — that's a nothing-statement. Deploy specificity:
 
