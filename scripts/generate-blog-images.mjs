@@ -29,7 +29,7 @@ const STYLES = {
   "pixel-art":
     "16-bit pixel art, [SCENE], retro video game aesthetic, rich detailed dithering, warm diffused lighting, vibrant saturated color palette, clean composition with clear focal point, slight atmospheric haze, every pixel visible, painterly pixel shading, Japanese SFC-era game background art, nostalgic and inviting mood, no text, no UI elements, no watermarks",
   "new-yorker":
-    "New Yorker magazine editorial illustration, [SCENE], warm and quietly optimistic mood, soft watercolour washes with confident ink linework, muted sophisticated palette — warm terracotta, dusty teal, soft ochre — against warm ivory, abstract human figures grounded in everyday activity, intimate and observational in scale, figures working with their hands or in relation to objects and spaces, the story told through posture and context not drama, generous negative space, delicate painterly texture, no floating or celestial imagery, no radiating light, no leaping or flying, no pixel art, no game art, no text, no captions, no speech bubbles, no logos",
+    "New Yorker and Economist magazine cover illustration style, [SCENE], bold graphic symbolism, one strong central visual metaphor, the entire idea compressed into a single image, highly abstract and conceptual, minimal elements — only what is essential to the idea, strong geometric composition, confident flat ink shapes with sparse watercolour wash, very limited palette — deep navy or charcoal, warm terracotta or amber, ivory — high contrast, clever visual wit, the kind of image that makes you think before you understand it, no literal scenes, no interiors, no furniture, no realistic characters, no faces, figures only as silhouette or shape, no pixel art, no game art, no text, no captions, no logos",
 };
 
 // ---------------------------------------------------------------------------
@@ -37,94 +37,94 @@ const STYLES = {
 // ---------------------------------------------------------------------------
 const POST_PROMPTS = {
   "10x-team-ai-peers": {
-    hero: "One person seated at a small desk, but five pairs of hands reach in from the edges of the frame helping simultaneously — writing, building, sketching — the single figure at calm centre of a ring of collaborative hands",
+    hero: "A single chess queen piece casting a shadow shaped like an entire army of pieces — one figure, the force of many — stark graphic, high contrast, white background",
     sections: [
-      "A figure at a table covered in work, each piece of work being picked up by a different pair of unseen hands and carried toward different doorways — output leaving in all directions at once",
-      "Two workers side by side: one surrounded by towering stacks of finished work, one surrounded only by a single unfinished thing and a long to-do list — the difference between leverage and labour",
+      "One candle flame multiplied into a hundred flames in a single breath — the geometry of exponential reach from a single source",
+      "A tiny seed on one side of a scale perfectly balancing a vast tree on the other — leverage made visible as pure graphic symbol",
     ],
   },
   "building-moat-at-scale": {
-    hero: "A craftsperson carefully laying one precise brick into a low wall — behind them, barely visible, the same wall stretches far into the distance already built — the quiet satisfaction of compounding work",
+    hero: "A small stone dropped into still water — the rings expanding outward and becoming walls, a fortress formed from the geometry of compounding — the ripple as architecture",
     sections: [
-      "A figure tending a small garden, but looking up to find the plants have already grown into an orchard behind them — patient tending as strategic act",
-      "Two businesses drawn as buildings: one wide and flat with a single door anyone can enter; one narrow and deep with a long corridor only the right person can navigate — the moat as architecture",
+      "An hourglass where the sand falling through transforms into bricks as it lands, building upward — time becoming structure",
+      "A single thread being pulled from a tangle that gradually straightens into a wall — the moat emerging from patience and repetition",
     ],
   },
   "coding-in-craft": {
-    hero: "A figure bent over a workbench, hands shaping something with great care — the object between their hands catching the light differently from the identical objects on a shelf behind them — craft as attention",
+    hero: "Two identical bolts of cloth — one cut by machine into a thousand identical shapes, one cut by a single pair of scissors into one perfect form — the geometry of mass versus the geometry of craft",
     sections: [
-      "A hand holding a tool making one precise mark, beside a machine stamping the same mark hundreds of times on identical surfaces — the singular versus the replicated",
-      "Two outputs side by side on a table: one made with a distinct hand, one produced by rote — a figure studying the difference closely, the gap visible only to those who look",
+      "A fingerprint magnified to fill the frame, its unique ridges forming the contours of a landscape — identity embedded in the made thing",
+      "A plain key beside an ornate key — both open a lock, but only one carries a signature — the difference craft makes rendered as pure object",
     ],
   },
   "collaborative-spaces": {
-    hero: "A human figure and a geometric form sitting at opposite ends of a long shared table, both working on the same drawing that meets in the middle — neither looking up, both contributing",
+    hero: "Two circles overlapping — the overlapping space a different colour, brighter than either circle alone — the Venn diagram as the entire argument, nothing else in the frame",
     sections: [
-      "A figure arranging a shared workspace — placing chairs, pinning things to a wall — making room for someone not yet there, the empty chair as invitation",
-      "Two figures working back to back, each doing something different, the outputs of each feeding quietly into the other's work — collaboration without interruption",
+      "A bridge drawn in a single unbroken line connecting two geometric forms that could not otherwise touch — connection as the simplest possible shape",
+      "Two arrows pointing at each other meeting in the middle and becoming a single wider arrow pointing forward — collision becoming direction",
     ],
   },
   "monetise-your-expertise": {
-    hero: "A figure seated at a desk writing into a book, while identical books quietly stack themselves on shelves behind them — the single act of writing becoming many without the writer stopping",
+    hero: "An iceberg — the small visible tip labelled by its shape alone as one person's time, the vast submerged mass the shape of compounding systems working without them — scale hiding beneath the surface",
     sections: [
-      "An abstract figure seated at a small desk, their shadow stretching upward and forward into a luminous city of soaring towers and bridges — the contrast between the still person and the vast bright future their work makes possible",
-      "A figure opening a door to find a long corridor of other doors, each one theirs to open — one piece of expertise becoming many directions, all accessible at once",
+      "A tap turned on, water flowing into one cup — then the same tap connected to a pipe network filling a hundred cups simultaneously — the same effort, radically different reach",
+      "A book open flat — its pages fanning out not as pages but as doors, each one a different direction the knowledge can travel — one source becoming many outputs",
     ],
   },
   "pillar-1-knowledge-management": {
-    hero: "A figure in a library of their own making — shelves they have built themselves, each book placed with intention — standing at the centre of it all, comfortable, unhurried, everything retrievable",
+    hero: "A labyrinth viewed from above with a single glowing path already traced through it — the maze is the same, but the path changes everything — knowledge as the thread through the labyrinth",
     sections: [
-      "A figure pulling a specific thread from a tangled pile and finding it attached to exactly what they needed — retrieval as a calm and practiced act",
-      "Two figures asked the same question: one rummaging through scattered piles, one reaching directly to the right shelf — the difference between stored and organised knowledge",
+      "A scattered constellation of dots — then the same dots connected by lines into a clear pattern — the knowledge base as the lines, not the dots",
+      "A dark room with a single beam of light illuminating exactly the right object — retrieval as precision, the darkness making the found thing more visible",
     ],
   },
   "pillar-2-hub-and-spoke": {
-    hero: "A figure standing at the center of a room with many doors — each door a different tool or service — calmly pointing at one while another swings shut behind them, the room still functioning",
+    hero: "A wheel — spokes extending outward to different shapes at their tips, each shape different, each replaceable — the hub perfectly still at the centre while the rim changes — ownership of the middle",
     sections: [
-      "A figure switching one component out of a running machine with one hand, the machine continuing undisturbed — the ease of the replaceable part",
-      "Two builders: one whose tools are all wired together in a knot; one whose tools hang separately on a pegboard, each reachable independently — tangled versus modular",
+      "A plug socket with many different adapters fitting the same port — modularity as graphic object, the socket as the unchanging constant",
+      "A spine — vertebrae stacked, each one independent, the whole column strong precisely because each part can move separately — architecture as anatomy",
     ],
   },
   "pillar-3-orchestration": {
-    hero: "A figure at a conductor's stand, score open, baton raised — around them a dozen different instruments playing in sequence without the conductor touching any of them — direction as the only act",
+    hero: "A single baton — and below it in perfect geometric array, dozens of instruments arranged by type — the one object that sets all the others in motion without touching them",
     sections: [
-      "A figure setting a line of objects in motion with a single push — each one nudging the next along a winding path — the chain of orchestrated cause and effect",
-      "Two desks: one where a person does every task themselves, surrounded by chaos; one where a person points and delegates, the desk clear, more done — the difference orchestration makes",
+      "A row of dominoes seen from above, the first one mid-fall — the chain of causality made graphic, the orchestrator visible only as the absence at the start",
+      "A circuit diagram reduced to its essential form — one input, branching paths, many outputs — orchestration as the logic made visible",
     ],
   },
   "pillar-4-ai-native-teams": {
-    hero: "Two figures given the same tools and time: one surrounded by a growing pile of finished things, one surrounded by a growing pile of plans and notes — the doer and the intender, same starting point",
+    hero: "Two hourglasses side by side, identical sand — one full of unturned potential, one already run through with a finished object sitting beneath it — the same resource, different outcomes",
     sections: [
-      "A figure walking away from a finished building, not looking back — the thing made, the next thing already in mind — the quiet confidence of someone who ships",
-      "A meeting room seen from outside through glass: many figures talking, hands waving — and beside it a workshop with one figure working, a completed thing on the bench beside them",
+      "A trail of footprints that become finished objects — each step leaving something made behind — motion as production rendered as pure graphic track",
+      "A speech bubble and a built object the same size, side by side on a scale — the object heavier — output outweighing intention as simple graphic fact",
     ],
   },
   "pillar-5-performance-standards": {
-    hero: "A figure measuring their own work with a ruler — not comparing to anyone else — adjusting it slightly upward, then looking at it again — the private and practiced act of holding a standard",
+    hero: "A thermometer — but instead of temperature, the rising column measures quality — a single line drawn across it marking the baseline, another line drawn higher marking where this person operates — the gap between them is the whole story",
     sections: [
-      "A figure drawing a line on a wall and marking it — then standing back and drawing another line slightly above it — the standard as something you keep raising for yourself",
-      "Two figures: one checking a box on a list and moving on; one pausing over the same box, not satisfied, reworking it — the imperceptible difference that compounds into irreplaceability",
+      "A ruler with all the standard markings — and one additional mark squeezed in above the highest number — the self-imposed standard that exists beyond the official scale",
+      "A bar chart of one — a single column so tall it breaks the frame — irreplaceability as pure graphic form, no comparison needed",
     ],
   },
   "speed-to-market": {
-    hero: "Two figures at the same starting point on a map: one taking the long winding road marked out in front of them; one stepping through a door in the wall beside them that opens directly onto the destination",
+    hero: "Two paths between the same two points — one a long winding line crossing the whole page, one a straight short line cutting directly across — the same origin, the same destination, radically different geometry",
     sections: [
-      "A figure removing obstacles from a path one by one — not running faster, just clearing the way — the path behind them already clean, the one ahead getting clearer",
-      "A figure handing something finished directly to someone waiting — no desk, no queue, no middleman — the shortest possible line between made and delivered",
+      "An hourglass with the neck removed — sand falling freely, no constraint — the bottleneck as the only thing that was ever causing the delay",
+      "A straight arrow and a tangled knot of rope — both the same length — the arrow already at its destination, the rope still mid-tangle — speed as simplicity",
     ],
   },
   "taste-through-ai": {
-    hero: "A figure at a potter's wheel, shaping clay with practiced hands — beside them a second wheel turning on its own, producing the same form — the taste in the hands now in the system",
+    hero: "A wax seal stamp and beside it a long scroll of identical wax seals — the mark of one person reproduced endlessly, each impression carrying the same signature — taste as a stamp that travels",
     sections: [
-      "A figure reviewing two objects side by side, one made by them, one made without them — picking up the second one with quiet recognition — their taste present even in their absence",
-      "A chef tasting a dish, adjusting the seasoning with one small gesture — beside them a long pass of identical dishes going out, each carrying that same adjustment — judgment at scale",
+      "A tuning fork and the waveform it produces — the same frequency carried forward through any medium — taste as the frequency, the AI as the medium",
+      "A master key beside a ring of keys all cut to the same pattern — one original, many derivatives, all carrying the same logic — the craft that propagates",
     ],
   },
   "you-are-not-generic": {
-    hero: "A figure in a row of identical figures, all facing the same direction — but holding something in their hands that nobody else is holding — not performing difference, simply being specifically themselves",
+    hero: "A row of identical locks — and one key, its unique cut visible — the only key shaped for the only lock that matters — specificity as the entire graphic argument",
     sections: [
-      "A figure fitting precisely into a gap in a wall that other figures beside them cannot fit — not forcing it, simply shaped for it — the advantage of specific experience",
-      "A hand leaving a thumbprint on a surface — beside it a series of stamped identical marks — the one impression that cannot be reproduced because it belongs to one specific person",
+      "A barcode and a fingerprint side by side — identical in function, opposite in nature — the generic and the specific as pure graphic contrast",
+      "A crowd of identical silhouettes — and one silhouette a slightly different shape — not marked, not highlighted, just different — the difference that is simply there for those who look",
     ],
   },
 };
