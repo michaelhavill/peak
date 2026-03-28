@@ -7,12 +7,12 @@ export default function HeroSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center px-8 md:px-16 lg:px-20 overflow-hidden">
       <div className="flex items-center w-full gap-12 lg:gap-16">
-      <div className="max-w-xl flex-shrink-0">
+      <div className="w-full max-w-xl lg:flex-shrink-0">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-[48px] sm:text-[54px] md:text-[70px] lg:text-[90px] leading-[110%] tracking-tight mb-8"
+          className="text-[36px] sm:text-[48px] md:text-[70px] lg:text-[90px] leading-[110%] tracking-tight mb-8"
           style={{ fontFamily: "var(--font-instrument-serif)", color: "var(--text-primary)" }}
         >
           Your path to becoming a 100x{" "}
