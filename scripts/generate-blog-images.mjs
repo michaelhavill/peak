@@ -6,6 +6,10 @@
  * Usage:
  *   GEMINI_API_KEY=... node scripts/generate-blog-images.mjs
  *   GEMINI_API_KEY=... node scripts/generate-blog-images.mjs --slug=speed-to-market
+ *   GEMINI_API_KEY=... node scripts/generate-blog-images.mjs --slug=monetise-your-expertise --style=new-yorker --force
+ *
+ * --style=new-yorker   Use New Yorker editorial illustration style instead of pixel art
+ * --force              Overwrite existing images
  */
 
 import fs from "fs";
@@ -19,104 +23,108 @@ const PUBLIC_DIR = path.resolve("public/blog");
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 // ---------------------------------------------------------------------------
-// Style direction — shared across all prompts for a cohesive look
+// Style presets
 // ---------------------------------------------------------------------------
-const STYLE_PREFIX =
-  "16-bit pixel art, [SCENE], retro video game aesthetic, rich detailed dithering, warm diffused lighting, vibrant saturated color palette, clean composition with clear focal point, slight atmospheric haze, every pixel visible, painterly pixel shading, Japanese SFC-era game background art, nostalgic and inviting mood, no text, no UI elements, no watermarks";
+const STYLES = {
+  "pixel-art":
+    "16-bit pixel art, [SCENE], retro video game aesthetic, rich detailed dithering, warm diffused lighting, vibrant saturated color palette, clean composition with clear focal point, slight atmospheric haze, every pixel visible, painterly pixel shading, Japanese SFC-era game background art, nostalgic and inviting mood, no text, no UI elements, no watermarks",
+  "new-yorker":
+    "New Yorker magazine cover illustration, [SCENE], abstract suggestive figures, deliberately ambiguous and open to interpretation, bold confident ink strokes, very limited muted palette — ivory, one warm tone, one cool accent — enormous clean negative space, story implied not shown, figures reduced to essential gesture and silhouette, no faces or minimal implied faces, painterly ink washes, high contrast shadow shapes, the feeling of a thought not a picture, no pixel art, no game art, no text, no captions, no speech bubbles, no logos",
+};
 
 // ---------------------------------------------------------------------------
 // Per-post prompt config: hero prompt + inline section prompts
 // ---------------------------------------------------------------------------
 const POST_PROMPTS = {
   "10x-team-ai-peers": {
-    hero: "A pixel art command center with a lone adventurer at a glowing console, summoning a squad of friendly robot companions that fan out across the scene, each carrying tools and working on different tasks in parallel",
+    hero: "A single abstract figure at a desk, their shadow splitting behind them into many silhouettes each doing different work — the one person whose presence multiplies across the room in implied motion",
     sections: [
-      "Pixel art split scene: left side a slow medieval workshop with one tired craftsman; right side a bustling automated factory with many cheerful robots assembling products on glowing conveyor belts",
-      "A pixel art brain-shaped circuit board with warm golden pathways, tiny robots walking along the neural paths carrying glowing orbs of knowledge between nodes",
+      "Two abstract figures of identical size: one alone pushing a boulder uphill; the other still, while multiple shadowed forms carry the boulder for them — effort versus orchestration",
+      "An abstract figure whose outstretched arms cast long shadows that reach across a wide empty space and become other figures working at the edges — reach without movement",
     ],
   },
   "building-moat-at-scale": {
-    hero: "A pixel art castle being built upward from a single glowing tower into a sprawling fortress, tiny builders and robots working together, the moat around it filled with shimmering data streams instead of water",
+    hero: "A solitary abstract figure standing on a small island, their reflection in the water below showing a vast continent — the gap between what they appear to be and what they have quietly built",
     sections: [
-      "Pixel art geological cross-section showing glowing knowledge layers stacking upward like a mountain, each stratum a different vibrant color, crystals growing at the intersections",
-      "A pixel art map showing a small golden campfire growing into a vast network of connected beacon towers across a landscape, each beacon lighting up in sequence",
+      "An abstract figure layering transparent sheets of glass, each layer adding depth until the stack becomes a wall — accumulation as architecture",
+      "A small abstract figure planting a seed, their shadow cast forward as a towering tree already grown — the implied future of something just begun",
     ],
   },
   "coding-in-craft": {
-    hero: "A pixel art master blacksmith at an enchanted forge, hammering glowing code runes onto a legendary sword, sparks flying with each precise strike, shelves of carefully crafted artifacts behind them",
+    hero: "An abstract figure carving into stone while a machine beside them stamps out identical copies on paper — the carved thing glows, the copies are flat — craft versus reproduction",
     sections: [
-      "Pixel art split scene: left side a grey factory producing identical bland boxes; right side an artisan workshop where a craftsperson polishes a unique glowing gemstone artifact",
-      "A pixel art alchemist's lab with a crystal prism in the center, raw materials flowing in from the left, refined golden artifacts emerging on the right",
+      "Two streams of abstract forms flowing side by side: one a rushing identical flood, one a slow deliberate trickle that leaves distinct marks on the ground beneath it",
+      "An abstract figure looking into a mirror, the reflection holding something the figure is not — the self seen through output, identity revealed through made things",
     ],
   },
   "collaborative-spaces": {
-    hero: "A pixel art tavern where human adventurers and robot companions sit together around a large holographic map table, sharing plans and pointing at glowing waypoints, warm fireplace in background",
+    hero: "Two abstract figures on opposite sides of a translucent wall, both reaching toward the same point in the middle — their hands nearly touching through the surface, a shared space implied but not yet real",
     sections: [
-      "Pixel art scene of two worlds merging: a cozy wooden workshop on the left blending into a sleek crystal tech lab on the right, with a shared workbench at the center",
-      "A pixel art star chart where constellation lines connect human and robot figures at bright intersection points, forming collaborative patterns across a deep purple sky",
+      "An abstract figure and a geometric form sharing a table with an empty space between them — the empty space shaped like the thing they are both building, visible only in negative",
+      "Multiple abstract silhouettes casting a single shared shadow — individuals dissolved into a collaborative form neither could make alone",
     ],
   },
   "monetise-your-expertise": {
-    hero: "A pixel art wizard extracting glowing memories from their mind, each memory crystallising into floating gem tokens that drop into treasure chests, a magical library behind them",
+    hero: "A lone abstract figure standing at a window, their shadow cast long behind them taking the shape of a vast branching tree — suggesting years of accumulated knowledge invisible to the eye but immense in form",
     sections: [
-      "Pixel art treasure room where knowledge gems are stacking into growing towers, a growth chart made of golden coins ascending in the background",
-      "A pixel art transformation scene: scattered glowing thought bubbles on the left being funneled through a magical press, emerging as faceted brilliant gems on the right",
+      "An abstract figure seated at a small desk, but their silhouette casts the shadow of a towering factory — the contrast between the contained person and their enormous latent output",
+      "Two abstract figures: one pouring thoughts into a narrow funnel, the other receiving from a wide river — the transformation of locked-in expertise into something that flows freely",
     ],
   },
   "pillar-1-knowledge-management": {
-    hero: "A pixel art grand library floating among clouds, books transforming into glowing data crystals as a scholar and their robot assistant organize them into an elegant crystal archive structure",
+    hero: "An abstract figure standing inside their own head — the interior vast and towering like a cathedral, everything they know suspended in the air around them — the mind as place",
     sections: [
-      "A pixel art locked treasure vault cracking open with golden light streaming out, ancient scrolls transforming into accessible floating holographic displays",
-      "A pixel art river of experiences flowing through a landscape, with magical bridges and portals built across it allowing instant travel to any point along the journey",
+      "An abstract figure holding a key that is the same shape as a door they are standing inside — already through, already arrived, the key and the lock the same thing",
+      "A figure pouring water from a vessel into another vessel — the water becoming solid mid-air, taking on structure — liquid thought becoming stored form",
     ],
   },
   "pillar-2-hub-and-spoke": {
-    hero: "A pixel art magical wheel with a glowing central hub and modular spokes, each spoke ending in a different tool shrine that can be swapped, floating in a mystical void",
+    hero: "An abstract figure standing at the center of a web of lines extending outward in all directions — they hold the center still while everything at the edges shifts and rearranges — ownership of the middle",
     sections: [
-      "Pixel art split: left side heavy iron chains locking tools in rigid positions; right side tools orbiting freely around a gravity well, easily swappable",
-      "A pixel art mechanical blueprint of a resilient machine where one broken gear is being seamlessly replaced by a fresh one, the rest of the machine still running smoothly",
+      "Two abstract figures: one tangled in a web of lines connecting them rigidly to surrounding objects; one standing free with lines radiating outward they could drop at any time — dependency versus choice",
+      "An abstract figure removing one spoke from a wheel, the wheel still turning — the implied resilience of a system that does not depend on any single part",
     ],
   },
   "pillar-3-orchestration": {
-    hero: "A pixel art conductor on a floating platform directing streams of colorful magical energy, each stream carrying different elements that converge into a symphony of automated spellwork",
+    hero: "An abstract figure with arms raised, not holding anything — but around them forms are moving in patterns, each following the others, the figure conducting without touching — direction as pure gesture",
     sections: [
-      "Pixel art progression: scattered lone campfires on the left gradually connecting into an organized network of flowing energy rivers on the right",
-      "A pixel art ensemble of distinct magical constructs working in harmony: a fire sprite, water elemental, earth golem, and wind spirit, connected by invisible golden threads",
+      "A line of abstract forms, each nudging the next into motion, a chain of implied causality stretching across the frame — orchestration as falling dominoes seen from above",
+      "An abstract figure standing between two rooms: behind them chaos; ahead of them order — the doorway they occupy is the only point of transformation",
     ],
   },
   "pillar-4-ai-native-teams": {
-    hero: "Pixel art two adventurers side by side: one surrounded by completed quests, trophies and shipped artifacts glowing bright; the other buried under a pile of unfinished scrolls and plans gathering dust",
+    hero: "Two abstract figures side by side — one surrounded by objects they have made, stacked high around them; one surrounded only by shadows of objects they intended to make — output versus intention",
     sections: [
-      "Pixel art amplifier scene: magical energy flowing into a builder who produces towers of glowing artifacts vs same energy flowing into a talker who produces clouds of floating empty speech bubbles",
-      "A pixel art party formation where each character leaves a trail behind them: some trails are bright with built structures, others fade into thin document shadows",
+      "An abstract figure running, their footprints behind them becoming finished structures — each step leaving something built — motion as production",
+      "Two figures receiving the same beam of light: one transformed by it, casting a long productive shadow; one passing it straight through, leaving no mark — amplification versus transparency",
     ],
   },
   "pillar-5-performance-standards": {
-    hero: "A pixel art mountain peak above the clouds: below the cloudline countless identical grey structures blend together; above it rare crystalline towers shine with unique quality in golden sunlight",
+    hero: "A crowd of identical abstract figures on a flat plane and a single figure above them, not floating — standing on something invisible, the height made by what cannot be seen — the irreplaceable elevated by their own standard",
     sections: [
-      "Pixel art impact visualization: a glowing stone dropped in water creating expanding concentric rings of light vs a spinning wheel that generates lots of motion but no outward ripples",
-      "A pixel art ascending staircase where each step glows brighter than the last, the top steps radiating in golden light above a baseline fog layer",
+      "An abstract figure drawing a line in the air — the line becoming the horizon, the act of setting a standard creating the landscape it measures",
+      "Two figures: one spinning fast and going nowhere, wearing a groove into the ground; one moving slowly but leaving a clear path — effort versus direction",
     ],
   },
   "speed-to-market": {
-    hero: "A pixel art time warp scene: a long winding road being compressed and folded by magic into a short straight path, speed lines and light trails showing the acceleration",
+    hero: "Two abstract figures at the same starting point: one on a long winding road stretching to the horizon; one stepping directly through a doorway that opens onto the destination — the same journey, radically different geometry",
     sections: [
-      "Pixel art timeline with dark gaps between glowing decision crystals, magical bridges appearing to eliminate the dead space and compress the journey",
-      "A pixel art rocket ship with minimal design cutting through space cleanly, while a huge ornate battleship behind it is weighed down by unnecessary bulk and falling behind",
+      "An abstract figure suspended in air between two platforms — the gap between them representing dead time — another figure below has already built a bridge across the same gap",
+      "A figure moving through a space where all the walls have been removed — not running faster, just no longer stopping — speed as absence of friction",
     ],
   },
   "taste-through-ai": {
-    hero: "A pixel art master chef loading their secret recipe book into a magical cooking golem, the golem then produces dishes with the same distinctive golden sparkle as the chef's signature style",
+    hero: "An abstract figure pressing their hand into soft material — the handprint remaining as the figure steps back — then a second form, not human, pressing into material beside it and leaving the same print — taste as transferable impression",
     sections: [
-      "Pixel art ancient tree with glowing growth rings visible in cross-section, a small robot reading the rings like a book, absorbing years of wisdom",
-      "A pixel art conduit scene: warm golden essence flowing from a craftsperson's hands through a crystal pipeline into a robot's core, tinting all its output with the same warm glow",
+      "An abstract figure and their shadow doing the same gesture — but the shadow is cast by something else entirely, the light source off-frame — taste outliving the person who formed it",
+      "A figure looking at two objects: one made by them, one made in their absence — the second one unmistakably theirs anyway — the quality that persists without presence",
     ],
   },
   "you-are-not-generic": {
-    hero: "A pixel art unique glowing fingerprint radiating outward from a character, shaping nearby robots and tools to match their distinct style, standing out against a sea of grey identical silhouettes",
+    hero: "A crowd of identical abstract forms and one that is the same size, the same posture — but casts a completely different shadow, an irregular silhouette that matches nothing around it — specificity invisible until the light hits",
     sections: [
-      "Pixel art ocean of identical grey cubes with one brilliant multicolored crystal rising above them all, beams of unique light radiating from it",
-      "A pixel art key made of swirling domain-specific symbols unlocking a unique ornate door that generic skeleton keys scattered on the ground cannot open",
+      "An abstract figure holding a key unlike any other key in a pile on the floor — the pile generic, the held key strange — the value is in the strangeness",
+      "Two figures facing the same wall: one pressing against it, unable to pass; one whose particular shape fits the gap perfectly and steps through — the advantage of being specifically, exactly yourself",
     ],
   },
 };
@@ -124,15 +132,15 @@ const POST_PROMPTS = {
 // ---------------------------------------------------------------------------
 // Generate a single image
 // ---------------------------------------------------------------------------
-async function generateImage(prompt, outputPath) {
-  if (fs.existsSync(outputPath)) {
+async function generateImage(prompt, outputPath, styleTemplate, force = false) {
+  if (!force && fs.existsSync(outputPath)) {
     console.log(`  ⏭  Skipping (exists): ${path.basename(outputPath)}`);
     return true;
   }
 
   console.log(`  🎨 Generating: ${path.basename(outputPath)}`);
   try {
-    const fullPrompt = STYLE_PREFIX.replace("[SCENE]", prompt);
+    const fullPrompt = styleTemplate.replace("[SCENE]", prompt);
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash-image",
       contents: fullPrompt,
@@ -234,7 +242,16 @@ function insertInlineImages(slug) {
 // ---------------------------------------------------------------------------
 async function main() {
   const slugArg = process.argv.find((a) => a.startsWith("--slug="));
+  const styleArg = process.argv.find((a) => a.startsWith("--style="));
+  const force = process.argv.includes("--force");
+
   const targetSlug = slugArg ? slugArg.split("=")[1] : null;
+  const styleName = styleArg ? styleArg.split("=")[1] : "pixel-art";
+  const styleTemplate = STYLES[styleName] ?? STYLES["pixel-art"];
+
+  if (!STYLES[styleName]) {
+    console.warn(`⚠️  Unknown style "${styleName}", falling back to pixel-art`);
+  }
 
   const slugs = targetSlug
     ? [targetSlug]
@@ -243,7 +260,7 @@ async function main() {
         .filter((f) => f.endsWith(".md"))
         .map((f) => f.replace(/\.md$/, ""));
 
-  console.log(`\n🖼  Generating images for ${slugs.length} blog post(s)...\n`);
+  console.log(`\n🖼  Generating images for ${slugs.length} blog post(s) [style: ${styleName}]...\n`);
 
   for (const slug of slugs) {
     const prompts = POST_PROMPTS[slug];
@@ -257,12 +274,12 @@ async function main() {
 
     // Hero image
     const heroPath = path.join(outDir, "hero.png");
-    const heroOk = await generateImage(prompts.hero, heroPath);
+    const heroOk = await generateImage(prompts.hero, heroPath, styleTemplate, force);
 
     // Section images
     for (let i = 0; i < prompts.sections.length; i++) {
       const secPath = path.join(outDir, `section-${i + 1}.png`);
-      await generateImage(prompts.sections[i], secPath);
+      await generateImage(prompts.sections[i], secPath, styleTemplate, force);
     }
 
     // Update markdown
