@@ -142,6 +142,26 @@ Your knowledge base provides the context the engine draws on. Your hub-and-spoke
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real teams are building orchestration engines that eliminate dead time between decisions — and the tools to do it are production-ready.
+
+- **Zapier Central** lets teams build AI-powered workflows where each step feeds the next with full context. A customer inquiry triggers research, the research feeds a draft response, the draft routes to a human for review — all connected, zero manual handoffs. Operations teams are replacing day-long routing work with flows that run in minutes.
+
+- **n8n + Claude** — engineering and ops teams build event-driven orchestration pipelines where AI handles context assembly, synthesis, and routing. A support ticket triggers automatic log analysis, customer history lookup, and a proposed fix — assembled before the engineer even opens the ticket. One team cut incident triage time by 70%.
+
+- **Dust.tt** provides team-level AI orchestration — agents that draw from connected data sources (Notion, Slack, GitHub, CRM) and prepare decision-ready briefs automatically. Product teams use Dust agents to assemble sprint context overnight. The PM walks in Monday morning holding full context instead of spending the morning building it.
+
+- **Temporal + AI workflows** — engineering teams orchestrate complex, multi-step AI processes with built-in reliability. A patient data change triggers verification, cross-reference, protocol check, and clinician notification — each step conditional on the last, with human checkpoints at critical decisions. Healthcare companies run this pattern in production today.
+
+- **Linear's auto-triage** uses AI to classify, prioritise, and route incoming issues based on project context, team capacity, and historical patterns. The engineering lead reviews pre-sorted, pre-contextualised work instead of manually routing 40 tickets every morning. Dead time between "issue reported" and "engineer starts work" compressed from days to minutes.
+
+- **Anthropic's own internal workflows** chain Claude calls with tool use — web search, code execution, file analysis — into multi-step pipelines where each step's output feeds the next. The pattern works for any team: research → synthesis → draft → human review, all connected, all context-preserving.
+
+- **Notion automations + AI** — product teams set up flows where a new customer call note automatically triggers insight extraction, persona mapping, and roadmap tagging. The PM doesn't "remember to update the knowledge base" — the system does it as a byproduct of normal work. That's orchestration at its simplest and most powerful.
+
+---
+
 ## Ask Yourself
 
 These questions reveal whether you're using AI for the easy parts and still doing the hard parts by hand.

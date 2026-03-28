@@ -141,6 +141,24 @@ A **product manager** linked specs to the engineering knowledge base. Requiremen
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real teams and builders are deploying engineering context right now — and the tools to do it already exist.
+
+- **Shopify** mandated that every developer use AI coding tools — then discovered the bottleneck wasn't the model, it was the context. Their internal "Sidekick" system feeds codebase-specific patterns, conventions, and institutional knowledge into every AI interaction. Engineers write code that fits the monolith because the AI knows the monolith.
+
+- **Cursor + .cursorrules files** — thousands of engineering teams now ship a `.cursorrules` file in their repo that encodes naming conventions, framework preferences, banned patterns, and architecture constraints. The AI reads it before generating a single line. One file. Immediate acceptance rate jump. The pattern has spread across open-source projects on GitHub because the ROI is obvious.
+
+- **Claude Code with CLAUDE.md** — Anthropic's own coding agent reads project-level context files that encode your stack constraints, testing philosophy, and "never do this" rules. Engineering teams write a single markdown file and every AI interaction respects their reality. The 60%-to-95% acceptance rate shift is real and repeatable.
+
+- **Vercel's v0** generates frontend code — but teams that connect their design system tokens and component libraries get output that actually ships. Teams without context get generic React. Teams with context get their React, their patterns, their components. Same model. Different economics.
+
+- **GitLab Duo** embeds engineering context from merge request history, CI pipeline configs, and code review patterns directly into AI suggestions. Teams that invest in structured engineering documentation see measurably fewer "fix it to match our style" review cycles.
+
+- **Stripe** built internal AI tools that reference their API design principles — a document encoding 10+ years of opinions about naming, versioning, error handling, and backwards compatibility. New engineers' AI-generated code follows Stripe's API philosophy from day one because the philosophy is in the system, not just in senior engineers' heads.
+
+---
+
 ## Ask Yourself
 
 These questions reveal whether your AI is coding in your reality -- or in a textbook that doesn't know your codebase exists.

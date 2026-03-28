@@ -142,6 +142,26 @@ Performance standards are the feedback signal for the entire system. Measure the
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real companies are redefining performance standards around impact instead of effort — and the results prove the model.
+
+- **Shopify's CEO Tobi Lütke** told the entire company: AI usage is now a baseline expectation, not a bonus. Before requesting headcount, teams must demonstrate why AI can't handle the work. That's the performance standard shift made explicit at the executive level. Speed + quality = the new minimum bar. Not optional. Not "nice to have." The floor.
+
+- **Klarna's CEO Sebastian Siemiatkowski** publicly stated that AI does the work of 700 employees — and the company stopped hiring as a result. The performance standard shifted from "how many people are working on this" to "what's the output quality and speed." Headcount is no longer the proxy for progress. Impact is.
+
+- **GitLab** measures "merge requests per engineer per month" — shipped outcomes, not hours logged. When AI-assisted development increased individual output by 30-50%, GitLab didn't question the speed. They updated the benchmark. The performance standard moved with the capability, not against it.
+
+- **Replit** shipped their entire AI product suite with a team of ~50 engineers producing output that legacy companies need 500 for. Their performance culture explicitly celebrates speed: "If it took you 20 minutes and it's excellent, that's excellent work." No suspicion. No "did you actually think about this." Impact, measured.
+
+- **Linear** built their product management tool with a team so small that industry observers assumed they had 10x the headcount. The company's internal standard: ship weekly, measure by what's deployed, not by what's in progress. AI-assisted workflows are the expectation, not the exception.
+
+- **Vercel** publicly celebrates shipping speed. Guillermo Rauch regularly shares examples of features built in hours that used to take weeks — and frames the speed as evidence of engineering excellence, not shortcuts. That cultural signal from the CEO is the performance standard in action.
+
+- **Y Combinator** now explicitly tells founders: if you're not using AI to ship faster, you're already behind. The accelerator's performance bar shifted. Demo Day pitches that show 2-week build timelines get celebrated. The old "we've been building for 6 months" is now a yellow flag, not a badge of effort.
+
+---
+
 ## Ask Yourself
 
 These questions reveal whether your culture accelerates your best people — or punishes them for being fast.

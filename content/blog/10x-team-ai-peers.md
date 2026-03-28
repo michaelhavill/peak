@@ -136,6 +136,26 @@ A **founder** runs 12 simultaneous projects without coordination overhead. Each 
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real builders and teams are deploying AI peers loaded with context right now — and the economics are already visible.
+
+- **Klarna** replaced the equivalent of 700 full-time customer service agents with AI peers grounded in their product knowledge, policies, and tone guidelines. Not generic chatbots — context-loaded agents that handle inquiries with the same resolution quality as human agents. Same team size. Radically different output.
+
+- **Devin by Cognition** — the first AI software engineering peer that carries full codebase context, runs in its own environment, and executes multi-step engineering tasks. Engineering leads assign it work the way they'd assign a junior: with context, constraints, and review checkpoints. One senior engineer directing Devin produces the output of a small team.
+
+- **Claude Code** operates as an engineering peer, not an autocomplete engine. It reads your repo, understands your architecture, follows your conventions, and executes multi-file changes with judgment. Engineers treat it as a pair programmer loaded with the team's full context — because it is.
+
+- **Harvey AI** built legal AI peers for law firms — agents loaded with case law, firm-specific precedent, and practice area expertise. Junior associates direct Harvey the way a senior would direct them. One lawyer with Harvey produces the research output of a team of three. The knowledge base is the multiplier.
+
+- **Intercom's Fin** handles 50%+ of customer conversations by drawing from the company's entire help center, product docs, and conversation history. Not canned responses — contextual answers grounded in everything the company knows. Three support agents with Fin do the work of ten.
+
+- **Replit Agent** lets solo founders describe what they want to build, and the agent writes, deploys, and iterates on full applications. Founders running 12 simultaneous workstreams aren't exaggerating — the agent handles the execution layer while the human directs strategy and product decisions.
+
+- **Zapier + Claude** — operations teams build AI peer workflows where agents monitor data sources, synthesize reports, draft communications, and route exceptions to humans. One ops leader with five Zapier-powered AI peers covers the coordination work of a team, directing and refining rather than assembling.
+
+---
+
 ## Ask Yourself
 
 These questions reveal whether your AI is an assistant you prompt -- or a peer that carries your context.

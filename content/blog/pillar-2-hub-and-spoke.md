@@ -137,6 +137,26 @@ Architecture is the container that holds everything else. Your knowledge base ne
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real builders and companies are deploying hub-and-spoke architecture right now — and the antifragile advantage is already compounding.
+
+- **Anthropic's Model Context Protocol (MCP)** is the hub-and-spoke pattern made into an open standard. Your knowledge base and workflow logic are the hub. AI models, tools, and data sources plug in as spokes via MCP. When a better tool launches, you swap the spoke. The hub — your context, your logic, your intelligence — never moves. Thousands of teams are building on this architecture today.
+
+- **Notion as hub** — product teams use Notion as their knowledge and workflow hub, with AI tools, project trackers, design tools, and communication platforms plugged in as spokes. When Linear replaced Asana, the hub didn't move. When Claude replaced a previous AI tool, the knowledge base stayed intact. The switching cost dropped to near zero.
+
+- **Vercel's architecture** — Next.js apps deploy to Vercel, but the application logic and data model are portable. Teams swap hosting providers, databases, and AI services without rewriting application code. The hub (your code, your data model) survives every spoke change. That's antifragile engineering.
+
+- **Zapier / Make as orchestration hubs** — operations teams build workflow logic in Zapier, connecting CRM, email, AI, analytics, and communication tools as spokes. When a spoke vendor raises prices or degrades, the replacement plugs into the same workflow. One team swapped their email provider in an afternoon. Their 40+ automated workflows never noticed.
+
+- **Terraform / Infrastructure as Code** — engineering teams encode their infrastructure logic as the hub. Cloud providers — AWS, GCP, Azure — are spokes. When cloud pricing shifts or a better service launches, teams migrate the spoke without rewriting infrastructure logic. The pattern is the same at every layer: own the center, rent the edges.
+
+- **dbt as the analytics hub** — data teams build transformation logic in dbt (the hub) and connect data warehouses, BI tools, and reporting platforms as spokes. When Looker got acquired and the product direction shifted, teams using dbt as their hub migrated to a new BI spoke without losing a single transformation. Years of analytical logic, preserved.
+
+- **PostHog, Plausible, and the analytics unbundling** — product teams moving away from Google Analytics are discovering the hub-and-spoke principle firsthand. Teams whose analytics logic lived in GA's proprietary system faced months of migration. Teams with their own data model and event taxonomy (the hub) swapped analytics providers in days. The lesson: if your core logic lives in a vendor's system, you don't have architecture. You have a dependency.
+
+---
+
 ## Ask Yourself
 
 These questions reveal whether you own your infrastructure — or your vendors own you.

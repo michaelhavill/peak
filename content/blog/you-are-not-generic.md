@@ -213,6 +213,26 @@ Your workflow orchestration gets smarter when it knows your quality thresholds, 
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real builders and companies are encoding specificity into AI right now — and the gap between them and generic operators widens daily.
+
+- **Anthropic's Claude Projects and System Prompts** — thousands of professionals create persistent AI configurations loaded with their specific judgment. A product strategist with 15 positioning rules. A clinical leader with assessment frameworks. A founder with fundraising patterns from 200 conversations. Each one moved from Level 0 to Level 3 with a single documentation session.
+
+- **Superhuman** built their entire product around a hyper-specific thesis: "email should feel fast." That specificity — not a generic "better email" pitch — informed every AI feature they shipped. Their AI drafts match Superhuman's opinionated voice because the specificity was encoded before the first model call. Generic email AI sounds like everyone. Superhuman's sounds like Superhuman.
+
+- **Cursor's .cursorrules ecosystem** — a grassroots movement of engineers encoding their specific coding philosophies, architecture opinions, and "never do this" rules into configuration files. These files represent years of accumulated engineering judgment — pattern recognition, quality thresholds, decision frameworks — made available to AI. The specificity spectrum in action, spreading organically because the ROI is undeniable.
+
+- **Jasper AI** found that customers who uploaded their brand voice documents, style guides, and content principles saw 3x higher output quality scores than those using generic prompts. Same model. Same pricing. The only variable: specificity of the context layer. That's the whole thesis in one data point.
+
+- **Midjourney power users** discovered the same pattern in visual AI. Generic prompts produce generic images. Users who encoded specific aesthetic preferences — "shot on Hasselblad, editorial lighting, muted earth tones, negative space dominant" — developed a recognisable visual style that AI reproduces consistently. Their specificity became their creative signature.
+
+- **Stripe's API design principles** are so specific that they function as a taste document for engineering: "Use exactly one word for each concept. Prefer common words over jargon. Error messages tell the user what to do next." New engineers' AI-generated API code follows Stripe's philosophy from day one — not because of training, but because the specificity is documented and deployed.
+
+- **Figma's design systems** encode specificity at the component level — spacing rules, colour tokens, interaction patterns, accessibility requirements. Design teams that connect these systems to AI tools get output that's unmistakably theirs. Teams without connected systems get generic Material Design suggestions. Same AI. Different specificity. Completely different output.
+
+---
+
 ## Ask Yourself
 
 These questions reveal where you sit on the specificity spectrum — and what it would take to move up a level.

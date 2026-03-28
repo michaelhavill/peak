@@ -145,6 +145,26 @@ Your architecture needs a knowledge layer to orchestrate intelligently. Your wor
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real builders and companies are turning knowledge bases into compounding AI infrastructure — and the tools to do it are available today.
+
+- **Notion + MCP** — teams connect their Notion workspace to Claude via the Model Context Protocol. Customer research, product decisions, engineering constraints — all queryable by AI in real time. The "let me find that doc" tax drops to zero because the AI already has it. Thousands of teams are running this exact setup right now.
+
+- **Granola** captures meeting context automatically — call notes, decisions, action items — and deposits them into a structured knowledge base. No extra work. No "remember to take notes." The context accumulates as a byproduct of normal work, which is the only way knowledge management actually sticks.
+
+- **Rewind (now Limitless)** records and indexes everything you see and hear on your machine. The knowledge base builds itself. When you ask "what did Sarah say about the pricing model last Tuesday?" — the answer exists because the system captured it without you lifting a finger.
+
+- **Cursor + codebase indexing** — engineering teams point Cursor at their entire repo and it builds a knowledge layer automatically. Architecture patterns, naming conventions, shared utilities — the AI learns your codebase reality by reading it, not by someone documenting it manually. The 60%-to-95% acceptance rate jump starts with letting the tool see your actual code.
+
+- **Stripe's internal knowledge platform** connects API documentation, engineering decisions, and incident postmortems into one queryable system. When an engineer asks "why does this endpoint work this way?" — the AI references the actual decision and the reasoning behind it, not a generic Stack Overflow answer.
+
+- **Amazon's "working backwards" documents** have been structured knowledge assets for decades — but teams that now feed them into AI tools get a compounding advantage. The AI references the customer letter, the FAQ, and the press release when generating product strategy. Twenty years of institutional judgment, now liquid and deployable.
+
+- **Linear + Slack + Claude** — product teams connect their issue tracker and communication channels to AI via integrations. When the PM prompts for sprint priorities, the AI already knows the backlog, the recent conversations, and the customer feedback without anyone copy-pasting a thing.
+
+---
+
 ## Ask Yourself
 
 Before you move on, sit with these. They'll tell you exactly where you stand — and where the leverage is hiding.

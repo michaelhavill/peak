@@ -159,6 +159,24 @@ Taste documentation is how you turn a knowledge base from a reference library in
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real builders and organisations are encoding taste into AI right now — and the results speak for themselves.
+
+- **Airbnb's design team** maintains a living document of design principles so specific that AI tools can reference them: "Illustrations use a warm, hand-drawn quality. Photography shows real spaces with natural light. UI copy is conversational, never corporate." That specificity is why Airbnb's AI-generated design explorations feel like Airbnb — not like a template.
+
+- **Basecamp / 37signals** has decades of opinionated product philosophy documented publicly — "build less," "charge from day one," "meetings are toxic." When their team uses AI for product strategy or copy, those principles aren't vague values. They're specific, deployable judgment calls that shape every output. The taste doc is the company.
+
+- **Figma's Config talks** revealed that top design teams encode not just visual style but product thinking — "progressive disclosure over feature density," "information architecture mirrors the user's mental model, not the database schema." Teams that feed this into AI design tools get UX solutions, not just UI layouts.
+
+- **Notion's internal writing guide** goes far beyond "be clear." It specifies voice characteristics, sentence structures to avoid, and how to frame feature announcements versus educational content. Their AI-assisted content starts from that taste layer — which is why Notion's communications feel consistent across hundreds of team members.
+
+- **Custom GPTs and Claude Projects** — thousands of professionals have built AI configurations loaded with their personal taste docs. A product strategist with 15 rules about positioning. A brand designer with 40 visual principles. A hiring manager with specific interview evaluation frameworks. The pattern is the same: document specificity, connect it, and the 45-minute rewrite tax disappears.
+
+- **Duolingo** encoded their character voice guidelines — playful, encouraging, slightly cheeky — so precisely that AI-generated lesson content matches the tone that took their content team years to develop. New writers' AI-assisted drafts sound like Duolingo from day one because the taste is in the system.
+
+---
+
 ## Ask Yourself
 
 These questions will expose exactly how much of your judgment is locked in your head — and how much leverage you're leaving on the table.

@@ -144,6 +144,26 @@ Your knowledge base is the foundation — the encoded asset that makes everythin
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real professionals are turning illiquid expertise into compounding, deployable assets — and the economics are already visible.
+
+- **Custom GPTs on the OpenAI Store** — thousands of professionals have packaged their domain expertise into AI configurations. A contract lawyer's negotiation frameworks. A nutritionist's meal planning methodology. A UX researcher's interview analysis system. Each one turned hours-based expertise into a product that operates in parallel without the expert's calendar.
+
+- **Sahil Lavingia (Gumroad founder)** publicly documents his startup operating frameworks — hiring philosophy, product judgment, fundraising patterns. He's turned 10+ years of founder expertise into a queryable knowledge base that AI can deploy. His judgment now scales without his time. That's the transition from selling hours to deploying assets.
+
+- **Ali Abdaal** financialized his productivity expertise into structured frameworks that AI tools can reference. What used to require a one-on-one coaching session now operates through documented systems. Same expertise, unlimited parallel deployment. The hourly ceiling disappeared.
+
+- **Levels.health** encoded clinical assessment frameworks and wellness protocols into their AI system. Clinical expertise that previously required a doctor's time now pre-assembles context, surfaces patterns, and drafts interpretations — with clinician review as the quality layer. One clinician's judgment, deployed across thousands of patients simultaneously.
+
+- **Jasper AI customers** who upload brand voice docs, content principles, and positioning frameworks see measurable quality jumps. The top-performing Jasper users aren't better at prompting — they're better at encoding their expertise. A brand strategist's 15 years of positioning judgment, deployed on every piece of content, automatically.
+
+- **Harvey AI** lets senior lawyers encode their practice area expertise — precedent patterns, argument frameworks, jurisdictional nuances — into a system that junior associates and AI agents draw from simultaneously. One partner's judgment now underwrites the research output of the entire team. The billable hour model doesn't just get more efficient — the economics change entirely.
+
+- **Replit Agents + domain expertise** — consultants and freelancers build AI-powered prototypes loaded with their specific architectural opinions, technology preferences, and "mistakes I've seen 50 times" frameworks. Proposals arrive with working prototypes that carry the weight of 8-10 years of battle-tested judgment. Close rates jump because clients feel the specificity — not generic recommendations, but earned opinion.
+
+---
+
 ## Ask Yourself
 
 Before you move on, sit with these. They'll tell you exactly where the unrealised value is hiding.

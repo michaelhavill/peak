@@ -123,6 +123,26 @@ A **product design team** connected Figma, GitHub, Notion, and Linear through sh
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real teams are building shared context layers where humans and AI collaborate — and the tools to do it exist today.
+
+- **Notion + MCP integrations** — teams connect their entire Notion workspace to Claude, creating a shared brain that every team member's AI draws from. The PM's customer research enriches the designer's AI. The engineer's technical constraints flow to product automatically. One knowledge base, many AI consumers. Zero copy-paste.
+
+- **Linear + Slack + Claude** — product teams connect their issue tracker and communication channels into a shared context layer. When anyone on the team prompts AI, it already knows the backlog state, recent discussions, and customer feedback. No one starts from zero. The "can you send me that doc?" overhead drops to near zero.
+
+- **Figma + GitHub + Cursor** — design engineering teams connect their design system, codebase, and project context through shared integrations. When a developer asks AI for a component, it references the actual Figma tokens and the actual code patterns. The wall between design and engineering dissolves because the AI carries context across both.
+
+- **Dust.tt** provides team-level AI workspaces where multiple people's AI agents draw from the same connected data sources — Notion, Slack, GitHub, CRM, Google Drive. When the PM's agent produces a brief, the engineer's agent can reference it with full context automatically. That's a shared brain, not parallel monologues.
+
+- **Granola** captures meeting context and makes it available to the entire team's AI tools. A sales call insight is immediately available to the PM's AI. A product decision from a design review reaches engineering's AI without anyone forwarding a Slack message. Context flows as a byproduct of having meetings — no extra work.
+
+- **Microsoft's Copilot ecosystem** connects Word, Teams, Outlook, and SharePoint into one shared context layer. When a team member prompts Copilot, it draws from shared documents, meeting transcripts, and email threads. The vision — even if execution is still maturing — is exactly right: AI should have the full team's context, not just one person's tab.
+
+- **Vercel's AI SDK** lets engineering teams build shared AI interfaces where multiple tools and data sources feed into one context layer. Custom dashboards where business, engineering, and operations all read from and write to the same AI-accessible system. The shared surface pattern, implemented as infrastructure.
+
+---
+
 ## Ask Yourself
 
 These questions reveal whether your team is actually collaborating with AI — or just using AI next to each other.

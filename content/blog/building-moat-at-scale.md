@@ -123,6 +123,26 @@ An **operations team** encoded not just procedures but the reasoning behind them
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real organisations are scaling individual knowledge moats into company-wide competitive advantages — and the compound loop is already visible.
+
+- **Stripe** scaled engineering knowledge across thousands of developers by encoding API design principles, architecture decisions, and incident learnings into a shared, AI-accessible system. New engineers don't just read docs — their AI carries 10+ years of institutional judgment from day one. That's onboarding at a fundamentally different velocity.
+
+- **Amazon's institutional memory** runs on structured knowledge — the "working backwards" process, six-pagers, and decision documents are all queryable assets. Teams that now connect this corpus to AI tools get compounding returns: every decision made enriches the system, and every future query draws from the full history. 20+ years of accumulated judgment, now liquid.
+
+- **Notion** practices what they sell. Their internal workspace connects customer research, product decisions, engineering constraints, and design principles into one AI-accessible layer. When any team member prompts, the AI draws from the collective intelligence. The knowledge doesn't walk out the door when someone leaves — it's in the system.
+
+- **GitLab's handbook** — the entire company operates from a public, structured knowledge base. Every process, decision framework, and operational standard is documented and versioned. Teams connecting this to AI tools get an organisational moat that new hires' AI can access immediately. 2,000+ pages of institutional knowledge, compounding with every contribution.
+
+- **Palantir** built their competitive moat on structured organisational knowledge. Their platforms don't just store data — they encode the analytical frameworks, decision patterns, and domain expertise of every analyst who's used the system. New analysts inherit years of accumulated intelligence on their first day.
+
+- **Granola + Notion + Claude** — the contribution-synthesis-access loop in action. Granola captures meeting context automatically (contribution). AI extracts and structures insights into the Notion knowledge base (synthesis). Every team member's Claude draws from the full base in real time (access). The compound math: 20 people x 5 artifacts/week = 5,200 per year. No competitor buys that by signing a contract.
+
+- **Basecamp / 37signals** has been encoding organisational opinions for 20+ years — in books, blog posts, and internal documents. Their product philosophy, hiring principles, and operational taste are so thoroughly documented that AI tools loaded with this context produce output that sounds like the company. That's a two-decade head start no newcomer can replicate.
+
+---
+
 ## Ask Yourself
 
 These questions reveal whether your team's knowledge is compounding — or evaporating with every resignation.

@@ -129,6 +129,26 @@ A **design engineer** generates 5 directions in a morning and presents the stron
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real teams are shipping in weeks what used to take quarters — and the speed advantage is already compounding into market position.
+
+- **Vercel** ships product updates at a pace that makes enterprise competitors look frozen. Their team uses AI across every stage — from spec to code to deploy — with shared context flowing through each handoff. The "wait for" gaps that kill most product cycles are near zero. Features go from idea to production in days, not months.
+
+- **Cursor** went from concept to the dominant AI code editor in under a year. The team is tiny relative to output. AI-assisted development with shared context across the team compressed every cycle. They ship weekly updates that competitors with 10x the headcount can't match.
+
+- **Replit** deployed a full AI agent product in weeks. CEO Amjad Masad has publicly described building production features in hours using AI tools loaded with product context. The dead time between "idea" and "users touching it" is measured in days, not quarters.
+
+- **Linear** ships product at a velocity that consistently surprises their market. Small team, massive output. Their workflow eliminates context assembly — every handoff from product to design to engineering to deploy carries full context. Sprint planning starts at 9am, not after lunch.
+
+- **Bolt.new and Lovable** — these AI-powered builders let founders go from idea to deployed prototype in hours. Not mockups. Deployed, working applications. The "planning phase" that used to consume 3 months before code was written has been compressed to a conversation. The dead time between decision and deployment — eliminated.
+
+- **Shopify** transformed their shipping velocity by mandating AI usage across engineering. Teams that previously spent days on context assembly now have AI pre-assemble sprint context, flag technical constraints, and surface relevant prior art before anyone opens their editor. The result: features that took 6 weeks now take 8 days.
+
+- **Y Combinator batch companies (2024-2025)** are shipping production applications in 2-4 weeks that would have taken previous batches 3-6 months. The pattern is consistent: AI-assembled context at every stage, zero dead time between stages, shared knowledge bases that eliminate re-establishment. YC partners now explicitly coach founders to "ship this week, not this quarter."
+
+---
+
 ## Ask Yourself
 
 These questions will expose exactly where your dead time lives — and whether your speed problems are people problems or architecture problems.

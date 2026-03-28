@@ -140,6 +140,26 @@ Teams are the layer where everything else compounds or collapses. Your knowledge
 
 ---
 
+## Examples How Others Have Made This Real
+
+These aren't hypotheticals. Real companies are building AI-native teams right now — hiring for agency, measuring shipped output, and watching the doer-versus-talker gap play out in real time.
+
+- **Shopify** mandated AI usage across the entire company — then made it a factor in performance reviews. Not "are you exploring AI tools" but "are you shipping with AI daily." The cultural signal was unmistakable: doers who embrace the tools get recognised. People waiting for permission got a clear message.
+
+- **Mercor** builds AI-native hiring infrastructure. Their thesis: the best predictor of AI-era performance is agency and execution speed, not domain pedigree. Companies using Mercor hire for "comfortable with ambiguity, ships weekly, learns fast" — exactly the profile that compounds with AI tools.
+
+- **Replit** hires engineers who ship on day one. Their culture explicitly rewards speed and iteration over planning and deliberation. New hires deploy code in their first week — not because the bar is low, but because AI tools plus a knowledge-rich codebase eliminate the traditional ramp-up period. Doers thrive. Talkers self-select out.
+
+- **Y Combinator's latest batches** show the pattern clearly. The most successful startups have 2-3 person teams producing output that legacy companies need 20+ people for. YC's implicit hiring advice to founders: hire one senior doer with AI tools over five juniors without them. The 10x math is visible in every demo day.
+
+- **Levels.health** operated with a tiny team using AI across every function — product, engineering, content, operations. They explicitly hired for "startup mentality" over domain expertise, then used structured knowledge bases to carry the domain context. New hires were productive in days, not months.
+
+- **Notion's AI training approach** — rather than running webinars, they embedded AI usage into existing workflows. Templates pre-loaded with AI capabilities. Workspace defaults that make AI the path of least resistance. Adoption went up because they removed friction rather than adding training. The capability problem solved itself when the culture made AI the default, not the exception.
+
+- **Linear** built their team around the principle that every person ships to production weekly. The company is public about their small team size relative to output. AI tools are table stakes — the differentiator is hiring people who execute, then measuring shipped outcomes instead of hours worked.
+
+---
+
 ## Ask Yourself
 
 These questions reveal whether your team is AI-native -- or just AI-equipped.
