@@ -251,6 +251,11 @@ These questions reveal where you sit on the specificity spectrum — and what it
 
 ---
 
-**Ready to make your specificity available to AI?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
+- [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
+- [Follow the Path to Monetising Your Expertise →](/blog/monetise-your-expertise)
 
-**This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
+
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

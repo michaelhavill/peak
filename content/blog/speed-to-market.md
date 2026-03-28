@@ -167,6 +167,11 @@ These questions will expose exactly where your dead time lives — and whether y
 
 ---
 
-**Want to find the dead time in your shipping process?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [Map the Path from AI Tasks to AI Workflows →](/blog/pillar-3-orchestration)
+- [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
+- [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
 
-**This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
+
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

@@ -180,8 +180,11 @@ These questions reveal whether you're using AI for the easy parts and still doin
 
 ---
 
-**Want to see how building your orchestration layer applies to your specific work?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [Follow the Path to Adding 10 Team Members — Without a Single Hire →](/blog/10x-team-ai-peers)
+- [See the Path to Owning the Center and Renting the Edges →](/blog/pillar-2-hub-and-spoke)
+- [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
 
-**We help builders, operations leaders, and product teams design the machine — not just the tasks.** [Let's talk →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**This is one of five pillars in the 100x Path.** [Explore the full framework →](/) | [Ready to start? Book a Strategy Session →](/book)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

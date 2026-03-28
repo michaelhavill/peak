@@ -183,8 +183,11 @@ Before you move on, sit with these. They'll tell you exactly where you stand —
 
 ---
 
-**Want to see how building your knowledge moat applies to your specific situation?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [Chart the Path from Individual Moat to Company Moat →](/blog/building-moat-at-scale)
+- [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
+- [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
 
-**We help founders, product leaders, and builders turn their expertise into AI infrastructure.** [Let's talk →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**This is one of five pillars in the 100x Path.** [Explore the full framework →](/) | [Ready to start? Book a Strategy Session →](/book)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

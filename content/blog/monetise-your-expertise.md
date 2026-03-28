@@ -182,8 +182,11 @@ Before you move on, sit with these. They'll tell you exactly where the unrealise
 
 ---
 
-**Want to see how monetising your expertise applies to your specific situation?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
+- [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
+- [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
 
-**We help founders, product leaders, and builders turn their years of craft into compounding AI infrastructure.** [Let's talk →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**This is one of five pillars in the 100x Path.** [Explore the full framework →](/) | [Ready to start? Book a Strategy Session →](/book)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

@@ -161,6 +161,11 @@ These questions reveal whether your team is actually collaborating with AI — o
 
 ---
 
-**Want to design collaborative spaces for your team?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [Follow the Path to Adding 10 Team Members — Without a Single Hire →](/blog/10x-team-ai-peers)
+- [Learn the Path to Hiring Doers Over Talkers →](/blog/pillar-4-ai-native-teams)
+- [Chart the Path from Individual Moat to Company Moat →](/blog/building-moat-at-scale)
 
-**This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
+
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

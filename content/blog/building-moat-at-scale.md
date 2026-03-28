@@ -161,6 +161,11 @@ These questions reveal whether your team's knowledge is compounding — or evapo
 
 ---
 
-**Want to scale your knowledge moat across your organization?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
+- [See the Path to Owning the Center and Renting the Edges →](/blog/pillar-2-hub-and-spoke)
+- [Follow the Path to Monetising Your Expertise →](/blog/monetise-your-expertise)
 
-**This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
+
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

@@ -174,6 +174,11 @@ These questions reveal whether your AI is an assistant you prompt -- or a peer t
 
 ---
 
-**Want to see how AI peers apply to your team's specific workload?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [Map the Path from AI Tasks to AI Workflows →](/blog/pillar-3-orchestration)
+- [Build the Path to Workspaces Where Humans and AI Actually Collaborate →](/blog/collaborative-spaces)
+- [Learn the Path to Hiring Doers Over Talkers →](/blog/pillar-4-ai-native-teams)
 
-**This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
+
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

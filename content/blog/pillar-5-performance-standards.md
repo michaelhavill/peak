@@ -180,8 +180,11 @@ These questions reveal whether your culture accelerates your best people — or 
 
 ---
 
-**Want to see how AI-native performance standards apply to your organization?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
+- [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
+- [Follow the Path to Monetising Your Expertise →](/blog/monetise-your-expertise)
 
-**We help founders, builders, and team leads redefine what great work looks like.** [Let's talk →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**This is one of five pillars in the 100x Path.** [Explore the full framework →](/) | [Ready to start? Book a Strategy Session →](/book)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

@@ -175,8 +175,11 @@ These questions reveal whether you own your infrastructure — or your vendors o
 
 ---
 
-**Want to see how hub-and-spoke architecture applies to your specific stack?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [Map the Path from AI Tasks to AI Workflows →](/blog/pillar-3-orchestration)
+- [Chart the Path from Individual Moat to Company Moat →](/blog/building-moat-at-scale)
+- [The Path to Shipping in Weeks What Used to Take Quarters →](/blog/speed-to-market)
 
-**We help founders, CTOs, and technical leaders design for replaceability from day one.** [Let's talk →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**This is one of five pillars in the 100x Path.** [Explore the full framework →](/) | [Ready to start? Book a Strategy Session →](/book)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

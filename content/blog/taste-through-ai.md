@@ -195,6 +195,11 @@ These questions will expose exactly how much of your judgment is locked in your 
 
 ---
 
-**Want help documenting your taste and connecting it to AI?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
+- [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
+- [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
 
-**This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
+
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

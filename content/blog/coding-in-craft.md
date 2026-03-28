@@ -177,6 +177,11 @@ These questions reveal whether your AI is coding in your reality -- or in a text
 
 ---
 
-**Want help building your engineering context package?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
+- [The Path to Shipping in Weeks What Used to Take Quarters →](/blog/speed-to-market)
+- [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
 
-**This is part of the 100x Learn Path.** [Explore all paths →](/#learn) | [Book a Strategy Session →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
+
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)

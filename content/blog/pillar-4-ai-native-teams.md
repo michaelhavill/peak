@@ -178,8 +178,11 @@ These questions reveal whether your team is AI-native -- or just AI-equipped.
 
 ---
 
-**Want to see how AI-native team building applies to your organization?** [Book a 30-minute strategy call →](/book)
+**Connected learning paths to consider:**
+- [Follow the Path to Adding 10 Team Members — Without a Single Hire →](/blog/10x-team-ai-peers)
+- [Build the Path to Workspaces Where Humans and AI Actually Collaborate →](/blog/collaborative-spaces)
+- [Chart the Path from Individual Moat to Company Moat →](/blog/building-moat-at-scale)
 
-**We help founders, CTOs, and operations leaders build teams that ship -- not teams that meet.** [Let's talk →](/book)
+**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**This is one of five pillars in the 100x Path.** [Explore the full framework →](/) | [Ready to start? Book a Strategy Session →](/book)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
