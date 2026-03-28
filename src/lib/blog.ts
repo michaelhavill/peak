@@ -54,7 +54,7 @@ function colorizeAscii(html: string): string {
 
 const AUTHOR_META: Record<string, { name: string; url: string }> = {
   "100xpath": {
-    name: "Michael van Havill",
+    name: "Michael Van Havill",
     url: "https://www.linkedin.com/in/michaelvanhavill/",
   },
 };
