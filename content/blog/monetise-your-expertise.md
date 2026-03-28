@@ -20,37 +20,37 @@ That is insanity. You're sitting on an appreciating asset with the liquidity of 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                 │
-│  ● THE OLD ECONOMICS OF EXPERTISE    ● THE NEW ECONOMICS OF EXPERTISE          │
+│  ● THE OLD ECONOMICS OF EXPERTISE    ● THE NEW ECONOMICS OF EXPERTISE           │
 │                                                                                 │
-│  You ──→ Client/Employer             You ──→ Knowledge Base ──→ AI Agents      │
-│                                            ┌──────────────┐                    │
-│  Access: 1 person at a time                │ Your taste    │                   │
-│  Format: Meetings & deliverables           │ Your craft    │                   │
-│  Scale: Linear (more hours = more $)       │ Your opinion  │                   │
-│  Liquidity: Zero                           │ Your judgment │                   │
-│                                            └──────┬───────┘                    │
-│  You trade TIME for MONEY.                        ↓                            │
-│  The oldest, worst deal                                                        │
-│  in economics.                     Access: Unlimited parallel deployment       │
-│                                    Format: Structured, queryable, alive        │
-│                                    Scale: Non-linear (compounds daily)         │
-│                                    Liquidity: Instant                          │
-│                                                                                │
-│                                    You deploy JUDGMENT for LEVERAGE.           │
-│                                    The asset appreciates with use.             │
-│                                                                                │
-│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  You ──→ Client/Employer             You ──→ Knowledge Base ──→ AI Agents       │
+│                                            ┌──────────────┐                     │
+│  Access: 1 person at a time                │ Your taste    │                    │
+│  Format: Meetings & deliverables           │ Your craft    │                    │
+│  Scale: Linear (more hours = more $)       │ Your opinion  │                    │
+│  Liquidity: Zero                           │ Your judgment │                    │
+│                                            └──────┬───────┘                     │
+│  You trade TIME for MONEY.                        ↓                             │
+│  The oldest, worst deal                                                         │
+│  in economics.                     Access: Unlimited parallel deployment        │
+│                                    Format: Structured, queryable, alive         │
+│                                    Scale: Non-linear (compounds daily)          │
+│                                    Liquidity: Instant                           │
+│                                                                                 │
+│                                    You deploy JUDGMENT for LEVERAGE.            │
+│                                    The asset appreciates with use.              │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
 │  EARNING POTENTIAL                    EARNING POTENTIAL                         │
-│  Capped by available hours.           Uncapped. Your expertise works           │
-│  Sell 40 hrs/week max.                in parallel across every project.        │
-│  ░░░░░░░░░░░░░░░░░░░░ linear          ████████████████████ compounding        │
+│  Capped by available hours.           Uncapped. Your expertise works            │
+│  Sell 40 hrs/week max.                in parallel across every project.         │
+│  ░░░░░░░░░░░░░░░░░░░░ linear          ████████████████████ compounding          │
 │                                                                                 │
-│  CAREER RESILIENCE                    CAREER RESILIENCE                        │
-│  One layoff and your                  Your knowledge base is portable.         │
-│  context walks out the door.          It compounds across roles, clients,      │
-│  Start from zero. Again.              and decades. It's yours. Period.         │
-│  ░░░░░░░░░░░░░░░░░░░░ fragile         ████████████████████ antifragile        │
+│  CAREER RESILIENCE                    CAREER RESILIENCE                         │
+│  One layoff and your                  Your knowledge base is portable.          │
+│  context walks out the door.          It compounds across roles, clients,       │
+│  Start from zero. Again.              and decades. It's yours. Period.          │
+│  ░░░░░░░░░░░░░░░░░░░░ fragile         ████████████████████ antifragile          │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
