@@ -10,7 +10,7 @@ tags: ["taste", "craft", "judgment", "knowledge base", "AI quality"]
 
 Taste is intellectual capital. You spent a decade accumulating it — pattern recognition, quality thresholds, decision frameworks — and right now you're letting it sit in a zero-yield account. You ask AI to draft a product strategy memo and it comes back sounding like a McKinsey intern who's never had a conviction in his life. Structurally competent. Generically correct. Missing every opinion that makes your thinking worth paying for.
 
-Here's the thing. The AI isn't broken — it's uninformed. It has zero access to the decades of compounded judgment that make your work yours. That's not a prompt problem. That's a capital deployment problem.
+Here's the thing. The AI isn't broken — it's uninformed. It has zero access to the decades of compounded judgment that make your work yours. That's not a prompt problem. That's a capital deployment problem. And the fix isn't handing your judgment to AI — it's empowering AI to work as an extension of your judgment. You, your knowledge store, and AI working together. That's the triad. That's where the value lives.
 
 **Your taste isn't aesthetics. It's intellectual capital across every domain where you hold earned opinions — strategy, hiring, product direction, brand voice, pricing, org design, positioning.** None of it reaches your AI right now. You are sitting on a pile of undeployed assets. That is insanity.
 
@@ -84,13 +84,13 @@ Here's the exciting part — all of this transfers to AI. Not through better pro
 
 A **founder** encoded his fundraising judgment — investor preferences from 200+ pitch meetings, objection patterns, how he frames challenges as opportunities without sugarcoating, the metrics he always leads with. His AI now drafts investor updates that reference the right context for each recipient. What took 3 hours per update now takes 20 minutes. More personalized than before. That's a 9x return on a one-time documentation investment.
 
-A **product manager** financialized her brief-writing craft — how she structures problem statements, what customer evidence clears her bar, how she frames success metrics that drive behavior. AI briefs now match her quality bar on the first draft. The 45-minute rewrite tax? Gone. That's burning $75 of senior time per interaction, compounded across every single output. Full stop.
+A **product manager** financialized her brief-writing craft — how she structures problem statements, what customer evidence clears her bar, how she frames success metrics that drive behavior. AI briefs now match her quality bar on the first draft. The 45-minute rewrite tax? Gone. But the real win isn't the $75 per interaction saved — it's what she does with those 45 minutes. She invests them in the deep product thinking that actually moves the needle: sitting with customer problems, pressure-testing strategy, designing the experiments worth running. Time to decision, faster. Time for the hard product work nobody else has time for? Unlocked. That's not just efficiency. That's a fundamentally different job. Full stop.
 
 A **product designer** wrote 40 specific principles spanning persona-driven content hierarchy, UX flow logic, progressive disclosure patterns, and visual taste. AI-generated concepts matched her product thinking and aesthetic without a single correction. First try. Like a poker player who finally wrote down her tells — now the AI plays her hand.
 
 An **engineering lead** documented his team's state management approach, API conventions, and component structure standards. The "fix it to match our style" step disappeared entirely. Zero rework cycles.
 
-**The punchline is compounding.** Every rule you refine, every judgment call you record, every "here's how I think about this" you document — these compound across every future interaction. Your taste doc becomes a living asset that appreciates with use. After 6 months, your AI carries judgment that would take a new hire a year to absorb. That's not a productivity hack. That's a moat.
+**The punchline is compounding.** Every rule you refine, every judgment call you record, every "here's how I think about this" you document — these compound across every future interaction. Your taste doc becomes a living asset that appreciates with use. But the asset isn't the doc alone — it's the triad: you continuing to exercise judgment, the knowledge store carrying your accumulated standards, and AI extending your capacity. You're not outsourcing your taste. You're deploying it through agents that build with you. After 6 months, your AI carries judgment that would take a new hire a year to absorb — because you built it, you refine it, and you direct it. That's not a productivity hack. That's a moat.
 
 <!-- toggle: team -->
 
@@ -110,7 +110,7 @@ One team built what I'd call a capital stack — three layers of taste, each one
 
 The AI deploys all three simultaneously. A new **PM's** first AI-assisted brief matched the team's quality bar because the context carried the organization's collective judgment. A new **clinician's** documentation reflected the care philosophy from day one. Like giving a rookie a championship playbook — they play at a higher level immediately.
 
-**The result: taste scales without bottlenecks.** No more "run it by the founder first" — the **founder's** strategic judgment is in the system. No more "check with brand" — brand voice is encoded. No more "have the clinical director review it" — her care standards are built in. The team produces consistent work at 3x the speed because the quality bar is financialized into the tools, not locked in one person's calendar. That's derisking quality at scale.
+**The result: taste scales without bottlenecks.** No more "run it by the founder first" — the **founder's** strategic judgment is in the system. No more "check with brand" — brand voice is encoded. No more "have the clinical director review it" — her care standards are built in. The team produces consistent work at 3x the speed because the quality bar is financialized into the tools, not locked in one person's calendar. And the leaders whose calendars just cleared? They're not filling them with more reviews. They're investing in the deep strategic work, the hard creative problems, and the craft that actually differentiates the company. The speed unlocks time. The time unlocks depth. That's derisking quality at scale while simultaneously raising the ceiling on what your best people can accomplish.
 
 Here's the thing about breadth. When a startup encodes only design taste, they get consistent UI and inconsistent everything else. When they encode strategy taste, product taste, hiring taste, voice, clinical taste, and design taste — every function produces work that carries the organization's judgment. That's the difference between a team that uses AI and a team that's compounding through AI.
 
@@ -138,7 +138,7 @@ A **clinical leader** encoded her documentation standards, patient communication
 
 Taste documentation is how you turn a knowledge base from a reference library into an opinionated decision engine. Raw knowledge is facts and data — necessary but commodity. Taste is your interpretation of what those facts mean and how they should influence action. Knowledge provides context. Taste provides judgment. Together, they produce AI output that's not just informed but opinionated — in the way that makes your work defensible and your position irreplaceable.
 
-**Knowledge without taste is a Wikipedia article. Taste without knowledge is guessing.** The builder who deploys both creates something no competitor can replicate. That's the whole game.
+**Knowledge without taste is a Wikipedia article. Taste without knowledge is guessing. Either without you directing AI is noise at scale.** The builder who deploys all three — their ongoing judgment, their knowledge store, and AI as an extension of their craft — creates something no competitor can replicate. You're not outsourcing your differentiators. You're compounding them. That's the whole game.
 
 ---
 

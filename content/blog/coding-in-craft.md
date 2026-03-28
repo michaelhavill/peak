@@ -10,7 +10,7 @@ tags: ["engineering", "code quality", "craft", "AI coding", "developer workflow"
 
 Most AI-generated code is dead on arrival. Copilot autocompletes a function, the code compiles, and then your senior engineer spends 15 minutes unfucking it -- wrong naming conventions, a pattern you deprecated last quarter, zero awareness of the shared utility that already does the same thing. Multiply that by every engineer, every day, across your entire org. That is insanity.
 
-Here's the thing. **The gap between 60% acceptance rate and 95% acceptance rate is not an AI capability problem -- it's a context deployment problem.** AI that doesn't know your codebase ships code that breaks on contact with your reality. AI that carries your constraints, your patterns, your scars? It ships code that belongs. Full stop.
+Here's the thing. **The gap between 60% acceptance rate and 95% acceptance rate is not an AI capability problem -- it's a context deployment problem.** AI that doesn't know your codebase ships code that breaks on contact with your reality. AI that carries your constraints, your patterns, your scars? It ships code that belongs — because it's building with you, not instead of you. Your knowledge store and your ongoing judgment are what make AI an extension of your engineering craft. You're not outsourcing code quality. You're amplifying it. Full stop.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -80,7 +80,7 @@ A **design engineer** connected his component library, design tokens, and access
 
 A **product manager** started linking specs to the engineering knowledge base. When she writes "add offline mode," the AI surfaces 3 architecture constraints and 2 previous failed attempts. Engineering gets the full picture embedded in the spec. Back-and-forth clarification dropped 70%.
 
-**The punchline is compounding.** Every architectural decision you document, every pattern you codify, every "we tried this and it failed" note -- these compound into a richer context that makes every future suggestion better. After a month, your AI has read every PR, every ADR, every incident postmortem. After 6 months, it's the most context-aware collaborator on your team. You're not writing documentation -- you're deploying context as infrastructure.
+**The punchline is compounding.** Every architectural decision you document, every pattern you codify, every "we tried this and it failed" note -- these compound into a richer context that makes every future suggestion better. After a month, your AI has read every PR, every ADR, every incident postmortem. After 6 months, it's the most context-aware collaborator on your team — but you're still the one directing it, refining its output, and deciding what ships. You're not writing documentation -- you're deploying your expertise as infrastructure. The value is the triad: you, your knowledge store, and AI working as one system. Your agents build with you, as an extension of your engineering craft. Not a replacement for it.
 
 <!-- toggle: team -->
 
@@ -90,7 +90,7 @@ Here's where the economics get interesting. At the team level, engineering conte
 
 Every team has a style. Naming patterns, error handling, testing philosophy, architecture boundaries. That style lives in the heads of 2-3 senior **engineers** and gets enforced through code review -- which means every PR is an expensive teaching moment instead of a quality gate. Senior engineers spend 30% of their time reviewing code that violates patterns the author didn't know existed. Net-net, your highest-leverage people are functioning as human linters. That is a terrible deployment of talent.
 
-When the team's engineering context feeds into everyone's AI, the floor rises. Junior **engineers** produce code that matches senior standards on the first draft. New hires write idiomatic code in week one instead of month three. Code review shifts from "please follow our patterns" to "let's discuss the architectural tradeoff here." That's the shift from defense to offense.
+When the team's engineering context feeds into everyone's AI, the floor rises. Junior **engineers** produce code that matches senior standards on the first draft. New hires write idiomatic code in week one instead of month three. Code review shifts from "please follow our patterns" to "let's discuss the architectural tradeoff here." That's the shift from defense to offense. And the time your senior engineers reclaim from pattern-policing? That goes to the work that actually makes a difference — architecture decisions, system design, the hardest most interesting technical problems that have been sitting in the backlog because nobody had time to think deeply about them. Faster reviews aren't just about shipping more. They're about unlocking time for the deep craft that differentiates great engineering teams from ones that just grind.
 
 **Designers** benefit enormously -- when the design system connects to engineering context, AI-generated code uses actual components with actual tokens. The "that's not how it was designed" QA cycle shrinks to near zero.
 
@@ -100,7 +100,7 @@ When the team's engineering context feeds into everyone's AI, the floor rises. J
 
 **Clinical teams** compound the value even further. One team encoded HIPAA compliance patterns, audit logging requirements, and data handling conventions into their context package. Every AI-generated code change automatically follows compliance patterns. Security review flags dropped from 40% of PRs to 5%. Think about what that means -- compliance built in, not bolted on. That derisks the entire development process.
 
-One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards -- by raising the floor. Every AI-assisted PR already follows the team's patterns because the AI has the context. Like giving every player on your roster the same scouting report before the game starts.
+One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards -- by raising the floor. Every AI-assisted PR already follows the team's patterns because the AI has the context. The reclaimed review time didn't disappear into more tickets — it went into architecture discussions, performance investigations, and the deep technical thinking that had been perpetually deprioritized. Time to ship, faster. Time for the engineering work that really matters? Finally unlocked. Like giving every player on your roster the same scouting report before the game starts — so the coach can spend prep time on strategy instead of fundamentals.
 
 **The engineering knowledge base also captures institutional memory.** Why did we choose this database? What happened last time someone tried to refactor auth? Which API endpoints are load-bearing and can never go down? This context prevents the same expensive mistakes from recurring every time a new engineer joins. The system remembers what individuals forget. That is infrastructure.
 

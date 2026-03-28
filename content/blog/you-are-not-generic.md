@@ -14,7 +14,7 @@ That is insanity. The story misidentifies the asset entirely.
 
 **You are not a generic knowledge worker. You are a specific person with specific taste, specific craft, and specific domain expertise.** The years you spent developing judgment in your field didn't produce "knowledge work." They produced *you* — a particular point of view that no model was trained on because it doesn't exist anywhere except inside your head. That is your seat position at the poker table.
 
-The moment you make that specificity available to AI, you stop competing with it and start compounding through it. Full stop. That's the entire thesis.
+The moment you make that specificity available to AI, you stop competing with it and start compounding through it. You're not outsourcing your differentiators. You're empowering your agents to build with you — as an extension of your skills, not a replacement. The value is the triad: you, your knowledge store, and AI working as one system. Full stop. That's the entire thesis.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -89,7 +89,7 @@ The **PM** asks for a product strategy and gets something that reads like a busi
 
 Then everyone spends 45 minutes rewriting it. Fixing the framing. Adding the nuance. Removing the corporate hedging. Injecting the opinions that make the work actually useful.
 
-**That 45 minutes is the tax you pay for keeping your specificity locked in your head.** Every single interaction. Every single day. That is a negative-ROI loop — and most people run it hundreds of times without questioning it.
+**That 45 minutes is the tax you pay for keeping your specificity locked in your head.** Every single interaction. Every single day. And what are you losing beyond the time? You're losing the hours you could spend on the deep thinking, deep craft, and hardest most interesting problems in your domain — the work that actually makes a difference. Every 45-minute rewrite is time you didn't spend on strategy, on creative breakthroughs, on the problems worth solving. It's not just a negative-ROI loop — it's a trap that keeps you grinding on what doesn't differentiate instead of investing in what does. Most people run it hundreds of times without questioning it.
 
 ### What Changes When You Make It Available
 
@@ -117,7 +117,7 @@ Every time you use AI with your documented judgment, two things happen. First, y
 
 A customer call reveals a new pattern. The **PM** documents it. Her AI surfaces it in future analysis. A design decision teaches the **product designer** something about how users actually navigate a flow. She refines her taste doc. Her AI applies that refinement everywhere. An incident teaches the **engineer** about a failure mode. He documents it. The AI flags similar patterns before they become incidents. A patient encounter teaches the **clinical leader** about an edge case in her protocol. She updates it. The AI catches it next time.
 
-The punchline is this: after 3 months, your AI has context that would take a new hire 6 months to absorb. After a year, you've built a body of encoded judgment that no competitor, no layoff, and no market shift can touch. It travels with you. It compounds with you. **It's not a tool you use — it's an extension of how you think.**
+The punchline is this: after 3 months, your AI has context that would take a new hire 6 months to absorb. After a year, you've built a body of encoded judgment that no competitor, no layoff, and no market shift can touch. It travels with you. It compounds with you. **It's not a tool you use — it's an extension of how you think.** And you're still the one thinking. The knowledge store carries your accumulated judgment. AI extends your capacity. But you direct, refine, and decide. That's not outsourcing. That's leverage.
 
 The people still prompting from scratch every morning are starting from zero every morning. Like a poker player who forgets all the hands from last night's session. You're starting from a year of accumulated, refined, sharpened specificity. That gap doesn't close. It widens. Net-net — that is the moat.
 
@@ -161,7 +161,7 @@ After a year, when a new hire asks AI to draft a customer proposal, the output r
 
 A new hire at your competitor asks the same AI for a proposal and gets the median internet response.
 
-**That gap is your moat. And it widens every single day.** That's how you win. That's how you build something no one can financialize away from you.
+**That gap is your moat. And it widens every single day.** The moat isn't the knowledge store alone. It's not the AI alone. It's the triad — your people, your accumulated knowledge, and AI working together. Your agents build with you, extending your skills across every interaction. You're not outsourcing what makes you special. You're compounding it. That's how you win. That's how you build something no one can financialize away from you.
 
 ---
 
@@ -177,7 +177,7 @@ This isn't binary. It's a spectrum — and it maps almost perfectly to levels of
 
 **Level 3: Taste and craft.** You've encoded your specific judgment — how you evaluate, decide, and create. Your AI produces work that's recognizably yours. The **product designer's** output reflects her thinking about users, flows, and visual craft. The **founder's** memos reflect his actual thinking. The **clinical leader's** notes reflect her care philosophy. Significant advantage. You're reading the other players now.
 
-**Level 4: Compounding specificity.** Your knowledge base grows with every interaction. New evidence refines old principles. Your AI improves daily. Your advantage compounds. **This is where the 1% lives.** You're not just playing hands — you're building a model of the game that gets sharper every session.
+**Level 4: Compounding specificity.** Your knowledge base grows with every interaction. New evidence refines old principles. Your AI improves daily. Your advantage compounds. And here's what separates Level 4 from everything below: you have time for the work that actually matters. Time to decision, faster. Time to idea, faster. Time for the deep thinking, deep craft, and hardest most interesting problems in your domain — the ones that have been permanently deprioritized because you were grinding on assembly. **This is where the 1% lives.** You're not just playing hands — you're building a model of the game that gets sharper every session, and you have the time to sit with the strategic decisions that really count.
 
 Most people are at Level 0 or 1. They're fighting over prompt engineering tips while the real leverage sits untouched — their own accumulated specificity. The spread between Level 1 and Level 4 after 12 months is enormous. And the people who start compounding first win.
 

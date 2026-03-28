@@ -74,7 +74,7 @@ A **product manager** made her research corpus and persona data the hub. Analyti
 
 A **clinical leader** built care coordination logic as the hub. The EHR is a spoke. When the EHR falls short, she builds extensions. When a better scheduling tool launched, she swapped it without disrupting a single clinical workflow.
 
-Consider this — it matters more for AI tools than any other category. The landscape reshapes itself every 90 days. Models improve by 40% per generation. New providers emerge monthly. Pricing drops 10x in 18 months. The builder who can swap AI tools without rebuilding workflows has a structural speed advantage that compounds with every market shift. That is the moat no vendor can take from you.
+Consider this — it matters more for AI tools than any other category. The landscape reshapes itself every 90 days. Models improve by 40% per generation. New providers emerge monthly. Pricing drops 10x in 18 months. The builder who can swap AI tools without rebuilding workflows has a structural speed advantage that compounds with every market shift. But the speed isn't the whole story — the real payoff is what you do with the time you're not spending on migration projects. Every 6-month migration you avoid is 6 months reclaimed for deep thinking, deep craft, and the hardest most interesting problems in your domain. Time to adopt new capabilities, faster. Time for the strategic work that actually differentiates? Unlocked. That is the moat no vendor can take from you.
 
 <!-- toggle: team -->
 
@@ -90,7 +90,7 @@ When their EHR vendor stalled a critical integration for 8 weeks, they built a b
 
 The organizational discipline: **tools are chosen for speed-to-integrate, not permanence.** The **engineering team** evaluates tools by asking "how fast can we integrate and how fast can we rip it out?" — not "how comprehensive is the platform?" The **product team** treats analytics providers as replaceable spokes. The **ops team** treats workflow tools the same way. The **clinical team** treats everything except their care coordination logic as a spoke. Think of it like reading the table in poker — you're always assessing which position gives you the most optionality, not committing your stack to one hand.
 
-This requires building custom interfaces for different teams — **business**, **clinical**, **operations** — each reading from and writing to the same central system. The upfront investment is real. But the payoff is an architecture that outlasts any individual tool decision by 10x. In AI, where the landscape reshapes itself quarterly, this is not a luxury. It is the thing that separates teams shipping on day one from competitors stuck in procurement cycles measuring 12-18 months. The punchline is: speed compounds, and lock-in is the tax that destroys compounding.
+This requires building custom interfaces for different teams — **business**, **clinical**, **operations** — each reading from and writing to the same central system. The upfront investment is real. But the payoff is an architecture that outlasts any individual tool decision by 10x. In AI, where the landscape reshapes itself quarterly, this is not a luxury. It is the thing that separates teams shipping on day one from competitors stuck in procurement cycles measuring 12-18 months. And the teams that aren't stuck in procurement? They're spending that time on the work that actually makes a difference — deep strategy, hard product problems, the craft that differentiates. The punchline is: speed compounds, lock-in is the tax that destroys compounding, and the real win is reclaiming time for the work only your team can do.
 
 ---
 
@@ -108,7 +108,7 @@ An **engineering lead** built the workflow engine and data model as the hub. Clo
 
 A **founder** made her business logic the hub. Every SaaS subscription is a spoke. When something better launches, she adopts it on day one while competitors are still scheduling their vendor evaluation kickoff. That gap compounds every single quarter.
 
-**The pattern: whatever generates your core value is the hub. Everything else is a spoke.** The moment you let a vendor tool become your hub, you've financialized your adaptability and handed the deed to someone else. That is the structural mistake that kills companies slowly — then all at once.
+**The pattern: whatever generates your core value is the hub. Everything else is a spoke.** Your hub is where the triad lives — your people's judgment, your accumulated knowledge, and AI working as extensions of your team's skills. The moment you let a vendor tool become your hub, you've outsourced your differentiators and handed the deed to someone else. That is the structural mistake that kills companies slowly — then all at once.
 
 ---
 
@@ -116,7 +116,7 @@ A **founder** made her business logic the hub. Every SaaS subscription is a spok
 
 Architecture is the container that holds everything else. Your knowledge base needs a hub to live in — a system you control, not one a vendor might deprecate on 30 days' notice. Your orchestration engine needs flexibility to route work across tools that change quarterly. Your team experiments faster when tool-swapping costs $0 in lost context. Your performance standards depend on infrastructure that moves as fast as your ambitions.
 
-**The hub is what you own. The spokes are what you rent. The discipline to maintain that boundary is what makes you antifragile** — not just resilient to stress, but genuinely better because of it. Every disruption is an upgrade opportunity. Every vendor misstep is a free option to improve. That is how you compound advantages while everyone else is filing procurement requests.
+**The hub is what you own. The spokes are what you rent. The discipline to maintain that boundary is what makes you antifragile** — not just resilient to stress, but genuinely better because of it. And the hub's value comes from the triad: you, your knowledge store, and AI working together. You're not outsourcing your differentiators to a platform. You're empowering your agents to build with you — through infrastructure you control. Every disruption is an upgrade opportunity. Every vendor misstep is a free option to improve. That is how you compound advantages while everyone else is filing procurement requests.
 
 ---
 

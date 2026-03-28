@@ -10,7 +10,7 @@ tags: ["AI peers", "team scaling", "productivity", "agents", "workforce"]
 
 The math on headcount is broken. Your team is 5 people and your roadmap demands 50. Hiring takes 3 months per role, onboarding burns another 2, and by the time someone is productive you've lost half a year of runway. That is insanity.
 
-Here's the thing. **When your AI has your knowledge base, your taste docs, and your domain constraints -- it stops being a tool and starts being a capital-efficient team member.** One that compounds output at 3am, never drops context, and produces work grounded in your specific situation. This is not incremental. This is a step-function change in the economics of building.
+Here's the thing. **When your AI has your knowledge base, your taste docs, and your domain constraints -- it stops being a tool and starts being an extension of you.** Not a replacement. Not an outsourced brain. A capital-efficient team member that you direct, that carries your judgment, and that compounds output at 3am while producing work grounded in your specific situation. The value is the triad: you, your knowledge store, and AI working together. This is not incremental. This is a step-function change in the economics of building.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -73,7 +73,7 @@ You're a **solo founder** or a team of one inside a bigger org. 40 items on your
 
 AI peers flip the economics entirely. Build context for each work domain, deploy agents across the domains you can't touch, and suddenly your throughput curve bends.
 
-A **founder** we work with runs 12 simultaneous workstreams with multiple AI agents. Not 12 ChatGPT tabs -- 12 distinct value streams, each loaded with context from her knowledge base: competitive research, customer outreach drafts, technical architecture docs, investor materials, product specs. Her job now? Direct and refine. The assembly layer is automated. That's 12x leverage on a single salary.
+A **founder** we work with runs 12 simultaneous workstreams with multiple AI agents. Not 12 ChatGPT tabs -- 12 distinct value streams, each loaded with context from her knowledge base: competitive research, customer outreach drafts, technical architecture docs, investor materials, product specs. Her job now? Direct, refine, and spend her reclaimed hours on the work that actually differentiates — strategic thinking, customer relationships, the hard product decisions nobody else can make. The assembly layer is automated. But the real win isn't 12x throughput on a single salary — it's having time for deep craft on the things that matter most instead of grinding on the things that don't.
 
 A **product manager** covering 3 product areas deployed AI peers for each: one monitors competitive moves, one synthesizes user feedback, one drafts briefs from the knowledge base. All 3 areas get equal strategic attention. Nothing rots because the throughput bottleneck disappeared. The ROI on that PM's comp just tripled.
 
@@ -83,7 +83,7 @@ An **engineering lead** uses AI peers for code review prep, test generation, doc
 
 A **clinical coordinator** uses AI peers to handle intake assembly, scheduling, and routine communications. She focuses on complex clinical decisions and relationship-sensitive interactions -- the work where human judgment is irreplaceable and underwriting risk requires a real brain.
 
-**The punchline is context, not prompting.** An AI peer with access to your customer research, technical constraints, and taste docs produces work you'd actually ship. An AI peer with no context produces noise. Full stop. The knowledge base is what turns a tool into a teammate.
+**The punchline is the triad: you, your knowledge, and your AI working as one system.** An AI peer with access to your customer research, technical constraints, and taste docs produces work you'd actually ship — because it's building with you, not for you. An AI peer with no context produces noise. Full stop. You're not outsourcing your differentiators to AI. You're empowering your agents with everything you've earned — and staying in the driver's seat. The knowledge base is what turns a tool into a teammate. Your judgment is what keeps the teammate accountable.
 
 <!-- toggle: team -->
 
@@ -99,7 +99,7 @@ One company runs their entire customer operations with 3 human team members and 
 
 **Here's the thing -- AI peers are not autonomous.** Every output routes to a human for review. The roughly 20 minutes of refinement per task is built into the workflow, not treated as overhead. The **PM** reviews strategy output. The **product designer** reviews UX and design output. The **engineer** reviews code output. The **clinical lead** reviews care-related output. The human's job shifts from "do the work" to "direct and refine the work" -- which is a dramatically higher-ROI use of their time and expertise. Like a poker player who stops grinding low-stakes tables and starts picking better games.
 
-Net-net -- the hiring implication is enormous. You hire for judgment, taste, and domain expertise. Not for throughput. One senior **founder** directing 5 AI peers outproduces 5 junior people working independently. One **clinical leader** with AI peers manages the patient load of 3 coordinators. The bottleneck moves from "not enough hands" to "not enough judgment." Solve that bottleneck and your headcount math changes permanently. Your cost per unit of output drops by 60-70%.
+Net-net -- the hiring implication is enormous. You hire for judgment, taste, and domain expertise. Not for throughput. One senior **founder** directing 5 AI peers outproduces 5 junior people working independently. One **clinical leader** with AI peers manages the patient load of 3 coordinators. The bottleneck moves from "not enough hands" to "not enough judgment." And when you solve that bottleneck, something else happens: your best people finally have time for the deep thinking, deep craft, and hardest most interesting problems that have been permanently deprioritized. They're not just producing more — they're doing the work that actually makes a difference because the grind is handled. Time to decision, faster. Time to idea, faster. Time for the work only senior judgment can do? Unlocked. Your headcount math changes permanently. Your cost per unit of output drops by 60-70%. And your team's quality of work goes up because they have space to think.
 
 ---
 
@@ -115,7 +115,7 @@ A **product manager** covers 3 product areas at the quality of covering 1. Resea
 
 A **founder** runs 12 simultaneous projects without coordination overhead. Each workstream has its own context. She reviews and refines. The coordination tax -- which kills most multi-project leaders -- drops to near zero.
 
-**The pattern: AI peers multiplied by context equals scaled output. AI peers multiplied by nothing equals scaled noise.** The knowledge base is what makes the unit economics work. That's the whole game. Like a sports franchise -- the talent is important, but the scouting system and playbook are what compound over time.
+**The pattern: AI peers multiplied by your context, directed by your judgment, equals scaled output. AI peers multiplied by nothing equals scaled noise.** The unit economics work because of all three — you, your knowledge store, and AI. Not one without the others. You're not handing the playbook to a stranger. You're running your own plays through more players. Like a sports franchise — the talent matters, the scouting system and playbook compound over time, but the coach's judgment is what turns all of it into wins.
 
 ---
 
