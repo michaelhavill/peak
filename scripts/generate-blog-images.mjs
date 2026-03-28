@@ -67,7 +67,7 @@ const POST_PROMPTS = {
   "monetise-your-expertise": {
     hero: "A lone abstract figure standing at a window, their shadow cast long behind them taking the shape of a vast branching tree — suggesting years of accumulated knowledge invisible to the eye but immense in form",
     sections: [
-      "An abstract figure seated at a small desk, but their silhouette casts the shadow of a towering factory — the contrast between the contained person and their enormous latent output",
+      "An abstract figure seated at a small desk, their shadow stretching upward and forward into a luminous city of soaring towers and bridges — the contrast between the still person and the vast bright future their work makes possible",
       "Two abstract figures: one pouring thoughts into a narrow funnel, the other receiving from a wide river — the transformation of locked-in expertise into something that flows freely",
     ],
   },
