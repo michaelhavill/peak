@@ -1,5 +1,6 @@
 ---
 title: "Follow the Path to Monetising Your Expertise: Turn 10,000 Hours Into a Compounding Asset"
+titleHighlight: "Compounding Asset"
 slug: monetise-your-expertise
 theme: ["build-your-moat", "craft-and-taste"]
 description: "Your years of craft, taste, and opinion were previously impossible to scale. Path turns illiquid expertise into a deployable, monetisable asset that compounds."
