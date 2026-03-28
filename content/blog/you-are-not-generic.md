@@ -1,12 +1,25 @@
 ---
-title: "Own the Path to Specificity: You Are Not Generic"
-titleHighlight: "You Are Not Generic"
+title: 'Own the Path to Specificity: You Are Not Generic'
+titleHighlight: You Are Not Generic
 slug: you-are-not-generic
-theme: ["craft-and-taste", "build-your-moat"]
-description: "Your craft, taste, and domain expertise are what make you irreplaceable. The moment you make that specificity available to AI, you stop competing with it and start compounding through it."
-date: 2026-03-28
-author: "100xpath"
-tags: ["specificity", "craft", "taste", "domain expertise", "AI leverage", "career capital", "knowledge base"]
+theme:
+  - craft-and-taste
+  - build-your-moat
+description: >-
+  Your craft, taste, and domain expertise are what make you irreplaceable. The
+  moment you make that specificity available to AI, you stop competing with it
+  and start compounding through it.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - specificity
+  - craft
+  - taste
+  - domain expertise
+  - AI leverage
+  - career capital
+  - knowledge base
+heroImage: /blog/you-are-not-generic/hero.png
 ---
 
 The dominant narrative about AI and work is wrong. Not directionally wrong — structurally wrong. The story says AI is coming for knowledge workers. That generalists are dead. That the person with the better prompt wins.
@@ -126,6 +139,9 @@ The people still prompting from scratch every morning are starting from zero eve
 
 ## The 100x Team & Business
 
+![](/blog/you-are-not-generic/section-1.png)
+
+
 ### The Organizational Specificity Problem
 
 Every company has specificity. Your product serves a particular market. Your customers have particular pain points. Your team has particular strengths. Your brand speaks in a particular voice. Your strategy makes particular bets. Your clinical practice has particular protocols.
@@ -167,6 +183,9 @@ A new hire at your competitor asks the same AI for a proposal and gets the media
 ---
 
 ## The Specificity Spectrum
+
+![](/blog/you-are-not-generic/section-2.png)
+
 
 This isn't binary. It's a spectrum — and it maps almost perfectly to levels of investment sophistication.
 

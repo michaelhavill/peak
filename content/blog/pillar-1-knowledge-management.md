@@ -1,13 +1,24 @@
 ---
-title: "The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital"
-titleHighlight: "New Career Capital"
+title: 'The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital'
+titleHighlight: New Career Capital
 slug: pillar-1-knowledge-management
 pillar: 1
-theme: ["build-your-moat", "craft-and-taste"]
-description: "Your expertise was illiquid — locked in your head, accessible only one meeting at a time. The moment you financialize it through AI, the economics of your career change forever."
-date: 2026-03-28
-author: "100xpath"
-tags: ["knowledge management", "career moat", "knowledge base", "AI context", "competitive advantage"]
+theme:
+  - build-your-moat
+  - craft-and-taste
+description: >-
+  Your expertise was illiquid — locked in your head, accessible only one meeting
+  at a time. The moment you financialize it through AI, the economics of your
+  career change forever.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - knowledge management
+  - career moat
+  - knowledge base
+  - AI context
+  - competitive advantage
+heroImage: /blog/pillar-1-knowledge-management/hero.png
 ---
 
 You have a career's worth of expertise that no one can access — including you.
@@ -84,6 +95,9 @@ You become the person whose AI produces work that's unmistakably theirs. Everyon
 
 ## The 100x Team & Business
 
+![](/blog/pillar-1-knowledge-management/section-1.png)
+
+
 Your company bought AI licenses for the whole team. Adoption stalled at 20%. That's $480 per seat per year producing essentially zero ROI. The people who do use it start every interaction from scratch — like a quarterback calling a play with no knowledge of the defense. The **PM's** prompt doesn't know about engineering's constraints. The **product designer's** prompt doesn't reference the persona research or IA patterns from previous projects. The **ops leader's** workflow AI doesn't know about the clinical protocols. Each person is building on sand while your organizational intelligence sits scattered across 40 Notion pages, 12 Slack channels, and somebody's head.
 
 The punchline is: the fix isn't better prompts. It's a shared knowledge base that every team member — and every AI agent — draws from. One investment. Unlimited compounding.
@@ -99,6 +113,9 @@ The adoption gap closes because the barrier drops. People who struggled with "wh
 ---
 
 ## The Pattern Hides in Plain Sight
+
+![](/blog/pillar-1-knowledge-management/section-2.png)
+
 
 That's the wrong question — "does this work in my domain?" The right question is: "why would structured knowledge not compound in any domain?"
 

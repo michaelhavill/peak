@@ -1,12 +1,22 @@
 ---
-title: "Follow the Path to Adding 10 Team Members — Without a Single Hire"
-titleHighlight: "Without a Single Hire"
+title: Follow the Path to Adding 10 Team Members — Without a Single Hire
+titleHighlight: Without a Single Hire
 slug: 10x-team-ai-peers
-theme: ["ai-teams", "ship-faster"]
-description: "AI peers aren't assistants. They're team members with your context, your constraints, and your quality bar."
-date: 2026-03-28
-author: "100xpath"
-tags: ["AI peers", "team scaling", "productivity", "agents", "workforce"]
+theme:
+  - ai-teams
+  - ship-faster
+description: >-
+  AI peers aren't assistants. They're team members with your context, your
+  constraints, and your quality bar.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - AI peers
+  - team scaling
+  - productivity
+  - agents
+  - workforce
+heroImage: /blog/10x-team-ai-peers/hero.png
 ---
 
 The math on headcount is broken. Your team is 5 people and your roadmap demands 50. Hiring takes 3 months per role, onboarding burns another 2, and by the time someone is productive you've lost half a year of runway. That is insanity.
@@ -90,6 +100,9 @@ A **clinical coordinator** uses AI peers to handle intake assembly, scheduling, 
 
 ## The 100x Team & Business
 
+![](/blog/10x-team-ai-peers/section-1.png)
+
+
 At the team level, AI peers fundamentally rewire headcount economics. The implications for capital efficiency are massive.
 
 The traditional scaling model is linear and brutal. More work requires more people. Each person costs 3 months to hire, 1 month to onboard, 2 months to ramp. Six months from "we need help" to "help is productive." In a startup burning $200K/month, that's $1.2M before you see a single deliverable. That is insanity.
@@ -105,6 +118,9 @@ Net-net -- the hiring implication is enormous. You hire for judgment, taste, and
 ---
 
 ## Where This Applies
+
+![](/blog/10x-team-ai-peers/section-2.png)
+
 
 A **product design team of 2** produces the output of 8 by running AI peers through their user research, UX flows, design system, and product strategy docs. Product designers focus on information architecture, UX decisions, and finding elegant solutions between constraints. AI handles research synthesis, flow exploration, competitive analysis, and design variations. Two salaries, eight salaries of output. The margin on that is extraordinary.
 

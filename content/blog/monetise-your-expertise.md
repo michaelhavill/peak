@@ -1,12 +1,29 @@
 ---
-title: "Follow the Path to Monetising Your Expertise: Turn 10,000 Hours Into a Compounding Asset"
-titleHighlight: "Compounding Asset"
+title: >-
+  Follow the Path to Monetising Your Expertise: Turn 10,000 Hours Into a
+  Compounding Asset
+titleHighlight: Compounding Asset
 slug: monetise-your-expertise
-theme: ["build-your-moat", "craft-and-taste"]
-description: "Your years of craft, taste, and opinion were previously impossible to scale. Path turns illiquid expertise into a deployable, monetisable asset that compounds."
-date: 2026-03-28
-author: "100xpath"
-tags: ["monetisation", "expertise", "craft", "taste", "career capital", "knowledge base", "AI leverage", "freelance", "consulting"]
+theme:
+  - build-your-moat
+  - craft-and-taste
+description: >-
+  Your years of craft, taste, and opinion were previously impossible to scale.
+  Path turns illiquid expertise into a deployable, monetisable asset that
+  compounds.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - monetisation
+  - expertise
+  - craft
+  - taste
+  - career capital
+  - knowledge base
+  - AI leverage
+  - freelance
+  - consulting
+heroImage: /blog/monetise-your-expertise/hero.png
 ---
 
 Your expertise has a liquidity problem. Full stop.
@@ -81,6 +98,9 @@ So... what's your expertise actually worth? Not per hour. Per deployment. If you
 
 ## The 100x Team & Business
 
+![](/blog/monetise-your-expertise/section-1.png)
+
+
 Now multiply this across an entire company. Every senior person on your team has years of accumulated judgment that's trapped in their head. The **VP of Sales** who can read a deal's trajectory in 3 minutes. The **Head of Product** whose taste eliminates 60% of feature requests before they waste a sprint. The **Principal Engineer** whose architecture opinions save 4 months per bad decision avoided. The **Design Director** whose brand instinct keeps every touchpoint coherent.
 
 The punchline is: you're paying full-time salaries for this expertise and only accessing a fraction of it. Most of their judgment sits idle — locked in context that never reaches the right conversation at the right time. That's not a people problem. It's an infrastructure problem.
@@ -98,6 +118,9 @@ The adoption gap closes because the value proposition changes. AI stops being "a
 ---
 
 ## The Shift Nobody's Talking About
+
+![](/blog/monetise-your-expertise/section-2.png)
+
 
 There's a structural change happening in the economics of expertise that most people haven't clocked yet. For centuries, knowledge work has been sold as a service — by the hour, by the project, by the salary. The expert shows up, delivers insight, goes home. The insight lives in a deliverable that immediately starts depreciating.
 

@@ -1,13 +1,23 @@
 ---
-title: "Learn the Path to Hiring Doers Over Talkers"
-titleHighlight: "Doers Over Talkers"
+title: Learn the Path to Hiring Doers Over Talkers
+titleHighlight: Doers Over Talkers
 slug: pillar-4-ai-native-teams
 pillar: 4
-theme: ["ai-teams", "scale"]
-description: "AI amplifies what's already there. Give it to a team of doers and they ship 10x more. Give it to talkers and you get 10x more slide decks."
-date: 2026-03-28
-author: "100xpath"
-tags: ["team building", "AI adoption", "hiring", "execution culture", "shipping"]
+theme:
+  - ai-teams
+  - scale
+description: >-
+  AI amplifies what's already there. Give it to a team of doers and they ship
+  10x more. Give it to talkers and you get 10x more slide decks.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - team building
+  - AI adoption
+  - hiring
+  - execution culture
+  - shipping
+heroImage: /blog/pillar-4-ai-native-teams/hero.png
 ---
 
 Your $50K AI budget is generating a 10% return. That is insanity.
@@ -84,6 +94,9 @@ A **founder** described the shift: "I used to spend 20 minutes prompting and 40 
 
 ## The 100x Team & Business
 
+![](/blog/pillar-4-ai-native-teams/section-1.png)
+
+
 Building an AI-native team means solving three problems simultaneously. Most leaders only see the first one. Let me be very clear about all three.
 
 **Problem 1: Capability.** Real but solvable. Most people don't know where to start. The blank prompt field is as intimidating as a blank page. Here's what actually works: hands-on tutoring. Not webinars. Not documentation. One-on-one sessions where someone sits with your people and walks them through a real task with real iteration. At $20/hour for external AI tutoring, the ROI is obscene -- one breakthrough session often produces permanent behavior change. The **PM** who couldn't write a brief with AI now produces them 5x faster. The **product designer** who gave up after one try now explores UX directions and design solutions she'd never have considered. The **engineer** who used it for autocomplete only now uses it for architecture decisions. Deploy $200 per person and watch the returns compound.
@@ -99,6 +112,9 @@ The filter: **ship to production weekly.** Not "made progress on." Not "explored
 ---
 
 ## The Adoption Pattern Crosses Every Industry
+
+![](/blog/pillar-4-ai-native-teams/section-2.png)
+
 
 The doer-versus-talker split isn't a tech industry phenomenon. It shows up everywhere AI touches a team -- because it's fundamentally about human agency, not software. The incentive structures are identical across industries.
 

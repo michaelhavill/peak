@@ -1,12 +1,22 @@
 ---
-title: "Walk the Path to Code That Carries Your Craft"
-titleHighlight: "Carries Your Craft"
+title: Walk the Path to Code That Carries Your Craft
+titleHighlight: Carries Your Craft
 slug: coding-in-craft
-theme: ["craft-and-taste", "ship-faster"]
-description: "Generic AI ships generic code. AI with your stack constraints, patterns, and quality bar ships code that works in your reality."
-date: 2026-03-28
-author: "100xpath"
-tags: ["engineering", "code quality", "craft", "AI coding", "developer workflow"]
+theme:
+  - craft-and-taste
+  - ship-faster
+description: >-
+  Generic AI ships generic code. AI with your stack constraints, patterns, and
+  quality bar ships code that works in your reality.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - engineering
+  - code quality
+  - craft
+  - AI coding
+  - developer workflow
+heroImage: /blog/coding-in-craft/hero.png
 ---
 
 Most AI-generated code is dead on arrival. Copilot autocompletes a function, the code compiles, and then your senior engineer spends 15 minutes unfucking it -- wrong naming conventions, a pattern you deprecated last quarter, zero awareness of the shared utility that already does the same thing. Multiply that by every engineer, every day, across your entire org. That is insanity.
@@ -87,6 +97,9 @@ A **product manager** started linking specs to the engineering knowledge base. W
 
 ## The 100x Team & Business
 
+![](/blog/coding-in-craft/section-1.png)
+
+
 Here's where the economics get interesting. At the team level, engineering context packages solve the consistency problem that code review was supposed to fix but never actually did.
 
 Every team has a style. Naming patterns, error handling, testing philosophy, architecture boundaries. That style lives in the heads of 2-3 senior **engineers** and gets enforced through code review -- which means every PR is an expensive teaching moment instead of a quality gate. Senior engineers spend 30% of their time reviewing code that violates patterns the author didn't know existed. Net-net, your highest-leverage people are functioning as human linters. That is a terrible deployment of talent.
@@ -108,6 +121,9 @@ One team reduced code review cycles from 2-day average to 4 hours. Not by loweri
 ---
 
 ## Where This Applies
+
+![](/blog/coding-in-craft/section-2.png)
+
 
 The pattern is universal: your engineering context is what turns AI from a generic code generator into a team member who respects your craft. The investment is documentation. The return is compounding quality at scale.
 

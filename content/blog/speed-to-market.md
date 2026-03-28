@@ -1,12 +1,22 @@
 ---
-title: "The Path to Shipping in Weeks What Used to Take Quarters"
-titleHighlight: "Weeks What Used to Take Quarters"
+title: The Path to Shipping in Weeks What Used to Take Quarters
+titleHighlight: Weeks What Used to Take Quarters
 slug: speed-to-market
-theme: ["ship-faster", "build-your-moat"]
-description: "The teams shipping fastest aren't using better AI. They've eliminated the dead time between decisions."
-date: 2026-03-28
-author: "100xpath"
-tags: ["speed", "time to market", "shipping", "workflows", "execution"]
+theme:
+  - ship-faster
+  - build-your-moat
+description: >-
+  The teams shipping fastest aren't using better AI. They've eliminated the dead
+  time between decisions.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - speed
+  - time to market
+  - shipping
+  - workflows
+  - execution
+heroImage: /blog/speed-to-market/hero.png
 ---
 
 Your competitor just shipped the feature you've been "planning" for three months. You haven't written a line of code because the brief isn't final, designs haven't been reviewed, and engineering is blocked on specs. This is not technical debt. It's decision debt -- and every week it compounds, you're burning capital on learning you will never get back.
@@ -85,6 +95,9 @@ A **founder** went from idea to live patient portal in 2.5 weeks -- work that tr
 
 ## The 100x Team & Business
 
+![](/blog/speed-to-market/section-1.png)
+
+
 At the team level, speed to market is a systems problem. Not a people problem. Your team is talented. They're slow because the system between them is slow -- and that system is burning capital every single day it stays broken.
 
 Map any feature from idea to production. Count the handoffs. **Product** writes a brief, waits for design review. **Design** produces mockups, waits for engineering review. **Engineering** builds, waits for QA. QA tests, waits for deploy. Each "waits for" is dead time. Each handoff loses context. By the time the feature ships, it's been touched by 6 people and none of them had the full picture at any point. That is insanity.
@@ -98,6 +111,9 @@ The punchline is the compounding effect — and it's two-sided. Think of it like
 ---
 
 ## Where This Applies
+
+![](/blog/speed-to-market/section-2.png)
+
 
 A **startup founder** went from idea to live patient portal in 2.5 weeks. Not superhuman effort -- AI-assembled context at every step. User research synthesized into requirements, requirements flowing into design specs, design specs flowing into component architecture. Zero dead time. Like a quarterback getting the snap and throwing in one motion instead of holding the ball for five seconds while the pocket collapses.
 

@@ -61,6 +61,7 @@ export interface BlogPost {
   author: string;
   tags: string[];
   themes: string[];
+  heroImage: string;
   content: string;
   htmlContent: string;
   htmlCtas: string;
@@ -110,6 +111,7 @@ export function getPostBySlug(slug: string): BlogPost {
     author: data.author ?? "100xpath",
     tags: data.tags ?? [],
     themes: data.theme ?? [],
+    heroImage: data.heroImage ?? "",
     content,
     htmlContent,
     htmlCtas,

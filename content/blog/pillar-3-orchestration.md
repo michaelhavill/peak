@@ -1,13 +1,23 @@
 ---
-title: "Map the Path from AI Tasks to AI Workflows"
-titleHighlight: "AI Workflows"
+title: Map the Path from AI Tasks to AI Workflows
+titleHighlight: AI Workflows
 slug: pillar-3-orchestration
 pillar: 3
-theme: ["ship-faster", "ai-teams"]
-description: "You're using AI for the easy parts and doing the hard parts by hand. The real 100x is in the orchestration."
-date: 2026-03-28
-author: "100xpath"
-tags: ["orchestration", "workflow automation", "AI workflows", "operations", "builder mindset"]
+theme:
+  - ship-faster
+  - ai-teams
+description: >-
+  You're using AI for the easy parts and doing the hard parts by hand. The real
+  100x is in the orchestration.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - orchestration
+  - workflow automation
+  - AI workflows
+  - operations
+  - builder mindset
+heroImage: /blog/pillar-3-orchestration/hero.png
 ---
 
 The average knowledge worker spends 62% of their day on context assembly, status updates, and information routing. Not thinking. Not deciding. Not creating. Assembling. At a fully-loaded cost of $85/hour, that is $110,000 per employee per year burned on work a machine should do. That is insanity.
@@ -84,6 +94,9 @@ A **founder** running 12 simultaneous projects uses AI agents with orchestration
 
 ## The 100x Team & Business
 
+![](/blog/pillar-3-orchestration/section-1.png)
+
+
 What does orchestration look like when you zoom out from one person to an entire team? The returns compound even faster -- but only if you deploy it correctly.
 
 Most teams approach AI bottom-up. Automate Task A. Automate Task B. Call it transformation. But the workflow between A and B -- the routing, the conditional logic, the exception handling -- is still manual. You have built a patchwork of disconnected automations that creates a new kind of overhead. Let me be very clear: that is duct tape masquerading as infrastructure. It does not scale.
@@ -101,6 +114,9 @@ The result: the **clinician** still makes the clinical decision -- but walks in 
 ---
 
 ## One Pattern, Every Domain
+
+![](/blog/pillar-3-orchestration/section-2.png)
+
 
 Why does orchestration work the same way everywhere? Because the waste is the same everywhere: dead time between decisions. Every minute spent assembling context before a decision is a minute with zero ROI. Orchestration eliminates it.
 

@@ -1,12 +1,22 @@
 ---
-title: "Find the Path to Making AI Carry Your Taste"
-titleHighlight: "Carry Your Taste"
+title: Find the Path to Making AI Carry Your Taste
+titleHighlight: Carry Your Taste
 slug: taste-through-ai
-theme: ["craft-and-taste", "build-your-moat"]
-description: "Your judgment about strategy, design, hiring, and positioning took years to develop. Here's how to make AI carry it."
-date: 2026-03-28
-author: "100xpath"
-tags: ["taste", "craft", "judgment", "knowledge base", "AI quality"]
+theme:
+  - craft-and-taste
+  - build-your-moat
+description: >-
+  Your judgment about strategy, design, hiring, and positioning took years to
+  develop. Here's how to make AI carry it.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - taste
+  - craft
+  - judgment
+  - knowledge base
+  - AI quality
+heroImage: /blog/taste-through-ai/hero.png
 ---
 
 Taste is intellectual capital. You spent a decade accumulating it — pattern recognition, quality thresholds, decision frameworks — and right now you're letting it sit in a zero-yield account. You ask AI to draft a product strategy memo and it comes back sounding like a McKinsey intern who's never had a conviction in his life. Structurally competent. Generically correct. Missing every opinion that makes your thinking worth paying for.
@@ -97,6 +107,9 @@ An **engineering lead** documented his team's state management approach, API con
 
 ## The 100x Team & Business
 
+![](/blog/taste-through-ai/section-1.png)
+
+
 At the team level, taste docs solve the consistency problem that kills scaling organizations. Your **CEO's** strategic judgment lives in her head. Your **VP Product's** quality bar arrives as feedback too late to incorporate. Your **brand voice** guidelines are too vague for anyone — human or AI — to actually deploy. Your **clinical director's** care philosophy only reaches the team through hallway conversations.
 
 Net-net — that's not a system. That's a single point of failure masquerading as leadership.
@@ -118,6 +131,9 @@ Here's the thing about breadth. When a startup encodes only design taste, they g
 ---
 
 ## Where This Applies
+
+![](/blog/taste-through-ai/section-2.png)
+
 
 The through line is scale economics: the more specific your taste documentation, the more your AI output diverges from generic. Every domain. Every function. No exceptions.
 

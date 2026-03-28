@@ -1,12 +1,22 @@
 ---
-title: "Chart the Path from Individual Moat to Company Moat"
-titleHighlight: "Company Moat"
+title: Chart the Path from Individual Moat to Company Moat
+titleHighlight: Company Moat
 slug: building-moat-at-scale
-theme: ["build-your-moat", "scale"]
-description: "Your personal knowledge base is a career moat. Your company's knowledge base is a competitive moat. Here's how to scale one into the other."
-date: 2026-03-28
-author: "100xpath"
-tags: ["scaling", "competitive moat", "organizational knowledge", "growth", "compound advantage"]
+theme:
+  - build-your-moat
+  - scale
+description: >-
+  Your personal knowledge base is a career moat. Your company's knowledge base
+  is a competitive moat. Here's how to scale one into the other.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - scaling
+  - competitive moat
+  - organizational knowledge
+  - growth
+  - compound advantage
+heroImage: /blog/building-moat-at-scale/hero.png
 ---
 
 You built the personal knowledge base. Your AI produces work that's unmistakably yours. You're in the top 1% of operators. Then your **CEO** walks in and asks: "How do we make the whole company work like this?" And suddenly you realize the distance between one person's moat and an organization's moat is the difference between a good stock pick and a fund that compounds at 30% annually.
@@ -77,6 +87,9 @@ A **founder** deposits strategic decisions with the evidence that drove them. Si
 
 ## The 100x Team & Business
 
+![](/blog/building-moat-at-scale/section-1.png)
+
+
 Scaling a knowledge moat requires three layers. That's it. Three — and most companies get zero of them right.
 
 **1. Contribution** — every team interaction generates knowledge automatically. Customer calls get synthesized. Design decisions get recorded. **Engineering** choices get documented. Sprint retros get captured. **Clinical** encounters enrich the base. The punchline is this: contribution cannot be extra work. If people have to "remember to add to the knowledge base," they won't. That is just human nature. The system must capture knowledge as a byproduct of normal work — like a poker table that records every hand automatically.
@@ -92,6 +105,9 @@ Picture this — one company deployed this exact loop: Granola captures calls, A
 ---
 
 ## Where This Applies
+
+![](/blog/building-moat-at-scale/section-2.png)
+
 
 A **healthcare organization** scaled their clinical knowledge base across 50 providers. Every patient encounter enriches the base. Every **provider's** AI draws from it. After 6 months, a new hire's AI has the context of someone who's been at the organization for 3 years. Care consistency improved measurably. That's a $2M+ onboarding cost vanishing into thin air.
 

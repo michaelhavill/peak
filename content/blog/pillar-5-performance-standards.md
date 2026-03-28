@@ -1,13 +1,23 @@
 ---
-title: "The Path from Commoditized to Irreplaceable"
-titleHighlight: "Irreplaceable"
+title: The Path from Commoditized to Irreplaceable
+titleHighlight: Irreplaceable
 slug: pillar-5-performance-standards
 pillar: 5
-theme: ["craft-and-taste", "build-your-moat"]
-description: "AI-assisted work is the new baseline. The builders who measure impact over effort are pulling away from everyone else."
-date: 2026-03-28
-author: "100xpath"
-tags: ["performance", "quality standards", "builder identity", "AI-native work", "career growth"]
+theme:
+  - craft-and-taste
+  - build-your-moat
+description: >-
+  AI-assisted work is the new baseline. The builders who measure impact over
+  effort are pulling away from everyone else.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - performance
+  - quality standards
+  - builder identity
+  - AI-native work
+  - career growth
+heroImage: /blog/pillar-5-performance-standards/hero.png
 ---
 
 Most organizations are running a broken incentive structure. Full stop. A **product designer** ships three polished homepage concepts in an afternoon — her manager asks if she "actually thought about them." A junior **engineer** delivers code that matches senior output quality — peer review flags it as "AI-generated." You build a production-grade prototype in 2.5 weeks that would have taken a legacy team 6 months — and leadership's first instinct is suspicion, not celebration. That is insanity.
@@ -81,6 +91,9 @@ A **clinical leader** faced identical friction. AI-assisted clinical notes — c
 
 ## The 100x Team & Business
 
+![](/blog/pillar-5-performance-standards/section-1.png)
+
+
 The organizational challenge is simple to describe and brutal to execute: redesign how you evaluate work. Most organizations are not ready for this conversation. They need to have it anyway.
 
 Here's the thing. Most performance systems — formal and informal — still deploy effort as a proxy for quality. Annual reviews reward "dedication" and "thoroughness," which in practice means "spent a lot of visible hours on it." Promotions go to people who demonstrate effort theater, not shipped impact. The incentive structure is broken at the root. Like playing poker and rewarding the player who agonizes longest over each hand instead of the one who reads the table and wins.
@@ -101,6 +114,9 @@ Leaders — **founders**, **CTOs**, **clinical directors**, **ops leaders** — 
 ---
 
 ## The Speed Paradox Hits Every Industry
+
+![](/blog/pillar-5-performance-standards/section-2.png)
+
 
 This is not a tech-industry phenomenon. The speed paradox shows up wherever AI-capable operators meet legacy quality assumptions. The pattern is universal — and universally mishandled.
 

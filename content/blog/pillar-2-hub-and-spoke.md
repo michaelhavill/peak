@@ -1,13 +1,23 @@
 ---
-title: "See the Path to Owning the Center and Renting the Edges"
-titleHighlight: "Renting the Edges"
+title: See the Path to Owning the Center and Renting the Edges
+titleHighlight: Renting the Edges
 slug: pillar-2-hub-and-spoke
 pillar: 2
-theme: ["scale", "ship-faster"]
-description: "The builders who own their orchestration layer can swap any tool overnight. Everyone else is locked in."
-date: 2026-03-28
-author: "100xpath"
-tags: ["architecture", "hub-and-spoke", "vendor independence", "infrastructure", "antifragile"]
+theme:
+  - scale
+  - ship-faster
+description: >-
+  The builders who own their orchestration layer can swap any tool overnight.
+  Everyone else is locked in.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - architecture
+  - hub-and-spoke
+  - vendor independence
+  - infrastructure
+  - antifragile
+heroImage: /blog/pillar-2-hub-and-spoke/hero.png
 ---
 
 Six months ago you picked an AI platform. Your team shipped 14 workflows on top of it. Now a competitor launches something 3x faster at half the price. You cannot switch. Your workflows are fused to the vendor's data model. Your prompts call proprietary APIs. Your team learned one UI. You didn't notice the lock-in because the first 90 days were free — and that is exactly how the incentive structure was designed.
@@ -81,6 +91,9 @@ Consider this — it matters more for AI tools than any other category. The land
 
 ## The 100x Team & Business
 
+![](/blog/pillar-2-hub-and-spoke/section-1.png)
+
+
 At the company level, hub-and-spoke is the difference between strategic flexibility and slow death by vendor dependency. Let me be very clear about what usually happens.
 
 Most enterprise AI strategies follow a playbook designed to fail: evaluate vendors for 6 months, pick one, sign a 3-year contract worth $500K+, build everything on the platform. Then the vendor's roadmap diverges from yours. Feature requests vanish into a backlog you cannot see or influence. But switching costs are now $2M and 18 months of migration — so you stay. You've outsourced your strategic flexibility to a company whose incentive structure is to keep you locked in. That is insanity.
@@ -96,6 +109,9 @@ This requires building custom interfaces for different teams — **business**, *
 ---
 
 ## The Same Pattern, Different Domains
+
+![](/blog/pillar-2-hub-and-spoke/section-2.png)
+
 
 Why does this pattern show up everywhere? Because the underlying economics are identical across every domain. There are only two categories: the thing that generates your core value — the hub — and everything else — spokes. Once you see it, you cannot unsee it.
 

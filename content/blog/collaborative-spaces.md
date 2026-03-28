@@ -1,12 +1,22 @@
 ---
-title: "Build the Path to Workspaces Where Humans and AI Actually Collaborate"
-titleHighlight: "Actually Collaborate"
+title: Build the Path to Workspaces Where Humans and AI Actually Collaborate
+titleHighlight: Actually Collaborate
 slug: collaborative-spaces
-theme: ["ai-teams", "scale"]
-description: "Your AI tools live in one tab. Your team lives in another. Here's how to build the shared space between them."
-date: 2026-03-28
-author: "100xpath"
-tags: ["collaboration", "workspaces", "AI integration", "team workflows", "surfaces"]
+theme:
+  - ai-teams
+  - scale
+description: >-
+  Your AI tools live in one tab. Your team lives in another. Here's how to build
+  the shared space between them.
+date: 2026-03-28T00:00:00.000Z
+author: 100xpath
+tags:
+  - collaboration
+  - workspaces
+  - AI integration
+  - team workflows
+  - surfaces
+heroImage: /blog/collaborative-spaces/hero.png
 ---
 
 Every person on your team is destroying value right now. The **product manager** prompts Claude, copies the output, pastes it into Notion, then Slacks the **product designer**. The **product designer** opens a fresh AI session with zero inherited context. The **engineer** starts a third session — tabula rasa. Three people using AI. Three completely isolated knowledge graphs. That is insanity.
@@ -79,6 +89,9 @@ A **clinical leader** connected care protocols, patient population data, and out
 
 ## The 100x Team & Business
 
+![](/blog/collaborative-spaces/section-1.png)
+
+
 Think about it — at the team level, collaborative spaces mean shared surfaces where humans and AI contribute with full context. The economics here are staggering.
 
 Most teams run two parallel worlds: the human world (Slack, meetings, docs) and the AI world (individual prompt sessions). Information flows between them through copy-paste, manual summaries, and meetings where someone explains "what the AI said." Net-net, this doubles communication overhead instead of cutting it. You are paying for AI and then paying again to manually distribute its output. That is like buying a dishwasher and then hand-washing every plate before you load it.
@@ -92,6 +105,9 @@ One team deployed custom interfaces for three groups: business, **clinical**, an
 ---
 
 ## Where This Applies
+
+![](/blog/collaborative-spaces/section-2.png)
+
 
 A **product team** built a shared research surface. Customer interviews, competitive analysis, usage data — all feeding one AI-accessible layer. When any team member asks a product question, the AI answers with the full research context. Not the 15% slice one person happens to remember. The information asymmetry inside their own team dropped to near zero. That alone eliminated two weekly syncs.
 

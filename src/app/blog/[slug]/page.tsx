@@ -103,6 +103,18 @@ export default async function BlogPostPage({
           </div>
         </div>
 
+        {post.heroImage && (
+          <div className="mb-10 -mx-6 md:-mx-8 rounded-lg overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.heroImage}
+              alt={post.title}
+              className="w-full h-auto"
+              style={{ borderRadius: "8px" }}
+            />
+          </div>
+        )}
+
         <article
           className="prose-100x"
           dangerouslySetInnerHTML={{ __html: post.htmlContent }}
