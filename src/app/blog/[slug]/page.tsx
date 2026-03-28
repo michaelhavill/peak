@@ -1,6 +1,7 @@
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { LEARN_THEMES } from "@/lib/constants";
 import PersonaPathway from "@/components/PersonaPathway";
+import ShareBar from "@/components/ShareBar";
 import Link from "next/link";
 
 export function generateStaticParams() {
@@ -92,10 +93,15 @@ export default async function BlogPostPage({
           {post.description}
         </p>
 
-        <div
-          className="w-full h-px mb-10"
-          style={{ backgroundColor: "var(--border-subtle)" }}
-        />
+        <div className="flex items-center justify-between mb-10">
+          <div
+            className="flex-1 h-px"
+            style={{ backgroundColor: "var(--border-subtle)" }}
+          />
+          <div className="ml-4">
+            <ShareBar title={post.title} slug={slug} />
+          </div>
+        </div>
 
         <article
           className="prose-100x"
@@ -111,6 +117,13 @@ export default async function BlogPostPage({
             dangerouslySetInnerHTML={{ __html: post.htmlCtas }}
           />
         )}
+
+        <div
+          className="mt-10 pt-6 flex justify-end"
+          style={{ borderTop: "1px solid var(--border-subtle)" }}
+        >
+          <ShareBar title={post.title} slug={slug} />
+        </div>
       </div>
     </main>
   );
