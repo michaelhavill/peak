@@ -14,6 +14,51 @@ Here's what's actually happening: it has zero access to the decades of judgment 
 
 **Your taste isn't just about aesthetics. It's about every domain where you have opinions that took years to form — strategy, hiring, product direction, brand voice, pricing, org design, and positioning.** Right now, none of it reaches your AI. That's backwards.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● AI WITHOUT YOUR TASTE               ● AI CARRYING YOUR TASTE                │
+│                                                                                 │
+│  Your prompt:                          Your prompt:                             │
+│  "Draft a product strategy"            "Draft a product strategy"               │
+│                                                                                 │
+│           ↓                                       ↓                             │
+│                                        ┌──────────────────────┐                │
+│  AI draws from:                        │ YOUR TASTE DOC       │                │
+│  The entire internet.                  │                      │                │
+│  Everyone's opinions.                  │ "Lead with customer  │                │
+│  No one's judgment.                    │  pain, not TAM"      │                │
+│                                        │ "Kill features that  │                │
+│           ↓                            │  don't move retention │                │
+│                                        │  within 2 sprints"   │                │
+│  Output:                               │ "Pricing: value-based│                │
+│  McKinsey intern's first               │  never cost-plus"    │                │
+│  attempt. Structurally                 └──────────┬───────────┘                │
+│  competent. Missing every                         ↓                             │
+│  opinion that makes your               Output:                                  │
+│  thinking valuable.                    Sounds like you wrote it.                │
+│                                        Your framing. Your opinions.             │
+│  Tax: 45 min rewriting.               Your quality bar. First draft.           │
+│  Every. Single. Time.                  Tax: 0 min. Judgment only.              │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  Your AI sounds like everyone          Your AI sounds like you.                 │
+│  else's. Your judgment is              Taste compounds. After 6 mo,             │
+│  invisible. You're a prompt            your AI carries judgment a               │
+│  operator.                             new hire needs a year to get.            │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  Team quality depends on who           Taste scales without bottlenecks.        │
+│  reviews it. Founder becomes           New PM's first brief matches             │
+│  the bottleneck.                       the org's quality bar. Day one.          │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 <!-- toggle: individual -->
 
 ## The 100x Individual

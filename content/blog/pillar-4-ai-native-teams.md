@@ -15,6 +15,48 @@ The gap isn't the technology. It's the people. And not in the way you think.
 
 **The 20% who adopted AI already had the trait that matters — they do things instead of describing things.** The tools just made that trait visible. That's the uncomfortable truth.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● HOW MOST TEAMS ADOPT AI             ● HOW A 100x OPERATOR BUILDS TEAMS      │
+│                                                                                 │
+│  ┌────────────────────────────┐        ┌────────────────────────────┐           │
+│  │   TEAM AI ADOPTION         │        │   TEAM AI ADOPTION         │           │
+│  │                            │        │                            │           │
+│  │   ██ 3 people use daily    │        │   ████████████████ doers   │           │
+│  │   ░░ 5 tried it once      │        │   Ship weekly. No excuses. │           │
+│  │   ░░ rest never logged in  │        │                            │           │
+│  │                            │        │   Hire: agency > domain    │           │
+│  │   $50K budget              │        │   Train: 1:1 tutoring      │           │
+│  │   $5K of value             │        │   Measure: shipped output  │           │
+│  └────────────────────────────┘        └────────────────────────────┘           │
+│                                                                                 │
+│  The talker:                           The doer:                                │
+│  "I explored several AI options        "I shipped it. Here's the PR.            │
+│   and I'm preparing a deck on          Feedback by EOD and I'll                 │
+│   our recommended approach..."         iterate tomorrow morning."               │
+│                                                                                 │
+│  AI amplifies what's already           AI amplifies what's already              │
+│  there → 10x more slide decks.         there → 10x more shipped work.           │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  "Getting up to speed" for             Shipped 3 things in week 1.              │
+│  months. AI tools collecting           AI made the trait visible.               │
+│  dust.                                 Undeniable.                              │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  20% adoption. 80% wasted             80% adoption. Knowledge base              │
+│  licenses. Competitors have            as onramp. Best people                   │
+│  identical tools, same output.         retained because culture                 │
+│  ░░░░░░░░░░░░░░░░░░░░                 rewards speed, not theater.              │
+│                                        ████████████████████                     │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 <!-- toggle: individual -->
 
 ## The 100x Individual

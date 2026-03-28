@@ -12,6 +12,48 @@ Your team uses AI in isolation. The **product manager** prompts Claude in one ta
 
 **The problem isn't that your team isn't using AI. It's that your AI doesn't know your team exists.** That's the design problem nobody's talking about.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● HOW MOST TEAMS USE AI               ● HOW A 100x TEAM COLLABORATES          │
+│                                                                                 │
+│  Parallel monologues:                  Shared brain:                            │
+│                                                                                 │
+│  ┌─────┐    ┌─────┐    ┌─────┐        ┌─────────────────────────────┐          │
+│  │ PM  │    │ Des │    │ Eng │        │   SHARED CONTEXT LAYER      │          │
+│  │  ↕  │    │  ↕  │    │  ↕  │        │                             │          │
+│  │ AI  │    │ AI  │    │ AI  │        │  PM ←→ ┌────┐ ←→ Design    │          │
+│  └──┬──┘    └──┬──┘    └──┬──┘        │        │ AI │              │          │
+│     │          │          │            │  Eng ←→│    │←→ Ops       │          │
+│     ↓          ↓          ↓            │        └────┘              │          │
+│  copy/paste  copy/paste  starts       │  All read from + write to  │          │
+│  to Notion   to Slack    from zero    │  the same knowledge base.  │          │
+│                                        └─────────────────────────────┘          │
+│  PM's AI doesn't know                                                          │
+│  Eng constraints.                      PM's insight enriches                    │
+│  Des AI doesn't know                   Des AI automatically.                    │
+│  user research.                        Eng constraints flow to                  │
+│  Eng AI doesn't know                   Product without a meeting.               │
+│  the brief.                            Nothing lost in translation.             │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  You're a copy-paste bridge            You're connected to the                  │
+│  between disconnected tools.           full team's intelligence.                │
+│  Context dies at every                 Every colleague's work                   │
+│  handoff.                              makes your AI smarter.                   │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  Meetings exist to share               Context flows without                    │
+│  context that should already           meetings. "That's not                    │
+│  be shared. Double overhead.           technically feasible" → 0.               │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 <!-- toggle: individual -->
 
 ## The 100x Individual

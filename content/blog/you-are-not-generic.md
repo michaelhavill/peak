@@ -16,6 +16,49 @@ It's wrong. Not because AI isn't transformative — it is. But because the story
 
 The moment you make that specificity available to AI, you stop competing with it. You start compounding through it. That's the whole game.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● THE SPECIFICITY SPECTRUM                                                     │
+│                                                                                 │
+│  Where most people stop:               Where the 1% lives:                     │
+│                                                                                 │
+│  Level 0  ░░░░░░░░░░░░░░░░░░░░        Level 4  ████████████████████            │
+│  Generic prompting                     Compounding specificity                  │
+│  Same input → same output              Every interaction sharpens the AI        │
+│                                                                                 │
+│  Level 1  ░░░░░░░░░░░░░░░░░░░░                                                 │
+│  Better prompting                      ┌──────────────────────────┐             │
+│  Marginal. Anyone replicates           │  YOUR SPECIFICITY        │             │
+│  it in a weekend.                      │                          │             │
+│                                        │  Pattern recognition     │             │
+│           ↑                            │  + Quality thresholds    │             │
+│      99% of people                     │  + Decision frameworks   │             │
+│      fighting over                     │  + Domain scars          │             │
+│      prompt tips                       │  + Taste & craft rules   │             │
+│                                        │                          │             │
+│                                        │  = Output that's         │             │
+│                                        │    unmistakably yours     │             │
+│                                        └──────────────────────────┘             │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  Competing with AI. Replaceable        Compounding through AI.                  │
+│  by anyone with the same               After 1 year: encoded judgment           │
+│  $20/month subscription.               no layoff can touch.                     │
+│  ░░░░░░░░░░░░░░░░░░░░ generic          ████████████████████ irreplaceable       │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  Same AI, same output as               12 months of encoded org                 │
+│  every competitor. No moat.            judgment. Competitors can                │
+│  Race to the bottom.                   buy the same models — not               │
+│  ░░░░░░░░░░░░░░░░░░░░ commodity        your accumulated specificity.            │
+│                                        ████████████████████ moat                │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 <!-- toggle: individual -->
 
 ## The 100x Individual

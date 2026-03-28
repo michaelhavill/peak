@@ -13,6 +13,42 @@ Here's what's actually happening. You've spent years — maybe a decade, maybe t
 
 All of it locked in your head. Invisible to every AI tool you use.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● HOW MOST PEOPLE USE AI TODAY        ● HOW A 100x OPERATOR USES AI           │
+│                                                                                 │
+│  You ──→ Generic Prompt ──→ Claude     You ──→ Knowledge Base ──→ Claude        │
+│                                              ┌──────────────┐                   │
+│  "Write me a product brief"                  │ 12 yrs taste │                   │
+│                                              │ 200+ calls   │                   │
+│           ↓                                  │ Team context  │                   │
+│                                              │ Domain rules  │                   │
+│  Generic output that                         └──────┬───────┘                   │
+│  sounds like everyone                               ↓                           │
+│  and no one.                                                                    │
+│                                        Output that sounds like you.             │
+│  Then you spend 45 min                 First draft. No rewriting.               │
+│  rewriting it to sound                                                          │
+│  like you.                             That 45 min? Gone. Every time.           │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  You're replaceable. Anyone            You're the person whose AI               │
+│  with the same prompt gets             produces work no one else's              │
+│  the same result.                      can. That's a moat.                      │
+│  ░░░░░░░░░░░░░░░░░░░░ 20%             ████████████████████ 100%                │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  AI budget producing generic           Every interaction makes the              │
+│  output. 20% adoption.                 system smarter. 12-month                 │
+│  Competitors have the same.            head start no one can buy.               │
+│  ░░░░░░░░░░░░░░░░░░░░ 20%             ████████████████████ 100%                │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 So you prompt Claude and get back something written for everyone and no one. You tweak. You retry. You wonder if the tool is overhyped. **It's not the tool. It's that your AI has zero access to the thing that makes you, you.** That's the whole problem. And once you see it, the fix is obvious.
 
 <!-- toggle: individual -->

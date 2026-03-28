@@ -15,6 +15,45 @@ You automated the easy parts. The hard parts — the information assembly, the r
 
 **The builder who figures out orchestration doesn't just use AI. They build the machine that makes everyone around them 10x more effective.** That's the real 100x.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● HOW MOST PEOPLE USE AI TODAY        ● HOW A 100x OPERATOR USES AI           │
+│                                                                                 │
+│  LEVEL 1: Task Replacement             LEVEL 2: Decision Preparation            │
+│                                                                                 │
+│  You ──→ "Summarize this"              ┌─────────────────────────────┐          │
+│  You ──→ "Draft that email"            │  OVERNIGHT ORCHESTRATION    │          │
+│  You ──→ "Generate this code"          │                             │          │
+│                                        │  Pull customer feedback ██  │          │
+│  Saves minutes.                        │  Cross-ref with roadmap ██  │          │
+│  Then you spend 3 hours                │  Map to priorities     ██░  │          │
+│  manually assembling context           │  Flag anomalies        ██░  │          │
+│  for the actual decision.              │  Assemble 2-page brief ███  │          │
+│                                        │                             │          │
+│     ┌──────────────────┐               └─────────────┬───────────────┘          │
+│     │ 70% assembly     │                             ↓                          │
+│     │ 30% judgment     │               You walk in with full context.           │
+│     │ That's backwards │               You make the decision.                   │
+│     └──────────────────┘               30 min standup → 12 min.                │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  You do tasks AI assigns.              You build the machine.                   │
+│  Interchangeable.                      The machine makes everyone               │
+│  ░░░░░░░░░░░░░░░░░░░░                 around you 10x more effective.           │
+│                                        ████████████████████                     │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  Patchwork automations.                End-to-end workflow engine.              │
+│  New overhead managing                 Dead time between decisions              │
+│  disconnected pieces.                  eliminated. 3x throughput.               │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 <!-- toggle: individual -->
 
 ## The 100x Individual

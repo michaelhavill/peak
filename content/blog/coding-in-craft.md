@@ -12,6 +12,52 @@ You use Copilot and it autocompletes a function. The code works. It also ignores
 
 Here's what's actually happening: **AI that doesn't know your codebase ships code that breaks on contact with your reality.** AI that knows your constraints, your patterns, your quality bar? That ships code that belongs. That's the whole difference.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● COPILOT WITHOUT YOUR CONTEXT        ● AI WITH YOUR ENGINEERING CONTEXT       │
+│                                                                                 │
+│  Autocomplete suggests:                Context package loaded:                  │
+│                                                                                 │
+│  function getUser(id) {                ┌──────────────────────────┐             │
+│    // generic pattern                  │ YOUR CODEBASE REALITY    │             │
+│    // wrong naming convention          │                          │             │
+│    // deprecated approach              │ Architecture patterns    │             │
+│    // reinvents existing util          │ Naming conventions       │             │
+│  }                                     │ Shared utilities         │             │
+│                                        │ Deploy constraints       │             │
+│  You accept it.                        │ Anti-patterns (scars)    │             │
+│  Then spend 15 min fixing              │ "Never do X because..."  │             │
+│  it to match your standards.           └──────────┬───────────────┘             │
+│  × every engineer × every day.                    ↓                             │
+│                                                                                 │
+│  Acceptance rate: 60%                  Code uses your patterns.                 │
+│                                        Respects your conventions.               │
+│                                        Knows about shared utils.                │
+│                                        Follows your deploy rules.               │
+│                                                                                 │
+│                                        Acceptance rate: 95%                     │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  You're a human linter.               You're the person who built               │
+│  Catching AI mistakes all day.         the context that makes                   │
+│  AI creates work instead of            everyone's AI smarter.                   │
+│  saving it.                            Code review is about ideas,              │
+│  ░░░░░░░░░░░░░░░░░░░░                 not style fixes.                         │
+│                                        ████████████████████                     │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  Code review: 2 days avg.             Code review: 4 hours avg.                │
+│  Senior engineers spend 30%            Juniors write idiomatic code             │
+│  of time on pattern violations.        in week 1, not month 3.                  │
+│  Onboarding: 3 months.                Onboarding: 2 weeks.                     │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 <!-- toggle: individual -->
 
 ## The 100x Individual

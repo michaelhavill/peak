@@ -12,6 +12,59 @@ Your team is 5 people and your roadmap needs 50. Hiring takes months. Contractor
 
 But here's what most teams miss entirely. **When your AI has your knowledge base, your taste docs, and your domain context — it stops being an assistant and starts being a peer.** A peer that works at 3am, never forgets context, and produces output grounded in your specific situation. That's the shift.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● YOUR INTENT                          ● AGENT SWARM                           │
+│                                                                                 │
+│  "Pull our persona research            Loading knowledge base context  ██░  85% │
+│   and KPI targets, spawn               Spawning research agent         ██░  70% │
+│   agents to draft the                  Spawning design agents (3)      ██░  55% │
+│   product brief from                   Spawning architecture agent     ██░  65% │
+│   first principles."                                                            │
+│                                         ⊙ Agents complete — artifacts ready     │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  ● TRADITIONAL SCALING                  ● AI PEER SCALING                       │
+│                                                                                 │
+│  Need 50-person output?                Need 50-person output?                   │
+│                                                                                 │
+│  Hire 50 people.                       5 humans + AI peers:                     │
+│  3 mo hiring per role.                                                          │
+│  1 mo onboarding.                      ┌──────┐ ┌──────┐ ┌──────┐             │
+│  2 mo ramp-up.                         │ You  │ │Peer 1│ │Peer 2│             │
+│  = 6 months to productive.             │ ████ │ │ ████ │ │ ████ │             │
+│                                        │ judge│ │resrch│ │draft │             │
+│  In a startup, 6 months                └──────┘ └──────┘ └──────┘             │
+│  is a lifetime.                        ┌──────┐ ┌──────┐                       │
+│                                        │Peer 3│ │Peer 4│  Each peer has       │
+│                                        │ ████ │ │ ████ │  your knowledge      │
+│                                        │synth │ │review│  base, your taste,   │
+│                                        └──────┘ └──────┘  your constraints.   │
+│                                                                                 │
+│                                        You: direct + refine.                    │
+│                                        5 humans = output of 15.                 │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  40 items on the list.                 40 items on the list.                    │
+│  Do 5. Let 35 rot.                     Direct agents on all 40.                │
+│  That's not strategy.                  Review + refine the output.              │
+│  That's survival.                      That's leverage.                         │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  Hire for throughput.                  Hire for judgment.                        │
+│  Headcount = output.                   One senior person directing              │
+│  Linear scaling.                       5 AI peers > 5 juniors.                  │
+│  ░░░░░░░░░░░░░░░░░░░░                 Exponential scaling.                     │
+│                                        ████████████████████                     │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 <!-- toggle: individual -->
 
 ## The 100x Individual

@@ -13,6 +13,47 @@ You build a professional-quality prototype in 2.5 weeks — work that would have
 
 Here's what's actually happening. Your organization runs on an unspoken equation: time invested = quality delivered. That equation was roughly true for decades. **It is now catastrophically wrong. And the people producing the best work are being penalized for it.** That's the hard truth. And naming it is half the work.
 
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  ● HOW MOST ORGS MEASURE WORK          ● HOW A 100x OPERATOR MEASURES          │
+│                                                                                 │
+│  THE OLD EQUATION:                     THE NEW EQUATION:                        │
+│                                                                                 │
+│  Time Invested ═══> Quality            Judgment Applied ═══> Impact             │
+│                                                                                 │
+│  "That was fast.                       "That was excellent.                     │
+│   What did we miss?"                    What's next?"                           │
+│                                                                                 │
+│  ┌─────────────────────────┐           ┌─────────────────────────┐             │
+│  │  3 days on a brief      │           │  40 min on judgment      │             │
+│  │  ████████████████ "good" │           │  ████ "excellent"        │             │
+│  │                         │           │                          │             │
+│  │  20 min on same brief   │           │  Same brief, same quality│             │
+│  │  ██ "suspicious"        │           │  Shipped Mon, not Thurs  │             │
+│  │                         │           │  3 extra days to build   │             │
+│  │  Same quality.          │           │  the next thing.         │             │
+│  │  One gets praised.      │           │                          │             │
+│  │  One gets questioned.   │           │  Speed IS the signal.    │             │
+│  └─────────────────────────┘           └──────────────────────────┘             │
+│                                                                                 │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│                                                                                 │
+│  CAREER IMPACT                         CAREER IMPACT                            │
+│  Best builders slow down to            Best builders ship fast and              │
+│  match cultural expectations.          explain their process. Trust             │
+│  Managing perception > shipping.       earned through evidence.                 │
+│  ░░░░░░░░░░░░░░░░░░░░ commoditized    ████████████████████ irreplaceable       │
+│                                                                                 │
+│  BUSINESS IMPACT                       BUSINESS IMPACT                          │
+│  Top talent leaves for orgs            Top talent stays because                 │
+│  that reward speed. Culture            speed + quality = celebrated.            │
+│  of performance theater.               3x shipped outcomes / week.              │
+│  ░░░░░░░░░░░░░░░░░░░░ declining       ████████████████████ compounding         │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
 <!-- toggle: individual -->
 
 ## The 100x Individual
