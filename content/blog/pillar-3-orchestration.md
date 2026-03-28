@@ -11,7 +11,7 @@ tags: ["orchestration", "workflow automation", "AI workflows", "operations", "bu
 
 The average knowledge worker spends 62% of their day on context assembly, status updates, and information routing. Not thinking. Not deciding. Not creating. Assembling. At a fully-loaded cost of $85/hour, that is $110,000 per employee per year burned on work a machine should do. That is insanity.
 
-You use AI to summarize a doc. Draft an email. Generate a code snippet. You count these as wins. Meanwhile your **care coordinator** still pulls patient data from four systems before every review. Your **ops lead** still spends a full day routing tasks that should route themselves. Your **designer** still burns 20 minutes re-establishing context everyone should already have.
+You use AI to summarize a doc. Draft an email. Generate a code snippet. You count these as wins. Meanwhile your **care coordinator** still pulls patient data from four systems before every review. Your **ops lead** still spends a full day routing tasks that should route themselves. Your **product designer** still burns 20 minutes re-establishing context everyone should already have.
 
 Look -- you automated the easy parts. The hard parts -- the information assembly, the routing logic, the decision preparation -- are still entirely manual. You are playing poker and folding every strong hand before the flop.
 
@@ -69,7 +69,7 @@ The shift from level 1 to level 2 changes everything. Think of it like seat posi
 
 A **product manager** deployed this exact pattern and the ROI was immediate. Each morning his AI reviews overnight customer feedback, cross-references it with the roadmap, maps patterns to existing priorities, and assembles a 2-page brief. He walks into standup holding cards nobody else has seen. Standup dropped from 30 minutes to 12 -- not because the meeting got shorter, but because the first 18 minutes of context assembly vanished. That is $47,000 in reclaimed team hours per year. From one workflow.
 
-A **designer** applied the same principle to her review process. Before each design review, her AI pulls persona data, references similar patterns from the design system, and flags accessibility issues. She walks in ready to make strategic calls instead of spending 20 minutes re-establishing context. Net-net: she reclaimed 7 hours per week of pure design time. That compounds.
+A **product designer** applied the same principle to her review process. Before each design review, her AI pulls persona data, maps UX flows against user research, references similar patterns from the design system, and flags accessibility and IA issues. She walks in ready to make strategic calls instead of spending 20 minutes re-establishing context. Net-net: she reclaimed 7 hours per week of pure design time. That compounds.
 
 An **engineering lead** has AI pre-assemble context for every ticket -- product rationale, design decisions, technical constraints, related past work. Engineers start building on day 1 of the sprint instead of day 3. Sprint velocity increased 30% without a single additional hour worked. Tell me another investment that returns 30% with zero incremental cost.
 
@@ -95,7 +95,7 @@ The critical design decision -- and this is where most teams get it wrong: **sta
 
 The result: the **clinician** still makes the clinical decision -- but walks in holding every card they need. Context assembly dropped from 45 minutes to 5. Decision quality went up. Throughput increased 3x without adding headcount. That is not a 3% improvement. That is a 3x multiple on the same cost base.
 
-**Here is the uncomfortable truth: AI cannot be trusted alone.** Every AI output requires human review. The 20 minutes of back-and-forth refinement per task is not overhead -- it is the quality layer that prevents the organization from shipping garbage. The orchestration engine routes AI output to the right human reviewer -- **PM**, **designer**, **engineer**, **clinical lead** -- with the right context for a quality check. Full stop.
+**Here is the uncomfortable truth: AI cannot be trusted alone.** Every AI output requires human review. The 20 minutes of back-and-forth refinement per task is not overhead -- it is the quality layer that prevents the organization from shipping garbage. The orchestration engine routes AI output to the right human reviewer -- **PM**, **product designer**, **engineer**, **clinical lead** -- with the right context for a quality check. Full stop.
 
 ---
 
@@ -105,7 +105,7 @@ Why does orchestration work the same way everywhere? Because the waste is the sa
 
 A **sales operations team** orchestrated deal reviews. Before each pipeline meeting, AI assembles account context from CRM data, email history, call transcripts, and competitive intelligence. The sales leader walks in reading the table instead of building it. Pipeline reviews went from 90-minute data-gathering sessions to 30-minute strategy discussions. That is $312,000 in reclaimed senior leadership time per year across a 20-person sales org.
 
-A **product design team** orchestrated research synthesis. User interviews get transcribed, themes extracted, patterns mapped to personas, and conflicts with prior research flagged -- before the **researcher** opens their analysis tool. The job shifted from "find the patterns" to "validate and deepen the patterns the system found." That is a fundamentally higher-leverage position.
+A **product design team** orchestrated UX research synthesis. User interviews get transcribed, themes extracted, patterns mapped to personas, and conflicts with prior research flagged -- before the **researcher** opens their analysis tool. The job shifted from "find the patterns" to "validate and deepen the patterns the system found." That is a fundamentally higher-leverage position.
 
 A **clinical intake team** orchestrated new patient onboarding. Data flows through verification, pre-authorization, history assembly, and team assignment -- each step triggered by the previous one, with human checkpoints at the three most critical decisions. Average intake time dropped from 4 hours to 45 minutes. That is an 81% reduction with better outcomes.
 
@@ -137,7 +137,7 @@ These questions reveal whether you're using AI for the easy parts and still doin
 
 4. **Where are the human checkpoints in your workflows?** If the answer is "nowhere" — you're trusting AI alone, and you shouldn't be. If the answer is "everywhere" — you're bottlenecking on human review. The right design has checkpoints at the 3-5 most critical decision points. Not more, not fewer.
 
-5. **Can multiple agents and team members work on the same thing seamlessly?** When your PM's AI finishes a brief, does it flow to the designer's AI with full context? Or does someone copy-paste between tools? Orchestration means the machine routes work — not the humans. [Explore how shared surfaces dissolve walls between tools →](/#surfaces)
+5. **Can multiple agents and team members work on the same thing seamlessly?** When your PM's AI finishes a brief, does it flow to the product designer's AI with full context? Or does someone copy-paste between tools? Orchestration means the machine routes work — not the humans. [Explore how shared surfaces dissolve walls between tools →](/#surfaces)
 
 6. **What's the dead time between your biggest recurring decisions?** Measure it. That's the orchestration opportunity. Every minute of context assembly before a decision is a minute AI should have handled. [See the full framework →](/#philosophy)
 

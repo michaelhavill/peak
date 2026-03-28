@@ -77,7 +77,7 @@ A **founder** we work with runs 12 simultaneous workstreams with multiple AI age
 
 A **product manager** covering 3 product areas deployed AI peers for each: one monitors competitive moves, one synthesizes user feedback, one drafts briefs from the knowledge base. All 3 areas get equal strategic attention. Nothing rots because the throughput bottleneck disappeared. The ROI on that PM's comp just tripled.
 
-Look -- a **designer** who's the only designer on the team uses AI peers running through the design system, component library, and brand docs. She focuses on creative direction and quality review. AI handles variations, responsive layouts, asset generation. A design team of 1 producing the output of 4. Her taste and judgment compound without burning out.
+Look -- a **product designer** who's the only designer on the team uses AI peers loaded with user research, persona docs, UX flows, and design system specs. She focuses on information architecture decisions, UX strategy, and finding the right solution between competing constraints. AI handles research synthesis, flow exploration, competitive UX analysis, and layout variations. A product design team of 1 producing the output of 4. Her taste and judgment compound without burning out.
 
 An **engineering lead** uses AI peers for code review prep, test generation, documentation, and refactoring plans -- all grounded in the team's architecture docs and coding standards. Review cycles dropped from 2 days to 4 hours. Test coverage doubled. Documentation stays current. That's capital deployed against maintenance drag.
 
@@ -97,7 +97,7 @@ The AI peer model breaks the linear curve. Each human team member operates with 
 
 One company runs their entire customer operations with 3 human team members and a fleet of AI agents. Each agent has the customer knowledge base, care protocols, and communication standards loaded. The **ops team** handles complex cases and relationship decisions. The **clinical leads** handle quality review. AI handles intake assembly, routine communication drafts, data synthesis, scheduling coordination. Three salaries doing the work of ten.
 
-**Here's the thing -- AI peers are not autonomous.** Every output routes to a human for review. The roughly 20 minutes of refinement per task is built into the workflow, not treated as overhead. The **PM** reviews strategy output. The **designer** reviews creative output. The **engineer** reviews code output. The **clinical lead** reviews care-related output. The human's job shifts from "do the work" to "direct and refine the work" -- which is a dramatically higher-ROI use of their time and expertise. Like a poker player who stops grinding low-stakes tables and starts picking better games.
+**Here's the thing -- AI peers are not autonomous.** Every output routes to a human for review. The roughly 20 minutes of refinement per task is built into the workflow, not treated as overhead. The **PM** reviews strategy output. The **product designer** reviews UX and design output. The **engineer** reviews code output. The **clinical lead** reviews care-related output. The human's job shifts from "do the work" to "direct and refine the work" -- which is a dramatically higher-ROI use of their time and expertise. Like a poker player who stops grinding low-stakes tables and starts picking better games.
 
 Net-net -- the hiring implication is enormous. You hire for judgment, taste, and domain expertise. Not for throughput. One senior **founder** directing 5 AI peers outproduces 5 junior people working independently. One **clinical leader** with AI peers manages the patient load of 3 coordinators. The bottleneck moves from "not enough hands" to "not enough judgment." Solve that bottleneck and your headcount math changes permanently. Your cost per unit of output drops by 60-70%.
 
@@ -105,7 +105,7 @@ Net-net -- the hiring implication is enormous. You hire for judgment, taste, and
 
 ## Where This Applies
 
-A **design team of 2** produces the output of 8 by running AI peers through their design system, component library, and brand docs. Designers focus on creative direction. AI handles variations, responsive layouts, asset generation. Two salaries, eight salaries of output. The margin on that is extraordinary.
+A **product design team of 2** produces the output of 8 by running AI peers through their user research, UX flows, design system, and product strategy docs. Product designers focus on information architecture, UX decisions, and finding elegant solutions between constraints. AI handles research synthesis, flow exploration, competitive analysis, and design variations. Two salaries, eight salaries of output. The margin on that is extraordinary.
 
 An **engineering lead** uses AI peers for code review prep, test generation, documentation, and refactoring plans. Review cycles dropped from days to hours. The team ships more because they maintain less. Velocity compounds.
 
@@ -129,7 +129,7 @@ These questions reveal whether your AI is an assistant you prompt -- or a peer t
 
 3. **What's the review loop on your AI output?** If you're spending 20 minutes refining each AI output -- that's the quality layer working correctly. If you're spending 2 hours rewriting from scratch -- the AI doesn't have your context. One is collaboration. The other is wasted time.
 
-4. **Are your AI peers coworking with your team -- or isolated in separate tabs?** Can the PM's AI peer see what the designer's AI peer produced? Can the engineer's AI peer reference the product brief? If every AI peer starts from zero, you have tools -- not team members. [Explore how collaborative spaces connect them →](/#surfaces)
+4. **Are your AI peers coworking with your team -- or isolated in separate tabs?** Can the PM's AI peer see what the product designer's AI peer produced? Can the engineer's AI peer reference the product brief? If every AI peer starts from zero, you have tools -- not team members. [Explore how collaborative spaces connect them →](/#surfaces)
 
 5. **What are you hiring for -- throughput or judgment?** If you're hiring junior people to do volume work, AI peers already do that better. The leverage hire is someone with taste, judgment, and domain expertise who can direct 5 AI peers. That's the 10x math.
 

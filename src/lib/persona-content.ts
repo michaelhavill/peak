@@ -37,10 +37,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "AI-generated designs look like everyone else's. Your taste — typography instincts, spacing sensibility, quality bar — is completely invisible to every tool you use. That's the hard truth.",
-      hundredX: "Your design knowledge base captures your taste framework, component principles, and aesthetic rules. **AI produces work that matches your aesthetic on the first try** — no more 'make it less corporate' loops.",
-      impact: "Your taste becomes a scalable asset. Junior designers produce work matching your quality bar because the knowledge base carries your judgment. That compounds.",
-      example: "A designer documented 40 principles about typography, spacing, and interaction patterns. Monday's AI-generated homepage concepts matched her aesthetic perfectly — saving 2 days of iteration per project. Holy moly.",
+      today: "AI-generated designs look like everyone else's. Your product thinking — how you navigate constraints, structure information architecture, map user journeys, and arrive at solutions that are both beautiful and strategically sound — is completely invisible to every tool you use. That's the hard truth.",
+      hundredX: "Your design knowledge base captures your product design frameworks: persona models, UX heuristics, IA patterns, interaction principles, and visual taste. **AI produces work that reflects your full design judgment on the first try** — not just pretty pixels, but the right solution for the right user.",
+      impact: "Your product design thinking becomes a scalable asset. Junior designers produce work matching your quality bar because the knowledge base carries your judgment about users, flows, and strategy — not just aesthetics. That compounds.",
+      example: "A product designer documented 40 principles spanning user personas, information hierarchy, interaction patterns, and visual taste. Monday's AI-generated concepts nailed the user flow and the aesthetics — saving 2 days of iteration per project. Holy moly.",
     },
     {
       id: "engineer",
@@ -88,10 +88,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "You spend hours editing AI output to match your aesthetic. The 2px spacing instinct, the typography weight preferences, the color temperature sensitivity — none of it reaches your tools. That's maddening.",
-      hundredX: "Your taste doc has 10–15 specific rules per design domain. **AI output matches your aesthetic on the first generation** because it knows your spacing system, type hierarchy, and color principles. First try.",
-      impact: "Your design taste becomes a compounding asset. Every project starts from your quality bar instead of generic defaults. That's how taste scales.",
-      example: "A designer wrote 40 specific principles: body text never exceeds 18px, line height always 1.5x, primary CTAs use high-contrast fills never outlines. AI-generated designs matched her aesthetic without a single correction. Thrilling.",
+      today: "You spend hours editing AI output because it misses everything that makes your work yours. The UX instincts about when to simplify a flow, the IA decisions about content hierarchy, the persona-informed choices about what to surface first — none of it reaches your tools. That's maddening.",
+      hundredX: "Your taste doc has 10–15 specific rules per design domain — from UX flow patterns and IA principles to visual hierarchy and spacing systems. **AI output reflects your full product design judgment on the first generation** because it knows how you think about users, not just pixels. First try.",
+      impact: "Your product design taste becomes a compounding asset. Every project starts from your quality bar — the right user flow, the right information hierarchy, the right visual execution — instead of generic defaults. That's how taste scales.",
+      example: "A product designer wrote 40 specific principles: progressive disclosure for complex flows, persona-specific content hierarchy, body text never exceeds 18px, primary CTAs use high-contrast fills never outlines. AI-generated work matched her product thinking and aesthetic without a single correction. Thrilling.",
     },
     {
       id: "engineer",
@@ -139,10 +139,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "You spend 2 hours researching patterns and pulling references before starting any design. By the time you start creating, half the day is gone. Just like that.",
-      hundredX: "Context packages include your design system, competitor patterns, and accessibility requirements. **You prompt with constraints and start from a meaningful first draft** instead of a blank canvas.",
-      impact: "Time to first reviewable mockup drops from 2 days to 3 hours. You explore 5 directions in the time it used to take to develop 1. That's the game.",
-      example: "A designer built context packages with her design system, tagged competitor screenshots, and accessibility rules. She now generates 5 directions in a morning and presents the strongest 2 with evidence — quality went up 60%.",
+      today: "You spend 2 hours pulling together persona research, competitor UX patterns, and technical constraints before starting any design work. By the time you start creating, half the day is gone. Just like that.",
+      hundredX: "Context packages include your persona models, user journey maps, design system, competitor UX analysis, and technical constraints. **You prompt with the full problem space and start from a meaningful first draft** instead of a blank canvas.",
+      impact: "Time to first reviewable concept drops from 2 days to 3 hours. You explore 5 directions — each solving the user problem differently — in the time it used to take to develop 1. That's the game.",
+      example: "A product designer built context packages with persona data, user journey maps, competitor UX patterns, her design system, and accessibility rules. She now generates 5 directions in a morning and presents the strongest 2 with strategic rationale — quality went up 60%.",
     },
     {
       id: "engineer",
@@ -190,10 +190,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "You walk into design reviews spending the first 20 minutes re-establishing context. Persona data, previous decisions, constraints — not available where you need them. Every time.",
-      hundredX: "Before each review, AI pulls persona data, references design system patterns, and flags accessibility issues. **You walk in ready for strategic discussion**, not context assembly.",
-      impact: "Design reviews become about creative direction instead of information sharing. Quality goes up because more time goes to judgment. That's the unlock.",
-      example: "A designer's pre-review AI assembles persona data, similar patterns from the design system, and accessibility flags. The first 20 minutes of 'let me catch everyone up' became 20 minutes of strategic design discussion.",
+      today: "You walk into design reviews spending the first 20 minutes re-establishing context. User research findings, persona data, IA decisions, previous design explorations, technical constraints — not available where you need them. Every time.",
+      hundredX: "Before each review, AI pulls persona data, user journey context, IA rationale, design system patterns, and flags accessibility and feasibility issues. **You walk in ready for strategic product discussion**, not context assembly.",
+      impact: "Design reviews become about product strategy and creative direction instead of information sharing. Quality goes up because more time goes to the judgment calls that matter — which user problem to solve, which constraint to push against. That's the unlock.",
+      example: "A product designer's pre-review AI assembles persona data, user journey context, IA rationale, and feasibility flags. The first 20 minutes of 'let me catch everyone up' became 20 minutes of strategic product design discussion.",
     },
     {
       id: "engineer",
@@ -241,10 +241,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "You're the only designer. You handle UX, visual design, research synthesis, and design system maintenance. Your best work suffers because you're spread too thin. Something has to give.",
-      hundredX: "AI peers generate design variations, test responsive layouts, produce asset sets, and maintain your design system. **You focus on creative direction and quality review** — the highest-value use of your taste.",
-      impact: "A design team of 2 produces the output of 8. Your taste and judgment scale without burning out. That's how you win.",
-      example: "A design team of 2 uses AI peers running through their design system, component library, and brand docs. Designers focus on creative direction. AI handles variations, responsive layouts, and asset generation — 4x output.",
+      today: "You're the only product designer. You handle user research synthesis, information architecture, UX flows, visual design, and design system maintenance. Your best strategic thinking suffers because you're buried in execution. Something has to give.",
+      hundredX: "AI peers synthesize research, generate UX flow variations, test responsive layouts, produce asset sets, and maintain your design system. **You focus on product strategy, creative direction, and the judgment calls that require a human understanding of user needs** — the highest-value use of your craft.",
+      impact: "A product design team of 2 produces the output of 8. Your strategic thinking and taste scale without burning out. That's how you win.",
+      example: "A product design team of 2 uses AI peers running through their persona research, design system, component library, and UX patterns. Designers focus on product strategy and creative direction. AI handles research synthesis, flow variations, responsive layouts, and asset generation — 4x output.",
     },
     {
       id: "engineer",
@@ -292,10 +292,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "You hand off designs and the implementation looks different. Your design tokens, spacing system, and interaction patterns get translated incorrectly in code. Every single time.",
-      hundredX: "Your design system connects to the engineering context. **AI-generated code uses your actual components with your actual tokens.** The gap between design and implementation closes. Finally.",
-      impact: "Implementation matches design on the first build. The QA cycle that used to catch visual discrepancies shrinks to near zero. That's the dream, right?",
-      example: "A design engineer connected his component library, design tokens, and accessibility requirements to his coding AI. Generated code uses his actual components with his actual tokens — no more translating from generic React.",
+      today: "You hand off designs and the implementation misses the intent. The UX flow logic, the information hierarchy decisions, the interaction patterns, the spacing system — all get lost or translated incorrectly in code. Every single time.",
+      hundredX: "Your product design decisions connect to the engineering context — not just tokens and components, but IA rationale, user flow logic, and interaction intent. **AI-generated code respects your design thinking, not just your visual specs.** The gap between design intent and implementation closes. Finally.",
+      impact: "Implementation matches your product design intent on the first build. The QA cycle that used to catch UX mismatches and visual discrepancies shrinks to near zero. That's the dream, right?",
+      example: "A product designer connected his UX flow documentation, IA decisions, component library, design tokens, and accessibility requirements to the coding AI. Generated code respects the full design intent — not just pixel specs but the product thinking behind them.",
     },
     {
       id: "engineer",
@@ -343,10 +343,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "You design in Figma, the PM writes in Notion, engineering builds in VS Code. Each tool is a silo. Your design decisions have no visibility to the rest of the team. None.",
-      hundredX: "Your design tools connect to the shared context layer. **When you make a design decision, it's visible to engineering's AI. When engineering has a constraint, your AI surfaces it** before you design something impossible.",
-      impact: "The 'that's not technically feasible' feedback disappears because constraints flow in real time. Design-engineering collaboration happens through the system, not through meetings. Finally.",
-      example: "A design engineer connected Figma, GitHub, Notion, and Linear through MCP. His AI knows the design system, code patterns, sprint priorities, and design principles. The walls between tools dissolve when they share a brain.",
+      today: "You design in Figma, the PM writes in Notion, engineering builds in VS Code. Each tool is a silo. Your product design decisions — the user flow rationale, the IA choices, the persona trade-offs — have no visibility to the rest of the team. None.",
+      hundredX: "Your design tools connect to the shared context layer. **When you make a product design decision, engineering's AI understands the user intent behind it. When engineering has a constraint, your AI surfaces it** before you design something impossible. Product strategy flows both ways.",
+      impact: "The 'that's not technically feasible' and 'that's not what the user needs' feedback loops tighten to near-zero because constraints and user context flow in real time. Cross-functional product design collaboration happens through the system, not through meetings. Finally.",
+      example: "A product designer connected Figma, GitHub, Notion, and Linear through MCP. His AI knows the persona research, user journey maps, design system, code patterns, and sprint priorities. The walls between product thinking and implementation dissolve when they share a brain.",
     },
     {
       id: "engineer",
@@ -394,10 +394,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "Half your design team experiments with AI on side projects. The other half waits for 'official AI design tools.' The gap between them widens every week. That's not okay.",
-      hundredX: "AI adoption is non-negotiable daily practice, like a musician's scales. **The team practices 20 minutes daily on real work**, not tutorials. Within a month, everyone is productive.",
-      impact: "Your design team's output doubles without adding headcount. The adoption gap closes because the practice is structured, not optional. That's how you do it.",
-      example: "A design team split organically: experimenters adopted AI in a week — generating variations and prototyping at 3x speed. After structured daily practice, the other half caught up within a month.",
+      today: "Half your product design team experiments with AI on side projects. The other half waits for 'official AI design tools.' The gap between them widens every week — not just in visual output, but in how fast they can explore user problems, test IA structures, and validate product hypotheses. That's not okay.",
+      hundredX: "AI adoption is non-negotiable daily practice, like a musician's scales. **The team practices 20 minutes daily on real product design work** — user flow exploration, IA validation, persona-driven ideation — not tutorials. Within a month, everyone is productive.",
+      impact: "Your product design team's output doubles without adding headcount. The adoption gap closes because the practice is structured, not optional. That's how you do it.",
+      example: "A product design team split organically: experimenters adopted AI in a week — exploring user flows, testing IA structures, and prototyping at 3x speed. After structured daily practice, the other half caught up within a month.",
     },
     {
       id: "engineer",
@@ -445,10 +445,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "Your design system is trapped in one tool. Components, tokens, documentation — all in Figma with no way to export the logic. Switch tools? Rebuild everything. That's the reality.",
-      hundredX: "Your design principles and tokens are the hub. Design tools are spokes. **Your design system's logic persists regardless of which tool renders it.**",
-      impact: "You adopt new design tools without losing years of design system investment. Your design infrastructure is tool-independent. That's the goal.",
-      example: "A design engineer structured his workflow: knowledge base and design tokens in Notion (hub), Figma and code editors as spokes. When Cursor outperformed his previous editor, he switched in an afternoon.",
+      today: "Your product design system is trapped in one tool. Persona models, UX patterns, IA frameworks, components, tokens, documentation — all locked in Figma with no way to export the thinking. Switch tools? Rebuild everything. That's the reality.",
+      hundredX: "Your product design principles — persona frameworks, UX heuristics, IA patterns, and visual tokens — are the hub. Design tools are spokes. **Your design system's logic and product thinking persist regardless of which tool renders it.**",
+      impact: "You adopt new design tools without losing years of product design system investment. Your design infrastructure — the thinking, not just the pixels — is tool-independent. That's the goal.",
+      example: "A product designer structured his workflow: persona models, UX patterns, IA frameworks, and design tokens in Notion (hub), Figma and code editors as spokes. When Cursor outperformed his previous editor, he switched in an afternoon. The product thinking traveled with him.",
     },
     {
       id: "engineer",
@@ -496,10 +496,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "Design decisions are made and forgotten. Project learnings live in individual designers' memories. New projects start from zero instead of building on what you've already learned. That's waste.",
-      hundredX: "Every design decision, client feedback pattern, and creative direction is captured. **New projects start with accumulated wisdom from every previous project**, not just the assigned designer's memory.",
-      impact: "Design quality compounds across the organization. Junior designers produce senior-level work because the knowledge base carries the team's collective taste. That's how taste scales.",
-      example: "A design agency scaled their creative process across 8 designers. Project learnings, client preferences, and aesthetic evolution all feed one base. New projects start with wisdom from every previous project.",
+      today: "Product design decisions are made and forgotten. Why you chose that IA structure, what persona research drove that UX flow, which constraints shaped the solution — it all lives in individual designers' memories. New projects start from zero instead of building on what you've already learned. That's waste.",
+      hundredX: "Every product design decision — persona insights, IA rationale, UX flow logic, user research patterns, and creative direction — is captured. **New projects start with accumulated product design wisdom from every previous project**, not just the assigned designer's memory.",
+      impact: "Product design quality compounds across the organization. Junior designers produce senior-level work because the knowledge base carries the team's collective product thinking and taste. That's how design judgment scales.",
+      example: "A product design team scaled their process across 8 designers. User research patterns, persona evolution, IA decisions, UX learnings, and aesthetic direction all feed one base. New projects start with product design wisdom from every previous project.",
     },
     {
       id: "engineer",
@@ -547,10 +547,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "You generate 5 directions in a morning instead of spending 3 days on 1. Your manager thinks you didn't think hard enough. The cultural assumption: fast design = lazy design. That's wrong.",
-      hundredX: "You present 5 directions evaluated against persona data with evidence for the top 2. **Quality goes up because you tested more hypotheses.** Speed becomes a creative advantage, not a liability.",
-      impact: "Your design practice evolves from single-bet to multi-hypothesis. Quality improves because you explore more of the solution space in less time. That's better design.",
-      example: "A designer generates 5 homepage directions in a morning, evaluates each against persona data and constraints, presents the 2 strongest with evidence. Quality went up because she tested more hypotheses. Time went down 60%.",
+      today: "You generate 5 product directions in a morning instead of spending 3 days on 1. Your manager thinks you didn't think hard enough. The cultural assumption: fast design = lazy design. That's wrong — you explored more of the solution space, not less.",
+      hundredX: "You present 5 directions — each solving the user problem through different IA structures, UX flows, and visual approaches — evaluated against persona data with evidence for the top 2. **Quality goes up because you tested more product hypotheses.** Speed becomes a strategic advantage, not a liability.",
+      impact: "Your product design practice evolves from single-bet to multi-hypothesis. Quality improves because you explore more of the solution space — different user flows, different IA structures, different constraint trade-offs — in less time. That's better product design.",
+      example: "A product designer generates 5 homepage directions in a morning — each with different IA approaches and user flow strategies — evaluates each against persona data and technical constraints, presents the 2 strongest with strategic rationale. Quality went up because she tested more product hypotheses. Time went down 60%.",
     },
     {
       id: "engineer",
@@ -598,10 +598,10 @@ export const PERSONA_CONTENT: Record<string, PersonaContent[]> = {
     {
       id: "designer",
       label: "Product Designer",
-      today: "AI-generated designs all look the same. The same layouts, the same patterns, the same 'modern minimalist' aesthetic. Your specific taste — the thing clients hire you for — is nowhere in the output.",
-      hundredX: "Your taste doc encodes the specific principles that make your work yours. **AI generates in your style from the first prompt** — not the default Dribbble aesthetic everyone else gets.",
-      impact: "Your design output is recognizably yours at scale. Clients and employers hire you for your taste, and now that taste reaches everything you touch. That's leverage.",
-      example: "A designer encoded her specific aesthetic principles — warm neutrals over cool grays, generous whitespace, type-forward hierarchy. AI designs now carry her signature style without a single manual correction.",
+      today: "AI-generated designs all solve problems the same way. The same IA structures, the same user flows, the same layouts, the same 'modern minimalist' aesthetic. Your specific product design sensibility — the way you navigate constraints, structure information, and find the elegant gap between user needs and business goals — is nowhere in the output.",
+      hundredX: "Your taste doc encodes the specific product design principles that make your work yours — how you structure IA, how you simplify complex flows, which user trade-offs you prioritize, and your visual signature. **AI generates solutions that reflect your product thinking from the first prompt** — not generic patterns everyone else gets.",
+      impact: "Your product design output is recognizably yours at scale. Clients and employers hire you for your ability to find beautiful solutions between constraints, and now that judgment reaches everything you touch. That's leverage.",
+      example: "A product designer encoded her specific principles — progressive disclosure over feature dumping, persona-driven content hierarchy, warm neutrals over cool grays, generous whitespace, type-forward visual hierarchy. AI designs now carry her product design signature without a single correction.",
     },
     {
       id: "engineer",

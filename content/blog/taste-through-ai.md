@@ -86,7 +86,7 @@ A **founder** encoded his fundraising judgment — investor preferences from 200
 
 A **product manager** financialized her brief-writing craft — how she structures problem statements, what customer evidence clears her bar, how she frames success metrics that drive behavior. AI briefs now match her quality bar on the first draft. The 45-minute rewrite tax? Gone. That's burning $75 of senior time per interaction, compounded across every single output. Full stop.
 
-A **designer** wrote 40 specific principles about typography, spacing, and interaction patterns. AI-generated designs matched her aesthetic without a single correction. First try. Like a poker player who finally wrote down her tells — now the AI plays her hand.
+A **product designer** wrote 40 specific principles spanning persona-driven content hierarchy, UX flow logic, progressive disclosure patterns, and visual taste. AI-generated concepts matched her product thinking and aesthetic without a single correction. First try. Like a poker player who finally wrote down her tells — now the AI plays her hand.
 
 An **engineering lead** documented his team's state management approach, API conventions, and component structure standards. The "fix it to match our style" step disappeared entirely. Zero rework cycles.
 
@@ -105,8 +105,8 @@ A shared taste infrastructure changes the economics entirely. When the team's AI
 One team built what I'd call a capital stack — three layers of taste, each one compounding on the next:
 
 1. **Company taste** — brand, strategy, quality standards that apply to everything. The foundation layer.
-2. **Team taste** — how **product** evaluates opportunities, how **engineering** defines "done," how **design** makes aesthetic decisions, how **clinical** approaches care documentation. The execution layer.
-3. **Individual taste** — personal judgment that layers on top. The **PM** who's particularly strong on pricing. The **designer** with refined opinions about motion. The **engineer** who's the expert on performance patterns. The **clinical lead** with the best patient communication instincts. The alpha layer.
+2. **Team taste** — how **product** evaluates opportunities, how **engineering** defines "done," how **product design** makes decisions about users, flows, and aesthetics, how **clinical** approaches care documentation. The execution layer.
+3. **Individual taste** — personal judgment that layers on top. The **PM** who's particularly strong on pricing. The **product designer** with refined opinions about information architecture and interaction patterns. The **engineer** who's the expert on performance patterns. The **clinical lead** with the best patient communication instincts. The alpha layer.
 
 The AI deploys all three simultaneously. A new **PM's** first AI-assisted brief matched the team's quality bar because the context carried the organization's collective judgment. A new **clinician's** documentation reflected the care philosophy from day one. Like giving a rookie a championship playbook — they play at a higher level immediately.
 
@@ -150,7 +150,7 @@ These questions will expose exactly how much of your judgment is locked in your 
 
 2. **When AI drafts something for you, how much time do you spend rewriting it to sound like you?** That rewrite time is the tax on undocumented taste. 45 minutes fixing tone, framing, and judgment calls — every single time. That's not AI's fault. It's a documentation problem.
 
-3. **Does your team have a shared definition of "good"?** When the PM says "this brief is done" and the designer says "this mockup is done" — are they measuring against the same bar? Or does quality only exist in the head of whoever reviews it? [Explore how teams share context →](/#surfaces)
+3. **Does your team have a shared definition of "good"?** When the PM says "this brief is done" and the product designer says "this solution is done" — are they measuring against the same bar? Or does quality only exist in the head of whoever reviews it? [Explore how teams share context →](/#surfaces)
 
 4. **Where is your organization's taste documented — if anywhere?** Brand voice guidelines that say "be clear and professional" are useless. Taste docs that say "we always frame opportunities as customer pain points first, TAM second" are powerful. Which kind do you have?
 

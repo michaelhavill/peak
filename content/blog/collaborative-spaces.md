@@ -8,7 +8,7 @@ author: "100xpath"
 tags: ["collaboration", "workspaces", "AI integration", "team workflows", "surfaces"]
 ---
 
-Every person on your team is destroying value right now. The **product manager** prompts Claude, copies the output, pastes it into Notion, then Slacks the **designer**. The **designer** opens a fresh AI session with zero inherited context. The **engineer** starts a third session — tabula rasa. Three people using AI. Three completely isolated knowledge graphs. That is insanity.
+Every person on your team is destroying value right now. The **product manager** prompts Claude, copies the output, pastes it into Notion, then Slacks the **product designer**. The **product designer** opens a fresh AI session with zero inherited context. The **engineer** starts a third session — tabula rasa. Three people using AI. Three completely isolated knowledge graphs. That is insanity.
 
 **The cost of this isn't "inefficiency." It's compounding information loss at every single handoff.** Each copy-paste is a context tax. Each re-prompt from scratch is value destruction. And nobody is accounting for it on any balance sheet.
 
@@ -82,7 +82,7 @@ Look — at the team level, collaborative spaces mean shared surfaces where huma
 
 Most teams run two parallel worlds: the human world (Slack, meetings, docs) and the AI world (individual prompt sessions). Information flows between them through copy-paste, manual summaries, and meetings where someone explains "what the AI said." Net-net, this doubles communication overhead instead of cutting it. You are paying for AI and then paying again to manually distribute its output. That is like buying a dishwasher and then hand-washing every plate before you load it.
 
-The punchline is this: shared workspaces where human contributions and AI contributions live side by side, drawing from the same knowledge base. A product brief starts as an AI draft grounded in persona research and competitive context. The **PM** refines the judgment calls. The **designer** adds visual direction. The AI incorporates those inputs into the next iteration. The **engineer** flags technical constraints that feed back into the design. Everyone sees the full history. Zero information loss. That is network effects on knowledge — every participant makes the shared context more valuable for every other participant.
+The punchline is this: shared workspaces where human contributions and AI contributions live side by side, drawing from the same knowledge base. A product brief starts as an AI draft grounded in persona research and competitive context. The **PM** refines the judgment calls. The **product designer** adds UX direction and visual strategy. The AI incorporates those inputs into the next iteration. The **engineer** flags technical constraints that feed back into the design. Everyone sees the full history. Zero information loss. That is network effects on knowledge — every participant makes the shared context more valuable for every other participant.
 
 One team deployed custom interfaces for three groups: business, **clinical**, and **operations**. All three read from and write to the same central platform. When the business team updates a customer insight, the **clinical team's** AI immediately has that context for care decisions. When **operations** identifies a workflow bottleneck, the **engineering team's** AI factors it into sprint planning. When a **clinician** documents a protocol adjustment, it flows to ops automatically. No meetings. No Slack threads. No "can you send me that doc?" The marginal cost of sharing context dropped to zero.
 
@@ -100,7 +100,7 @@ A **distributed engineering team** built a shared architecture surface. Technica
 
 An **operations team** built a shared workflow surface. Every process decision, exception pattern, and vendor interaction feeds one system. New hires deploy with operational guidance grounded in the team's actual experience. The "ask the senior person" bottleneck — the single most expensive knowledge constraint in any scaling org — disappeared.
 
-A **design team** connected Figma, GitHub, Notion, and Linear through shared context. The walls between design and engineering dissolved because the AI carries context across both domains. The "that's not technically feasible" feedback loop — which used to cost 3-5 days per cycle — dropped to near zero.
+A **product design team** connected Figma, GitHub, Notion, and Linear through shared context. The walls between design and engineering dissolved because the AI carries context across both domains. The "that's not technically feasible" feedback loop — which used to cost 3-5 days per cycle — dropped to near zero.
 
 **Here's the thing: collaboration scales when context is shared, not when meetings are more frequent.** Every meeting that exists solely to transfer information is a tax on your organization. Build the shared surface. Let AI and humans both contribute. Watch information flow without the overhead. That is how you compound team intelligence.
 
@@ -110,11 +110,11 @@ A **design team** connected Figma, GitHub, Notion, and Linear through shared con
 
 These questions reveal whether your team is actually collaborating with AI — or just using AI next to each other.
 
-1. **Do your AI tools share a brain — or are they all silos?** When your designer prompts AI, does it know about the PM's customer research? When your engineer prompts, does it reference the design system? If every tool starts from zero context, you have parallel monologues — not collaboration. [See how shared surfaces dissolve walls →](/#surfaces)
+1. **Do your AI tools share a brain — or are they all silos?** When your product designer prompts AI, does it know about the PM's customer research? When your engineer prompts, does it reference the design system? If every tool starts from zero context, you have parallel monologues — not collaboration. [See how shared surfaces dissolve walls →](/#surfaces)
 
-2. **Where are your coworking spaces for AI and teams?** Not Slack channels. Not meeting rooms. Shared digital surfaces where both humans and AI contribute with full context. Where a PM's insight enriches the designer's AI automatically. Where an engineer's constraint flows to product without a meeting. Do you have these spaces? Or is information still flowing through copy-paste?
+2. **Where are your coworking spaces for AI and teams?** Not Slack channels. Not meeting rooms. Shared digital surfaces where both humans and AI contribute with full context. Where a PM's insight enriches the product designer's AI automatically. Where an engineer's constraint flows to product without a meeting. Do you have these spaces? Or is information still flowing through copy-paste?
 
-3. **Can multiple agents and team members all work on the same thing seamlessly?** The real test: start a product brief. Can the PM's AI draft it, the designer's AI reference it with full context, and the engineer's AI flag constraints — without anyone manually bridging between them? If not, your tools are disconnected. [Explore how the stack connects →](/#stack)
+3. **Can multiple agents and team members all work on the same thing seamlessly?** The real test: start a product brief. Can the PM's AI draft it, the product designer's AI reference it with full context, and the engineer's AI flag constraints — without anyone manually bridging between them? If not, your tools are disconnected. [Explore how the stack connects →](/#stack)
 
 4. **How many meetings exist solely to share context that should already be shared?** Every standup where someone explains "what the AI said." Every sync where someone re-establishes context. Those meetings are symptoms of disconnected tools, not collaboration needs. What percentage of your meetings would vanish if context flowed automatically?
 

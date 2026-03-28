@@ -69,7 +69,7 @@ Forget your job title. Think about what you actually *deploy* every day.
 
 A **product manager** doesn't "manage products." She knows that user onboarding friction in B2B SaaS follows a specific decay curve: users bail at the third step when the value isn't obvious within 8 seconds. She knows this because she's watched 400 session recordings, run 12 experiments, and felt the pattern before the data confirmed it. That's not knowledge work. That's judgment — and it compounds every quarter.
 
-A **designer** doesn't "design interfaces." He knows that a particular weight mismatch between heading and body text creates a subconscious tension that tanks trust on the page. He can't always articulate it. He just sees it. That's taste. A decade of reps to develop. Zero shortcut.
+A **product designer** doesn't "design interfaces." She knows that when a SaaS onboarding flow asks for too much information on step two, 40% of users bail — not because of the UI, but because the information architecture violated progressive disclosure at exactly the wrong moment. She knows the gap between what users say they want and how they actually navigate. She knows that a particular weight mismatch between heading and body text tanks trust on the page before anyone reads a word. She can't always articulate it. She just sees the whole system — users, flows, constraints, pixels. That's product design taste. A decade of reps to develop. Zero shortcut.
 
 A **founder** doesn't "run a company." She knows that when an enterprise prospect asks about SOC 2 compliance in the first meeting, that deal is 3x more likely to close — because it signals the buyer has already cleared internal objections. She knows this from 200 sales conversations, not a playbook. That's pattern recognition you cannot buy.
 
@@ -85,7 +85,7 @@ Here's the thing. AI has access to more raw information than you ever will. But 
 
 Look — when you use AI without your specificity, you're playing the same hand as everyone else at the table. Same cards, same odds. You get the median internet response. Structurally competent. Generically correct. Missing every opinion that makes your thinking valuable.
 
-The **PM** asks for a product strategy and gets something that reads like a business school case study. The **designer** asks for a design review and gets a checklist that applies to any product ever built. The **founder** asks for a hiring framework and gets a list of competencies aggregated from every HR blog on the internet. The **engineer** asks for architecture advice and gets a textbook answer that ignores the 3 real constraints in the codebase. The **clinical leader** asks for a care protocol and gets a guideline so generic it could apply to any patient population.
+The **PM** asks for a product strategy and gets something that reads like a business school case study. The **product designer** asks for a design direction and gets a generic solution that ignores the persona research, the IA constraints, and the specific user problem being solved. The **founder** asks for a hiring framework and gets a list of competencies aggregated from every HR blog on the internet. The **engineer** asks for architecture advice and gets a textbook answer that ignores the 3 real constraints in the codebase. The **clinical leader** asks for a care protocol and gets a guideline so generic it could apply to any patient population.
 
 Then everyone spends 45 minutes rewriting it. Fixing the framing. Adding the nuance. Removing the corporate hedging. Injecting the opinions that make the work actually useful.
 
@@ -95,15 +95,15 @@ Then everyone spends 45 minutes rewriting it. Fixing the framing. Adding the nua
 
 The transfer is simpler than people think and harder than they expect.
 
-Simple because the format is straightforward: document your judgment. Not abstract principles — concrete rules. Not "I value clean design" but "Body text never exceeds 18px on desktop. Primary CTAs use high-contrast fills, never ghost buttons. Section padding is 80px minimum." Not "I hire for culture fit" but "I evaluate culture by how someone describes their last failure, not their last success."
+Simple because the format is straightforward: document your judgment. Not abstract principles — concrete rules. Not "I value clean design" but "Progressive disclosure on complex flows — never more than 3 decisions per screen. Content hierarchy follows the user's mental model, not the org chart. Body text never exceeds 18px on desktop. Primary CTAs use high-contrast fills, never ghost buttons." Not "I hire for culture fit" but "I evaluate culture by how someone describes their last failure, not their last success."
 
-Hard because it requires you to articulate things you've never had to articulate. The **designer's** instinct that makes her reject a layout in 10 seconds — what exactly is wrong? The **founder's** gut feeling that a candidate won't work out — what signals is she actually reading? The **PM's** sense that a pricing model won't survive — what pattern is she recognizing? The **engineer's** feeling that an architecture decision will cause pain in 6 months — what's he actually seeing? The **clinical leader's** intuition about a patient's trajectory — what data is she weighting differently?
+Hard because it requires you to articulate things you've never had to articulate. The **product designer's** instinct that makes her reject a solution in 10 seconds — is it the information architecture, the user flow, the visual hierarchy, or all three? The **founder's** gut feeling that a candidate won't work out — what signals is she actually reading? The **PM's** sense that a pricing model won't survive — what pattern is she recognizing? The **engineer's** feeling that an architecture decision will cause pain in 6 months — what's he actually seeing? The **clinical leader's** intuition about a patient's trajectory — what data is she weighting differently?
 
 **That articulation is the work. It's the highest-leverage work you can do right now.** The moment you do it, everything changes.
 
 A **founder** encoded his strategic judgment: how he evaluates market opportunities, sizes bets, decides when to pivot vs. persevere. His AI doesn't make decisions for him. It drafts memos that reflect his actual thinking — not consultant-speak, not generic frameworks, but the specific way he reasons about his specific business. Night and day.
 
-A **product designer** documented 40 principles about typography, spacing, color relationships, and interaction patterns refined over 12 years. She connected them to Claude. Monday morning — three homepage concepts. Every one matched her aesthetic. No "make it less corporate" loops. The AI carried her craft instead of flattening it. That is the unlock.
+A **product designer** documented 40 principles about user personas, information architecture, UX flow patterns, interaction design, and visual taste refined over 12 years. She connected them to Claude. Monday morning — three homepage concepts. Every one nailed the user flow, respected the IA, and matched her aesthetic. No "that's not how the user thinks about this" loops. The AI carried her full product design craft instead of flattening it to pretty pixels. That is the unlock.
 
 An **engineering lead** documented architecture decisions and the reasoning behind them. AI suggestions now follow the team's actual philosophy — not generic patterns. Code review shifted from style nits to real ideas.
 
@@ -115,7 +115,7 @@ Here's where specificity gets exponential — and you need to think about this t
 
 Every time you use AI with your documented judgment, two things happen. First, you get better output — work that sounds like you, reflects your standards, requires less correction. Second, you discover gaps in your documentation. The AI misses something you'd have caught. You articulate that rule. You add it. Next time, it catches it. That is a compounding loop. The returns accelerate.
 
-A customer call reveals a new pattern. The **PM** documents it. Her AI surfaces it in future analysis. A design decision teaches the **designer** something about his own preferences. He refines his taste doc. His AI applies that refinement everywhere. An incident teaches the **engineer** about a failure mode. He documents it. The AI flags similar patterns before they become incidents. A patient encounter teaches the **clinical leader** about an edge case in her protocol. She updates it. The AI catches it next time.
+A customer call reveals a new pattern. The **PM** documents it. Her AI surfaces it in future analysis. A design decision teaches the **product designer** something about how users actually navigate a flow. She refines her taste doc. Her AI applies that refinement everywhere. An incident teaches the **engineer** about a failure mode. He documents it. The AI flags similar patterns before they become incidents. A patient encounter teaches the **clinical leader** about an edge case in her protocol. She updates it. The AI catches it next time.
 
 The punchline is this: after 3 months, your AI has context that would take a new hire 6 months to absorb. After a year, you've built a body of encoded judgment that no competitor, no layoff, and no market shift can touch. It travels with you. It compounds with you. **It's not a tool you use — it's an extension of how you think.**
 
@@ -131,7 +131,7 @@ Every company has specificity. Your product serves a particular market. Your cus
 
 Almost none of it reaches anyone's AI. That is insanity.
 
-So your team of 30 people deploys the same AI tools as every competitor and gets the same generic output. The **designer's** AI doesn't know about the **PM's** customer research. The **PM's** AI doesn't know about **engineering's** technical constraints. The **sales team's** AI doesn't know about the product roadmap. The **clinical team's** AI doesn't know about the **ops team's** workflow constraints. Everyone is building on sand while organizational intelligence sits scattered across 40 Notion pages, 12 Slack channels, and somebody's head. No leverage. No compounding. Just commodity output at scale.
+So your team of 30 people deploys the same AI tools as every competitor and gets the same generic output. The **product designer's** AI doesn't know about the **PM's** customer research or persona evolution. The **PM's** AI doesn't know about **engineering's** technical constraints. The **sales team's** AI doesn't know about the product roadmap. The **clinical team's** AI doesn't know about the **ops team's** workflow constraints. Everyone is building on sand while organizational intelligence sits scattered across 40 Notion pages, 12 Slack channels, and somebody's head. No leverage. No compounding. Just commodity output at scale.
 
 The fix isn't better prompts. It's making your organization's specificity as available to AI as the individual's. That is the architecture that matters.
 
@@ -143,9 +143,9 @@ One team created three layers:
 
 **Company layer:** Brand voice, strategic direction, quality standards, values that apply to everything. The **founder's** strategic taste. The company's care philosophy. This is the base.
 
-**Team layer:** How the **PM team** evaluates opportunities. How **engineering** defines "done." How the **design team** makes aesthetic decisions. How the **clinical team** approaches documentation. How **operations** evaluates process quality. How **marketing** speaks to the market. Functional specificity.
+**Team layer:** How the **PM team** evaluates opportunities. How **engineering** defines "done." How the **product design team** makes decisions about users, information architecture, and aesthetics. How the **clinical team** approaches documentation. How **operations** evaluates process quality. How **marketing** speaks to the market. Functional specificity.
 
-**Individual layer:** Personal judgment that layers on top. The **PM** who's particularly strong on pricing strategy. The **designer** with unusually refined opinions about motion. The **engineer** who's the expert on performance patterns. The **clinical lead** with the strongest patient communication instincts. The **ops leader** with the best vendor management judgment.
+**Individual layer:** Personal judgment that layers on top. The **PM** who's particularly strong on pricing strategy. The **product designer** with unusually refined opinions about information architecture and interaction patterns. The **engineer** who's the expert on performance patterns. The **clinical lead** with the strongest patient communication instincts. The **ops leader** with the best vendor management judgment.
 
 The AI applies all three. A new **PM's** first AI-assisted brief matches the team's quality bar because the context carries the organization's collective judgment. A new **clinician's** documentation reflects the care philosophy from day one. A new **engineer's** code follows the team's patterns in week one. That is compounding at the organizational level — and it derisks every new hire.
 
@@ -175,7 +175,7 @@ This isn't binary. It's a spectrum — and it maps almost perfectly to levels of
 
 **Level 2: Domain context.** You've documented some of your knowledge — **PM** research, **engineering** patterns, **clinical** protocols — and connected it to AI. Your output reflects your field. Meaningful advantage, but still general. You're card-counting but haven't developed real table sense.
 
-**Level 3: Taste and craft.** You've encoded your specific judgment — how you evaluate, decide, and create. Your AI produces work that's recognizably yours. The **designer's** output matches her aesthetic. The **founder's** memos reflect his actual thinking. The **clinical leader's** notes reflect her care philosophy. Significant advantage. You're reading the other players now.
+**Level 3: Taste and craft.** You've encoded your specific judgment — how you evaluate, decide, and create. Your AI produces work that's recognizably yours. The **product designer's** output reflects her thinking about users, flows, and visual craft. The **founder's** memos reflect his actual thinking. The **clinical leader's** notes reflect her care philosophy. Significant advantage. You're reading the other players now.
 
 **Level 4: Compounding specificity.** Your knowledge base grows with every interaction. New evidence refines old principles. Your AI improves daily. Your advantage compounds. **This is where the 1% lives.** You're not just playing hands — you're building a model of the game that gets sharper every session.
 

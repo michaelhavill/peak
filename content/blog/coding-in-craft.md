@@ -120,7 +120,7 @@ An **ops leader** encoded workflow logic and decision criteria. AI-generated int
 
 A **product manager** linked specs to the engineering knowledge base. Requirements stopped getting lost in translation between product and engineering.
 
-**Every person on the team -- engineer, designer, PM, ops, clinical -- compounds the value when engineering context is real and specific.** The cost is hours of documentation. The return is thousands of hours of engineering time recovered, permanently.
+**Every person on the team -- engineer, product designer, PM, ops, clinical -- compounds the value when engineering context is real and specific.** The cost is hours of documentation. The return is thousands of hours of engineering time recovered, permanently.
 
 ---
 

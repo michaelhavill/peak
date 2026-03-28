@@ -9,7 +9,7 @@ author: "100xpath"
 tags: ["performance", "quality standards", "builder identity", "AI-native work", "career growth"]
 ---
 
-Most organizations are running a broken incentive structure. Full stop. A **designer** ships three polished homepage concepts in an afternoon — her manager asks if she "actually thought about them." A junior **engineer** delivers code that matches senior output quality — peer review flags it as "AI-generated." You build a production-grade prototype in 2.5 weeks that would have taken a legacy team 6 months — and leadership's first instinct is suspicion, not celebration. That is insanity.
+Most organizations are running a broken incentive structure. Full stop. A **product designer** ships three polished homepage concepts in an afternoon — her manager asks if she "actually thought about them." A junior **engineer** delivers code that matches senior output quality — peer review flags it as "AI-generated." You build a production-grade prototype in 2.5 weeks that would have taken a legacy team 6 months — and leadership's first instinct is suspicion, not celebration. That is insanity.
 
 Here's the thing. Every one of these organizations is operating on the same unspoken equation: time invested = quality delivered. That equation held for decades. **It is now catastrophically wrong. And the people producing the best work are being actively punished for it.** The incentive structure rewards theater over output. Name that problem or it compounds against you.
 
@@ -84,14 +84,14 @@ The organizational challenge is simple to describe and brutal to execute: redesi
 
 Here's the thing. Most performance systems — formal and informal — still deploy effort as a proxy for quality. Annual reviews reward "dedication" and "thoroughness," which in practice means "spent a lot of visible hours on it." Promotions go to people who demonstrate effort theater, not shipped impact. The incentive structure is broken at the root. Like playing poker and rewarding the player who agonizes longest over each hand instead of the one who reads the table and wins.
 
-AI breaks this model completely. **AI-assisted work is now the minimum baseline.** Not a bonus. Not innovation. The floor. A junior **PM** with AI and a knowledge base should produce brief quality that matches what a senior PM delivered manually 18 months ago. A first-year **designer** with structured context should hit the professional quality bar within a day. A new **engineer** with the team's context package should write idiomatic code in week one. A new **clinician** with the care knowledge base should produce documentation matching team standards from day one. That is the new expectation. Anything less means your onboarding is the bottleneck.
+AI breaks this model completely. **AI-assisted work is now the minimum baseline.** Not a bonus. Not innovation. The floor. A junior **PM** with AI and a knowledge base should produce brief quality that matches what a senior PM delivered manually 18 months ago. A first-year **product designer** with structured context should hit the professional quality bar within a day. A new **engineer** with the team's context package should write idiomatic code in week one. A new **clinician** with the care knowledge base should produce documentation matching team standards from day one. That is the new expectation. Anything less means your onboarding is the bottleneck.
 
 The measurement shift is non-negotiable:
 
 - **Old question:** How long did this take? How thorough was the process?
 - **New question:** What outcome did this produce? Did it move the metric?
 
-One startup made this explicit. They killed hour-tracking and started measuring "shipped outcomes per week." Every team member — **founder**, **PM**, **designer**, **engineer**, **ops lead** — ships something deployed, live, or in active use by Friday. Not "worked on." Shipped. Their output — features deployed, decisions made, experiments run — tripled in Q1. 3x. Same team. Different incentive structure.
+One startup made this explicit. They killed hour-tracking and started measuring "shipped outcomes per week." Every team member — **founder**, **PM**, **product designer**, **engineer**, **ops lead** — ships something deployed, live, or in active use by Friday. Not "worked on." Shipped. Their output — features deployed, decisions made, experiments run — tripled in Q1. 3x. Same team. Different incentive structure.
 
 The organizations that refuse this shift will hemorrhage their best people. High-agency **builders** will not slow down to match cultural expectations about what effort should look like. They leave. They always leave. **The talent war in AI is not about compensation. It is about which culture lets fast, high-quality work be recognized as fast, high-quality work.** That is the retention moat. Full stop.
 

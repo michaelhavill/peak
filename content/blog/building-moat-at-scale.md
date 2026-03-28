@@ -62,7 +62,7 @@ The operator who thinks about scale doesn't just document for themselves. They d
 
 A **product manager** structures every customer call note with two sections: "My analysis" (personal, opinionated conviction) and "Evidence for the base" (raw facts, quotes, data points). The second section deposits into the team's shared knowledge automatically. She's not doing extra work — she's structuring the same work to compound across the organization. That is the move.
 
-A **designer** captures every design decision with two layers: "My aesthetic choice" (personal taste, the subjective edge) and "Design principle" (the pattern that scales to the team). When a new **designer** joins, their AI carries the team's collective taste from day one. Zero ramp time on the judgment that takes years to develop.
+A **product designer** captures every design decision with two layers: "My product design choice" (the persona insight, the IA rationale, the UX trade-off, the aesthetic call — the subjective edge) and "Design principle" (the pattern that scales to the team). When a new **product designer** joins, their AI carries the team's collective product design judgment from day one. Zero ramp time on the thinking that takes years to develop.
 
 An **engineer** documents architecture decisions with reasoning attached — not just "we chose Postgres" but "we chose Postgres because X, we considered Y, and here's what happened when we tried Z in Q2." When a new **engineer** proposes a refactor, the AI surfaces precedent. The same mistake doesn't happen twice. That's institutional memory doing real work.
 
@@ -70,7 +70,7 @@ A **clinical coordinator** captures not just procedures but the reasoning behind
 
 A **founder** deposits strategic decisions with the evidence that drove them. Six months later, when the board asks "why did we pivot?" — the AI references actual data, not a reconstructed narrative someone cobbled together from memory. That is the difference between a company that learns and one that just ages.
 
-**The individual incentive is pure alignment.** When your contributions enrich the shared base, the shared base enriches your AI's context. The more you deposit, the higher your returns. You benefit from the **designer's** user research, the **engineer's** technical constraints, the **sales team's** competitive intelligence, the **clinical team's** outcome data — all flowing into your AI's context automatically. It's a compounding loop where every participant is both depositor and beneficiary.
+**The individual incentive is pure alignment.** When your contributions enrich the shared base, the shared base enriches your AI's context. The more you deposit, the higher your returns. You benefit from the **product designer's** user research and IA decisions, the **engineer's** technical constraints, the **sales team's** competitive intelligence, the **clinical team's** outcome data — all flowing into your AI's context automatically. It's a compounding loop where every participant is both depositor and beneficiary.
 
 <!-- toggle: team -->
 
@@ -82,7 +82,7 @@ Scaling a knowledge moat requires three layers. That's it. Three — and most co
 
 **2. Synthesis** — raw contributions get structured into deployable context. A customer call transcript is not useful. The extracted insights — mapped to personas, tagged by theme, connected to existing patterns — that's the asset. AI handles most of this synthesis. Humans review and refine the connections. The **PM** validates product insights. The **clinical lead** validates care patterns. The **ops leader** validates workflow learnings. Think of synthesis as the underwriting step — raw data in, investable intelligence out.
 
-**3. Access** — every team member's AI draws from the full organizational knowledge at the moment they need it. Not through search. Not through asking someone. Automatically, as context for whatever they're working on. The **designer** gets user research without pinging the PM. The **engineer** gets business context without attending the standup. The **clinical coordinator** gets updated protocols without reading a memo. Frictionless access is what turns a knowledge base into a knowledge moat.
+**3. Access** — every team member's AI draws from the full organizational knowledge at the moment they need it. Not through search. Not through asking someone. Automatically, as context for whatever they're working on. The **product designer** gets user research and persona context without pinging the PM. The **engineer** gets business context without attending the standup. The **clinical coordinator** gets updated protocols without reading a memo. Frictionless access is what turns a knowledge base into a knowledge moat.
 
 Look — one company deployed this exact loop: Granola captures calls, AI synthesizes key evidence, insights deposit into the Notion knowledge base, any team member's AI draws from this base in real time. Three months in, their AI's output quality was measurably better than month one. Six months in, the gap between them and competitors using identical AI tools was visible in every single deliverable. That gap is the moat. And it widens every week.
 
@@ -96,7 +96,7 @@ A **healthcare organization** scaled their clinical knowledge base across 50 pro
 
 A **SaaS company** built a product knowledge base connecting **sales** insights, support tickets, and usage analytics. Product decisions now reference the full picture automatically. The **PM** doesn't need to "talk to sales" for competitive context — it's already in the system. Net-net: faster decisions, better products, fewer information gaps costing you deals.
 
-A **design agency** scaled their creative process knowledge across 8 **designers**. Project learnings, client preference patterns, aesthetic evolution — all feeding one base. New projects start with accumulated wisdom from every previous project, not just the ones the assigned designer worked on. Quality became consistent across the team. That is how you derisk creative output.
+A **design agency** scaled their product design process knowledge across 8 **product designers**. User research patterns, IA decisions, UX learnings, client preference patterns, aesthetic evolution — all feeding one base. New projects start with accumulated product design wisdom from every previous project, not just the ones the assigned designer worked on. Quality became consistent across the team. That is how you derisk creative output.
 
 An **engineering team** captured every ADR, incident postmortem, and technical decision. When an **engineer** proposes a refactor, AI surfaces relevant precedent. The same mistake never happens twice because the system remembers what individuals forget. Like having a coach who's watched every game film — except the coach never sleeps and never forgets.
 
@@ -118,7 +118,7 @@ These questions reveal whether your team's knowledge is compounding — or evapo
 
 4. **Is your knowledge base structured for synthesis — or is it a document graveyard?** Raw call transcripts aren't useful. Extracted insights mapped to personas, tagged by theme, connected to patterns — that's useful. Does your system do the synthesis? Or is it just storing unprocessed data?
 
-5. **Do your individual moats feed the organizational moat?** When the PM captures a customer insight, does it enrich the base the designer's AI draws from? When the engineer documents an architecture decision, can the new hire's AI reference it? The compound loop only works if contributions flow across the organization. [Explore how shared surfaces connect everyone →](/#surfaces)
+5. **Do your individual moats feed the organizational moat?** When the PM captures a customer insight, does it enrich the base the product designer's AI draws from? When the engineer documents an architecture decision, can the new hire's AI reference it? The compound loop only works if contributions flow across the organization. [Explore how shared surfaces connect everyone →](/#surfaces)
 
 6. **What walks out the door when someone leaves?** List your team's top 3 people. If they left tomorrow, what knowledge goes with them? That gap is the measure of your institutional memory — or lack of it. [See the full framework →](/#philosophy)
 
