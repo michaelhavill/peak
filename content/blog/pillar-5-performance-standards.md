@@ -189,6 +189,5 @@ These questions reveal whether your culture accelerates your best people — or 
 - [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
 - [Follow the Path to Monetising Your Expertise →](/blog/monetise-your-expertise)
 
-**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

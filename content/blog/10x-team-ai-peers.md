@@ -183,6 +183,5 @@ These questions reveal whether your AI is an assistant you prompt -- or a peer t
 - [Build the Path to Workspaces Where Humans and AI Actually Collaborate →](/blog/collaborative-spaces)
 - [Learn the Path to Hiring Doers Over Talkers →](/blog/pillar-4-ai-native-teams)
 
-**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

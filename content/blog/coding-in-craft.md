@@ -188,6 +188,5 @@ These questions reveal whether your AI is coding in your reality -- or in a text
 - [The Path to Shipping in Weeks What Used to Take Quarters →](/blog/speed-to-market)
 - [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
 
-**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

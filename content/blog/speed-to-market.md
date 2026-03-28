@@ -176,6 +176,5 @@ These questions will expose exactly where your dead time lives — and whether y
 - [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
 - [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
 
-**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

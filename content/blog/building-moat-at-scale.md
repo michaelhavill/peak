@@ -170,6 +170,5 @@ These questions reveal whether your team's knowledge is compounding — or evapo
 - [See the Path to Owning the Center and Renting the Edges →](/blog/pillar-2-hub-and-spoke)
 - [Follow the Path to Monetising Your Expertise →](/blog/monetise-your-expertise)
 
-**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

@@ -170,6 +170,5 @@ These questions reveal whether your team is actually collaborating with AI — o
 - [Learn the Path to Hiring Doers Over Talkers →](/blog/pillar-4-ai-native-teams)
 - [Chart the Path from Individual Moat to Company Moat →](/blog/building-moat-at-scale)
 
-**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

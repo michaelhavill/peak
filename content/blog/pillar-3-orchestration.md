@@ -189,6 +189,5 @@ These questions reveal whether you're using AI for the easy parts and still doin
 - [See the Path to Owning the Center and Renting the Edges →](/blog/pillar-2-hub-and-spoke)
 - [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
 
-**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

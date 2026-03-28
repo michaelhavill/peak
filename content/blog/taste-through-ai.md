@@ -206,6 +206,5 @@ These questions will expose exactly how much of your judgment is locked in your 
 - [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
 - [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
 
-**Want to connect on this?** [Book an advisory call →](https://cal.com/mvhavill)
 
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/) · [X](https://x.com/mvhavill)
+**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)
