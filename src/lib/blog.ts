@@ -5,6 +5,53 @@ import { marked } from "marked";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
+/**
+ * Add retro 16-bit color accents to ASCII diagrams inside <pre><code> blocks.
+ * Wraps specific patterns in <span> elements — small touches only.
+ */
+function colorizeAscii(html: string): string {
+  return html.replace(
+    /<pre><code>([\s\S]*?)<\/code><\/pre>/g,
+    (_match, inner: string) => {
+      let c = inner;
+
+      // 1. Bullets ● — amber/gold terminal cursor
+      c = c.replace(/●/g, '<span class="ascii-bullet">●</span>');
+
+      // 2. Filled progress bars ████+ — muted green (success)
+      c = c.replace(/█{3,}/g, (m) => `<span class="ascii-bar-full">${m}</span>`);
+
+      // 3. Empty progress bars ░░░░+ — muted coral (lacking)
+      c = c.replace(/░{3,}/g, (m) => `<span class="ascii-bar-empty">${m}</span>`);
+
+      // 4. Percentage labels next to bars: "100%" or "20%" etc.
+      //    High percentages (≥60%) get green, low (<60%) get coral
+      c = c.replace(
+        /(<\/span>\s*)(\d+%)/g,
+        (_m, gap: string, pct: string) => {
+          const n = parseInt(pct);
+          const cls = n >= 60 ? "ascii-pct-high" : "ascii-pct-low";
+          return `${gap}<span class="${cls}">${pct}</span>`;
+        }
+      );
+
+      // 5. Arrows ──→ and ↓ — soft lavender
+      c = c.replace(/──+→/g, (m) => `<span class="ascii-arrow">${m}</span>`);
+      c = c.replace(/↓/g, '<span class="ascii-arrow">↓</span>');
+
+      // 6. Inner box titles — ALL-CAPS labels inside nested boxes
+      //    Match: │  TITLE WORDS  │ or │  TITLE WORDS   │
+      c = c.replace(
+        /(│\s{1,3})((?:[A-Z][A-Z &/\-]+){2,})(\s+│)/g,
+        (_m, pre: string, title: string, post: string) =>
+          `${pre}<span class="ascii-label">${title}</span>${post}`
+      );
+
+      return `<pre><code>${c}</code></pre>`;
+    }
+  );
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -50,7 +97,7 @@ export function getPostBySlug(slug: string): BlogPost {
     }
   }
 
-  const htmlContent = marked.parse(body) as string;
+  const htmlContent = colorizeAscii(marked.parse(body) as string);
   const htmlCtas = ctaSection ? (marked.parse(ctaSection) as string) : "";
 
   return {

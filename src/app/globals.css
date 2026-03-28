@@ -144,6 +144,15 @@ body {
   line-height: inherit;
 }
 
+/* Retro 16-bit color accents for ASCII diagrams */
+.prose-100x pre .ascii-bullet { color: #D4A017; }
+.prose-100x pre .ascii-bar-full { color: #4E9A4E; }
+.prose-100x pre .ascii-bar-empty { color: #B85450; }
+.prose-100x pre .ascii-pct-high { color: #4E9A4E; }
+.prose-100x pre .ascii-pct-low { color: #B85450; }
+.prose-100x pre .ascii-label { color: #5B9EA6; }
+.prose-100x pre .ascii-arrow { color: #8B7EC8; }
+
 /* Show on tablets with scrollable overflow */
 @media (min-width: 768px) {
   .prose-100x pre {
