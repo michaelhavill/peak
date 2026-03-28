@@ -64,3 +64,60 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Blog article typography */
+.prose-100x {
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.prose-100x h2 {
+  font-family: var(--font-instrument-serif), serif;
+  font-size: 28px;
+  line-height: 1.15;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.prose-100x h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.prose-100x p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+.prose-100x strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.prose-100x a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-100x a:hover {
+  color: var(--text-secondary);
+}
+.prose-100x hr {
+  border: none;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 2.5rem 0;
+}
+.prose-100x ul, .prose-100x ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+.prose-100x li {
+  margin-bottom: 0.35rem;
+}
+.prose-100x blockquote {
+  border-left: 2px solid var(--border-medium);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
