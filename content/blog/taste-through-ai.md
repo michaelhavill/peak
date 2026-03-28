@@ -84,7 +84,11 @@ The **product sense** that flags wrong positioning before you can articulate why
 
 Here's the exciting part — all of this transfers to AI. Not through better prompts. Through documentation. You're financializing judgment that currently lives rent-free in your head, doing nothing at scale.
 
-**The format is dead simple.** Pick one domain. Write 10-15 specific rules. Not "I prefer clear communication" — that's a nothing-statement. Deploy specificity:
+**The format is dead simple.** Pick one domain. Write 10-15 specific rules. Not "I prefer clear communication" — that's a nothing-statement.
+
+**How to write your first taste doc in 20 minutes:** Open a new doc. Title it "[Your Domain] Taste Rules." Set a timer for 20 minutes. Write the answer to: "If I hired a brilliant junior who'd never worked in my domain, what are the 10 rules I'd give them on day one?" Be ruthlessly specific — not "write clearly" but "every brief starts with the user's current workaround, not the feature description." When you're done, upload it to a Claude Project or add it to your `CLAUDE.md` file. Test it immediately by asking Claude to produce something in your domain. The difference will be obvious on the first try.
+
+Deploy specificity:
 
 - **Founder / strategy taste:** "We always frame market opportunities as customer pain points first, TAM second. We never pursue a segment without 5+ customer conversations. Competitive positioning leads with differentiation, not feature comparison."
 - **PM / product taste:** "Every feature brief starts with the user's current workaround. Success metrics are behavioral, not engagement-based. We kill features that don't move retention within 2 sprints."
@@ -113,6 +117,8 @@ An **engineering lead** documented his team's state management approach, API con
 At the team level, taste docs solve the consistency problem that kills scaling organizations. Your **CEO's** strategic judgment lives in her head. Your **VP Product's** quality bar arrives as feedback too late to incorporate. Your **brand voice** guidelines are too vague for anyone — human or AI — to actually deploy. Your **clinical director's** care philosophy only reaches the team through hallway conversations.
 
 Net-net — that's not a system. That's a single point of failure masquerading as leadership.
+
+**How to build a shared taste layer for your team:** Create a Notion database called "Taste Docs" with columns for Domain, Owner, and Last Updated. Have each senior person write their taste doc using the format above — 10-15 specific rules. Organize by layer: Company Taste (brand, strategy, quality bar), Team Taste (how each function makes decisions), Individual Taste (personal alpha). Connect the Notion workspace to Claude via MCP. Now every team member's AI draws from the full taste stack. A new PM's first brief matches the org's quality bar because the context carries it automatically.
 
 A shared taste infrastructure changes the economics entirely. When the team's AI draws from documented principles — strategic frameworks, hiring rubrics, product quality bars, design standards, voice guidelines, pricing philosophy, clinical protocols — every output starts from the same baseline. Consistency without bottlenecks. That's the unlock.
 

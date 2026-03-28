@@ -109,7 +109,9 @@ Then everyone spends 45 minutes rewriting it. Fixing the framing. Adding the nua
 
 The transfer is simpler than people think and harder than they expect.
 
-Simple because the format is straightforward: document your judgment. Not abstract principles — concrete rules. Not "I value clean design" but "Progressive disclosure on complex flows — never more than 3 decisions per screen. Content hierarchy follows the user's mental model, not the org chart. Body text never exceeds 18px on desktop. Primary CTAs use high-contrast fills, never ghost buttons." Not "I hire for culture fit" but "I evaluate culture by how someone describes their last failure, not their last success."
+Simple because the format is straightforward: document your judgment. Not abstract principles — concrete rules.
+
+**How to start encoding your specificity today:** Open Claude.ai and create a new Project. Name it after your domain — "Product Strategy," "UX Design," "Engineering Architecture," whatever your craft is. Now add a Project Knowledge file with your rules. Start with just 5 — the 5 things you'd tell a sharp new hire on day one. Test it by asking Claude to produce a real deliverable. See what it gets wrong. Add the rules that would have caught those mistakes. Repeat this weekly. After a month, your AI carries judgment that would take someone else a year to develop. You've moved from Level 0 to Level 3 on the specificity spectrum. Not "I value clean design" but "Progressive disclosure on complex flows — never more than 3 decisions per screen. Content hierarchy follows the user's mental model, not the org chart. Body text never exceeds 18px on desktop. Primary CTAs use high-contrast fills, never ghost buttons." Not "I hire for culture fit" but "I evaluate culture by how someone describes their last failure, not their last success."
 
 Hard because it requires you to articulate things you've never had to articulate. The **product designer's** instinct that makes her reject a solution in 10 seconds — is it the information architecture, the user flow, the visual hierarchy, or all three? The **founder's** gut feeling that a candidate won't work out — what signals is she actually reading? The **PM's** sense that a pricing model won't survive — what pattern is she recognizing? The **engineer's** feeling that an architecture decision will cause pain in 6 months — what's he actually seeing? The **clinical leader's** intuition about a patient's trajectory — what data is she weighting differently?
 
@@ -153,6 +155,8 @@ So your team of 30 people deploys the same AI tools as every competitor and gets
 The fix isn't better prompts. It's making your organization's specificity as available to AI as the individual's. That is the architecture that matters.
 
 ### Building the Organizational Taste Layer
+
+**How to build your organizational specificity layer:** Start with a shared Notion workspace or Confluence space. Create three sections: Company (brand voice, strategic principles, quality bar), Teams (each function's decision frameworks), and Individuals (personal alpha from senior contributors). Connect it to Claude via MCP — the Notion MCP server takes 10 minutes to set up. For engineering, add a `CLAUDE.md` to your repo. For design, connect your Figma library via the Figma MCP server. Every AI interaction across the organization now starts from a shared foundation of accumulated judgment — not from the median internet.
 
 When a team encodes its collective specificity — strategic frameworks, product quality bars, design standards, brand voice, hiring philosophy, pricing principles, clinical protocols, operational workflows — every AI interaction across the organization starts from a shared foundation. Think of it as deploying institutional judgment at scale.
 

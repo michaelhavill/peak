@@ -75,7 +75,11 @@ Here's the thing. **The gap between 60% acceptance rate and 95% acceptance rate 
 
 Your engineering craft is not knowing how to code. It's knowing how to code *in this codebase*, with *these constraints*, for *these users*. That specificity is your edge -- and it's exactly what generic AI tools throw away. They're playing poker without looking at the board.
 
-The fix is building an engineering context package. Not a "best practices" wiki that nobody reads -- a deployable artifact that encodes your team's reality. Five things matter:
+The fix is building an engineering context package. Not a "best practices" wiki that nobody reads -- a deployable artifact that encodes your team's reality.
+
+**How to build your context package in 30 minutes:** Create a `CLAUDE.md` file in the root of your repo — Claude Code reads this automatically before every interaction. Or create a `.cursorrules` file if you use Cursor. Write 5 sections covering: (1) how your system is wired, (2) what you call things, (3) what utilities already exist, (4) what your deploy pipeline needs, (5) what broke production and why. Be specific — not "use good naming" but "services are named by verb, e.g. `processPayment`, not `PaymentProcessor`." Commit it to the repo. Every AI interaction now respects your reality.
+
+Five things matter:
 
 1. **Architecture patterns** -- how your system is actually wired, not how a textbook says it should be
 2. **Naming conventions** -- what you call things and why, so AI stops inventing its own vocabulary
@@ -103,6 +107,8 @@ A **product manager** started linking specs to the engineering knowledge base. W
 Here's where the economics get interesting. At the team level, engineering context packages solve the consistency problem that code review was supposed to fix but never actually did.
 
 Every team has a style. Naming patterns, error handling, testing philosophy, architecture boundaries. That style lives in the heads of 2-3 senior **engineers** and gets enforced through code review -- which means every PR is an expensive teaching moment instead of a quality gate. Senior engineers spend 30% of their time reviewing code that violates patterns the author didn't know existed. Net-net, your highest-leverage people are functioning as human linters. That is a terrible deployment of talent.
+
+**How to share engineering context across your team:** Add your `CLAUDE.md` or `.cursorrules` to the repo — every engineer gets it on `git pull`. For deeper context, create a `/docs/engineering-context/` folder with files like `architecture-decisions.md`, `anti-patterns.md`, and `naming-conventions.md`. Claude Code and Cursor both index these automatically. For cross-functional teams, connect your docs repo to Notion via MCP so PMs and designers can query engineering constraints without pinging an engineer.
 
 When the team's engineering context feeds into everyone's AI, the floor rises. Junior **engineers** produce code that matches senior standards on the first draft. New hires write idiomatic code in week one instead of month three. Code review shifts from "please follow our patterns" to "let's discuss the architectural tradeoff here." That's the shift from defense to offense. And the time your senior engineers reclaim from pattern-policing? That goes to the work that actually makes a difference — architecture decisions, system design, the hardest most interesting technical problems that have been sitting in the backlog because nobody had time to think deeply about them. Faster reviews aren't just about shipping more. They're about unlocking time for the deep craft that differentiates great engineering teams from ones that just grind.
 
