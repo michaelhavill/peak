@@ -8,7 +8,7 @@ import RolePaths from "@/components/RolePaths";
 import IntegrationsGrid from "@/components/IntegrationsGrid";
 import StatsBar from "@/components/StatsBar";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import BlogSection from "@/components/BlogSection";
+import LearnPaths from "@/components/LearnPaths";
 import FooterCTA from "@/components/FooterCTA";
 import Footer from "@/components/Footer";
 import MobileNav from "@/components/MobileNav";
@@ -29,7 +29,7 @@ export default function Home() {
           <IntegrationsGrid />
           <StatsBar />
           <TestimonialsCarousel />
-          <BlogSection />
+          <LearnPaths />
           <FooterCTA />
           <Footer />
         </div>

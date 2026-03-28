@@ -2,6 +2,7 @@
 title: "The Builder Who Runs the Machine: From AI Tasks to AI Workflows"
 slug: pillar-3-orchestration
 pillar: 3
+theme: ["ship-faster", "ai-teams"]
 description: "You're using AI for the easy parts and doing the hard parts by hand. The real 100x is in the orchestration."
 date: 2026-03-28
 author: "100xpath"

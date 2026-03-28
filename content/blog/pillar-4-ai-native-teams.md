@@ -2,6 +2,7 @@
 title: "Doers Over Talkers: Building the Team That Actually Ships with AI"
 slug: pillar-4-ai-native-teams
 pillar: 4
+theme: ["ai-teams", "scale"]
 description: "AI amplifies what's already there. Give it to a team of doers and they ship 10x more. Give it to talkers and you get 10x more slide decks."
 date: 2026-03-28
 author: "100xpath"

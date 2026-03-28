@@ -2,6 +2,7 @@
 title: "The 1% Who Built Their Moat: Why Knowledge Bases Are the New Career Capital"
 slug: pillar-1-knowledge-management
 pillar: 1
+theme: ["build-your-moat", "craft-and-taste"]
 description: "Your taste, craft, and domain expertise are career capital AI can't replicate — unless you feed it to them."
 date: 2026-03-28
 author: "100xpath"

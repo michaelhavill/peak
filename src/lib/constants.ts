@@ -4,7 +4,7 @@ export const NAV_ITEMS = [
   { label: "Surfaces", href: "#surfaces" },
   { label: "Stack", href: "#stack" },
   { label: "Builders", href: "#builders" },
-  { label: "Writing", href: "#writing" },
+  { label: "Learn", href: "#learn" },
 ];
 
 export const ROTATING_ROLES = [
@@ -157,18 +157,81 @@ export const TESTIMONIALS = [
   },
 ];
 
-export const BLOG_POSTS = [
+export const LEARN_THEMES = [
+  { id: "all", label: "All Paths" },
+  { id: "build-your-moat", label: "Build Your Moat" },
+  { id: "ship-faster", label: "Ship Faster" },
+  { id: "craft-and-taste", label: "Craft & Taste" },
+  { id: "ai-teams", label: "AI + Human Teams" },
+  { id: "scale", label: "Scale" },
+];
+
+export const LEARN_PATHS = [
   {
-    author: "Path to 100x",
     title: "The 1% Who Built Their Moat: Why Knowledge Bases Are the New Career Capital",
+    description: "Your taste, craft, and domain expertise are career capital AI can't replicate — unless you feed it to them.",
+    themes: ["build-your-moat", "craft-and-taste"],
+    slug: "pillar-1-knowledge-management",
   },
   {
-    author: "Path to 100x",
-    title: "Your Company's AI Is Only as Good as the Context You Give It",
+    title: "Make Your Taste Flow Through Every AI Interaction",
+    description: "Your aesthetic instincts took years to develop. Here's how to make AI produce work that's unmistakably yours.",
+    themes: ["craft-and-taste", "build-your-moat"],
+    slug: "taste-through-ai",
   },
   {
-    author: "Path to 100x",
-    title: "Commoditized vs. Irreplaceable: The Builder Who Wields the Moat",
+    title: "Code That Carries Your Craft: Making AI Ship Work That's Actually Yours",
+    description: "Generic AI ships generic code. AI with your stack constraints, patterns, and quality bar ships code that works in your reality.",
+    themes: ["craft-and-taste", "ship-faster"],
+    slug: "coding-in-craft",
+  },
+  {
+    title: "Ship in Weeks What Used to Take Quarters",
+    description: "The teams shipping fastest aren't using better AI. They've eliminated the dead time between decisions.",
+    themes: ["ship-faster", "build-your-moat"],
+    slug: "speed-to-market",
+  },
+  {
+    title: "The Builder Who Runs the Machine: From AI Tasks to AI Workflows",
+    description: "You're using AI for the easy parts and doing the hard parts by hand. The real 100x is in the orchestration.",
+    themes: ["ship-faster", "ai-teams"],
+    slug: "pillar-3-orchestration",
+  },
+  {
+    title: "Add 10 Team Members Tomorrow — Without a Single Hire",
+    description: "AI peers aren't assistants. They're team members with your context, your constraints, and your quality bar.",
+    themes: ["ai-teams", "ship-faster"],
+    slug: "10x-team-ai-peers",
+  },
+  {
+    title: "Build Workspaces Where Humans and AI Actually Collaborate",
+    description: "Your AI tools live in one tab. Your team lives in another. Here's how to build the shared space between them.",
+    themes: ["ai-teams", "scale"],
+    slug: "collaborative-spaces",
+  },
+  {
+    title: "Doers Over Talkers: Building the Team That Actually Ships with AI",
+    description: "AI amplifies what's already there. Give it to doers and they ship 10x. Give it to talkers and you get 10x more slide decks.",
+    themes: ["ai-teams", "scale"],
+    slug: "pillar-4-ai-native-teams",
+  },
+  {
+    title: "Own the Center, Rent the Edges: The Architecture That Makes You Antifragile",
+    description: "The builders who own their orchestration layer can swap any tool overnight. Everyone else is locked in.",
+    themes: ["scale", "ship-faster"],
+    slug: "pillar-2-hub-and-spoke",
+  },
+  {
+    title: "From Individual Moat to Company Moat: Scaling What Can't Be Copied",
+    description: "Your personal knowledge base is a career moat. Your company's knowledge base is a competitive moat.",
+    themes: ["build-your-moat", "scale"],
+    slug: "building-moat-at-scale",
+  },
+  {
+    title: "Commoditized vs. Irreplaceable: Redefining What Great Work Looks Like",
+    description: "AI-assisted work is the new baseline. The builders who measure impact over effort are pulling away.",
+    themes: ["craft-and-taste", "build-your-moat"],
+    slug: "pillar-5-performance-standards",
   },
 ];
 

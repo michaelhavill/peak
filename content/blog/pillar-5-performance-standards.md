@@ -2,6 +2,7 @@
 title: "Commoditized vs. Irreplaceable: Redefining What Great Work Looks Like"
 slug: pillar-5-performance-standards
 pillar: 5
+theme: ["craft-and-taste", "build-your-moat"]
 description: "AI-assisted work is the new baseline. The builders who measure impact over effort are pulling away from everyone else."
 date: 2026-03-28
 author: "100xpath"

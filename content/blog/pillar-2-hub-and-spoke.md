@@ -2,6 +2,7 @@
 title: "Own the Center, Rent the Edges: The Architecture That Makes You Antifragile"
 slug: pillar-2-hub-and-spoke
 pillar: 2
+theme: ["scale", "ship-faster"]
 description: "The builders who own their orchestration layer can swap any tool overnight. Everyone else is locked in."
 date: 2026-03-28
 author: "100xpath"
