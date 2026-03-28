@@ -1,5 +1,6 @@
 ---
 title: "Learn the Path to Hiring Doers Over Talkers"
+titleHighlight: "Doers Over Talkers"
 slug: pillar-4-ai-native-teams
 pillar: 4
 theme: ["ai-teams", "scale"]

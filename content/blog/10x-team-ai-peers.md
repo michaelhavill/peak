@@ -1,5 +1,6 @@
 ---
 title: "Follow the Path to Adding 10 Team Members — Without a Single Hire"
+titleHighlight: "Without a Single Hire"
 slug: 10x-team-ai-peers
 theme: ["ai-teams", "ship-faster"]
 description: "AI peers aren't assistants. They're team members with your context, your constraints, and your quality bar."

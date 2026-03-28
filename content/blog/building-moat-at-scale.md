@@ -1,5 +1,6 @@
 ---
 title: "Chart the Path from Individual Moat to Company Moat"
+titleHighlight: "Company Moat"
 slug: building-moat-at-scale
 theme: ["build-your-moat", "scale"]
 description: "Your personal knowledge base is a career moat. Your company's knowledge base is a competitive moat. Here's how to scale one into the other."

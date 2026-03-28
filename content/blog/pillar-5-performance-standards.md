@@ -1,5 +1,6 @@
 ---
 title: "The Path from Commoditized to Irreplaceable"
+titleHighlight: "Irreplaceable"
 slug: pillar-5-performance-standards
 pillar: 5
 theme: ["craft-and-taste", "build-your-moat"]

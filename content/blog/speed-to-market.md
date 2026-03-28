@@ -1,5 +1,6 @@
 ---
 title: "The Path to Shipping in Weeks What Used to Take Quarters"
+titleHighlight: "Weeks What Used to Take Quarters"
 slug: speed-to-market
 theme: ["ship-faster", "build-your-moat"]
 description: "The teams shipping fastest aren't using better AI. They've eliminated the dead time between decisions."

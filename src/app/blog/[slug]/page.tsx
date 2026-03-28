@@ -66,7 +66,23 @@ export default async function BlogPostPage({
             color: "var(--text-primary)",
           }}
         >
-          {post.title}
+          {post.titleHighlight ? (
+            <>
+              {post.title.split(post.titleHighlight)[0]}
+              <span
+                style={{
+                  backgroundColor: "rgba(200, 162, 255, 0.18)",
+                  padding: "0.05em 0.15em",
+                  borderRadius: "4px",
+                  boxDecorationBreak: "clone",
+                  WebkitBoxDecorationBreak: "clone",
+                }}
+              >{post.titleHighlight}</span>
+              {post.title.split(post.titleHighlight)[1]}
+            </>
+          ) : (
+            post.title
+          )}
         </h1>
 
         <p

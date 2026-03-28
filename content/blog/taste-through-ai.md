@@ -1,5 +1,6 @@
 ---
 title: "Find the Path to Making AI Carry Your Taste"
+titleHighlight: "Carry Your Taste"
 slug: taste-through-ai
 theme: ["craft-and-taste", "build-your-moat"]
 description: "Your judgment about strategy, design, hiring, and positioning took years to develop. Here's how to make AI carry it."

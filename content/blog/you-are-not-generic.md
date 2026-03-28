@@ -1,5 +1,6 @@
 ---
 title: "Own the Path to Specificity: You Are Not Generic"
+titleHighlight: "You Are Not Generic"
 slug: you-are-not-generic
 theme: ["craft-and-taste", "build-your-moat"]
 description: "Your craft, taste, and domain expertise are what make you irreplaceable. The moment you make that specificity available to AI, you stop competing with it and start compounding through it."

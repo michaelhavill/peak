@@ -1,5 +1,6 @@
 ---
 title: "Map the Path from AI Tasks to AI Workflows"
+titleHighlight: "AI Workflows"
 slug: pillar-3-orchestration
 pillar: 3
 theme: ["ship-faster", "ai-teams"]

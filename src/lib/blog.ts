@@ -55,6 +55,7 @@ function colorizeAscii(html: string): string {
 export interface BlogPost {
   slug: string;
   title: string;
+  titleHighlight: string;
   description: string;
   date: string;
   author: string;
@@ -103,6 +104,7 @@ export function getPostBySlug(slug: string): BlogPost {
   return {
     slug,
     title: data.title ?? "",
+    titleHighlight: data.titleHighlight ?? "",
     description: data.description ?? "",
     date: data.date ?? "",
     author: data.author ?? "100xpath",
