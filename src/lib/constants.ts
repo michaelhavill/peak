@@ -158,12 +158,41 @@ export const TESTIMONIALS = [
 ];
 
 export const LEARN_THEMES = [
-  { id: "all", label: "All Paths" },
-  { id: "build-your-moat", label: "Build Your Moat" },
-  { id: "ship-faster", label: "Ship Faster" },
-  { id: "craft-and-taste", label: "Craft & Taste" },
-  { id: "ai-teams", label: "AI + Human Teams" },
-  { id: "scale", label: "Scale" },
+  {
+    id: "build-your-moat",
+    label: "Build Your Moat",
+    heading: "Build the moat: knowledge that can't be copied",
+    description:
+      "Your taste, craft, and domain expertise are years of accumulated judgment. Codify them into a knowledge base and your AI becomes inimitable — not just useful.",
+  },
+  {
+    id: "craft-and-taste",
+    label: "Craft & Taste",
+    heading: "Make AI carry your craft, not flatten it",
+    description:
+      "Your aesthetic instincts and quality bar are what make your work yours. Here's how to make every AI interaction reflect them.",
+  },
+  {
+    id: "ship-faster",
+    label: "Ship Faster",
+    heading: "Eliminate the dead time between decisions",
+    description:
+      "Speed comes from removing context assembly, manual handoffs, and workflow gaps — not from working harder.",
+  },
+  {
+    id: "ai-teams",
+    label: "AI + Human Teams",
+    heading: "Build teams of humans and AI that actually ship",
+    description:
+      "AI peers aren't assistants. They're team members with your context, your constraints, and your quality bar. Here's how to collaborate.",
+  },
+  {
+    id: "scale",
+    label: "Scale",
+    heading: "Take what works for one and make it work for everyone",
+    description:
+      "Individual moats become company moats when the knowledge compounds across people. Architecture and culture that scales.",
+  },
 ];
 
 export const LEARN_PATHS = [
