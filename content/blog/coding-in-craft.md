@@ -19,7 +19,7 @@ tags:
 heroImage: /blog/coding-in-craft/hero.png
 ---
 
-Most AI-generated code is dead on arrival. Copilot autocompletes a function, the code compiles, and then your senior engineer spends 15 minutes unfucking it -- wrong naming conventions, a pattern you deprecated last quarter, zero awareness of the shared utility that already does the same thing. Multiply that by every engineer, every day, across your entire org. That is insanity.
+Most AI-generated code is dead on arrival. Copilot autocompletes a function, the code compiles, and then your senior engineer spends 15 minutes fixing it -- wrong naming conventions, a pattern you deprecated last quarter, zero awareness of the shared utility that already does the same thing. Multiply that by every engineer, every day, across your entire org. That is insanity.
 
 Here's the thing. **The gap between 60% acceptance rate and 95% acceptance rate is not an AI capability problem -- it's a context deployment problem.** AI that doesn't know your codebase ships code that breaks on contact with your reality. AI that carries your constraints, your patterns, your scars? It ships code that belongs — because it's building with you, not instead of you. Your knowledge store and your ongoing judgment are what make AI an extension of your engineering craft. You're not outsourcing code quality. You're amplifying it. Full stop.
 
