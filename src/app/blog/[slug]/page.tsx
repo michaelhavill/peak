@@ -1,5 +1,6 @@
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { LEARN_THEMES } from "@/lib/constants";
+import PersonaPathway from "@/components/PersonaPathway";
 import Link from "next/link";
 
 export function generateStaticParams() {
@@ -84,6 +85,8 @@ export default async function BlogPostPage({
           className="prose-100x"
           dangerouslySetInnerHTML={{ __html: post.htmlContent }}
         />
+
+        <PersonaPathway slug={slug} />
       </div>
     </main>
   );
