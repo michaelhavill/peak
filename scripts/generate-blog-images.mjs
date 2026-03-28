@@ -29,7 +29,7 @@ const STYLES = {
   "pixel-art":
     "16-bit pixel art, [SCENE], retro video game aesthetic, rich detailed dithering, warm diffused lighting, vibrant saturated color palette, clean composition with clear focal point, slight atmospheric haze, every pixel visible, painterly pixel shading, Japanese SFC-era game background art, nostalgic and inviting mood, no text, no UI elements, no watermarks",
   "new-yorker":
-    "New Yorker magazine cover illustration, [SCENE], upbeat and energetic mood, sense of momentum and forward motion, vibrant saturated accent colors — warm amber, electric teal, vivid coral — against a bright ivory background, abstract expressive figures full of kinetic energy and optimism, bold confident brushstrokes, figures caught mid-leap or mid-reach suggesting possibility and flourishing, painterly ink washes with rich color fills, clean composition with generous negative space, joyful creative spirit, the feeling of something beginning not ending, no pixel art, no game art, no text, no captions, no speech bubbles, no logos",
+    "New Yorker magazine cover illustration, [SCENE], upbeat and optimistic mood, sense of momentum and forward motion, soft watercolour washes with loose ink linework, muted sophisticated palette — warm terracotta, dusty teal, soft ochre — against a warm ivory background, figures reduced to expressive gesture and fluid silhouette, caught mid-leap or mid-reach suggesting possibility and joy, generous negative space, delicate painterly texture, the feeling of something beginning not ending, no pixel art, no game art, no text, no captions, no speech bubbles, no logos",
 };
 
 // ---------------------------------------------------------------------------
