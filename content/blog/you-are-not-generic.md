@@ -21,13 +21,13 @@ The moment you make that specificity available to AI, you stop competing with it
 │                                                                                 │
 │  ● THE SPECIFICITY SPECTRUM                                                     │
 │                                                                                 │
-│  Where most people stop:               Where the 1% lives:                     │
+│  Where most people stop:               Where the 1% lives:                      │
 │                                                                                 │
-│  Level 0  ░░░░░░░░░░░░░░░░░░░░        Level 4  ████████████████████            │
+│  Level 0  ░░░░░░░░░░░░░░░░░░░░        Level 4  ████████████████████             │
 │  Generic prompting                     Compounding specificity                  │
 │  Same input → same output              Every interaction sharpens the AI        │
 │                                                                                 │
-│  Level 1  ░░░░░░░░░░░░░░░░░░░░                                                 │
+│  Level 1  ░░░░░░░░░░░░░░░░░░░░                                                  │
 │  Better prompting                      ┌──────────────────────────┐             │
 │  Marginal. Anyone replicates           │  YOUR SPECIFICITY        │             │
 │  it in a weekend.                      │                          │             │
@@ -38,10 +38,10 @@ The moment you make that specificity available to AI, you stop competing with it
 │      prompt tips                       │  + Taste & craft rules   │             │
 │                                        │                          │             │
 │                                        │  = Output that's         │             │
-│                                        │    unmistakably yours     │             │
+│                                        │    unmistakably yours     │            │
 │                                        └──────────────────────────┘             │
 │                                                                                 │
-│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
 │  CAREER IMPACT                         CAREER IMPACT                            │
 │  Competing with AI. Replaceable        Compounding through AI.                  │
@@ -52,7 +52,7 @@ The moment you make that specificity available to AI, you stop competing with it
 │  BUSINESS IMPACT                       BUSINESS IMPACT                          │
 │  Same AI, same output as               12 months of encoded org                 │
 │  every competitor. No moat.            judgment. Competitors can                │
-│  Race to the bottom.                   buy the same models — not               │
+│  Race to the bottom.                   buy the same models — not                │
 │  ░░░░░░░░░░░░░░░░░░░░ commodity        your accumulated specificity.            │
 │                                        ████████████████████ moat                │
 │                                                                                 │

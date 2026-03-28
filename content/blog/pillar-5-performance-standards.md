@@ -16,7 +16,7 @@ Here's the thing. Every one of these organizations is operating on the same unsp
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                 │
-│  ● HOW MOST ORGS MEASURE WORK          ● HOW A 100x OPERATOR MEASURES          │
+│  ● HOW MOST ORGS MEASURE WORK          ● HOW A 100x OPERATOR MEASURES           │
 │                                                                                 │
 │  THE OLD EQUATION:                     THE NEW EQUATION:                        │
 │                                                                                 │
@@ -25,9 +25,9 @@ Here's the thing. Every one of these organizations is operating on the same unsp
 │  "That was fast.                       "That was excellent.                     │
 │   What did we miss?"                    What's next?"                           │
 │                                                                                 │
-│  ┌─────────────────────────┐           ┌─────────────────────────┐             │
+│  ┌─────────────────────────┐           ┌─────────────────────────┐              │
 │  │  3 days on a brief      │           │  40 min on judgment      │             │
-│  │  ████████████████ "good" │           │  ████ "excellent"        │             │
+│  │  ████████████████ "good" │           │  ████ "excellent"        │            │
 │  │                         │           │                          │             │
 │  │  20 min on same brief   │           │  Same brief, same quality│             │
 │  │  ██ "suspicious"        │           │  Shipped Mon, not Thurs  │             │
@@ -37,19 +37,19 @@ Here's the thing. Every one of these organizations is operating on the same unsp
 │  │  One gets questioned.   │           │  Speed IS the signal.    │             │
 │  └─────────────────────────┘           └──────────────────────────┘             │
 │                                                                                 │
-│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
 │  CAREER IMPACT                         CAREER IMPACT                            │
 │  Best builders slow down to            Best builders ship fast and              │
 │  match cultural expectations.          explain their process. Trust             │
 │  Managing perception > shipping.       earned through evidence.                 │
-│  ░░░░░░░░░░░░░░░░░░░░ commoditized    ████████████████████ irreplaceable       │
+│  ░░░░░░░░░░░░░░░░░░░░ commoditized    ████████████████████ irreplaceable        │
 │                                                                                 │
 │  BUSINESS IMPACT                       BUSINESS IMPACT                          │
 │  Top talent leaves for orgs            Top talent stays because                 │
 │  that reward speed. Culture            speed + quality = celebrated.            │
 │  of performance theater.               3x shipped outcomes / week.              │
-│  ░░░░░░░░░░░░░░░░░░░░ declining       ████████████████████ compounding         │
+│  ░░░░░░░░░░░░░░░░░░░░ declining       ████████████████████ compounding          │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```

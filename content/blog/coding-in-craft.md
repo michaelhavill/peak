@@ -38,22 +38,22 @@ Here's the thing. **The gap between 60% acceptance rate and 95% acceptance rate 
 │                                                                                 │
 │                                        Acceptance rate: 95%                     │
 │                                                                                 │
-│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
 │  CAREER IMPACT                         CAREER IMPACT                            │
 │  You're a human linter.               You're the person who built               │
 │  Catching AI mistakes all day.         the context that makes                   │
 │  AI creates work instead of            everyone's AI smarter.                   │
 │  saving it.                            Code review is about ideas,              │
-│  ░░░░░░░░░░░░░░░░░░░░                 not style fixes.                         │
+│  ░░░░░░░░░░░░░░░░░░░░                 not style fixes.                          │
 │                                        ████████████████████                     │
 │                                                                                 │
 │  BUSINESS IMPACT                       BUSINESS IMPACT                          │
-│  Code review: 2 days avg.             Code review: 4 hours avg.                │
+│  Code review: 2 days avg.             Code review: 4 hours avg.                 │
 │  Senior engineers spend 30%            Juniors write idiomatic code             │
 │  of time on pattern violations.        in week 1, not month 3.                  │
-│  Onboarding: 3 months.                Onboarding: 2 weeks.                     │
-│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│  Onboarding: 3 months.                Onboarding: 2 weeks.                      │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                      │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```

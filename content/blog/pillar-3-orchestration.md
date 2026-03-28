@@ -20,7 +20,7 @@ Look -- you automated the easy parts. The hard parts -- the information assembly
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                 │
-│  ● HOW MOST PEOPLE USE AI TODAY        ● HOW A 100x OPERATOR USES AI           │
+│  ● HOW MOST PEOPLE USE AI TODAY        ● HOW A 100x OPERATOR USES AI            │
 │                                                                                 │
 │  LEVEL 1: Task Replacement             LEVEL 2: Decision Preparation            │
 │                                                                                 │
@@ -37,21 +37,21 @@ Look -- you automated the easy parts. The hard parts -- the information assembly
 │     │ 70% assembly     │                             ↓                          │
 │     │ 30% judgment     │               You walk in with full context.           │
 │     │ That's backwards │               You make the decision.                   │
-│     └──────────────────┘               30 min standup → 12 min.                │
+│     └──────────────────┘               30 min standup → 12 min.                 │
 │                                                                                 │
-│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
 │  CAREER IMPACT                         CAREER IMPACT                            │
 │  You do tasks AI assigns.              You build the machine.                   │
 │  Interchangeable.                      The machine makes everyone               │
-│  ░░░░░░░░░░░░░░░░░░░░                 around you 10x more effective.           │
+│  ░░░░░░░░░░░░░░░░░░░░                 around you 10x more effective.            │
 │                                        ████████████████████                     │
 │                                                                                 │
 │  BUSINESS IMPACT                       BUSINESS IMPACT                          │
 │  Patchwork automations.                End-to-end workflow engine.              │
 │  New overhead managing                 Dead time between decisions              │
 │  disconnected pieces.                  eliminated. 3x throughput.               │
-│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                      │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```

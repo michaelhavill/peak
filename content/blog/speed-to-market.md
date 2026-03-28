@@ -15,45 +15,45 @@ Here's the thing: **the teams shipping in weeks instead of quarters didn't hire 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                 │
-│  ● HOW MOST TEAMS SHIP                 ● HOW A 100x TEAM SHIPS                 │
+│  ● HOW MOST TEAMS SHIP                 ● HOW A 100x TEAM SHIPS                  │
 │                                                                                 │
-│  Idea ──→ Brief ──→ Design ──→ Build ──→ Ship                                  │
+│  Idea ──→ Brief ──→ Design ──→ Build ──→ Ship                                   │
 │       wait    wait     wait      wait                                           │
-│       2wk     1wk      1wk      1wk     = 6 weeks                              │
+│       2wk     1wk      1wk      1wk     = 6 weeks                               │
 │                                                                                 │
 │  Each "wait" = context assembly + handoff loss                                  │
 │                                                                                 │
-│  ┌──────────────────────┐              ┌──────────────────────┐                │
-│  │  YOUR DAY             │              │  YOUR DAY             │                │
-│  │                       │              │                       │                │
-│  │  ████████████████ 70% │              │  ████ 30% assembly    │                │
-│  │  Assembly: pulling    │              │  AI handles overnight  │                │
-│  │  dashboards, reading  │              │                       │                │
-│  │  Slack, gathering     │              │  ████████████████ 70% │                │
-│  │  context              │              │  Judgment: decisions,  │                │
-│  │                       │              │  strategy, shipping    │                │
-│  │  ██████ 30%           │              │                       │                │
-│  │  Judgment: actual     │              │  Context flows across  │                │
-│  │  decisions            │              │  every handoff. No one │                │
-│  │                       │              │  re-establishes what   │                │
-│  └──────────────────────┘              │  the last person knew. │                │
-│                                        └──────────────────────┘                │
-│  Idea to prod: 6 weeks                                                         │
+│  ┌──────────────────────┐              ┌──────────────────────┐                 │
+│  │  YOUR DAY             │              │  YOUR DAY             │               │
+│  │                       │              │                       │               │
+│  │  ████████████████ 70% │              │  ████ 30% assembly    │               │
+│  │  Assembly: pulling    │              │  AI handles overnight  │              │
+│  │  dashboards, reading  │              │                       │               │
+│  │  Slack, gathering     │              │  ████████████████ 70% │               │
+│  │  context              │              │  Judgment: decisions,  │              │
+│  │                       │              │  strategy, shipping    │              │
+│  │  ██████ 30%           │              │                       │               │
+│  │  Judgment: actual     │              │  Context flows across  │              │
+│  │  decisions            │              │  every handoff. No one │              │
+│  │                       │              │  re-establishes what   │              │
+│  └──────────────────────┘              │  the last person knew. │               │
+│                                        └──────────────────────┘                 │
+│  Idea to prod: 6 weeks                                                          │
 │                                        Idea to prod: 8 days                     │
 │                                                                                 │
-│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
 │  CAREER IMPACT                         CAREER IMPACT                            │
 │  Your competitor shipped it            You shipped it. You learned              │
 │  while you were still                  from real users. You iterated.           │
-│  assembling the brief.                 3 cycles while they did 1.              │
-│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│  assembling the brief.                 3 cycles while they did 1.               │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                      │
 │                                                                                 │
 │  BUSINESS IMPACT                       BUSINESS IMPACT                          │
 │  3 experiments per quarter.            12 experiments per quarter.              │
-│  Slow learning. Competitors            4x faster learning. Speed               │
+│  Slow learning. Competitors            4x faster learning. Speed                │
 │  catch up.                             advantage compounds.                     │
-│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                      │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```

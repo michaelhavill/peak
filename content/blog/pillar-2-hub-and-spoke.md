@@ -18,40 +18,40 @@ The builder down the hall swaps AI providers over lunch. Her workflows keep runn
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                 │
-│  ● HOW MOST PEOPLE BUILD TODAY         ● HOW A 100x OPERATOR BUILDS            │
+│  ● HOW MOST PEOPLE BUILD TODAY         ● HOW A 100x OPERATOR BUILDS             │
 │                                                                                 │
 │  Everything tangled with one vendor:   Own the center. Rent the edges:          │
 │                                                                                 │
-│  ┌─────────────────────────┐           ┌─────────────────────────┐             │
-│  │    VENDOR PLATFORM      │           │     YOUR HUB            │             │
-│  │  ┌───┐ ┌───┐ ┌───┐     │           │  Knowledge base         │             │
-│  │  │ A │ │ B │ │ C │     │           │  Workflow logic          │             │
-│  │  └─┬─┘ └─┬─┘ └─┬─┘     │           │  Orchestration rules    │             │
-│  │    └──┬───┘───┬──┘      │           │  Business rules         │             │
-│  │       │ LOCKED │        │           └──────────┬──────────────┘             │
-│  │       │  IN    │        │                ┌─────┼─────┐                      │
-│  └───────┴───────┴─────────┘           ┌────┴┐ ┌──┴──┐ ┌┴────┐                │
-│                                        │Spoke│ │Spoke│ │Spoke│                │
-│  Something better launches?            │ AI  │ │ CRM │ │ IDE │                │
-│  You can't switch.                     └─────┘ └─────┘ └─────┘                │
-│  6-month migration. Maybe.                                                     │
-│                                        Something better launches?              │
-│                                        Swap the spoke over lunch.              │
-│                                        Hub doesn't move. Nothing breaks.       │
+│  ┌─────────────────────────┐           ┌─────────────────────────┐              │
+│  │    VENDOR PLATFORM      │           │     YOUR HUB            │              │
+│  │  ┌───┐ ┌───┐ ┌───┐     │           │  Knowledge base         │               │
+│  │  │ A │ │ B │ │ C │     │           │  Workflow logic          │              │
+│  │  └─┬─┘ └─┬─┘ └─┬─┘     │           │  Orchestration rules    │               │
+│  │    └──┬───┘───┬──┘      │           │  Business rules         │              │
+│  │       │ LOCKED │        │           └──────────┬──────────────┘              │
+│  │       │  IN    │        │                ┌─────┼─────┐                       │
+│  └───────┴───────┴─────────┘           ┌────┴┐ ┌──┴──┐ ┌┴────┐                  │
+│                                        │Spoke│ │Spoke│ │Spoke│                  │
+│  Something better launches?            │ AI  │ │ CRM │ │ IDE │                  │
+│  You can't switch.                     └─────┘ └─────┘ └─────┘                  │
+│  6-month migration. Maybe.                                                      │
+│                                        Something better launches?               │
+│                                        Swap the spoke over lunch.               │
+│                                        Hub doesn't move. Nothing breaks.        │
 │                                                                                 │
-│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
 │  CAREER IMPACT                         CAREER IMPACT                            │
 │  Your skills are trapped in            Your knowledge travels with              │
 │  one vendor's ecosystem.               you. Tools come and go.                  │
 │  Platform dies, you restart.           You never restart.                       │
-│  ░░░░░░░░░░░░░░░░░░░░ fragile         ████████████████████ antifragile         │
+│  ░░░░░░░░░░░░░░░░░░░░ fragile         ████████████████████ antifragile          │
 │                                                                                 │
 │  BUSINESS IMPACT                       BUSINESS IMPACT                          │
 │  Vendor owns your roadmap.             You adopt the best tool on               │
 │  Procurement cycles kill               day one. Competitors are                 │
 │  your speed.                           still in procurement.                    │
-│  ░░░░░░░░░░░░░░░░░░░░ locked          ████████████████████ free                │
+│  ░░░░░░░░░░░░░░░░░░░░ locked          ████████████████████ free                 │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```

@@ -17,44 +17,44 @@ Here's the thing. The AI isn't broken — it's uninformed. It has zero access to
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                 │
-│  ● AI WITHOUT YOUR TASTE               ● AI CARRYING YOUR TASTE                │
+│  ● AI WITHOUT YOUR TASTE               ● AI CARRYING YOUR TASTE                 │
 │                                                                                 │
 │  Your prompt:                          Your prompt:                             │
 │  "Draft a product strategy"            "Draft a product strategy"               │
 │                                                                                 │
 │           ↓                                       ↓                             │
-│                                        ┌──────────────────────┐                │
-│  AI draws from:                        │ YOUR TASTE DOC       │                │
-│  The entire internet.                  │                      │                │
-│  Everyone's opinions.                  │ "Lead with customer  │                │
-│  No one's judgment.                    │  pain, not TAM"      │                │
-│                                        │ "Kill features that  │                │
+│                                        ┌──────────────────────┐                 │
+│  AI draws from:                        │ YOUR TASTE DOC       │                 │
+│  The entire internet.                  │                      │                 │
+│  Everyone's opinions.                  │ "Lead with customer  │                 │
+│  No one's judgment.                    │  pain, not TAM"      │                 │
+│                                        │ "Kill features that  │                 │
 │           ↓                            │  don't move retention │                │
-│                                        │  within 2 sprints"   │                │
-│  Output:                               │ "Pricing: value-based│                │
-│  McKinsey intern's first               │  never cost-plus"    │                │
-│  attempt. Structurally                 └──────────┬───────────┘                │
+│                                        │  within 2 sprints"   │                 │
+│  Output:                               │ "Pricing: value-based│                 │
+│  McKinsey intern's first               │  never cost-plus"    │                 │
+│  attempt. Structurally                 └──────────┬───────────┘                 │
 │  competent. Missing every                         ↓                             │
 │  opinion that makes your               Output:                                  │
 │  thinking valuable.                    Sounds like you wrote it.                │
 │                                        Your framing. Your opinions.             │
-│  Tax: 45 min rewriting.               Your quality bar. First draft.           │
-│  Every. Single. Time.                  Tax: 0 min. Judgment only.              │
+│  Tax: 45 min rewriting.               Your quality bar. First draft.            │
+│  Every. Single. Time.                  Tax: 0 min. Judgment only.               │
 │                                                                                 │
-│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   │
+│  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
 │  CAREER IMPACT                         CAREER IMPACT                            │
 │  Your AI sounds like everyone          Your AI sounds like you.                 │
 │  else's. Your judgment is              Taste compounds. After 6 mo,             │
 │  invisible. You're a prompt            your AI carries judgment a               │
 │  operator.                             new hire needs a year to get.            │
-│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                      │
 │                                                                                 │
 │  BUSINESS IMPACT                       BUSINESS IMPACT                          │
 │  Team quality depends on who           Taste scales without bottlenecks.        │
 │  reviews it. Founder becomes           New PM's first brief matches             │
 │  the bottleneck.                       the org's quality bar. Day one.          │
-│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                     │
+│  ░░░░░░░░░░░░░░░░░░░░                 ████████████████████                      │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
