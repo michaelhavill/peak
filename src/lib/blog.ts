@@ -52,6 +52,13 @@ function colorizeAscii(html: string): string {
   );
 }
 
+const AUTHOR_META: Record<string, { name: string; url: string }> = {
+  "100xpath": {
+    name: "Michael van Havill",
+    url: "https://www.linkedin.com/in/michaelvanhavill/",
+  },
+};
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -59,6 +66,8 @@ export interface BlogPost {
   description: string;
   date: string;
   author: string;
+  authorName: string;
+  authorUrl: string;
   tags: string[];
   themes: string[];
   heroImage: string;
@@ -109,6 +118,8 @@ export function getPostBySlug(slug: string): BlogPost {
     description: data.description ?? "",
     date: data.date ?? "",
     author: data.author ?? "100xpath",
+    authorName: AUTHOR_META[data.author ?? "100xpath"]?.name ?? data.author ?? "",
+    authorUrl: AUTHOR_META[data.author ?? "100xpath"]?.url ?? "",
     tags: data.tags ?? [],
     themes: data.theme ?? [],
     heroImage: data.heroImage ?? "",

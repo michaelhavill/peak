@@ -87,11 +87,30 @@ export default async function BlogPostPage({
         </h1>
 
         <p
-          className="text-[15px] mb-8"
+          className="text-[15px] mb-4"
           style={{ color: "var(--text-secondary)" }}
         >
           {post.description}
         </p>
+
+        {post.authorName && (
+          <p className="text-[13px] mb-8" style={{ color: "var(--text-secondary)" }}>
+            By{" "}
+            {post.authorUrl ? (
+              <a
+                href={post.authorUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+                style={{ color: "var(--text-primary)" }}
+              >
+                {post.authorName}
+              </a>
+            ) : (
+              post.authorName
+            )}
+          </p>
+        )}
 
         <div className="flex items-center justify-between mb-10">
           <div
