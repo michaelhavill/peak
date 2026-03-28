@@ -29,7 +29,7 @@ const STYLES = {
   "pixel-art":
     "16-bit pixel art, [SCENE], retro video game aesthetic, rich detailed dithering, warm diffused lighting, vibrant saturated color palette, clean composition with clear focal point, slight atmospheric haze, every pixel visible, painterly pixel shading, Japanese SFC-era game background art, nostalgic and inviting mood, no text, no UI elements, no watermarks",
   "new-yorker":
-    "New Yorker and Economist magazine cover illustration style, [SCENE], bold graphic symbolism, one strong central visual metaphor, the entire idea compressed into a single image, highly abstract and conceptual, minimal elements — only what is essential to the idea, strong geometric composition, confident flat ink shapes with sparse watercolour wash, very limited palette — deep navy or charcoal, warm terracotta or amber, ivory — high contrast, clever visual wit, the kind of image that makes you think before you understand it, no literal scenes, no interiors, no furniture, no realistic characters, no faces, figures only as silhouette or shape, no pixel art, no game art, no text, no captions, no logos",
+    "New Yorker magazine editorial illustration, [SCENE], one abstract humanoid figure rendered as a warm golden-terracotta simplified form — featureless, dignified, still — in relationship with a larger organic or architectural form rendered in deep navy ink with rich detailed linework, the connection between the figure and the form tells the entire story, warm ivory background, painterly ink linework with loose watercolour wash, the mood quietly hopeful and expansive — the figure always in a moment of discovery or possibility, never struggle, generous negative space, no realistic faces, no furniture or interiors, no pixel art, no game art, no text, no captions, no logos",
 };
 
 // ---------------------------------------------------------------------------
@@ -37,94 +37,94 @@ const STYLES = {
 // ---------------------------------------------------------------------------
 const POST_PROMPTS = {
   "10x-team-ai-peers": {
-    hero: "A single chess queen piece casting a shadow shaped like an entire army of pieces — one figure, the force of many — stark graphic, high contrast, white background",
+    hero: "A single golden figure standing still, their shadow cast behind them branching into many silhouettes each doing different work — writing, building, reaching — the one person whose stillness multiplies into motion",
     sections: [
-      "One candle flame multiplied into a hundred flames in a single breath — the geometry of exponential reach from a single source",
-      "A tiny seed on one side of a scale perfectly balancing a vast tree on the other — leverage made visible as pure graphic symbol",
+      "A golden figure standing with arms slightly open, their shadow on the wall behind them expanding into a vast branching network of connected figures — the reach invisible from the front, enormous from behind",
+      "A small golden figure at the base of an enormous tree whose branches each end in a different kind of work — the tree as everything that grows from one person's intent",
     ],
   },
   "building-moat-at-scale": {
-    hero: "A small stone dropped into still water — the rings expanding outward and becoming walls, a fortress formed from the geometry of compounding — the ripple as architecture",
+    hero: "A golden figure standing beside a young sapling — but their shadow on the ground behind them is the shadow of an ancient, enormous tree already fully grown — the future already present in what they are tending",
     sections: [
-      "An hourglass where the sand falling through transforms into bricks as it lands, building upward — time becoming structure",
-      "A single thread being pulled from a tangle that gradually straightens into a wall — the moat emerging from patience and repetition",
+      "A golden figure placing a single stone at the base of a vast wall that stretches to the horizon — already built, still being built, the figure calm at the edge of something enormous they made",
+      "A golden figure standing at the centre of concentric rings carved into the ground around them — like growth rings in a cross-section of wood — the record of everything that has compounded around them",
     ],
   },
   "coding-in-craft": {
-    hero: "Two identical bolts of cloth — one cut by machine into a thousand identical shapes, one cut by a single pair of scissors into one perfect form — the geometry of mass versus the geometry of craft",
+    hero: "A golden figure with hands pressed against an arch they are shaping — the arch intricate and alive with detailed organic linework, every curve deliberate — the figure as the author of something that could not exist without their particular attention",
     sections: [
-      "A fingerprint magnified to fill the frame, its unique ridges forming the contours of a landscape — identity embedded in the made thing",
-      "A plain key beside an ornate key — both open a lock, but only one carries a signature — the difference craft makes rendered as pure object",
+      "A golden figure holding a single object — simple in their hands, but its shadow on the wall is vastly more complex, a detailed architectural form — what craft makes visible that generic production cannot",
+      "A golden figure standing before two trees — one perfectly symmetrical and identical on both sides, one wild and asymmetric and unmistakably grown by a specific hand — the figure looking at the second one",
     ],
   },
   "collaborative-spaces": {
-    hero: "Two circles overlapping — the overlapping space a different colour, brighter than either circle alone — the Venn diagram as the entire argument, nothing else in the frame",
+    hero: "Two golden figures standing apart, each casting a shadow toward the other — the shadows meeting in the middle and merging into a single larger form neither figure alone could cast — shared space as the place where something new becomes possible",
     sections: [
-      "A bridge drawn in a single unbroken line connecting two geometric forms that could not otherwise touch — connection as the simplest possible shape",
-      "Two arrows pointing at each other meeting in the middle and becoming a single wider arrow pointing forward — collision becoming direction",
+      "A golden figure and a geometric companion form facing each other across a gap — between them, suspended in the air, the outline of something neither holds — the made thing existing in the space of collaboration",
+      "Two golden figures back to back, each shadow extending forward — both shadows converging ahead of them into a single illuminated path — collaboration pointing both of them in the same direction",
     ],
   },
   "monetise-your-expertise": {
-    hero: "An iceberg — the small visible tip labelled by its shape alone as one person's time, the vast submerged mass the shape of compounding systems working without them — scale hiding beneath the surface",
+    hero: "A golden figure standing at an open doorway, their shadow cast long behind them taking the shape of a vast branching tree laden with detail — everything they know made visible as an enormous living structure growing from where they stand",
     sections: [
-      "A tap turned on, water flowing into one cup — then the same tap connected to a pipe network filling a hundred cups simultaneously — the same effort, radically different reach",
-      "A book open flat — its pages fanning out not as pages but as doors, each one a different direction the knowledge can travel — one source becoming many outputs",
+      "A golden figure seated quietly, their shadow expanding outward into a wide river that flows toward many directions at once — the still person and the moving thing their knowledge becomes",
+      "A golden figure opening their hands, their shadow on the wall behind them becoming a great spreading canopy — the release of something that then shelters far more than one person",
     ],
   },
   "pillar-1-knowledge-management": {
-    hero: "A labyrinth viewed from above with a single glowing path already traced through it — the maze is the same, but the path changes everything — knowledge as the thread through the labyrinth",
+    hero: "A golden figure standing at the centre of a vast library that grows organically around them like a living forest — shelves becoming branches, books becoming leaves — the figure unhurried at the centre of everything they have gathered",
     sections: [
-      "A scattered constellation of dots — then the same dots connected by lines into a clear pattern — the knowledge base as the lines, not the dots",
-      "A dark room with a single beam of light illuminating exactly the right object — retrieval as precision, the darkness making the found thing more visible",
+      "A golden figure reaching into a dense tangle of branches and pulling one specific branch free — the branch in their hand flowering immediately — retrieval as a precise and generative act",
+      "A golden figure standing before an enormous web of connected nodes spread across the wall — their hand resting on one node, the whole web responding with a warm glow — knowledge as a living connected thing",
     ],
   },
   "pillar-2-hub-and-spoke": {
-    hero: "A wheel — spokes extending outward to different shapes at their tips, each shape different, each replaceable — the hub perfectly still at the centre while the rim changes — ownership of the middle",
+    hero: "A golden figure standing at the exact centre of a great wheel — deep navy spokes extending outward in all directions to the rim — the figure perfectly still as the rim turns and changes around them — calm ownership of the middle",
     sections: [
-      "A plug socket with many different adapters fitting the same port — modularity as graphic object, the socket as the unchanging constant",
-      "A spine — vertebrae stacked, each one independent, the whole column strong precisely because each part can move separately — architecture as anatomy",
+      "A golden figure holding one spoke lightly, a different spoke already slotting in to replace it — the wheel still turning, the figure untroubled — control as the lightest possible grip",
+      "A golden figure at the root of a great tree whose branches reach to many different things — the branches changing with the seasons, the roots unchanged — the hub as the permanent thing beneath the changing surface",
     ],
   },
   "pillar-3-orchestration": {
-    hero: "A single baton — and below it in perfect geometric array, dozens of instruments arranged by type — the one object that sets all the others in motion without touching them",
+    hero: "A golden figure with one arm raised, baton held lightly — around them in a wide arc, deep navy organic forms each in motion, each following the others in sequence — the figure conducting without touching, direction as pure presence",
     sections: [
-      "A row of dominoes seen from above, the first one mid-fall — the chain of causality made graphic, the orchestrator visible only as the absence at the start",
-      "A circuit diagram reduced to its essential form — one input, branching paths, many outputs — orchestration as the logic made visible",
+      "A golden figure standing at the top of a long staircase of falling forms — each one setting the next in motion below — the figure has only touched the first, everything else is already moving",
+      "A golden figure standing at the point where many currents converge — the currents in deep navy flowing around and through them and emerging as a single directed stream — the orchestrator as the still point in the turning world",
     ],
   },
   "pillar-4-ai-native-teams": {
-    hero: "Two hourglasses side by side, identical sand — one full of unturned potential, one already run through with a finished object sitting beneath it — the same resource, different outcomes",
+    hero: "A golden figure walking forward, a trail of made things growing behind them like plants from footprints — each step leaving something finished, the path behind them already a garden — the builder whose motion is inseparable from their output",
     sections: [
-      "A trail of footprints that become finished objects — each step leaving something made behind — motion as production rendered as pure graphic track",
-      "A speech bubble and a built object the same size, side by side on a scale — the object heavier — output outweighing intention as simple graphic fact",
+      "A golden figure holding a finished object, their shadow behind them already reaching toward the next thing — the maker always a step ahead of the made",
+      "A golden figure standing beside a growing tower of finished work — not looking at it, looking forward — the accumulation of shipping as backdrop, not destination",
     ],
   },
   "pillar-5-performance-standards": {
-    hero: "A thermometer — but instead of temperature, the rising column measures quality — a single line drawn across it marking the baseline, another line drawn higher marking where this person operates — the gap between them is the whole story",
+    hero: "A golden figure standing on a ledge of their own making — the ledge clearly carved from the rock face by their own hand — below them the plain where others stand, above them open sky — the standard as something you build to stand on",
     sections: [
-      "A ruler with all the standard markings — and one additional mark squeezed in above the highest number — the self-imposed standard that exists beyond the official scale",
-      "A bar chart of one — a single column so tall it breaks the frame — irreplaceability as pure graphic form, no comparison needed",
+      "A golden figure drawing a line across a wall — the line becoming the horizon of a new landscape, everything below it ordered, everything above it possible — the act of setting a standard as world-making",
+      "A golden figure holding a measuring tool against their own work — the work exceeding the measure — the satisfaction of someone whose standard has outgrown the available instruments",
     ],
   },
   "speed-to-market": {
-    hero: "Two paths between the same two points — one a long winding line crossing the whole page, one a straight short line cutting directly across — the same origin, the same destination, radically different geometry",
+    hero: "A golden figure stepping through a narrow doorway — on one side of the door a long winding road stretching to the horizon, on the other side the destination already present — the door as the compression of distance",
     sections: [
-      "An hourglass with the neck removed — sand falling freely, no constraint — the bottleneck as the only thing that was ever causing the delay",
-      "A straight arrow and a tangled knot of rope — both the same length — the arrow already at its destination, the rope still mid-tangle — speed as simplicity",
+      "A golden figure walking a straight path, their shadow falling back across a tangled labyrinth they have already passed through and simplified — the path behind them straightened by their having walked it",
+      "A golden figure and their shadow — the shadow arriving at the destination while the figure is still mid-stride — speed as the gap between intent and arrival collapsing",
     ],
   },
   "taste-through-ai": {
-    hero: "A wax seal stamp and beside it a long scroll of identical wax seals — the mark of one person reproduced endlessly, each impression carrying the same signature — taste as a stamp that travels",
+    hero: "A golden figure pressing their hand gently into a surface — the handprint remaining and blooming outward into an intricate organic form in deep navy — taste as the impression that outlasts the touch and grows into something larger",
     sections: [
-      "A tuning fork and the waveform it produces — the same frequency carried forward through any medium — taste as the frequency, the AI as the medium",
-      "A master key beside a ring of keys all cut to the same pattern — one original, many derivatives, all carrying the same logic — the craft that propagates",
+      "A golden figure standing before two trees — one grown wild and unmistakably shaped by a specific sensibility, one perfectly generic — the figure's shadow falling only on the distinctive one — recognition as alignment",
+      "A golden figure and their shadow side by side — both making the same gesture, both producing the same detailed form — the taste in the hands now also in the system that shadows them",
     ],
   },
   "you-are-not-generic": {
-    hero: "A row of identical locks — and one key, its unique cut visible — the only key shaped for the only lock that matters — specificity as the entire graphic argument",
+    hero: "A golden figure among a row of grey silhouettes all facing forward — the golden figure the same size, the same posture, but casting a completely different shadow behind them — an irregular, organic, unmistakable form — specificity visible only in what they cast",
     sections: [
-      "A barcode and a fingerprint side by side — identical in function, opposite in nature — the generic and the specific as pure graphic contrast",
-      "A crowd of identical silhouettes — and one silhouette a slightly different shape — not marked, not highlighted, just different — the difference that is simply there for those who look",
+      "A golden figure fitting through an opening in a great stone wall — the opening exactly their shape, no one else's — not forcing it, simply belonging to it — the advantage of being precisely themselves",
+      "A golden figure holding something no one else in the frame holds — not displayed, just held — the quiet fact of a distinctive thing in a specific hand",
     ],
   },
 };
