@@ -198,7 +198,7 @@ export const LEARN_THEMES = [
 export const LEARN_PATHS = [
   {
     title: "The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital",
-    description: "Your taste, craft, and domain expertise are career capital AI can't replicate — unless you actually feed it to them. Most people don't. That's the gap.",
+    description: "Your expertise was illiquid — locked in your head, accessible only one meeting at a time. The moment you financialize it through AI, the economics of your career change forever.",
     themes: ["build-your-moat", "craft-and-taste"],
     slug: "pillar-1-knowledge-management",
   },
@@ -261,6 +261,12 @@ export const LEARN_PATHS = [
     description: "AI-assisted work is the new baseline. The builders who measure impact over effort are pulling away from everyone else. Which side are you on?",
     themes: ["craft-and-taste", "build-your-moat"],
     slug: "pillar-5-performance-standards",
+  },
+  {
+    title: "Follow the Path to Monetising Your Expertise: Turn 10,000 Hours Into a Compounding Asset",
+    description: "Your years of craft, taste, and opinion were previously impossible to scale. Path turns illiquid expertise into a deployable, monetisable asset that compounds.",
+    themes: ["build-your-moat", "craft-and-taste"],
+    slug: "monetise-your-expertise",
   },
 ];
 
