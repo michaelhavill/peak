@@ -29,7 +29,7 @@ const STYLES = {
   "pixel-art":
     "16-bit pixel art, [SCENE], retro video game aesthetic, rich detailed dithering, warm diffused lighting, vibrant saturated color palette, clean composition with clear focal point, slight atmospheric haze, every pixel visible, painterly pixel shading, Japanese SFC-era game background art, nostalgic and inviting mood, no text, no UI elements, no watermarks",
   "new-yorker":
-    "New Yorker magazine cover illustration, [SCENE], upbeat and optimistic mood, sense of momentum and forward motion, soft watercolour washes with loose ink linework, muted sophisticated palette — warm terracotta, dusty teal, soft ochre — against a warm ivory background, figures reduced to expressive gesture and fluid silhouette, caught mid-leap or mid-reach suggesting possibility and joy, generous negative space, delicate painterly texture, the feeling of something beginning not ending, no pixel art, no game art, no text, no captions, no speech bubbles, no logos",
+    "New Yorker magazine editorial illustration, [SCENE], warm and quietly optimistic mood, soft watercolour washes with confident ink linework, muted sophisticated palette — warm terracotta, dusty teal, soft ochre — against warm ivory, abstract human figures grounded in everyday activity, intimate and observational in scale, figures working with their hands or in relation to objects and spaces, the story told through posture and context not drama, generous negative space, delicate painterly texture, no floating or celestial imagery, no radiating light, no leaping or flying, no pixel art, no game art, no text, no captions, no speech bubbles, no logos",
 };
 
 // ---------------------------------------------------------------------------
@@ -37,94 +37,94 @@ const STYLES = {
 // ---------------------------------------------------------------------------
 const POST_PROMPTS = {
   "10x-team-ai-peers": {
-    hero: "A jubilant abstract figure leaping upward, trails of energy radiating outward into many bright active forms all moving in different directions simultaneously — one spark becoming a constellation of momentum",
+    hero: "One person seated at a small desk, but five pairs of hands reach in from the edges of the frame helping simultaneously — writing, building, sketching — the single figure at calm centre of a ring of collaborative hands",
     sections: [
-      "Abstract figures in full sprint, each one spawning two more behind them mid-stride — a cascade of joyful forward motion multiplying across the frame",
-      "A single abstract figure at the center with outstretched arms, colourful arcs of energy connecting them to a ring of dynamic forms all in motion around them — conductor and chorus",
+      "A figure at a table covered in work, each piece of work being picked up by a different pair of unseen hands and carried toward different doorways — output leaving in all directions at once",
+      "Two workers side by side: one surrounded by towering stacks of finished work, one surrounded only by a single unfinished thing and a long to-do list — the difference between leverage and labour",
     ],
   },
   "building-moat-at-scale": {
-    hero: "An abstract figure stacking luminous blocks with ease and delight, each block clicking into place and glowing brighter — a tower rising with joyful inevitability, the whole structure radiating warmth",
+    hero: "A craftsperson carefully laying one precise brick into a low wall — behind them, barely visible, the same wall stretches far into the distance already built — the quiet satisfaction of compounding work",
     sections: [
-      "An abstract figure planting seeds that bloom instantly into vibrant structures as they walk forward — growth as effortless creative act",
-      "A small figure whose footsteps leave a glowing trail that widens behind them into a broad luminous path — individual steps becoming collective ground",
+      "A figure tending a small garden, but looking up to find the plants have already grown into an orchard behind them — patient tending as strategic act",
+      "Two businesses drawn as buildings: one wide and flat with a single door anyone can enter; one narrow and deep with a long corridor only the right person can navigate — the moat as architecture",
     ],
   },
   "coding-in-craft": {
-    hero: "An abstract figure sculpting something in mid-air with both hands, the object taking a vivid unique shape between their palms — creation as joyful physical act, the made thing already alive",
+    hero: "A figure bent over a workbench, hands shaping something with great care — the object between their hands catching the light differently from the identical objects on a shelf behind them — craft as attention",
     sections: [
-      "A figure moving through a field of identical grey forms, each one they touch transforming into something vibrant and distinct — the craftsperson as animator",
-      "An abstract figure and a swirl of energy working together on the same object, their contributions weaving into something neither could make alone — collaboration as colour mixing",
+      "A hand holding a tool making one precise mark, beside a machine stamping the same mark hundreds of times on identical surfaces — the singular versus the replicated",
+      "Two outputs side by side on a table: one made with a distinct hand, one produced by rote — a figure studying the difference closely, the gap visible only to those who look",
     ],
   },
   "collaborative-spaces": {
-    hero: "Two abstract figures leaping toward each other across a gap, meeting in the middle in a burst of colour and energy — the collision as creative ignition rather than impact",
+    hero: "A human figure and a geometric form sitting at opposite ends of a long shared table, both working on the same drawing that meets in the middle — neither looking up, both contributing",
     sections: [
-      "Multiple abstract figures building upward together, each one standing on the others' shoulders with ease and balance, reaching toward something bright above — collaboration as joyful architecture",
-      "Abstract forms in different colours merging at the centre of the frame into a single luminous shape — many voices becoming one clear signal",
+      "A figure arranging a shared workspace — placing chairs, pinning things to a wall — making room for someone not yet there, the empty chair as invitation",
+      "Two figures working back to back, each doing something different, the outputs of each feeding quietly into the other's work — collaboration without interruption",
     ],
   },
   "monetise-your-expertise": {
-    hero: "A lone abstract figure standing at a window, their shadow cast long behind them taking the shape of a vast branching tree — suggesting years of accumulated knowledge invisible to the eye but immense in form",
+    hero: "A figure seated at a desk writing into a book, while identical books quietly stack themselves on shelves behind them — the single act of writing becoming many without the writer stopping",
     sections: [
       "An abstract figure seated at a small desk, their shadow stretching upward and forward into a luminous city of soaring towers and bridges — the contrast between the still person and the vast bright future their work makes possible",
-      "An abstract figure opening their hands to release a flock of bright geometric forms that spiral outward and upward — expertise becoming something that moves and multiplies freely",
+      "A figure opening a door to find a long corridor of other doors, each one theirs to open — one piece of expertise becoming many directions, all accessible at once",
     ],
   },
   "pillar-1-knowledge-management": {
-    hero: "An abstract figure surrounded by a swirling constellation of glowing ideas and memories — all of it organised into flowing arcs around them, the mind as a vibrant living archive",
+    hero: "A figure in a library of their own making — shelves they have built themselves, each book placed with intention — standing at the centre of it all, comfortable, unhurried, everything retrievable",
     sections: [
-      "A figure reaching into a stream of flowing light and pulling out something solid and vivid — capturing and crystallising knowledge as an act of joyful retrieval",
-      "An abstract figure building a shining structure from fragments of light — each piece snapping into place, the whole growing more brilliant with each addition",
+      "A figure pulling a specific thread from a tangled pile and finding it attached to exactly what they needed — retrieval as a calm and practiced act",
+      "Two figures asked the same question: one rummaging through scattered piles, one reaching directly to the right shelf — the difference between stored and organised knowledge",
     ],
   },
   "pillar-2-hub-and-spoke": {
-    hero: "An abstract figure at the bright centre of a wheel of colourful radiating lines — each line a different direction of possibility, the figure calm and powerful at the hub of it all",
+    hero: "A figure standing at the center of a room with many doors — each door a different tool or service — calmly pointing at one while another swings shut behind them, the room still functioning",
     sections: [
-      "A figure effortlessly swapping one glowing spoke for another — the system humming on, fluid and resilient, the change made with a single graceful gesture",
-      "An abstract figure conducting a system of orbiting forms — each one circling freely, the whole arrangement alive and responsive — control as lightness not grip",
+      "A figure switching one component out of a running machine with one hand, the machine continuing undisturbed — the ease of the replaceable part",
+      "Two builders: one whose tools are all wired together in a knot; one whose tools hang separately on a pegboard, each reachable independently — tangled versus modular",
     ],
   },
   "pillar-3-orchestration": {
-    hero: "An abstract figure conducting with both arms wide, colourful streams of energy flowing through the air in sweeping arcs — everything in motion, everything coordinated, the whole scene alive with directed momentum",
+    hero: "A figure at a conductor's stand, score open, baton raised — around them a dozen different instruments playing in sequence without the conductor touching any of them — direction as the only act",
     sections: [
-      "A chain of bright abstract forms each in mid-leap, the energy passing between them like light through prisms — orchestration as joyful relay",
-      "An abstract figure stepping forward through a swirl of converging coloured streams — all the moving parts flowing together into a single luminous direction",
+      "A figure setting a line of objects in motion with a single push — each one nudging the next along a winding path — the chain of orchestrated cause and effect",
+      "Two desks: one where a person does every task themselves, surrounded by chaos; one where a person points and delegates, the desk clear, more done — the difference orchestration makes",
     ],
   },
   "pillar-4-ai-native-teams": {
-    hero: "An abstract figure in full stride, a trail of bright completed forms left in their wake — each footstep a finished thing, the path behind them a gallery of made work",
+    hero: "Two figures given the same tools and time: one surrounded by a growing pile of finished things, one surrounded by a growing pile of plans and notes — the doer and the intender, same starting point",
     sections: [
-      "A figure launching upward on a beam of energy, artefacts and creations orbiting around them as they rise — output as lift, making as flight",
-      "An abstract figure surrounded by a vibrant constellation of shipped things — each one glowing, each one distinct — the satisfaction of a builder mid-flow",
+      "A figure walking away from a finished building, not looking back — the thing made, the next thing already in mind — the quiet confidence of someone who ships",
+      "A meeting room seen from outside through glass: many figures talking, hands waving — and beside it a workshop with one figure working, a completed thing on the bench beside them",
     ],
   },
   "pillar-5-performance-standards": {
-    hero: "An abstract figure standing on a peak of their own making — the landscape below bright and ordered, the figure at the top reaching upward still — the standard-setter always in motion, always rising",
+    hero: "A figure measuring their own work with a ruler — not comparing to anyone else — adjusting it slightly upward, then looking at it again — the private and practiced act of holding a standard",
     sections: [
-      "A figure drawing a luminous line through the air that becomes a horizon — the act of setting a standard as a creative and generative gesture",
-      "An abstract figure whose every step leaves a bright mark — a trail of quality visible behind them, the path ahead open and inviting",
+      "A figure drawing a line on a wall and marking it — then standing back and drawing another line slightly above it — the standard as something you keep raising for yourself",
+      "Two figures: one checking a box on a list and moving on; one pausing over the same box, not satisfied, reworking it — the imperceptible difference that compounds into irreplaceability",
     ],
   },
   "speed-to-market": {
-    hero: "An abstract figure stepping through a doorway while another is still at the starting line — the first already arriving, full of forward energy and ease — the joy of eliminated distance",
+    hero: "Two figures at the same starting point on a map: one taking the long winding road marked out in front of them; one stepping through a door in the wall beside them that opens directly onto the destination",
     sections: [
-      "A figure surfing a wave of compressed time — riding momentum rather than fighting it, the whole image full of kinetic joy and speed",
-      "An abstract figure in mid-leap between two points, the space between them dissolving into light — the gap closed not by effort but by clarity",
+      "A figure removing obstacles from a path one by one — not running faster, just clearing the way — the path behind them already clean, the one ahead getting clearer",
+      "A figure handing something finished directly to someone waiting — no desk, no queue, no middleman — the shortest possible line between made and delivered",
     ],
   },
   "taste-through-ai": {
-    hero: "An abstract figure pressing their hand into light — the impression remaining, vivid and warm, as a second luminous form beside them makes the same impression naturally — taste as something that lives on and propagates",
+    hero: "A figure at a potter's wheel, shaping clay with practiced hands — beside them a second wheel turning on its own, producing the same form — the taste in the hands now in the system",
     sections: [
-      "A figure conducting two streams of output simultaneously — both carrying the same warmth and colour, both unmistakably from the same source — the multiplication of a personal voice",
-      "An abstract figure surrounded by objects they have made and objects made in their spirit — all of them glowing with the same signature warmth — the style that persists",
+      "A figure reviewing two objects side by side, one made by them, one made without them — picking up the second one with quiet recognition — their taste present even in their absence",
+      "A chef tasting a dish, adjusting the seasoning with one small gesture — beside them a long pass of identical dishes going out, each carrying that same adjustment — judgment at scale",
     ],
   },
   "you-are-not-generic": {
-    hero: "A vivid abstract figure standing among others, their unique colour radiating outward and lighting everything around them — specificity as generosity, distinctiveness as a gift to the whole scene",
+    hero: "A figure in a row of identical figures, all facing the same direction — but holding something in their hands that nobody else is holding — not performing difference, simply being specifically themselves",
     sections: [
-      "An abstract figure whose particular shape fits perfectly through an opening others cannot find — moving through with ease and delight while the opening glows around them",
-      "A figure holding something no one else is holding — the object bright and strange and clearly theirs — the quiet power of being precisely and joyfully yourself",
+      "A figure fitting precisely into a gap in a wall that other figures beside them cannot fit — not forcing it, simply shaped for it — the advantage of specific experience",
+      "A hand leaving a thumbprint on a surface — beside it a series of stamped identical marks — the one impression that cannot be reproduced because it belongs to one specific person",
     ],
   },
 };
