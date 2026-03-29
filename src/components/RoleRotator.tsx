@@ -9,7 +9,7 @@ import {
 } from "@chenglou/pretext";
 
 /**
- * RoleRotator — cycles through role titles with stable width.
+ * RoleRotator - cycles through role titles with stable width.
  *
  * Uses @chenglou/pretext to pre-measure every role string and lock the
  * container to the widest one, eliminating the layout shift that occurs

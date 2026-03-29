@@ -9,7 +9,7 @@ import {
 } from "@chenglou/pretext";
 
 /**
- * PretextReveal — reveals text line-by-line with staggered animation.
+ * PretextReveal - reveals text line-by-line with staggered animation.
  *
  * Uses @chenglou/pretext to measure text layout without DOM reflow,
  * splitting the text into exact visual lines at the container's current

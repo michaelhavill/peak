@@ -7,7 +7,7 @@ const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
 /**
  * Add retro 16-bit color accents to ASCII diagrams inside <pre><code> blocks.
- * Wraps specific patterns in <span> elements — small touches only.
+ * Wraps specific patterns in <span> elements - small touches only.
  */
 function colorizeAscii(html: string): string {
   return html.replace(
@@ -15,13 +15,13 @@ function colorizeAscii(html: string): string {
     (_match, inner: string) => {
       let c = inner;
 
-      // 1. Bullets ● — amber/gold terminal cursor
+      // 1. Bullets ● - amber/gold terminal cursor
       c = c.replace(/●/g, '<span class="ascii-bullet">●</span>');
 
-      // 2. Filled progress bars ████+ — muted green (success)
+      // 2. Filled progress bars ████+ - muted green (success)
       c = c.replace(/█{3,}/g, (m) => `<span class="ascii-bar-full">${m}</span>`);
 
-      // 3. Empty progress bars ░░░░+ — muted coral (lacking)
+      // 3. Empty progress bars ░░░░+ - muted coral (lacking)
       c = c.replace(/░{3,}/g, (m) => `<span class="ascii-bar-empty">${m}</span>`);
 
       // 4. Percentage labels next to bars: "100%" or "20%" etc.
@@ -35,11 +35,11 @@ function colorizeAscii(html: string): string {
         }
       );
 
-      // 5. Arrows ──→ and ↓ — soft lavender
+      // 5. Arrows ──→ and ↓ - soft lavender
       c = c.replace(/──+→/g, (m) => `<span class="ascii-arrow">${m}</span>`);
       c = c.replace(/↓/g, '<span class="ascii-arrow">↓</span>');
 
-      // 6. Inner box titles — ALL-CAPS labels inside nested boxes
+      // 6. Inner box titles - ALL-CAPS labels inside nested boxes
       //    Match: │  TITLE WORDS  │ or │  TITLE WORDS   │
       c = c.replace(
         /(│\s{1,3})((?:[A-Z][A-Z &/\-]+){2,})(\s+│)/g,

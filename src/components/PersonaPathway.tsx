@@ -69,7 +69,7 @@ export default function PersonaPathway({ slug }: { slug: string }) {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
           >
-            {/* Today vs 100x — two columns */}
+            {/* Today vs 100x - two columns */}
             <div
               className="rounded-xl overflow-hidden mb-4"
               style={{ border: "1px solid var(--border-subtle)" }}

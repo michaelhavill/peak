@@ -15,9 +15,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Path to 100x — Frameworks for the Career You Actually Want",
+  title: "Path to 100x - Frameworks for the Career You Actually Want",
   description:
-    "Frameworks, mental models, and curated resources to 100x your craft — no matter where you are on the journey.",
+    "Frameworks, mental models, and curated resources to 100x your craft - no matter where you are on the journey.",
 };
 
 export default function RootLayout({

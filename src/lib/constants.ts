@@ -21,14 +21,14 @@ export const USE_CASES = [
   {
     title: "Write down your taste",
     description:
-      "Here's what's actually happening: you've spent years building instincts about strategy, hiring, design, pricing, positioning — and none of it reaches your AI. Write it down. Now your AI carries your judgment instead of guessing.",
+      "Here's what's actually happening: you've spent years building instincts about strategy, hiring, design, pricing, positioning - and none of it reaches your AI. Write it down. Now your AI carries your judgment instead of guessing.",
     badge: "Career Moat",
     tools: ["Claude", "Notion", "Figma"],
   },
   {
     title: "Encode who you're building for",
     description:
-      "The hard truth? Most AI output is generic because it has zero customer context. Encode your personas, your KPIs, what success actually looks like — and suddenly your AI makes decisions your competitors literally cannot.",
+      "The hard truth? Most AI output is generic because it has zero customer context. Encode your personas, your KPIs, what success actually looks like - and suddenly your AI makes decisions your competitors literally cannot.",
     badge: "Company Moat",
     tools: ["Linear", "Notion", "Amplitude"],
   },
@@ -56,7 +56,7 @@ export const USE_CASES = [
   {
     title: "Get your knowledge out of your head",
     description:
-      "Mental models, hard-won insights, pattern recognition built over a career — most people leave this locked up. You're going to compound it across every AI interaction, every single day.",
+      "Mental models, hard-won insights, pattern recognition built over a career - most people leave this locked up. You're going to compound it across every AI interaction, every single day.",
     badge: "Knowledge Moat",
     tools: ["Claude", "Obsidian", "Notion"],
   },
@@ -70,7 +70,7 @@ export const DEMO_STEPS = [
   { label: "Spawning research synthesis agent", progress: 70 },
   { label: "Spawning design direction agents (3)", progress: 55 },
   { label: "Spawning architecture planning agent", progress: 65 },
-  { label: "Agents complete — artifacts ready", progress: 100, done: true },
+  { label: "Agents complete - artifacts ready", progress: 100, done: true },
 ];
 
 export const COMMAND_TABS = [
@@ -133,7 +133,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "We encoded our domain knowledge — regulatory constraints, customer personas, the whole technical debt map. Our competitors can copy our tools. They literally cannot copy our context. That's the moat.",
+      "We encoded our domain knowledge - regulatory constraints, customer personas, the whole technical debt map. Our competitors can copy our tools. They literally cannot copy our context. That's the moat.",
     name: "Marcus Rivera",
     role: "CTO at a Series B startup",
     initials: "MR",
@@ -163,14 +163,14 @@ export const LEARN_THEMES = [
     label: "Build Your Moat",
     heading: "Build the moat. Knowledge that can't be copied.",
     description:
-      "Here's the thing — your taste, craft, and domain expertise are years of accumulated judgment. Codify them into a knowledge base and your AI becomes inimitable. Not just useful. Inimitable.",
+      "Here's the thing - your taste, craft, and domain expertise are years of accumulated judgment. Codify them into a knowledge base and your AI becomes inimitable. Not just useful. Inimitable.",
   },
   {
     id: "craft-and-taste",
     label: "Craft & Taste",
     heading: "Make AI carry your craft. Not flatten it.",
     description:
-      "Your judgment about strategy, design, hiring, pricing, voice, product direction — that's what makes your work yours. Here's how to make every AI interaction actually reflect it.",
+      "Your judgment about strategy, design, hiring, pricing, voice, product direction - that's what makes your work yours. Here's how to make every AI interaction actually reflect it.",
   },
   {
     id: "ship-faster",
@@ -184,7 +184,7 @@ export const LEARN_THEMES = [
     label: "AI + Human Teams",
     heading: "Build teams of humans and AI that actually ship",
     description:
-      "Let's be honest — AI peers aren't assistants. They're team members with your context, your constraints, your quality bar. Here's how to collaborate with them like you mean it.",
+      "Let's be honest - AI peers aren't assistants. They're team members with your context, your constraints, your quality bar. Here's how to collaborate with them like you mean it.",
   },
   {
     id: "scale",
@@ -198,7 +198,7 @@ export const LEARN_THEMES = [
 export const LEARN_PATHS = [
   {
     title: "The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital",
-    description: "Your expertise was illiquid — locked in your head, accessible only one meeting at a time. The moment you financialize it through AI, the economics of your career change forever.",
+    description: "Your expertise was illiquid - locked in your head, accessible only one meeting at a time. The moment you financialize it through AI, the economics of your career change forever.",
     themes: ["build-your-moat", "craft-and-taste"],
     slug: "pillar-1-knowledge-management",
   },
@@ -210,7 +210,7 @@ export const LEARN_PATHS = [
   },
   {
     title: "Walk the Path to Code That Carries Your Craft",
-    description: "Generic AI ships generic code that breaks on contact with your reality. Give it your stack constraints, your patterns, your quality bar — and watch what happens.",
+    description: "Generic AI ships generic code that breaks on contact with your reality. Give it your stack constraints, your patterns, your quality bar - and watch what happens.",
     themes: ["craft-and-taste", "ship-faster"],
     slug: "coding-in-craft",
   },
@@ -227,7 +227,7 @@ export const LEARN_PATHS = [
     slug: "pillar-3-orchestration",
   },
   {
-    title: "Follow the Path to Adding 10 Team Members — Without a Single Hire",
+    title: "Follow the Path to Adding 10 Team Members - Without a Single Hire",
     description: "AI peers aren't assistants. They're team members with your context, your constraints, your quality bar. You just have to set them up right.",
     themes: ["ai-teams", "ship-faster"],
     slug: "10x-team-ai-peers",

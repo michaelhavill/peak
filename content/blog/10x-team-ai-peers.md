@@ -1,5 +1,5 @@
 ---
-title: Follow the Path to Adding 10 Team Members — Without a Single Hire
+title: Follow the Path to Adding 10 Team Members - Without a Single Hire
 titleHighlight: Without a Single Hire
 slug: 10x-team-ai-peers
 theme:
@@ -33,7 +33,7 @@ Here's the thing. **When your AI has your knowledge base, your taste docs, and y
 │   agents to draft the                  Spawning design agents (3)      ██░  55% │
 │   product brief from                   Spawning architecture agent     ██░  65% │
 │   first principles."                                                            │
-│                                         ⊙ Agents complete — artifacts ready     │
+│                                         ⊙ Agents complete - artifacts ready     │
 │                                                                                 │
 │  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │
 │                                                                                 │
@@ -86,7 +86,7 @@ AI peers flip the economics entirely. Build context for each work domain, deploy
 
 A **founder** we work with runs 12 simultaneous workstreams with multiple AI agents. Not 12 ChatGPT tabs -- 12 distinct value streams, each loaded with context from her knowledge base: competitive research, customer outreach drafts, technical architecture docs, investor materials, product specs.
 
-**How to set up AI peers for multiple workstreams:** In Claude, create a separate Project for each work domain — "Product Strategy," "Investor Relations," "Engineering Architecture," "Customer Research." Upload the relevant docs, frameworks, and past work into each Project's knowledge. Now each conversation within that Project starts with full context. For even more power, connect your Notion workspace via MCP so your AI peers pull from live, up-to-date information instead of static uploads. Her job now? Direct, refine, and spend her reclaimed hours on the work that actually differentiates — strategic thinking, customer relationships, the hard product decisions nobody else can make. The assembly layer is automated. But the real win isn't 12x throughput on a single salary — it's having time for deep craft on the things that matter most instead of grinding on the things that don't.
+**How to set up AI peers for multiple workstreams:** In Claude, create a separate Project for each work domain - "Product Strategy," "Investor Relations," "Engineering Architecture," "Customer Research." Upload the relevant docs, frameworks, and past work into each Project's knowledge. Now each conversation within that Project starts with full context. For even more power, connect your Notion workspace via MCP so your AI peers pull from live, up-to-date information instead of static uploads. Her job now? Direct, refine, and spend her reclaimed hours on the work that actually differentiates - strategic thinking, customer relationships, the hard product decisions nobody else can make. The assembly layer is automated. But the real win isn't 12x throughput on a single salary - it's having time for deep craft on the things that matter most instead of grinding on the things that don't.
 
 A **product manager** covering 3 product areas deployed AI peers for each: one monitors competitive moves, one synthesizes user feedback, one drafts briefs from the knowledge base. All 3 areas get equal strategic attention. Nothing rots because the throughput bottleneck disappeared. The ROI on that PM's comp just tripled.
 
@@ -96,7 +96,7 @@ An **engineering lead** uses AI peers for code review prep, test generation, doc
 
 A **clinical coordinator** uses AI peers to handle intake assembly, scheduling, and routine communications. She focuses on complex clinical decisions and relationship-sensitive interactions -- the work where human judgment is irreplaceable and underwriting risk requires a real brain.
 
-**The punchline is the triad: you, your knowledge, and your AI working as one system.** An AI peer with access to your customer research, technical constraints, and taste docs produces work you'd actually ship — because it's building with you, not for you. An AI peer with no context produces noise. Full stop. You're not outsourcing your differentiators to AI. You're empowering your agents with everything you've earned — and staying in the driver's seat. The knowledge base is what turns a tool into a teammate. Your judgment is what keeps the teammate accountable.
+**The punchline is the triad: you, your knowledge, and your AI working as one system.** An AI peer with access to your customer research, technical constraints, and taste docs produces work you'd actually ship - because it's building with you, not for you. An AI peer with no context produces noise. Full stop. You're not outsourcing your differentiators to AI. You're empowering your agents with everything you've earned - and staying in the driver's seat. The knowledge base is what turns a tool into a teammate. Your judgment is what keeps the teammate accountable.
 
 <!-- toggle: team -->
 
@@ -113,11 +113,11 @@ The AI peer model breaks the linear curve. Each human team member operates with 
 
 One company runs their entire customer operations with 3 human team members and a fleet of AI agents. Each agent has the customer knowledge base, care protocols, and communication standards loaded. The **ops team** handles complex cases and relationship decisions. The **clinical leads** handle quality review. AI handles intake assembly, routine communication drafts, data synthesis, scheduling coordination. Three salaries doing the work of ten.
 
-**How to structure the human-AI review loop:** For each AI peer output, build a simple routing step. In Notion, create a "Review Queue" database where AI-generated drafts land with a status of "Needs Review" and a field for the assigned reviewer — PM reviews strategy, designer reviews UX, engineer reviews code, clinical lead reviews care content. The reviewer spends 15-20 minutes refining, marks it "Approved," and it moves to the next step. Zapier or Notion automations can handle the routing.
+**How to structure the human-AI review loop:** For each AI peer output, build a simple routing step. In Notion, create a "Review Queue" database where AI-generated drafts land with a status of "Needs Review" and a field for the assigned reviewer - PM reviews strategy, designer reviews UX, engineer reviews code, clinical lead reviews care content. The reviewer spends 15-20 minutes refining, marks it "Approved," and it moves to the next step. Zapier or Notion automations can handle the routing.
 
 **Here's the thing -- AI peers are not autonomous.** Every output routes to a human for review. The roughly 20 minutes of refinement per task is built into the workflow, not treated as overhead. The **PM** reviews strategy output. The **product designer** reviews UX and design output. The **engineer** reviews code output. The **clinical lead** reviews care-related output. The human's job shifts from "do the work" to "direct and refine the work" -- which is a dramatically higher-ROI use of their time and expertise. Like a poker player who stops grinding low-stakes tables and starts picking better games.
 
-Net-net -- the hiring implication is enormous. You hire for judgment, taste, and domain expertise. Not for throughput. One senior **founder** directing 5 AI peers outproduces 5 junior people working independently. One **clinical leader** with AI peers manages the patient load of 3 coordinators. The bottleneck moves from "not enough hands" to "not enough judgment." And when you solve that bottleneck, something else happens: your best people finally have time for the deep thinking, deep craft, and hardest most interesting problems that have been permanently deprioritized. They're not just producing more — they're doing the work that actually makes a difference because the grind is handled. Time to decision, faster. Time to idea, faster. Time for the work only senior judgment can do? Unlocked. Your headcount math changes permanently. Your cost per unit of output drops by 60-70%. And your team's quality of work goes up because they have space to think.
+Net-net -- the hiring implication is enormous. You hire for judgment, taste, and domain expertise. Not for throughput. One senior **founder** directing 5 AI peers outproduces 5 junior people working independently. One **clinical leader** with AI peers manages the patient load of 3 coordinators. The bottleneck moves from "not enough hands" to "not enough judgment." And when you solve that bottleneck, something else happens: your best people finally have time for the deep thinking, deep craft, and hardest most interesting problems that have been permanently deprioritized. They're not just producing more - they're doing the work that actually makes a difference because the grind is handled. Time to decision, faster. Time to idea, faster. Time for the work only senior judgment can do? Unlocked. Your headcount math changes permanently. Your cost per unit of output drops by 60-70%. And your team's quality of work goes up because they have space to think.
 
 ---
 
@@ -136,27 +136,27 @@ A **product manager** covers 3 product areas at the quality of covering 1. Resea
 
 A **founder** runs 12 simultaneous projects without coordination overhead. Each workstream has its own context. She reviews and refines. The coordination tax -- which kills most multi-project leaders -- drops to near zero.
 
-**The pattern: AI peers multiplied by your context, directed by your judgment, equals scaled output. AI peers multiplied by nothing equals scaled noise.** The unit economics work because of all three — you, your knowledge store, and AI. Not one without the others. You're not handing the playbook to a stranger. You're running your own plays through more players. Like a sports franchise — the talent matters, the scouting system and playbook compound over time, but the coach's judgment is what turns all of it into wins.
+**The pattern: AI peers multiplied by your context, directed by your judgment, equals scaled output. AI peers multiplied by nothing equals scaled noise.** The unit economics work because of all three - you, your knowledge store, and AI. Not one without the others. You're not handing the playbook to a stranger. You're running your own plays through more players. Like a sports franchise - the talent matters, the scouting system and playbook compound over time, but the coach's judgment is what turns all of it into wins.
 
 ---
 
 ## Examples How Others Have Made This Real
 
-These aren't hypotheticals. Real builders and teams are deploying AI peers loaded with context right now — and the economics are already visible.
+These aren't hypotheticals. Real builders and teams are deploying AI peers loaded with context right now - and the economics are already visible.
 
-- **Klarna** replaced the equivalent of 700 full-time customer service agents with AI peers grounded in their product knowledge, policies, and tone guidelines. Not generic chatbots — context-loaded agents that handle inquiries with the same resolution quality as human agents. Same team size. Radically different output.
+- **Klarna** replaced the equivalent of 700 full-time customer service agents with AI peers grounded in their product knowledge, policies, and tone guidelines. Not generic chatbots - context-loaded agents that handle inquiries with the same resolution quality as human agents. Same team size. Radically different output.
 
-- **Devin by Cognition** — the first AI software engineering peer that carries full codebase context, runs in its own environment, and executes multi-step engineering tasks. Engineering leads assign it work the way they'd assign a junior: with context, constraints, and review checkpoints. One senior engineer directing Devin produces the output of a small team.
+- **Devin by Cognition** - the first AI software engineering peer that carries full codebase context, runs in its own environment, and executes multi-step engineering tasks. Engineering leads assign it work the way they'd assign a junior: with context, constraints, and review checkpoints. One senior engineer directing Devin produces the output of a small team.
 
-- **Claude Code** operates as an engineering peer, not an autocomplete engine. It reads your repo, understands your architecture, follows your conventions, and executes multi-file changes with judgment. Engineers treat it as a pair programmer loaded with the team's full context — because it is.
+- **Claude Code** operates as an engineering peer, not an autocomplete engine. It reads your repo, understands your architecture, follows your conventions, and executes multi-file changes with judgment. Engineers treat it as a pair programmer loaded with the team's full context - because it is.
 
-- **Harvey AI** built legal AI peers for law firms — agents loaded with case law, firm-specific precedent, and practice area expertise. Junior associates direct Harvey the way a senior would direct them. One lawyer with Harvey produces the research output of a team of three. The knowledge base is the multiplier.
+- **Harvey AI** built legal AI peers for law firms - agents loaded with case law, firm-specific precedent, and practice area expertise. Junior associates direct Harvey the way a senior would direct them. One lawyer with Harvey produces the research output of a team of three. The knowledge base is the multiplier.
 
-- **Intercom's Fin** handles 50%+ of customer conversations by drawing from the company's entire help center, product docs, and conversation history. Not canned responses — contextual answers grounded in everything the company knows. Three support agents with Fin do the work of ten.
+- **Intercom's Fin** handles 50%+ of customer conversations by drawing from the company's entire help center, product docs, and conversation history. Not canned responses - contextual answers grounded in everything the company knows. Three support agents with Fin do the work of ten.
 
-- **Replit Agent** lets solo founders describe what they want to build, and the agent writes, deploys, and iterates on full applications. Founders running 12 simultaneous workstreams aren't exaggerating — the agent handles the execution layer while the human directs strategy and product decisions.
+- **Replit Agent** lets solo founders describe what they want to build, and the agent writes, deploys, and iterates on full applications. Founders running 12 simultaneous workstreams aren't exaggerating - the agent handles the execution layer while the human directs strategy and product decisions.
 
-- **Zapier + Claude** — operations teams build AI peer workflows where agents monitor data sources, synthesize reports, draft communications, and route exceptions to humans. One ops leader with five Zapier-powered AI peers covers the coordination work of a team, directing and refining rather than assembling.
+- **Zapier + Claude** - operations teams build AI peer workflows where agents monitor data sources, synthesize reports, draft communications, and route exceptions to humans. One ops leader with five Zapier-powered AI peers covers the coordination work of a team, directing and refining rather than assembling.
 
 ---
 

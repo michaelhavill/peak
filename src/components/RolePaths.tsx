@@ -13,7 +13,7 @@ export default function RolePaths() {
       <div className="max-w-5xl" ref={ref}>
         <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-4">From commoditized to irreplaceable</motion.h2>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.05 }} className="text-[15px] mb-12" style={{ color: "var(--text-secondary)" }}>
-          Let&apos;s be honest — 99% of people use AI the same way. You&apos;re building the moat that puts you in the 1%. For your career and every company you touch. That&apos;s the path.
+          Let&apos;s be honest - 99% of people use AI the same way. You&apos;re building the moat that puts you in the 1%. For your career and every company you touch. That&apos;s the path.
         </motion.p>
         <div className="grid md:grid-cols-2 gap-5 items-start">
           <motion.div initial={{ opacity: 0, x: -16 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }} className="rounded-xl p-6" style={{ border: "1px solid var(--border-subtle)" }}>

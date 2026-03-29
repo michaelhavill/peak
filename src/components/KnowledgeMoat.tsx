@@ -9,19 +9,19 @@ const MOAT_PILLARS = [
     title: "Taste",
     subtitle: "Your judgment can't be replicated",
     description:
-      "Every call you've made about what's good — a product direction, a hire, a pricing model, a design choice — that's years of pattern recognition. AI can't replicate it on its own. Write it down, and now it can.",
+      "Every call you've made about what's good - a product direction, a hire, a pricing model, a design choice - that's years of pattern recognition. AI can't replicate it on its own. Write it down, and now it can.",
   },
   {
     title: "Craft",
     subtitle: "Your process is your edge",
     description:
-      "How you scope a problem, structure a brief, review a design, ship a feature — that's uniquely yours. Codify it and every AI interaction compounds your way of working. That's the game.",
+      "How you scope a problem, structure a brief, review a design, ship a feature - that's uniquely yours. Codify it and every AI interaction compounds your way of working. That's the game.",
   },
   {
     title: "Knowledge",
     subtitle: "Your context is irreplaceable",
     description:
-      "Personas, KPIs, regulatory constraints, technical debt, market dynamics — the hard-won understanding of your specific domain. This is what turns generic AI into something that actually thinks like your best people.",
+      "Personas, KPIs, regulatory constraints, technical debt, market dynamics - the hard-won understanding of your specific domain. This is what turns generic AI into something that actually thinks like your best people.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function KnowledgeMoat() {
           className="text-[15px] max-w-2xl mb-16 leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
-          Here&apos;s what&apos;s actually happening: the models are commoditizing. The prompts are public. The tools are the same. So what can&apos;t be copied? The knowledge you put into your AI stack — years of judgment, domain expertise, creative instinct. That&apos;s the moat. For your career and your business.
+          Here&apos;s what&apos;s actually happening: the models are commoditizing. The prompts are public. The tools are the same. So what can&apos;t be copied? The knowledge you put into your AI stack - years of judgment, domain expertise, creative instinct. That&apos;s the moat. For your career and your business.
         </motion.p>
 
         <div className="grid md:grid-cols-3 gap-px bg-[var(--border-subtle)] rounded-xl overflow-hidden border border-[var(--border-subtle)]">
@@ -121,7 +121,7 @@ export default function KnowledgeMoat() {
                 className="text-[13px] leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Generic output anyone could get. Same prompts, same results, same commoditized work. You&apos;re competing on speed alone — and that&apos;s a race to the bottom.
+                Generic output anyone could get. Same prompts, same results, same commoditized work. You&apos;re competing on speed alone - and that&apos;s a race to the bottom.
               </p>
             </div>
             <div
@@ -139,7 +139,7 @@ export default function KnowledgeMoat() {
                 className="text-[13px] leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Work that carries your judgment. Matches your taste. Respects your constraints. You&apos;re competing on depth — and depth compounds. That&apos;s the answer.
+                Work that carries your judgment. Matches your taste. Respects your constraints. You&apos;re competing on depth - and depth compounds. That&apos;s the answer.
               </p>
             </div>
           </div>
