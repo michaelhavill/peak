@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import PretextReveal from "./PretextReveal";
 
 const MOAT_PILLARS = [
   {
@@ -44,21 +45,18 @@ export default function KnowledgeMoat() {
         >
           The next moat
         </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.05 }}
+        <PretextReveal
+          text="Everyone has access to the same AI. Your taste, craft, and knowledge are what make it yours. That's the whole moat."
+          font="42px 'Instrument Serif'"
           className="text-[32px] md:text-[42px] leading-[1.1] mb-5"
           style={{
             fontFamily: "var(--font-instrument-serif)",
             color: "var(--text-primary)",
           }}
-        >
-          Everyone has access to the same AI.{" "}
-          <span style={{ color: "var(--text-secondary)" }}>
-            Your taste, craft, and knowledge are what make it yours. That&apos;s the whole moat.
-          </span>
-        </motion.h2>
+          lineDelay={0.08}
+          duration={0.5}
+          y={14}
+        />
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

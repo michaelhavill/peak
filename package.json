@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chenglou/pretext": "^0.0.2",
     "@google/genai": "^1.46.0",
     "framer-motion": "^11.18.2",
     "gray-matter": "^4.0.3",
