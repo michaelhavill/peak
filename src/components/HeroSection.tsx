@@ -11,7 +11,7 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) videoRef.current.playbackRate = 0.85;
+    if (videoRef.current) videoRef.current.playbackRate = 0.70;
   }, []);
 
   return (
