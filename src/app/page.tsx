@@ -19,7 +19,7 @@ export default function Home() {
       <Sidebar />
       <MobileNav />
       <main className="lg:ml-[180px] overflow-x-hidden">
-        <div className="pt-16 lg:pt-0">
+        <div>
           <HeroSection />
           <UseCasesGrid />
           <KnowledgeMoat />

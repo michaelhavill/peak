@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import RoleRotator from "./RoleRotator";
 
@@ -7,6 +8,12 @@ const HERO_VIDEO_URL =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4";
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.playbackRate = 0.85;
+  }, []);
+
   return (
     <section
       id="hero"
@@ -20,6 +27,7 @@ export default function HeroSection() {
     >
       {/* Background video */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
