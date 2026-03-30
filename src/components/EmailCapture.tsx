@@ -89,7 +89,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                   color: "var(--bg-primary)",
                 }}
               >
-                {state === "loading" ? "..." : "Get the playbook"}
+                {state === "loading" ? "..." : "Subscribe"}
               </button>
             </motion.form>
           )}
@@ -135,7 +135,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
               Check your inbox.
             </p>
             <p className="text-[14px]" style={{ color: "var(--text-secondary)" }}>
-              The playbook is on its way.
+              Welcome to the 1%.
             </p>
           </motion.div>
         ) : (
@@ -144,7 +144,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
               className="text-[11px] font-medium uppercase tracking-widest mb-4"
               style={{ color: "var(--text-tertiary)" }}
             >
-              Free playbook
+              Newsletter
             </p>
             <h3
               className="text-[24px] md:text-[28px] leading-[1.1] mb-3"
@@ -153,15 +153,14 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                 color: "var(--text-primary)",
               }}
             >
-              Get the 100x Knowledge Moat Playbook
+              Stay ahead of the 99%
             </h3>
             <p
               className="text-[15px] leading-relaxed mb-8 max-w-lg"
               style={{ color: "var(--text-secondary)" }}
             >
-              The 5 Pillars framework, the Specificity Spectrum, and the exact
-              steps to build a knowledge moat no one can replicate - distilled
-              into one actionable guide.
+              Frameworks, strategies, and real examples for building your
+              knowledge moat - delivered straight to your inbox.
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
@@ -198,7 +197,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                   color: "var(--bg-primary)",
                 }}
               >
-                {state === "loading" ? "Sending..." : "Send me the playbook"}
+                {state === "loading" ? "Subscribing..." : "Subscribe"}
               </button>
             </form>
 

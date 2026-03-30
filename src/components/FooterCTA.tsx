@@ -27,7 +27,7 @@ export default function FooterCTA() {
             <a href="/#learn" className="h-11 px-7 rounded-full text-[14px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90" style={{ backgroundColor: "var(--text-primary)", color: "var(--bg-primary)" }}>Read the playbook</a>
           </div>
           <div className="max-w-md">
-            <p className="text-[12px] font-medium uppercase tracking-wider mb-3" style={{ color: "var(--text-tertiary)" }}>Or get the framework straight to your inbox</p>
+            <p className="text-[12px] font-medium uppercase tracking-wider mb-3" style={{ color: "var(--text-tertiary)" }}>Or subscribe to the newsletter</p>
             <EmailCapture variant="compact" />
           </div>
         </div>
