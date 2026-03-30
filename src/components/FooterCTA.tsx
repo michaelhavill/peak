@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import PretextReveal from "./PretextReveal";
+import EmailCapture from "./EmailCapture";
 
 export default function FooterCTA() {
   const ref = useRef<HTMLDivElement>(null);
@@ -20,10 +21,15 @@ export default function FooterCTA() {
           duration={0.6}
           y={16}
         />
-        <p className="text-[16px] leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>Your taste, your craft, your domain knowledge - encoded into an AI stack no one else can replicate. That&apos;s how you become irreplaceable. For your career and every company you touch. We&apos;re going to win.</p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#" className="h-11 px-7 rounded-full text-[14px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90" style={{ backgroundColor: "var(--text-primary)", color: "var(--bg-primary)" }}>Build your moat</a>
-          <a href="#" className="h-11 px-7 rounded-full text-[14px] font-medium inline-flex items-center justify-center transition-colors hover:bg-[var(--bg-elevated)]" style={{ border: "1px solid var(--border-medium)", color: "var(--text-primary)" }}>See the framework</a>
+        <p className="text-[16px] leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>Your taste, your craft, your domain knowledge - encoded into an AI stack no one else can replicate. That&apos;s how you become irreplaceable.</p>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href="/#learn" className="h-11 px-7 rounded-full text-[14px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90" style={{ backgroundColor: "var(--text-primary)", color: "var(--bg-primary)" }}>Read the playbook</a>
+          </div>
+          <div className="max-w-md">
+            <p className="text-[12px] font-medium uppercase tracking-wider mb-3" style={{ color: "var(--text-tertiary)" }}>Or get the framework straight to your inbox</p>
+            <EmailCapture variant="compact" />
+          </div>
         </div>
       </motion.div>
     </section>

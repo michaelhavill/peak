@@ -1,6 +1,7 @@
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { LEARN_THEMES } from "@/lib/constants";
 import PersonaPathway from "@/components/PersonaPathway";
+import EmailCapture from "@/components/EmailCapture";
 import ShareBar from "@/components/ShareBar";
 import Link from "next/link";
 
@@ -138,6 +139,8 @@ export default async function BlogPostPage({
           className="prose-100x"
           dangerouslySetInnerHTML={{ __html: post.htmlContent }}
         />
+
+        <EmailCapture variant="inline" />
 
         <PersonaPathway slug={slug} />
 
