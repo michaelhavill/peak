@@ -136,9 +136,19 @@ export default async function BlogPostPage({
         )}
 
         {(() => {
-          // Split article at roughly 1/3 to insert a newsletter teaser
+          // Split article at roughly 1/4 by character length for a true early teaser
           const paragraphs = post.htmlContent.split(/(?=<(?:p|h[2-6]|pre|ul|ol|blockquote)[\s>])/);
-          const splitIndex = Math.max(1, Math.round(paragraphs.length / 3));
+          const totalLength = post.htmlContent.length;
+          const targetLength = totalLength * 0.25;
+          let cumulative = 0;
+          let splitIndex = 1;
+          for (let i = 0; i < paragraphs.length; i++) {
+            cumulative += paragraphs[i].length;
+            if (cumulative >= targetLength) {
+              splitIndex = Math.max(1, i + 1);
+              break;
+            }
+          }
           const firstThird = paragraphs.slice(0, splitIndex).join("");
           const rest = paragraphs.slice(splitIndex).join("");
 
