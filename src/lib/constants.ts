@@ -268,6 +268,12 @@ export const LEARN_PATHS = [
     themes: ["build-your-moat", "craft-and-taste"],
     slug: "monetise-your-expertise",
   },
+  {
+    title: "Walk the Path to Widening Your Context Window",
+    description: "You used to make decisions through the lens of your own experience. Now you can consult an endless breadth of perspectives, domains, and knowledge before every decision. The professionals widening that window are playing a different game.",
+    themes: ["craft-and-taste", "build-your-moat"],
+    slug: "widen-your-context-window",
+  },
 ];
 
 export const FOOTER_LINKS = [
