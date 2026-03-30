@@ -1,76 +1,87 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import RoleRotator from "./RoleRotator";
 
-const HERO_IMAGES = [
-  { src: "/hero/founder.png",          alt: "A founder sketching plans in an empty studio" },
-  { src: "/hero/product-builder.png",  alt: "A product builder assembling pieces at a workbench" },
-  { src: "/hero/design-engineer.png",  alt: "A design engineer bridging sketch and structure" },
-  { src: "/hero/solo-operator.png",    alt: "A solo operator running everything from one desk" },
-  { src: "/hero/technical-leader.png", alt: "A technical leader at the whiteboard with their team" },
-  { src: "/hero/creative-director.png",alt: "A creative director surveying a wall of work" },
-  { src: "/hero/vibe-coder.png",       alt: "A vibe coder deep in flow on a cosy afternoon" },
-];
+const HERO_VIDEO_URL =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4";
 
 export default function HeroSection() {
-  const [heroImage, setHeroImage] = useState(HERO_IMAGES[0]);
-
-  useEffect(() => {
-    setHeroImage(HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)]);
-  }, []);
-
   return (
-    <section id="hero" className="min-h-screen flex items-center px-8 md:px-16 lg:px-20 overflow-hidden">
-      <div className="flex items-center w-full gap-12 lg:gap-16">
-      <div className="w-full max-w-xl lg:flex-shrink-0">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-[36px] sm:text-[48px] md:text-[70px] lg:text-[90px] leading-[110%] tracking-tight mb-8"
-          style={{ fontFamily: "var(--font-instrument-serif)", color: "var(--text-primary)" }}
-        >
-          Your path to becoming a 100x{" "}
-          <RoleRotator />
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-          className="text-[15px] max-w-md mb-8 leading-[140%]"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          Frameworks, mental models, and real resources to 100x your craft. No matter where you are on the journey. Let&apos;s go.
-        </motion.p>
-        <motion.a
-          href="#philosophy"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="inline-flex items-center gap-2 text-[15px] font-medium group"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          See the framework
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="transition-transform duration-200 group-hover:translate-x-1">
-            <path d="M6 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </motion.a>
-      </div>
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="hidden lg:block flex-1 min-w-0"
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center px-8 md:px-16 lg:px-20 overflow-hidden"
+      style={{
+        // Override CSS variables so child components (e.g. RoleRotator) render
+        // in light tones over the dark video background
+        "--text-secondary": "rgba(255, 255, 255, 0.55)",
+        "--text-primary": "#FFFFFF",
+      } as React.CSSProperties}
+    >
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={heroImage.src}
-          alt={heroImage.alt}
-          className="w-full h-[70vh] object-cover rounded-2xl"
-        />
-      </motion.div>
+        <source src={HERO_VIDEO_URL} type="video/mp4" />
+      </video>
+
+      {/* Dark overlay so text is readable */}
+      <div className="absolute inset-0 bg-black/55 z-[1]" />
+
+      {/* Bottom gradient fade to page background */}
+      <div className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-[var(--bg-primary)] to-transparent z-[2]" />
+
+      {/* Content */}
+      <div className="relative z-10 flex items-center w-full gap-12 lg:gap-16">
+        <div className="w-full max-w-xl lg:flex-shrink-0">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="text-[36px] sm:text-[48px] md:text-[70px] lg:text-[90px] leading-[110%] tracking-tight mb-8 text-white"
+            style={{ fontFamily: "var(--font-instrument-serif)" }}
+          >
+            Your path to becoming a 100x{" "}
+            <RoleRotator />
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+            className="text-[15px] max-w-md mb-8 leading-[140%] text-white/70"
+          >
+            Frameworks, mental models, and real resources to 100x your craft. No
+            matter where you are on the journey. Let&apos;s go.
+          </motion.p>
+          <motion.a
+            href="#philosophy"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 text-[15px] font-medium group text-white/70 hover:text-white transition-colors"
+          >
+            See the framework
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            >
+              <path
+                d="M6 4l4 4-4 4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </motion.a>
+        </div>
       </div>
     </section>
   );
