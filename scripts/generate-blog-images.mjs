@@ -125,12 +125,12 @@ const POST_PROMPTS = {
   },
 
   // Accent: golden yellow + soft apricot
-  // Theme: AI-assisted is the new baseline; measure impact over effort; irreplaceable vs commoditised
+  // Theme: automation vs elevation - using AI to do your job vs using AI to become something new
   "pillar-5-performance-standards": {
-    hero: "golden yellow and soft apricot accents - a figure standing on a high rung of a ladder that extends far above a clearly marked baseline bar - the figure not looking down at the baseline, looking upward still, the ladder above them continuing into open sky - irreplaceability as the place you reach by measuring only your own standard",
+    hero: "golden yellow and soft apricot accents - two figures at identical desks with identical AI tools glowing beside them: the left figure hunched over doing the same small task faster and faster on a treadmill going nowhere, the right figure standing tall using the AI as a telescope looking far beyond the desk into a vast landscape of new possibilities, the contrast between compression and expansion, between automation and elevation",
     sections: [
-      "golden yellow accent - a quality thermometer with a baseline mark halfway up and the current reading near the top - a figure beside it drawing a new mark above the current reading - the standard as something you keep revising upward yourself",
-      "apricot accent - two figures doing identical tasks: one measuring their time and effort with a stopwatch; one measuring only the quality and impact of the outcome - the second figure's output visibly richer, their focus entirely elsewhere",
+      "golden yellow accent - an organisation shown as a building cross-section: the bottom floors are automated conveyor belts running themselves efficiently, but the top floors are wide open creative studios where small teams of humans work on expansive ambitious projects that fill the walls - the automation below freeing the elevation above, the building thriving because both exist",
+      "apricot accent - two paths diverging from the same starting point: the left path flat and fast with a figure sprinting but the horizon staying the same distance away, the right path climbing upward with a figure moving steadily but the horizon expanding with every step revealing new territory below - the automation path is faster, the elevation path is compounding",
     ],
   },
 
