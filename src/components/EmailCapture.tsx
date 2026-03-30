@@ -62,7 +62,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                 className="text-[14px] mb-4"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Enjoying this? Get frameworks like this delivered to your inbox.
+                Sign up to learn how to implement these concepts at work - or for yourself.
               </p>
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
                 <input
