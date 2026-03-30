@@ -1,7 +1,9 @@
 {
   "name": "peak",
+  "main": "worker.ts",
   "compatibility_date": "2025-03-27",
   "assets": {
-    "directory": "./out"
+    "directory": "./out",
+    "binding": "ASSETS"
   }
 }
