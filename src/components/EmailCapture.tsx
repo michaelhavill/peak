@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { subscribe } from "@/lib/newsletter";
 
 interface EmailCaptureProps {
-  variant: "inline" | "compact";
+  variant: "inline" | "compact" | "teaser";
 }
 
 export default function EmailCapture({ variant }: EmailCaptureProps) {
@@ -29,6 +29,88 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
       setErrorMsg(result.error ?? "Something went wrong.");
       setState("error");
     }
+  }
+
+  if (variant === "teaser") {
+    return (
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.4 }}
+        className="my-10 py-6 px-6 md:px-8 rounded-lg"
+        style={{
+          backgroundColor: "var(--bg-elevated)",
+          border: "1px solid var(--border-subtle)",
+        }}
+      >
+        <AnimatePresence mode="wait">
+          {state === "success" ? (
+            <motion.p
+              key="success"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="text-[14px] font-medium"
+              style={{ color: "var(--text-primary)" }}
+            >
+              You&apos;re in. Welcome to the 1%.
+            </motion.p>
+          ) : (
+            <motion.div key="form" exit={{ opacity: 0 }}>
+              <p
+                className="text-[14px] mb-4"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                Enjoying this? Get frameworks like this delivered to your inbox.
+              </p>
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (state === "error") setState("idle");
+                  }}
+                  placeholder="Your email address"
+                  required
+                  className="h-10 px-4 rounded-full text-[13px] flex-1 min-w-0 outline-none transition-shadow"
+                  style={{
+                    border: `1px solid ${state === "error" ? "#C85450" : "var(--border-medium)"}`,
+                    backgroundColor: "var(--bg-secondary)",
+                    color: "var(--text-primary)",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.boxShadow = "0 0 0 2px var(--accent-highlight)";
+                    e.currentTarget.style.borderColor = "var(--accent-highlight)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.boxShadow = "none";
+                    e.currentTarget.style.borderColor = state === "error" ? "#C85450" : "var(--border-medium)";
+                  }}
+                />
+                <button
+                  type="submit"
+                  disabled={state === "loading"}
+                  className="h-10 px-6 rounded-full text-[13px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
+                  style={{
+                    backgroundColor: "var(--text-primary)",
+                    color: "var(--bg-primary)",
+                  }}
+                >
+                  {state === "loading" ? "..." : "Subscribe"}
+                </button>
+              </form>
+              {state === "error" && errorMsg && (
+                <p className="text-[12px] mt-2" style={{ color: "#C85450" }}>
+                  {errorMsg}
+                </p>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    );
   }
 
   if (variant === "compact") {

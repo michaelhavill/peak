@@ -135,10 +135,27 @@ export default async function BlogPostPage({
           </div>
         )}
 
-        <article
-          className="prose-100x"
-          dangerouslySetInnerHTML={{ __html: post.htmlContent }}
-        />
+        {(() => {
+          // Split article at roughly 1/3 to insert a newsletter teaser
+          const paragraphs = post.htmlContent.split(/(?=<(?:p|h[2-6]|pre|ul|ol|blockquote)[\s>])/);
+          const splitIndex = Math.max(1, Math.round(paragraphs.length / 3));
+          const firstThird = paragraphs.slice(0, splitIndex).join("");
+          const rest = paragraphs.slice(splitIndex).join("");
+
+          return (
+            <>
+              <article
+                className="prose-100x"
+                dangerouslySetInnerHTML={{ __html: firstThird }}
+              />
+              <EmailCapture variant="teaser" />
+              <article
+                className="prose-100x"
+                dangerouslySetInnerHTML={{ __html: rest }}
+              />
+            </>
+          );
+        })()}
 
         <EmailCapture variant="inline" />
 
