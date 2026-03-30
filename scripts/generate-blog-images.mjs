@@ -154,6 +154,16 @@ const POST_PROMPTS = {
     ],
   },
 
+  // Accent: warm amber + deep navy
+  // Theme: widening your personal context window - consulting endless perspectives to shape better decisions
+  "widen-your-context-window": {
+    hero: "warm amber and deep navy accents - a figure standing at the centre of an enormous circular lens or aperture that is opening wider and wider, and through the widening opening a vast landscape of different knowledge domains becomes visible - books, data, faces, patterns, disciplines - all flowing inward toward the figure who stands calm and focused at the centre, the wider the lens the richer the view, the figure's posture one of quiet command over an expanding world of insight",
+    sections: [
+      "amber accent - two decision-making scenes side by side: on the left a figure looking through a narrow keyhole seeing only a tiny slice of a vast room beyond; on the right the same figure with the wall removed entirely, seeing the full room with all its detail and connections - the same person, radically different visibility, the wide-view figure pointing confidently at something the keyhole figure could never have seen",
+      "deep navy accent - a figure at the centre of a constellation of glowing orbiting spheres, each sphere a different colour representing a different knowledge domain - psychology, economics, engineering, design, medicine - all connected by fine threads to the central figure who synthesizes them into one coherent view, the constellation beautiful and balanced, the synthesis visible as a warm glow at the centre",
+    ],
+  },
+
   // Accent: amber + terracotta
   // Theme: specificity is the asset - your craft/domain expertise makes you irreplaceable, not generic
   "you-are-not-generic": {
