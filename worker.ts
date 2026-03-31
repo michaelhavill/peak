@@ -60,6 +60,9 @@ async function handleSubscribe(request: Request, env: Env): Promise<Response> {
       return Response.json({ success: true }, { headers: corsHeaders });
     }
 
+    const body = await res.text();
+    console.error(`Buttondown error: status=${res.status} body=${body}`);
+
     return Response.json(
       { success: false, error: "Something went wrong. Try again." },
       { status: 500, headers: corsHeaders }
