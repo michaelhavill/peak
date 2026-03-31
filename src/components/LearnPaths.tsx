@@ -141,7 +141,7 @@ export default function LearnPaths() {
             color: "var(--text-primary)",
           }}
         >
-          The articles that get you there
+          The paths that get you there
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
