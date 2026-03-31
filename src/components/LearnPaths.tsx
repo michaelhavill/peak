@@ -4,6 +4,14 @@ import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { LEARN_THEMES, LEARN_PATHS } from "@/lib/constants";
 
+const THEME_COLORS: Record<string, { bg: string; text: string }> = {
+  "build-your-moat": { bg: "#EAF0E8", text: "#4A7550" },
+  "craft-and-taste": { bg: "#EDE8F5", text: "#6B5A8A" },
+  "ship-faster":     { bg: "#F5EDE6", text: "#8A5A38" },
+  "ai-teams":        { bg: "#E6EEF5", text: "#3A5C8A" },
+  "scale":           { bg: "#F5E8EE", text: "#8A3A5C" },
+};
+
 function ThemeSection({
   theme,
   paths,
@@ -72,13 +80,14 @@ function ThemeSection({
             <div className="flex flex-wrap gap-1.5 mb-3">
               {path.themes.map((t) => {
                 const th = LEARN_THEMES.find((x) => x.id === t);
+                const color = THEME_COLORS[t];
                 return (
                   <span
                     key={t}
                     className="text-[10px] px-2 py-0.5 rounded-full font-medium uppercase tracking-wider"
                     style={{
-                      backgroundColor: "var(--bg-elevated)",
-                      color: "var(--text-secondary)",
+                      backgroundColor: color?.bg ?? "var(--bg-elevated)",
+                      color: color?.text ?? "var(--text-secondary)",
                     }}
                   >
                     {th?.label ?? t}
