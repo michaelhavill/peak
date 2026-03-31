@@ -38,7 +38,7 @@ export default function HeroSection() {
       </video>
 
       {/* Dark overlay so text is readable */}
-      <div className="absolute inset-0 bg-black/55 z-[1]" />
+      <div className="absolute inset-0 bg-black/30 z-[1]" />
 
       {/* Bottom gradient fade to page background */}
       <div className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-[var(--bg-primary)] to-transparent z-[2]" />
@@ -51,7 +51,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-[36px] sm:text-[48px] md:text-[70px] lg:text-[90px] leading-[110%] tracking-tight mb-8 text-white"
-            style={{ fontFamily: "var(--font-instrument-serif)" }}
+            style={{ fontFamily: "var(--font-instrument-serif)", textShadow: "0 2px 40px rgba(0,0,0,0.55), 0 0 80px rgba(0,0,0,0.3)" }}
           >
             Your path to becoming a 100x{" "}
             <RoleRotator />
@@ -61,6 +61,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="text-[15px] max-w-md mb-8 leading-[140%] text-white/70"
+            style={{ textShadow: "0 1px 20px rgba(0,0,0,0.6)" }}
           >
             Frameworks, mental models, and real resources to 100x your craft. No
             matter where you are on the journey. Let&apos;s go.
