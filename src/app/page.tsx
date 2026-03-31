@@ -21,6 +21,7 @@ export default function Home() {
       <main className="lg:ml-[180px] overflow-x-hidden">
         <div>
           <HeroSection />
+          <LearnPaths />
           <UseCasesGrid />
           <KnowledgeMoat />
           <InteractiveDemo />
@@ -29,7 +30,6 @@ export default function Home() {
           <IntegrationsGrid />
           <StatsBar />
           <TestimonialsCarousel />
-          <LearnPaths />
           <FooterCTA />
           <Footer />
         </div>

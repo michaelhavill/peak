@@ -66,14 +66,14 @@ export default function HeroSection() {
             matter where you are on the journey. Let&apos;s go.
           </motion.p>
           <motion.a
-            href="#philosophy"
+            href="#learn"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             className="inline-flex items-center gap-2 text-[15px] font-medium group text-white/70 hover:text-white transition-colors px-4 py-2 rounded-full backdrop-blur-sm"
             style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
           >
-            See the framework
+            Explore the learning paths
             <svg
               width="16"
               height="16"

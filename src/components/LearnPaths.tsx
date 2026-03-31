@@ -129,7 +129,7 @@ export default function LearnPaths() {
           className="text-[12px] font-medium uppercase tracking-widest mb-5"
           style={{ color: "var(--text-secondary)" }}
         >
-          Learn paths
+          Your learning path
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -141,7 +141,7 @@ export default function LearnPaths() {
             color: "var(--text-primary)",
           }}
         >
-          The moat builder&apos;s playbook
+          The articles that get you there
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -150,8 +150,9 @@ export default function LearnPaths() {
           className="text-[15px] max-w-2xl mb-10 leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
-          Practical paths for builders who want to make AI carry their taste,
-          scale their team, and ship work that can&apos;t be copied.
+          Each article is a mental model - a new way of thinking about yourself,
+          your craft, and how AI amplifies both. Read one, change how you work.
+          Read them all, become someone who can&apos;t be copied.
         </motion.p>
 
         {/* Theme filters */}
