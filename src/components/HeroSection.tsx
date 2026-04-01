@@ -4,15 +4,12 @@ import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import RoleRotator from "./RoleRotator";
 
-const R2_BASE = "https://videos.pathto100x.com";
+const CF = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P";
 
 const HERO_VIDEOS = [
-  `${R2_BASE}/hero-1.mp4`,
-  `${R2_BASE}/hero-2.mp4`,
-  `${R2_BASE}/hero-3.mp4`,
-  `${R2_BASE}/hero-4.mp4`,
-  `${R2_BASE}/hero-5.mp4`,
-  `${R2_BASE}/hero-6.mp4`,
+  `${CF}/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4`,
+  `${CF}/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4`,
+  `${CF}/hf_20260306_074215_04640ca7-042c-45d6-bb56-58b1e8a42489.mp4`,
 ];
 
 export default function HeroSection() {
