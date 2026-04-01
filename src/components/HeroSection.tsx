@@ -1,14 +1,25 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import RoleRotator from "./RoleRotator";
 
-const HERO_VIDEO_URL =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4";
+const R2_BASE = "https://videos.pathto100x.com";
+
+const HERO_VIDEOS = [
+  `${R2_BASE}/hero-1.mp4`,
+  `${R2_BASE}/hero-2.mp4`,
+  `${R2_BASE}/hero-3.mp4`,
+  `${R2_BASE}/hero-4.mp4`,
+  `${R2_BASE}/hero-5.mp4`,
+  `${R2_BASE}/hero-6.mp4`,
+];
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoUrl] = useState(
+    () => HERO_VIDEOS[Math.floor(Math.random() * HERO_VIDEOS.length)]
+  );
 
   useEffect(() => {
     if (videoRef.current) videoRef.current.playbackRate = 0.70;
@@ -34,7 +45,7 @@ export default function HeroSection() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src={HERO_VIDEO_URL} type="video/mp4" />
+        <source src={videoUrl} type="video/mp4" />
       </video>
 
       {/* Dark overlay so text is readable */}
