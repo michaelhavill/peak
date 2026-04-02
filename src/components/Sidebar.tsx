@@ -35,12 +35,6 @@ export default function Sidebar() {
           </nav>
         </div>
         <div className="flex flex-col gap-3">
-          <a href="#" className="text-[13px]" style={{ color: "var(--text-secondary)" }}>
-            Pricing
-          </a>
-          <a href="#" className="text-[13px]" style={{ color: "var(--text-secondary)" }}>
-            Log in
-          </a>
           <button
             onClick={() => setShowSubscribe(true)}
             className="text-[13px] inline-flex items-center justify-center h-9 px-5 rounded-full font-medium cursor-pointer"
