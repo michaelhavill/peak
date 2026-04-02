@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import RoleRotator from "./RoleRotator";
 
@@ -17,12 +17,14 @@ const HERO_VIDEOS = [
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoUrl] = useState(
-    () => HERO_VIDEOS[Math.floor(Math.random() * HERO_VIDEOS.length)]
-  );
 
   useEffect(() => {
-    if (videoRef.current) videoRef.current.playbackRate = 0.70;
+    const video = videoRef.current;
+    if (!video) return;
+    const url = HERO_VIDEOS[Math.floor(Math.random() * HERO_VIDEOS.length)];
+    video.src = url;
+    video.playbackRate = 0.70;
+    video.load();
   }, []);
 
   return (
@@ -44,9 +46,7 @@ export default function HeroSection() {
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src={videoUrl} type="video/mp4" />
-      </video>
+      />
 
       {/* Dark overlay so text is readable */}
       <div className="absolute inset-0 bg-black/30 z-[1]" />
