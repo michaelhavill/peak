@@ -1,0 +1,310 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Taste is intellectual capital. You spent a decade accumulating it - pattern recognition, quality thresholds, decision frameworks - and right now you're letting it sit in a zero-yield account. You ask AI to draft a product strategy memo and it comes back sounding like a consultant who's never had a conviction in his life.</p><p>The AI isn't broken - it's uninformed. It has zero access to the decades of compounded judgment that make your work yours. That's not a prompt problem. That's a capital deployment problem. And the fix isn't handing your judgment to AI - it's empowering AI to work as an extension of your judgment.</p><p><strong>Your taste isn't aesthetics. It's intellectual capital across every domain where you hold earned opinions</strong> - strategy, hiring, product direction, brand voice, pricing, positioning. None of it reaches your AI right now.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Write Your First Taste Doc in 20 Minutes",
+          "triggerText": "See how to build a taste document",
+          "html": "<h3>The Format</h3><p>Open a new doc. Title it \"[Your Domain] Taste Rules.\" Set a timer for 20 minutes. Write the answer to: \"If I hired a brilliant junior who'd never worked in my domain, what are the 10 rules I'd give them on day one?\"</p><h3>Be Ruthlessly Specific</h3><p>Not \"write clearly\" but \"every brief starts with the user's current workaround, not the feature description.\" Not \"I prefer quality\" but \"we kill features that don't move retention within 2 sprints.\"</p><h3>Examples by Domain</h3><ul><li><strong>Strategy:</strong> \"We always frame market opportunities as customer pain points first, TAM second. We never pursue a segment without 5+ customer conversations.\"</li><li><strong>Design:</strong> \"Body text never exceeds 18px. Primary CTAs use high-contrast fills, never outlines. Section padding is 80px minimum on desktop.\"</li><li><strong>Engineering:</strong> \"Services are named by what they do, not what they contain. Error messages tell the user what to do next, not what went wrong.\"</li></ul><h3>Deploy It</h3><p>Upload to a Claude Project or add it to your <code>CLAUDE.md</code> file. Test immediately by asking Claude to produce something in your domain. The difference will be obvious on the first try.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A product manager financialized her brief-writing craft this way. AI briefs now match her quality bar on the first draft. The 45-minute rewrite tax? Gone. But the real win isn't the time saved - it's what she does with those 45 minutes. Deep product thinking. Pressure-testing strategy. Designing experiments worth running.</p><p>An engineering lead documented state management, API conventions, and component standards. The \"fix it to match our style\" step disappeared entirely. Zero rework cycles.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build a Shared Taste Layer for Your Team",
+          "triggerText": "Learn the framework for scaling taste across teams",
+          "html": "<h3>The Three-Layer Capital Stack</h3><p><strong>Layer 1 - Company taste:</strong> Brand, strategy, quality standards that apply to everything. The foundation.</p><p><strong>Layer 2 - Team taste:</strong> How product evaluates opportunities, how engineering defines \"done,\" how design makes decisions. The execution layer.</p><p><strong>Layer 3 - Individual taste:</strong> Personal judgment that layers on top. The PM who's strong on pricing. The designer with refined opinions about information architecture. The alpha layer.</p><h3>How to Set It Up</h3><p>Create a Notion database called \"Taste Docs\" with columns for Domain, Owner, and Last Updated. Have each senior person write their taste doc - 10-15 specific rules. Connect the Notion workspace to Claude via MCP. Every team member's AI now draws from the full taste stack.</p><h3>The Result</h3><p>A new PM's first brief matches the org's quality bar because the context carries it automatically. Taste scales without bottlenecks. No more \"run it by the founder first\" - the founder's judgment is in the system.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The punchline is compounding. Every rule you refine, every judgment call you record, every \"here's how I think about this\" you document - these compound across every future interaction. Your taste doc becomes a living asset that appreciates with use.</p><p>After 6 months, your AI carries judgment that would take a new hire a year to absorb. That's not a productivity hack. That's a moat.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Real Examples of Taste in Production",
+          "triggerText": "See how companies are encoding taste right now",
+          "html": "<h3>Airbnb</h3><p>Their design team maintains a living document of design principles so specific that AI tools can reference them: illustrations use a warm, hand-drawn quality; photography shows real spaces with natural light; UI copy is conversational, never corporate.</p><h3>Basecamp / 37signals</h3><p>Decades of opinionated product philosophy documented publicly - \"build less,\" \"charge from day one.\" When their team uses AI, those principles aren't vague values. They're specific, deployable judgment calls.</p><h3>Notion</h3><p>Their internal writing guide specifies voice characteristics, sentence structures to avoid, and how to frame different content types. AI-assisted content starts from that taste layer - which is why their communications feel consistent across hundreds of team members.</p><h3>Duolingo</h3><p>Character voice guidelines encoded so precisely that AI-generated lesson content matches the tone their content team took years to develop. New writers' AI-assisted drafts sound like Duolingo from day one.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Taste documentation turns a knowledge base from a reference library into an opinionated decision engine. Knowledge provides context. Taste provides judgment. Together, they produce AI output that's not just informed but opinionated - in the way that makes your work defensible and your position irreplaceable.</p><p><strong>Knowledge without taste is a Wikipedia article. Taste without knowledge is guessing. Either without you directing AI is noise at scale.</strong></p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your strategic judgment - how you evaluate markets, size bets, decide when to pivot versus persevere - is the thing investors are actually funding. And right now, none of it reaches your AI. You ask for a board deck and get consultant-speak that could belong to any startup. The conviction that makes your thinking worth backing? Missing entirely.</p><p>That's not an AI capability problem. It's a capital deployment problem. Your taste in strategy, hiring, pricing, and positioning is intellectual capital sitting in a zero-yield account.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Encode Your Strategic Judgment",
+          "triggerText": "See how founders are encoding strategic taste",
+          "html": "<h3>Your Strategy Taste Doc</h3><p>Write 10-15 rules that capture how you actually make decisions. Not platitudes - specifics: \"We always frame market opportunities as customer pain points first, TAM second. We never pursue a segment without 5+ customer conversations. Competitive positioning leads with differentiation, not feature comparison.\"</p><h3>Your Fundraising Judgment</h3><p>Encode investor preferences, objection patterns, how you frame challenges as opportunities without sugarcoating, and the metrics you always lead with. One founder encoded this from 200+ pitch meetings - investor updates now take 20 minutes instead of 3 hours, more personalized than before.</p><h3>Deploy It</h3><p>Upload to a Claude Project. Test by asking for a board memo or competitive analysis. If it sounds like your thinking - your framing, your opinions, your quality bar - you've encoded enough.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI now drafts board materials that reflect your actual strategic thinking. Not consultant-speak. Your thinking. The ROI on that documentation session is infinite because it compounds across every board deck for the life of the company.</p><p>But the real unlock is time. The hours you reclaim from rewriting? Those go to the deep strategic work that actually differentiates - sitting with market shifts, pressure-testing positioning, designing the company's next act.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Scale Your Taste Across the Company",
+          "triggerText": "Learn how to remove yourself as the quality bottleneck",
+          "html": "<h3>The Founder Bottleneck Problem</h3><p>Your CEO judgment lives in your head. Your quality bar arrives as feedback too late to incorporate. Your team can't ship without your review because your taste is the only quality gate. That's not leadership. That's a single point of failure.</p><h3>The Three-Layer Solution</h3><p><strong>Company taste:</strong> Brand, strategy, quality standards. Your non-negotiables encoded once.<br/><strong>Team taste:</strong> How product evaluates opportunities, how engineering defines \"done,\" how design approaches users.<br/><strong>Individual taste:</strong> The PM who's strong on pricing, the engineer who's the expert on performance.</p><h3>The Result</h3><p>No more \"run it by the founder first.\" Your strategic judgment is in the system. The team produces consistent work at 3x the speed. And your calendar? Finally clear for the strategic depth your company actually needs from you.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>When a startup encodes only one domain of taste, they get consistency there and chaos everywhere else. When they encode strategy, product, hiring, voice, and design - every function produces work that carries organizational judgment. That's the difference between a team that uses AI and one that compounds through AI.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Taste Tools for Founders",
+          "triggerText": "See the tools founders are deploying",
+          "html": "<h3>Claude Projects</h3><p>Load your strategy docs, fundraising context, and competitive positioning as Project Knowledge. Every conversation draws from your judgment. Test it by asking for something in your domain - the difference is immediate.</p><h3>Notion + MCP for Team Taste</h3><p>Create a Notion database of taste docs. Connect via MCP. Every team member's AI draws from the full stack - company taste, team taste, individual taste - simultaneously.</p><h3>The Compounding Advantage</h3><p>After 6 months, your AI carries judgment a new VP would need a year to absorb. After 12 months, that's a competitive moat. Competitors can buy the same models. They cannot buy your compounded strategic judgment and the team culture built around it.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Specificity is the moat. Strategy, hiring, product, pricing, positioning - every domain where your founder judgment matters. The builder who deploys all three - their ongoing judgment, their knowledge store, and AI as an extension of their craft - creates something no competitor can replicate. That's the whole game.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your product sense took years to build. The instinct that separates a retention-moving feature from a vanity metric. The quality threshold that knows when a brief is done versus when it's just long enough. You ask AI for a product strategy and get a structurally competent document with zero conviction.</p><p>The AI isn't bad at product - it's uninformed about YOUR product thinking. Your prioritization framework, your evidence bar, your opinion about what \"done\" means - none of it is accessible. That 45-minute rewrite you do on every AI draft? That's the tax on undocumented taste.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Write Your Product Taste Doc",
+          "triggerText": "See how to encode your product judgment",
+          "html": "<h3>Your Product Rules</h3><p>Write 10-15 rules that capture how you actually make product decisions: \"Every feature brief starts with the user's current workaround. Success metrics are behavioral, not engagement-based. We kill features that don't move retention within 2 sprints.\"</p><h3>Your Prioritization Taste</h3><p>Document how you weigh customer pain against business value, your threshold for \"enough evidence,\" and how you frame trade-offs for engineering. One PM encoded this and sprint planning briefs now start 80% of the way to final. That's 4 hours reclaimed per sprint, every sprint, forever.</p><h3>Deploy Immediately</h3><p>Upload to a Claude Project along with your 3 best briefs as examples. Test it by asking for a feature brief in your domain. If the framing matches your thinking, you're there.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One product manager financialized her brief-writing craft. AI briefs now match her quality bar on the first draft. The 45-minute rewrite tax? Gone. But the real win is what she does with those 45 minutes - sitting with customer problems, pressure-testing strategy, designing experiments worth running. That's a fundamentally different job.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Team Product Taste Infrastructure",
+          "triggerText": "Learn how to scale product quality without bottlenecks",
+          "html": "<h3>The Problem</h3><p>Your VP Product's quality bar arrives as feedback too late to incorporate. The PM's \"done\" and the designer's \"done\" measure against different bars. Quality only exists in the head of whoever reviews it.</p><h3>The Three Layers</h3><p><strong>Company:</strong> Strategic frameworks, quality standards that apply across all products.<br/><strong>Team:</strong> How product evaluates opportunities, how you define success metrics, how you structure problem statements.<br/><strong>Individual:</strong> The PM who's strong on pricing. The researcher with the best user interview instincts. Personal alpha that layers on top.</p><h3>Deploy via Notion</h3><p>Create a Notion database of taste docs by domain. Connect to Claude via MCP. A new PM's first AI-assisted brief matches the team's quality bar because the context carries the org's collective product judgment automatically.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Product taste at scale means consistency without bottlenecks. The founder doesn't need to review every brief. The head of product doesn't need to enforce the evidence bar manually. The quality bar is in the system.</p><p>And the leaders whose calendars cleared? They invest in the deep product thinking that differentiates - customer research, strategy, the hard product problems that have been waiting because nobody had time.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Product Taste in the Wild",
+          "triggerText": "See how product teams are encoding taste",
+          "html": "<h3>Basecamp / 37signals</h3><p>Decades of opinionated product philosophy documented publicly. \"Build less. Charge from day one. Meetings are toxic.\" These aren't vague values - they're specific judgment calls that shape every AI-assisted output.</p><h3>Figma</h3><p>Top product teams encode not just visual style but product thinking - \"progressive disclosure over feature density,\" \"information architecture mirrors the user's mental model, not the database schema.\"</p><h3>Custom Claude Projects</h3><p>Thousands of PMs have built AI configurations loaded with their product taste docs. Prioritization frameworks, positioning rules, evidence thresholds. The pattern is consistent: document specificity, connect it, and the rewrite tax disappears.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Knowledge without taste is a Wikipedia article. Taste without knowledge is guessing. The product builder who deploys both - their ongoing judgment, their knowledge store, and AI as an extension of their craft - produces work that's not just informed but opinionated. That's what makes your product thinking defensible and your position irreplaceable.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your design judgment is the result of thousands of reps. The eye that catches a weight mismatch across the page. The sense for information hierarchy that puts the right content at the right level. The aesthetic instinct that knows warm neutrals over cool grays, 80px section padding, high-contrast CTAs over outlines.</p><p>You ask AI for a design concept and get something structurally adequate, aesthetically generic. All your opinions about typography, spacing, color, interaction design - invisible. You're spending 30 minutes per component translating generic output into your reality.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Write Your Design Taste Doc",
+          "triggerText": "See how to encode your visual and UX judgment",
+          "html": "<h3>Be Brutally Specific</h3><p>\"Body text never exceeds 18px. Primary CTAs use high-contrast fills, never outlines. Section padding is 80px minimum on desktop. Warm neutrals over cool grays. Progressive disclosure over feature density. Information architecture mirrors the user's mental model, not the database schema.\"</p><h3>Cover All Dimensions</h3><p>One product designer wrote 40 specific principles spanning persona-driven content hierarchy, UX flow logic, progressive disclosure patterns, and visual taste. AI concepts matched her thinking and aesthetic without a single correction. First try.</p><h3>Include Your System</h3><p>Document your component structure, design tokens, and accessibility requirements alongside your aesthetic rules. When AI generates code, it should use your actual system with your actual constraints.</p><h3>Deploy It</h3><p>Add to a Claude Project or <code>CLAUDE.md</code>. Connect your component library docs via MCP. Test by asking for a component - if it uses your tokens, your spacing, your aesthetic, you're there.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A design engineer connected his component library, tokens, and accessibility requirements. Generated code uses his actual components. The translation step from generic patterns to his reality - gone. The gap between Figma and production closed.</p><p>That's not just faster output. It's freedom to focus on the deep craft - information architecture decisions, interaction nuance, the hard UX problems that differentiate your product from everything that looks the same.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build a Design Taste System for Your Team",
+          "triggerText": "Learn how to scale design quality systematically",
+          "html": "<h3>The Consistency Problem</h3><p>When the team's AI draws from documented design principles - visual standards, UX patterns, accessibility requirements, component conventions - every output starts from the same baseline. The \"that's not how it was designed\" QA cycle disappears.</p><h3>Three Layers</h3><p><strong>System taste:</strong> Design tokens, component standards, accessibility rules. Non-negotiable foundations.<br/><strong>Pattern taste:</strong> How you approach information architecture, interaction design, progressive disclosure. The UX philosophy.<br/><strong>Craft taste:</strong> Individual aesthetic refinements. The designer who has strong opinions about type pairing. The alpha layer.</p><h3>The Payoff</h3><p>New designers' AI-generated concepts carry the team's visual identity from day one. Senior designers reclaim time from pattern-policing and invest it in the creative exploration that actually pushes the product forward.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every design principle you refine, every UX pattern you document, every accessibility rule you encode - these compound across every future interaction. Your taste doc becomes a living asset. After 6 months, your AI carries design judgment a new hire would need a year to develop.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Design Taste Tools in Production",
+          "triggerText": "See the tools design engineers are deploying",
+          "html": "<h3>Airbnb</h3><p>Design principles so specific that AI tools reference them directly. The specificity is why AI-generated design explorations feel like Airbnb - not like a template.</p><h3>Figma Config Insights</h3><p>Top teams encode product thinking alongside visual style - not just how it looks, but how information flows, how interactions progress, how complexity is managed.</p><h3>Vercel's v0</h3><p>Teams that connect their design system tokens and component libraries get output that ships. Teams without context get generic React. Same model, different economics.</p><h3>Custom Claude Projects</h3><p>Brand designers with 40 visual principles. UX designers with interaction frameworks. The pattern: document specificity, connect it, and the 30-minute translation tax disappears.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Taste documentation turns a design system from a reference library into an opinionated creative engine. Knowledge provides the components. Taste provides the judgment about how to use them. Together they produce design output that's not just systematic but beautiful - in the way that makes your craft defensible and your eye irreplaceable.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>When you're wearing every hat, your taste IS the product. Your strategic judgment, your design eye, your engineering standards, your brand voice - it all lives in one place: your head. And every time you prompt AI, it starts from scratch. The rewrite tax hits you across every domain, every day.</p><p>A solo founder described the fix as having a business partner with perfect memory and zero ego. That's the framing. You're not creating documentation - you're building yourself a collaborator who carries your standards across everything you touch.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Write Your Multi-Domain Taste Doc",
+          "triggerText": "See how to encode taste when you're doing everything",
+          "html": "<h3>Cover Every Hat</h3><p>When you're solo, one taste doc covers all your domains. Write your rules for each: product decisions, design aesthetic, engineering standards, brand voice, pricing philosophy. 5-10 rules per domain, one document.</p><h3>The 20-Minute Sprint</h3><p>For each domain, answer: \"What would I tell a brilliant contractor on their first day?\" Be specific - not \"make it look good\" but \"warm neutrals, generous spacing, body text at 16px, section padding at 64px minimum.\"</p><h3>Deploy Everywhere</h3><p>Upload to a Claude Project for general work. Add a <code>CLAUDE.md</code> to your repo for code. Connect Notion via MCP for ongoing context. One investment, every tool carries your taste.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The 45-minute rewrite tax, multiplied across every domain you touch, is catastrophic for a solo operator. Kill it once and you reclaim hours every week. Those hours are the difference between grinding on fixing AI output and shipping the next feature, running the next customer call, building the next thing that matters.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Taste Compound Across All Your Work",
+          "triggerText": "Learn how to build a compounding taste system solo",
+          "html": "<h3>The Living Document</h3><p>Your taste doc isn't static. Every time you correct AI output, add the rule. \"Headlines always lead with the outcome, not the feature.\" \"API error responses include the fix, not just the error.\" \"Landing pages start with the pain, not the solution.\" The doc grows smarter with every project.</p><h3>Examples as Leverage</h3><p>Upload your best work alongside the rules. Your best landing page, your cleanest code, your most effective email - the AI learns from your actual output, not just your rules about output.</p><h3>The Compound Effect</h3><p>After a few months, your AI carries judgment across every domain you work in. Starting a new project feels like having a partner who already knows your standards, your preferences, your quality bar. That's leverage no amount of hustle can replicate.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Knowledge without taste is research you never act on. Taste without knowledge is guessing at scale. As a solo operator, you need both working together - your ongoing judgment, your accumulated standards, and AI extending your capacity. That combination creates output that's unmistakably yours across everything you build. That's the whole game when you're a team of one.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your engineering taste - architecture review criteria, \"too clever\" detectors, build-vs-buy judgment, the opinion about when to optimize versus ship - took years of real decisions to build. It lives in your head and gets deployed through code reviews. Which means every PR is an expensive teaching moment instead of a quality gate.</p><p>The AI your team uses has zero access to your engineering judgment. It generates code that's technically correct and culturally wrong. Your senior engineers spend their time catching violations of patterns the author didn't know existed.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Encode Your Engineering Taste",
+          "triggerText": "See how to document engineering judgment",
+          "html": "<h3>Your Code Taste Doc</h3><p>Write the rules that define quality on your team: \"Services are named by what they do, not what they contain. API responses always include pagination metadata. Error messages tell the user what to do next, not what went wrong.\"</p><h3>Architecture Review Criteria</h3><p>Document what makes a design \"too clever,\" when to optimize versus ship, and how to evaluate build-vs-buy decisions. This is the judgment that currently only exists in senior engineers' heads.</p><h3>Anti-Patterns and Scars</h3><p>The things that broke production. The patterns that looked elegant but didn't scale. Encode these alongside the taste rules - they prevent your AI from reopening every healed wound.</p><h3>Deploy via CLAUDE.md</h3><p>Commit to the repo. Every engineer and every AI interaction respects your engineering taste from the next <code>git pull</code>.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One engineering lead encoded his architecture review criteria. Junior engineers' AI-assisted proposals now match his quality bar. That's underwriting the quality of every technical decision across the team - not through review bottlenecks, but through encoded taste that scales.</p><p>The shift: code review moves from \"please follow our patterns\" to \"let's discuss the architectural tradeoff here.\" Defense to offense. That's a different engineering culture.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Engineering Taste Infrastructure",
+          "triggerText": "Learn how to scale engineering judgment across your team",
+          "html": "<h3>The Taste Stack</h3><p><strong>Platform taste:</strong> Architecture principles, deployment philosophy, reliability standards. The non-negotiable layer.<br/><strong>Team taste:</strong> How you approach state management, testing, API design. The execution standards.<br/><strong>Individual taste:</strong> The engineer who's the expert on performance. The one with the best API design instincts. The alpha layer.</p><h3>Share Across Functions</h3><p>Connect engineering taste docs to Notion via MCP. When PMs spec features, the AI surfaces your constraints automatically. The \"we can't do it that way\" feedback loop compresses from days to the moment the spec is written.</p><h3>The Quality Multiplier</h3><p>New engineers produce code matching senior standards on the first draft. Onboarding drops from months to weeks. Code review shifts to architecture discussions and design tradeoffs - the high-leverage work your team never had time for.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The time your senior engineers reclaim from pattern-policing goes to architecture decisions, system design, and the hardest technical problems in the backlog. That's not just better output - it's a fundamentally better use of your most expensive, most capable people.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Engineering Taste in the Wild",
+          "triggerText": "See how engineering teams encode taste",
+          "html": "<h3>Stripe</h3><p>10+ years of opinions about naming, versioning, error handling, and backwards compatibility - encoded so new engineers' AI-generated code follows Stripe's API philosophy from day one.</p><h3>Shopify</h3><p>Discovered the AI bottleneck wasn't the model - it was the context. Their internal Sidekick system feeds codebase-specific patterns and conventions into every interaction.</p><h3>.cursorrules and CLAUDE.md</h3><p>Thousands of teams ship these context files encoding conventions, preferences, and constraints. One file per repo. Immediate acceptance rate jump. The pattern has spread across open-source because the ROI is obvious.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Engineering taste is the difference between code that compiles and code that belongs. Between a team that generates code and one that ships with conviction. The leader who encodes their engineering judgment doesn't just improve output quality - they change what their team spends time on. And that change compounds with every sprint.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your creative judgment is the thing clients are actually paying for. The voice instinct that knows when messaging is on-brand versus just \"close enough.\" The visual sense that catches what's wrong before you can explain it. The campaign instinct that separates a concept that resonates from one that's technically fine.</p><p>Your AI has zero access to any of it. Your brand guidelines say \"be clear and professional\" - a nothing-statement that produces nothing work. Your team can't ship without your review because the only quality gate is your calendar.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Encode Your Creative Taste",
+          "triggerText": "See how to build a creative taste document",
+          "html": "<h3>Beyond Brand Guidelines</h3><p>Not \"be conversational\" - that's useless. Instead: \"Headlines lead with the emotional truth, not the feature. We use sentence case, never title case. Humor is dry and observational, never slapstick. We acknowledge the reader's intelligence - no explaining the obvious.\"</p><h3>Visual Taste Rules</h3><p>\"Illustrations use a warm, hand-drawn quality. Photography shows real spaces with natural light. Color palette is warm neutrals with one saturated accent. Whitespace is a feature, never a gap to fill.\"</p><h3>Campaign Philosophy</h3><p>Document how you evaluate creative concepts, what makes a campaign brief strong, and how you think about audience tension. This is the judgment that makes your creative direction valuable.</p><h3>Examples as Anchors</h3><p>Upload your best campaigns, on-brand copy, and visual direction decks to a Claude Project. The AI learns your taste from examples of what \"right\" looks like.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Duolingo encoded their character voice so precisely that AI-generated content matches the tone their team took years to develop. New writers produce on-brand drafts from day one because the taste is in the system. That's the model: encode specificity and the quality scales.</p><p>Your calendar clears. The time goes to the work that actually matters - brand evolution, creative strategy, the concepts that differentiate the company.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Scale Creative Quality Across Your Team",
+          "triggerText": "Learn how to remove the creative bottleneck",
+          "html": "<h3>The Three Layers</h3><p><strong>Brand taste:</strong> Voice, visual identity, creative principles that define the brand. Non-negotiable.<br/><strong>Channel taste:</strong> How the social team writes versus how the content team writes. How campaign creative differs from evergreen. The format-level execution.<br/><strong>Craft taste:</strong> Individual creative strengths. The copywriter who nails headlines. The designer with type mastery. Personal excellence that layers on top.</p><h3>Deploy It</h3><p>Notion database of creative taste docs, connected via MCP. Every team member's AI draws from the full creative stack. A new writer's first draft carries the brand voice. A new designer's first concept carries the visual identity.</p><h3>The Unlock</h3><p>Taste scales without bottlenecks. You stop being the reviewer of everything and start being the creative leader who has time for the deep brand work - the thinking, the vision, the creative leaps that no amount of process can produce.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>When you encode only visual taste, you get consistent design and inconsistent everything else. When you encode voice, visual identity, campaign philosophy, and creative strategy - every output carries the organization's creative judgment. That's the difference between a team that uses AI and one that produces genuinely branded work at scale.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Creative Taste Tools",
+          "triggerText": "See the tools creative teams are deploying",
+          "html": "<h3>Airbnb's Design Principles</h3><p>So specific that AI tools reference them directly. The result: AI-generated design explorations feel like Airbnb, not like templates.</p><h3>Notion's Writing Guide</h3><p>Specifies voice characteristics, sentence structures to avoid, and content framing by type. Why Notion's communications feel consistent across hundreds of team members.</p><h3>Custom Claude Projects</h3><p>Brand designers with 40 visual principles. Copywriters with voice frameworks. Campaign strategists with positioning rules. Document specificity, connect it, and the rewrite tax disappears.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Taste documentation turns a brand guide from a shelf ornament into a creative engine. Knowledge provides the context. Taste provides the creative judgment. Together they produce work that's not just on-brand but alive - in the way that makes your creative direction defensible and your eye irreplaceable. That's the whole game.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You know the feeling. You have a strong aesthetic - the way you like your code structured, the visual style you're drawn to, the tools and patterns that feel right. But every time you prompt AI, it gives you textbook output. Generic React. Default styles. Someone else's conventions. The vibe is gone.</p><p>Your taste is the thing that makes your projects yours. The framework opinions, the design sensibility, the specific way you like things built. It took dozens of side projects to develop. And right now, your AI can't see any of it.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Write Your Vibe Doc",
+          "triggerText": "See how to encode your personal coding aesthetic",
+          "html": "<h3>Your Aesthetic Rules</h3><p>Not best practices from a blog - YOUR practices from building things: \"Warm neutrals over cool grays. Generous spacing. No border-radius above 12px. Body text at 16px Inter. Section padding at least 64px.\"</p><h3>Your Stack Opinions</h3><p>\"Always use server components for data fetching. Tailwind for styling, never CSS-in-JS. Prefer Zustand over Redux for anything under 50 components. Framer Motion for transitions, GSAP only for scroll-triggered animations.\"</p><h3>Your Anti-Patterns</h3><p>\"Never use Redux for a project this size. No utility-first class names longer than 6 values without extraction. No magic numbers in layout code.\"</p><h3>Deploy It</h3><p>Add to <code>CLAUDE.md</code> or a Claude Project. The next time you ask for a component, it should feel like your code - not a tutorial example.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The 30 minutes of fixing AI output to match your reality is what kills momentum on a Saturday project. When your AI actually knows your style, you go from idea to YOUR code without the translation step. That's the difference between a productive weekend and an abandoned repo.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Your Taste Compound Across Projects",
+          "triggerText": "Learn how to build a personal taste system that grows",
+          "html": "<h3>The Living Taste Doc</h3><p>Every time you correct AI output, add the rule. Every time you discover a pattern you love, document it. Every time something breaks your aesthetic, note the anti-pattern. The doc grows smarter with every project you ship.</p><h3>Examples Over Rules</h3><p>Upload your best work to a Claude Project. Your cleanest component, your best landing page, your most satisfying interaction. The AI learns your vibe from examples - sometimes better than from explicit rules.</p><h3>Cross-Project Context</h3><p>Use Cursor's <code>.cursorrules</code> per project for stack-specific context. Use Claude Projects for persistent personal taste that carries across everything. After 5 projects, starting a new one feels like picking up where you left off.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every project you build refines your taste doc. After a few months, your AI carries your entire aesthetic and technical sensibility. You become the builder whose side projects have a recognizable style - not because you spend hours polishing, but because your taste is in the system. That's the compound effect for creative coders: every project makes the next one faster, more refined, and more unmistakably yours.</p>"
+        }
+      ]
+    }
+  }
+}

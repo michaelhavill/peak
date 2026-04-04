@@ -1,0 +1,332 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your expertise has a liquidity problem. You spent a decade - maybe two - developing taste, craft, and judgment that nobody else has. All of it locked in a format with zero scalability: your brain. The only way anyone could access it was to hire you - by the hour, by the project, by the year. One person. One conversation at a time.</p><p>You're sitting on an appreciating asset with the liquidity of a house you can't sell.</p><h2>The Distribution Problem</h2><p>The world's most valuable professionals aren't the ones with the most knowledge. They're the ones whose knowledge is most <em>accessible</em> - to clients, to teams, to systems. A brilliant surgeon whose insights die in her head after every procedure is worth $500K/year. That same surgeon whose protocols, frameworks, and pattern recognition are encoded, deployed, and compounding? She's building an institution. Different economics entirely.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Financialize Your Expertise This Weekend",
+          "triggerText": "See how to encode your judgment into a deployable asset",
+          "html": "<p>Pick your strongest domain - the thing clients pay you for or colleagues come to you for. Open Claude.ai, create a Project, and spend 2 hours writing your judgment into the Project Knowledge: your frameworks, your rules, your \"here's what most people get wrong\" list, your decision criteria. Upload past deliverables that represent your best work.</p><p>Then test it - ask Claude to produce a deliverable in that domain. Compare the output to your generic prompting results. The gap is the value you just unlocked.</p><h3>Real examples of what this looks like</h3><p>A <strong>product designer</strong> with 12 years of refined taste - user flow patterns, interaction design principles, visual hierarchy rules - encoded it into a knowledge base in one weekend. Monday morning: three homepage concepts, all nailed. No rewrite cycle. She financialized 12 years of judgment into a reusable asset in 8 hours. Her taste now operates in parallel across every project.</p><p>A <strong>brand strategist</strong> documented 15 years and 80+ brand launches worth of positioning frameworks. His AI now produces first-draft positioning decks that clients say are 85% of the way there - before he's spent a single billable hour. He doubled his effective client capacity without working a single extra hour.</p><p>A <strong>freelance engineer</strong> encoded opinions about API design, database architecture, and the 10 mistakes every early-stage startup makes. Close rate went from 30% to 55% - because proposals carried the weight of 8 years of specific, battle-tested judgment.</p><p>A <strong>clinical consultant</strong> encoded patient assessment frameworks and care coordination protocols. She went from onboarding one facility per quarter to three simultaneously. Same expertise. 3x the reach.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Compound Loop</h2><p>Here's the thing about taste, craft, and opinion. They're the hardest things to develop and the easiest things to lose. You spend years building judgment through thousands of reps - then you sell it one hour at a time and watch it evaporate into deliverables no one archives.</p><p><strong>Document once, deploy forever, compound daily.</strong> Your taste doesn't degrade with each use. It sharpens. Every project that runs through your knowledge base teaches the system something new - and the system teaches you what's working. That's a feedback loop the hourly billing model could never create.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "How to Scale This Across a Team",
+          "triggerText": "See how organizations are scaling expertise",
+          "html": "<p>Every senior person on your team has years of accumulated judgment trapped in their head. The VP of Sales who can read a deal's trajectory in 3 minutes. The Head of Product whose taste eliminates 60% of feature requests before they waste a sprint. The Principal Engineer whose architecture opinions save 4 months per bad decision avoided.</p><p>You're paying full-time salaries for this expertise and only accessing a fraction of it.</p><h3>The team approach</h3><p>Have each senior leader block 2-3 hours to encode their domain expertise. Give them a simple template: \"Write 10-15 specific rules about how you make decisions in your domain. Not principles - rules. Not 'be strategic' but 'we always validate a market opportunity with 5+ customer conversations before committing engineering resources.'\"</p><p>Deposit these into a shared Notion workspace. Connect the workspace to Claude via MCP. Now every team member's AI carries senior judgment from day one.</p><h3>What happens next</h3><ul><li><strong>Junior team members' AI</strong> starts producing work that reflects senior judgment on the first try.</li><li><strong>The \"run it by Sarah first\" bottleneck</strong> disappears - because Sarah's thinking is already in the system.</li><li><strong>Cross-functional alignment</strong> happens without standing meetings. Product knows about engineering constraints. Sales knows about product positioning. Design knows about technical feasibility.</li></ul><p>After 12 months, the compound loop becomes a genuine moat. Not because of the technology - anyone can buy that. Because of the encoded expertise of your specific people, refined through your specific customer interactions, deployed through your specific workflows.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Structural Shift</h2><p>There's a change happening in the economics of expertise that most people haven't clocked yet. For centuries, knowledge work has been sold as a service - by the hour, by the project, by the salary. The expert shows up, delivers insight, goes home. The insight lives in a deliverable that immediately starts depreciating.</p><p>Encoding your expertise turns it into a product economically - you invest upfront, the asset produces value repeatedly, and the returns compound. That's product economics applied to professional expertise.</p><p>There is no version of the future where unstructured expertise - locked in heads, sold by the hour, lost with every departure - competes with structured expertise deployed through AI by the person who earned it. None. The only question is how long it takes you to make the transition.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Real Companies Making Expertise Compound",
+          "triggerText": "See real-world examples of expertise monetization",
+          "html": "<ul><li><strong>Custom GPTs on the OpenAI Store</strong> - thousands of professionals have packaged domain expertise into AI configurations. A contract lawyer's negotiation frameworks. A nutritionist's meal planning methodology. Each one turned hours-based expertise into a product that operates in parallel.</li><li><strong>Sahil Lavingia (Gumroad founder)</strong> publicly documents his startup operating frameworks - hiring philosophy, product judgment, fundraising patterns. He's turned 10+ years of founder expertise into a queryable knowledge base that AI can deploy.</li><li><strong>Levels.health</strong> encoded clinical assessment frameworks and wellness protocols into their AI system. One clinician's judgment, deployed across thousands of patients simultaneously.</li><li><strong>Harvey AI</strong> lets senior lawyers encode practice area expertise - precedent patterns, argument frameworks, jurisdictional nuances - into a system junior associates and AI agents draw from simultaneously. One partner's judgment now underwrites the entire team's output.</li><li><strong>Replit Agents + domain expertise</strong> - consultants and freelancers build AI-powered prototypes loaded with their specific architectural opinions. Proposals arrive with working prototypes carrying 8-10 years of battle-tested judgment. Close rates jump because clients feel the specificity.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Math</h2><p>What's your expertise actually worth? Not per hour. Per deployment. If your judgment could run in 10 places simultaneously - across clients, across projects, across teams - what's the annual value of that? For most experienced professionals, the gap between what they earn and what their expertise could generate is 5-10x. The bottleneck was never the expertise. It was the distribution.</p><p>Every month you wait, someone in your field is compounding while you're billing. Every pillar of the framework increases the surface area where your expertise generates value. More surface area means more feedback. More feedback means sharper expertise. The flywheel spins. And it only spins faster.</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You spent years developing market instincts, fundraising pattern recognition, and strategic judgment that nobody else has. The ability to read a deal's trajectory in one meeting. The conviction about which positioning angles die on contact with the market. The gut for when to pivot versus persevere.</p><p>All of it locked in a format with zero scalability: you, in a room, making calls. Your startup's most valuable asset - your strategic judgment - has the liquidity of a house you can't sell.</p><h2>The Founder's Leverage Problem</h2><p>Your judgment is the bottleneck. Not because it's wrong - because it can only be in one room at a time. Every decision that needs your pattern recognition, every hire that needs your culture instinct, every strategy call that needs your market sense - they're all queued behind your calendar. That's not a people problem. It's a distribution problem.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Encode Founder Judgment Into a Deployable Asset",
+          "triggerText": "See how founders are scaling strategic judgment",
+          "html": "<p>One founder stopped thinking of AI as a productivity tool and started thinking of it as a strategy partner. She built 15 years of market pattern recognition into a knowledge base - which channels actually convert for her customer profile, which pricing structures create expansion revenue, which positioning angles survive contact with the market.</p><p>Now she pressure-tests full go-to-market strategies against that judgment before committing a dollar. Her board asked her to apply the same approach to three new markets. She went from operating one business to orchestrating a portfolio.</p><h3>What to encode</h3><ul><li><strong>Market pattern recognition:</strong> Which signals predict a deal will close. Which customer segments actually expand. Which competitive dynamics matter and which are noise.</li><li><strong>Strategic frameworks:</strong> How you evaluate market opportunities. How you size bets. How you decide when to pivot versus persevere. Your specific reasoning, not generic frameworks.</li><li><strong>Hiring judgment:</strong> How you evaluate culture fit. What signals you read in interviews. What patterns predict success at your company specifically.</li><li><strong>Fundraising instincts:</strong> What investors actually respond to. Which narrative structures work. How to position traction data for maximum impact.</li></ul><p>The AI doesn't make decisions for you. It drafts memos that reflect your actual thinking - not consultant-speak, not generic frameworks. Night and day from generic prompting.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Scale the Bottleneck</h2><p>Every senior person on your team has judgment you're paying full-time salaries for but only accessing a fraction of. The VP of Sales who reads deal trajectories in 3 minutes. The Head of Product whose taste eliminates 60% of feature requests. The Principal Engineer whose opinions save 4 months per bad decision avoided.</p><p>When you encode institutional judgment, junior team members produce work reflecting senior thinking from day one. Cross-functional alignment happens without standing meetings. The \"run it by the founder first\" bottleneck disappears.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building the Company's Intelligence Layer",
+          "triggerText": "See how to turn institutional knowledge into a competitive moat",
+          "html": "<p>Have each senior leader block 2-3 hours to encode their domain expertise. Not principles - rules. \"We always validate a market opportunity with 5+ customer conversations before committing engineering resources.\"</p><h3>The compound effect</h3><p>After 12 months, when a new hire asks AI to draft a customer proposal, the output reflects hundreds of past conversations, the specific objections this customer segment raises, the pricing philosophy you developed through 18 months of experimentation, and the brand voice your marketing lead refined across 200 pieces of content.</p><p>A new hire at your competitor asks the same AI for a proposal and gets the median internet response.</p><h3>Why this is defensible</h3><p>Competitors can buy the same AI models. They can hire from the same talent pool. They can copy your features. They cannot copy 12 months of encoded organizational judgment. That's earned capital. And it compounds daily.</p><h3>Real examples</h3><ul><li><strong>Sahil Lavingia</strong> turned 10+ years of founder expertise into a queryable knowledge base. His judgment scales without his time.</li><li><strong>Y Combinator</strong> founders getting funded aren't automating the old playbook - they're using AI to attempt strategies that were impossible at their stage 2 years ago.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>From Service to Asset</h2><p>The structural shift: expertise sold as a service depreciates in deliverables. Expertise encoded and deployed through AI appreciates with use. That's the transition from linear economics to compounding economics. From trading time for money to deploying judgment for leverage.</p><p>The adoption gap closes when AI stops being \"a tool the team needs to learn\" and becomes \"the system that gives everyone access to the best thinking in the company.\" That's when the 80% who gave up on AI come back.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Founder's Monetization Diagnostic",
+          "triggerText": "See the assessment questions for founders",
+          "html": "<h3>Where's the unrealized value?</h3><ul><li><strong>How much of your strategic judgment is accessible to your team without you in the room?</strong> If you got hit by a bus tomorrow, how much of your market instinct, hiring judgment, and strategic framework would survive? That's the measure of how much you've financialized versus how much you're hoarding in the worst possible vault.</li><li><strong>What's the total cost of the \"run it by the founder\" bottleneck?</strong> Every decision queued behind your calendar represents judgment that should be in the system. Calculate the delay cost across your entire team.</li><li><strong>What would your judgment be worth as a product?</strong> Not a course. A living, compounding system that deploys your strategic thinking automatically, gets smarter with use, and scales without your calendar. What's the addressable market for that?</li><li><strong>Who in your competitive landscape is already compounding?</strong> Someone with your level of experience has already encoded it. Their capacity is expanding while their hours stay flat. Every month that passes, the gap widens.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every pillar of the framework increases the surface area where your expertise generates value. More surface area means more feedback. More feedback means sharper judgment. Sharper judgment means better bets. The flywheel spins. And the founder who starts it first wins.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You spent years building product instincts that nobody else has. The ability to spot a retention-killing decision before the data confirms it. The design eye that knows a layout is wrong in 3 seconds. The judgment that separates a real feature from a vanity metric.</p><p>All of it locked in a format with zero scalability: your brain. One product review at a time. One design critique at a time. One brief at a time.</p><h2>The Product Builder's Leverage Problem</h2><p>Your product judgment is the most valuable thing you bring to any team. It's also the least scalable. Every brief that needs your perspective, every design that needs your eye, every roadmap decision that needs your instinct - they're all queued behind your availability. The bottleneck was never the expertise. It was the distribution.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Encode Product Judgment Into a Reusable Asset",
+          "triggerText": "See how product builders are scaling their taste",
+          "html": "<p>A product designer with 12 years of refined taste - user flow patterns, interaction design principles, visual hierarchy rules, the 40 things she checks before approving a layout - spent one weekend encoding it. Monday morning: three homepage concepts, all nailed. No rewrite cycle. No \"that's not how the user thinks about this\" feedback. Her taste now operates in parallel across every project.</p><p>A PM curated 200+ customer calls, competitive analyses, and strategic frameworks into a knowledge base so specific that her AI produces briefs carrying her exact judgment. She can hear the pattern across all 200 voices simultaneously - contradictions between what enterprise buyers say they want and what drives renewal decisions.</p><h3>What to encode</h3><ul><li><strong>Product decision frameworks:</strong> How you evaluate opportunities. What signals predict a feature will move retention versus become a vanity metric. Your specific prioritization logic.</li><li><strong>User patterns:</strong> The behavioral patterns you've observed across hundreds of sessions. Why users bail at specific moments. What progressive disclosure looks like for your product.</li><li><strong>Quality thresholds:</strong> Not \"we value quality\" - specific rules. \"Never more than 3 decisions per screen.\" \"Primary CTAs use high-contrast fills, never ghost buttons.\" The rules that took you a decade to develop.</li><li><strong>Past deliverables:</strong> Upload your best briefs, competitive analyses, and strategic documents. They carry your thinking patterns.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Product Team Multiplier</h2><p>When the PM team's evaluation frameworks, the design team's quality standards, and engineering's technical constraints are all encoded in a shared knowledge base, something changes. Junior PMs produce briefs that match the team's quality bar from day one. Designers make decisions informed by user research they didn't personally conduct. The \"run it by the product lead first\" bottleneck disappears.</p><p>You just turned individual product taste into organizational infrastructure.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building the Product Team's Intelligence Layer",
+          "triggerText": "See how product teams turn expertise into compounding capital",
+          "html": "<h3>The three-layer approach</h3><ul><li><strong>Company layer:</strong> Brand voice, strategic direction, quality standards. What applies to every product decision.</li><li><strong>Team layer:</strong> How the PM team evaluates opportunities. How design defines \"good.\" How engineering defines \"done.\" Functional standards.</li><li><strong>Individual layer:</strong> The PM with the strongest pricing instinct. The designer with the most refined IA opinions. Personal alpha that layers on top.</li></ul><h3>The compound effect</h3><p>Every customer conversation synthesized into the knowledge base sharpens future analysis. Every design decision and its reasoning becomes a reference for the next one. Every strategic pivot and the evidence that drove it informs the next bet.</p><h3>Examples</h3><ul><li><strong>Stripe</strong> builds developer tools informed by how developers actually behave - synthesizing usage data, support interactions, and community conversations. The context window captures real experience across millions of integration patterns.</li><li><strong>Shopify</strong> uses AI to understand merchant behavior across millions of stores - patterns no individual PM could synthesize manually.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>From Hourly Judgment to Compounding Asset</h2><p>For the entire history of product work, expertise has been sold the same way: by the hour, by the project, by the salary. You develop taste through thousands of reps - then sell it one brief at a time and watch it evaporate into deliverables no one archives.</p><p>Encoding your product judgment flips the equation. Document once, deploy forever, compound daily. Your taste doesn't degrade with each use. It sharpens. Every project that runs through your knowledge base teaches the system something new.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Product Builder's Monetization Assessment",
+          "triggerText": "See the diagnostic questions for product builders",
+          "html": "<h3>Where's the unrealized value?</h3><ul><li><strong>What's your rewrite tax?</strong> Time yourself. When AI drafts a brief or design, how many minutes do you spend rewriting it to match your standards? That number, multiplied by every interaction, is the cost of keeping your product judgment locked in your head.</li><li><strong>How much of your accumulated judgment is accessible without you?</strong> If you left tomorrow, how much of your product taste, user insight, and strategic frameworks would survive? That's the gap between financialized and illiquid expertise.</li><li><strong>What would your product judgment be worth running in parallel?</strong> If your evaluation frameworks, design standards, and user insight could run across 10 projects simultaneously, what's the value? For most senior product builders, the gap is 5-10x.</li><li><strong>What's your 20-minute investment?</strong> Pick one domain where your product opinion is most valuable and least accessible. That's where the highest-leverage encoding starts. One weekend. One knowledge base. The economics change permanently.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your product expertise is a compounding asset waiting to be deployed. Every pillar of the framework increases the surface area where it generates value. The flywheel: more deployment, more feedback, sharper judgment, better output, more demand. It only spins faster.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You spent years developing craft - the design eye that knows a layout is wrong in 3 seconds, the architectural instinct that catches a bad decision before it ships, the taste that separates functional from beautiful, working from elegant. All of it locked in the worst possible format: your head. One critique at a time. One review at a time.</p><h2>The Craft Liquidity Problem</h2><p>Your taste and craft are the hardest things to develop and the easiest things to lose. You built them through thousands of reps - then sell them one hour at a time and watch them evaporate into deliverables no one archives. The investment compounds in your head but depreciates everywhere else. That's insanity.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Encode Design and Engineering Craft",
+          "triggerText": "See how design engineers are financializing their taste",
+          "html": "<p>A product designer with 12 years of refined taste spent one weekend encoding it - user flow patterns, interaction design principles, visual hierarchy rules, the 40 things she checks before approving a layout. Connected it to Claude. Monday morning: three homepage concepts, all nailed. No rewrite cycle. She financialized 12 years of design craft into a reusable asset in 8 hours.</p><p>An engineering lead documented architecture decisions and the reasoning behind them. AI suggestions now follow the team's actual philosophy - not generic patterns. Code review shifted from style nits to real ideas.</p><h3>What to encode for design engineers</h3><ul><li><strong>Visual taste rules:</strong> Not \"I value clean design\" - specific rules. \"Progressive disclosure on complex flows - never more than 3 decisions per screen. Body text never exceeds 18px on desktop. Primary CTAs use high-contrast fills, never ghost buttons.\"</li><li><strong>Architecture opinions:</strong> How you evaluate system design. Your performance budgets. Your \"never do this\" rules about database design, API patterns, or component architecture.</li><li><strong>Craft quality thresholds:</strong> The 40 things you check before approving work. The gap between \"functional\" and \"elegant\" - made explicit.</li><li><strong>Past work:</strong> Upload your best deliverables. They carry your thinking patterns in a way rules alone can't capture.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Compound Effect of Encoded Craft</h2><p>Every time you use AI with your documented craft, two things happen. You get better output - work that reflects your standards, requires less correction. And you discover gaps in your documentation. The AI misses something you'd have caught. You articulate that rule. You add it. Next time, it catches it.</p><p>After 3 months, your AI has context that would take a new hire 6 months to absorb. After a year, you've built a body of encoded craft that no competitor, no layoff, and no market shift can touch. It travels with you. It compounds with you.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building the Team's Craft Layer",
+          "triggerText": "See how teams scale design and engineering quality",
+          "html": "<p>When a team encodes its collective craft - design standards, architecture philosophy, quality thresholds - every AI interaction starts from a shared foundation of accumulated judgment.</p><h3>The three layers</h3><ul><li><strong>System layer:</strong> Design tokens, spacing systems, typography rules, interaction patterns, accessibility requirements, architecture principles. The foundation.</li><li><strong>Team layer:</strong> How engineering defines \"done.\" How design evaluates visual quality. Performance budgets. Testing philosophy. Component standards.</li><li><strong>Individual layer:</strong> The designer with the most refined IA opinions. The engineer who's the expert on performance patterns. Personal craft that compounds on top.</li></ul><h3>Examples from the ecosystem</h3><ul><li><strong>Figma's design systems</strong> encode specificity at the component level. Teams that connect these to AI tools get output that's unmistakably theirs.</li><li><strong>Stripe's API design principles</strong> function as an engineering taste document. New engineers' AI-generated code follows Stripe's philosophy from day one.</li><li><strong>Cursor's .cursorrules</strong> - engineers sharing coding philosophies in config files. Years of judgment made available to AI.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>From Craft to Capital</h2><p>The structural shift: craft sold by the hour depreciates in deliverables. Craft encoded and deployed through AI appreciates with use. A designer's taste, an engineer's architectural opinions - they become assets that produce value repeatedly and compound with every interaction.</p><p>There is no version of the future where unstructured craft competes with structured craft deployed through AI by the person who earned it.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Design Engineer's Monetization Assessment",
+          "triggerText": "See the diagnostic questions for design engineers",
+          "html": "<h3>Where's the unrealized value?</h3><ul><li><strong>What's your rewrite tax?</strong> Time AI output against your quality standard. Every minute spent fixing generic output to match your craft is a minute you didn't spend on the deep design and architecture problems that actually matter.</li><li><strong>Is your AI producing work that's recognizably yours?</strong> If the output looks like every other AI-generated design or codebase, your craft isn't in the system. The specificity gap is the entire problem.</li><li><strong>Could your design system or architecture philosophy survive without you?</strong> If you left, how much of the team's aesthetic standards and architectural reasoning would persist? That's the gap between encoded craft and illiquid expertise.</li><li><strong>What's your craft worth running in parallel?</strong> If your design taste and engineering judgment could operate across 10 projects simultaneously, what's the value? The $200/hour ceiling is a distribution problem, not a value problem.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your craft is a compounding asset waiting to be deployed. Document once, deploy forever, compound daily. Every project refines it. Every interaction sharpens it. The flywheel turns your taste and judgment into something no competitor can replicate by buying a license.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You've been trading time for money your entire career. Consulting. Freelancing. The unit economics are brutal - you're capped by available hours, and the moment you stop working, the revenue stops. Your years of accumulated craft, taste, and opinion have exactly one distribution channel: you, in a room, talking.</p><h2>The Solo Operator's Economic Trap</h2><p>What's the hourly rate ceiling in your field? If you're near it, you've maxed out the linear model. The only way to increase the economic value of your expertise from here is to change the distribution model. That's the whole game.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Break the Hourly Ceiling",
+          "triggerText": "See how solo operators are escaping the time-for-money trap",
+          "html": "<p>A solo operator built her entire expertise into a knowledge base - domain rules, client context, 15 years of pattern recognition. Her AI doesn't produce generic output. It produces work that sounds like her, thinks like her, and carries her specific conviction. She didn't automate her business. She scaled her judgment.</p><p>Clients can't replace her with a cheaper alternative because the alternative doesn't have her context. That's a moat that compounds.</p><h3>This weekend</h3><ul><li><strong>Pick your strongest domain.</strong> The thing clients pay you for or colleagues come to you for.</li><li><strong>Spend 2 hours encoding your judgment.</strong> Frameworks, rules, \"here's what most people get wrong\" list, decision criteria. Upload past deliverables that represent your best work.</li><li><strong>Test the gap.</strong> Ask AI to produce a deliverable with and without your context. The quality difference is the value you just unlocked.</li><li><strong>Run every engagement through it.</strong> From here, every client project carries the weight of your accumulated judgment automatically.</li></ul><h3>The economics shift</h3><p>A freelance engineer encoded opinions about API design and the 10 mistakes every startup makes. Close rate went from 30% to 55%. A clinical consultant went from onboarding one facility per quarter to three simultaneously. Same expertise. Radically different distribution.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Compound Loop</h2><p>Every project that runs through your knowledge base teaches the system something new - and the system teaches you what's working. After 3 months, your AI has context that would take a new hire 6 months to absorb. After a year, you've built a body of encoded judgment that travels with you, compounds with you, and no client departure or market shift can touch.</p><p>The people still prompting from scratch every morning are starting from zero every morning. You're starting from a year of accumulated, refined, sharpened specificity. That gap doesn't close. It widens.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "From Freelancer to One-Person Firm",
+          "triggerText": "See how to transform the economics of solo work",
+          "html": "<p>Encoding your expertise changes the fundamental business model. You stop being someone who trades time for money and become someone who deploys judgment at scale.</p><h3>What changes</h3><ul><li><strong>Proposals:</strong> When your AI produces proposals carrying your specific judgment (not generic best practices), clients feel the difference. They're not hiring \"an expert\" - they're hiring your specific pattern recognition.</li><li><strong>Capacity:</strong> Your expertise runs across multiple client engagements simultaneously, not sequentially. The consulting fee doesn't change. The economics do.</li><li><strong>Resilience:</strong> Your knowledge base is portable. It compounds across roles, clients, and decades. One layoff, one client departure - your accumulated judgment survives intact.</li><li><strong>Positioning:</strong> You stop competing on hourly rate and start competing on the unique value of your judgment deployed at scale. Different competitive set entirely.</li></ul><h3>The math</h3><p>If your judgment could run in 10 places simultaneously, what's the annual value? For most experienced solo operators, the gap between what they earn and what their expertise could generate is 5-10x. The bottleneck was never the expertise. It was the distribution.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Structural Shift</h2><p>For centuries, expertise has been sold as a service. The expert shows up, delivers insight, goes home. The insight depreciates immediately. Encoding your expertise turns it into a product economically - invest upfront, produce value repeatedly, compound the returns.</p><p>There is no version of the future where unstructured expertise - locked in your head, sold by the hour, lost with every client departure - competes with structured expertise deployed through AI. The only question is how long it takes you to make the transition.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Solo Operator's Monetization Diagnostic",
+          "triggerText": "See the assessment questions for solo builders",
+          "html": "<h3>Where's the unrealized value?</h3><ul><li><strong>What's your expertise worth per deployment versus per hour?</strong> If your judgment could run in 10 places simultaneously, what's the annual value of that delta? Do the math. The gap is probably larger than you think.</li><li><strong>How much of your judgment is accessible without your calendar?</strong> If you got hit by a bus tomorrow, how much of your professional taste, craft, and opinion would survive? That's the measure of how much you've financialized versus how much you're hoarding.</li><li><strong>What's the hourly rate ceiling in your field?</strong> If you're near it, the linear model is maxed. The only path to more value is a different distribution model.</li><li><strong>Who in your field is already compounding while you're billing?</strong> Someone with your level of expertise has already encoded it. Their capacity is expanding while their hours stay flat. Every month, the gap widens.</li><li><strong>What's your 20-minute investment?</strong> Pick one domain where your opinion is most valuable and least accessible. That's where the highest-leverage encoding starts. One weekend. The economics of your expertise change permanently.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your expertise is a compounding asset trapped in a linear business model. Document once, deploy forever, compound daily. That's how a solo operator becomes a one-person firm with institutional-grade judgment. The flywheel spins. And every month you wait, someone in your field is compounding while you're billing.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your engineering organization has accumulated years of architectural judgment, failure pattern recognition, and systems thinking. The Principal Engineer whose opinions save 4 months per bad decision avoided. The staff engineer whose performance instincts prevent production incidents. The tech lead whose code review catches design flaws nobody else sees.</p><p>Almost all of it is locked in individual heads, accessed one conversation at a time.</p><h2>The Engineering Knowledge Leak</h2><p>You're paying full-time salaries for this expertise and only accessing a fraction of it. Most of their judgment sits idle - locked in context that never reaches the right conversation at the right time. When your best engineer leaves, years of institutional knowledge walk out the door. That's not a people problem. It's an infrastructure problem.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Encode Engineering Judgment at Scale",
+          "triggerText": "See how technical leaders are building knowledge infrastructure",
+          "html": "<p>An engineering lead documented architecture decisions and the reasoning behind them. AI suggestions now follow the team's actual philosophy - not generic patterns. Code review shifted from style nits to real architectural ideas.</p><h3>The practical approach</h3><ul><li><strong>Architecture Decision Records (ADRs) as knowledge base:</strong> Not just documenting what was decided - documenting why, what alternatives were considered, and what constraints drove the choice. AI can then challenge new proposals against the team's actual reasoning.</li><li><strong>Failure pattern encoding:</strong> Production incident history, performance benchmarks, edge cases discovered in review. Let AI surface similar patterns before they become incidents.</li><li><strong>Code philosophy:</strong> Not style guides - architectural opinions. How your team thinks about data modeling, API design, service boundaries, performance tradeoffs. The rules that take a decade to develop.</li></ul><h3>The junior engineer unlock</h3><p>A junior engineer loaded his team's architecture context, failure patterns, and production incident history into AI and started identifying systemic risks nobody else was looking for. He catches design flaws before they ship. He maps edge cases from understanding how the system actually behaves under load. AI didn't make him faster at his old job. It gave him access to a job that usually takes a decade of experience to reach.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Team Multiplier</h2><p>When the Principal Engineer's architecture opinions are encoded, every developer builds on that foundation from day one. The \"run it by the tech lead first\" bottleneck disappears - because the tech lead's thinking is already in the system. New hires produce work reflecting senior judgment in their first week.</p><p>After 12 months, the compound loop becomes a genuine moat. Not because of the technology. Because of the encoded expertise of your specific engineers, refined through your specific production challenges, deployed through your specific workflows.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building the Engineering Intelligence Layer",
+          "triggerText": "See how to turn institutional knowledge into organizational capital",
+          "html": "<h3>The three-layer model</h3><ul><li><strong>Organization layer:</strong> Architecture principles, technology choices, security standards, deployment philosophy. The foundation everything builds on.</li><li><strong>Team layer:</strong> How your specific team defines \"done.\" Performance budgets. Testing philosophy. Service boundaries. The standards that differ from team to team.</li><li><strong>Individual layer:</strong> The principal engineer who's the expert on data modeling. The staff engineer with the strongest performance opinions. The tech lead with the best instincts about system boundaries. Personal judgment that compounds on top.</li></ul><h3>Cross-functional alignment</h3><p>When engineering constraints are encoded alongside product strategy and design standards, alignment happens without standing meetings. Product knows about technical constraints. Engineering knows about user research. Design knows about performance budgets. Not because they sat in each other's meetings - because the knowledge base connected their expertise automatically.</p><h3>Examples</h3><ul><li><strong>Cursor's .cursorrules</strong> - engineers encoding specific coding philosophies into configuration files. Years of accumulated judgment, made available to AI.</li><li><strong>Stripe's API design principles</strong> are so specific they function as a taste document for engineering. New engineers' AI-generated code follows Stripe's philosophy from day one.</li><li><strong>Harvey AI</strong> lets senior practitioners encode expertise into a system that junior team members and AI agents draw from simultaneously. One expert's judgment now underwrites the entire team's output.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>From Cost Center to Capital Asset</h2><p>When a senior engineer's judgment is encoded, you turn individual expertise into organizational infrastructure. That's the transition from cost center to capital asset. The knowledge doesn't depreciate with each use - it sharpens. Every production incident refined, every architecture decision documented, every code review pattern captured - the system gets smarter daily.</p><p>Competitors can buy the same tools. They can hire from the same talent pool. They cannot copy 12 months of encoded engineering judgment.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Technical Leader's Knowledge Audit",
+          "triggerText": "See the assessment for engineering leaders",
+          "html": "<h3>Evaluate your knowledge infrastructure</h3><ul><li><strong>If your principal engineer left tomorrow, what survives?</strong> How much architectural reasoning, performance instinct, and system knowledge would persist? That's the gap between encoded and illiquid engineering judgment.</li><li><strong>How long does it take a new hire to produce work at team quality standard?</strong> If the answer is months, the institutional knowledge isn't in the system. With encoded judgment, that timeline compresses to weeks.</li><li><strong>What's the cost of the \"run it by the tech lead\" bottleneck?</strong> Every review, every architecture question, every design decision queued behind a senior engineer's calendar - that's judgment that should be in the system, not in a queue.</li><li><strong>Is your engineering knowledge appreciating or depreciating?</strong> If architecture decisions are made but reasoning isn't captured, if production incidents are resolved but lessons aren't encoded, if code reviews happen but patterns aren't documented - your institutional knowledge is depreciating with every passing month.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your engineering organization's accumulated judgment is a compounding asset. Encode it, deploy it, and it becomes the moat that no competitor can replicate by hiring or buying tools. The flywheel: encoded judgment produces better systems, better systems generate new insights, new insights refine the judgment. It only spins faster.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You spent years developing brand instinct, visual taste, and creative judgment that nobody else has. The ability to look at a brand identity and know it won't resonate before the focus group confirms it. The voice that turns corporate hedging into copy that actually lands. The eye that catches when a campaign is technically excellent but emotionally dead.</p><p>All of it sold one engagement at a time. One creative review at a time. The oldest, worst deal in creative economics.</p><h2>The Creative Liquidity Problem</h2><p>Your creative judgment is an appreciating asset with zero scalability. You built it through thousands of campaigns, hundreds of brand launches, decades of pattern recognition. And the only distribution channel is your calendar.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Encode Creative Judgment Into a Deployable Asset",
+          "triggerText": "See how creative leaders are scaling their taste",
+          "html": "<p>A brand strategist documented his positioning frameworks from 15 years and 80+ brand launches - the questions he always asks, the patterns he spots in competitive landscapes, the 6 signals that predict whether a brand will resonate. Previously, clients paid $25K for a 3-week engagement to access that thinking. Now his AI produces first-draft positioning decks that clients say are 85% of the way there - before he's spent a single billable hour. The remaining 15%? That's the premium work. The deep craft.</p><h3>What to encode</h3><ul><li><strong>Brand voice rules:</strong> Not \"we're friendly and approachable\" - specific rules about sentence length, word choice, tone shifts across contexts. The rules that make your voice your voice.</li><li><strong>Visual taste principles:</strong> How you evaluate typography, color relationships, spacing, visual hierarchy. The 40 things you check before approving creative.</li><li><strong>Positioning frameworks:</strong> The questions you always ask. The patterns you spot in competitive landscapes. The signals that predict resonance.</li><li><strong>Past work:</strong> Upload your best campaigns, brand decks, creative briefs. They carry your creative DNA in ways rules alone can't capture.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Brand Intelligence Compound</h2><p>Every campaign that runs through your knowledge base teaches the system something new about what works for your specific audience. Every brand project refines the positioning frameworks. Every creative review sharpens the taste document. The investment compounds in the system instead of evaporating in deliverables.</p><p>After a year, you've built a body of encoded creative judgment that no competitor can replicate. Not because of the AI - because of the 15 years of taste layered into it.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Scaling Creative Judgment Across a Team",
+          "triggerText": "See how creative teams build compounding brand intelligence",
+          "html": "<p>When a creative team encodes brand voice, visual identity, and strategic positioning into a shared knowledge base, every team member's AI starts from the brand's accumulated taste.</p><h3>Team-level encoding</h3><ul><li><strong>Brand layer:</strong> Voice principles, visual identity standards, positioning frameworks. The creative foundation everything builds on.</li><li><strong>Team layer:</strong> How the copywriting team evaluates tone. How the design team judges visual quality. How the strategy team assesses market opportunities.</li><li><strong>Individual layer:</strong> The strategist with the strongest positioning instinct. The designer with the most refined visual taste. The copywriter whose voice is the brand benchmark.</li></ul><h3>Examples</h3><ul><li><strong>Jasper AI</strong> found that customers uploading brand voice docs, style guides, and content principles saw 3x higher output quality scores. Same model. The only variable: specificity.</li><li><strong>Superhuman</strong> built their product around \"email should feel fast.\" That specificity informed every AI feature. Generic email AI sounds like everyone. Superhuman's sounds like Superhuman.</li><li><strong>Midjourney power users</strong> with encoded aesthetic preferences developed recognizable visual styles that AI reproduces consistently. Specificity as creative signature.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>From Service to Asset</h2><p>The structural shift for creative professionals: expertise sold as a service depreciates in deliverables. Creative judgment encoded and deployed through AI appreciates with use. Every campaign refines the knowledge. Every project sharpens the taste. The returns compound.</p><p>A consultant stops trading time for money and becomes someone who deploys creative judgment at scale. A freelancer breaks through the hourly ceiling. A creative director becomes someone whose taste is permanently embedded in the organization's creative output.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Creative Director's Monetization Assessment",
+          "triggerText": "See the diagnostic questions for creative leaders",
+          "html": "<h3>Where's the unrealized value?</h3><ul><li><strong>What's your rewrite tax on AI creative output?</strong> Every minute spent fixing AI output to match your taste is a minute you didn't spend on creative strategy. That tax, multiplied by every interaction, is the cost of keeping your judgment locked in your head.</li><li><strong>How much of your brand instinct is accessible without you?</strong> If you stepped away for a month, would the team's creative output maintain your quality bar? The gap between \"yes\" and \"no\" is the value of encoding your taste.</li><li><strong>What's your creative judgment worth running in parallel?</strong> If your positioning instinct, brand voice, and visual taste could operate across 10 client engagements simultaneously, what's the annual value? The $25K engagement ceiling is a distribution problem.</li><li><strong>Who in your competitive set is already compounding?</strong> Someone with your level of creative expertise has already encoded it. Their capacity is expanding. Every month you wait, the gap widens.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your creative judgment is the rarest asset in the room. Document once, deploy forever, compound daily. The flywheel turns your taste into something no competitor can replicate by buying a subscription. That's the transition from creative service to creative capital.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You've built up real opinions about code, design, and how things should work. Maybe through side projects, maybe through creative experiments, maybe through years of tinkering. Either way, you've got taste - aesthetic preferences, technology convictions, quality thresholds that are uniquely yours.</p><p>And every time you start a new project, you start from scratch. Same generic AI output. Same rewrite cycle to make it match your standards. That's the worst possible deal for someone who builds as much as you do.</p><h2>Your Taste Is the Asset</h2><p>The vibe coders doing the most interesting work aren't the ones who ship the fastest. They're the ones whose projects carry a specific point of view - a recognizable style, an opinionated architecture, a creative sensibility that no generic builder could produce. That specificity is worth encoding.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Build a Personal Creative Stack",
+          "triggerText": "See how indie builders are encoding their creative judgment",
+          "html": "<h3>This weekend</h3><ul><li><strong>Write your taste rules:</strong> Not best practices from a tutorial - your actual opinions. \"I always use system fonts for body copy.\" \"Interactions should feel snappy - never more than 150ms transition.\" \"I prefer SQLite for anything that doesn't need concurrent writes.\" Your rules.</li><li><strong>Document your architecture opinions:</strong> The technology preferences, the \"mistakes I've seen 50 times\" list, the patterns that work and the ones that don't. This becomes the foundation for every project.</li><li><strong>Upload your best work:</strong> Your favorite side projects, your cleanest code, your most polished interfaces. They carry your creative DNA.</li></ul><h3>The compound loop</h3><p>Every project adds to the stack. A weekend experiment teaches you something about interaction design. You document it. The next project is better. A failed side project reveals an architecture mistake. You encode the lesson. You never make it again. That is the difference between shipping projects and building craft.</p><h3>Inspiration from the ecosystem</h3><ul><li><strong>Cursor's .cursorrules</strong> - engineers sharing specific coding philosophies in config files. Your version of this for creative coding.</li><li><strong>Midjourney power users</strong> with encoded aesthetic preferences that produce a recognizable visual style.</li><li><strong>Custom GPTs</strong> - professionals packaging their domain expertise into AI configurations that produce work carrying their judgment.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Distribution Problem for Indies</h2><p>If you're freelancing or doing contract work alongside your creative coding, the economics are the same: you're capped by available hours. Your taste and judgment have exactly one distribution channel - you, in front of a screen, building one thing at a time.</p><p>Encoding your creative judgment doesn't just make individual projects better. It means your proposals carry the weight of your specific experience. Your prototypes reflect your actual opinions. Clients feel the difference between generic and opinionated.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "From Side Projects to Compounding Capital",
+          "triggerText": "See how to turn creative experiments into lasting assets",
+          "html": "<h3>The indie builder's monetization play</h3><ul><li><strong>Proposals that close:</strong> When your AI produces proposals carrying your specific architectural opinions and design taste, clients feel the difference. Close rates jump because they're hiring your judgment, not a generic skill set.</li><li><strong>Faster project starts:</strong> Every new project begins with your accumulated taste, architecture opinions, and quality thresholds already loaded. No more starting from zero.</li><li><strong>Parallel experiments:</strong> Your creative judgment running across multiple projects simultaneously. The side project, the client work, and the creative experiment - all benefiting from the same encoded taste.</li></ul><h3>Real examples</h3><ul><li><strong>Replit Agents + domain expertise</strong> - builders loading AI-powered prototypes with their specific architectural opinions. Working demos carrying the weight of real experience.</li><li><strong>Custom GPTs</strong> - professionals packaging domain expertise into AI configurations. A contract developer's architecture frameworks. A designer's component patterns. Each one turning hourly expertise into a scalable asset.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Gap Widens</h2><p>After 6 months of documented specificity, your AI has context that would take a new collaborator a year to absorb. After 6 months of generic prompting, you're exactly where you started. The vibe coder with a compounding creative stack builds better things every quarter. The one who starts from scratch every morning stays flat.</p><p>Your taste is the hardest thing you've built and the easiest thing to waste. Every project that runs through your knowledge base makes it sharper. Every project that doesn't is taste that evaporated into a deliverable nobody will reference again.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Indie Builder's Monetization Checklist",
+          "triggerText": "See the action plan for creative coders",
+          "html": "<h3>Quick wins</h3><ul><li><strong>Create your .cursorrules (or equivalent):</strong> Your coding philosophy, architecture opinions, and aesthetic preferences in a format that every AI tool can reference.</li><li><strong>Build a taste document:</strong> 10-15 specific rules about how you evaluate quality. Visual preferences, interaction standards, performance thresholds. Specific enough that AI can apply them.</li><li><strong>Test on a real project:</strong> Take your next side project and run it through your encoded stack. Compare the starting point to what you'd get from generic prompting. The gap is the value.</li></ul><h3>The longer game</h3><ul><li><strong>Share your specificity:</strong> Write up your rules and opinions publicly. The vibe coding community thrives on shared taste documents. It sharpens your own thinking and builds your reputation.</li><li><strong>Add to the stack after every project.</strong> One new rule. One refined opinion. One new aesthetic preference. The compound loop is the whole game.</li><li><strong>Consider the product angle:</strong> Your encoded taste - as a template, a rules file, a GPT configuration - might be worth more than the projects it produces. Some of the most successful indie builders monetize their judgment directly.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your creative judgment is an asset, not a process. Document once, deploy forever, compound daily. The vibe coder who builds this stack today has a compounding advantage that widens every month. The one who starts from scratch every morning? Same output as everyone else with a subscription.</p>"
+        }
+      ]
+    }
+  }
+}

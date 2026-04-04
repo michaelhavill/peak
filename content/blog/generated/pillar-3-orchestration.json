@@ -1,0 +1,321 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>The average knowledge worker spends 62% of their day on context assembly, status updates, and information routing. Not thinking. Not deciding. Not creating. Assembling. At a fully-loaded cost of $85/hour, that's $110,000 per employee per year burned on work a machine should do.</p><p>You use AI to summarize a doc. Draft an email. Generate a code snippet. You count these as wins. Meanwhile the hard parts - information assembly, routing logic, decision preparation - are still entirely manual. <strong>You automated the easy parts. The hard parts are still you.</strong></p><p>The builder who figures out orchestration doesn't just use AI. They build the machine that makes everyone around them 10x more effective.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Move from Task Replacement to Decision Preparation",
+          "triggerText": "See how to shift from Level 1 to Level 2 AI usage",
+          "html": "<h3>The Two Levels</h3><p><strong>Level 1: Task replacement</strong> - write this, summarize that, generate this code. Saves minutes. This is where 99% of people stop.</p><p><strong>Level 2: Decision preparation</strong> - before you sit down to make a call, your AI has already assembled the context, surfaced the data, identified patterns, and flagged anomalies. This is the compounding position.</p><h3>Build Your First Overnight Brief</h3><p>Set up a Zapier or n8n flow that triggers daily at 6am. Connect it to your data sources - Slack channels, CRM, analytics dashboard API. Have the flow compile key updates into a single document, then feed into Claude via API to synthesize a decision-ready brief.</p><h3>Alternative: Dust.tt</h3><p>Create an agent that pulls from Notion, Slack, and Linear automatically. Configure data sources once, the brief assembles itself every morning.</p><h3>The Impact</h3><p>One PM deployed this and standup dropped from 30 minutes to 12 - not because the meeting got shorter, but because context assembly vanished. That's $47,000 in reclaimed team hours per year from one workflow.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A product designer applied the same principle to her review process. Before each design review, AI pulls persona data, maps UX flows against research, references patterns from the design system, and flags accessibility issues. She reclaimed 7 hours per week - not just for shipping more, but for the deep craft work that generic output can never touch.</p><p>An engineering lead has AI pre-assemble context for every ticket. Engineers start building on day 1 of the sprint instead of day 3. Velocity increased 30% without a single additional hour worked.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Map Your First Orchestration Workflow",
+          "triggerText": "Learn how to build end-to-end workflow orchestration",
+          "html": "<h3>Start with the Workflow, Not the Tasks</h3><p>Most teams automate bottom-up: automate Task A, automate Task B, call it transformation. But the workflow between A and B is still manual. That's duct tape, not infrastructure.</p><h3>Map the Process</h3><p>Open a blank doc and list every step in one recurring process - say, sprint planning. For each step, write who does it, what information they need, and where that information currently lives. Circle the steps that are pure context assembly. Those are your first automation targets.</p><h3>Build It</h3><p>Use Zapier Central, n8n, or Notion automations. Start simple. Add AI at specific steps. Keep human review at decision points.</p><h3>Critical Design Decision</h3><p>Start with humans in the loop, then layer in automation. Tasks route to humans first. The team sees what works, refines the logic, builds confidence. Only then does AI-driven automation enter at specific steps. Derisk before you deploy.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One company built an event-driven orchestration engine for patient care. A reading triggers a cascade: check medication history, compare with baseline, assess against protocols, route to the clinician with full context. Context assembly dropped from 45 minutes to 5. Throughput increased 3x without adding headcount. That is not a 3% improvement. That is a 3x multiple on the same cost base.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Orchestration Tools in Production",
+          "triggerText": "See the tools teams are using for workflow orchestration",
+          "html": "<h3>Zapier Central</h3><p>AI-powered workflows where each step feeds the next. A customer inquiry triggers research, research feeds a draft response, the draft routes to a human for review. Zero manual handoffs.</p><h3>n8n + Claude</h3><p>Event-driven orchestration pipelines for engineering and ops. A support ticket triggers automatic log analysis, customer history lookup, and a proposed fix - assembled before the engineer opens the ticket. One team cut incident triage by 70%.</p><h3>Dust.tt</h3><p>Team-level AI orchestration - agents that draw from connected data sources and prepare decision-ready briefs automatically. Product teams use Dust to assemble sprint context overnight.</p><h3>Linear's Auto-Triage</h3><p>AI classifies, prioritizes, and routes incoming issues based on context. Dead time between \"issue reported\" and \"engineer starts work\" compressed from days to minutes.</p><h3>Notion Automations + AI</h3><p>A new customer call note triggers insight extraction, persona mapping, and roadmap tagging automatically. The knowledge base grows as a byproduct of normal work.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Orchestration is the engine connecting everything. Knowledge without orchestration is a library nobody reads. Orchestration without knowledge is a machine running empty. Either without the builder directing them is noise at scale. The builder who connects all three - their judgment, their knowledge store, and AI extending capacity - creates a system that compounds. That is the whole game.</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your team spends 62% of their day on context assembly and information routing. At a fully-loaded cost, that's $110,000 per employee per year burned on work a machine should do. You bought AI licenses for everyone. They use it to summarize docs and draft emails. Meanwhile the expensive work - routing, coordination, decision preparation - is still entirely manual.</p><p>The founder who figures out orchestration doesn't just use AI. They build the machine that makes their entire team 10x more effective. That's a fundamentally different company.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Decision Preparation Infrastructure",
+          "triggerText": "See how founders are building orchestration machines",
+          "html": "<h3>From Tasks to Decisions</h3><p>Level 1 AI saves minutes on individual tasks. Level 2 AI prepares you for decisions before you sit down. The difference is the difference between a 2% return and a 200% return on your time investment.</p><h3>Your First Orchestration Win</h3><p>Pick your most expensive recurring decision. Board prep? Sprint planning? Investor updates? Set up an overnight workflow that pre-assembles the context: pull data from your sources, synthesize into a decision-ready brief, have it waiting when you sit down.</p><h3>The Scale</h3><p>One founder running 12 simultaneous projects uses AI agents with orchestration logic. Each project's context flows automatically. She replaced $180,000 of project management overhead with $200/month in AI tooling. No manual status updates. No coordination meetings. Strategy gets the attention it deserves.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The uncomfortable truth: most teams approach AI bottom-up. Automate Task A, automate Task B. But the workflow between A and B is still manual. You've built a patchwork of disconnected automations that creates new overhead. That's duct tape masquerading as infrastructure. Orchestration starts with the end-to-end workflow.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Design Your Orchestration Engine",
+          "triggerText": "Learn how to build workflow orchestration for your startup",
+          "html": "<h3>The Sequence</h3><p>Map the end-to-end process first. Design the decision points. Build the routing logic. Then layer AI into each step where it adds value. Anything else is burning money.</p><h3>Critical Rule: Humans First</h3><p>Start with humans in the loop. Tasks route to humans first. The team sees what works, refines the logic, builds confidence. Only then does AI-driven automation enter. Derisk before you deploy.</p><h3>The Company Impact</h3><p>When orchestration connects sales, product, and engineering, information flows without meetings. A customer inquiry triggers research, feeds a draft response, routes to a human for review. Sprint context assembles overnight. Incident triage happens before the engineer opens the ticket. Dead time between decisions - eliminated.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The ROI is concrete. $47,000 in reclaimed team hours per year from one sprint context workflow. $312,000 in reclaimed senior leadership time from orchestrated pipeline reviews. Incident triage time cut 70%. These aren't projections - they're results from teams running these patterns in production.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Orchestration Tools for Startups",
+          "triggerText": "See the tools startups are using for orchestration",
+          "html": "<h3>Zapier Central</h3><p>AI-powered workflows where each step feeds the next. Operations teams replacing day-long routing with flows that run in minutes.</p><h3>Dust.tt</h3><p>Team-level orchestration - agents pulling from Notion, Slack, and Linear to assemble decision-ready briefs automatically. Configure once, benefit every morning.</p><h3>n8n + Claude</h3><p>Event-driven pipelines for complex workflows. Support ticket triggers log analysis, history lookup, and proposed fix - all before anyone opens the ticket.</p><h3>Notion Automations</h3><p>Customer call notes trigger insight extraction and roadmap tagging automatically. The knowledge base grows as a byproduct of normal work. Orchestration at its simplest and most powerful.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Orchestration is the engine that connects your knowledge base, your team's judgment, and AI into one system. The founder who builds this machine creates leverage that no amount of hiring can match. Not a productivity tool - a different operating model for the entire company.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You spend 70% of your day assembling context - pulling dashboards, re-reading threads, gathering feedback - and 30% making actual product decisions. That ratio is backwards. The hard work isn't the decision. It's getting to the point where you can make one.</p><p>The product builders moving fastest aren't better at decisions. They're better at eliminating the assembly work before decisions. That's what orchestration gives you.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Product Decision Machine",
+          "triggerText": "See how to automate context assembly for product decisions",
+          "html": "<h3>The Overnight Sprint Brief</h3><p>Each morning, AI reviews overnight customer feedback, cross-references with the roadmap, maps patterns to existing priorities, and assembles a 2-page brief. You walk into standup holding cards nobody else has seen.</p><h3>The Setup</h3><p>Zapier flow running daily: pull Slack threads, customer feedback from CRM, sprint board from Linear. Feed into Claude to synthesize a decision-ready brief. Or use Dust.tt to create an agent that pulls from multiple sources automatically.</p><h3>The Result</h3><p>Standup dropped from 30 to 12 minutes. Half-day reclaimed every week. Over a year, six extra weeks for deep product thinking - customer problems, strategy, experiment design. That's $47,000 in reclaimed team hours from one workflow.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A product designer applied the same principle. Before each review, AI pulls persona data, maps flows against research, references design system patterns, and flags accessibility issues. 7 hours per week reclaimed for the craft work that generic output can never touch - information architecture, interaction nuance, the hard UX problems.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Orchestrate Your Product Pipeline",
+          "triggerText": "Learn how to build end-to-end product workflows",
+          "html": "<h3>Beyond Patchwork Automation</h3><p>Automating the brief doesn't help if the handoff to design is still manual, and design to engineering is still a copy-paste. Orchestration means the full pipeline is connected.</p><h3>Map Your Process</h3><p>List every step from idea to production. For each step: who does it, what info they need, where it lives. Circle the context assembly steps. Those are your automation targets.</p><h3>The Connected Pipeline</h3><p>Brief includes engineering constraints because AI pulled them. Design includes accessibility requirements because AI referenced the system. Engineering specs include business context because AI surfaced customer evidence. No one re-establishes what the last person figured out.</p><h3>Human Checkpoints</h3><p>AI output routes to the right reviewer - PM, designer, engineer - with the right context. The 20 minutes of refinement isn't overhead. It's the quality layer. Put checkpoints at the 3-5 most critical decisions. Not more, not fewer.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The dead time between product decisions is where throughput dies. Orchestration eliminates it. But it also gives you something more valuable than speed - time for depth. Time to sit with customer problems instead of assembling dashboards. Time to pressure-test strategy instead of routing information. That's a fundamentally different product job.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Product Orchestration Tools",
+          "triggerText": "See the tools product teams use for orchestration",
+          "html": "<h3>Dust.tt</h3><p>Agents pulling from Notion, Slack, and Linear to assemble sprint context overnight. The PM walks in Monday morning with full context.</p><h3>Linear Auto-Triage</h3><p>AI classifies, prioritizes, and routes issues based on context and capacity. Dead time from \"reported\" to \"started\" compressed from days to minutes.</p><h3>Notion Automations + AI</h3><p>Customer call notes trigger insight extraction, persona mapping, and roadmap tagging automatically. The knowledge base grows without extra work.</p><h3>Zapier Central</h3><p>Multi-step product workflows where each step feeds the next. Customer inquiry triggers research, research feeds response draft, draft routes to review. Zero manual handoffs.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Knowledge without orchestration is a library nobody reads. Orchestration without knowledge is a machine running empty. The product builder who connects both creates a system where every decision compounds - getting smarter and faster with every cycle. That's the whole game.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You burn 20 minutes re-establishing context before every design review. You spend hours gathering persona data, mapping flows against research, checking the design system for precedents. The actual design thinking - the craft that differentiates you - gets squeezed into whatever time is left. That ratio is backwards.</p><p>Orchestration isn't about automating design. It's about eliminating the assembly work that eats your best hours.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Orchestrate Your Design Review Prep",
+          "triggerText": "See how to automate design context assembly",
+          "html": "<h3>The Pre-Review Machine</h3><p>Before each design review, AI automatically: pulls persona data relevant to the feature, maps your UX flows against user research findings, references similar patterns from your design system, and flags accessibility and information architecture issues.</p><h3>The Setup</h3><p>Connect your design system docs, user research repo, and component library to Claude via MCP. Create a review prep template. Before each review, prompt Claude with the feature context and get back a comprehensive prep doc.</p><h3>The Result</h3><p>One designer reclaimed 7 hours per week. Not just for shipping more - for the deep craft work: information architecture decisions, interaction nuance, the hard UX problems nobody else has time to sit with. Those 7 hours are where the real differentiation happens.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The shift is from \"find the patterns\" to \"validate and deepen the patterns the system found.\" That's a fundamentally higher-leverage position for a design engineer. You're not doing less design work. You're doing better design work because the assembly is handled.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Design Into the Full Pipeline",
+          "triggerText": "Learn how to orchestrate design across handoffs",
+          "html": "<h3>The Design Handoff Problem</h3><p>You design the feature. You explain the rationale. Two weeks later, engineering builds something that technically matches the spec but misses the intent. The \"that's not how it was designed\" cycle begins.</p><h3>Orchestrated Context Flow</h3><p>Your design rationale, UX flow logic, and component decisions flow into the engineering spec automatically. When the engineer starts building, they ask the AI \"why was this designed this way?\" and get your actual thinking, not a Slack message from 3 weeks ago.</p><h3>Bi-Directional Flow</h3><p>Engineering constraints flow back to you before you spec things that are impossible. The component library status flows into your design decisions. No more designing for components that don't exist or ignoring constraints you didn't know about.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The quality improvement is real. When design intent survives handoffs, the QA cycle shrinks. When engineering constraints inform design upfront, impossible proposals stop being proposed. The whole pipeline moves faster because the context flows without meetings and without loss.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Design Orchestration Tools",
+          "triggerText": "See the tools for orchestrating design workflows",
+          "html": "<h3>Notion + MCP</h3><p>User research, design system docs, and feature context in one queryable workspace. AI assembles review prep automatically.</p><h3>Figma + Claude</h3><p>Design tokens and component standards connected to coding AI. Generated code matches your design system without manual translation.</p><h3>Zapier / n8n Flows</h3><p>Automate the context assembly for recurring design activities. User research synthesis, competitive pattern analysis, accessibility audits - all triggered automatically when you start a new feature.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Orchestration gives design engineers back the hours that context assembly steals. Those hours go to the work that AI can't do - the creative judgment, the information architecture thinking, the interaction design craft that makes products feel intentional instead of assembled. That's where your value compounds.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>When you're solo, you ARE the orchestration layer. Customer feedback comes to your inbox. Sprint planning happens in your head. Status updates are you checking three different tools. You're spending most of your day being a human router instead of a builder.</p><p>The solo operators who ship the most aren't working more hours. They've built machines that handle the routing, assembly, and coordination - so their hours go to decisions and building.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Solo Decision Machine",
+          "triggerText": "See how to automate context assembly when you're solo",
+          "html": "<h3>Your Morning Brief</h3><p>Set up a daily Zapier flow: pull unread customer emails, analytics highlights, and task board status. Feed into Claude to synthesize a decision brief: what happened, what matters, what to do today. You walk in with context instead of spending the first hour assembling it.</p><h3>Your Feedback Pipeline</h3><p>Customer feedback from email, Twitter, and support triggers automatic extraction and tagging. Instead of you manually reading and categorizing every piece, the system pre-processes it. You review the synthesis.</p><h3>Your Project Coordination</h3><p>If you're running multiple projects or products, set up context flows for each one. Status, blockers, and next actions assembled automatically. No more mental overhead of tracking everything in your head.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One founder running 12 simultaneous projects replaced $180,000 of project management overhead with $200/month in AI tooling. No manual status updates, no coordination overhead. Strategy gets the attention it deserves. That's the solo operator dream - leverage without headcount.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Orchestrate Your Multi-Hat Workflow",
+          "triggerText": "Learn how to connect all your roles into one system",
+          "html": "<h3>The Problem</h3><p>You're PM in the morning, designer at noon, engineer in the afternoon, marketer in the evening. Each role change costs you 30 minutes of context-switching. That's hours per day.</p><h3>One Connected System</h3><p>Notion as your central hub, connected via MCP. Product decisions, design rationale, engineering notes, marketing plans - all queryable. When you switch hats, the AI has your complete context from every angle.</p><h3>Automated Handoffs to Yourself</h3><p>When you finish a product decision, it automatically becomes context for your design session. When you finish designing, the rationale flows into your engineering context. No more re-establishing what you decided in a different role yesterday.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The shift from Level 1 to Level 2 is transformative for solo operators. Level 1: you assign AI tasks throughout the day. Level 2: AI prepares your decisions before you sit down. You still make all the calls. But the assembly work - the 62% that kills your best hours - is handled by the machine you built.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Solo Orchestration Tools",
+          "triggerText": "See the tools solo operators use for orchestration",
+          "html": "<h3>Zapier + Claude API</h3><p>Overnight briefs, feedback synthesis, analytics summaries - all running while you sleep. The simplest path to Level 2 for a solo operator.</p><h3>Notion + MCP</h3><p>Your entire operation in one queryable workspace. Product, design, engineering, marketing context - all connected to AI.</p><h3>Dust.tt</h3><p>AI agents that pull from your connected sources automatically. Configure once, get decision-ready briefs every morning.</p><h3>n8n for Complex Flows</h3><p>When your workflows need conditional logic, branching, and multi-step processing. Free and self-hostable for bootstrapped operators.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Orchestration is the highest-leverage investment a solo operator can make. Every hour of assembly you automate is an hour returned to building, selling, or thinking. The solo operator who builds the machine doesn't just work smarter - they create leverage that no amount of hustle can match. That's how a team of one competes with a team of ten.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your engineers spend the first 1-2 days of every sprint re-establishing context. Reading specs, chasing designers for rationale, finding the relevant architecture decisions. By the time they start building, the sprint is a third over. Meanwhile your incident response process starts with 30 minutes of context assembly at 3am. That's not an engineering problem. It's an orchestration problem.</p><p>The engineering teams shipping fastest have automated the context assembly. Engineers start building on day 1 because the machine prepared them.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Orchestrate Engineering Context",
+          "triggerText": "See how to pre-load context for every engineering task",
+          "html": "<h3>Ticket Context Assembly</h3><p>For every ticket, AI pre-assembles: product rationale, design decisions, technical constraints, and related past work. Engineers start building on day 1 of the sprint instead of day 3.</p><h3>The Setup</h3><p>Connect your Notion (specs), Figma (designs), and codebase (constraints) via MCP. When an engineer picks up a ticket, they ask Claude for the full context and get everything - business reasoning, design intent, technical constraints, prior attempts.</p><h3>The Impact</h3><p>Sprint velocity increased 30% for one team without a single additional hour worked. That's not a productivity hack. That's a 30% return with zero incremental cost.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The engineering lead who pre-loads context doesn't just make the team faster. They change what the team spends time on. Architecture discussions instead of context assembly. Performance investigations instead of pattern-chasing. The deep technical thinking that's been sitting in the backlog because nobody had headspace.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Orchestrated Incident Response",
+          "triggerText": "Learn how to orchestrate engineering workflows",
+          "html": "<h3>Incident Response</h3><p>When an alert fires, AI pre-assembles: relevant logs, recent deploys, service dependencies, and past incidents with similar signatures. The on-call engineer starts diagnosing immediately instead of spending 30 minutes assembling context at 3am. MTTR dropped 60% for one team.</p><h3>The Orchestration Pattern</h3><p>Map the end-to-end workflow first. Design decision points. Build routing logic. Then layer AI into each step. Start with humans in the loop - tasks route to engineers first, the team refines the logic, builds confidence. Only then does automation enter.</p><h3>Code Review Orchestration</h3><p>AI pre-checks PRs against the engineering context package before human review. Pattern violations caught automatically. Senior engineers review architecture and tradeoffs, not style issues. Review cycles drop from 2 days to 4 hours.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Here's the uncomfortable truth: AI cannot be trusted alone. Every AI output requires human review. The orchestration engine routes AI output to the right engineer with the right context for a quality check. That's not a bottleneck. That's the quality layer that prevents shipping garbage. Put checkpoints at the 3-5 most critical decisions. Not more, not fewer.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Engineering Orchestration Tools",
+          "triggerText": "See the tools engineering teams use for orchestration",
+          "html": "<h3>n8n + Claude</h3><p>Event-driven orchestration for engineering workflows. Support ticket triggers log analysis, history lookup, and proposed fix - before the engineer opens the ticket. One team cut triage time 70%.</p><h3>Linear Auto-Triage</h3><p>AI classifies, prioritizes, and routes issues based on context, capacity, and historical patterns. Dead time from \"reported\" to \"started\" compressed from days to minutes.</p><h3>Temporal + AI Workflows</h3><p>Complex multi-step processes with built-in reliability. Each step conditional on the last, with human checkpoints at critical decisions. Healthcare companies run this in production.</p><h3>Anthropic's Internal Pattern</h3><p>Chain Claude calls with tool use - web search, code execution, file analysis - into multi-step pipelines. Research, synthesis, draft, human review - all connected, all context-preserving.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Orchestration is the engine that connects your engineering knowledge base, your team's judgment, and AI into one system. Knowledge without orchestration is documentation nobody reads. Orchestration without knowledge is automation running empty. The technical leader who connects both creates an engineering org that compounds - getting smarter and faster with every sprint.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your creative team spends most of their time on work that isn't creative. Assembling references. Pulling performance data. Routing reviews. Gathering feedback. The actual creative thinking - the work your team was hired for - gets squeezed into whatever hours are left after the administrative machinery finishes grinding.</p><p>Orchestration isn't about automating creativity. It's about eliminating everything that isn't creativity so your team can do what they're actually good at.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Automate Creative Context Assembly",
+          "triggerText": "See how to give your team context without the assembly work",
+          "html": "<h3>The Pre-Brief Machine</h3><p>Before each campaign kickoff, AI assembles: previous campaign performance data, audience insights, competitive creative, brand guidelines, and channel requirements. Your team walks in with context instead of spending the first meeting establishing it.</p><h3>The Setup</h3><p>Connect your analytics, brand docs, and campaign archives in Notion. Link via MCP. Create a campaign brief template. AI populates it with relevant context before anyone opens a blank doc.</p><h3>The Impact</h3><p>One marketing team cut campaign launch from 3 weeks to 4 days. Not by rushing the creative. By eliminating the context assembly that surrounded it.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The time your creative team reclaims from assembly doesn't go to producing more campaigns. It goes to producing better ones. More concept exploration. More refinement. More of the deep creative work that differentiates your brand from everything that looks the same.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Orchestrate the Creative Pipeline",
+          "triggerText": "Learn how to connect every stage of creative production",
+          "html": "<h3>The Connected Pipeline</h3><p>Brief informs creative direction. Creative direction informs copy. Copy informs design. Design informs production. Each stage currently loses context to handoffs. Orchestration connects them.</p><h3>How to Build It</h3><p>One campaign doc in Notion, connected via MCP. Brief, creative direction, copy approach, visual direction, production specs - all in one place. Each person at each stage sees everything that came before. AI surfaces relevant context at each step.</p><h3>Human Checkpoints</h3><p>Creative director reviews concept direction. Copy lead reviews messaging. Design lead reviews visual execution. Three checkpoints, each with full context. Not more, not fewer.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The creative vision survives production when the context flows through every stage. No more dilution through handoffs. No more re-briefing at every step. The original intent - your intent - carries through because the machine preserves it.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Creative Orchestration Tools",
+          "triggerText": "See the tools for orchestrating creative workflows",
+          "html": "<h3>Notion + MCP</h3><p>Campaign context, brand guidelines, and performance data in one queryable workspace. AI assembles creative briefs and surfaces relevant precedents automatically.</p><h3>Zapier Central</h3><p>Multi-step creative workflows. New brief triggers reference gathering, competitive analysis, and channel requirement assembly. Each step feeds the next.</p><h3>Notion Automations</h3><p>Campaign feedback triggers performance extraction and learning documentation automatically. The knowledge base of creative learnings grows without extra work.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Orchestration gives your creative team back the hours that assembly steals. Those hours go to the work that no machine can do - the creative leaps, the brand vision, the conceptual thinking that makes your campaigns resonate instead of just exist. That's where your team's value compounds.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You use AI to generate code snippets and debug errors. That's Level 1. You count it as a win. Meanwhile you're still manually checking docs, switching between tools, re-establishing context every time you sit down to build. The hard parts - project coordination, context assembly, knowing what to build next - are still entirely you.</p><p>Level 2 is when AI prepares your building sessions before you sit down. The context is ready. The decisions are pre-assembled. You start coding immediately instead of spending an hour remembering where you left off.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Personal Orchestration System",
+          "triggerText": "See how to automate your building workflow",
+          "html": "<h3>Session Context Prep</h3><p>Before each building session, AI assembles: where you left off, what you decided and why, the next steps you planned, and any new information (user feedback, bug reports, ideas you noted).</p><h3>The Simple Setup</h3><p>Keep a running project doc in Notion. End each session with a quick note about what you built and what's next. Connect via MCP. Next session, prompt Claude: \"What's the context for this project?\" You're back in flow in 2 minutes instead of 30.</p><h3>The Upgrade</h3><p>Automate feedback collection. If you have users, set up a Zapier flow that collects feedback and synthesizes it into your project doc. You walk into each session knowing what users are saying without manually checking.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The side projects that ship are the ones where momentum survives between sessions. Context preservation is the difference between a shipped product and a forgotten repo. Orchestration keeps the momentum alive.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Orchestrate Multiple Side Projects",
+          "triggerText": "Learn how to run multiple projects without losing context",
+          "html": "<h3>The Multi-Project Problem</h3><p>You have 3 side projects. Each one has its own context, its own decisions, its own next steps. Switching between them costs 30 minutes of re-orientation each time. Most of those projects stall because the switching cost is too high.</p><h3>The Fix</h3><p>Each project gets its own context doc. AI maintains the state for each one. When you switch projects, the full context is one prompt away. No re-orientation, no lost decisions, no forgotten rationale.</p><h3>Priority Surfacing</h3><p>Set up a weekly prompt that reviews all your projects and surfaces: which has the most momentum, which has user traction, which is blocked. Let the system help you decide where to invest your limited building time.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The vibe coder who orchestrates their building workflow ships 10x more projects than the one who starts from scratch every session. Not because they're more talented or have more time. Because the machine preserves context and the human focuses on building. That's the compound effect: every session builds on the last instead of reinventing it.</p>"
+        }
+      ]
+    }
+  }
+}

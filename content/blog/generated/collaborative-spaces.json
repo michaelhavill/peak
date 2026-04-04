@@ -1,0 +1,332 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Every person on your team is destroying value right now. The PM prompts Claude, copies the output, pastes it into Notion, then Slacks the designer. The designer opens a fresh AI session with zero inherited context. The engineer starts a third session - tabula rasa. Three people using AI. Three completely isolated knowledge graphs.</p><p><strong>The cost is not \"inefficiency.\" It is compounding information loss at every single handoff.</strong> Each copy-paste is a context tax. Each re-prompt from scratch is value destruction. And nobody is accounting for it.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Connect Your First 3 Tools This Afternoon",
+          "triggerText": "See how to wire your tools into a shared context layer",
+          "html": "<p>The goal: shift from \"I use AI in this tool\" to \"AI flows across all my tools.\" Here is how to set it up in one afternoon.</p><h3>Connection 1: Notion to Claude</h3><p>Install the Notion MCP server, authorize your workspace, and Claude can now query every page, database, and document in your workspace. Your customer research, design principles, and architecture docs become available in every conversation.</p><h3>Connection 2: GitHub to Claude Code</h3><p>Add a <code>CLAUDE.md</code> file to your repo root with your architecture patterns and constraints. Claude Code reads it automatically. Your engineering context flows into every coding session.</p><h3>Connection 3: Slack to your knowledge base</h3><p>Set up a Zapier flow that watches key Slack channels and deposits summarized decisions into a Notion database daily. Decisions made in conversation become permanent knowledge.</p><p><strong>Three connections. One afternoon. Every AI interaction from tomorrow draws from the same context layer.</strong> Expected payoff: 5-10x that time back every single week.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Most teams run two parallel worlds: the human world (Slack, meetings, docs) and the AI world (individual prompt sessions). Information flows between them through copy-paste, manual summaries, and meetings where someone explains \"what the AI said.\" This doubles communication overhead instead of cutting it.</p><p>Shared workspaces where human contributions and AI contributions live side by side, drawing from the same knowledge base - that is the architecture. A product brief starts as an AI draft grounded in persona research. The PM refines judgment calls. The designer adds UX direction. The AI incorporates those inputs into the next iteration. Everyone sees the full history. <strong>Zero information loss.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build a Shared Context Layer for Your Team",
+          "triggerText": "See how to create the shared brain your team's AI draws from",
+          "html": "<h3>Structure the workspace</h3><p>Create a single Notion workspace structured by function - Product, Engineering, Design, Operations - where each team deposits insights in a consistent format. Connect this workspace to Claude via MCP.</p><h3>Make cross-functional context flow</h3><p>When the PM asks Claude \"What engineering constraints apply to the notifications feature?\" the answer draws from engineering's actual documented decisions. When the designer asks \"What did users say about onboarding?\" the answer draws from the PM's customer research. No meetings required.</p><h3>The contribution loop</h3><p>Each team member's work enriches the shared base automatically. Customer call insights flow to design. Technical constraints flow to product. Design decisions flow to engineering. The workspace is the shared brain.</p><h3>What disappears</h3><ul><li>Meetings that exist solely to transfer context</li><li>\"Can you send me that doc?\" messages</li><li>Re-establishing context at the start of every cross-functional conversation</li><li>The 3-5 day feedback loop on \"that is not technically feasible\"</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One team deployed custom interfaces for three groups - business, clinical, and operations. All three read from and write to the same central platform. When the business team updates a customer insight, the clinical team's AI immediately has that context. When operations identifies a bottleneck, the engineering team's AI factors it into sprint planning. No meetings. No Slack threads. No \"can you send me that doc?\"</p><p><strong>The critical design principle: AI is a participant in your system, not a replacement for your team.</strong> It surfaces relevant context when needed. The humans direct, decide, and refine. That is how you deploy intelligence at scale.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Eliminate Meetings That Only Transfer Context",
+          "triggerText": "See how to replace status meetings with shared surfaces",
+          "html": "<h3>Audit your meeting calendar</h3><p>For each recurring meeting, ask: does this meeting exist to make decisions, or to share context? If the answer is \"share context\" - that meeting is a symptom of disconnected tools, not a collaboration need.</p><h3>Replace with shared surfaces</h3><p>For each context-sharing meeting, build the shared surface that makes it unnecessary:</p><ul><li><strong>Weekly standup:</strong> Replace with a Notion dashboard where AI synthesizes each team member's progress from their actual work output</li><li><strong>Cross-functional sync:</strong> Replace with a shared knowledge base where product, design, and engineering context flows automatically</li><li><strong>Research readout:</strong> Replace with a research database where AI-synthesized insights are tagged and accessible to everyone's AI</li></ul><h3>Keep the decision meetings</h3><p>Meetings where humans align on strategy, resolve conflicts, or make judgment calls - those stay. But they start from a richer foundation because everyone's AI has the full context before they walk in.</p><p><strong>Expected outcome:</strong> 30-50% reduction in meeting hours within the first month. That time goes to deep work - the thinking that no meeting could replace.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Collaboration scales when context is shared, not when meetings are more frequent. Every meeting that exists solely to transfer information is a tax on your organization. Build the shared surface. Let AI and humans both contribute - with humans directing and AI extending.</p><p><strong>The value is the triad: your people, your shared knowledge, and AI working together.</strong> You are not handing collaboration to AI. You are making your team's collaboration compound through AI.</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your team is using AI in parallel silos. The PM prompts Claude, copies output to Notion, Slacks the designer. The designer starts a fresh session. The engineer starts another. Three completely disconnected knowledge graphs. You are paying for AI and then paying again to manually distribute its output.</p><p><strong>Every meeting that exists solely to share context is a tax on your burn rate.</strong> And right now, most of your meetings are exactly that. Shared context layers are not a nice-to-have - they are how you cut coordination overhead while scaling output.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Company's Shared Brain",
+          "triggerText": "See how to create one context layer for your entire company",
+          "html": "<h3>The founder's architecture</h3><p>Create a single Notion workspace as your company's knowledge hub. Structure it by function: Product, Engineering, Customer, Strategy, Operations. Connect to Claude via MCP so every team member's AI draws from the same base.</p><h3>Connect your highest-value data</h3><ul><li><strong>Customer data:</strong> Call transcripts, feedback, support tickets</li><li><strong>Strategic context:</strong> Board materials, competitive analysis, financial models</li><li><strong>Product context:</strong> Specs, research, design decisions</li><li><strong>Technical context:</strong> Architecture docs, ADRs, deployment patterns</li></ul><h3>The founder's superpower</h3><p>When you need an investor deck for a growth-stage fund, the AI pulls the right metrics automatically. Deck for a strategic partner? Different context, zero extra work. You derisked the highest-stakes communications of your company.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>At the company level, shared surfaces mean the PM's insight enriches the designer's AI automatically. The engineer's constraints flow to product without a meeting. The speed of context-sharing is not just about moving faster - it is about unlocking time for strategic decisions that have been perpetually deferred.</p><p><strong>The meetings that disappear are your biggest cost savings.</strong> Not the subscription fees. The hours of senior people sitting in rooms transferring information that should already be shared.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Cut 50% of Your Status Meetings",
+          "triggerText": "See how to replace coordination overhead with shared context",
+          "html": "<h3>The meeting audit</h3><p>List every recurring meeting. Tag each as \"decision meeting\" or \"context transfer meeting.\" The context transfer meetings are your target - they represent pure coordination overhead.</p><h3>Replace with shared surfaces</h3><p>For each context transfer meeting, build the shared surface: a Notion database where AI synthesizes team progress, a cross-functional knowledge base where insights flow automatically, a dashboard where metrics update in real time.</p><h3>The math</h3><p>If you have 10 people in 5 weekly context-transfer meetings averaging 30 minutes each, that is 25 person-hours per week. At $100/hour loaded cost, that is $130K/year in meeting overhead. Cut 50% of that and you have freed $65K worth of time for deep work.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The companies winning this race built shared context layers where every team member's AI draws from the full organizational intelligence. New hires ramp in weeks instead of months. Decisions happen faster because context is already shared. The information asymmetry inside the team drops to near zero.</p><p><strong>Your team's collaboration compounds through shared context.</strong> That is how you build a company that moves at startup speed regardless of headcount.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Wire Customer Intelligence to Every Function",
+          "triggerText": "See how to make customer insights flow automatically",
+          "html": "<h3>Capture automatically</h3><p>Use Granola to capture every customer call. Set up Zapier to route key Slack threads to your knowledge base. Connect your CRM so customer data flows into the shared context layer.</p><h3>Synthesize and route</h3><p>AI extracts insights from raw data and tags them by theme, persona, and product area. A customer insight about pricing flows to the finance team's AI. A feature request pattern flows to product. A churn signal flows to customer success.</p><h3>The compound effect</h3><p>After 3 months, your team's AI output quality is measurably better because every function sees the full customer picture. After 6 months, the gap between you and competitors using identical AI tools is visible in every deliverable.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The tools exist today. Notion plus MCP integrations. Linear plus Slack plus Claude. Granola capturing meeting context automatically. The architecture is not theoretical - teams are deploying it and the coordination overhead is collapsing.</p><p><strong>AI is a participant in your system, not a replacement for your team.</strong> Build the shared surface. The value compounds from there.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your PM prompts Claude with customer research. The designer opens a fresh session without it. The engineer starts from zero. Three people using AI on the same product - with three completely disconnected knowledge graphs. The information asymmetry inside your own team is the bottleneck nobody is measuring.</p><p><strong>When the designer asks AI about users and it does not know about the PM's research - that is not an AI problem. That is an architecture problem.</strong> The delta between 10% and 100% context is where the real product alpha lives.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Shared Product Research Surface",
+          "triggerText": "See how to make research available to every team member's AI",
+          "html": "<h3>Structure your product knowledge base</h3><p>In Notion, create databases for: Customer Interviews, Competitive Analysis, Usage Data, Feature Requests, and Design Decisions. Use consistent tagging: persona, product area, theme, priority.</p><h3>Connect to your team's AI</h3><p>Install the Notion MCP server. Every team member's Claude now queries the full research corpus when working on product tasks.</p><h3>The transformation</h3><p>When the designer asks \"What did users say about onboarding?\" the answer draws from every customer interview, not the 15% slice one person remembers. When the engineer asks \"What are the product constraints on notifications?\" it references actual documented decisions.</p><p><strong>The information asymmetry inside your own team drops to near zero.</strong> That alone eliminates two weekly syncs that existed only to transfer context.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A product brief starts as an AI draft grounded in persona research and competitive context. The PM refines judgment calls. The designer adds UX direction. The AI incorporates those inputs into the next iteration. The engineer flags technical constraints that feed back into design. Everyone sees the full history. Zero information loss.</p><p><strong>This is network effects on knowledge.</strong> Every participant makes the shared context more valuable for every other participant.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Design, Engineering, and Product Context",
+          "triggerText": "See how to dissolve the walls between product functions",
+          "html": "<h3>Three critical connections</h3><ol><li><strong>Figma + GitHub:</strong> Connect your design system and codebase through shared integrations. The wall between design and engineering dissolves because AI carries context across both.</li><li><strong>Linear + Slack:</strong> Connect your issue tracker and communication channels. When anyone prompts AI, it already knows the backlog state and recent discussions.</li><li><strong>Notion (research) + everything:</strong> Your product research base feeds into every tool via MCP.</li></ol><h3>The feedback loop accelerator</h3><p>The \"that is not technically feasible\" feedback loop used to cost 3-5 days per cycle. With shared context, the designer's AI already knows the engineering constraints. The engineer's AI already knows the product requirements. The cycle drops to near zero.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Product teams that built shared research surfaces report that the information asymmetry inside their own team dropped to near zero. Not the 15% slice one person remembers - the full research context. That alone eliminated weekly syncs and made product decisions measurably faster.</p><p><strong>Collaboration scales when context is shared, not when meetings are more frequent.</strong> Build the shared surface and let your product team's collective intelligence compound.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Replace Product Syncs with Shared Surfaces",
+          "triggerText": "See which meetings you can eliminate with better context sharing",
+          "html": "<h3>The product meeting audit</h3><p>Tag each recurring meeting: \"decision\" or \"context transfer.\" Common context transfer meetings in product teams:</p><ul><li>Design-engineering handoff sync</li><li>Research readout</li><li>Sprint status update</li><li>Cross-functional alignment</li></ul><h3>Build the replacement surfaces</h3><p>For each context transfer meeting, create the shared surface that makes it unnecessary. A research database where insights flow automatically. A design-engineering bridge where constraints are visible in real time. A sprint dashboard where AI synthesizes progress.</p><h3>Keep what matters</h3><p>Decision meetings where the team aligns on what to build, what to kill, and which trade-offs to make - those stay. But they start richer because everyone's AI has the full context before they walk in.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The tools exist today. Notion plus MCP for the knowledge layer. Figma plus GitHub plus Cursor for the design-engineering bridge. Granola for capturing meeting context automatically. The product team that connects these first compounds advantages every quarter.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your design context lives in Figma. Your code lives in GitHub. Your project context lives in Notion. Your backlog lives in Linear. Four tools, four isolated databases. You are the copy-paste bridge between all of them - dozens of times a day. That cost compounds.</p><p><strong>When your tools share a brain, everything changes.</strong> Your design context informs your code generation. Your code constraints inform your design suggestions. Your customer research informs both. The network effects on knowledge kick in the moment the walls come down.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Wire Your Entire Design-Engineering Stack",
+          "triggerText": "See how to connect Figma, GitHub, Notion, and Linear",
+          "html": "<p>A design engineer we work with wired his entire stack through MCP integrations. Claude reads his Figma component library, his GitHub repo structure, his Notion design principles, his Linear backlog. Here is how to replicate it.</p><h3>Connection 1: Notion to Claude</h3><p>Install the Notion MCP server. Your design principles, user research, component documentation, and project context become available in every AI conversation.</p><h3>Connection 2: GitHub to Claude Code</h3><p>Add a <code>CLAUDE.md</code> file with your component conventions, naming patterns, and architecture decisions. Claude Code reads it automatically and follows your patterns.</p><h3>Connection 3: Figma to your workflow</h3><p>Connect your Figma component library via MCP so AI-generated code uses your actual design tokens and component patterns.</p><h3>The result</h3><p>When you ask for a component, the AI already knows your design system, your code patterns, and your current sprint priorities. Zero copy-paste. The tools share a brain. ROI: 6-8 hours saved per week, compounding every week.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The shift is from \"I use AI in this tool\" to \"AI flows across all my tools.\" Your design system's logic persists regardless of which tool renders it. When a better editor launches, you adopt it without losing your design system investment. The hub is your knowledge. The tools are spokes.</p><p><strong>The \"that is not technically feasible\" feedback loop drops to near zero</strong> because the AI carries context across both design and engineering domains.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Cross-Domain Context That Compounds",
+          "triggerText": "See how to make design and engineering context flow automatically",
+          "html": "<h3>The two-direction bridge</h3><p>Design context should inform code: component specs, spacing tokens, color values, interaction patterns. Code context should inform design: technical constraints, performance implications, API limitations.</p><h3>Structure for AI retrieval</h3><p>In your Notion workspace, create linked databases: Design Decisions (with technical implications noted), Engineering Decisions (with design implications noted). Tag each by component, feature, and sprint.</p><h3>The compound loop</h3><p>Every design decision you document makes the AI's code suggestions better. Every technical constraint you capture makes the AI's design suggestions more feasible. The cross-pollination is the magic - and it happens automatically once the context is connected.</p><h3>What disappears</h3><ul><li>\"Is this technically feasible?\" conversations</li><li>Design-to-dev handoff meetings</li><li>Re-implementing components because the AI did not know the design system</li><li>Design revisions because the AI did not know the technical constraints</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Design engineering teams that connected Figma, GitHub, Notion, and Linear through shared context report that the walls between design and engineering dissolved. The AI carries context across both domains. Quality went up. Speed went up. The grind of translation between tools disappeared.</p><p><strong>Your collaboration surface is your knowledge infrastructure.</strong> When your tools share a brain, you stop being a copy-paste bridge and start being a creative force multiplied by connected context.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Set Up a Design System Knowledge Layer",
+          "triggerText": "See how to make your design system AI-accessible",
+          "html": "<h3>Document your design system for AI</h3><p>Beyond component specs, capture: when to use each component, spacing principles, color application rules, responsive breakpoints, and interaction patterns. The \"why\" behind the system is as important as the \"what.\"</p><h3>Connect to both design and code tools</h3><p>Your Figma component library connects via MCP so AI knows what components exist. Your code component library connects via CLAUDE.md so AI follows implementation patterns. Both reference the same design system documentation.</p><h3>The new workflow</h3><p>When you design a new feature, AI suggests components from your system. When you code it, AI generates implementation using your actual patterns. The design system becomes a living layer that both design and code tools respect automatically.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The design engineer with connected tools operates at a fundamentally different speed. Not because the AI is smarter - because the AI has the full picture. Design tokens, code patterns, user research, sprint priorities - all flowing into every interaction. That is the collaborative space that actually works.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You are the PM, the designer, the engineer, and the ops person. Every time you switch hats, you lose context. You prompt AI for design work, then switch to coding and start from zero. You research a market question, then cannot find the insight when you need it for a pitch.</p><p><strong>When you are one person playing every role, disconnected tools are not just inefficient - they are crippling.</strong> The context you generated as a researcher is invisible to you as a builder. The customer insight you captured last week is buried in a thread you cannot find.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Personal Shared Brain in One Afternoon",
+          "triggerText": "See how to connect all your tools into one context layer",
+          "html": "<h3>Pick your hub</h3><p>Choose one system as your knowledge hub - Notion, Obsidian, or a well-structured folder of markdown files. This is where everything flows to and from.</p><h3>Three connections</h3><ol><li><strong>Notion to Claude:</strong> Install MCP server. All your research, notes, and decisions become available in every AI conversation.</li><li><strong>GitHub to Claude Code:</strong> Add CLAUDE.md with your patterns and conventions. Your coding context is always present.</li><li><strong>Slack/email to Notion:</strong> Set up Zapier to capture key decisions and insights into your knowledge base automatically.</li></ol><h3>The solo operator's advantage</h3><p>When you switch from PM mode to engineering mode, the AI carries the product context with it. When you switch to design mode, it carries the technical constraints. The context-switching tax drops to near zero because the AI remembers what you forget between hats.</p><p><strong>Total investment: one afternoon. Expected payoff: 5-10x that time back every week.</strong></p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>For a solo operator, the shared context layer is even more powerful than for a team - because you are every function. The research you do as a PM informs the code you write as an engineer. The technical constraints you discover inform the product decisions you make. Everything connects because you are the throughline.</p><p><strong>Your tools need to share a brain because you are the only brain they have.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Every Work Session Build on the Last",
+          "triggerText": "See how to eliminate the context-switching tax",
+          "html": "<h3>Structure for continuity</h3><p>In your Notion hub, create a running \"Context Log\" where AI deposits key decisions, insights, and state at the end of each work session. Tomorrow, AI reads it and you start where you left off.</p><h3>Cross-role context flow</h3><p>Tag every insight by role: product, design, engineering, operations. When you switch hats, your AI pulls the relevant context from all roles. The customer insight from your PM session shows up in your engineering session when it matters.</p><h3>The compound effect</h3><p>After a month, your knowledge base holds hundreds of synthesized decisions and insights. Your AI knows your product inside and out - from every angle, every role, every session. That depth of context is something no contractor or freelancer could match without weeks of onboarding.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Solo operators who build connected context layers report that the biggest win is not speed - it is coherence. The product decisions, design decisions, and technical decisions all draw from the same base. Nothing contradicts because everything is connected.</p><p><strong>The shared surface for a solo operator is the integration between your own roles.</strong> Build it once, and every work session makes the next one more productive.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Automate Context Capture So Nothing Gets Lost",
+          "triggerText": "See how to capture insights without extra effort",
+          "html": "<h3>The zero-effort capture rule</h3><p>If you have to remember to save something to your knowledge base, you will not. Build capture into the tools you already use.</p><h3>Automation setup</h3><ul><li><strong>Meeting notes:</strong> Use Granola to auto-capture and transcribe every call</li><li><strong>Slack decisions:</strong> Zapier watches your channels and deposits key threads into Notion daily</li><li><strong>Code decisions:</strong> Commit messages and PR descriptions automatically feed your architecture knowledge base</li><li><strong>Customer interactions:</strong> Email and chat summaries route to your customer research database</li></ul><h3>The solo operator's flywheel</h3><p>Every interaction generates knowledge automatically. Every AI session draws from that knowledge. Every output builds on everything that came before. The flywheel spins faster the longer you use it.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The solo operators who connect their tools first have a structural advantage that compounds every week. Their AI gets smarter as they work. Their context deepens. Their output improves. And they never lose an insight to a forgotten Slack thread again.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your distributed engineering team runs in silos. Each engineer's AI starts from zero. Architecture decisions live in one person's head. Onboarding takes months because tribal knowledge is locked in Slack threads nobody can find. The \"ask the senior person\" bottleneck is killing your velocity.</p><p><strong>A shared architecture surface where every technical decision, ADR, and incident learning feeds one AI-accessible layer changes everything.</strong> New team members get answers grounded in actual decisions, not generic Stack Overflow patterns. Onboarding time drops by 40%.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Shared Architecture Knowledge Surface",
+          "triggerText": "See how to create the engineering shared brain",
+          "html": "<h3>Structure the knowledge base</h3><p>In Notion, create databases for: Architecture Decision Records (ADRs), Incident Postmortems, Deployment Patterns, Code Conventions, and Technical Debt Inventory. Connect via MCP so every engineer's AI queries it automatically.</p><h3>Feed it from existing workflows</h3><ul><li><strong>ADRs:</strong> When the team makes a technical decision, document it with reasoning - not just what, but why</li><li><strong>Postmortems:</strong> Every incident feeds the knowledge base. The same mistake never happens twice.</li><li><strong>PR patterns:</strong> Key PR decisions and review feedback flow into the conventions database</li></ul><h3>The onboarding payoff</h3><p>When a new engineer asks \"why did we build it this way?\" the AI answers with the team's actual decisions and tradeoffs. At $180K average fully-loaded eng cost, cutting onboarding from 3 months to 6 weeks saves $45K per hire. That is real money.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The real cost of disconnected engineering tools is not inefficiency - it is repeated mistakes. The same architectural trap gets sprung because the last person who hit it documented the fix in a Slack thread that nobody can find. The same design patterns get debated because the reasoning behind past decisions is locked in someone's head.</p><p><strong>Shared architecture surfaces turn tribal knowledge into institutional memory.</strong> The \"ask the senior person\" bottleneck disappears because the AI carries the senior person's context.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Engineering Tools Into One Context Layer",
+          "triggerText": "See how to wire GitHub, Linear, Notion, and your monitoring stack",
+          "html": "<h3>The engineering stack integration</h3><ol><li><strong>GitHub to Claude Code:</strong> CLAUDE.md with architecture patterns, naming conventions, and key constraints. Every coding session starts with team context.</li><li><strong>Notion (ADRs) to Claude:</strong> MCP connection so AI references actual technical decisions in every conversation.</li><li><strong>Linear to Slack to Notion:</strong> Zapier routes key technical discussions and decisions from Slack into the knowledge base. Linear sprint context feeds into the shared layer.</li></ol><h3>Cross-team context flow</h3><p>When the PM asks about technical constraints, the AI draws from engineering's actual documented decisions. When a designer proposes a feature, the AI flags implementation complexity from the architecture docs. The \"that is not technically feasible\" feedback loop compresses from days to minutes.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Engineering teams that built shared architecture surfaces report that the \"ask the senior person\" bottleneck disappeared. New engineers reached productive velocity 40% faster. Code review quality improved because every reviewer had access to the same architectural context. The team shipped more because they debated less.</p><p><strong>The marginal cost of sharing engineering context dropped to zero.</strong> That is how you scale an engineering team without proportionally scaling coordination overhead.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Scale Engineering Culture Through Shared Surfaces",
+          "triggerText": "See how to maintain engineering standards across a growing team",
+          "html": "<h3>Encode your engineering culture</h3><p>Your coding standards, review expectations, architecture principles, and quality bar - document them in a format AI can reference. Not a 100-page style guide nobody reads, but living documentation connected to the team's AI.</p><h3>Automate cultural consistency</h3><p>When an engineer writes code, their AI follows the team's conventions because it has read the CLAUDE.md. When a PR gets reviewed, the AI pre-checks against documented standards. When a new hire writes their first PR, the AI nudges them toward team patterns.</p><h3>The scaling advantage</h3><p>As you grow from 5 to 15 to 50 engineers, the shared surface carries your engineering culture at scale. New hires absorb conventions from day one. Code quality stays consistent. The senior engineers' time shifts from repeating themselves in reviews to solving the hard architectural problems that actually need their judgment.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Shared engineering surfaces are how you scale a team without losing the architectural discipline that made you fast in the first place. The context compounds. The conventions propagate. The mistakes do not repeat. That is engineering culture at scale.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your creative team is running AI in isolated sessions. The copywriter's AI does not know about the designer's mood board. The designer's AI does not know the brand voice guidelines the copywriter follows. The strategist's insights stay in their head until the next meeting. Three creatives using AI. Three completely disconnected creative visions.</p><p><strong>When your brand context, creative direction, and campaign history live in a shared layer, every AI interaction starts from the same creative foundation.</strong> No drift. No inconsistency. No re-establishing the brief in every conversation.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Shared Creative Context Layer",
+          "triggerText": "See how to give your entire creative team the same AI brain",
+          "html": "<h3>Structure the creative knowledge base</h3><p>In Notion, create databases for: Brand Voice Guidelines, Visual Identity Specs, Campaign History, Audience Research, and Creative Decisions. Connect via MCP so every team member's AI draws from the same creative foundation.</p><h3>Load the brand DNA</h3><ul><li>Brand voice doc with tone spectrum, word preferences, and examples</li><li>Visual identity guide with reasoning behind every choice</li><li>Campaign archive with what worked, what did not, and why</li><li>Audience personas with psychographic depth, not just demographics</li></ul><h3>The shared creative brain</h3><p>When the copywriter asks AI for headline variations, it draws from the brand voice doc and past campaigns. When the designer asks for layout direction, it references the visual identity and audience insights. Everyone's AI speaks the same brand language.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The real cost of disconnected creative tools is brand inconsistency. When every team member's AI starts from scratch, the output drifts. Voice varies. Visual language fragments. The brand feels different across every touchpoint - and audiences feel it even when they cannot articulate it.</p><p><strong>Shared creative surfaces are how you maintain brand coherence at scale.</strong> The AI enforces consistency because it carries the same creative DNA into every interaction.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Campaign Intelligence Across Your Team",
+          "triggerText": "See how to make every campaign build on every previous one",
+          "html": "<h3>Capture campaign learning automatically</h3><p>After every campaign, deposit: strategic insight, creative direction, audience response, what worked, and what you would change. Tag by audience segment, channel, and campaign type.</p><h3>Make it flow</h3><p>When a new campaign brief lands, the AI surfaces relevant precedent from past campaigns. The strategist's audience insight enriches the copywriter's AI. The designer's visual exploration informs the developer's implementation. No one starts from scratch.</p><h3>The compound creative advantage</h3><p>After 6 months, your team's AI carries your complete campaign history. New team members' AI has the context of someone who has been at the company for years. The creative quality becomes consistent across the team because everyone works from the same accumulated intelligence.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Creative teams that built shared context layers report that brand consistency improved measurably across channels. The time spent re-establishing creative direction in meetings dropped dramatically. New team members produced on-brand work faster because their AI carried the creative DNA from day one.</p><p><strong>The creative process compounds when context is shared.</strong> Every campaign makes the next one better because the learning never gets lost.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Replace Creative Briefing Meetings with Shared Surfaces",
+          "triggerText": "See how to brief your team without a meeting",
+          "html": "<h3>The creative brief as a living surface</h3><p>Instead of briefing in a meeting, create the brief in your shared Notion workspace. AI enriches it with relevant audience data, past campaign performance, and competitive creative. Team members' AI draws from it automatically.</p><h3>Async creative collaboration</h3><p>The strategist adds direction. The copywriter adds voice explorations. The designer adds visual references. The AI synthesizes inputs and surfaces connections. All async. All in the shared surface. All building on each other.</p><h3>What changes</h3><ul><li>Creative kickoff meetings shrink from 60 minutes to 15 (decisions only)</li><li>Every team member's AI starts with the full brief context</li><li>Mid-project pivots update the brief once and flow to everyone's AI instantly</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The creative teams that connect their tools first will produce more consistent, more informed, and more effective work. Not because the AI is more creative - because the AI carries the team's full creative context into every interaction. The shared surface is how creative intelligence compounds.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You have side projects scattered across different tools, different folders, different AI sessions. Each time you pick one back up, you spend 30 minutes re-establishing context. Your design ideas live in Figma. Your code lives in GitHub. Your notes live in Apple Notes or wherever. Nothing connects.</p><p><strong>For a vibe coder, disconnected tools are the number one project killer.</strong> Not lack of motivation. Not lack of skill. The friction of re-establishing context every time you sit down is what turns a promising side project into an abandoned repo.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Side Project Context Hub",
+          "triggerText": "See how to never lose project context again",
+          "html": "<h3>Pick your hub</h3><p>Obsidian or a well-structured markdown folder works great for side projects. One folder per project with: README, architecture decisions, current state, next steps, and interesting ideas.</p><h3>Connect to your AI</h3><p>Add a <code>CLAUDE.md</code> to each project repo with your patterns, decisions, and constraints. Connect your notes to Claude via MCP if using Notion or Obsidian.</p><h3>The context pickup pattern</h3><p>At the end of every session, tell the AI: \"Summarize where we are and what is next.\" Save that to your project notes. Next session, the AI reads it and you are productive in 30 seconds instead of 30 minutes.</p><h3>Cross-project knowledge</h3><p>Keep a personal \"patterns\" database where you deposit reusable solutions, interesting techniques, and lessons learned. Every project benefits from every other project. The learning compounds across your entire portfolio.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The magic happens when your tools share context across projects. The cool animation technique you figured out in Project A is available when you are building Project B. The API integration pattern you nailed last month shows up when you need it today. Nothing gets lost. Everything compounds.</p><p><strong>A connected context layer turns a graveyard of abandoned side projects into a portfolio that compounds.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Wire Your Creative Coding Stack",
+          "triggerText": "See how to connect your design and code tools for side projects",
+          "html": "<h3>Minimal viable connections</h3><ol><li><strong>VS Code/Cursor to your knowledge:</strong> CLAUDE.md in every repo with your coding style and patterns</li><li><strong>Notes to Claude:</strong> Connect your notes app via MCP so research and ideas flow into coding sessions</li><li><strong>GitHub to your learning base:</strong> PR descriptions and commit messages that capture what you learned, not just what you changed</li></ol><h3>The creative coding workflow</h3><p>Idea capture: jot it in your notes app. When you sit down to build, AI pulls the idea plus relevant patterns from past projects. While coding, AI handles the boring parts (setup, boilerplate, tests). You focus on the creative parts. At the end, AI deposits new patterns and learnings back to the knowledge base.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The vibe coders shipping the most are not working harder. They are working with connected tools that remember everything. Every session builds on the last. Every project benefits from every other project. The compound effect over a year is massive.</p><p><strong>Your tools sharing a brain is the difference between 5 abandoned repos and 5 shipped side projects.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Build a Personal Learning Network That Compounds",
+          "triggerText": "See how to make everything you learn available everywhere",
+          "html": "<h3>The learning capture system</h3><p>Create a \"Patterns\" database in your notes. Every time you solve an interesting problem, figure out a new technique, or discover a useful library - deposit it. Tag by technology, use case, and project.</p><h3>Make it flow</h3><p>Connect this database to your AI. Now when you start a new project, AI knows every trick you have ever learned. When you hit a problem, AI searches your personal patterns first before suggesting generic solutions.</p><h3>The compound advantage</h3><p>After a year of capturing, your AI carries your complete technical journey. Every framework you learned, every gotcha you hit, every elegant solution you found. New projects start from your accumulated experience, not from a blank slate. That is a technical moat no tutorial can replicate.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Connected tools are the multiplier that turns hobby coding into a real creative practice. Your context compounds. Your patterns accumulate. Your AI gets smarter with every project. The friction drops and the shipping rate goes up. That is how vibe coding becomes a superpower.</p>"
+        }
+      ]
+    }
+  }
+}

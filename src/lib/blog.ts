@@ -2,8 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import type { PersonaVariants } from "@/components/ArticleBody";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
+const GENERATED_DIR = path.join(BLOG_DIR, "generated");
 
 /**
  * Add retro 16-bit color accents to ASCII diagrams inside <pre><code> blocks.
@@ -127,4 +129,16 @@ export function getPostBySlug(slug: string): BlogPost {
     htmlContent,
     htmlCtas,
   };
+}
+
+export function getPostVariants(slug: string): PersonaVariants | null {
+  const filePath = path.join(GENERATED_DIR, `${slug}.json`);
+  if (!fs.existsSync(filePath)) return null;
+  try {
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const data = JSON.parse(raw) as { personas: PersonaVariants };
+    return data.personas;
+  } catch {
+    return null;
+  }
 }

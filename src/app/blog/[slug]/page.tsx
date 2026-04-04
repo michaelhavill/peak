@@ -1,8 +1,9 @@
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug, getPostVariants } from "@/lib/blog";
 import { LEARN_THEMES } from "@/lib/constants";
 import PersonaPathway from "@/components/PersonaPathway";
 import EmailCapture from "@/components/EmailCapture";
 import ShareBar from "@/components/ShareBar";
+import ArticleBody from "@/components/ArticleBody";
 import Link from "next/link";
 
 export function generateStaticParams() {
@@ -16,6 +17,7 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  const variants = getPostVariants(slug);
 
   return (
     <main className="min-h-screen px-6 md:px-16 lg:px-20 py-16 lg:ml-[180px]">
@@ -135,37 +137,40 @@ export default async function BlogPostPage({
           </div>
         )}
 
-        {(() => {
-          // Split article at roughly 1/4 by character length for a true early teaser
-          const paragraphs = post.htmlContent.split(/(?=<(?:p|h[2-6]|pre|ul|ol|blockquote)[\s>])/);
-          const totalLength = post.htmlContent.length;
-          const targetLength = totalLength * 0.25;
-          let cumulative = 0;
-          let splitIndex = 1;
-          for (let i = 0; i < paragraphs.length; i++) {
-            cumulative += paragraphs[i].length;
-            if (cumulative >= targetLength) {
-              splitIndex = Math.max(1, i + 1);
-              break;
+        {variants ? (
+          <ArticleBody variants={variants} fallbackHtml={post.htmlContent} />
+        ) : (
+          (() => {
+            const paragraphs = post.htmlContent.split(/(?=<(?:p|h[2-6]|pre|ul|ol|blockquote)[\s>])/);
+            const totalLength = post.htmlContent.length;
+            const targetLength = totalLength * 0.25;
+            let cumulative = 0;
+            let splitIndex = 1;
+            for (let i = 0; i < paragraphs.length; i++) {
+              cumulative += paragraphs[i].length;
+              if (cumulative >= targetLength) {
+                splitIndex = Math.max(1, i + 1);
+                break;
+              }
             }
-          }
-          const firstThird = paragraphs.slice(0, splitIndex).join("");
-          const rest = paragraphs.slice(splitIndex).join("");
+            const firstThird = paragraphs.slice(0, splitIndex).join("");
+            const rest = paragraphs.slice(splitIndex).join("");
 
-          return (
-            <>
-              <article
-                className="prose-100x"
-                dangerouslySetInnerHTML={{ __html: firstThird }}
-              />
-              <EmailCapture variant="teaser" />
-              <article
-                className="prose-100x"
-                dangerouslySetInnerHTML={{ __html: rest }}
-              />
-            </>
-          );
-        })()}
+            return (
+              <>
+                <article
+                  className="prose-100x"
+                  dangerouslySetInnerHTML={{ __html: firstThird }}
+                />
+                <EmailCapture variant="teaser" />
+                <article
+                  className="prose-100x"
+                  dangerouslySetInnerHTML={{ __html: rest }}
+                />
+              </>
+            );
+          })()
+        )}
 
         <EmailCapture variant="inline" />
 

@@ -1,0 +1,299 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Most AI-generated code is dead on arrival. Copilot autocompletes a function, the code compiles, and then your senior engineer spends 15 minutes fixing it - wrong naming conventions, a pattern you deprecated last quarter, zero awareness of the shared utility that already does the same thing.</p><p><strong>The gap between 60% acceptance rate and 95% acceptance rate is not an AI capability problem - it's a context deployment problem.</strong> AI that doesn't know your codebase ships code that breaks on contact with your reality. AI that carries your constraints, your patterns, your scars? It ships code that belongs.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Engineering Context Package in 30 Minutes",
+          "triggerText": "See how to build a context package for your codebase",
+          "html": "<h3>Create Your CLAUDE.md</h3><p>Create a <code>CLAUDE.md</code> file in the root of your repo - Claude Code reads this automatically before every interaction. Or create a <code>.cursorrules</code> file if you use Cursor.</p><h3>Five Sections That Matter</h3><ol><li><strong>Architecture patterns</strong> - how your system is actually wired, not how a textbook says it should be</li><li><strong>Naming conventions</strong> - what you call things and why, so AI stops inventing its own vocabulary</li><li><strong>Shared utilities</strong> - the stuff that already exists, so AI stops reinventing wheels</li><li><strong>Deployment constraints</strong> - what your pipeline can and can't handle</li><li><strong>Anti-patterns</strong> - the scars. The things that broke production and the postmortems that taught you why</li></ol><h3>Be Specific</h3><p>Not \"use good naming\" but \"services are named by verb, e.g. <code>processPayment</code>, not <code>PaymentProcessor</code>.\" Commit it to the repo. Every AI interaction now respects your reality.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>An engineering lead built this context doc and acceptance rate jumped from 60% to 95%. If your team has 8 engineers generating 20 suggestions per day, that's 14 hours of senior engineering time recovered daily. From a document.</p><p>A design engineer connected his component library, design tokens, and accessibility requirements. Generated code uses his actual components with his actual tokens. The gap between Figma and production closed.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Share Engineering Context Across Your Team",
+          "triggerText": "Learn how to distribute engineering context",
+          "html": "<h3>Repo-Level Context</h3><p>Add your <code>CLAUDE.md</code> or <code>.cursorrules</code> to the repo - every engineer gets it on <code>git pull</code>. For deeper context, create a <code>/docs/engineering-context/</code> folder with files like <code>architecture-decisions.md</code>, <code>anti-patterns.md</code>, and <code>naming-conventions.md</code>.</p><h3>Cross-Functional Access</h3><p>Connect your docs repo to Notion via MCP so PMs and designers can query engineering constraints without pinging an engineer. When specs auto-reference your constraints, the \"we can't do it that way\" feedback loop compresses from days to minutes.</p><h3>The Floor Rises</h3><p>Junior engineers produce code matching senior standards on the first draft. New hires write idiomatic code in week one instead of month three. Code review shifts from style violations to architectural tradeoffs.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards - by raising the floor. The reclaimed review time went into architecture discussions, performance investigations, and the deep technical thinking that had been perpetually deprioritized.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Tools Teams Are Using Right Now",
+          "triggerText": "See the engineering context tools in production",
+          "html": "<h3>Claude Code + CLAUDE.md</h3><p>Anthropic's coding agent reads project-level context files encoding your stack constraints, testing philosophy, and anti-patterns. The 60%-to-95% acceptance rate shift is real and repeatable.</p><h3>Cursor + .cursorrules</h3><p>Thousands of teams ship a <code>.cursorrules</code> file encoding conventions, framework preferences, and architecture constraints. One file. Immediate quality jump.</p><h3>Shopify's Sidekick</h3><p>Feeds codebase-specific patterns, conventions, and institutional knowledge into every AI interaction. Engineers write code that fits the monolith because the AI knows the monolith.</p><h3>Vercel's v0</h3><p>Teams that connect their design system tokens and component libraries get output that actually ships. Teams without context get generic React. Same model, different economics.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every architectural decision you document, every pattern you codify, every \"we tried this and it failed\" note compounds into richer context. After 6 months, your AI is the most context-aware collaborator on your team - but you're still the one directing it. You're not writing documentation. You're deploying your expertise as infrastructure.</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your startup's engineering velocity is bleeding out through AI-generated code that doesn't fit your codebase. Every engineer prompting Copilot gets suggestions that violate your stack constraints, reinvent utilities you already have, and ignore the three services that absolutely cannot go down. You're burning senior engineering time on pattern violations instead of product velocity.</p><p>The gap between teams that ship fast and teams that are stuck isn't talent. It's whether the AI knows your engineering reality.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Encode Your Startup's Engineering Constraints",
+          "triggerText": "See how founder-CTOs deploy engineering context",
+          "html": "<h3>The Startup Context Package</h3><p>One founder-CTO encoded his startup's constraints: deploy pipeline, database conventions, API versioning, and the 3 services that absolutely cannot go down. Created a <code>CLAUDE.md</code> in the repo root.</p><h3>What Matters for Startups</h3><ul><li>Critical infrastructure and \"never touch\" zones</li><li>Deploy pipeline rules and CI constraints</li><li>API conventions and data model patterns</li><li>The anti-patterns - what broke prod and why</li></ul><h3>The Result</h3><p>New engineers' AI-generated code respected all constraints from day one. Onboarding dropped from 3 months to 2 weeks. That's not incremental improvement - that's a structural advantage in a market where shipping speed is survival.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Onboarding at 2 weeks instead of 3 months means your next hire is productive 10 weeks sooner. At startup burn rates, that's the difference between shipping the feature that closes the round and running out of runway trying to get new engineers up to speed.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Engineering Context a Team Asset",
+          "triggerText": "Learn how to scale engineering quality with a small team",
+          "html": "<h3>The Problem</h3><p>Your 2-3 senior engineers hold the codebase context. Code review is an expensive teaching moment instead of a quality gate. Your highest-leverage people are functioning as human linters.</p><h3>The Fix</h3><p>Commit <code>CLAUDE.md</code> to the repo. Add a <code>/docs/engineering-context/</code> folder. Connect to Notion via MCP so PMs can query constraints. Junior engineers produce senior-quality code on the first draft. Code review time drops from days to hours.</p><h3>For Cross-Functional Speed</h3><p>When your PM links specs to the engineering knowledge base, the AI surfaces architecture constraints and previous failed attempts automatically. The back-and-forth between product and engineering drops 70%. That's sprint cycles saved.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>After 12 months, your engineering knowledge base is a competitive moat. Competitors can hire the same engineers. They can't buy the institutional knowledge that prevents expensive mistakes from recurring. The system remembers what individuals forget. That is infrastructure.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "What Fast Startups Are Doing",
+          "triggerText": "See the engineering tools startups are deploying",
+          "html": "<h3>Claude Code + CLAUDE.md</h3><p>One markdown file, committed to the repo. Every AI interaction respects your stack reality. The acceptance rate shift from 60% to 95% is real and documented across hundreds of teams.</p><h3>Cursor + .cursorrules</h3><p>The pattern has spread across open-source because the ROI is obvious. One file, immediate quality improvement.</p><h3>Stripe's Approach</h3><p>10+ years of engineering opinions about naming, versioning, error handling, and backwards compatibility - encoded so every AI interaction follows their philosophy. That's the target state for any startup building lasting infrastructure.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The cost is hours of documentation. The return is thousands of hours of engineering time recovered, permanently. For a startup burning cash and racing competitors, there is no higher-ROI investment in your engineering capability.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You write a spec. Engineering builds something that technically matches the requirements but misses the intent. The \"we can't do it that way\" feedback loop takes days. Specs get lost in translation. Sprint cycles burn on proposals that were architecturally impossible from the start.</p><p>The problem isn't communication skills. It's that your specs exist in one universe and the engineering reality exists in another. When AI can bridge that gap, the entire product-to-code pipeline transforms.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Link Product Specs to Engineering Reality",
+          "triggerText": "See how to eliminate the product-engineering gap",
+          "html": "<h3>Connect Specs to the Knowledge Base</h3><p>When you write \"add offline mode,\" the AI should surface 3 architecture constraints and 2 previous failed attempts. That context belongs in the spec, not discovered three days into the sprint.</p><h3>How to Set This Up</h3><p>Connect your Notion workspace (where specs live) to Claude via MCP. Have engineering add their architecture decisions, anti-patterns, and technical constraints to the same workspace. When you write a spec, ask Claude to surface relevant engineering context.</p><h3>The Result</h3><p>One PM started linking specs to the engineering knowledge base. Back-and-forth clarification dropped 70%. Engineering gets the full picture embedded in the spec. No more wasted sprint cycles on impossible proposals.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The designer benefits too. When the design system connects to engineering context, AI-generated code uses actual components with actual tokens. The \"that's not how it was designed\" QA cycle shrinks to near zero. Everyone working from the same reality, at the same time.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Cross-Functional Engineering Context",
+          "triggerText": "Learn how to make engineering constraints visible to everyone",
+          "html": "<h3>For Product Teams</h3><p>Create a <code>/docs/engineering-context/</code> folder in the repo with architecture decisions, naming conventions, and constraints. Connect it via MCP so you can query engineering reality without pinging an engineer.</p><h3>For Design Teams</h3><p>When the component library and design tokens connect to engineering context, the gap between design and production closes. Designers spec things that are buildable. Engineers build things that match the design. The translation layer disappears.</p><h3>The Sprint Improvement</h3><p>One team saw sprint velocity increase 30% without a single additional hour worked. Engineers start building on day 1 of the sprint instead of day 3 because context is pre-loaded. Review cycles drop from 2-day average to 4 hours because code already follows patterns.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every sprint you ship with full context compounds into better product decisions. When you can see engineering constraints while writing specs, you make better trade-offs. When engineering can see product rationale while building, they make better implementation choices. That feedback loop is where great products come from.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Tools for Product-Engineering Alignment",
+          "triggerText": "See the tools that bridge product and code",
+          "html": "<h3>Notion + MCP</h3><p>Product specs and engineering constraints in one queryable workspace. The AI surfaces relevant context from either side automatically.</p><h3>Linear + Claude</h3><p>Connect your issue tracker. When the PM prompts for sprint priorities, the AI already knows the backlog, technical debt items, and recent engineering decisions.</p><h3>Claude Code + CLAUDE.md</h3><p>Engineering context committed to the repo. Every AI coding interaction respects the team's reality. The 60%-to-95% acceptance rate means fewer review cycles, faster shipping.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The engineering knowledge base captures institutional memory. Why was this decision made? What happened last time someone tried this approach? Which systems are load-bearing? This context prevents expensive mistakes and enables better product decisions. The cost is hours of documentation. The return is permanently faster shipping with fewer surprises.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You live at the intersection of design and code. And that intersection is where AI falls apart hardest. It generates React that looks nothing like your system. It uses generic components instead of your library. It ignores your tokens, your spacing scale, your accessibility requirements. Every AI-generated component needs 30 minutes of translation before it fits your reality.</p><p>The gap between generic code and your code isn't capability - it's context. The AI doesn't know your design system exists.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Connect Your Design System to Your Coding AI",
+          "triggerText": "See how to make AI generate code in your system",
+          "html": "<h3>Your CLAUDE.md for Design Engineering</h3><p>Document your component library structure, design token file paths, and the conventions that define your system. Include your accessibility requirements, responsive breakpoints, and the interaction patterns you've standardized.</p><h3>Be Specific About Your Aesthetic</h3><p>\"Body text uses <code>text-base</code> (16px), never larger. Primary CTAs get <code>bg-primary</code> fill, never outline. Cards use <code>rounded-lg</code> (12px), never <code>rounded-full</code>. Spacing between sections is <code>py-20</code> minimum.\"</p><h3>Include Anti-Patterns</h3><p>\"Never use inline styles. Never hardcode colors - always use tokens. Never create a one-off component when a variant of an existing component works. Never skip the focus state.\"</p><h3>The Result</h3><p>One design engineer connected his component library, tokens, and accessibility requirements. Generated code uses his actual components. The translation step - gone.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The gap between Figma and production closed. No more translating from generic React to your design system. When you ask for a component, the AI uses your tokens, your spacing, your patterns. The 30-minute fix cycle per component disappears.</p><p>That time goes back to the craft - refining interactions, exploring design directions, solving the hard UX problems that make your product feel different from everything else.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build a Shared Design-Engineering Context",
+          "triggerText": "Learn how to bridge design and code for your team",
+          "html": "<h3>The Cross-Functional Setup</h3><p>Your <code>CLAUDE.md</code> covers engineering conventions. Your design tokens and component docs cover the design system. Connected via MCP, both sides see the same reality. Designers spec things that are buildable. Engineers build things that match the design.</p><h3>The QA Shift</h3><p>When the design system connects to engineering context, the \"that's not how it was designed\" QA cycle shrinks to near zero. AI-generated code uses actual components with actual tokens. The translation layer between design and code disappears.</p><h3>For the Team</h3><p>New engineers write code that matches the design system in week one. Designers query engineering constraints before they spec. The review cycle drops from \"fix everything\" to \"discuss the tradeoff.\"</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every component pattern you codify, every token you document, every accessibility rule you encode - these compound. After a month, your AI has absorbed every pattern in your system. After 6 months, it's the most context-aware design-engineering collaborator you've ever worked with. You're still directing - but the execution matches your craft.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Design-Engineering Tools in Production",
+          "triggerText": "See the tools design engineers are deploying",
+          "html": "<h3>Cursor + .cursorrules</h3><p>Encode your component conventions, token usage, and design patterns. The AI reads it before generating any code. One file, immediate system-awareness.</p><h3>Vercel's v0</h3><p>Teams that connect their design system tokens and component libraries get output that actually ships. Generic React versus YOUR React - same model, different context.</p><h3>Claude Code + CLAUDE.md</h3><p>Your stack constraints, component standards, and design rules in one file. Every AI interaction respects your design system reality.</p><h3>Figma + Code Pipeline</h3><p>Connect Figma design tokens to your codebase context. AI generates code that references your actual color system, spacing scale, and typography - not defaults.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>You're not writing documentation. You're deploying your design-engineering craft as infrastructure. The system carries your standards, your aesthetic, your quality bar. Every AI interaction gets better because the context gets richer. That's the compound effect - and it's what makes the difference between a design engineer who fights AI output and one who ships with it.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You're building the whole thing yourself. And every time AI generates code, you spend 15 minutes fixing it to match your stack, your conventions, your way of building. When you're the only engineer, that 15 minutes per suggestion adds up to hours per day. Hours you need for shipping, not for teaching AI what your codebase looks like.</p><p>The fix takes 30 minutes. One document. Your AI goes from generic code generator to a collaborator who respects your reality.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Solo Engineering Context",
+          "triggerText": "See how to set up engineering context when you're the only dev",
+          "html": "<h3>Your CLAUDE.md</h3><p>Create one file in your repo root. Cover your stack choices, your naming patterns, your component structure, and the utilities you've already built. Be specific: \"Use Zustand for state, not Redux. Server components for data fetching. Tailwind for styling. API routes follow <code>/api/v1/[resource]</code> pattern.\"</p><h3>Your Anti-Patterns</h3><p>\"Never use inline styles. Don't create new utilities when one exists in <code>/lib/utils</code>. Don't use <code>any</code> type - always define interfaces. Never hardcode URLs - use environment variables.\"</p><h3>Your Shared Utilities</h3><p>List the utilities you've already built. The formatting functions, the API helpers, the common components. AI reinventing your wheel costs you 15 minutes every time.</p><h3>Test It</h3><p>Prompt for a feature you're planning to build. If the code uses your patterns, your utilities, your naming - you're there. If it's still generic, add more specifics.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A founder-CTO encoded his constraints and new code respected all of them from the first AI interaction. No more fixing. No more explaining. The AI just knows your codebase. For a solo operator, that's the difference between shipping a feature in an afternoon and losing a day to AI code cleanup.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Your Codebase Self-Documenting",
+          "triggerText": "Learn how to build context that grows with your project",
+          "html": "<h3>The Living Context</h3><p>Every time you make an architecture decision, add a one-liner to your <code>CLAUDE.md</code>. Every time AI generates something you have to fix, add the anti-pattern. The context grows with your project without a documentation sprint.</p><h3>Cursor for Project Context</h3><p>Point Cursor at your repo. It indexes your architecture patterns, naming conventions, and shared utilities automatically. Your AI learns your codebase by reading it.</p><h3>The Compound Effect</h3><p>After a few months of building, your AI knows your project better than a new contractor would after a week of onboarding. When you need help or want to bring someone on, the context IS the onboarding. That's leverage.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every pattern you codify, every decision you document, every anti-pattern you flag - these compound into a richer context. You're not writing documentation for someone else. You're building an engineering partner that gets smarter every day. For a solo operator, that's the closest thing to having a co-founder who knows your code as well as you do.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your team's AI tools are generating code that compiles and culture-clashes. Wrong naming conventions. Deprecated patterns. Zero awareness of shared utilities. Your senior engineers spend 30% of their time in code review catching violations of patterns the author didn't know existed. Your highest-leverage people are functioning as human linters.</p><p>The gap between 60% and 95% acceptance rate is a context deployment problem. Solve it once, recover 14 hours of senior engineering time per day across an 8-person team. From a document.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Team's Engineering Context Package",
+          "triggerText": "See how to encode your team's engineering reality",
+          "html": "<h3>The CLAUDE.md Approach</h3><p>Create a <code>CLAUDE.md</code> in the repo root. Five critical sections:</p><ol><li><strong>Architecture</strong> - how your system is actually wired. Service boundaries, data flow, dependency rules.</li><li><strong>Conventions</strong> - naming patterns, file structure, code organization standards.</li><li><strong>Shared utilities</strong> - what exists, where it lives, when to use it.</li><li><strong>Deploy constraints</strong> - CI requirements, environment rules, pipeline limitations.</li><li><strong>Anti-patterns</strong> - the scars. What broke production and why. The postmortems that taught you.</li></ol><h3>The ROI Math</h3><p>8 engineers, 20 suggestions/day, 15 min per rejection fix. Going from 60% to 95% acceptance = 14 hours of senior time recovered daily. At blended cost, $2,800/day. From a single document committed to the repo.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Code review shifts from \"please follow our patterns\" to \"let's discuss the architectural tradeoff here.\" That's defense to offense. And the senior engineering time you reclaim goes to architecture decisions, system design, and the hardest technical problems that have been sitting in the backlog because nobody had the headspace.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Scale Engineering Knowledge Across the Organization",
+          "triggerText": "Learn how to make engineering context institutional",
+          "html": "<h3>Repo-Level Distribution</h3><p>Commit <code>CLAUDE.md</code> to the repo. Every engineer gets it on <code>git pull</code>. Add a <code>/docs/engineering-context/</code> folder for deeper docs: architecture decisions, anti-patterns, naming conventions. Claude Code and Cursor index these automatically.</p><h3>Cross-Functional Access</h3><p>Connect to Notion via MCP so PMs and designers can query engineering constraints. Specs auto-reference your constraints. The \"we can't do it that way\" feedback compresses from days to the moment the spec is written.</p><h3>Institutional Memory</h3><p>Why did you choose this database? What happened last time someone tried to refactor auth? Which endpoints are load-bearing? This context prevents the same expensive mistakes from recurring. The system remembers what individuals forget.</p><h3>Onboarding Impact</h3><p>New hires write idiomatic code in week one instead of month three. One team dropped onboarding from 3 months to 2 weeks. That's a structural advantage in hiring velocity.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards - by raising the floor. Every AI-assisted PR follows the team's patterns because the AI has the context. That's the shift from reviewing style to reviewing substance.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "What Top Engineering Teams Deploy",
+          "triggerText": "See the engineering context tools at scale",
+          "html": "<h3>Shopify</h3><p>Mandated AI coding tools, then discovered the bottleneck was context, not the model. Their Sidekick system feeds codebase-specific patterns into every interaction. Engineers write code that fits the monolith because the AI knows the monolith.</p><h3>Stripe</h3><p>10+ years of API design principles encoded so new engineers' AI-generated code follows Stripe's philosophy from day one. The philosophy is in the system, not in senior engineers' heads.</p><h3>GitLab Duo</h3><p>Embeds engineering context from merge request history, CI configs, and review patterns into AI suggestions. Structured documentation means measurably fewer style-violation review cycles.</p><h3>Claude Code + Cursor</h3><p>CLAUDE.md and .cursorrules files spreading across the industry because the ROI is immediate and obvious. One file per repo, committed alongside the code it documents.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>After 12 months, your engineering knowledge base is institutional memory that walks out the door with nobody. Every architectural decision documented, every pattern codified, every scar recorded. New engineers inherit the full context. The compound loop between your team's growing expertise and the growing knowledge base is the moat competitors cannot buy. The cost is hours of documentation. The return is permanently better engineering.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your brand's digital expression depends on code - and the code AI generates has zero awareness of your brand system. Generic components. Default colors. Stock interaction patterns that feel like every other website. The craft you've built into your visual identity doesn't survive the translation from design to production.</p><p>The bridge between your creative vision and shipped code is engineering context. When AI knows your design system, your brand tokens, your interaction standards - the gap between what you designed and what shipped closes.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Bridge Creative Direction and Code",
+          "triggerText": "See how to make code carry your brand",
+          "html": "<h3>Your Design System in Code Context</h3><p>Document your design tokens, component conventions, and brand-level aesthetic rules in a <code>CLAUDE.md</code> or connect your design docs via MCP. When engineering's AI generates code, it should reference your actual color system, typography scale, and spacing rules.</p><h3>Aesthetic Rules for Code</h3><p>\"Section padding is 80px minimum. Body text is 16px, line-height 1.6. CTAs use the primary fill, never outline variants. Transitions are 200ms ease-out, never linear. Card shadows use <code>shadow-sm</code>, never harsh drop shadows.\"</p><h3>The QA Improvement</h3><p>When the design system connects to engineering context, the \"that's not how it was designed\" QA cycle shrinks to near zero. Your creative intent survives the production pipeline.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The gap between Figma and production is where brand quality dies. When code carries your design system context, that gap closes. Designers spec things that are buildable. Engineers build things that match the design. Your creative vision ships intact.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Cross-Discipline Context",
+          "triggerText": "Learn how to connect creative and engineering knowledge",
+          "html": "<h3>Design Tokens in the Codebase</h3><p>Connect your design tokens, brand color system, and typography scale to the engineering context package. AI-generated code references your actual visual system, not defaults.</p><h3>Interaction Standards</h3><p>Document your animation philosophy, transition standards, and responsive behavior rules. When AI generates interactions, they should feel like your brand, not like a tutorial example.</p><h3>The Team Benefit</h3><p>New engineers write code that matches the visual identity in week one. The review cycle shifts from \"make it look right\" to \"refine the experience.\" Your creative standards are in the system, not just in your head.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every brand expression you codify into the engineering context compounds across every feature, every page, every interaction. The cost is a few hours of documentation. The return is brand consistency in production - permanently. That's what makes the difference between a brand that feels intentional and one that feels assembled.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You have opinions about code. Strong ones. The framework you reach for, the naming style you like, the component patterns that feel right. But AI doesn't know any of that. It gives you generic React, default Next.js boilerplate, components that work but don't feel like yours. Then you spend 30 minutes per feature massaging it into your style.</p><p>When you're building on weekends and evenings, those 30 minutes are the difference between shipping and abandoning the project.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Make AI Code in Your Style",
+          "triggerText": "See how to set up your personal coding context",
+          "html": "<h3>Your CLAUDE.md</h3><p>Create one file per project. Cover your stack choices, your patterns, and your opinions: \"Zustand for state. Server components for data. Tailwind for styles. Framer Motion for animations. File-based routing. API routes at <code>/api/v1/</code>.\"</p><h3>Your Code Aesthetic</h3><p>\"Short components - nothing over 80 lines. Composable hooks over utility functions. Descriptive variable names - no abbreviations. Prefer <code>const</code> arrow functions for components.\"</p><h3>Your Existing Code</h3><p>Add a <code>.cursorrules</code> file for Cursor or use Cursor's codebase indexing. It reads your existing code and learns your patterns automatically. The AI generates code that matches what you've already built.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The magic is momentum. When AI generates code that's already in your style, you stay in the flow. No context-switching to fix naming. No restructuring components. No hunting for the utility you already wrote. You go from idea to working feature without the friction that kills side projects.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Context That Compounds Across Projects",
+          "triggerText": "Learn how to carry your coding knowledge forward",
+          "html": "<h3>Project-Level Context</h3><p>Each project gets its own <code>CLAUDE.md</code> or <code>.cursorrules</code> with stack-specific context. Your Next.js project has different rules than your Python project.</p><h3>Personal Context</h3><p>Use a Claude Project loaded with your coding philosophy, your favorite patterns, and examples from your best work. This carries across projects - your general coding taste, always available.</p><h3>The Growing Library</h3><p>After 5 projects, you've built a personal context library. Each project teaches the AI more about how you build. Starting project 6 feels like picking up where you left off, not starting from scratch.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every pattern you document, every opinion you encode, every anti-pattern you flag - these compound. Your AI becomes a coding partner that knows your style better than any collaborator you've worked with. For a vibe coder, that's the dream: AI that doesn't kill the vibe, but amplifies it.</p>"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>AI can do your job. That's not the threat. The threat is that you're using AI to do your job too - taking the 3-day task and making it a 3-hour task. Same work. Same level. Just compressed.</p><p>That is the wrong game. When everyone produces the same baseline output using the same tools, the output is no longer the differentiator. Your judgment is. Your taste is. Your ability to see what's <em>worth</em> building - not just what's possible to build.</p><h2>The Elevation Play</h2><p>Think of every professional as having a personal context window - the number of perspectives and domains you can hold and synthesize when making a decision. That window used to be tiny, limited to your own experience. AI blew it open. You can now consult behavioral psychology when designing a feature, pressure-test pricing against economic theory, stress-test architecture against failure patterns from industries you've never worked in - all before your first meeting.</p><p><strong>Don't just automate. Elevate.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How to Shift from Executor to Orchestrator",
+          "triggerText": "See how to make the shift from automation to elevation",
+          "html": "<p>The professionals pulling away are the ones who shifted from executor to orchestrator. Here's what that looks like in practice:</p><p>A <strong>product designer</strong> stopped making mockups and started deciding product positioning. She loads competitive intelligence, persona research, and market data into her knowledge base and uses AI to generate and pressure-test positioning hypotheses. She's pulling in behavioral psychology, competitive positioning frameworks from adjacent markets, and accessibility research. Her context window went from \"design best practices\" to a cross-disciplinary lens no single designer could hold.</p><p>A <strong>founder</strong> built 15 years of market pattern recognition into a knowledge base - instincts about which positioning angles die on contact with the market, which channels convert, which pricing structures create expansion revenue. She now pressure-tests full go-to-market strategies against that judgment before committing a dollar. Her board asked her to apply the same approach to three new markets.</p><p>A <strong>junior engineer</strong> loaded his team's architecture context, failure patterns, and production incident history into AI and started identifying systemic risks nobody else was looking for. His title says \"junior.\" His contribution says \"architect.\"</p><p>A <strong>product manager</strong> curated 200+ customer calls and strategic frameworks into a knowledge base so specific that her AI produces briefs carrying her exact judgment. She can hear the thing that customer #7 and customer #183 both said differently but meant identically.</p><h3>The key question</h3><p>The question is not \"how do I use AI to do my job faster?\" The question is \"what role can I grow into that didn't exist for someone at my level before?\"</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Teams: The Organizational Version</h2><p>Most companies are using AI to make existing operations cheaper. Almost none are using it to reimagine what their team is capable of. The companies pulling away are operating at the highest levels - using AI to augment and elevate, creating capabilities that didn't exist before.</p><p>The measurement shift follows: stop asking \"How long did this take?\" and start asking \"What new capability did this unlock? What can we do now that we couldn't do last quarter?\"</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "How Teams Make the Elevation Shift",
+          "triggerText": "See how teams are applying elevation at scale",
+          "html": "<p>A <strong>startup</strong> stopped asking \"how much did we ship?\" and started asking \"what can we do now that we couldn't do last quarter?\" Their engineers weren't writing more code - they were making architecture decisions deferred for months. Their designers weren't producing more mockups - they were running longitudinal UX research that actually moves retention. Same team. Same headcount. Operating at a level that previously required a company three times their size.</p><p>A <strong>healthcare system</strong> moved beyond the boring automation story of AI handling documentation. Clinicians are now identifying patterns across entire patient populations that no individual practitioner could ever see in their own caseload. They're catching correlations between treatment protocols and outcomes that used to require a dedicated research team.</p><p>A <strong>marketing team</strong> built a continuous experimentation engine - testing positioning hypotheses, audience segments, and channel strategies in parallel, building a compounding dataset of what actually moves their specific market. They went from a team that produces campaigns to a team that owns market intelligence.</p><h3>The talent retention angle</h3><p>High-agency builders will not stay in organizations that use AI to automate the grind but then fill the reclaimed time with more grind. They leave for cultures where the time back gets invested in deeper, harder, more interesting work. The retention moat is not your AI tools. It is what you let people do with the leverage those tools create.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Two Paths Are Diverging Fast</h2><p>This split is showing up in every industry. And the gap is widening, not narrowing.</p><p><strong>Path 1 - Automation:</strong> A product manager uses AI to write briefs 85% faster. Same briefs. Same thinking. Her value is depreciating every quarter because every other PM produces the same output. She's competing on speed - a race she cannot win.</p><p><strong>Path 2 - Elevation:</strong> A different product manager now owns competitive intelligence for her entire business unit. She synthesizes patterns across 40 competitors, maps customer insights to strategic positioning, and pressure-tests hypotheses before a dollar gets committed. Her value compounds because the judgment layer is hers alone.</p><p>Same title. Same tools. Completely different trajectory.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Real Companies Making Elevation Work",
+          "triggerText": "See real-world examples of the elevation shift",
+          "html": "<p>These aren't hypotheticals. Real companies and operators are making it work:</p><ul><li><strong>Shopify's CEO Tobi Lutke</strong> told the company: AI usage is now a baseline expectation. Before requesting headcount, teams must demonstrate why AI can't handle the work. The expectation isn't \"automate\" - it's \"what can you now build that you couldn't before?\"</li><li><strong>Replit</strong> shipped their entire AI product suite with roughly 50 engineers producing output that legacy companies need 500 for. Each engineer operates across a scope that would have been 10 roles at a traditional company.</li><li><strong>Linear</strong> built their product management tool with a team so small that industry observers assumed they had 10x the headcount. Weekly shipping cycles. The AI-assisted workflow isn't saving them time on old work - it's allowing a tiny team to compete with companies 10x larger.</li><li><strong>Ethan Mollick's Wharton research</strong> found that the skills dismissed as \"soft\" - scoping problems, defining deliverables, recognizing when output is off - turned out to be the most valuable when working with AI. Management became the AI superpower.</li><li><strong>Vercel's Guillermo Rauch</strong> frames speed as evidence of engineering excellence, not shortcuts. That cultural signal redefines what the team aspires to - not faster at the old work, but capable of new work entirely.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Where This Connects</h2><p>Your position on the automation-to-elevation spectrum determines everything else. Stay in automation mode and your knowledge base collects dust, your orchestration layer goes unused, your team doesn't adopt AI deeply because the culture rewards output volume over output quality.</p><p>The elevation play is the thermostat. Set it right - invest reclaimed time in deeper work, measure new capabilities instead of faster versions of old ones, build judgment instead of just deploying it - and every other pillar compounds faster.</p><p>You're not outsourcing your craft to AI. You're supercharging it. The triad - your judgment, your knowledge store, and AI as an extension of your capabilities - is how you go from doing the work to defining what work is worth doing. <strong>Don't just automate. Elevate.</strong></p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Every founder with a ChatGPT subscription can now produce a decent pitch deck, a reasonable GTM strategy, a functional MVP. The floor rose. And the majority responded by using AI to hit that baseline faster. Same strategy. Same thinking. Just compressed.</p><p>That is the wrong game. When every early-stage company produces the same baseline using the same tools, strategy becomes the only differentiator. Your market instinct. Your conviction about where the puck is going. Your ability to see which bets are worth making before the data confirms it.</p><h2>From Operator to Portfolio Builder</h2><p>AI didn't just make you faster - it widened the strategic lens you see through. You can now pressure-test a go-to-market hypothesis against economic theory, validate positioning against behavioral psychology, stress-test your pricing against competitive patterns from adjacent markets - all before committing a dollar. The founders doing this are making fundamentally different-quality bets.</p><p><strong>Don't just automate the startup playbook. Elevate to a different class of strategic thinking.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Founders Are Becoming Strategic Orchestrators",
+          "triggerText": "See how founders are scaling judgment instead of tasks",
+          "html": "<p>One founder stopped thinking of AI as a productivity tool and started thinking of it as a strategy partner. She built 15 years of market pattern recognition into a knowledge base - the instincts that told her which positioning angles die on contact with the market, which channels actually convert for her customer profile, which pricing structures create expansion revenue.</p><p>Now she pressure-tests full go-to-market strategies against that judgment before committing a dollar. Her board asked her to apply the same approach to three new markets. She went from operating one business to orchestrating a portfolio. Same person. Fundamentally different scale of contribution.</p><h3>Steps to make the shift</h3><ul><li><strong>Build your strategic knowledge base:</strong> Document your market pattern recognition - which deals close, which positioning resonates, which channels convert. Not principles - specific rules from your experience.</li><li><strong>Pressure-test before committing:</strong> Run every major bet through AI loaded with your context. Test positioning hypotheses, pricing structures, and market entry strategies against your accumulated judgment.</li><li><strong>Measure capabilities, not speed:</strong> Stop asking \"how fast did we ship?\" Start asking \"what can we do now that we couldn't do last quarter?\"</li><li><strong>Invest reclaimed time in strategy:</strong> The hours AI gives you back should go to harder thinking - market analysis, competitive positioning, the decisions that determine whether the company scales.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Your Team Is Underperforming</h2><p>Most startup teams adopted AI at the automation level - replacing manual tasks with automated ones. That's table stakes. The startups pulling away are using AI to create capabilities that didn't exist before. Their engineers aren't writing more code - they're making architecture decisions. Their designers aren't producing more mockups - they're running the research that actually moves retention.</p><p>Same headcount. Operating at a level that previously required a company three times their size. That is the competitive edge Y Combinator is funding.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building an Elevation Culture in Your Startup",
+          "triggerText": "See how to build a team culture around elevation",
+          "html": "<p>The talent war in AI is not about compensation. It is about which culture lets people elevate.</p><h3>What to say out loud</h3><p>\"We don't measure how fast you did the old work. We measure what new value you created with the time AI gave you back.\" Say it in all-hands. Put it in the review rubric. Make it real or watch your A-players walk.</p><h3>Real examples</h3><ul><li><strong>Shopify</strong> made AI usage a baseline expectation. Before requesting headcount, teams must demonstrate why AI can't handle the work.</li><li><strong>Replit</strong> ships with roughly 50 engineers producing output that legacy companies need 500 for. Their culture explicitly celebrates speed as evidence of expanded capability, not shortcuts.</li><li><strong>Y Combinator</strong> explicitly tells founders: the ones getting funded aren't automating their old playbook - they're using AI to attempt strategies that were impossible at their stage 2 years ago.</li></ul><h3>The retention play</h3><p>High-agency builders will not stay in organizations that automate the grind then fill the reclaimed time with more grind. They leave for cultures where the time back gets invested in deeper, harder, more interesting work.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Two Paths, One Decision</h2><p>The founder who automates the old playbook competes on speed - a race against every other founder with the same tools. The founder who elevates competes on strategic insight - a race against almost no one.</p><p>Your position on this spectrum determines everything: fundraising leverage, team retention, competitive moat, and whether your company is building something defensible or something anyone can replicate with a better prompt. The market will sort this in 3 years. Which side do you want to be on?</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Founder's Elevation Audit",
+          "triggerText": "See the diagnostic questions for founders",
+          "html": "<h3>Ask yourself these questions</h3><ul><li><strong>Are you using AI to execute the old startup playbook faster - or to attempt strategies that were impossible at your stage?</strong> If your AI usage is just compressing the same GTM motions, you're automating. If you're testing market hypotheses that would have required a team of 10 analysts, you're elevating.</li><li><strong>What can your team do today that was literally impossible 18 months ago?</strong> Not faster. Impossible. If you can't name three things, you're underinvesting in elevation.</li><li><strong>Could a well-funded competitor replicate your output by buying the same tools?</strong> If yes, you don't have a moat - you have a head start that's shrinking daily. The moat comes from your encoded judgment, not your tool stack.</li><li><strong>What are you doing with the time AI gives you back?</strong> If reclaimed hours go to more tactical work, you're accelerating toward commodity. If they go to strategic thinking and harder problems, you're building something defensible.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The elevation play is the thermostat for your entire company. Set it right - invest reclaimed time in strategy, measure new capabilities instead of faster versions of old ones - and everything compounds. Your knowledge base becomes the moat. Your team becomes irreplaceable. Your company becomes the one competitors can't figure out how to catch.</p><p><strong>Don't just automate. Elevate.</strong> That is the path from funded to defensible.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Every PM with a ChatGPT subscription can produce a decent product brief, a reasonable roadmap, a functional spec. The floor rose. And the vast majority responded by using AI to produce the same artifacts faster. Same briefs. Same thinking. Just compressed.</p><p>When every product builder produces the same baseline output, the output stops mattering. What matters is your product instinct - the judgment that spots a retention-killing decision before the data shows it, the taste that separates a real feature from a vanity metric, the conviction about what's worth building.</p><h2>From Brief Writer to Strategic Decision Maker</h2><p>AI widened the lens you see through. You can now synthesize insights from 200+ customer calls (not the 5 you remember), consult behavioral psychology when designing flows, pressure-test pricing against economic theory, and stress-test your roadmap against failure patterns from adjacent products - all before your first sprint planning.</p><p><strong>Don't just write briefs faster. Make better product bets.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Product Builders Are Shifting Scope",
+          "triggerText": "See how PMs and designers are elevating their role",
+          "html": "<p>A <strong>product manager</strong> curated 200+ customer calls, competitive analyses, and strategic frameworks into a knowledge base so specific that her AI produces briefs carrying her exact judgment. She can spot the contradiction between what enterprise buyers say they want and what actually drives renewal decisions - across the entire dataset. She went from someone who writes briefs to someone whose strategic perspective scales across every product decision.</p><p>A <strong>product designer</strong> stopped making mockups and started shaping product positioning. She loads competitive intelligence, persona research, and market data into her knowledge base and uses AI to generate and pressure-test positioning hypotheses. She's pulling in behavioral psychology to understand why users hesitate at the pricing page, competitive frameworks from adjacent markets, and accessibility research. She walks into meetings with evidence-backed recommendations her entire team has never considered.</p><h3>The practical shift</h3><ul><li><strong>Build your product knowledge base:</strong> Document your decision frameworks, user patterns you've observed, and the specific signals you use to evaluate opportunities.</li><li><strong>Synthesize at scale:</strong> Feed every customer call, support ticket, and churn interview into a knowledge base. Cross-reference patterns across hundreds of conversations, not the handful you remember.</li><li><strong>Test hypotheses before committing:</strong> Use AI to pressure-test roadmap bets, pricing structures, and positioning against your accumulated product judgment.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Product Team's Elevation</h2><p>The automation play for product teams is briefs - AI writes them, humans review them. Same briefs, faster. The elevation play is fundamentally different. Product teams that elevate are building continuous experimentation engines, testing positioning hypotheses in parallel, and creating compounding datasets of what actually moves their specific market.</p><p>They went from teams that produce artifacts to teams that own product intelligence. The artifacts got better as a side effect.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building a Product Experimentation Engine",
+          "triggerText": "See how product teams build compounding intelligence",
+          "html": "<p>One team restructured how they make decisions. Instead of each function presenting its own analysis in weekly review, they built a shared knowledge base that AI synthesizes across product, design, and engineering.</p><p>When engineering raises an architecture concern, AI automatically surfaces the product data that quantifies business impact and design research that suggests user-facing implications. Every function's context window now includes every other function's perspective.</p><h3>Measurement shift</h3><ul><li><strong>Old question:</strong> \"How long did this take? How thorough was the process?\"</li><li><strong>New question:</strong> \"What new capability did this unlock? What can we do now that we couldn't do last quarter?\"</li></ul><h3>Examples in practice</h3><ul><li><strong>Stripe</strong> synthesizes usage data, support interactions, and developer community conversations to build a context window that captures real developer experience across millions of integration patterns.</li><li><strong>Linear</strong> built their tool with a team so small that industry observers assumed 10x the headcount. Weekly shipping cycles. AI isn't saving them time on old work - it's allowing a tiny team to compete with companies 10x larger.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Diverging Paths</h2><p><strong>Path 1:</strong> A PM uses AI to write briefs 85% faster. Same briefs. Same thinking. Her value depreciates every quarter because every other PM produces the same output.</p><p><strong>Path 2:</strong> A different PM now owns competitive intelligence for her entire business unit. She synthesizes patterns across 40 competitors and pressure-tests go-to-market hypotheses before a single dollar gets committed. She's making strategic calls that used to be the VP's job.</p><p>Same title. Same tools. Completely different trajectory. The skills dismissed as \"soft\" - judgment, taste, the ability to define what good looks like - turned out to be the hard ones. The ones AI can't replicate.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Product Builder's Self-Assessment",
+          "triggerText": "See the diagnostic questions for product builders",
+          "html": "<h3>Where do you stand?</h3><ul><li><strong>Are you producing the same deliverables faster, or new deliverables entirely?</strong> If you're writing the same briefs in less time, you're automating. If you're producing strategic analysis, cross-disciplinary synthesis, and hypothesis testing at scale - you're elevating.</li><li><strong>Could someone with the same tools and zero domain expertise produce your output?</strong> If yes, your value is depreciating. The moat is your judgment, your context, your taste - deployed through AI.</li><li><strong>Does your team measure faster execution or new capabilities?</strong> \"We write briefs 80% faster\" is automation. \"We now test 5 strategic hypotheses before committing to a direction\" is elevation.</li><li><strong>What can your product team do today that was impossible 18 months ago?</strong> Not faster - impossible. If you can't name three things, you're underinvesting in elevation.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The elevation play is the thermostat for product quality. Set it right and your knowledge base captures real product intelligence, your experimentation compounds, and your team makes decisions informed by everything relevant - not just what's top of mind. You're not outsourcing product judgment to AI. You're supercharging it.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Every designer and engineer with AI tools can now produce a functional interface, a reasonable system, a passable codebase. The floor of craft rose. And the majority responded by producing the same baseline work faster - same design patterns, same architecture decisions, just compressed.</p><p>That's the wrong game. When everyone produces the same baseline, craft quality becomes the only differentiator. Your eye for visual hierarchy. Your instinct for interaction patterns. Your architectural taste that knows when a system will break before the metrics show it.</p><h2>Taste Is the New Bottleneck</h2><p>When AI agents can build anything you describe, the only question that matters is: what's worth building, and to what standard? That requires your years of reps. Your pattern recognition that says \"this layout is wrong\" before you can articulate why. Your clinical eye for the gap between functional and beautiful, between working and elegant.</p><p><strong>Don't just ship faster. Ship work that only you could have directed.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Design Engineers Are Elevating Their Craft",
+          "triggerText": "See how design-minded builders are shifting scope",
+          "html": "<p>A <strong>product designer</strong> with 12 years of refined taste spent one weekend encoding it into a structured knowledge base - user flow patterns, interaction design principles, visual hierarchy rules, the 40 things she checks before approving a layout. Monday morning: three homepage concepts, all nailed. No rewrite cycle. No \"that's not how the user thinks about this\" feedback. She financialized 12 years of design craft into a reusable asset.</p><p>She's not just consulting design principles anymore. She's pulling in behavioral psychology to understand why users hesitate at key moments, competitive positioning frameworks from adjacent markets, and accessibility research that reshapes how she thinks about interaction patterns entirely. Her context window went from \"design best practices\" to a cross-disciplinary lens.</p><p>An <strong>engineering lead</strong> documented architecture decisions and the reasoning behind them. AI suggestions now follow the team's actual philosophy - not generic patterns. Code review shifted from style nits to real architectural ideas.</p><h3>Steps for design engineers</h3><ul><li><strong>Encode your aesthetic rules:</strong> Not \"I value clean design\" but specific rules like \"Progressive disclosure on complex flows - never more than 3 decisions per screen. Body text never exceeds 18px on desktop. Primary CTAs use high-contrast fills, never ghost buttons.\"</li><li><strong>Document your systems thinking:</strong> How you evaluate component hierarchies, spacing systems, interaction states. The rules that take a decade to develop.</li><li><strong>Connect craft to strategy:</strong> Load your design knowledge alongside competitive intelligence, user research, and market data. Let your aesthetic taste operate on a wider canvas.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Architecture and Design Systems at Scale</h2><p>An engineering team stopped using AI to write code faster and started using it to architect systems they never would have attempted. AI handles the implementation. The team focuses on system design, performance optimization, and the architectural decisions that determine whether the product scales. The code is a commodity. The architecture is the moat.</p><p>The same principle applies to design systems. When AI can generate components, the value shifts to the system-level thinking: the spacing scales, the typography rules, the interaction patterns that make everything feel coherent.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building Design Systems That Compound",
+          "triggerText": "See how teams encode craft into compounding systems",
+          "html": "<p>When a team encodes its collective craft - design standards, architecture philosophy, quality thresholds - every AI interaction starts from a shared foundation of accumulated judgment.</p><h3>The three-layer approach</h3><ul><li><strong>System layer:</strong> Design tokens, spacing systems, typography rules, interaction patterns, accessibility requirements. The foundation everything builds on.</li><li><strong>Team layer:</strong> How your engineering team defines \"done.\" How the design team evaluates visual quality. Architecture constraints and performance budgets.</li><li><strong>Individual layer:</strong> The designer with unusually refined opinions about information architecture. The engineer who's the expert on performance patterns. Personal craft that layers on top.</li></ul><h3>Examples</h3><ul><li><strong>Stripe's API design principles</strong> are so specific they function as a taste document: \"Use exactly one word for each concept. Error messages tell the user what to do next.\" New engineers' AI-generated code follows Stripe's philosophy from day one.</li><li><strong>Figma's design systems</strong> encode specificity at the component level. Design teams that connect these to AI tools get output that's unmistakably theirs. Teams without connected systems get generic Material Design suggestions.</li><li><strong>Vercel's Guillermo Rauch</strong> frames features built in hours (that used to take weeks) as evidence of engineering excellence, not shortcuts.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Craft Gap</h2><p>The gap between automated and elevated craft work is already visible. Design engineers who automate produce more of the same - more mockups, more components, more code. Design engineers who elevate produce work that feels different - systems that are more coherent, architectures that are more resilient, interfaces that are more considered.</p><p>The skills dismissed as \"soft\" - taste, craft quality, the ability to define what good looks like - turned out to be the hard ones. The ones AI can't replicate. The ones that get <em>more</em> valuable as AI gets more capable.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Design Engineer's Self-Assessment",
+          "triggerText": "See the diagnostic questions for design engineers",
+          "html": "<h3>Where's your craft leverage?</h3><ul><li><strong>Is your AI producing work that's recognizably yours?</strong> If the output looks like every other AI-generated design or codebase, your specificity isn't in the system. The gap between generic output and your craft standard is the tax you pay every day.</li><li><strong>Are you spending time on craft or on assembly?</strong> If reclaimed hours go to more assembly work, you're automating. If they go to deeper thinking about systems, patterns, and the hardest design problems - you're elevating.</li><li><strong>Is your architecture designed for the system you're building or for the one AI suggested?</strong> Generic architecture recommendations ignore the 3 real constraints in your codebase. Your judgment about those constraints is the durable asset.</li><li><strong>Could someone with the same tools and no design background produce your output?</strong> If yes, your craft isn't in the system yet. The moment it is, everything changes.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>You're not outsourcing your craft to AI. You're supercharging it. The triad - your aesthetic judgment, your systems thinking, and AI as an extension of your capabilities - is how a designer becomes a strategist and an engineer becomes an architect. <strong>Don't just automate. Elevate.</strong></p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You're one person doing the work of five. AI promised to help, and it did - for the easy stuff. But if you're using it to produce the same deliverables faster, you're running on a treadmill that speeds up every quarter. Every other solo operator with the same subscription produces the same output.</p><p>The threat isn't AI. It's that you're using AI to compress the grind instead of escaping it.</p><h2>From Solo Grinder to Portfolio Builder</h2><p>AI widened the scope of what one person can do. Not just more of the same work, but fundamentally different work. The solo operators pulling away aren't doing tasks faster - they're operating at a scale that used to require a team. Strategy, positioning, cross-domain synthesis - the work that was always out of reach when you were grinding on deliverables.</p><p><strong>Don't just automate your solo hustle. Elevate to a different class of work entirely.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Solo Operators Scale Judgment Instead of Hours",
+          "triggerText": "See how solo builders are operating at team-level scope",
+          "html": "<p>A solo operator built her entire expertise into a knowledge base - domain rules, client context, 15 years of pattern recognition. Her AI doesn't produce generic output. It produces work that sounds like her, thinks like her, and carries her specific conviction. She didn't automate her business. She scaled her judgment.</p><p>Clients can't replace her with a cheaper alternative because the alternative doesn't have her context. That's a moat that compounds over 5-10 years.</p><h3>The practical steps</h3><ul><li><strong>Encode your judgment this weekend:</strong> Pick your strongest domain. Spend 2 hours writing your rules, frameworks, and \"here's what most people get wrong\" list into a knowledge base. Upload past deliverables that represent your best work.</li><li><strong>Test the gap:</strong> Ask AI to produce a deliverable with and without your context. The quality difference is the value you just unlocked.</li><li><strong>Run every engagement through your context:</strong> From here, every client project, every proposal, every deliverable carries the weight of your accumulated judgment automatically.</li><li><strong>Reinvest the time:</strong> The hours you save on assembly should go to strategy, positioning, and the deep craft work that clients actually pay premium for.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Economics Change</h2><p>A freelance engineer encoded his opinions about API design, database architecture, and the 10 mistakes every early-stage startup makes. His proposals now arrive with architecture recommendations that reference his actual frameworks. Close rate went from 30% to 55% - not because proposals looked better, but because they carried the weight of 8 years of battle-tested judgment.</p><p>A consultant who used to onboard new facilities at one per quarter - because knowledge transfer took 6 weeks of physical presence - now onboards three simultaneously. Same expertise. 3x the reach. The consulting fee didn't change. The economics did.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Breaking the Hourly Ceiling",
+          "triggerText": "See how to escape the time-for-money trap",
+          "html": "<p>As a solo operator, you've hit the ceiling of the linear model: more hours equals more money, capped by available hours. Elevation breaks that ceiling.</p><h3>The math</h3><p>If your judgment could run in 10 places simultaneously - across clients, across projects - what's the annual value? For most experienced solo operators, the gap between what they earn and what their expertise could generate is 5-10x. The bottleneck was never the expertise. It was the distribution.</p><h3>What elevation looks like for solo operators</h3><ul><li><strong>Proposals that close:</strong> When your AI produces proposals carrying your specific judgment (not generic best practices), clients feel the difference between \"someone who knows the field\" and \"someone who knows our specific problem.\"</li><li><strong>Parallel deployment:</strong> Your expertise running across multiple client engagements simultaneously, not sequentially.</li><li><strong>Strategic positioning:</strong> Instead of competing on hourly rate, compete on the unique value of your judgment deployed at scale.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Diverging Paths for Solo Operators</h2><p>The solo operator who automates is still trading time for money - just faster. The solo operator who elevates is building an asset that compounds. One is a freelancer competing on price. The other is building something that looks more like a one-person firm with institutional-grade judgment.</p><p>The gap between these two widens every month. And every month you spend grinding on assembly is a month you didn't spend building the asset that compounds.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Solo Operator's Elevation Checklist",
+          "triggerText": "See the action plan for solo builders",
+          "html": "<h3>This weekend</h3><ul><li><strong>Pick one domain</strong> where your opinion is most valuable and least accessible. That's where the highest-leverage encoding starts.</li><li><strong>Write 10 specific rules</strong> about how you make decisions in that domain. Not principles - rules. Not \"be strategic\" but concrete, opinionated frameworks.</li><li><strong>Test with a real deliverable.</strong> Compare your AI's output with and without your context. The gap tells you everything.</li></ul><h3>This month</h3><ul><li><strong>Run every client engagement through your knowledge base.</strong> Build the habit of deploying judgment through a system, not just through your calendar.</li><li><strong>Track the rewrite tax.</strong> Time yourself - how many minutes do you spend fixing AI output to match your standards? That number, multiplied by every interaction, is the cost of keeping your specificity locked in your head.</li></ul><h3>This quarter</h3><ul><li><strong>Add to the knowledge base with every project.</strong> Each engagement should teach the system something new. That's the compounding loop that turns you from a solo operator into a portfolio builder.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>You're not outsourcing your craft to AI. You're scaling it. The triad - your judgment, your knowledge store, and AI working as one system - is how a solo operator becomes a portfolio builder. <strong>Don't just automate. Elevate.</strong> That is how one person builds something no competitor can replicate.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Every engineering team can now produce functional code faster. AI writes implementations, generates tests, handles boilerplate. The floor of technical execution rose. And most engineering organizations responded by measuring the same thing they always measured: velocity. More story points. More PRs merged. More code shipped.</p><p>That is the wrong metric for the age we're entering. When AI handles implementation, the durable asset isn't code - it's architecture, system design, and the engineering judgment that determines whether the product scales or collapses under its own weight.</p><h2>From Code Velocity to Architecture Quality</h2><p>The engineering teams pulling away aren't writing more code. They're making better architectural decisions - the kind that used to get deferred for months because nobody had the headroom to think that deeply. AI gave them the headroom. The question is whether they're using it.</p><p><strong>Don't just ship code faster. Make the decisions that determine whether the code matters.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Engineering Teams Are Shifting from Velocity to Quality",
+          "triggerText": "See how technical leaders are making the shift",
+          "html": "<p>An engineering team stopped using AI to write code faster and started using it to architect systems they never would have attempted. AI handles the implementation. The team focuses on system design, performance optimization, and the architectural decisions that determine scale. The code is a commodity. The architecture is the moat.</p><p>A junior engineer loaded his team's architecture context, failure patterns, and production incident history into AI and started identifying systemic risks nobody else was looking for. He's now the person who catches the design flaw before it ships, who maps edge cases from understanding how the system actually behaves under load. His title says \"junior.\" His contribution says \"architect.\"</p><h3>The practical approach</h3><ul><li><strong>Encode architecture decisions and reasoning:</strong> Document the \"why\" behind every significant technical choice. AI suggestions then follow the team's actual philosophy, not generic patterns.</li><li><strong>Load failure patterns:</strong> Production incident history, performance benchmarks, architecture decision records. Let AI challenge new designs against real-world failure modes.</li><li><strong>Shift code review to architecture review:</strong> When AI handles implementation quality, human review should focus on system design, performance implications, and long-term maintainability.</li><li><strong>Measure capabilities, not velocity:</strong> \"We deployed 50% more PRs\" is automation. \"We now handle 10x the concurrent load without degradation\" is elevation.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Engineering Culture Shift</h2><p>Most engineering organizations adopted AI at the automation level - writing code faster, generating tests, handling boilerplate. Some displaced repetitive work entirely. That is table stakes. The organizations pulling away are using AI to create engineering capabilities that didn't exist before.</p><p>Their engineers aren't producing more code - they're making architecture decisions that had been deferred for months. Their junior developers aren't just shipping faster - they're designing with the accumulated wisdom of the entire team's incident history.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building the Institutional Knowledge Layer",
+          "triggerText": "See how to encode engineering judgment into the system",
+          "html": "<p>When a principal engineer's architecture opinions are encoded into the team's knowledge base, every developer builds on that foundation from day one. Code review shifts from style nits to real ideas. New hires produce work that reflects senior judgment in their first week.</p><h3>The three-layer model</h3><ul><li><strong>Organization layer:</strong> Architecture principles, technology choices, quality standards. The foundation.</li><li><strong>Team layer:</strong> How your specific team defines \"done.\" Performance budgets. Testing philosophy. Deployment standards.</li><li><strong>Individual layer:</strong> The principal engineer who's the expert on performance patterns. The staff engineer with the strongest opinions on data modeling. Personal judgment that compounds on top.</li></ul><h3>Real examples</h3><ul><li><strong>Cursor's .cursorrules ecosystem</strong> - engineers encoding coding philosophies, architecture opinions, and \"never do this\" rules into configuration files. Years of accumulated judgment made available to AI.</li><li><strong>Stripe's API design principles</strong> are so specific they function as an engineering taste document. New engineers' AI-generated code follows Stripe's philosophy from day one.</li><li><strong>Replit</strong> ships with roughly 50 engineers producing output that legacy companies need 500 for. Each engineer operates across a scope that would have been 10 roles.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Talent Retention Problem</h2><p>High-agency engineers will not stay in organizations that use AI to automate the grind but then fill the reclaimed time with more grind. They leave for cultures where the time back gets invested in deeper, harder, more interesting technical problems.</p><p>The retention moat is not your AI tools. It is what you let people do with the leverage those tools create.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Technical Leader's Elevation Diagnostic",
+          "triggerText": "See the assessment for engineering leaders",
+          "html": "<h3>Evaluate your team</h3><ul><li><strong>Is your team measuring velocity or capability?</strong> \"We ship 50% more PRs\" is automation. \"We now attempt architectural patterns we never would have considered\" is elevation. Which describes your last quarter?</li><li><strong>What architectural decisions are still being deferred?</strong> If AI gave your team back 20% of their time and it went to more feature work, you missed the elevation play. Those hours should go to the system design, performance optimization, and technical debt decisions that determine long-term health.</li><li><strong>Is institutional knowledge encoded or locked in heads?</strong> If your principal engineer left tomorrow, how much of the team's architectural reasoning would survive? That's the measure of how much engineering judgment you've captured versus how much you're hoping people remember.</li><li><strong>What can your team build today that was impossible 18 months ago?</strong> Not faster - impossible. The AI investment should be unlocking new engineering capabilities, not just compressing old ones.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The code is a commodity. The architecture, the system design, the engineering judgment that determines whether the product scales - that's the durable asset. The triad of your team's judgment, your encoded institutional knowledge, and AI working as one system is how an engineering team goes from shipping code to shaping what's worth building. <strong>Don't just automate. Elevate.</strong></p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Every creative team with AI tools can now produce passable campaign copy, reasonable visual concepts, functional brand assets. The baseline of creative output rose. And the majority responded by producing more of the same - more drafts, more variations, more content. Faster.</p><p>That is the wrong game. When every agency and in-house team produces the same baseline creative using the same tools, the creative itself stops being the differentiator. Your taste is. Your brand instinct is. Your ability to see what resonates before the market confirms it.</p><h2>Taste Is the New Bottleneck</h2><p>When AI can generate any creative you describe, the only question that matters is: what's worth creating? That requires your years of brand building. Your instinct for what will land. Your eye that catches the gap between functional and memorable, between on-brand and transformative.</p><p><strong>Don't just produce more creative. Direct creative that only your taste could have shaped.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Creative Directors Are Elevating Beyond Production",
+          "triggerText": "See how creative leaders are shifting their role",
+          "html": "<p>A <strong>brand strategist</strong> documented his positioning frameworks from 15 years and 80+ brand launches - the questions he always asks, the patterns he spots in competitive landscapes, the 6 signals that predict whether a brand will resonate. Previously, clients paid $25K for a 3-week engagement to access that thinking. Now his AI produces first-draft positioning decks that clients say are 85% of the way there - before he's spent a single billable hour. The remaining 15%? That's the premium work. The deep craft. The part he actually enjoys.</p><p>A <strong>creative director</strong> shaping a brand identity used to draw from her own aesthetic sensibility and the design traditions she trained in. Now she consults color psychology research, cross-cultural perception studies, competitive visual positioning across adjacent categories, and audience sentiment data from social listening tools. Her taste is still the filter. But the inputs feeding that taste are radically wider.</p><h3>Steps to elevate your creative direction</h3><ul><li><strong>Encode your brand taste:</strong> Document your aesthetic rules, your voice principles, the signals you use to evaluate whether creative work lands. Not \"we value creativity\" but specific rules about tone, visual hierarchy, and brand coherence.</li><li><strong>Widen your creative inputs:</strong> Pull in behavioral psychology, cultural research, competitive visual analysis. Let your taste operate on a wider canvas of perspectives.</li><li><strong>Shift from production to strategy:</strong> When AI handles the first 85%, your time goes to the strategic 15% - the creative direction that shapes what's worth making.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Creative Teams at Scale</h2><p>A marketing team went through the automation-to-elevation shift. The automation play was briefs - AI writes them, humans review them. The elevation play was unexpected. The team built a continuous experimentation engine - testing positioning hypotheses, audience segments, and channel strategies in parallel, building a compounding dataset of what actually moves their specific market.</p><p>They went from a team that produces campaigns to a team that owns market intelligence. The campaigns got better as a side effect. The real value was the strategic asset underneath.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building the Brand Intelligence Layer",
+          "triggerText": "See how to turn brand knowledge into a compounding asset",
+          "html": "<p>When a creative team encodes its brand voice, visual identity principles, and strategic positioning into a shared knowledge base, every AI interaction starts from the brand's accumulated taste.</p><h3>What to encode</h3><ul><li><strong>Brand voice:</strong> Not just tone guidelines - specific rules about how the brand speaks in different contexts. The difference between \"friendly\" and your brand's specific version of friendly.</li><li><strong>Visual identity:</strong> Design principles, color usage rules, typography standards, spacing philosophy. The system-level thinking that makes everything feel coherent.</li><li><strong>Strategic positioning:</strong> How you evaluate market opportunities, what resonates with your audience, the competitive landscape patterns you track.</li></ul><h3>Real examples</h3><ul><li><strong>Jasper AI</strong> found that customers who uploaded brand voice docs, style guides, and content principles saw 3x higher output quality scores. Same model. The only variable: specificity of context.</li><li><strong>Superhuman</strong> built their product around a hyper-specific thesis: \"email should feel fast.\" That specificity informed every AI feature. Their AI drafts match Superhuman's opinionated voice because the specificity was encoded first.</li><li><strong>Midjourney power users</strong> who encoded specific aesthetic preferences developed a recognizable visual style that AI reproduces consistently. Their specificity became their creative signature.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Creative Gap</h2><p>Professionals with narrow context windows are making good creative decisions slowly. Professionals with wide context windows are making great creative decisions - because the quality of the input determines the quality of the output. Your taste is the filter. AI is the aperture. The wider you open it, the more your taste has to work with.</p><p>The brand work is better not because your taste changed, but because your taste now has more to work with - behavioral psychology, cultural trends, competitive visual positioning, audience data. Same instinct. Radically more informed.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Creative Director's Elevation Assessment",
+          "triggerText": "See the diagnostic questions for creative leaders",
+          "html": "<h3>Where's your creative leverage?</h3><ul><li><strong>Is your team producing more creative or better creative?</strong> More variations, more drafts, more content is automation. Work that's more strategically informed, more culturally resonant, more unmistakably branded is elevation.</li><li><strong>Are you competing on production speed or creative insight?</strong> If clients could replicate your output by giving the same tools to any competent creative, your value is depreciating. The moat is your taste deployed through AI, not AI deployed without your taste.</li><li><strong>How many perspectives inform your creative direction?</strong> If it's your instinct plus a mood board, your context window is a keyhole. The creative directors pulling ahead consult behavioral psychology, cultural research, competitive analysis, and audience data before making the call.</li><li><strong>What's your rewrite tax?</strong> Time yourself. How many minutes do you spend fixing AI creative output to match your standards? That number, multiplied by every interaction, is the cost of keeping your taste locked in your head.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>You're not outsourcing your creative vision to AI. You're extending it. The triad - your taste, your brand knowledge, and AI as an extension of your creative capacity - is how a creative director goes from producing campaigns to shaping what campaigns are worth producing. <strong>Don't just automate. Elevate.</strong></p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You're building things because building things is fun. Side projects, experiments, creative code, indie products. AI made the building faster - and that's great. But if you're using AI the same way everyone else does, you're producing the same indie projects everyone else produces.</p><p>The interesting play isn't faster shipping. It's attempting things you never would have tried - projects that were too ambitious for one person, experiments that required cross-domain knowledge you didn't have, creative ideas that needed architectural thinking you hadn't developed yet.</p><h2>From Side Project to Something Nobody Else Could Build</h2><p>AI didn't just make you faster. It made you wider. You can now pull in design principles, behavioral psychology, market research, and systems architecture for a weekend project. The vibe coders who are doing interesting work aren't just shipping faster - they're building things that carry a perspective no generic builder could produce.</p><p><strong>Don't just vibe code faster. Vibe code things only you could have imagined.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Vibe Coders Are Building Beyond the Tutorial",
+          "triggerText": "See how indie builders are elevating their projects",
+          "html": "<p>The best indie hackers aren't the ones who ship the most projects. They're the ones whose projects carry a specific point of view - informed by their unique combination of interests, skills, and taste.</p><h3>What elevation looks like for vibe coders</h3><ul><li><strong>Cross-pollinate domains:</strong> Your side project in music visualization doesn't just need code - pull in audio psychology, visual perception research, and interaction design principles. The project becomes something only your specific combination of interests could produce.</li><li><strong>Build your taste into the tools:</strong> Create a knowledge base with your aesthetic preferences, your architectural opinions, your \"never do this\" rules. Every project you start gets a head start from your accumulated craft.</li><li><strong>Attempt the ambitious thing:</strong> AI makes the implementation tractable. The bottleneck isn't code anymore - it's ideas worth building. The project you thought was too complex for one person? It probably isn't anymore.</li></ul><h3>The specificity advantage</h3><p>A vibe coder who builds with encoded taste - aesthetic preferences, architecture opinions, quality thresholds - produces projects that feel different from generic AI-generated apps. The specificity is visible. The craft compounds. Each project teaches the system something new about how you build.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Learning Compound Loop</h2><p>Here's what makes this interesting for builders who learn by doing: every project with AI isn't just shipping a thing - it's expanding your context window. You're learning design principles by applying them. You're learning architecture by attempting systems you wouldn't have tried. You're developing taste by seeing what works and what doesn't, at a pace that used to take years.</p><p>The vibe coder who builds with curiosity and encoded judgment compounds faster than the one who just ships more projects at the same level.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building a Personal Creative Stack",
+          "triggerText": "See how to build a compounding creative toolkit",
+          "html": "<h3>Your creative stack</h3><ul><li><strong>Taste document:</strong> Write down your aesthetic rules. Not \"I like clean design\" but specific preferences: your color sensibility, your typography opinions, your interaction patterns. This becomes the foundation for every project.</li><li><strong>Architecture opinions:</strong> Document your technology preferences, your \"mistakes I've seen 50 times\" list, your opinions about what tools are worth using and why. New projects start from your judgment, not from scratch.</li><li><strong>Cross-domain library:</strong> Build a collection of knowledge from outside your primary domain - design principles if you're an engineer, systems thinking if you're a designer, behavioral psychology if you're building user-facing products.</li></ul><h3>The compound loop</h3><p>Every project adds to the stack. A weekend experiment teaches you something about interaction design. You document it. The next project is better because of it. A failed side project reveals an architecture mistake. You encode the lesson. You never make it again. That is the difference between shipping projects and building craft.</p><h3>Inspiration from the ecosystem</h3><ul><li><strong>Cursor's .cursorrules</strong> - engineers sharing specific coding philosophies in config files. Your version of this for creative coding.</li><li><strong>Midjourney power users</strong> with encoded aesthetic preferences that produce a recognizable visual style. Specificity as creative signature.</li><li><strong>Replit Agents</strong> loaded with domain-specific architectural opinions - prototypes that carry the weight of real experience.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Gap Between Generic and Specific</h2><p>The vibe coder using AI without specificity gets the same output as everyone else - structurally competent, generically correct, missing every opinion that makes their work interesting. The vibe coder with encoded taste and judgment gets output that's a starting point for something genuinely new.</p><p>After a year of compounding, the gap is enormous. One builder has a year of refined, sharpened creative judgment built into every project. The other starts from zero every morning.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Vibe Coder's Weekend Kickstart",
+          "triggerText": "See the action plan for indie builders",
+          "html": "<h3>This weekend</h3><ul><li><strong>Write 5 rules about how you build.</strong> Not best practices from a tutorial - your actual opinions. Your aesthetic preferences. Your technology convictions. Your quality threshold.</li><li><strong>Start the ambitious project.</strong> The one you've been putting off because it seemed too complex for one person. AI handles the implementation - you handle the vision. See how far you get.</li><li><strong>Pull in one unfamiliar domain.</strong> If you're building a tool, consult behavioral psychology about how users actually make decisions. If you're building art, consult systems architecture about how to make it scale. The cross-pollination is where the interesting work lives.</li></ul><h3>The ongoing practice</h3><ul><li><strong>After every project, document what you learned.</strong> One new rule, one new aesthetic preference, one new architectural opinion. The stack compounds.</li><li><strong>Share your specificity.</strong> The vibe coding community thrives on shared opinions and taste documents. Your .cursorrules, your design principles, your architecture opinions - they help others and sharpen your own thinking.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>You're not just shipping projects. You're building creative craft that compounds. The triad - your taste, your accumulated knowledge, and AI as an extension of your creative capacity - is how a vibe coder goes from building side projects to building things nobody else could have imagined. <strong>Don't just automate. Elevate.</strong></p>"
+        }
+      ]
+    }
+  }
+}

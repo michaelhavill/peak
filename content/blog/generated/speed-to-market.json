@@ -1,0 +1,321 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your competitor just shipped the feature you've been \"planning\" for three months. You haven't written a line of code because the brief isn't final, designs haven't been reviewed, and engineering is blocked on specs. This is not technical debt. It's decision debt - and every week it compounds.</p><p><strong>The teams shipping in weeks instead of quarters didn't hire faster. They eliminated the dead time between decisions.</strong> That's the entire alpha. And here's what nobody talks about: the speed isn't just about shipping more. It's about unlocking time for deep thinking, deep craft, and the hardest problems. Every day you spend assembling context instead of deploying decisions is a day your competitor compounds insight.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Monday Morning Pre-Brief",
+          "triggerText": "See how to eliminate context assembly from your mornings",
+          "html": "<h3>The Problem</h3><p>Track your day honestly. How much time do you spend deploying judgment versus assembling the context to deploy it? For most builders the ratio is brutal - 70% assembly, 30% actual decisions.</p><h3>The Overnight Brief Setup</h3><p>Set up a Zapier flow that runs Sunday night: (1) pull unresolved Slack threads from your product channel, (2) pull new customer feedback from your CRM or Intercom, (3) pull sprint board status from Linear or Jira. Feed all three into a Claude API call with the prompt \"Synthesize this into a 1-page sprint context brief: key customer signals, blockers, and decisions needed.\"</p><h3>The Result</h3><p>Output lands in a Notion page titled \"Sprint Brief - [Date].\" You walk in Monday morning holding context that used to take until lunch to assemble. Sprint planning starts at 9am instead of 2pm. That's a half-day reclaimed every single week.</p><h3>The Compound Math</h3><p>Over a year, that's six extra weeks of high-leverage work. Not just for shipping more - for the deep thinking that actually moves the needle.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A product designer applied the same principle. Instead of burning 2 hours researching patterns before touching a canvas, she built a context package - design system, user research synthesis, competitor patterns, accessibility requirements. Time to first reviewable design dropped from 2 days to 3 hours. She now explores 5 directions in the time it used to take to develop 1.</p><p>An engineering lead eliminated handoff gaps. Each step's AI has access to every previous step's output. Cycle time compressed from 6 weeks to 8 days.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Eliminate Context Loss at Handoffs",
+          "triggerText": "Learn how to kill dead time between team stages",
+          "html": "<h3>The Handoff Problem</h3><p>Map any feature from idea to production. Count the handoffs. Product writes a brief, waits for design review. Design produces mockups, waits for engineering. Each \"waits for\" is dead time. Each handoff loses context.</p><h3>The Fix: One Living Doc Per Feature</h3><p>Create a single \"Feature Context\" Notion page for each feature. Every stage writes to it: PM adds the brief, designer adds the rationale and UX flows, engineer adds the technical approach and constraints. Connect Notion to Claude via MCP.</p><h3>How It Works</h3><p>When the engineer starts building, they ask Claude \"What was the design rationale for this feature?\" and get the designer's actual thinking - not a Slack summary from 3 weeks ago. One living doc. Zero context death at handoffs.</p><h3>The Result</h3><p>One team cut idea-to-production from 6 weeks to 8 days. Not by working more hours. By eliminating context loss.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Think of it like two investment portfolios. A team shipping weekly runs 12 experiments per quarter. A team shipping monthly runs 3. Same talent, same market - but a 4x difference in learning velocity. After a year? 48 data points versus 12. The fast team also has more time between shipments for strategic depth. Speed is the moat - but depth is what the speed buys you.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Teams Shipping at This Speed Right Now",
+          "triggerText": "See examples of compressed shipping cycles",
+          "html": "<h3>Vercel</h3><p>Ships product updates at a pace that makes enterprise competitors look frozen. AI across every stage with shared context flowing through each handoff. Features go from idea to production in days.</p><h3>Cursor</h3><p>Went from concept to the dominant AI code editor in under a year. Tiny team relative to output. AI-assisted development with shared context compressed every cycle.</p><h3>Y Combinator Batch Companies (2024-2025)</h3><p>Shipping production applications in 2-4 weeks that would have taken previous batches 3-6 months. The pattern: AI-assembled context at every stage, zero dead time between stages, shared knowledge bases. YC partners now explicitly coach founders to \"ship this week, not this quarter.\"</p><h3>Bolt.new and Lovable</h3><p>Founders go from idea to deployed prototype in hours. Not mockups - working applications. The planning phase that consumed 3 months has been compressed to a conversation.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The principle: eliminate every minute you spend on assembly so you can invest every minute in judgment, craft, and the work that actually makes a difference. The builder who ships 4x faster doesn't just win on speed. They win on insight - and they win on depth, because they have time to think about what really matters instead of grinding on what doesn't.</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your competitor just shipped while you're still assembling the brief. This is not a talent problem. It's not a resource problem. It's a dead-time problem - and every week of decision debt you carry is burning capital on learning you will never get back.</p><p>The teams shipping in weeks instead of quarters didn't raise more money or hire faster. They eliminated the dead time between decisions. That's the entire alpha. Speed to market isn't just a feature of good execution - it's the primary driver of learning velocity. And learning velocity is how startups win.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Compress Your Idea-to-Shipping Cycle",
+          "triggerText": "See how founders are shipping in weeks instead of quarters",
+          "html": "<h3>The Dead Time Audit</h3><p>Map your last feature from idea to production. Count every handoff, every \"waiting for\" step. Each one is dead time. Most founders find 60-70% of the total cycle is waiting, not working.</p><h3>The Fix</h3><p>AI maintains the full context across every handoff. The brief includes engineering constraints because AI pulled them from the architecture docs. Design includes accessibility requirements because AI referenced the component library. Nobody waits for information that already exists.</p><h3>Real Example</h3><p>One founder went from idea to live patient portal in 2.5 weeks - work that traditionally takes 6 months. AI-assembled context at every stage. Zero dead time between stages. That's not superhuman effort. That's architecture derisking the time-value-of-shipping.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Think about it as learning velocity. A team shipping weekly runs 12 experiments per quarter. A team shipping monthly runs 3. After a year, that's 48 data points versus 12. At startup speed, that's the difference between finding product-market fit and running out of runway while your data trickles in.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Your Overnight Context Machine",
+          "triggerText": "Learn how to walk in Monday with full context",
+          "html": "<h3>The Setup</h3><p>Zapier or n8n flow running Sunday night: pull Slack threads, customer feedback from CRM, sprint board status from Linear. Feed into Claude API to synthesize a 1-page decision-ready brief. Output lands in Notion.</p><h3>Alternatively: Dust.tt</h3><p>Create an agent that pulls from Notion, Slack, and Linear automatically. Configure data sources once, the brief assembles itself every morning.</p><h3>The Founder Impact</h3><p>Sprint planning starts at 9am instead of 2pm. Over a year, that's six extra weeks of strategic work. One founder replaced $180,000 worth of project management overhead with $200/month in AI tooling by running 12 simultaneous projects with orchestrated context.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Speed to market isn't just about being first. It's about learning faster. Every feature shipped is an experiment. Every experiment produces data. The founder who runs 12 experiments per quarter while the competition runs 3 doesn't just have 4x the output - they have 4x the insight. And they have time left over to think strategically about what to build next. That compound advantage is how you win.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "What Fast Startups Look Like",
+          "triggerText": "See examples of startup shipping velocity",
+          "html": "<h3>Y Combinator 2024-2025</h3><p>Batch companies shipping production apps in 2-4 weeks that would have taken previous batches 3-6 months. YC partners now explicitly coach: \"ship this week, not this quarter.\"</p><h3>Bolt.new and Lovable</h3><p>Founders go from idea to deployed prototype in hours. The 3-month planning phase compressed to a conversation.</p><h3>Replit</h3><p>CEO Amjad Masad builds production features in hours using AI loaded with product context. Dead time between idea and users measured in days, not quarters.</p><h3>Cursor</h3><p>Concept to dominant AI code editor in under a year. Tiny team, massive output. Shared context compressed every cycle.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Eliminate every minute of assembly so you can invest every minute in judgment. The founder who ships 4x faster doesn't just win on speed - they win on insight, on learning, on strategic depth. Because shipping fast gives you time to think about what to build, not just how to build it. That's a fundamentally different company.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Monday morning. 45 minutes pulling sprint data from three dashboards. 20 minutes re-reading Slack threads. 30 minutes mining customer feedback. You haven't made a single decision and the morning is gone. That's not work. That's overhead masquerading as work.</p><p>The teams shipping fastest aren't using better AI. They've eliminated the dead time between decisions. Context assembly is the silent killer of product velocity. Fix that ratio and everything changes.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Overnight Sprint Brief",
+          "triggerText": "See how to start Monday with context instead of assembly",
+          "html": "<h3>The Current State</h3><p>70% of your day is spent assembling context - pulling dashboards, re-reading threads, gathering feedback. 30% is actual decisions. That ratio is backwards.</p><h3>The Overnight Brief</h3><p>Set up a Zapier flow that runs Sunday night. Pull unresolved Slack threads, new customer feedback from CRM, and sprint board status. Feed into Claude to synthesize a decision-ready brief: key customer signals, blockers, and decisions needed.</p><h3>The Impact</h3><p>Sprint planning starts at 9am instead of 2pm. That's a half-day reclaimed every week. Over a year, six extra weeks for the deep product thinking that actually moves the needle - customer problems, strategy, experiment design.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Sprint velocity increased 30% for one team - not because they worked harder, but because decisions deployed 3x faster. Multiply that across 52 weeks and you've underwritten an entirely different product trajectory.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Kill Context Loss at Every Handoff",
+          "triggerText": "Learn how to preserve context across product stages",
+          "html": "<h3>The Handoff Problem</h3><p>Brief waits for design review. Design waits for engineering. Each handoff loses context. By the time the feature ships, nobody had the full picture at any point.</p><h3>One Living Doc Per Feature</h3><p>Create a \"Feature Context\" Notion page for each feature. PM adds the brief, designer adds rationale and UX flows, engineer adds technical approach. Connect via MCP. When engineering starts, they get the designer's actual thinking - not a Slack summary from weeks ago.</p><h3>Cross-Functional Speed</h3><p>The brief includes engineering constraints because AI pulled them. Design includes accessibility requirements because AI referenced the component library. Nobody re-establishes what the last person already figured out.</p><h3>The Result</h3><p>One team cut idea-to-production from 6 weeks to 8 days. Same people. Same resources. Different architecture for information flow.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A team shipping weekly runs 12 experiments per quarter versus 3 for a team shipping monthly. That's 4x the learning velocity. But the fast team also has more time for strategic depth between shipments. Speed gives you both: more data AND more time to think about what the data means.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Product Teams Shipping at Speed",
+          "triggerText": "See how product teams are compressing cycles",
+          "html": "<h3>Linear</h3><p>Ships at a velocity that surprises their market. Small team, massive output. Every handoff carries full context. Sprint planning starts at 9am, not after lunch.</p><h3>Shopify</h3><p>Teams that spent days on context assembly now have AI pre-assemble sprint context and flag constraints before anyone opens their editor. Features that took 6 weeks now take 8 days.</p><h3>Vercel</h3><p>Features go from idea to production in days. AI across every stage with shared context through each handoff. The \"wait for\" gaps near zero.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Eliminate assembly time. Invest judgment time. The product builder who ships 4x faster doesn't just win on output - they win on insight. Every feature shipped is a learning opportunity. The one who learns fastest wins the market.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You burn 2 hours researching patterns before touching a canvas. You know the constraints you need to design within, but gathering them takes half the morning. By the time you start the actual design work - the craft that differentiates you - the day is half gone.</p><p>The teams moving fastest aren't designing faster. They're eliminating the context assembly before design starts. Start from a meaningful first draft instead of a blank canvas, and the entire design cycle compresses.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Design Context Package",
+          "triggerText": "See how to start designing from context instead of scratch",
+          "html": "<h3>The Context Package</h3><p>Build a design context package: your design system, user research synthesis, competitor UX patterns tagged by flow type, and accessibility requirements. Connect it via MCP or load it into a Claude Project.</p><h3>How It Works</h3><p>When you start a new feature, prompt with constraints: \"Design a checkout flow. Use our design system components. Reference the user research on cart abandonment. Follow our accessibility patterns.\" You get a meaningful first draft instead of starting from zero.</p><h3>The Result</h3><p>Time to first reviewable design dropped from 2 days to 3 hours for one designer. She now explores 5 directions in the time it used to take to develop 1. More reps, better signal - like seeing five flops instead of one.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The real win isn't the speed. It's what you do with the time back. Instead of spending the afternoon on one direction, you explore 5 directions in the morning and spend the afternoon on the deep craft work - information architecture decisions, interaction nuance, the hard UX problems nobody else has time to sit with. Quality went up because she tested more hypotheses.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Close the Design-to-Code Gap",
+          "triggerText": "Learn how to ship design without translation loss",
+          "html": "<h3>The Handoff Problem for Design Engineers</h3><p>You design it in Figma. Engineering builds something that looks close but misses the intent. The QA cycle catches 20 visual issues. Half the sprint is spent on \"that's not how it was designed.\"</p><h3>The Fix</h3><p>Connect your component library and design tokens to the engineering context. When AI generates code, it uses your actual components, your actual tokens, your actual spacing. The translation layer between design and code disappears.</p><h3>One Living Doc</h3><p>Every feature gets a context page. You add the design rationale and UX flows. Engineering adds the technical approach. When questions arise, the AI has your actual thinking - not a summary from a meeting nobody remembers.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Time to ship, faster. Time for craft, unlocked. The design engineer who eliminates context assembly and translation gaps doesn't just ship more - they ship better. Because the time that used to go to fixing handoff issues now goes to the work that actually makes the product feel different.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Speed Tools for Design Engineers",
+          "triggerText": "See the tools compressing design-to-code cycles",
+          "html": "<h3>Vercel's v0</h3><p>Teams with design system context connected get output that ships. The gap between your design and production code closes to near zero.</p><h3>Cursor with Design Context</h3><p>Engineering context plus design tokens in one <code>.cursorrules</code> file. AI-generated code matches your visual system. No translation step.</p><h3>Notion + MCP for Feature Context</h3><p>Every feature's design rationale, engineering constraints, and product context in one queryable doc. No information dies at handoffs.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The compound effect: every feature you ship faster teaches you something. Every experiment you run builds the context base. Speed creates insight. Insight creates better design. Better design creates products people choose. That's the loop that separates design engineers who ship from ones who polish mockups that never launch.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>When you're solo, dead time is existential. Every hour spent assembling context - pulling dashboards, re-reading your own notes, gathering feedback - is an hour not spent building, selling, or talking to customers. You don't have a PM to write the brief or a designer to explore directions. It's all you. And the 70/30 assembly-to-judgment ratio is killing your output.</p><p>The fix isn't working harder. It's eliminating the dead time between your own decisions.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Solo Overnight Brief",
+          "triggerText": "See how to start every morning with context",
+          "html": "<h3>The Solo Morning Problem</h3><p>You wake up and spend the first hour remembering where you left off. Checking Slack. Reading customer emails. Opening analytics. By the time you start building, the morning is gone.</p><h3>The Overnight Brief</h3><p>Set up a simple Zapier flow: pull your unread customer emails, your analytics highlights, and your task board status. Feed into Claude to synthesize a 1-page brief: what happened, what matters, and what to build today.</p><h3>The Impact</h3><p>You walk in holding full context. Building starts immediately. Over a year, that's six extra weeks of productive time - the equivalent of adding a month and a half to your calendar. As a solo operator, that's the difference between shipping and stalling.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One solo founder went from idea to live product in 2.5 weeks - work that typically takes 6 months. AI-assembled context at every stage. Zero dead time between stages. That's what shipping looks like when you stop burning your solo hours on assembly.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Eliminate Your Own Handoff Tax",
+          "triggerText": "Learn how to keep context when you're wearing every hat",
+          "html": "<h3>The Solo Handoff Problem</h3><p>You're the PM, the designer, AND the engineer. Every time you switch hats, you lose context. The product thinking from Monday is gone by Wednesday when you're coding. The engineering constraints you discovered are forgotten by Friday when you're designing the next feature.</p><h3>One Doc Per Feature</h3><p>Write everything in one place per feature. Product thinking, design rationale, engineering constraints, customer evidence. Use Notion and connect via MCP. When you switch hats, the AI has your complete thinking from every angle.</p><h3>The Solo Advantage</h3><p>You don't lose context at organizational handoffs because there are no organizational handoffs. Your only handoff is between your own roles. Solve that and you're faster than teams 3x your size.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The solo operator who ships 4x faster doesn't just build more. They learn faster. Every feature is an experiment. 12 experiments per quarter versus 3. That learning velocity is how solo operators compete with funded teams. Speed isn't just a feature of good execution - it's the primary competitive advantage when you're a team of one.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Solo Speed Tools",
+          "triggerText": "See the tools solo builders use to ship fast",
+          "html": "<h3>Bolt.new / Lovable</h3><p>Idea to deployed prototype in hours. The planning phase that consumed weeks compressed to a conversation. Perfect for validating ideas before committing to a full build.</p><h3>Zapier + Claude API</h3><p>Overnight briefs, customer feedback synthesis, analytics summaries - all running while you sleep. You wake up to decisions, not assembly.</p><h3>Cursor with Full Context</h3><p>Your codebase indexed, your patterns learned, your conventions respected. AI generates code in your style. No translation step between idea and implementation.</p><h3>Notion + MCP</h3><p>One queryable knowledge base across all your roles. PM thinking, design decisions, engineering constraints - all accessible to AI in real time.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Eliminate assembly. Invest in judgment. As a solo operator, every hour you reclaim from context gathering goes directly into the work that compounds: shipping features, talking to customers, and thinking about what to build next. That's the only way a team of one outperforms a team of ten.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your team is talented. They're slow because the system between them is slow. Brief waits for design review. Design waits for engineering. Engineering waits for QA. Each handoff loses context. By the time the feature ships, six people touched it and none had the full picture. Your idea-to-production cycle is 6 weeks, and most of that is waiting, not working.</p><p>The fix isn't hiring faster. It's eliminating the dead time between decisions.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Eliminate Context Loss Across Your Pipeline",
+          "triggerText": "See how to kill dead time between engineering stages",
+          "html": "<h3>Map the Waste</h3><p>Map your last feature from idea to production. Count the handoffs. Now count how many lose context. Every \"wait, what was the rationale again?\" is dead time that compounds across every feature, every sprint.</p><h3>AI-Maintained Context</h3><p>Each step's AI has access to every previous step's output plus the shared knowledge base. Specs include design rationale. Designs include engineering constraints. PRs include business context. Nobody spends a day re-establishing what the last person figured out.</p><h3>The Engineering Setup</h3><p>One living Notion doc per feature, connected via MCP. PM writes the brief, designer adds rationale, engineer adds technical approach. When the engineer asks \"why was this designed this way?\" the AI has the designer's actual thinking.</p><h3>The Result</h3><p>One team cut idea-to-production from 6 weeks to 8 days. Not by working more hours. By eliminating context loss at handoffs.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Sprint velocity increased 30% for one engineering lead - without a single additional hour worked. Engineers start building on day 1 of the sprint instead of day 3 because context is pre-loaded. The reclaimed time goes to architecture discussions and the deep technical thinking that's been sitting in the backlog.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Pre-Assemble Engineering Context",
+          "triggerText": "Learn how to give engineers full context from day one",
+          "html": "<h3>The Ticket Context Problem</h3><p>Engineers spend 1-2 days per sprint re-establishing context before they write code. Reading specs, chasing designers for rationale, finding the relevant architecture decisions.</p><h3>AI-Assembled Ticket Context</h3><p>For every ticket, AI pre-assembles: product rationale, design decisions, technical constraints, and related past work. Engineers start building on day 1 instead of day 3.</p><h3>Cross-Functional Pre-Loading</h3><p>Connect engineering docs, design docs, and product specs via MCP. When an engineer picks up a ticket, the full picture is already there - business context, design rationale, technical constraints, relevant past attempts.</p><h3>The Sprint Impact</h3><p>Sprint velocity up 30% without additional hours. Code review cycles from 2-day average to 4 hours. The floor rises because context is pre-loaded, not discovered mid-sprint.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The compounding effect is two-sided. Faster shipping means more experiments. More experiments mean more data. But faster shipping also means more time for deep technical thinking between shipments. Your team isn't just grinding faster - they have headspace for the architecture decisions, performance investigations, and technical depth that's been perpetually deprioritized.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Engineering Teams Shipping Fast",
+          "triggerText": "See how engineering teams are compressing cycles",
+          "html": "<h3>Shopify</h3><p>Teams that spent days on context assembly now have AI pre-assemble sprint context and flag constraints. Features that took 6 weeks now take 8 days.</p><h3>Cursor + Context</h3><p>Teams shipping <code>.cursorrules</code> and <code>CLAUDE.md</code> files see immediate velocity improvements. AI generates code that fits the codebase from the first suggestion.</p><h3>Linear</h3><p>Auto-triage classifies, prioritizes, and routes issues based on context. Dead time between \"issue reported\" and \"engineer starts work\" compressed from days to minutes.</p><h3>Vercel</h3><p>Features from idea to production in days. AI across every stage. Context flows through every handoff.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Speed comes from eliminating dead time, not from working faster. The team that builds the triad - their engineers directing, their knowledge store carrying context, and AI extending capacity - ships circles around the team still assembling information by hand. 12 experiments versus 3. That's not a marginal improvement. That's a different engineering org.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Campaign launch takes 3 weeks. Brief assembly, creative direction, copy drafting, channel configuration - each step waits for the previous one, and each handoff loses the creative intent. By the time the campaign ships, half the original vision is diluted. That's not a quality problem. It's a speed problem masquerading as a quality problem.</p><p>The fastest creative teams aren't more talented. They've eliminated the dead time between creative decisions.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Compress Your Campaign Pipeline",
+          "triggerText": "See how to launch campaigns in days instead of weeks",
+          "html": "<h3>The Current State</h3><p>Brief assembly: 2 days. Creative direction review: 3 days. Copy drafting and revision: 4 days. Design and production: 5 days. Channel configuration: 2 days. Total: 3 weeks. Most of that is waiting, not creating.</p><h3>The Context-Connected Pipeline</h3><p>Brief assembly, creative direction, copy, and channel configuration all draw from the same knowledge base. Each step starts pre-loaded with context from the previous step. Brand voice, visual guidelines, campaign history, audience insights - all available to AI at every stage.</p><h3>The Result</h3><p>One marketing team cut campaign launch from 3 weeks to 4 days. Same quality. Same brand consistency. Different architecture for information flow. That's 3 weeks of learning they would have missed on the old timeline.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Speed in creative work isn't about rushing. It's about eliminating the 70% of time spent assembling context and re-establishing creative intent. The time you reclaim goes to the deep creative work - exploring more directions, refining the concept, pushing the brand forward.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Preserve Creative Intent Across Handoffs",
+          "triggerText": "Learn how to keep the vision intact through production",
+          "html": "<h3>The Dilution Problem</h3><p>Your creative brief is sharp. The design direction is clear. But by the time it reaches production, through 4 handoffs and 3 review cycles, the edge is gone. The original vision dies a death of a thousand compromises.</p><h3>One Creative Context Per Campaign</h3><p>Single Notion doc per campaign. Creative direction, brand rules, audience insights, channel requirements, copy approach - all in one place. Connected to AI via MCP. Every person at every stage sees the full creative context.</p><h3>The Impact</h3><p>The copywriter has the visual direction. The designer has the messaging strategy. The production team has the creative intent. Nobody dilutes the vision because nobody loses the context.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Campaigns shipped faster mean more creative experiments per quarter. More experiments mean more data about what resonates. The creative director who runs 12 campaigns per quarter while the competition runs 3 has 4x the insight into what works. Speed in creative isn't about quantity - it's about the learning velocity that makes every subsequent campaign sharper.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Creative Teams Moving Fast",
+          "triggerText": "See how creative teams are compressing timelines",
+          "html": "<h3>Shared Knowledge Bases</h3><p>Campaign history, brand guidelines, audience insights, performance data - all in one queryable system. New campaigns start with the full weight of everything learned before.</p><h3>AI-Assembled Creative Briefs</h3><p>Performance data from previous campaigns, audience signals, competitive activity - synthesized overnight into a brief. The creative director walks in with context, not assembly work.</p><h3>Connected Production Pipelines</h3><p>Each production stage draws from the same creative context. No re-briefing. No re-establishing intent. The vision flows through production intact.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Eliminate assembly. Preserve intent. Ship faster. The creative director who eliminates dead time doesn't just produce more campaigns - they produce better ones. Because the time reclaimed from assembly and re-establishment goes to the deep creative thinking that actually differentiates the brand.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Saturday morning. Great idea. You open your editor and spend 2 hours configuring the project, setting up the stack, researching the right approach. By afternoon, you've written 50 lines of actual code. Sunday, you remember half of what you decided Saturday. By the following weekend, the momentum is gone and the project joins the graveyard.</p><p>The side projects that ship aren't built by better coders. They're built by people who eliminate the dead time between inspiration and implementation.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Go from Idea to Building in Minutes",
+          "triggerText": "See how to start coding before the motivation fades",
+          "html": "<h3>The Setup Tax</h3><p>Project setup, stack configuration, boilerplate, package research - it eats hours before you write a single line of meaningful code. That's where weekend projects die.</p><h3>The Fix: Pre-Built Context</h3><p>Create a Claude Project or <code>CLAUDE.md</code> template with your standard stack, your conventions, your preferred packages. When inspiration hits, you prompt with the idea and get a meaningful starting point - not boilerplate, but YOUR boilerplate with YOUR patterns.</p><h3>Faster: Bolt.new or Lovable</h3><p>Idea to deployed prototype in hours. Describe what you want, get a working app. Iterate from there. The 3-hour setup phase compressed to a conversation.</p><h3>The Velocity</h3><p>One weekend is enough to ship a complete side project when you eliminate the dead time. Not a toy - a working product. That changes the calculus on which ideas are worth pursuing.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The vibe coders who ship the most projects aren't the ones with the most time. They're the ones who eliminated the friction between idea and code. When the gap is 5 minutes instead of 5 hours, you ship 10x more experiments. And experiments are how you find the idea that matters.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Keep Momentum Across Sessions",
+          "triggerText": "Learn how to pick up where you left off",
+          "html": "<h3>The Context Death Problem</h3><p>You build on Saturday. Sunday you're catching up. Next weekend, the project feels foreign. The mental model you had is gone.</p><h3>The Fix: Session Context</h3><p>End each session by writing a quick note in the project: what you built, what's next, and the decisions you made and why. Add it to your Notion project doc connected via MCP. Next session, ask Claude for a summary and you're back in flow in 2 minutes instead of 30.</p><h3>The Compound Effect</h3><p>Projects that survive across weekends ship. Projects that die between sessions don't. Context preservation is the difference between a shipped product and a forgotten repo.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>12 experiments per quarter versus 3. As a vibe coder, that's 12 chances to find the project that takes off versus 3. Speed isn't about grinding harder on weekends. It's about eliminating the dead time that kills momentum. Ship fast, learn fast, find the thing worth building for real.</p>"
+        }
+      ]
+    }
+  }
+}

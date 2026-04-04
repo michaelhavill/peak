@@ -1,0 +1,332 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You built the personal knowledge base. Your AI produces work that is unmistakably yours. Then someone asks: \"How do we make the whole company work like this?\" And suddenly you realize the distance between one person's moat and an organization's moat is the difference between a good stock pick and a fund that compounds at 30% annually.</p><p><strong>Scaling a knowledge moat is not about distributing the same docs to everyone.</strong> It is about building a system where every person's work makes every other person's AI smarter - and where every person stays in command of the agents they empower. The moat is the triad: your people, your accumulated knowledge, and AI working together as one system.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Make Knowledge Contribution Automatic",
+          "triggerText": "See how to capture knowledge without extra effort",
+          "html": "<p>If people have to \"remember to add to the knowledge base\" - they will not. The system must capture knowledge as a byproduct of normal work.</p><h3>Meeting capture</h3><p>Set up Granola to capture every meeting - it records, transcribes, and extracts key decisions and action items without anyone taking notes. Connect a Notion automation so insights get tagged by persona, theme, and product area automatically.</p><h3>Slack capture</h3><p>Use a Zapier trigger on specific Slack channels to capture and synthesize key threads daily. Decisions made in conversation become permanent knowledge.</p><h3>Design and engineering capture</h3><p>Design decisions get recorded through structured templates. Engineering ADRs feed the knowledge base. Sprint retros get captured. Every team interaction generates knowledge automatically.</p><h3>The rule</h3><p><strong>Contribution cannot be extra work.</strong> The system must capture knowledge as a byproduct of normal work. If it requires a separate step, adoption drops to near zero. Build it into the tools your team already uses.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Raw knowledge is not useful. A customer call transcript sitting in a database is noise. The extracted insights - mapped to personas, tagged by theme, connected to existing patterns - that is the asset. Synthesis turns raw contributions into deployable context.</p><p><strong>AI handles most of the synthesis. Humans review and refine the connections.</strong> The PM validates product insights. The clinical lead validates care patterns. The ops leader validates workflow learnings. Think of synthesis as the underwriting step - raw data in, investable intelligence out.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Your Team's AI to the Shared Knowledge Base",
+          "triggerText": "See how to make organizational knowledge flow to every AI session",
+          "html": "<h3>The access layer</h3><p>Every team member's AI should draw from the full organizational knowledge at the moment they need it. Not through search. Not through asking someone. Automatically, as context for whatever they are working on.</p><h3>Setup for different roles</h3><ul><li><strong>For everyone:</strong> Install the Notion MCP server and authorize with your team workspace. Every team member using Claude can query the full knowledge base in real time.</li><li><strong>For engineering:</strong> Point Cursor at your docs repo and add a <code>.cursorrules</code> file that references your architecture decisions.</li><li><strong>For design:</strong> Connect Figma's component library via MCP so AI-generated code uses your actual design system.</li></ul><h3>What changes</h3><p>The designer gets user research context without pinging the PM. The engineer gets business context without attending the standup. The new hire's AI has 3 years of institutional context on day one. Frictionless access is what turns a knowledge base into a knowledge moat.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The compound math is what makes this inimitable. If your team has 20 people and each person contributes 5 knowledge artifacts per week, that is 100 additions weekly. 400 monthly. After one year, your knowledge base holds 5,200+ synthesized artifacts that no competitor can replicate. They would have to hire your people, live your experiences, and serve your customers for twelve straight months to match it. And by then you would be another year ahead.</p><p><strong>The gap only widens.</strong> That is compounding in its purest form.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Build the Three-Layer Knowledge System",
+          "triggerText": "See the complete contribution-synthesis-access architecture",
+          "html": "<h3>Layer 1: Contribution (automatic)</h3><ul><li>Granola captures meetings automatically</li><li>Zapier routes Slack decisions to Notion</li><li>Structured templates capture design and engineering decisions</li><li>Customer call summaries flow to the research database</li></ul><h3>Layer 2: Synthesis (AI + human review)</h3><ul><li>AI extracts insights from raw data and tags them by theme, persona, and product area</li><li>PM validates product insights</li><li>Designer validates UX patterns</li><li>Engineer validates technical patterns</li><li>Synthesized artifacts replace raw data in the knowledge base</li></ul><h3>Layer 3: Access (frictionless)</h3><ul><li>Notion MCP gives every Claude user real-time access to the full base</li><li>CLAUDE.md gives every engineer access to architecture decisions</li><li>Figma MCP gives every designer access to the design system</li><li>No searching, no asking colleagues, no copy-pasting</li></ul><p><strong>The compound loop:</strong> contribution feeds synthesis, synthesis feeds access, access improves everyone's output, better output generates richer contributions. The flywheel accelerates.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Individual moats are career insurance. Organizational moats are competitive insurance. In both cases, the moat is the triad - you, your knowledge store, and AI working as one. Build the personal moat first. Then build the system that compounds it across the whole company. The returns compound daily.</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You built a personal knowledge base that makes your AI produce extraordinary work. Your CEO instinct says: \"How do we make the whole company work like this?\" The distance between your personal moat and an organizational moat is the distance between a good trade and a fund that compounds at 30% annually.</p><p><strong>Scaling a knowledge moat is your biggest competitive advantage.</strong> Not your product features - those get copied. Not your team size - that is a cost center. Your accumulated organizational intelligence, deployed through AI at scale, is the thing no competitor can buy, replicate, or shortcut.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Deploy the Contribution-Synthesis-Access Loop",
+          "triggerText": "See the architecture for scaling your knowledge moat company-wide",
+          "html": "<h3>Layer 1: Automatic contribution</h3><p>Your team generates knowledge as a byproduct of normal work. No extra steps.</p><ul><li>Granola captures every meeting - decisions and action items extracted automatically</li><li>Slack key channels route to Notion via Zapier daily</li><li>Customer calls get summarized and tagged by persona, theme, and product area</li><li>Engineering ADRs and design decisions flow into the shared base</li></ul><h3>Layer 2: AI synthesis</h3><p>AI transforms raw data into deployable intelligence. A customer call transcript becomes tagged insights mapped to personas and patterns. Human reviewers validate: PM reviews product insights, clinical lead reviews care patterns, ops leader reviews workflow learnings.</p><h3>Layer 3: Frictionless access</h3><p>Every team member's AI draws from the full organizational knowledge in real time via Notion MCP. No searching. No asking. Automatic context for every task.</p><h3>The founder's role</h3><p>You set the architecture and the expectation. The system runs itself once built. Your job: ensure contribution is frictionless and synthesis is validated.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The compound math is the fundraising story. 20 people contributing 5 knowledge artifacts per week equals 5,200 per year. No competitor buys that by signing a contract. They would need to hire your team, serve your customers, and live your experience for a full year. And by then you are another year ahead.</p><p><strong>After 3 months, your AI's output quality is measurably better than month one.</strong> After 6 months, the gap between you and competitors using identical AI tools is visible in every deliverable. That gap is the moat. And it widens every week.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make the Board-Level Case for Knowledge Infrastructure",
+          "triggerText": "See how to pitch organizational knowledge as competitive moat",
+          "html": "<h3>The pitch</h3><p>\"Our organizational knowledge base is our competitive moat. Every week, our team generates 100+ synthesized knowledge artifacts. After one year, we will have 5,200+ artifacts that no competitor can replicate. Our AI output quality improves measurably every quarter. This is compounding returns on organizational intelligence.\"</p><h3>The metrics</h3><ul><li><strong>Accumulation rate:</strong> Knowledge artifacts per week (team size x 5)</li><li><strong>Quality improvement:</strong> AI output quality score over time</li><li><strong>Onboarding speed:</strong> Time for new hires to reach full productivity (target: 50% reduction)</li><li><strong>Decision speed:</strong> Time from question to informed decision (target: 70% reduction)</li></ul><h3>The comparison</h3><p>Competitor A has the same AI tools but no organizational knowledge base. Their AI produces generic output. Ours produces output grounded in 3 years of accumulated intelligence. Same cost. Wildly different ROI. That is the moat investors want to fund.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A new hire at your company gets AI that carries 3 years of institutional context on day one. A new hire at your competitor starts from zero. That onboarding advantage alone saves millions. But the deeper win is that your team's output quality compounds while theirs stagnates.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Prevent Knowledge Loss When People Leave",
+          "triggerText": "See how to make institutional knowledge survive departures",
+          "html": "<h3>The risk</h3><p>List your top 3 people. If they left tomorrow, what knowledge goes with them? That gap is the measure of your institutional memory - or lack of it.</p><h3>The protection strategy</h3><ul><li><strong>Automatic capture:</strong> Every interaction generates knowledge automatically - meetings, decisions, code changes, design choices</li><li><strong>Structured documentation:</strong> Two layers for everything - \"My analysis\" (personal, can leave) and \"Evidence for the base\" (institutional, stays)</li><li><strong>Review validation:</strong> Human reviewers ensure quality before knowledge enters the permanent base</li></ul><h3>The insurance policy</h3><p>When a key person leaves, their AI context transfers to their successor. The knowledge they contributed lives in the system. The new hire's AI has the departed person's institutional intelligence from day one. Not their personal edge - but the evidence, decisions, and patterns that belong to the company.</p><p><strong>The goal:</strong> when someone leaves, the team's AI barely notices. The knowledge is in the system, not in anyone's head.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your people built the knowledge. They refine it. They direct AI through it. Nobody is outsourcing differentiators - they are deploying them at scale. The organizational moat is the system that ensures this intelligence survives any individual departure and compounds every quarter. That is the competitive insurance worth building.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your personal product knowledge makes your AI produce brilliant briefs. But the designer's AI starts from zero on user context. The engineer's AI does not know about the competitive landscape. Each person's knowledge is an island.</p><p><strong>The organizational product moat is when every PM's customer call enriches every designer's AI. When every engineer's technical decision enriches every PM's context.</strong> The compound loop where everyone benefits from everyone else's knowledge - that is the system that makes your product team inimitable.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build the Product Knowledge Flywheel",
+          "triggerText": "See how to make product knowledge compound across the team",
+          "html": "<h3>Structure every contribution with two layers</h3><p>For every piece of product work, capture two layers:</p><ul><li><strong>\"My analysis\":</strong> Personal, opinionated conviction. The PM's strategic read, the designer's UX instinct.</li><li><strong>\"Evidence for the base\":</strong> Raw facts, quotes, data points that enrich the shared knowledge base.</li></ul><h3>Product knowledge categories</h3><ul><li><strong>Customer calls:</strong> Synthesized insights tagged by persona, theme, and product area</li><li><strong>Competitive intelligence:</strong> Feature launches, pricing changes, strategic shifts</li><li><strong>Usage analytics:</strong> Patterns, trends, anomalies with product implications</li><li><strong>Design decisions:</strong> IA rationale, UX trade-offs, pattern choices with reasoning</li><li><strong>Technical decisions:</strong> Architecture choices, constraints, performance implications</li></ul><h3>The cross-pollination</h3><p>Connect via Notion MCP. Now when the PM asks about engineering constraints, the AI references actual technical decisions. When the designer asks about users, the AI draws from the PM's full research corpus. The information asymmetry inside the product team drops to zero.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A SaaS company built a product knowledge base connecting sales insights, support tickets, and usage analytics. Product decisions now reference the full picture automatically. The PM does not need to \"talk to sales\" for competitive context - it is already in the system. Faster decisions. Better products. Fewer information gaps.</p><p><strong>The product moat is not better features. It is better product judgment, compounding through shared knowledge.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Product Research to the Organizational Base",
+          "triggerText": "See how to make research compound instead of expire",
+          "html": "<h3>The research compound problem</h3><p>Most product research expires. Customer calls from 3 months ago are forgotten. Competitive analyses from last quarter are stale. Usability findings get buried. The knowledge exists but nobody can find it when they need it.</p><h3>The fix</h3><ol><li><strong>Structured capture:</strong> Every research artifact gets tagged by persona, product area, theme, and date in a Notion database</li><li><strong>AI synthesis:</strong> Weekly, AI synthesizes new research against existing patterns. \"This insight from Customer Call #47 connects to the pattern we identified in Q3 research.\"</li><li><strong>Frictionless access:</strong> Via MCP, anyone's AI can query: \"What do we know about enterprise onboarding friction?\" and get a synthesized answer drawing from every relevant source</li></ol><h3>The compound effect</h3><p>After 6 months, your product team's AI has more customer context than any individual PM could hold in their head. Research from 3 months ago surfaces automatically when relevant. The depth of product understanding grows with every customer interaction.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The product teams with organizational knowledge moats report that new product decisions are faster, more informed, and more consistent. The PM does not need to re-read 40 customer call transcripts - the AI has synthesized the patterns. The designer does not need a research readout meeting - the context flows automatically.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Onboard New Product People in Days, Not Months",
+          "triggerText": "See how knowledge infrastructure transforms product onboarding",
+          "html": "<h3>The onboarding problem</h3><p>A new PM takes 3 months to build enough context to make confident product decisions. Three months of shadowing, reading old docs, and absorbing tribal knowledge. At senior PM comp, that is $50K+ in ramp-up cost.</p><h3>The knowledge-powered onboarding</h3><p>Day 1: New PM's Claude has access to the full product knowledge base via MCP. They can ask:</p><ul><li>\"What did customers say about pricing in the last 6 months?\"</li><li>\"What are the top 3 feature requests from the enterprise segment?\"</li><li>\"Why did we decide against building X in Q2?\"</li></ul><p>The AI answers with synthesized evidence from the entire team's accumulated intelligence. Not generic answers - specific answers grounded in your company's actual data, decisions, and customer base.</p><h3>The result</h3><p>New PMs reach confident decision-making in 2-3 weeks instead of 3 months. They are building on the team's collective product judgment from day one. The onboarding cost drops by 70%.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Individual product knowledge is a career asset. Organizational product knowledge is a competitive weapon. Every customer call, every research synthesis, every product decision - compounding across the team, accessible to every AI session. That is how product teams build moats that no competitor can replicate by simply hiring a few smart PMs.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your taste doc makes your AI produce work that is unmistakably yours. But when a new designer joins the team, they start from zero. Your years of accumulated UX intuition, IA decisions, and design system reasoning live in your head - not in a system that compounds.</p><p><strong>The organizational design moat is when every designer's decisions enrich every other designer's AI.</strong> When the research patterns, IA rationale, and UX trade-offs accumulate into a shared intelligence that new team members inherit on day one. That is the system that makes design quality consistent and compounding.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Composable Design Knowledge System",
+          "triggerText": "See how to structure design knowledge for organizational scale",
+          "html": "<h3>Two-layer documentation</h3><p>Every design decision gets captured with two layers:</p><ul><li><strong>\"My design choice\":</strong> The persona insight, the IA rationale, the UX trade-off, the aesthetic call. This is the subjective edge that makes your work distinctive.</li><li><strong>\"Design principle\":</strong> The pattern that scales to the team. When a new designer joins, their AI carries the team's collective design judgment from day one.</li></ul><h3>Design knowledge categories</h3><ul><li><strong>UX patterns:</strong> What works, what does not, and why - tagged by use case and context</li><li><strong>IA decisions:</strong> Information architecture choices with reasoning and alternatives considered</li><li><strong>Design system evolution:</strong> Why components changed, what triggered the update, what the impact was</li><li><strong>User research patterns:</strong> Recurring findings mapped to personas and product areas</li></ul><h3>The composable structure</h3><p>Your taste doc has a personal layer (your preferences, your edge) and a shareable layer (principles the whole team can deploy). Two layers. One workflow. The shareable layer feeds the organizational moat.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A design agency scaled their design process knowledge across 8 designers. User research patterns, IA decisions, UX learnings, client preference patterns, aesthetic evolution - all feeding one base. New projects start with accumulated design wisdom from every previous project. Quality became consistent across the team.</p><p><strong>That is how you derisk creative output.</strong> The design quality stops depending on which designer gets assigned and starts depending on the system's accumulated intelligence.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Design Knowledge Across the Team",
+          "triggerText": "See how to make design decisions compound instead of fragment",
+          "html": "<h3>Connect design to the organizational base</h3><ul><li><strong>Design decisions to Notion:</strong> Every significant design choice - IA, UX, visual - documented with reasoning in the shared knowledge base</li><li><strong>Research to design:</strong> User research findings auto-tagged and accessible when exploring design directions</li><li><strong>Design to engineering:</strong> Component decisions, interaction patterns, and design tokens shared through MCP connections</li></ul><h3>The designer's compound loop</h3><p>You benefit from the PM's customer research and the engineer's technical constraints - flowing into your AI's context automatically. Your design decisions enrich the PM's product context and the engineer's implementation context. Everyone benefits from everyone.</p><h3>New designer onboarding</h3><p>When a new designer joins, their AI carries: the team's UX patterns, IA philosophy, design system reasoning, and accumulated user research insights. The thinking that takes years to develop is available on day one. Ramp time on design judgment drops from months to weeks.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The compound math for design teams: 8 designers contributing 5 design decisions per week equals 2,080 documented design choices per year. Each one enriches the base. Each one makes the next decision more informed. No competitor can replicate that depth by hiring designers away - the knowledge is in the system.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Build a Design System That Carries Institutional Memory",
+          "triggerText": "See how to make your design system a living knowledge base",
+          "html": "<h3>Beyond components and tokens</h3><p>Your design system should carry not just what the components are, but why they are that way. For each component, document:</p><ul><li>The user problem it solves</li><li>The alternatives that were considered</li><li>The trade-offs that led to this design</li><li>Usage guidelines with reasoning, not just rules</li></ul><h3>Connect the reasoning to AI</h3><p>When a designer asks AI \"What component should I use for this pattern?\" the answer draws from the full reasoning library, not just a component list. The AI recommends based on user context, design principles, and precedent - because all of that lives in the knowledge base.</p><h3>The evolving system</h3><p>As the design system evolves, capture why changes were made. When someone proposes reverting a decision, the AI surfaces the original reasoning. The system remembers what individuals forget. That institutional memory is what keeps design quality consistent through team turnover.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Individual design taste is a career moat. Organizational design intelligence is a competitive moat. Build the first, then scale it through a system that compounds across every designer, every project, and every decision. The returns are visible in every deliverable.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You built a personal knowledge base that makes your AI produce work that is unmistakably yours. That is a career moat. But it is just the beginning. The question is: how do you scale that moat so it compounds faster, survives your bad days, and becomes genuinely inimitable?</p><p><strong>For a solo operator, the organizational moat is your own system.</strong> Every project, every client, every domain you work in - the knowledge should compound across all of it. Your AI should get smarter with every engagement. That is the flywheel that turns solo work into a scalable operation.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Personal Knowledge Flywheel",
+          "triggerText": "See how to make your knowledge compound across every project",
+          "html": "<h3>Structure for compounding</h3><p>Every piece of work you do should deposit knowledge that makes future work better. Structure your knowledge base with:</p><ul><li><strong>Domain knowledge:</strong> Industry patterns, market insights, technical solutions - tagged by domain and client type</li><li><strong>Process patterns:</strong> What works, what does not, and why - reusable frameworks across projects</li><li><strong>Client/customer insights:</strong> What you learned about each client's needs, preferences, and constraints</li><li><strong>Quality standards:</strong> Your taste doc, evolving with every project</li></ul><h3>The compound loop</h3><p>Every project adds to the base. Every new project starts from a richer foundation. After 6 months, your AI has more context than a new hire would gain in a year. After a year, the depth is inimitable.</p><h3>Cross-project pollination</h3><p>The insight from Client A's project surfaces when it is relevant to Client B's work. The pattern you discovered in one domain applies to another. Your AI connects dots across your entire body of work because the knowledge is structured and accessible.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The solo operator with a compounding knowledge base is not competing on hours. They are competing on accumulated intelligence. Every engagement makes the next one better. Every domain they enter enriches every other domain. That is how you charge premium rates - not because you are expensive, but because your output draws on a depth of context no competitor can match.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Knowledge Capture Into Your Daily Workflow",
+          "triggerText": "See how to capture knowledge without extra effort as a solo operator",
+          "html": "<h3>The zero-effort principle</h3><p>If knowledge capture requires a separate step, you will skip it on busy days. And busy days are when the most valuable knowledge gets generated.</p><h3>Automatic capture points</h3><ul><li><strong>Meetings:</strong> Granola captures and transcribes automatically. AI extracts key decisions and insights.</li><li><strong>Work output:</strong> Every deliverable you produce gets summarized and tagged before archiving</li><li><strong>Research:</strong> Every research session deposits synthesized findings, not just raw notes</li><li><strong>Reflections:</strong> End-of-day prompt: \"What did I learn today that my AI should remember?\" - 5 minutes, compounding daily</li></ul><h3>The weekly synthesis</h3><p>Every Friday, spend 15 minutes reviewing the week's captured knowledge. AI synthesizes it into patterns. You validate and refine. This weekly synthesis is the highest-leverage 15 minutes of your week.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>After one year of consistent capture and synthesis, your knowledge base holds thousands of artifacts. Your AI understands your domains, your clients, your patterns, and your taste at a depth that would take a new competitor years to replicate. That is the solo operator's moat.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Scale Your Solo Knowledge Into a Team Asset",
+          "triggerText": "See how to prepare your knowledge base for when you hire",
+          "html": "<h3>Building for the future</h3><p>Even as a solo operator, structure your knowledge base as if a team will use it. Because eventually, they will - whether that is a hire, a contractor, or a collaborator.</p><h3>The two-layer structure</h3><ul><li><strong>Personal layer:</strong> Your specific preferences, subjective edge, and personal taste - this stays with you</li><li><strong>Shareable layer:</strong> Domain knowledge, process patterns, quality standards, and evidence - this scales to a team</li></ul><h3>When you hire</h3><p>Your first hire's AI has access to the shareable layer on day one. They are productive immediately because the knowledge base carries the context. You do not need to spend weeks downloading your brain into theirs. The system does it.</p><h3>When you collaborate</h3><p>A contractor or collaborator gets selective access to the shareable layer. They produce work that aligns with your standards because the AI carries your quality bar. The knowledge base is the scalable version of your judgment.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The solo operator's moat starts personal and grows organizational. Every project compounds it. Every engagement deepens it. When you eventually scale - whether to 2 people or 20 - the knowledge base is the foundation that makes scaling possible without losing quality. Build the moat now. It pays dividends forever.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your best engineer just left. With them went 3 years of architectural context, incident pattern recognition, and institutional knowledge about why the system is built the way it is. The replacement will take 3 months to ramp. At $180K fully-loaded cost, that is $45K in ramp-up drag.</p><p><strong>An organizational engineering knowledge moat means that institutional memory survives any departure.</strong> Every architecture decision, every incident postmortem, every technical trade-off - documented, synthesized, and accessible through every engineer's AI from day one.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build an Engineering Knowledge System That Compounds",
+          "triggerText": "See how to capture engineering decisions so they never repeat",
+          "html": "<h3>Architecture Decision Records (ADRs)</h3><p>Document every significant technical decision with reasoning attached:</p><ul><li>What we decided</li><li>Why we decided it (the context at the time)</li><li>What alternatives we considered</li><li>What happened when we tried the alternatives</li></ul><h3>Incident postmortem knowledge</h3><p>Feed every incident postmortem into the knowledge base. When a similar pattern emerges, AI surfaces the precedent. The same mistake never happens twice because the system remembers what individuals forget.</p><h3>Code pattern documentation</h3><p>Key PR decisions, naming conventions, and architectural patterns - documented and accessible. When a new engineer writes their first PR, AI nudges them toward team patterns because CLAUDE.md and the knowledge base carry the conventions.</p><h3>The compound effect</h3><p>After a year, your engineering knowledge base holds thousands of decisions with reasoning. New proposals get checked against precedent automatically. Onboarding drops from 3 months to 6 weeks. The team's collective engineering judgment is in the system, not in any individual's head.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The \"ask the senior person\" bottleneck is the single most expensive knowledge constraint in any scaling engineering org. When every answer requires finding and asking the right person, velocity is throttled by availability. When the AI carries the senior person's context, the bottleneck disappears.</p><p><strong>Engineering teams that capture technical decisions with reasoning report a 40% reduction in onboarding time.</strong> At $180K average fully-loaded eng cost, that is real money per hire.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Engineering Knowledge Flow Automatically",
+          "triggerText": "See how to capture technical knowledge without extra process",
+          "html": "<h3>Capture from existing workflows</h3><ul><li><strong>PR descriptions:</strong> Template that captures not just what changed, but why. Feeds the knowledge base automatically.</li><li><strong>Incident responses:</strong> Postmortem template that captures root cause, resolution, and prevention pattern. Auto-deposits to the base.</li><li><strong>Architecture discussions:</strong> Slack channels with Zapier integration that captures key technical threads daily.</li><li><strong>Sprint retros:</strong> Structured capture of what the team learned.</li></ul><h3>AI synthesis</h3><p>Weekly, AI synthesizes new technical knowledge against existing patterns. \"This refactoring approach is similar to what Team B tried in Q3 - here is what they learned.\" Human reviewers (tech leads) validate the connections.</p><h3>The engineering rule</h3><p>If engineers have to do extra work to contribute knowledge, they will not. Build capture into the tools they already use: Git, Slack, CI/CD, incident management. The system captures knowledge as a byproduct of normal engineering work.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>An engineering team that captured every ADR, incident postmortem, and technical decision found that when an engineer proposes a refactor, AI surfaces relevant precedent. The same debate does not happen twice. Review quality improves because every reviewer has access to the same architectural context.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Protect Engineering Knowledge From Departures",
+          "triggerText": "See how to make institutional engineering memory departure-proof",
+          "html": "<h3>The departure risk assessment</h3><p>List your top 3 engineers. If they left tomorrow, what knowledge goes with them?</p><ul><li>Which systems do only they understand deeply?</li><li>Which architectural decisions exist only in their heads?</li><li>Which incident patterns would be relearned painfully?</li></ul><h3>The protection strategy</h3><ul><li><strong>Ongoing capture:</strong> Architecture decisions documented with reasoning in real time, not retrospectively</li><li><strong>Knowledge pairing:</strong> Every system has at least 2 engineers who contribute context to the knowledge base</li><li><strong>AI-accessible documentation:</strong> Not a wiki nobody reads - a knowledge base every engineer's AI queries automatically</li></ul><h3>The continuity test</h3><p>Simulate a key departure. Can a replacement engineer's AI answer 80% of their \"how does this work?\" questions from the knowledge base? If not, the knowledge is still locked in heads. Fix it before you need to.</p><h3>The organizational advantage</h3><p>When the knowledge lives in the system, departures are manageable. New hires ramp fast. The team's velocity barely dips. That resilience is worth more than any retention bonus.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The engineering knowledge moat is what separates teams that scale gracefully from teams that break at every growth inflection. Capture decisions, synthesize patterns, provide frictionless access. The compound math makes your engineering organization more capable every quarter - regardless of who comes or goes.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your creative taste makes your work distinctive. But that taste lives in your head. When a new team member joins, they spend months absorbing the brand's creative DNA through osmosis. When you are unavailable, the work drifts. The creative quality depends entirely on you being in the room.</p><p><strong>The organizational creative moat is when your taste, your brand intelligence, and your creative process live in a system that every team member's AI draws from.</strong> Quality becomes consistent across the team because the creative DNA is in the system, not in any single person.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Scale Your Creative Taste Into a System",
+          "triggerText": "See how to make your creative judgment compound across the team",
+          "html": "<h3>Document your creative DNA</h3><p>Your taste doc becomes the foundation of the organizational creative moat:</p><ul><li><strong>Brand voice principles:</strong> Not just rules, but the reasoning behind every choice. Why this tone. Why these words. Why this rhythm.</li><li><strong>Visual identity reasoning:</strong> The thinking behind the aesthetic. What inspired it. What it intentionally avoids. How it should evolve.</li><li><strong>Creative process documentation:</strong> How you approach a brief. What questions you ask first. How you evaluate concepts. Your decision framework.</li></ul><h3>Two-layer structure</h3><ul><li><strong>Your personal creative edge:</strong> The subjective instincts that make your direction distinctive - this stays with you</li><li><strong>Shareable creative principles:</strong> The patterns, frameworks, and standards the team can deploy through AI</li></ul><h3>Connect to the team's AI</h3><p>Load the shareable layer into the Notion knowledge base. Connect via MCP. Now every team member's AI applies your creative principles automatically. The brand voice stays consistent. The visual direction stays coherent.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>When the brand's creative DNA lives in a system, new creative team members produce on-brand work from their first week. The ramp time for creative judgment drops from months of osmosis to days of AI-assisted immersion. The brand quality stops depending on whether the creative director reviewed every piece.</p><p><strong>That scalability is the organizational creative moat.</strong> Your creative intelligence, compounding through a system, deployed across every team member's AI.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build a Campaign Knowledge Archive That Compounds",
+          "triggerText": "See how to make every campaign make the next one better",
+          "html": "<h3>Structured campaign capture</h3><p>After every campaign, deposit:</p><ul><li><strong>Strategic insight:</strong> What was the audience truth? What tension did the campaign resolve?</li><li><strong>Creative direction:</strong> The concept, the execution, the craft decisions</li><li><strong>Audience response:</strong> What resonated, what fell flat, what surprised</li><li><strong>Lessons learned:</strong> What you would do differently and why</li></ul><h3>Tag for retrieval</h3><p>Tag by: audience segment, channel, campaign type, brand tone, and outcome. When a similar brief arrives, AI surfaces relevant precedent automatically.</p><h3>The creative compound loop</h3><p>After 2 years of structured capture, your knowledge base holds hundreds of campaign insights. New projects start with the accumulated creative wisdom of every previous project. The team does not repeat mistakes. They build on successes. Every campaign is better informed than the last.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The creative teams with organizational knowledge moats report that brand consistency improves measurably. New team members produce on-brand work faster. The creative review process becomes refinement, not course correction. The quality bar holds across the team because the system carries the creative DNA.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Protect Creative Institutional Memory",
+          "triggerText": "See how to keep your brand intelligence when key creatives leave",
+          "html": "<h3>The creative departure risk</h3><p>What happens when your senior copywriter leaves? Does the brand voice drift? When the lead designer moves on, does the visual identity fragment? If yes, the creative intelligence lives in heads, not systems.</p><h3>The protection strategy</h3><ul><li><strong>Ongoing capture:</strong> Every creative decision documented with reasoning in real time</li><li><strong>Brand voice training data:</strong> Examples of approved copy, with notes on what makes them on-brand</li><li><strong>Visual direction precedent:</strong> Approved visual work with reasoning, rejection examples with explanation</li><li><strong>Process documentation:</strong> How the team approaches briefs, evaluates concepts, and makes creative decisions</li></ul><h3>The continuity test</h3><p>Can a new creative team member's AI produce work that passes the brand quality bar in their first week? If not, the creative DNA is still locked in individual heads. Keep building the system until the answer is yes.</p><h3>The brand's immune system</h3><p>When creative institutional memory lives in the system, brand quality becomes self-reinforcing. New team members learn the DNA faster. The review process is lighter. The brand evolves intentionally instead of drifting accidentally. That consistency is the creative moat.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The creative moat is not your most talented person. It is the system that captures, compounds, and deploys creative intelligence across the entire team. Build it, and your brand quality scales. Neglect it, and quality depends on who is in the room today. That fragility is the risk worth eliminating.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You have been coding for years. Every project taught you something. But most of that knowledge lives in scattered memories, old repos, and forgotten bookmarks. When you start a new project, you start from scratch - not because you lack knowledge, but because your knowledge is not accessible.</p><p><strong>Your personal knowledge moat is the system that makes everything you have ever learned available in every future project.</strong> Every framework mastered, every bug debugged, every elegant solution found - compounding into an AI context that makes you faster and better with every passing month.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Personal Technical Knowledge System",
+          "triggerText": "See how to make everything you learn compound permanently",
+          "html": "<h3>The patterns database</h3><p>Create a knowledge base (Notion, Obsidian, or markdown) with categories:</p><ul><li><strong>Solutions:</strong> Problems you solved with the approach, reasoning, and code snippets</li><li><strong>Patterns:</strong> Reusable approaches that work across projects</li><li><strong>Gotchas:</strong> Things that tripped you up and how to avoid them</li><li><strong>Libraries:</strong> Tools you have evaluated, with honest assessments</li><li><strong>Architecture decisions:</strong> Why you structured projects certain ways</li></ul><h3>Capture as you work</h3><p>At the end of each coding session, spend 5 minutes depositing what you learned. Not a full write-up - a quick note tagged by technology, pattern type, and project. The AI can synthesize it later.</p><h3>Connect to your AI</h3><p>Via MCP or CLAUDE.md, your knowledge base feeds every AI session. When you hit a problem, the AI searches your personal knowledge first. When you start a new project, it suggests patterns from your past work. Your accumulated experience is always at your fingertips.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>After a year of consistent capture, your knowledge base holds hundreds of solutions, patterns, and insights. Your AI carries your complete technical journey. New projects start from your accumulated experience, not from a blank slate. That depth of personal context is something no tutorial, no bootcamp, and no AI without your history can replicate.</p><p><strong>That is the vibe coder's moat.</strong> Not the tools - everyone has those. The accumulated knowledge that makes every project faster and better than the last.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Scale Your Knowledge Across Side Projects",
+          "triggerText": "See how to make every project make every other project better",
+          "html": "<h3>Cross-project pollination</h3><p>The authentication pattern you nailed in Project A applies to Project B. The deployment workflow from your last app works for the next one. The performance optimization you discovered in a game engine applies to your web app.</p><h3>How to enable it</h3><ul><li>Use a central knowledge base that spans all projects</li><li>Tag solutions by technology and pattern type, not just by project</li><li>When AI suggests a solution, it draws from your entire portfolio of past work</li></ul><h3>The compound math</h3><p>10 side projects per year, each generating 20+ reusable patterns = 200 patterns per year. After 3 years, your AI carries 600+ tested solutions. A new project that takes a fresh developer a month takes you a weekend - not because you are faster at typing, but because your AI knows how you have already solved 80% of the subproblems.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The vibe coders with compounding knowledge bases are not just shipping more projects. They are shipping better projects - because every one builds on the lessons of every previous one. The quality improves alongside the speed. That is the compound effect.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Build a Public Knowledge Portfolio",
+          "triggerText": "See how to turn your knowledge moat into reputation and opportunity",
+          "html": "<h3>The knowledge-to-reputation pipeline</h3><p>Your accumulated knowledge is not just an AI context - it is content. The patterns, solutions, and insights you have captured are valuable to other developers.</p><h3>Sharing strategies</h3><ul><li><strong>Blog posts:</strong> Turn your best patterns into tutorials. The knowledge is already captured - the writing is the easy part.</li><li><strong>Open source:</strong> Extract reusable patterns into libraries or templates. Your project starter kit, published.</li><li><strong>Social proof:</strong> Share solutions publicly. The knowledge you deposit daily becomes the portfolio that attracts opportunities.</li></ul><h3>The reputation compound effect</h3><p>Every blog post, every open source contribution, every shared solution builds your reputation. The reputation attracts better projects. Better projects generate deeper knowledge. Deeper knowledge feeds better content. The flywheel spins.</p><h3>The moat becomes visible</h3><p>A vibe coder with a public knowledge portfolio and 500+ documented patterns is undeniably valuable. Not because of credentials - because of demonstrated depth. The knowledge moat becomes your calling card.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build the personal knowledge moat first. Let it compound across every project. Then share it publicly and let the reputation compound too. The vibe coder who documents, compounds, and shares has an unfair advantage that grows every week. Start today. The returns start immediately and never stop growing.</p>"
+        }
+      ]
+    }
+  }
+}

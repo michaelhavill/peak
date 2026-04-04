@@ -1,0 +1,310 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You have a career's worth of expertise that no one can access - including you. Ten, maybe twenty years of instincts no job description captures. The strategic sense that flags wrong positioning before you can articulate why. The hiring judgment that reads a culture mismatch in five minutes flat.</p><p>All of it locked in your head. Impossible to sell. Impossible to scale. You're sitting on your most valuable career asset - and it has zero liquidity.</p><p>The problem isn't the AI tool. It's that your AI has zero access to the thing that makes you, you. You prompt Claude and get back something written for everyone and no one. The value isn't the AI alone - it's you, your knowledge store, and AI working as one system.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your First Knowledge Base in 20 Minutes",
+          "triggerText": "See how to build your first knowledge base",
+          "html": "<h3>The Quick Start</h3><p>Open Claude.ai, click <strong>Projects</strong> in the sidebar, create a new Project, and add your expertise docs, frameworks, or past work as Project Knowledge. Every conversation inside that Project now draws from your context.</p><h3>What to Document First</h3><p>Pick one domain of expertise. Write 10-15 specific rules - not vague principles like \"I value quality\" but actionable specifics like \"every brief starts with the user's current workaround, not the feature description.\"</p><h3>Go Further with MCP</h3><p>Connect your Notion workspace, Confluence pages, or Google Docs to Claude via MCP (Model Context Protocol) so your knowledge base stays live and current without manual uploads.</p><h3>The Investment Math</h3><p>Roughly 20 minutes per knowledge area. Document one domain. Connect it. Test it. The first time your AI returns something that sounds like you - not like the median internet response - you'll understand the difference between using AI and deploying it.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The moment you make your specificity available to AI, you stop selling time and start deploying an asset. A product designer spent one weekend documenting 40 design principles - persona-driven UX, information architecture, visual taste refined over 12 years. Monday morning, every AI-generated concept nailed her thinking. The 45-minute rewrite cycle? Gone. She financialized 12 years of judgment in 8 hours.</p><p>An engineering lead documented architecture decisions, naming conventions, and the 5 things you never do in the codebase. Code suggestion acceptance went from 60% to 95%. His hard-won opinions are now embedded in every line the team ships.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build a Shared Team Knowledge Base",
+          "triggerText": "Learn how to connect your team's knowledge",
+          "html": "<h3>The Team Setup</h3><p>Build your knowledge base in Notion and connect it via MCP - you can do this in under an hour. Install the Notion MCP server, authorize your workspace, and Claude can read and query every page your team maintains.</p><h3>The Flow</h3><p>Customer calls flow through Granola, get synthesized, and deposit key evidence into a structured knowledge base. Next time anyone needs context - the PM needs competitive positioning, the designer needs user research, the engineer needs business context - the foundation is already there.</p><h3>Why This Fixes Adoption</h3><p>Simple prompts produce excellent output because the accumulated context does the heavy lifting. People who struggled with \"what do I even prompt?\" now get useful output on the first try. The knowledge base is the onramp that makes AI accessible to the 80% who gave up.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Here's where the compounding gets wild. Every customer call you summarize and deposit, every design decision you record, every technical constraint you document - it makes tomorrow's output measurably better than today's. After 6 months, your AI has context that would take a new hire a year to absorb. After 12 months, you've built career capital that no layoff, no reorg, and no competitor can touch.</p><h2>The Pattern Hides in Plain Sight</h2><p>The right question isn't \"does this work in my domain?\" It's \"why would structured knowledge not compound in any domain?\" A solo founder describes it as having a business partner with perfect memory and zero ego - 170 hours recaptured per year. A clinical coordinator cut prep from 45 minutes to 5. Different domains. Same pattern. Same economics.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Tools and Integrations That Make This Real",
+          "triggerText": "See the tools teams are using right now",
+          "html": "<h3>Notion + MCP</h3><p>Teams connect their Notion workspace to Claude via the Model Context Protocol. Customer research, product decisions, engineering constraints - all queryable by AI in real time. The \"let me find that doc\" tax drops to zero.</p><h3>Granola</h3><p>Captures meeting context automatically - call notes, decisions, action items - and deposits them into a structured knowledge base. No extra work. The context accumulates as a byproduct of normal work.</p><h3>Cursor + Codebase Indexing</h3><p>Engineering teams point Cursor at their entire repo and it builds a knowledge layer automatically. Architecture patterns, naming conventions, shared utilities - the AI learns your codebase by reading it.</p><h3>Linear + Slack + Claude</h3><p>Product teams connect their issue tracker and communication channels to AI. When the PM prompts for sprint priorities, the AI already knows the backlog, the recent conversations, and the customer feedback.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Knowledge management isn't one idea among five. It's the foundation everything else builds on. Your architecture needs a knowledge layer to orchestrate intelligently. Your workflow engine needs context to route work. Your AI-native team needs shared context to close the adoption gap.</p><p>Every pillar feeds knowledge back into the base. Every improvement to the base improves every pillar. The game isn't who has the best AI. It's who has the best people empowering the best agents through the best context - all three working as one system.</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You spent years building strategic instincts - reading markets, sizing opportunities, knowing when to pivot and when to persevere. That judgment is your single greatest competitive advantage. And right now, none of it reaches your AI.</p><p>You prompt Claude for an investor update and get back consultant-speak that could belong to any startup in any market. You're burning 3 hours per update rewriting it to sound like your actual strategic thinking. Meanwhile your competitor just shipped their knowledge base and their AI drafts carry their conviction. That gap compounds daily.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Encode Your Fundraising and Strategy Context",
+          "triggerText": "See how founders are encoding fundraising context",
+          "html": "<h3>What to Document</h3><p>Start with your fundraising context: investor preferences from pitch meetings, objection patterns you've learned to navigate, competitive positioning notes, and the metrics you always lead with. This is the knowledge that makes your investor updates land differently.</p><h3>The Setup</h3><p>Create a Claude Project. Upload your best investor updates, pitch decks, and board materials as Project Knowledge. Add a short doc covering your positioning philosophy and how you frame challenges as opportunities without sugarcoating.</p><h3>The Result</h3><p>One founder encoded his context from 200+ pitch meetings. AI-drafted investor updates now reference the right context for each recipient. What took 3 hours now takes 20 minutes - and they're more personalized than before. That's a 9x return on a one-time documentation investment.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>This isn't about productivity. It's about changing the economics of your expertise as a founder. Before, your strategic judgment was illiquid - trapped in your head, accessible one board meeting at a time. Now it's deployable. Working across every project simultaneously. Same conviction, 10x the surface area.</p><p>Think about what that means for hiring, for fundraising, for product direction. Every domain where your judgment matters - encoded once, compounding forever.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Your Company's Shared Knowledge Infrastructure",
+          "triggerText": "Learn how to build organizational knowledge that compounds",
+          "html": "<h3>The Problem at Scale</h3><p>Your company bought AI licenses for the whole team. Adoption stalled at 20%. That's $480 per seat per year producing zero ROI. The PM's prompt doesn't know about engineering's constraints. The designer's prompt doesn't reference the persona research. Each person is building on sand.</p><h3>The Fix</h3><p>Build in Notion, connect via MCP - under an hour. Customer calls flow through Granola, get synthesized, and deposit key evidence into a structured knowledge base. Simple prompts now produce excellent output because the accumulated context does the heavy lifting.</p><h3>The Moat</h3><p>After 12 months, competitors cannot replicate your curated organizational intelligence. They can buy the same models, the same tools - they cannot buy your 12 months of compounded knowledge and the loop between your people and the system.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every silo you collapse is a meeting you kill. Every meeting you kill is 6 hours of salary cost per week you redeploy to actual work. When sales call notes enrich the same knowledge base that product uses for prioritization, information flows without meetings.</p><p>The adoption gap closes because the barrier drops. The knowledge base is the onramp that takes your AI spend from cost center to force multiplier. That's how you win - not by having better technology, but by having better people empowering better agents through better context.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Compounding Playbook for Startups",
+          "triggerText": "See how startups are building knowledge moats",
+          "html": "<h3>Notion + MCP</h3><p>Connect your Notion workspace to Claude. Customer research, product decisions, engineering constraints - all queryable by AI in real time. Thousands of teams are running this setup right now.</p><h3>Granola for Meeting Intelligence</h3><p>Meeting context captured automatically - decisions, action items, customer signals. The knowledge accumulates as a byproduct of normal work, which is the only way knowledge management sticks at a startup.</p><h3>Cursor for Engineering Context</h3><p>Point Cursor at your repo and it builds a knowledge layer automatically. Architecture patterns, naming conventions, shared utilities - the AI learns your codebase reality by reading it.</p><h3>The Compound Loop</h3><p>After 6 months, your AI has context that would take a new hire a year to absorb. After 12 months, that's career capital and company capital that no competitor can buy. The gap widens daily.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>You just changed the economics of your startup's expertise. Your knowledge was illiquid - trapped in formats that could only be accessed one conversation at a time. Now it's liquid. Deployable. Compounding while you focus on the next problem. That's not a productivity hack. That's a structural advantage your competitors can't close by working harder - only by starting sooner.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You've built product instincts over thousands of reps. The sense that separates a retention-moving feature from a vanity metric. The judgment that catches a positioning problem before anyone can prove it. But when you prompt Claude for a product brief, you get a structurally competent nothing-burger. The AI has zero access to what makes your product thinking valuable.</p><p>The fix isn't better prompts. It's making your product judgment available to AI - so every brief, every spec, every prioritization decision starts from your quality bar, not from zero.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Product Knowledge Base",
+          "triggerText": "See how to encode your product judgment",
+          "html": "<h3>Start with Your Brief-Writing Craft</h3><p>Document how you structure problem statements, what customer evidence clears your bar, and how you frame success metrics that drive behavior. Upload your three best product briefs to a Claude Project as examples.</p><h3>Add Your Domain Context</h3><p>Competitive positioning, user research synthesis, feature performance data, and the personas that actually drive your decisions. The goal: when you prompt for a sprint planning brief, the AI surfaces what matters about that feature area without you pulling up six dashboards first.</p><h3>The Payoff</h3><p>One PM financialized her brief-writing craft this way. AI briefs now match her quality bar on the first draft. The 45-minute rewrite tax? Gone. That time goes back to deep product thinking - sitting with customer problems, pressure-testing strategy, designing experiments worth running.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Context assembly time dropped 80% for PMs who encoded their product knowledge. Same person. Same tools. Completely different output. The only variable that changed was the quality of the context layer.</p><p>Sprint planning went from \"let me pull up six dashboards\" to \"here's what the knowledge base surfaces about this feature area.\" That's not a time savings hack - it's a fundamentally different way to run product.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Your Product Team's Knowledge",
+          "triggerText": "Learn how to build shared product context",
+          "html": "<h3>The Problem</h3><p>The PM's prompt doesn't know about engineering's constraints. The designer's prompt doesn't reference the persona research from the last project. Each person starts from zero while your organizational intelligence sits scattered across 40 Notion pages and 12 Slack channels.</p><h3>The Solution</h3><p>Build in Notion and connect via MCP. Customer calls flow through Granola, get synthesized, and deposit key evidence into a structured knowledge base. When the PM needs competitive positioning, when the designer needs user research, when the engineer needs business context - the foundation is already there.</p><h3>Cross-Functional Payoff</h3><p>When engineering constraints live in the same system the designer queries, technically impossible solutions stop getting proposed. When customer signals feed both product and sales, prioritization reflects reality instead of whoever talked loudest in the last meeting.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Here's the compounding effect. Every customer call you summarize and deposit, every feature decision you record, every user research insight you capture - tomorrow's output is measurably better than today's. After 6 months, your product AI has context that would take a new PM a year to absorb.</p><p>The game isn't who has the best AI. It's who has the best product people empowering the best agents through the best context. That's the moat - and it widens every single day.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Tools for Product Knowledge Infrastructure",
+          "triggerText": "See the product tools that make this work",
+          "html": "<h3>Notion + MCP</h3><p>Customer research, product decisions, engineering constraints - all queryable by AI in real time. The \"let me find that doc\" tax drops to zero because the AI already has it.</p><h3>Granola</h3><p>Captures meeting context automatically. Customer call notes, decisions, action items - deposited into your knowledge base without extra work. The context accumulates as a byproduct of normal product work.</p><h3>Linear + Slack + Claude</h3><p>Connect your issue tracker and communication channels to AI. When you prompt for sprint priorities, the AI already knows the backlog, recent conversations, and customer feedback without anyone copy-pasting.</p><h3>The Compounding Math</h3><p>After 12 months, this becomes a competitive moat. Competitors can buy the same models. They cannot buy your 12 months of curated product intelligence and the compound loop between your team and the system.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Knowledge management is the foundation every other product capability builds on. Your workflow engine needs context to route work with the right information. Your team needs shared context to close the adoption gap. Remove the knowledge layer and everything collapses. Build it well, and every improvement compounds across everything you ship.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You've spent years developing an eye for what works - the weight mismatch across a page, the information architecture that mirrors how users actually think, the interaction patterns that feel right before you can explain why. That refined taste is your most valuable asset. And right now, your AI can't see any of it.</p><p>You ask for a component and get generic patterns that require 30 minutes of translation to fit your system. Your design tokens, your accessibility requirements, your visual taste - invisible to the tool that's supposed to help you ship faster.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Connect Your Design System to AI",
+          "triggerText": "See how to make AI use your actual components",
+          "html": "<h3>What to Connect</h3><p>Your component library, design tokens, brand guidelines, and accessibility requirements. When you ask for a component, the AI should use your actual system with your actual constraints - not generic React with generic styles.</p><h3>How to Set It Up</h3><p>Create a <code>CLAUDE.md</code> file in your repo root. Document your component structure standards, naming conventions, and the design principles that drive your aesthetic decisions. Add your design tokens file path and your accessibility rules. Claude Code reads this before every interaction.</p><h3>Write Your Design Principles</h3><p>Be ruthlessly specific: \"Body text never exceeds 18px. Primary CTAs use high-contrast fills, never outlines. Section padding is 80px minimum on desktop. Warm neutrals over cool grays.\" These aren't preferences - they're your deployable taste.</p><h3>The Result</h3><p>One design engineer connected his component library, tokens, and accessibility requirements. Generated code uses his actual components with his actual tokens. The translation step from generic patterns to his reality - gone.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The gap between Figma and production closed. No more translating from generic React to your design system. No more fixing spacing, colors, and component structure on every AI-generated output. Your craft is now embedded in the tool.</p><p>A product designer wrote 40 specific principles spanning persona-driven content hierarchy, UX flow logic, progressive disclosure patterns, and visual taste. AI-generated concepts matched her thinking and aesthetic without a single correction. First try.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Shared Design and Engineering Context",
+          "triggerText": "Learn how to share context across design and code",
+          "html": "<h3>The Cross-Functional Problem</h3><p>When the design system connects to engineering context, AI-generated code uses actual components with actual tokens. The \"that's not how it was designed\" QA cycle shrinks to near zero. But this only works when both sides share a knowledge base.</p><h3>The Setup</h3><p>Create a <code>/docs/engineering-context/</code> folder with architecture decisions, component standards, and naming conventions. Connect your Notion design docs via MCP so PMs and engineers can query design rationale without pinging you.</p><h3>For the Design System</h3><p>Document not just visual style but product thinking: \"progressive disclosure over feature density,\" \"information architecture mirrors the user's mental model, not the database schema.\" Teams that feed this into AI get UX solutions, not just UI layouts.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every design decision you record, every component pattern you codify, every accessibility rule you document - these compound across every future interaction. After 6 months, your AI carries design judgment that would take a new hire a year to absorb.</p><p>The craft isn't diminished by encoding it. It's amplified. You're not outsourcing your aesthetic - you're deploying it at scale while freeing yourself for the deep work that actually differentiates: information architecture decisions, interaction nuance, the hard UX problems nobody else has time to sit with.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Tools for Design-Engineering Knowledge",
+          "triggerText": "See the tools design engineers are using",
+          "html": "<h3>Cursor + .cursorrules</h3><p>Ship a <code>.cursorrules</code> file in your repo that encodes component conventions, design token usage, and banned patterns. The AI reads it before generating a single line. One file, immediate quality jump.</p><h3>Claude Code + CLAUDE.md</h3><p>Anthropic's coding agent reads project-level context files that encode your stack constraints, component standards, and design rules. Every AI interaction respects your design system reality.</p><h3>Vercel's v0</h3><p>Teams that connect their design system tokens and component libraries get output that actually ships. Teams without context get generic React. Same model, different economics.</p><h3>Figma + Design Tokens</h3><p>Connect your Figma design tokens to your codebase knowledge. When AI generates code, it references your actual color system, spacing scale, and typography - not defaults.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Knowledge management is the foundation your entire design system builds on. Your craft needs context to produce quality. Your code needs design awareness to ship correctly. Remove the knowledge layer and every component degrades to generic. Build it well, and the quality compounds across everything you make.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You're wearing every hat. Product, design, engineering, marketing, support - all you, all the time. The one thing you can't scale is the expertise locked in your head. You prompt AI for help and get generic output that needs 45 minutes of rewriting to match your actual standards. When you're a team of one, that 45 minutes is catastrophic.</p><p>A solo founder described the fix as having a business partner with perfect memory and zero ego. That's 170 hours recaptured per year - the equivalent of adding a month to your calendar. As a solo operator, that's the difference between drowning in busywork and actually building something.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Solo Knowledge Base in 20 Minutes",
+          "triggerText": "See how to encode everything when you're a team of one",
+          "html": "<h3>Encode Everything</h3><p>When you're solo, your knowledge base IS the company. Pitch learnings, customer discovery notes, architecture decisions, market research, brand voice, pricing logic - document it all. You're not creating documentation. You're building yourself a business partner.</p><h3>The Quick Setup</h3><p>Create a Claude Project. Upload your best work - pitch decks, customer research, technical decisions, marketing copy that landed. Add a short rules doc covering how you think about your domain. That's your foundation.</p><h3>The Solo Advantage</h3><p>You don't need committee approval to build this. You don't need cross-team coordination. One weekend of focused documentation and every AI interaction for the rest of your journey carries your context. The AI doesn't make your decisions. It ensures you never waste 20 minutes re-finding your own previous thinking.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The economics are starkest for solo operators. Before, your knowledge was illiquid - trapped in your brain, accessible one deliverable at a time. Now it's deployable. Working across product, marketing, and engineering simultaneously. Same expertise, 10x the surface area.</p><p>Over a year, that's roughly 170 hours recaptured. As a bootstrapper, that's not a convenience - it's survival. Every hour you spend re-establishing context is an hour not spent shipping, not spent talking to customers, not spent on the work that moves the needle.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Your Tools Without a Team",
+          "triggerText": "Learn the solo-friendly tool setup",
+          "html": "<h3>Notion + MCP (Free Tier Works)</h3><p>Connect Notion to Claude. Your customer research, product decisions, and technical notes - all queryable by AI. The \"let me find that doc\" tax drops to zero.</p><h3>Granola for One</h3><p>Captures every customer call and meeting automatically. When you're solo, every conversation is gold - Granola ensures none of it evaporates. The knowledge accumulates without extra work from you.</p><h3>Cursor for Your Codebase</h3><p>Point Cursor at your repo. It indexes your architecture patterns, naming conventions, and shared utilities. Your AI learns your codebase by reading it - no documentation sprint required.</p><h3>The Compound Effect</h3><p>After 6 months, your AI has context that would take a contractor weeks to absorb. When you need to bring on help, the knowledge base IS the onboarding. That's leverage no amount of hustle can replicate.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Here's the compounding that matters most for solo operators: every customer call you capture, every technical decision you record, every pricing experiment you document - it makes tomorrow's output better than today's. You're building an asset that compounds in your sleep.</p><p>You become the solo operator whose AI produces work that's unmistakably yours. While others get generic output from generic prompts, you've built a knowledge moat that makes you irreplaceable. That gap widens every day - and it's a gap you can never close by working harder, only by starting sooner.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You've accumulated years of architecture decisions, naming conventions, and hard-won opinions about how your codebase should work. The 5 things you never do. The patterns that broke production. The service boundaries that matter. None of it reaches your team's AI tools.</p><p>Your company bought AI licenses for everyone. Adoption stalled at 20%. Engineers prompt Copilot and get suggestions that violate patterns they didn't know existed. You're spending 30% of your time in code review catching style violations. Your highest-leverage people are functioning as human linters. That is a terrible deployment of talent.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Engineering Context Package",
+          "triggerText": "See how to encode your team's engineering reality",
+          "html": "<h3>The CLAUDE.md Approach</h3><p>Create a <code>CLAUDE.md</code> file in the root of your repo. Claude Code reads this automatically before every interaction. Write 5 sections covering: (1) how your system is wired, (2) what you call things, (3) what utilities already exist, (4) what your deploy pipeline needs, (5) what broke production and why.</p><h3>Be Specific</h3><p>Not \"use good naming\" but \"services are named by verb, e.g. <code>processPayment</code>, not <code>PaymentProcessor</code>.\" Not \"follow conventions\" but \"API responses always include pagination metadata. Error messages tell the user what to do next, not what went wrong.\"</p><h3>The Math</h3><p>If your team has 8 engineers generating 20 suggestions per day, and each rejected suggestion costs 15 minutes of senior time to fix - going from 60% to 95% acceptance recovers 14 hours of senior engineering time per day. At blended cost, that's $2,800/day from a single document.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One engineering lead built this context doc and saw acceptance rates jump from 60% to 95%. The \"fix it to match our standards\" step - the one that made engineers hate AI tooling - just disappeared. His 8 years of hard-won opinions about the codebase are now embedded in every line the team ships.</p><p>Code review shifted from \"please follow our patterns\" to \"let's discuss the architectural tradeoff here.\" That's the shift from defense to offense.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Share Engineering Context Across Your Team",
+          "triggerText": "Learn how to scale engineering knowledge",
+          "html": "<h3>Repo-Level Context</h3><p>Add your <code>CLAUDE.md</code> or <code>.cursorrules</code> to the repo. Every engineer gets it on <code>git pull</code>. For deeper context, create a <code>/docs/engineering-context/</code> folder with files like <code>architecture-decisions.md</code>, <code>anti-patterns.md</code>, and <code>naming-conventions.md</code>.</p><h3>Cross-Functional Access</h3><p>Connect your docs repo to Notion via MCP so PMs and designers can query engineering constraints without pinging an engineer. When specs auto-reference your constraints, the \"we can't do it that way\" feedback loop compresses from days to minutes.</p><h3>Institutional Memory</h3><p>Why did you choose this database? What happened last time someone tried to refactor auth? Which endpoints are load-bearing? This context prevents the same expensive mistakes from recurring every time a new engineer joins. The system remembers what individuals forget.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>New hires write idiomatic code in week one instead of month three. Onboarding dropped from 3 months to 2 weeks for one startup CTO who encoded his stack's constraints. That's not incremental improvement - that's a structural advantage.</p><p>The time your senior engineers reclaim from pattern-policing goes to architecture decisions, system design, and the hardest technical problems sitting in the backlog because nobody had time to think deeply about them. Faster reviews aren't just about shipping more. They're about unlocking time for the deep engineering work that differentiates great teams.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Tools for Engineering Knowledge Infrastructure",
+          "triggerText": "See what engineering teams are deploying",
+          "html": "<h3>Claude Code with CLAUDE.md</h3><p>Anthropic's coding agent reads project-level context files encoding your stack constraints, testing philosophy, and anti-patterns. The 60%-to-95% acceptance rate shift is real and repeatable.</p><h3>Cursor + .cursorrules</h3><p>Thousands of teams ship a <code>.cursorrules</code> file encoding naming conventions, framework preferences, and architecture constraints. One file. Immediate quality jump. The pattern has spread across open-source projects because the ROI is obvious.</p><h3>Shopify's Approach</h3><p>Their internal \"Sidekick\" system feeds codebase-specific patterns, conventions, and institutional knowledge into every AI interaction. Engineers write code that fits the monolith because the AI knows the monolith.</p><h3>Stripe's Knowledge Platform</h3><p>Connects API documentation, engineering decisions, and incident postmortems into one queryable system. When an engineer asks \"why does this endpoint work this way?\" the AI references the actual decision and reasoning.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Knowledge management is the foundation your entire engineering culture builds on. Your architecture needs a knowledge layer to orchestrate intelligently. Your team needs shared context to close the adoption gap. After 12 months, this becomes a competitive moat competitors cannot replicate. They can buy the same models. They cannot buy your curated engineering intelligence and the compound loop between your team and the system.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your creative judgment - brand voice, visual identity, campaign instincts - took years to develop. The ability to spot when messaging is off-brand before you can articulate why. The eye that catches a weight mismatch across a layout. The voice sense that knows the difference between \"conversational\" and \"sloppy.\"</p><p>All of it locked in your head. Your team prompts AI and gets output that's structurally competent and creatively dead. The brand guidelines say \"be clear and professional\" - a nothing-statement that helps no one, human or AI. You've become the bottleneck for quality because your taste only exists in one place: your calendar.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Brand and Creative Knowledge Base",
+          "triggerText": "See how to encode your creative judgment",
+          "html": "<h3>Write Your Taste Doc</h3><p>Not vague brand guidelines. Specific, deployable rules: \"Illustrations use a warm, hand-drawn quality. Photography shows real spaces with natural light. UI copy is conversational, never corporate.\" Think about what you'd tell a brilliant new creative on their first day - the 10-15 rules that would save them months of corrections.</p><h3>Layer Your Brand Voice</h3><p>Go beyond \"be clear.\" Specify sentence structures to avoid, how to frame announcements versus educational content, the difference between your brand's playful and your brand's serious. Duolingo encoded their character voice so precisely that AI-generated content matches the tone that took their content team years to develop.</p><h3>Upload Examples</h3><p>Your best campaigns, on-brand copy, visual direction decks - add them to a Claude Project. The AI learns from examples of what \"right\" looks like, not just rules about what to avoid.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The result: taste scales without bottlenecks. No more \"run it by the creative director first\" for every piece of copy, every design concept, every campaign brief. Your judgment is in the system. The team produces consistent work at 3x the speed because the quality bar is financialized into the tools, not locked in your calendar.</p><p>And your calendar just cleared. That time doesn't go to more reviews. It goes to the deep creative work - the brand evolution, the campaign concepts, the visual identity refinements that actually differentiate the company.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build a Team Creative Taste Stack",
+          "triggerText": "Learn how to scale creative quality across your team",
+          "html": "<h3>Three Layers</h3><p><strong>Company taste:</strong> Brand voice, visual identity, quality standards that apply to everything. The foundation layer.</p><p><strong>Team taste:</strong> How the content team writes, how design approaches layouts, how marketing frames campaigns. The execution layer.</p><p><strong>Individual taste:</strong> The copywriter who nails headlines. The designer with refined opinions about type pairing. The alpha layer.</p><h3>Deploy via Notion + MCP</h3><p>Create a Notion database called \"Taste Docs\" with columns for Domain, Owner, and Last Updated. Connect the workspace to Claude via MCP. Now every team member's AI draws from the full taste stack.</p><h3>The Payoff</h3><p>A new writer's first AI-assisted draft matches the brand voice. A new designer's first concepts carry the visual identity. Like giving a rookie a championship playbook - they produce at a higher level immediately.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>When a startup encodes only design taste, they get consistent UI and inconsistent everything else. When they encode brand voice, visual identity, campaign philosophy, and creative direction - every function produces work that carries the organization's judgment. That's the difference between a team that uses AI and a team that compounds through AI.</p><p>The knowledge base isn't a reference library. It's an opinionated creative engine. Knowledge provides context. Taste provides judgment. Together they produce AI output that's not just informed but creatively alive - in the way that makes your brand defensible and your position irreplaceable.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Creative Tools and Integrations",
+          "triggerText": "See the tools creative teams are using",
+          "html": "<h3>Custom Claude Projects</h3><p>Thousands of creative professionals have built AI configurations loaded with their taste docs. Brand designers with 40 visual principles. Copywriters with voice guides. Campaign strategists with positioning frameworks. Document specificity, connect it, and the 45-minute rewrite tax disappears.</p><h3>Notion as Creative Knowledge Hub</h3><p>Brand guidelines, campaign learnings, creative briefs, design principles - all in one queryable workspace connected to AI via MCP. The \"let me find the brand doc\" tax drops to zero.</p><h3>Figma + Design Context</h3><p>Top design teams encode not just visual style but product thinking - progressive disclosure over feature density, information architecture that mirrors the user's mental model. AI design tools get UX solutions, not just UI layouts.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every creative rule you refine, every brand judgment you record, every \"here's how we think about this\" you document - these compound across every future interaction. Your taste doc becomes a living asset that appreciates with use. After 6 months, your AI carries creative judgment that would take a new hire a year to absorb. That's not a productivity hack. That's a creative moat.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You've built interesting things. Side projects, experiments, creative code, indie products. Each one taught you something - a framework opinion, a design instinct, a shortcut that works, a pattern that doesn't. But every time you start something new, your AI starts from scratch. Zero memory of your style, your stack preferences, your aesthetic.</p><p>You prompt for a component and get textbook React that looks like everyone else's tutorial output. Your vibe - the specific way you build, the tools you reach for, the aesthetic you're drawn to - invisible. That's fixable in 20 minutes.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Personal Coding Knowledge Base",
+          "triggerText": "See how to make AI code in your style",
+          "html": "<h3>Start Simple</h3><p>Create a <code>CLAUDE.md</code> in your project root. Write down your stack preferences, your naming style, and the patterns you always reach for. Not best practices from a blog - YOUR practices from building things.</p><h3>What to Include</h3><p>Your framework opinions (\"always use server components for data fetching\"). Your aesthetic preferences (\"warm neutrals, generous spacing, no border-radius above 12px\"). Your anti-patterns (\"never use Redux for a project this size\"). The packages you love and the ones you avoid.</p><h3>Add Your Past Work</h3><p>Upload your best side project code to a Claude Project. The AI learns your style from examples. Next time you start a project, it codes like you would - not like a Stack Overflow answer.</p><h3>The Test</h3><p>Ask Claude for a component in a domain you care about. If it nails your style on the first try, you've encoded enough. If it still feels generic, add more specifics.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The magic happens when your AI actually knows your style. A design engineer connected his component library, tokens, and accessibility requirements. Generated code uses his actual components with his actual tokens. No more translating from generic React to his system. The gap between the idea in his head and the code on screen - closed.</p><p>For indie hackers and vibe coders, that translation step is the killer. You know what you want to build. The 30 minutes of fixing AI output to match your reality is what kills momentum on a Saturday afternoon project.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Level Up Your Experiment Velocity",
+          "triggerText": "Learn how to ship side projects faster",
+          "html": "<h3>The Knowledge Compound</h3><p>Every project you build, document the decisions that worked. Architecture choices, package selections, design patterns. After 5 projects, your knowledge base IS your development environment - the AI knows your preferences before you type them.</p><h3>Connect Your Tools</h3><p>Cursor + <code>.cursorrules</code> file gives you instant context per project. Claude Projects give you persistent context across conversations. Notion + MCP gives you a living knowledge base that grows with every experiment.</p><h3>The Indie Hacker Advantage</h3><p>Solo builders who encode their stack preferences ship projects in hours instead of weekends. The \"how do I configure this again\" phase disappears. The \"fix it to match my style\" phase disappears. You go straight from idea to YOUR code.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every experiment you document, every pattern you codify, every \"this worked\" and \"this didn't\" you record - these compound. After a few months, your AI is the most context-aware collaborator you've ever had. It knows your stack, your style, your taste. Starting a new project feels like picking up where you left off, not starting from scratch.</p><p>You become the builder whose AI produces code that's unmistakably yours. While others get generic tutorial output, you've built a personal knowledge moat that makes every project faster, more refined, and more you. That gap widens with every project you ship.</p>"
+        }
+      ]
+    }
+  }
+}

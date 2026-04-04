@@ -1,0 +1,332 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Six months ago you picked an AI platform. Your team shipped 14 workflows on top of it. Now a competitor launches something 3x faster at half the price. You cannot switch. Your workflows are fused to the vendor's data model. Your prompts call proprietary APIs. You did not notice the lock-in because the first 90 days were free.</p><p>The builder down the hall swaps AI providers over lunch. Her workflows keep running. Her knowledge base does not move. Her team barely notices. <strong>The difference is not technical sophistication. It is architectural discipline.</strong> One structure is fragile. The other is antifragile - every market disruption makes you faster.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Hub Today",
+          "triggerText": "See how to set up a knowledge hub you own in one afternoon",
+          "html": "<p>The principle is simple: <strong>own the center, rent the edges.</strong> Your knowledge base and workflow logic live in systems you control - the hub. Design tools, code editors, AI models, deployment platforms - all spokes you can swap.</p><h3>Step 1: Choose your hub system</h3><p>Notion, Obsidian, or even a well-structured folder of markdown files. The key is that you control it - not a vendor who might deprecate it on 30 days' notice.</p><h3>Step 2: Move your core knowledge in</h3><p>Your domain knowledge, workflow logic, business rules, taste docs, and quality standards. This is the stuff that generates your core value. It lives in the hub.</p><h3>Step 3: Connect spokes via MCP</h3><ul><li><strong>Notion to Claude:</strong> Install MCP server. Your knowledge base feeds every AI conversation.</li><li><strong>Markdown to Cursor:</strong> <code>.cursorrules</code> and project docs connect your knowledge to your code editor.</li><li><strong>Zapier for workflow:</strong> Your orchestration logic lives in your hub. Tools plug in as spokes.</li></ul><h3>The test</h3><p>For each tool in your stack, ask: \"If this disappeared tomorrow, what breaks?\" If the answer is \"everything\" - you have a dependency, not architecture. If the answer is \"I swap the spoke and the hub keeps running\" - you are antifragile.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>This matters more for AI tools than any other category. The landscape reshapes itself every 90 days. Models improve by 40% per generation. New providers emerge monthly. Pricing drops 10x in 18 months. The builder who can swap AI tools without rebuilding workflows has a structural speed advantage that compounds with every market shift.</p><p><strong>Every 6-month migration you avoid is 6 months reclaimed for deep work.</strong> The speed of adoption is the moat no vendor can take from you.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Run the Dependency Audit",
+          "triggerText": "See how to identify where you are locked in",
+          "html": "<h3>The disappearance test</h3><p>List every tool in your stack. For each one, answer honestly: \"If this disappeared tomorrow, how long does it take to replace?\"</p><ul><li><strong>An afternoon:</strong> This is a spoke. You are antifragile here.</li><li><strong>A week:</strong> Mild dependency. Worth addressing but not urgent.</li><li><strong>A month or more:</strong> You are locked in. This is a structural risk.</li></ul><h3>Common lock-in traps</h3><ul><li><strong>Proprietary data models:</strong> Your data is stored in a format only one vendor can read</li><li><strong>Vendor-specific APIs:</strong> Your workflows call endpoints that only exist in one platform</li><li><strong>Single-vendor training:</strong> Your team learned one UI and resists switching</li><li><strong>Platform-fused prompts:</strong> Your prompts depend on vendor-specific features</li></ul><h3>The fix for each</h3><p>Move the logic to your hub. Keep the tool as a spoke. If your analytics logic lives in your hub and the analytics tool is a spoke, swapping vendors is a configuration change - not a 6-month migration project.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Most enterprise AI strategies follow a playbook designed to fail: evaluate for 6 months, pick one vendor, sign a 3-year contract, build everything on the platform. Then the vendor's roadmap diverges from yours. Switching costs are $2M and 18 months. So you stay locked in. You have outsourced your strategic flexibility to a company whose incentive is to keep you there.</p><p><strong>The alternative: own your orchestration layer, treat every tool as replaceable, and adopt the best tool on day one.</strong> Competitors are still in procurement while you are already shipping.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Design for Speed-to-Integrate",
+          "triggerText": "See how to evaluate tools by how fast you can swap them",
+          "html": "<h3>The new evaluation criteria</h3><p>Stop asking \"how comprehensive is the platform?\" Start asking:</p><ul><li>How fast can we integrate it?</li><li>How fast can we rip it out?</li><li>Does it require proprietary data formats?</li><li>Can we pilot it alongside our current tool?</li></ul><h3>The speed-to-integrate test</h3><p>When something better launches, you should be able to pilot it in a day. If evaluation takes 6 months and procurement takes another 6, you are structurally slower than every competitor who designed for flexibility.</p><h3>The organizational discipline</h3><ul><li><strong>Engineering:</strong> Evaluate tools by integration speed and rip-out speed</li><li><strong>Product:</strong> Treat analytics providers as replaceable spokes</li><li><strong>Operations:</strong> Treat workflow tools the same way</li><li><strong>Everyone:</strong> All current infrastructure is considered replaceable</li></ul><p><strong>The principle that changes everything:</strong> all current infrastructure is considered replaceable. The hub is what you own. The spokes are what you rent. The discipline to maintain that boundary is what makes you antifragile.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The hub is where the triad lives - your people's judgment, your accumulated knowledge, and AI working as extensions of your team's skills. The moment you let a vendor tool become your hub, you have outsourced your differentiators. Speed compounds. Lock-in is the tax that destroys compounding. The real win is reclaiming time for the work only your team can do.</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You picked an AI platform. Built workflows on top of it. A competitor just launched something 3x faster at half the price. You cannot switch because your team's work is fused to the vendor. The first 90 days were free - and that is exactly how the lock-in was designed.</p><p><strong>Hub-and-spoke architecture is how you maintain strategic flexibility while moving fast.</strong> Own the center - your data, your workflows, your knowledge base. Rent the edges - AI models, tools, platforms. Swap any spoke without touching the hub. That is antifragility for a startup.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Startup's Hub Architecture",
+          "triggerText": "See how to structure your startup for permanent flexibility",
+          "html": "<h3>Define your hub</h3><p>Your hub contains everything that generates core value: customer data model, business logic, workflow rules, knowledge base, and orchestration logic. This lives in systems you control - Notion, your own database, your own codebase.</p><h3>Define your spokes</h3><p>Everything else: AI models, CRM, analytics, payment processing, email, deployment. These are tools you rent. They plug into the hub. They are all replaceable.</p><h3>The founder's discipline</h3><p>For every new tool decision, ask: \"Does this become part of our hub or is it a spoke?\" If it is a spoke, evaluate by speed-to-integrate and speed-to-rip-out. If it tries to become the hub, that is the lock-in trap. Walk away.</p><h3>Real example</h3><p>A founder built her customer data model, workflow logic, and orchestration rules in her own system. Salesforce, Stripe, and analytics are spokes. When her analytics provider tripled pricing, she swapped to a competitor over a weekend. Hub did not change. Saved $9,600/year and upgraded analytics in 48 hours.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>In a startup burning cash, the cost of lock-in is not just money - it is time. A 6-month migration is 6 months of runway that does not go to product, customers, or growth. In the AI landscape where the best tool changes every 90 days, being locked in means being permanently behind.</p><p><strong>The founder who adopts the best tool on day one while competitors are in procurement has a structural advantage that compounds every quarter.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Avoid the Enterprise AI Trap",
+          "triggerText": "See why 3-year AI contracts are designed to fail",
+          "html": "<h3>The trap</h3><p>Evaluate vendors for 6 months. Pick one. Sign a 3-year contract worth $500K+. Build everything on the platform. Then the vendor's roadmap diverges from yours. Switching costs are now $2M and 18 months. You stay.</p><h3>The alternative</h3><ul><li><strong>Never sign multi-year AI contracts.</strong> The landscape changes too fast.</li><li><strong>Pilot before committing.</strong> If you cannot pilot in a day, the tool is too entangled.</li><li><strong>Build on open standards.</strong> MCP, open APIs, portable data formats.</li><li><strong>Keep your prompts and workflows in your hub.</strong> Not in a vendor's proprietary system.</li></ul><h3>The board-level argument</h3><p>\"Our architecture lets us adopt the best AI tool on day one of launch. Our competitors take 6-12 months. That speed advantage compounds every quarter.\" That is a fundraising story.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>When your AI model shows 30% better accuracy on a key task, you should be able to swap it with a configuration change - not a 6-month migration. When a better tool launches, you should pilot it alongside your current stack in a day. That is what antifragile looks like at the organizational level.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Build the Tool-Swap Playbook",
+          "triggerText": "See how to make tool swaps a lunch-break decision",
+          "html": "<h3>The swap readiness checklist</h3><p>For each spoke in your stack, document:</p><ul><li>What data does it hold? (Should be minimal - data lives in the hub)</li><li>What APIs does your hub call? (Should be abstracted behind your own interface)</li><li>What would the swap steps be? (Should be less than a day of work)</li></ul><h3>Build abstraction layers</h3><p>Your workflows should call your own API layer, which calls the vendor's API. When you swap vendors, you change the adapter - not every workflow.</p><h3>Practice swapping</h3><p>Once a quarter, pick a spoke and test the swap. Not in production - but go through the exercise. How long does it take? Where are the friction points? Fix those friction points before you actually need to swap under pressure.</p><h3>The startup speed advantage</h3><p>A startup that can swap tools in a day can chase the frontier of AI capabilities permanently. A startup locked into last year's tools is permanently behind. That gap is the difference between winning and losing.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The hub is what you own. The spokes are what you rent. The discipline to maintain that boundary is what makes you antifragile. Every disruption becomes an upgrade opportunity. Every vendor misstep is a free option to improve. That is how you compound advantages while everyone else files procurement requests.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your analytics provider got acquired. The product is degrading. Your dashboards, experiments, and feature flags are all entangled with their platform. Migration estimate: 4 months. Meanwhile, a competitor swapped in a week because their analytics was a spoke, not a dependency.</p><p><strong>Product builders who own their data model and logic in a hub can swap any tool on the edges.</strong> Those who build on vendor platforms get locked in - and the lock-in shows up at the worst possible time.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Make Your Product Data Model the Hub",
+          "triggerText": "See how to structure product tools for permanent flexibility",
+          "html": "<h3>The product hub</h3><p>Your hub contains: customer data model, feature flag system, experiment framework, persona definitions, and research corpus. This lives in systems you control.</p><h3>Product spokes</h3><p>Analytics tools, A/B testing services, survey platforms, user research tools, project management software. All replaceable. All evaluated by speed-to-integrate and speed-to-rip-out.</p><h3>The practical setup</h3><ul><li><strong>Research corpus:</strong> Lives in Notion (your hub), connected to AI via MCP</li><li><strong>Feature flags:</strong> Managed in your own system, with analytics tools as consumers</li><li><strong>Persona data:</strong> Structured in your hub, referenced by every tool</li></ul><h3>The payoff</h3><p>When a vendor gets acquired and the product degrades - which happens on a 2-3 year cycle - you migrate in a week. Dashboards, experiments, feature flags: all keep running. Competitors spend 4 months on the same migration.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The AI tool landscape reshapes itself every 90 days for product teams. New research tools, better analytics, improved AI models for synthesis. The product builder who can adopt the best tool on day one compounds advantages. The one locked into last quarter's tool falls behind.</p><p><strong>Speed-to-integrate is the new evaluation criterion.</strong> Not how comprehensive the platform is. How fast can you plug it in and how fast can you rip it out?</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Portable Product Workflows",
+          "triggerText": "See how to keep your product workflows vendor-independent",
+          "html": "<h3>The portability principle</h3><p>Your product workflows should work regardless of which specific tool powers them. The logic lives in your hub. The tools are execution spokes.</p><h3>For research workflows</h3><p>Your research synthesis framework lives in Notion. The survey tool, the interview recording platform, the analytics tool - all spokes. When a better survey tool launches, you swap it without losing your synthesis methodology or historical data.</p><h3>For experimentation</h3><p>Your experiment design and analysis framework lives in your hub. The A/B testing tool is a spoke. When pricing changes or a better tool launches, you swap the execution layer without losing your experiment history or methodology.</p><h3>For AI-powered product work</h3><p>Your prompts, frameworks, and quality standards live in your knowledge base. The AI model is a spoke. When a better model launches, your product workflows immediately benefit. No rewriting. No migration.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Product teams that built hub-and-spoke architecture report that the biggest payoff is not avoiding migration costs - it is the speed of adopting better tools. When the best analytics tool, research platform, or AI model launches, they are using it on day one while competitors are scheduling vendor evaluation kickoffs.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Run the Product Stack Dependency Audit",
+          "triggerText": "See how to identify lock-in across your product tools",
+          "html": "<h3>The audit</h3><p>List every product tool. For each one:</p><ul><li>Where does the data live? (Hub or vendor?)</li><li>How long to replace? (Hours, days, or months?)</li><li>What is the vendor lock-in mechanism? (Proprietary format? API dependency? Training debt?)</li></ul><h3>Priority fixes</h3><ol><li><strong>Move data to your hub:</strong> Export customer data, research findings, and experiment results to systems you control</li><li><strong>Abstract API calls:</strong> Build a thin layer between your workflows and vendor APIs</li><li><strong>Document replacement steps:</strong> For each tool, write down exactly what swapping it would require</li></ol><h3>The quarterly check</h3><p>Every quarter, review your product stack for new lock-in that has crept in. The discipline is ongoing - every new tool decision is either a spoke or a potential dependency.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your product data model, your research corpus, and your workflow logic are the hub. Everything else is a spoke. The discipline to maintain that boundary is what keeps your product team moving at the speed the market demands.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>A better code editor just launched. A better design tool shipped a killer feature. A new AI model is 40% better for your use case. Can you adopt them today? Or are you locked into a stack that takes months to change?</p><p><strong>Your design system, your knowledge base, and your workflow logic are the hub. Every tool is a spoke.</strong> When Cursor shipped a feature that outperformed a previous editor, the design engineer with hub-and-spoke architecture swapped that spoke in one afternoon. Zero rebuilding. Zero lost context.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Structure Your Design-Engineering Hub",
+          "triggerText": "See how to own the center of your creative-technical stack",
+          "html": "<h3>Your hub</h3><p>The things that generate your core value and should live in systems you control:</p><ul><li><strong>Design principles and tokens:</strong> Your design system's logic persists regardless of which tool renders it</li><li><strong>Knowledge base:</strong> Domain knowledge, patterns, conventions in Notion or markdown</li><li><strong>Architecture decisions:</strong> ADRs, component patterns, code conventions in your repo</li></ul><h3>Your spokes</h3><p>Everything you can swap in an afternoon:</p><ul><li>Design tools (Figma, Sketch, etc.)</li><li>Code editors (Cursor, VS Code, etc.)</li><li>AI models (Claude, GPT, etc.)</li><li>Deployment platforms (Vercel, Netlify, etc.)</li></ul><h3>The connection layer</h3><p>MCP connects your hub to your spokes. CLAUDE.md in your repo connects your knowledge to your code editor. Your design tokens connect your system to any rendering tool. The hub stays. The spokes rotate.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>For design engineers, the tool landscape moves fast. New design tools, new editors, new AI capabilities ship monthly. If your design system investment is locked in one tool, you cannot adopt the next breakthrough. If your design principles live in your hub, every new tool gets the benefit of your accumulated craft.</p><p><strong>A $250K+ design system investment should survive any tool change.</strong> That only happens if the system's logic lives in your hub, not in a vendor's proprietary format.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Your Design System Portable",
+          "triggerText": "See how to protect years of design system investment",
+          "html": "<h3>Separate logic from rendering</h3><p>Your design system has two layers:</p><ul><li><strong>Logic layer (hub):</strong> Token values, spacing scales, color semantics, component behaviors, usage guidelines. This lives in your own system - markdown files, Notion, or a dedicated token repo.</li><li><strong>Rendering layer (spoke):</strong> Figma components, code components, prototype implementations. These render the logic but are replaceable.</li></ul><h3>Token portability</h3><p>Store your design tokens in a format-agnostic system (JSON, YAML, or a dedicated token tool). Generate Figma tokens, CSS variables, and code constants from the same source. When you swap tools, the tokens come from your hub.</p><h3>Documentation portability</h3><p>Component usage guidelines, design principles, and pattern documentation live in your hub (Notion, markdown). Not in Figma comments or tool-specific annotations that get lost when you switch tools.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The design engineer who can adopt a new tool on day one without losing context is permanently ahead. Every market shift is an upgrade opportunity. Every new AI model immediately benefits your workflow. That structural advantage compounds every quarter.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Run the Design-Engineering Dependency Audit",
+          "triggerText": "See where your creative-technical stack is locked in",
+          "html": "<h3>The disappearance test for design engineers</h3><p>For each tool, ask: \"If this disappeared tomorrow, what do I lose?\"</p><ul><li><strong>Figma disappears:</strong> Do you lose your design system logic, or just the rendering? If the logic is in your hub, you rebuild components in a new tool. If the logic is in Figma, you are in trouble.</li><li><strong>Your code editor disappears:</strong> Do you lose your coding patterns and conventions, or just the UI? If CLAUDE.md and your docs are in your repo, any editor works.</li><li><strong>Your AI provider disappears:</strong> Do you lose your knowledge base, or just the interface? If your knowledge is in Notion/markdown, any AI can access it.</li></ul><h3>Fix the dependencies</h3><p>For anything where \"I lose years of work\" - move the valuable logic to your hub. Keep the tool as a rendering spoke. The investment in portability pays for itself the first time you need to swap.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Own the center: your design principles, your code patterns, your accumulated craft. Rent the edges: the tools that render and execute. That discipline is what makes you antifragile in a landscape that reshapes itself every quarter.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your analytics provider just tripled pricing. Your project management tool got acquired and the product is degrading. Your AI model is no longer the best option. Can you swap any of these by the end of the week? Or are you looking at months of migration?</p><p><strong>As a solo operator, every hour spent on migration is an hour not spent on your business.</strong> Hub-and-spoke architecture means you never spend those hours. You swap spokes without touching the hub. Your workflows keep running. Your knowledge stays intact.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Personal Hub This Weekend",
+          "triggerText": "See how to set up an antifragile stack as a solo operator",
+          "html": "<h3>Your hub (what you own)</h3><ul><li><strong>Knowledge base:</strong> Notion, Obsidian, or structured markdown files with your domain knowledge, customer data, frameworks, and quality standards</li><li><strong>Business logic:</strong> Your data model, workflow rules, and orchestration logic in your own system</li><li><strong>Content and templates:</strong> Your voice, brand, frameworks in portable format</li></ul><h3>Your spokes (what you rent)</h3><ul><li>AI tools (Claude, Cursor - swap when something better launches)</li><li>Analytics (PostHog, Plausible - swap when pricing changes)</li><li>Project management (Linear, Notion - swap when needs evolve)</li><li>Communication tools (all replaceable)</li></ul><h3>The connection</h3><p>MCP connects Notion to Claude. CLAUDE.md connects your knowledge to Cursor. Zapier connects your workflow spokes. Everything talks to the hub. Nothing is entangled with a specific spoke.</p><h3>The payoff</h3><p>When a spoke vendor triples pricing or a better tool launches, you swap over a weekend. Your hub does not change. Your workflows keep running. Your knowledge stays clean. One founder saved $9,600/year swapping an analytics spoke in 48 hours.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Solo operators feel vendor lock-in harder than anyone. You do not have an IT team to manage migrations. You do not have months to rebuild workflows. When a tool breaks or a vendor raises prices, you need to move fast or eat the cost.</p><p><strong>The builder who can swap any tool in an afternoon is playing a fundamentally different game.</strong> Every vendor misstep is a free option to upgrade. Every price increase is a reason to find something better. That is antifragility at the individual level.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Run the Solo Operator's Stack Audit",
+          "triggerText": "See how to identify where you are vulnerable to vendor lock-in",
+          "html": "<h3>List every tool you pay for</h3><p>For each subscription, answer:</p><ul><li>Where does my data live? In my hub or in the vendor's system?</li><li>How long to replace this tool? Hours, days, or months?</li><li>What is my export plan? Can I get my data out in a usable format?</li></ul><h3>Common solo operator traps</h3><ul><li><strong>CRM data locked in a proprietary format:</strong> Move customer data to your hub, use CRM as a view layer</li><li><strong>Content in a platform you do not control:</strong> Keep originals in your hub, publish to platforms as spokes</li><li><strong>Workflows built on vendor-specific features:</strong> Move logic to Zapier/Make (a more portable orchestration spoke)</li></ul><h3>The \"3-hour rule\"</h3><p>Every tool in your stack should be replaceable in 3 hours or less. If it takes longer, the tool has become a dependency. Fix it before it costs you.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The AI landscape reshapes itself every 90 days. New models, new tools, new capabilities. The solo operator who can adopt the best tool on day one compounds advantages that locked-in competitors can never close. Speed of adoption is your structural edge.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Design Every New Tool Adoption for Easy Exit",
+          "triggerText": "See how to evaluate new tools without getting locked in",
+          "html": "<h3>Before adopting any new tool</h3><p>Ask three questions:</p><ol><li><strong>Where will my data live?</strong> If the answer is \"in the vendor's system with no export\" - walk away.</li><li><strong>Can I pilot it alongside my current tool?</strong> If not, the switching cost is already too high.</li><li><strong>What is the rip-out plan?</strong> Write it down before you commit. If you cannot articulate it, you are walking into lock-in.</li></ol><h3>The solo operator's tool evaluation framework</h3><ul><li><strong>Speed to integrate:</strong> Can I be productive in a day?</li><li><strong>Speed to rip out:</strong> Can I replace it in a weekend?</li><li><strong>Data portability:</strong> Can I export everything in a standard format?</li><li><strong>Hub compatibility:</strong> Does it connect to my knowledge base via MCP or API?</li></ul><p>If a tool fails any of these, it is a dependency waiting to happen. Find a better spoke.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your hub is your career capital - your knowledge, your frameworks, your accumulated expertise. No vendor can take that from you. The spokes come and go. The hub compounds. That is how you build a stack that gets better every quarter regardless of what happens in the tool market.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your team built 14 workflows on an AI platform. A better model just launched with 30% better accuracy. Migration estimate: 6 months and $200K in engineering time. Meanwhile, the team down the hall swapped their AI model with a configuration change.</p><p><strong>At the infrastructure level, hub-and-spoke is the difference between strategic flexibility and slow death by vendor dependency.</strong> Your workflow engine and data model are the hub. Cloud services, CI/CD tools, AI models, and monitoring are all spokes.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build the Engineering Hub Architecture",
+          "triggerText": "See how to structure your infrastructure for permanent flexibility",
+          "html": "<h3>The engineering hub</h3><p>Your hub contains everything that represents core technical value:</p><ul><li><strong>Data model and business logic:</strong> Application code and domain logic in your codebase</li><li><strong>Workflow engine:</strong> Orchestration rules in your own system</li><li><strong>Architecture decisions:</strong> ADRs, patterns, and conventions in your docs</li><li><strong>Infrastructure logic:</strong> Terraform/IaC that encodes your infrastructure decisions</li></ul><h3>Engineering spokes</h3><p>Everything replaceable: cloud providers, CI/CD tools, monitoring platforms, AI models, databases (within reason), communication tools.</p><h3>The abstraction pattern</h3><p>Build adapter layers between your hub and spokes. Your application calls your interface. The adapter maps to the vendor's API. When you swap vendors, you replace the adapter - not the application logic. This is well-established engineering practice applied to the AI tool layer.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>When cloud pricing shifts, teams with hub-and-spoke architecture migrate the compute spoke without touching application logic. When a better CI tool ships, they swap it in a day. When an AI model improves, it is a configuration change. Cost optimization, performance improvements, and new capabilities manifest as configuration changes - not migrations that burn $200K.</p><p><strong>The organizational discipline: tools are chosen for speed-to-integrate, not permanence.</strong> \"How fast can we integrate and how fast can we rip it out?\" - not \"how comprehensive is the platform?\"</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Evaluate Tools by Integration and Exit Speed",
+          "triggerText": "See the engineering team's tool evaluation framework",
+          "html": "<h3>The technical evaluation framework</h3><p>For every tool decision, evaluate:</p><ul><li><strong>Integration speed:</strong> How fast can a single engineer get it running?</li><li><strong>Exit speed:</strong> How fast can we rip it out and replace it?</li><li><strong>Data portability:</strong> Can we export everything in standard formats?</li><li><strong>API abstraction:</strong> Can we wrap the vendor's API behind our own interface?</li></ul><h3>Red flags</h3><ul><li>Vendor requires proprietary data formats</li><li>No export functionality or severely limited exports</li><li>Workflows depend on vendor-specific query languages</li><li>Multi-year contracts with steep exit penalties</li></ul><h3>The team practice</h3><p>Before committing to any new tool, an engineer writes the rip-out plan. How long to replace? What adapter needs building? What data needs migrating? If the rip-out plan exceeds 1 week, the tool requires architectural review before adoption.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The engineering team that can adopt new tools on day one compounds technical advantages every quarter. The team locked into a 3-year vendor contract falls behind permanently. In AI, where capabilities improve by 40% per generation, speed of adoption is the determining factor.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Build the Infrastructure Swap Playbook",
+          "triggerText": "See how to make infrastructure changes safe and fast",
+          "html": "<h3>The adapter pattern</h3><p>For each spoke category, build a thin adapter layer:</p><pre><code>// Your interface (hub)\ninterface AIProvider {\n  complete(prompt: string, context: Context): Response\n}\n\n// Vendor adapter (spoke)\nclass ClaudeAdapter implements AIProvider { ... }\nclass GPTAdapter implements AIProvider { ... }</code></pre><p>Swap the adapter, not the business logic.</p><h3>The quarterly swap drill</h3><p>Once per quarter, pick a spoke and test-swap it. Not in production - but go through the exercise end-to-end. How long does it take? Where is the friction? Fix the friction points proactively.</p><h3>Infrastructure as code</h3><p>Encode infrastructure logic in Terraform/IaC. Cloud providers become true spokes when the infrastructure logic lives in code you own, not in a console you click through.</p><h3>The team discipline</h3><p>Make \"all current infrastructure is considered replaceable\" a team principle. Review it in architecture discussions. Enforce it in tool adoption decisions. The discipline is what prevents lock-in from creeping in.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The hub holds your engineering value - the data model, the business logic, the architectural decisions. Spokes execute. When spokes improve (and they will), your team upgrades instantly. That is how you stay on the frontier of engineering capability without the migration tax.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your team built their entire design workflow in one platform. Brand assets, templates, approval flows - all living in a vendor's system. Then the vendor got acquired. The product direction shifted. Your 3 years of design system investment is now hostage to a company that does not care about your use case.</p><p><strong>Creative teams need hub-and-spoke architecture as much as engineering teams.</strong> Your brand DNA, creative principles, and institutional taste are the hub. The tools that render and produce are spokes. When a better tool launches, you adopt it without losing years of accumulated creative intelligence.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Creative Hub",
+          "triggerText": "See how to protect your brand investment from vendor risk",
+          "html": "<h3>The creative hub</h3><p>Your hub contains the creative assets that represent accumulated value:</p><ul><li><strong>Brand voice guidelines:</strong> Tone, word choices, examples - in Notion or markdown</li><li><strong>Visual identity principles:</strong> Not just the files, but the reasoning behind every choice</li><li><strong>Campaign archive:</strong> What worked, what did not, and why</li><li><strong>Design tokens:</strong> Colors, typography, spacing in a format-agnostic system</li></ul><h3>Creative spokes</h3><p>Design tools, production platforms, AI models, collaboration tools. All replaceable.</p><h3>The protection strategy</h3><p>Keep the creative logic in your hub. Use tools to render and produce. When a better design tool launches, your brand DNA moves with you. When an AI model improves at creative tasks, it draws from your existing brand context.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The creative landscape is changing as fast as the engineering landscape. New AI tools for image generation, copy production, and campaign creation launch monthly. The creative team that can adopt the best tool on day one has a production advantage. The team locked into one platform watches from the sidelines.</p><p><strong>Your creative intelligence should outlast any tool.</strong> Brand voice documents, visual principles, campaign learnings - these compound over years. No vendor should hold them hostage.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Your Brand Assets Portable",
+          "triggerText": "See how to ensure your creative investment survives any tool change",
+          "html": "<h3>Brand voice portability</h3><p>Your brand voice doc should live in your hub (Notion, Google Docs, markdown) - not locked in a specific AI tool's \"custom instructions\" that disappear when you switch providers.</p><h3>Visual identity portability</h3><p>Design tokens in JSON/YAML format. Logo files in open formats. Style guides in your own system. Component logic separate from component rendering.</p><h3>Campaign knowledge portability</h3><p>Campaign results, creative decisions, and audience insights structured in your knowledge base - not scattered across tool-specific dashboards that disappear when you cancel a subscription.</p><h3>The rule</h3><p>If you cancelled every creative tool tomorrow, would you still have your brand intelligence? If yes, your hub is strong. If no, start moving the valuable knowledge to systems you control.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Creative teams that invest in hub-and-spoke architecture report that tool transitions become opportunities instead of crises. When a better production tool launches, they adopt it and bring their full creative context. The brand does not skip a beat. The quality does not dip. The output accelerates.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Evaluate Creative Tools Without Getting Locked In",
+          "triggerText": "See the creative team's tool evaluation framework",
+          "html": "<h3>Before adopting any creative tool</h3><ul><li><strong>Can you export everything?</strong> Assets, templates, data - in formats other tools can read</li><li><strong>Can you pilot alongside current tools?</strong> Running both in parallel for a week reveals true switching costs</li><li><strong>Does it connect to your hub?</strong> Can it read from your brand knowledge base and write results back?</li></ul><h3>The creative integration test</h3><p>Load your brand voice, visual identity, and campaign history into the new tool. Produce one campaign deliverable. Compare quality to your current workflow. If the new tool plus your hub context produces better work - it is worth adopting as a spoke.</p><h3>The exit plan</h3><p>Before committing, write down: what does it take to leave? If the answer is \"months of recreation\" - the tool is trying to become your hub. If the answer is \"export assets and reconnect\" - it is a proper spoke.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your brand intelligence, your creative principles, and your campaign learnings are the real assets. Tools come and go. The creative hub compounds. Own the center. Rent the edges. That discipline protects years of creative investment from any vendor's decisions.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>A new AI coding tool just launched. It is 2x better for your use case. But your project context, your custom configs, and your workflow are all built around the old tool. Switching means rebuilding. So you stay on the worse tool. That is lock-in at the individual level - and it is killing your productivity.</p><p><strong>Vibe coders need hub-and-spoke thinking more than anyone</strong> because the tools change fastest in the creative coding space. New editors, new AI models, new deployment platforms - monthly. If you can swap tools in an afternoon, you are always on the best available stack.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Portable Coding Setup",
+          "triggerText": "See how to switch between tools without losing anything",
+          "html": "<h3>Your coding hub</h3><ul><li><strong>CLAUDE.md / .cursorrules:</strong> Your coding patterns, conventions, and preferences in portable markdown. Works in any AI-powered editor.</li><li><strong>Project documentation:</strong> Architecture decisions, tech stack rationale, and current state in README and docs folder.</li><li><strong>Knowledge base:</strong> Patterns, solutions, and learnings in Notion or Obsidian - connected to any AI via MCP.</li></ul><h3>Your coding spokes</h3><ul><li>Code editors (Cursor, VS Code, Windsurf - swap when something better ships)</li><li>AI models (Claude, GPT - swap when capabilities shift)</li><li>Hosting (Vercel, Netlify, Railway - swap when pricing changes)</li><li>Databases (Supabase, PlanetScale - portable when your data model is well-defined)</li></ul><h3>The portable project template</h3><p>Create a starter template for new projects that includes: CLAUDE.md, docs folder, .cursorrules, and a README with your architecture decisions. Every project starts portable. No lock-in from day one.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The vibe coding landscape moves faster than any other. New tools ship weekly. The coder who can adopt the best tool immediately has a permanent speed advantage. The coder locked into one editor's proprietary features falls behind every month.</p><p><strong>Your patterns, your knowledge, and your project context are the hub.</strong> They should travel with you to any tool, any editor, any AI provider.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Make Your AI Context Portable",
+          "triggerText": "See how to keep your AI working for you across any tool",
+          "html": "<h3>The portability problem</h3><p>Your AI context - custom instructions, project knowledge, coding preferences - often lives inside one specific tool. Switch tools and you start from zero. That is vendor lock-in disguised as personalization.</p><h3>The fix</h3><ul><li><strong>Project context:</strong> CLAUDE.md in the repo. Any AI-powered tool can read it. Your patterns, conventions, and constraints travel with the project.</li><li><strong>Personal knowledge:</strong> Notion or Obsidian with MCP connections. Your accumulated solutions and patterns are available to any AI, not just one tool's memory.</li><li><strong>Coding style:</strong> .cursorrules or equivalent config files that define your preferences in a portable format.</li></ul><h3>The test</h3><p>Open your current project in a completely different editor with a different AI model. How quickly are you productive? If the answer is \"immediately, because my context is in the repo and my knowledge base\" - you are portable. If the answer is \"hours of reconfiguration\" - your context is locked in a spoke.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>New AI coding tools launch monthly. The frontier moves fast. If you are portable, every new tool is an instant upgrade. If you are locked in, every new tool is a painful decision about whether to start over. Freedom of movement is the vibe coder's structural advantage.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Build the Tool-Hopper's Workflow",
+          "triggerText": "See how to evaluate and adopt new coding tools in a day",
+          "html": "<h3>The 1-day adoption test</h3><p>When a new tool launches:</p><ol><li>Clone an active project into the new tool</li><li>Point it at your CLAUDE.md and docs</li><li>Try a real task from your current sprint</li><li>Compare: is this better than my current setup?</li></ol><p>If yes, adopt as your new spoke. If no, stay. Total investment: one afternoon. Zero risk because your hub never moved.</p><h3>Keep a tool journal</h3><p>In your knowledge base, log every tool you try: what it did well, what it lacked, when to revisit. When a tool you tried 6 months ago releases a major update, your journal tells you whether it is worth another look.</p><h3>The vibe coder's edge</h3><p>While others debate tool choices for weeks, you try them in a day and make data-driven decisions. Your hub means switching costs are near zero. That speed of evaluation - trying 20 tools to find the best one - is an unfair advantage in a fast-moving landscape.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your code, your patterns, and your knowledge are the hub. Tools are spokes you swap for fun and profit. That portability is what lets you stay on the cutting edge permanently - adopting the best tools as fast as they ship. That is the vibe coder's structural moat.</p>"
+        }
+      ]
+    }
+  }
+}

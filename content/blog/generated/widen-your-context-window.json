@@ -1,0 +1,332 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You are making every decision through a keyhole. Think about the last high-stakes call you made - a product bet, a positioning decision, a hire, an architecture choice. How many perspectives did you actually consult? Your own experience. Maybe a colleague or two. An article you half-remember. That's the full input set for a decision that might shape the next 18 months.</p><p>Now think about what you <em>didn't</em> consult. The behavioral psychology research on why users abandon checkout flows. The pricing theory that explains why your competitor's packaging works. The failure patterns from an adjacent industry that map onto your current risk. The 200 customer calls where customers told you exactly what they needed - but you only remember the last 5.</p><h2>The Constraint Is Gone</h2><p>Every professional has a personal context window - the number of perspectives and data sources you can synthesize when making a decision. For your entire career, that window was brutally small. Limited by working memory, by time, by the fact that a human brain can only hold so many threads. AI didn't just give you a faster typist. It gave you an infinitely wider lens.</p><p><strong>The width of your context window is now a competitive advantage.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Professionals Are Widening Their Lens",
+          "triggerText": "See how individuals are making better-informed decisions",
+          "html": "<p>A <strong>founder</strong> used to make market entry decisions based on her own pattern recognition - which markets felt right, which customer segments resonated. Good instincts. Narrow input set. Now she loads market data, customer research, competitive intelligence, and pricing theory into her knowledge base and uses AI to challenge her assumptions from angles she'd never consider. She recently killed a market entry she was 80% committed to - because AI surfaced a regulatory pattern from an adjacent industry that mapped directly onto her risk profile.</p><p>A <strong>junior engineer</strong> writes code informed by failure patterns from systems he's never worked on. He loads production incident reports, architecture decision records, and performance benchmarks into AI and asks it to challenge his design against real-world failure modes. His senior teammates notice that his designs anticipate problems they wouldn't have flagged until review.</p><p>A <strong>product manager</strong> making a pricing decision used to consult her own market sense and a competitor spreadsheet. Now she synthesizes insights from 200+ customer calls, pricing psychology research, competitive packaging analysis across adjacent markets, and churn data correlated with plan structure. Same judgment. Radically wider inputs.</p><p>A <strong>product designer</strong> with 12 years of experience sees patterns instantly. But her lens was shaped by the products she'd worked on. Now she consults behavioral economics, accessibility research from markets she's never designed for, and cognitive science that explains why her best patterns work. She's still making the final call. But the inputs are radically more informed.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Teams Have the Same Problem - Amplified</h2><p>Every team operates inside a bubble of its own expertise. Engineering sees technical constraints. Design sees user experience. Product sees market opportunity. Sales sees customer objections. Each function has a deep but narrow lens. The handoff points between those lenses are where the most expensive mistakes get made.</p><p>AI collapses those handoff points. Not by replacing any function's expertise, but by making every function's context available to every other function in real time.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "How Teams Are Collapsing Functional Silos",
+          "triggerText": "See how organizations widen their collective context window",
+          "html": "<p>A <strong>startup</strong> restructured how their team makes decisions. Instead of each function presenting its own analysis in weekly review, they built a shared knowledge base that AI synthesizes across product, design, and engineering. When their engineer raises an architecture concern, AI automatically surfaces the product data that quantifies business impact and design research suggesting user-facing implications. Every function's context window now includes every other function's perspective.</p><p>A <strong>healthcare organization</strong> applied this across clinical specialties. A cardiologist doesn't naturally consider the endocrinologist's perspective when treating overlapping conditions. AI bridging those knowledge domains means treatment decisions are informed by cross-specialty patterns no single practitioner could hold.</p><p>A <strong>product team</strong> building for enterprise buyers feeds every sales call, support ticket, churn interview, and competitive mention into a knowledge base that AI synthesizes continuously. The designer isn't designing for an imagined persona - she's designing for the synthesized voice of hundreds of real users, their actual frustrations, their unspoken needs that only emerge when you cross-reference enough conversations.</p><h3>The measurement shift</h3><ul><li><strong>Old question:</strong> Does each function have the context it needs?</li><li><strong>New question:</strong> Does every decision draw from the full context of the business?</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Widening Gap</h2><p>The gap between narrow-window and wide-window professionals is already visible. And it compounds.</p><p>A solo consultant doesn't just know healthcare operations anymore - she brings in behavioral economics for incentive structures, organizational psychology for change management, and technology architecture patterns for vendor evaluation. Her competitors are still looking through the keyhole. She's looking through a window wall.</p><p>An engineering leader making build-vs-buy decisions used to weigh two inputs. Now he consults maintenance cost patterns, vendor lock-in case studies, and total cost of ownership models from comparable situations. The coin flip became a strategic call backed by evidence from dozens of scenarios.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Real Companies Widening the Lens",
+          "triggerText": "See real-world examples of the context window advantage",
+          "html": "<ul><li><strong>Bridgewater Associates</strong> built radical transparency into decision-making - every meeting recorded, every decision documented. AI takes this further: every decision is now informed by the full history of how similar decisions played out. Decades of institutional learning in every call.</li><li><strong>Stripe</strong> synthesizes usage data, support interactions, and developer community conversations to capture real developer experience across millions of integration patterns. Product decisions are better because the input set is wider than any single PM could hold.</li><li><strong>IDEO</strong> pioneered cross-disciplinary design thinking - putting engineers, psychologists, anthropologists, and business strategists in one room. AI democratizes that approach. Now every professional can access cross-disciplinary perspectives without assembling a team of specialists.</li><li><strong>Shopify</strong> uses AI to understand merchant behavior across millions of stores. The context window for every product decision includes the synthesized experience of their entire merchant base.</li><li><strong>Ethan Mollick's Wharton research</strong> showed that professionals who benefited most from AI weren't the fastest prompters - they were the ones who brought the widest context to their AI interactions.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>Where This Connects</h2><p>Your context window determines the quality of every other decision you make. A narrow window means your knowledge base captures only what you already know. Your orchestration layer routes context you've already considered. Your team operates in silos. Everything underperforms when the input set is too small.</p><p>Widen the window and everything compounds. Your knowledge base becomes more valuable because you're feeding it perspectives from domains you never would have explored. Your team makes cross-functional decisions that feel integrated instead of stitched together.</p><p>Your judgment is irreplaceable. Your context window used to be the constraint on how well you could deploy it. That constraint is gone. The only question left is: how wide are you willing to look?</p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Every strategic decision you make is shaped by what you can hold in your head at the time. Your market instincts. A few conversations with advisors. The competitive landscape as you understand it. That's the input set for decisions that shape the next 18 months of your company.</p><p>But you're missing the pricing theory that explains why your competitor's packaging converts. The regulatory patterns from an adjacent industry that map onto your risk profile. The behavioral psychology behind why your onboarding flow loses users at step three. All accessible. All relevant. All outside your current lens.</p><h2>The Strategic Context Gap</h2><p>Founders are trained to trust their instincts - and they should. But instinct informed by 4 inputs versus instinct informed by 40 inputs produces fundamentally different-quality decisions. AI didn't replace your judgment. It widened the lens your judgment operates through.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Founders Are Making Better Strategic Bets",
+          "triggerText": "See how founders widen their decision-making lens",
+          "html": "<p>One founder used to make market entry decisions based on her own pattern recognition. Good instincts. Narrow input set. Now she loads market data, customer research, competitive intelligence, and pricing theory into her knowledge base and uses AI to challenge her assumptions from angles she'd never consider.</p><p>She recently killed a market entry she was 80% committed to - not because the data was bad, but because AI surfaced a regulatory pattern from an adjacent industry that mapped directly onto her risk profile. She would never have found that on her own. Not because she's not smart enough. Because her context window was too narrow to include it.</p><h3>Practical steps for founders</h3><ul><li><strong>Load your strategic context:</strong> Market data, customer research, competitive intelligence, pricing theory, regulatory landscape. Make it queryable.</li><li><strong>Challenge every major bet:</strong> Before committing, ask AI to argue against your position from perspectives you haven't considered. Adjacent industries, different geographies, historical precedents.</li><li><strong>Cross-reference your customer data:</strong> You probably have 200+ customer conversations sitting in your CRM. You remember 5. AI can synthesize all of them and surface patterns you'd never catch manually.</li><li><strong>Consult unfamiliar domains:</strong> Behavioral psychology for user acquisition. Economic theory for pricing. Organizational psychology for team design. The cross-pollination is where the best strategic insight lives.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Team's Context Ceiling</h2><p>Your team has the same problem at scale. Engineering sees technical constraints. Product sees market opportunity. Sales sees customer objections. Each function has a deep but narrow lens. The handoff points between those lenses are where the most expensive mistakes get made - the feature that's technically excellent but nobody wants, the GTM strategy that ignores engineering constraints, the pricing decision that doesn't account for competitive dynamics.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Widening the Team's Decision-Making Lens",
+          "triggerText": "See how startup teams break down context silos",
+          "html": "<p>One startup restructured how their team makes decisions. Instead of each function presenting its own analysis, they built a shared knowledge base that AI synthesizes across all functions. When engineering raises an architecture concern, AI automatically surfaces the product data that quantifies business impact and the design research suggesting user-facing implications.</p><h3>What this unlocks for startups</h3><ul><li><strong>Faster, better-informed decisions:</strong> Every function's context is available to every other function in real time. No more \"I wish engineering had told us that before we committed.\"</li><li><strong>Cross-functional alignment without more meetings:</strong> Product knows about engineering constraints. Sales knows about product positioning. Not because they sat in each other's meetings - because the knowledge base connects them.</li><li><strong>Better product bets:</strong> When your PM makes a roadmap decision informed by engineering constraints, customer voice, competitive intelligence, and pricing theory simultaneously, the bet quality is fundamentally different.</li></ul><h3>Real examples</h3><ul><li><strong>Stripe</strong> captures real developer experience across millions of integration patterns. Product decisions are informed by a wider context than any single PM could hold.</li><li><strong>Shopify</strong> understands merchant behavior across millions of stores. Every product decision includes the synthesized experience of their entire merchant base.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Compounding Advantage</h2><p>The gap between narrow-window and wide-window founders is already visible and it compounds. The founder who makes market entry decisions informed by 4 inputs competes on instinct. The founder who makes them informed by 40 inputs competes on informed conviction. Same tools. Different aperture. Completely different outcomes.</p><p>Every quarter your context window gets wider, your strategic bets get sharper. Every quarter it stays the same, competitors who are widening theirs pull further ahead.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Founder's Context Window Audit",
+          "triggerText": "See the diagnostic questions for founders",
+          "html": "<h3>How wide is your lens?</h3><ul><li><strong>How many distinct knowledge domains informed your last major strategic decision?</strong> If the answer is one or two - your experience and an advisor's opinion - your context window is a keyhole. The founders pulling ahead consult 5, 10, 15 relevant perspectives before committing capital.</li><li><strong>Could you articulate the strongest argument against your current strategy?</strong> If not, your context window is too narrow. The best founders actively seek perspectives that challenge their assumptions from different industries, disciplines, and customer segments.</li><li><strong>Does your team make decisions with cross-functional context?</strong> When engineering makes architecture decisions without product's market context, or product makes roadmap decisions without engineering's constraints, the context window is fragmented.</li><li><strong>When was the last time you consulted a knowledge domain outside your expertise?</strong> Behavioral psychology for acquisition. Economic theory for pricing. Organizational psychology for hiring. If you can't name a specific instance this month, your context window is narrowing while others' are widening.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your judgment is the filter. AI is the aperture. The wider you open it, the more your judgment has to work with. The organizations that widen their collective context window will make better strategic bets, catch cross-functional risks earlier, and build products that feel like they were designed by someone who understands the whole picture. Because they were.</p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your last product decision - that pricing change, that feature bet, that roadmap prioritization - how many perspectives actually informed it? Your own product sense. A competitor spreadsheet. Maybe a conversation with sales. That's the input set for a decision that might determine the next quarter's retention metrics.</p><p>Meanwhile, 200 customer calls sit in your CRM, telling you exactly what users need. Behavioral psychology research explains why your onboarding flow loses users at step three. Pricing theory from adjacent markets reveals why your packaging doesn't convert. All accessible. All relevant. All outside the keyhole you're looking through.</p><h2>The Product Decision Quality Gap</h2><p>Your product instinct is valuable - but instinct informed by 4 inputs versus 40 produces fundamentally different-quality bets. AI didn't replace your product judgment. It widened the lens your judgment operates through.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Product Builders Are Making Better Bets",
+          "triggerText": "See how PMs and designers widen their decision-making lens",
+          "html": "<p>A <strong>product manager</strong> making a pricing decision used to consult her own market sense, a competitor spreadsheet, and maybe a conversation with sales. Now she synthesizes insights from 200+ customer calls (not the 5 she remembers - all 200, cross-referenced for patterns), pricing psychology research, competitive packaging analysis across adjacent markets, and churn data correlated with plan structure. The decision still requires her judgment. The inputs feeding that judgment went from a keyhole to a panorama.</p><p>A <strong>product designer</strong> with 12 years of experience sees interaction patterns instantly. But her lens was shaped by the products she's worked on. Now she consults behavioral economics, accessibility research from markets she's never designed for, and cognitive science that explains why her best patterns work. She's still making the final call. But the inputs are radically more informed.</p><h3>Practical steps</h3><ul><li><strong>Synthesize your entire customer voice:</strong> Feed every customer call, support ticket, and churn interview into a knowledge base. Cross-reference patterns across hundreds of conversations.</li><li><strong>Consult adjacent disciplines:</strong> Behavioral psychology for flow design. Pricing theory for packaging. Cognitive science for information architecture. The cross-pollination is where product insight lives.</li><li><strong>Challenge your assumptions:</strong> Before committing to a feature bet, ask AI to argue against it from perspectives you haven't considered - different user segments, competitive dynamics, technical constraints.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Cross-Functional Context Gap</h2><p>Product teams operate inside a bubble. PMs see market opportunity. Designers see user experience. Engineers see technical constraints. The handoff points between these lenses are where the most expensive product mistakes get made - the feature that's beautifully designed but technically unmaintainable, the roadmap bet that ignores competitive dynamics, the UX decision that doesn't account for the data model underneath.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Breaking Down the Product Team's Context Silos",
+          "triggerText": "See how product teams build shared context",
+          "html": "<p>One product team building for enterprise buyers feeds every sales call, support ticket, churn interview, and competitive mention into a knowledge base that AI synthesizes continuously. The designer isn't designing for an imagined persona - she's designing for the synthesized voice of hundreds of real users.</p><h3>What shared context unlocks</h3><ul><li><strong>Integrated decisions:</strong> When engineering raises a concern, AI surfaces the product data quantifying business impact and design research on user implications. Every function's perspective informs every other function's decisions.</li><li><strong>Real user voice:</strong> Not the persona you imagined. The synthesized patterns from every conversation, weighted by what matters right now.</li><li><strong>Faster alignment:</strong> Cross-functional alignment without standing meetings. Product knows about engineering constraints. Design knows about competitive positioning. The knowledge base connects them automatically.</li></ul><h3>Examples</h3><ul><li><strong>Stripe</strong> synthesizes usage data, support interactions, and developer community conversations to capture real developer experience across millions of patterns.</li><li><strong>Shopify</strong> uses AI to understand merchant behavior across millions of stores - patterns no individual PM could synthesize.</li><li><strong>IDEO's</strong> cross-disciplinary design thinking - engineers, psychologists, and strategists in one room - is now accessible to any product team through AI.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Compounding Quality Gap</h2><p>Two product builders with identical experience and tools will make different-quality decisions based on how many perspectives they bring into the room. The one consulting behavioral psychology alongside market data alongside customer voice alongside failure patterns from other industries will consistently outperform the one running the same analysis they would have done manually.</p><p>Same tools. Different aperture. Completely different product outcomes.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Product Builder's Context Window Audit",
+          "triggerText": "See the diagnostic questions for product builders",
+          "html": "<h3>How wide is your product lens?</h3><ul><li><strong>How many knowledge domains informed your last product decision?</strong> Your experience, a competitor spreadsheet, and a hunch? Or customer voice, behavioral psychology, pricing theory, competitive analysis, and technical constraints? Count them.</li><li><strong>What perspectives are you not consulting?</strong> A designer who never consults pricing psychology. A PM who never looks at behavioral economics. An engineer who never considers organizational change management. AI makes these accessible in minutes.</li><li><strong>Does your team make decisions with full cross-functional context?</strong> When design decisions happen without engineering's constraints, or roadmap decisions happen without sales' customer intelligence, the context window is fragmented.</li><li><strong>Is your context window wider this quarter than last?</strong> Product builders who systematically widen their inputs make better decisions every quarter. The ones consulting the same narrow set are standing still while the market shifts.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your product judgment is the filter. AI is the aperture. The wider you open it, the more your judgment has to work with. Widen the window and your knowledge base captures richer insights, your team makes integrated decisions, and your products feel like they were designed by someone who understands the whole picture.</p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your design instinct is sharp. Your architectural judgment is battle-tested. But both were shaped by the specific products you've built, the specific systems you've worked on, the specific design traditions you were trained in. That lens is your superpower. It is also your constraint.</p><p>There's behavioral science explaining why your best interaction patterns work. There's accessibility research from markets you've never designed for. There's failure pattern data from systems you've never operated. All of it relevant to the decisions you make every day. All of it outside the keyhole you're looking through.</p><h2>The Craft Lens Problem</h2><p>Your career built you a specific, incredibly valuable lens. AI doesn't replace it. It widens it. The shift isn't faster decisions. It's better-informed craft - design and architecture shaped by a context window so wide that your blind spots get surfaced before they become expensive mistakes.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Design Engineers Are Widening Their Craft Lens",
+          "triggerText": "See how design-minded builders expand their decision inputs",
+          "html": "<p>A <strong>product designer</strong> with 12 years of experience sees interaction patterns instantly. She knows what works. But her lens was shaped by the products she's worked on, the users she's studied. She has blind spots in behavioral economics, in accessibility research from unfamiliar markets, in the cognitive science that explains why her best patterns work. Now she consults perspectives she never would have sought out - not because she wasn't curious, but because there weren't enough hours.</p><p>An <strong>engineering leader</strong> making build-vs-buy decisions used to weigh technical complexity against team capacity. Two inputs. Now he consults maintenance cost patterns from open-source projects in similar domains, vendor lock-in case studies from companies that made the same choice 3 years ago, and total cost of ownership models factoring in the hiring market for specific technologies. Same decision. Radically more informed.</p><h3>Practical steps for design engineers</h3><ul><li><strong>Consult the science behind your patterns:</strong> Cognitive science for information architecture. Behavioral psychology for interaction design. Perception research for visual hierarchy. Your instincts become sharper when you understand why they work.</li><li><strong>Learn from systems you've never operated:</strong> Load failure patterns, incident reports, and architecture decision records from adjacent domains. Your designs will anticipate problems you've never personally encountered.</li><li><strong>Cross-reference competitive approaches:</strong> Not just direct competitors - adjacent categories, different platforms, different markets. The patterns that solve similar problems in unfamiliar contexts.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Team Craft Silo Problem</h2><p>Design sees the user experience. Engineering sees the technical constraints. Product sees the market opportunity. Each function has a deep but narrow craft lens. The handoff points between those lenses produce the most expensive mistakes - the beautifully designed component that's unmaintainable, the performant architecture that's hostile to users, the elegant system that nobody needs.</p><p>AI collapses those handoffs. When an engineer's architecture concern automatically surfaces alongside the design research on user impact and the product data on business value, every craft decision is informed by the full picture.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building Cross-Functional Craft Intelligence",
+          "triggerText": "See how teams break down craft silos",
+          "html": "<p>One startup built a shared knowledge base that AI synthesizes across design, engineering, and product. When their engineer raises an architecture concern, AI automatically surfaces design research on user impact and product data on business value. Every craft decision draws from the full context.</p><h3>What this looks like for design engineering</h3><ul><li><strong>Design decisions informed by technical constraints:</strong> Not after the design is done - during the design process. AI surfaces performance budgets, component limitations, and architecture patterns alongside design options.</li><li><strong>Architecture decisions informed by user research:</strong> When the system design affects user experience, that connection is surfaced automatically. No more \"engineering made a decision that broke the UX.\"</li><li><strong>Shared quality standards:</strong> Design quality, code quality, and performance quality as a unified context. The team's craft lens includes every function's perspective.</li></ul><h3>Examples</h3><ul><li><strong>Figma's design systems</strong> encode specificity at the component level - spacing rules, color tokens, interaction patterns, accessibility requirements. Connected to AI, they become a shared craft lens.</li><li><strong>Stripe's</strong> developer tools are informed by how developers actually behave, synthesized across millions of integration patterns. Craft decisions informed by real usage data.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Widening Craft Gap</h2><p>A creative director shaping a brand identity used to draw from her own aesthetic sensibility and design traditions. Now she consults color psychology, cross-cultural perception studies, competitive visual positioning, and audience sentiment data. Her taste is still the filter. But the inputs feeding that taste went from \"my training and instinct\" to \"my training and instinct, informed by every relevant perspective.\"</p><p>The craft work is better not because the taste changed, but because the taste now has more to work with. The gap between narrow-lens and wide-lens craft compounds every quarter.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Design Engineer's Context Window Audit",
+          "triggerText": "See the diagnostic questions for design engineers",
+          "html": "<h3>How wide is your craft lens?</h3><ul><li><strong>What perspectives are you not consulting?</strong> A designer who never consults cognitive science about why certain patterns work. An engineer who never considers the organizational change implications of an architecture decision. AI makes these perspectives accessible in minutes.</li><li><strong>When did you last consult a domain outside your expertise?</strong> Not casually - seriously. Loaded research into your knowledge base and let it reshape how you think about your craft. If you can't name a specific instance this month, your context window is narrowing.</li><li><strong>Does your team's craft span functional boundaries?</strong> When design decisions happen without engineering context, or architecture decisions happen without user research, the craft is fragmented. The best work comes from the widest lens.</li><li><strong>Is your context window wider this quarter than last?</strong> Design engineers who systematically widen their inputs - adding behavioral science, accessibility research, failure patterns from new domains - make better craft decisions every quarter.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your craft judgment is the filter. AI is the aperture. The wider you open it, the more your craft has to work with. The design engineer who consults behavioral science alongside system architecture alongside user research will produce work that's more considered, more resilient, and more beautiful than the one operating through a narrower lens. Same talent. Different aperture. Completely different craft.</p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You're one person making every decision - product, positioning, pricing, architecture, design, marketing. And every one of those decisions is shaped by whatever you can hold in your head at the time. Your experience in your niche. A few articles you've read. The instinct you've built. That's the full input set.</p><p>The solo operators pulling ahead aren't just faster. They're making fundamentally better-informed decisions by consulting perspectives a solo operator was never supposed to have access to.</p><h2>The Solo Context Ceiling</h2><p>Your strength is that you see the whole picture - you wear every hat. Your constraint is that each hat has a narrow lens. You know your domain deeply, but the adjacent perspectives that would sharpen every decision - behavioral psychology, pricing theory, competitive patterns from other industries - are outside your bandwidth. Or were.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Solo Operators Are Making Better Decisions Across Every Hat",
+          "triggerText": "See how solo builders widen their lens across functions",
+          "html": "<p>A solo consultant used to compete on deep domain expertise - she knew her niche better than anyone. Now she competes on cross-domain synthesis. She doesn't just know healthcare operations - she brings in behavioral economics for incentive structures, organizational psychology for change management, and technology architecture patterns for vendor evaluation.</p><p>Her clients didn't hire a healthcare consultant. They hired someone who sees healthcare through every relevant lens simultaneously. Her competitors are still looking through the keyhole.</p><h3>Practical steps for solo operators</h3><ul><li><strong>Consult adjacent disciplines for every major decision:</strong> Pricing decision? Load pricing psychology research and competitive packaging from adjacent markets. Product decision? Consult behavioral economics and user research patterns. Hire? Pull in organizational psychology.</li><li><strong>Synthesize your full customer history:</strong> You probably have dozens of client conversations, emails, and project notes. Feed them all into a knowledge base. The patterns across all of them are more valuable than the handful you remember.</li><li><strong>Challenge every assumption from unfamiliar angles:</strong> Before committing to a strategy, ask AI to argue against it from perspectives outside your domain. The blind spots you don't know about are the dangerous ones.</li><li><strong>Build a cross-domain knowledge base:</strong> Not just your expertise - perspectives from every field that touches your work. The cross-pollination is where the best solo operator insight lives.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Solo Operator's Superpower</h2><p>Here's the paradox: solo operators have the most to gain from a wide context window because they're making decisions across every function. When you widen the lens on your product decisions, your pricing decisions, your marketing decisions, and your architecture decisions simultaneously, the compound effect is massive. You're not just making one better decision - you're making every decision better.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building a Cross-Domain Decision Engine",
+          "triggerText": "See how to build a personal intelligence layer",
+          "html": "<h3>The solo operator's knowledge architecture</h3><ul><li><strong>Core domain:</strong> Your deep expertise. Client insights, industry patterns, competitive landscape. The foundation.</li><li><strong>Adjacent domains:</strong> Behavioral psychology, pricing theory, design principles, organizational psychology, technology trends. The perspectives that sharpen every decision in your core domain.</li><li><strong>Client/customer voice:</strong> Every conversation, every email, every project note. The synthesized patterns across all of them, not just what you remember.</li><li><strong>Competitive intelligence:</strong> Not just direct competitors. Adjacent markets, different geographies, different business models solving similar problems.</li></ul><h3>Real examples</h3><ul><li><strong>IDEO's</strong> cross-disciplinary approach - engineers, psychologists, and strategists in one room - is now accessible to a single person through AI. The $500K engagement methodology, democratized.</li><li><strong>Bridgewater's</strong> radical transparency in decision-making - every decision informed by full historical context - is a pattern any solo operator can replicate at their scale.</li><li><strong>Renaissance Technologies</strong> built investment success by widening the context window to domains traditional finance would never consider. The principle applies everywhere.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Widening Gap</h2><p>Two solo operators with identical experience and tools will make different-quality decisions based on how many perspectives they bring into each call. The one consulting behavioral psychology alongside market data alongside customer voice alongside failure patterns from other industries will consistently win more clients, make better product bets, and build more resilient businesses.</p><p>Same tools. Different aperture. Completely different trajectory. And the gap compounds every quarter.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Solo Operator's Context Window Audit",
+          "triggerText": "See the diagnostic questions for solo builders",
+          "html": "<h3>How wide is your lens?</h3><ul><li><strong>How many knowledge domains informed your last major decision?</strong> Count them honestly. If it's two - your experience and a gut feeling - you're operating through a keyhole while competitors with wider apertures make better calls.</li><li><strong>What perspectives are you missing across your different hats?</strong> When you make a pricing decision without consulting pricing psychology, or a product decision without behavioral economics, or a hiring decision without organizational research, you're leaving edge on the table.</li><li><strong>Could you argue against your current strategy convincingly?</strong> If not, your context window is too narrow. The best solo operators actively seek perspectives that challenge their assumptions.</li><li><strong>Is your context window wider this quarter than last?</strong> If you're consulting the same narrow input set you've always relied on, you're standing still while others who are systematically widening their lens pull ahead.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your judgment is the filter. AI is the aperture. As a solo operator wearing every hat, widening that aperture across every function produces a compound effect no specialist can match. The solo operator with the widest context window across the most domains makes the best decisions. Period.</p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your last architecture decision - that build-vs-buy call, that service boundary choice, that technology bet - how many perspectives actually informed it? Technical complexity. Team capacity. Maybe a vendor evaluation. That's the input set for a decision that might determine the next 2 years of your system's evolution.</p><p>But you're missing the maintenance cost patterns from open-source projects in similar domains. The vendor lock-in case studies from companies that made the same choice 3 years ago. The total cost of ownership models that factor in the hiring market for specific technologies. The failure patterns from adjacent systems that map onto your current risk.</p><h2>The Engineering Context Ceiling</h2><p>Engineering decisions are typically made through a narrow technical lens. Technical complexity, team capacity, deadline pressure. AI widens that lens to include perspectives that engineering leaders rarely have bandwidth for - economic analysis, organizational impact, cross-industry failure patterns, long-term market dynamics.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Technical Leaders Are Making Better Architecture Decisions",
+          "triggerText": "See how engineering leaders widen their decision-making lens",
+          "html": "<p>An engineering leader making build-vs-buy decisions used to weigh technical complexity against team capacity. Two inputs. Now he consults maintenance cost patterns from open-source projects in similar domains, vendor lock-in case studies, and total cost of ownership models factoring in the hiring market for specific technologies. The coin flip became a strategic call backed by evidence from dozens of comparable situations.</p><p>A junior engineer writes code informed by failure patterns from systems he's never worked on. He loads production incident reports, architecture decision records, and performance benchmarks into AI and asks it to challenge his design against real-world failure modes. His designs anticipate problems his senior teammates wouldn't have flagged until review.</p><h3>Practical steps</h3><ul><li><strong>Load cross-industry failure patterns:</strong> Production incident reports, post-mortems, and architecture decision records from domains similar to yours. Let AI challenge new designs against real-world failure modes you haven't personally encountered.</li><li><strong>Consult economic perspectives:</strong> Total cost of ownership models, hiring market dynamics for specific technologies, maintenance cost patterns. Technical decisions have economic implications that engineering teams rarely quantify upfront.</li><li><strong>Cross-reference architecture decisions:</strong> How did companies in similar situations handle the same build-vs-buy, monolith-vs-microservice, or technology choice? The evidence from dozens of comparable decisions beats the gut instinct from your own experience alone.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Cross-Functional Blind Spot</h2><p>Engineering teams operate inside a technical bubble. They see constraints, performance characteristics, and system behavior. They don't naturally see the product impact of an architecture choice, the market dynamics behind a technology bet, or the organizational change implications of a platform migration. Those blind spots produce the most expensive engineering mistakes - technically excellent decisions that ignore business context.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building Cross-Functional Engineering Intelligence",
+          "triggerText": "See how engineering teams break down context silos",
+          "html": "<p>When engineering context is combined with product data, customer voice, and business strategy in a shared knowledge base, every technical decision is informed by the full picture.</p><h3>What this unlocks</h3><ul><li><strong>Architecture decisions informed by business impact:</strong> When an engineer raises a technical concern, AI surfaces the product data quantifying what's at stake and the customer data showing who's affected.</li><li><strong>Technical debt prioritized by business value:</strong> Not by engineering preference - by actual impact on product metrics, customer experience, and team velocity. The context to make the right tradeoffs.</li><li><strong>Migration decisions with full context:</strong> Technology bets informed by hiring market data, vendor ecosystem health, community activity, and organizational readiness - not just technical merit.</li></ul><h3>Examples</h3><ul><li><strong>Bridgewater</strong> records every decision and makes the full history queryable. Engineering teams can apply the same principle - every architecture decision and its outcomes, available for future reference.</li><li><strong>Stripe</strong> synthesizes developer experience across millions of integrations. Engineering decisions informed by how developers actually use the system, not how engineers imagine they do.</li><li><strong>Renaissance Technologies</strong> built success by pulling data from domains traditional finance ignores. The principle: the quality of the decision is proportional to the breadth of relevant context.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Engineering Decision Quality Gap</h2><p>Two engineering leaders with identical technical expertise will make different-quality architecture decisions based on how many perspectives they bring into the room. The one consulting failure patterns from adjacent industries, economic models, organizational impact studies, and customer data alongside the technical analysis will consistently make better calls.</p><p>The gap compounds. Every quarter the wide-context leader makes better architecture decisions, the system becomes more sound, the team becomes more productive, and the product becomes more resilient. The narrow-context leader makes good technical decisions that miss the full picture.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Technical Leader's Context Window Audit",
+          "triggerText": "See the diagnostic questions for engineering leaders",
+          "html": "<h3>How wide is your engineering lens?</h3><ul><li><strong>How many non-technical perspectives informed your last architecture decision?</strong> If the answer is zero - if it was purely technical complexity and team capacity - your context window is too narrow. The best architecture decisions account for business impact, market dynamics, hiring implications, and organizational readiness.</li><li><strong>Does your team have access to cross-functional context?</strong> When engineering makes decisions without product's market context, or builds systems without understanding how customers actually use them, the context window is fragmented.</li><li><strong>Do you consult failure patterns from outside your domain?</strong> Adjacent industries, different technology stacks, companies at different scales. The patterns that would have prevented your last production incident might exist in a domain you've never explored.</li><li><strong>Is your context window wider this quarter?</strong> Engineering leaders who systematically add new perspectives - economic analysis, organizational psychology, cross-industry patterns - make better architecture decisions every quarter. Standing still means falling behind.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your technical judgment is the filter. AI is the aperture. The wider you open it, the more your judgment has to work with. Architecture decisions informed by business context, failure patterns from adjacent industries, economic models, and organizational dynamics produce systems that are more resilient, more valuable, and more aligned with what the business actually needs.</p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your creative instinct is sharp. Your aesthetic sensibility is refined through years of work. But both were shaped by the specific campaigns you've run, the specific brands you've built, the specific design traditions you were trained in. That lens is your superpower. It is also your constraint.</p><p>There's color psychology research that explains why certain palettes convert. Cross-cultural perception studies that reveal how your brand reads in markets you haven't tested. Audience sentiment data that shows the gap between what your brand says and what people actually hear. All accessible. All relevant. All outside your current lens.</p><h2>The Creative Context Gap</h2><p>The creative directors making the best work right now aren't the ones with the best raw taste. They're the ones whose taste operates on the widest input set - informed by behavioral science, cultural research, competitive analysis, and real audience data alongside their instincts.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Creative Directors Are Widening Their Aesthetic Lens",
+          "triggerText": "See how creative leaders expand their decision inputs",
+          "html": "<p>A creative director shaping a brand identity used to draw from her own aesthetic sensibility and the design traditions she trained in. Now she consults color psychology research, cross-cultural perception studies, competitive visual positioning across adjacent categories, and audience sentiment data from social listening tools. Her taste is still the filter. But the inputs feeding that taste are radically wider.</p><p>The brand work is better not because her taste changed, but because her taste now has more to work with.</p><h3>Practical steps for creative directors</h3><ul><li><strong>Consult the science behind creative decisions:</strong> Color psychology for palette choices. Cognitive science for information hierarchy. Behavioral economics for how people make decisions about brands. Your intuition becomes sharper when you understand the mechanisms underneath.</li><li><strong>Cross-reference cultural and market context:</strong> Cross-cultural perception studies, competitive visual positioning, audience sentiment analysis. The perspectives that reveal how your creative reads beyond your own lens.</li><li><strong>Synthesize audience data:</strong> Social listening, customer interviews, brand perception surveys. The synthesized voice of your actual audience, not the persona you imagine.</li><li><strong>Explore adjacent creative categories:</strong> How similar problems are solved in different industries, different cultures, different media. The cross-pollination is where unexpected creative insight lives.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Creative Team Silo Problem</h2><p>Creative teams often operate in an aesthetic bubble - deep in visual culture, separated from the market data, customer insights, and business strategy that should inform every creative decision. The handoff between strategy and creative is where the most expensive brand mistakes happen - work that's visually stunning but strategically misaligned, campaigns that win awards but miss the audience.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building Cross-Functional Creative Intelligence",
+          "triggerText": "See how creative teams break down their context silos",
+          "html": "<p>When creative context is combined with market data, customer voice, and business strategy in a shared knowledge base, every creative decision is informed by the full picture.</p><h3>What this unlocks</h3><ul><li><strong>Creative decisions informed by audience data:</strong> Not designing for the persona you imagine - designing for the synthesized voice of hundreds of real conversations. Their language, their frustrations, their unspoken needs.</li><li><strong>Brand consistency with strategic flexibility:</strong> When the creative team has access to strategic context, brand decisions maintain coherence while adapting to market dynamics.</li><li><strong>Cross-functional creative briefs:</strong> Briefs informed by engineering constraints, product roadmap, competitive intelligence, and customer data. Not just the marketing team's interpretation of the strategy.</li></ul><h3>Examples</h3><ul><li><strong>IDEO</strong> pioneered cross-disciplinary creativity - engineers, psychologists, and strategists in one room. AI democratizes that approach for any creative team.</li><li><strong>Shopify</strong> uses AI to synthesize merchant behavior across millions of stores. Creative decisions informed by real usage patterns, not assumed preferences.</li><li><strong>Ethan Mollick's research</strong> showed the professionals who benefited most from AI brought the widest context - not the fastest prompting. Cross-domain synthesis is the creative superpower.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Widening Creative Gap</h2><p>The pattern: creative professionals with narrow context windows make good creative decisions slowly. Creative professionals with wide context windows make great creative decisions - because the quality of the input determines the quality of the output.</p><p>Your taste is the filter. AI is the aperture. The wider you open it, the more your taste has to work with. The creative director who consults behavioral science, cultural research, competitive analysis, and audience data will produce brand work that's more resonant than the one operating on instinct alone.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Creative Director's Context Window Audit",
+          "triggerText": "See the diagnostic questions for creative leaders",
+          "html": "<h3>How wide is your creative lens?</h3><ul><li><strong>How many non-aesthetic perspectives informed your last brand decision?</strong> If it was purely visual instinct and a mood board, your context window is a keyhole. The creative directors pulling ahead consult behavioral science, market data, cultural research, and audience sentiment alongside their taste.</li><li><strong>What perspectives are you not consulting?</strong> Color psychology. Cross-cultural perception. Audience data beyond focus groups. Competitive visual positioning in adjacent categories. AI makes all of these accessible in minutes.</li><li><strong>Does your team have access to strategic context?</strong> When creative decisions happen without market data, customer voice, or business strategy, the context window is fragmented. The best creative work is strategically informed.</li><li><strong>Is your creative lens wider this quarter?</strong> Creative directors who systematically add new inputs - behavioral science, cultural research, audience data - produce better brand work every quarter. Operating on the same narrow input set means your competitors who are widening their lens will pull ahead.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Your taste is irreplaceable. Your context window used to be the constraint on how well you could deploy it. That constraint is gone. The creative director with the widest lens across the most perspectives produces the most resonant, most strategically sound, and most beautiful work. Not because the taste changed - because the taste has more to work with.</p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You build things by feeling your way through them. That's the beauty of vibe coding - instinct, experimentation, the joy of making something work. But your instincts are shaped by what you've been exposed to. The tutorials you've followed. The projects you've built. The aesthetic traditions you picked up along the way.</p><p>What if your next side project could be informed by behavioral psychology about why users actually engage? Or design principles from disciplines you've never studied? Or architecture patterns from systems you've never built? Not to make the building less fun - to make the thing you build more interesting.</p><h2>The Curiosity Multiplier</h2><p>The vibe coders doing the most interesting work aren't the most technically skilled. They're the most curious. They pull in perspectives from art, psychology, science, culture - and those perspectives make their projects feel fundamentally different from the generic AI-assisted app.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "How Vibe Coders Are Cross-Pollinating Domains",
+          "triggerText": "See how indie builders bring unexpected perspectives to their projects",
+          "html": "<h3>The cross-pollination play</h3><p>Your next project doesn't have to live within the boundaries of your current knowledge. Pull in unfamiliar perspectives and watch what happens:</p><ul><li><strong>Music visualization?</strong> Load audio psychology research and visual perception studies alongside your code. The project becomes something informed by how humans actually process sound and image together.</li><li><strong>Productivity tool?</strong> Consult behavioral economics about how people make decisions about their time. The insights reshape the entire UX.</li><li><strong>Creative coding?</strong> Pull in art history, color theory, and perceptual psychology. Your generative work becomes informed by centuries of aesthetic thinking.</li><li><strong>Developer tool?</strong> Study how developers actually behave (not how you think they do). Usage patterns, support interactions, community conversations. The tool becomes more useful because the context is wider.</li></ul><h3>How to do it</h3><ul><li><strong>Before you start building, load context.</strong> Find 2-3 research papers, articles, or datasets from domains adjacent to your project. Feed them into your knowledge base. Ask AI how they might reshape your approach.</li><li><strong>During building, challenge your assumptions.</strong> \"Why would a behavioral psychologist redesign this flow?\" \"What would an architect think about this data model?\" The unexpected answers are where the interesting work lives.</li><li><strong>After building, document what you learned.</strong> The cross-domain insight you gained becomes part of your permanent context for future projects.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Learning Accelerator</h2><p>Here's what makes this powerful for builders who learn by doing: every project with a wide context window isn't just shipping a thing - it's expanding your skills in multiple directions simultaneously. You're learning design principles by applying them to real code. You're learning architecture by attempting systems informed by patterns from unfamiliar domains. You're developing taste by seeing what works when cross-domain perspectives collide.</p><p>The learning compounds. The vibe coder with a wide context window grows faster in every direction than the one who stays in their comfort zone.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Building a Cross-Domain Creative Library",
+          "triggerText": "See how to build a personal knowledge base that makes every project better",
+          "html": "<h3>Your cross-domain library</h3><ul><li><strong>Design principles:</strong> Visual hierarchy, color theory, typography, spacing systems. Not just tutorials - the underlying principles that make design decisions work.</li><li><strong>Human behavior:</strong> Behavioral economics, cognitive psychology, perception research. Why people interact with things the way they do.</li><li><strong>Systems thinking:</strong> Architecture patterns, failure modes, scaling principles. How complex systems behave and break.</li><li><strong>Creative references:</strong> Art movements, interaction patterns from unexpected domains, creative approaches from outside tech. The inspiration that makes your work unique.</li></ul><h3>The compound effect</h3><p>Every project adds to the library. A weekend experiment with generative art teaches you about color theory. A productivity tool teaches you about behavioral economics. A game teaches you about engagement psychology. The library grows, and every future project benefits from everything you've learned.</p><h3>Inspiration</h3><ul><li><strong>IDEO's</strong> cross-disciplinary approach is now available to any individual builder through AI. Engineers, psychologists, and designers in one room - except the room is your knowledge base.</li><li><strong>Renaissance Technologies</strong> won by pulling in data from domains that traditional finance ignored. Same principle: the quality of what you build is proportional to the breadth of context informing it.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<h2>The Gap Between Curious and Comfortable</h2><p>Two vibe coders with identical technical skills will build fundamentally different things based on how many perspectives they bring into their projects. The one who pulls in psychology, design principles, architecture patterns from unfamiliar domains, and cultural references will produce work that feels alive and surprising. The one who stays within familiar territory will produce work that feels... familiar.</p><p>Same tools. Different aperture. Completely different creative output.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "The Vibe Coder's Context Window Challenge",
+          "triggerText": "See the action plan for expanding your creative lens",
+          "html": "<h3>This weekend</h3><ul><li><strong>Pick one unfamiliar domain that relates to your next project.</strong> If you're building a tool, try behavioral psychology. If you're doing creative coding, try art history or perception research. Load it into your knowledge base.</li><li><strong>Build with the new perspective.</strong> Let the unfamiliar domain reshape how you approach the project. Don't just apply your usual patterns with a new coat of paint - let the new context change the design decisions themselves.</li><li><strong>Document the cross-pollination.</strong> What did you learn from the unfamiliar domain? How did it change your approach? That insight goes into your permanent library for future projects.</li></ul><h3>The ongoing practice</h3><ul><li><strong>For every project, add one new domain.</strong> It becomes a creative discipline - every build expands your context window in a new direction.</li><li><strong>Share the unexpected connections.</strong> The vibe coding community thrives on surprising cross-domain insights. Your discovery about how perception research reshaped your UI might be exactly what someone else needs.</li><li><strong>Challenge your comfort zone regularly.</strong> Attempt a project in an unfamiliar genre or medium, informed by cross-domain research. The growth happens at the edges of what you know.</li></ul>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The most interesting things get built at the intersection of unexpected perspectives. Your curiosity is the filter. AI is the aperture. The wider you open it, the more surprising and original your work becomes. Vibe coding with a wide context window isn't just more productive - it's more <em>creative</em>. And that's the whole point.</p>"
+        }
+      ]
+    }
+  }
+}
