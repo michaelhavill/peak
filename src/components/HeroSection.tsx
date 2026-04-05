@@ -7,11 +7,8 @@ import RoleRotator from "./RoleRotator";
 const CF = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P";
 
 const HERO_VIDEOS = [
-  `${CF}/hf_20260330_145725_08886141-ed95-4a8e-8d6d-b75eaadce638.mp4`,
-  `${CF}/hf_20260331_074327_a4d6275d-82d9-4c83-bfbe-f1fb2213c17c.mp4`,
   `${CF}/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4`,
   `${CF}/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4`,
-  `${CF}/hf_20260324_024928_1efd0b0d-6c02-45a8-8847-1030900c4f63.mp4`,
   `${CF}/hf_20260319_055001_8e16d972-3b2b-441c-86ad-2901a54682f9.mp4`,
   `${CF}/hf_20260404_050931_6b868bbb-85a4-498d-921e-e815d5a55906.mp4`,
   `${CF}/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4`,
