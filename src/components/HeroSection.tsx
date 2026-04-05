@@ -13,6 +13,9 @@ const HERO_VIDEOS = [
   `${CF}/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4`,
   `${CF}/hf_20260324_024928_1efd0b0d-6c02-45a8-8847-1030900c4f63.mp4`,
   `${CF}/hf_20260319_055001_8e16d972-3b2b-441c-86ad-2901a54682f9.mp4`,
+  `${CF}/hf_20260404_050931_6b868bbb-85a4-498d-921e-e815d5a55906.mp4`,
+  `${CF}/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4`,
+  `${CF}/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4`,
 ];
 
 export default function HeroSection() {
