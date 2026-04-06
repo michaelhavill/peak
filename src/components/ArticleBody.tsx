@@ -62,6 +62,11 @@ export default function ArticleBody({
 
   const sections = currentVariant.sections;
 
+  // Extract ASCII diagram (<pre><code>...</code></pre>) from fallback HTML so
+  // it can be rendered inside the persona variant view, which otherwise omits it.
+  const asciiMatch = fallbackHtml.match(/<pre><code>[\s\S]*?<\/code><\/pre>/);
+  const asciiDiagram = asciiMatch ? asciiMatch[0] : "";
+
   // Find the split point for the teaser EmailCapture (~25% through WHY sections)
   const whySections = sections.filter((s) => s.type === "why");
   const totalWhyLength = whySections.reduce((acc, s) => acc + s.html.length, 0);
@@ -96,6 +101,12 @@ export default function ArticleBody({
                     className="prose-100x"
                     dangerouslySetInnerHTML={{ __html: section.html }}
                   />
+                  {i === 0 && asciiDiagram && (
+                    <article
+                      className="prose-100x"
+                      dangerouslySetInnerHTML={{ __html: asciiDiagram }}
+                    />
+                  )}
                   {i === teaserInsertedAfter && (
                     <EmailCapture variant="teaser" />
                   )}
