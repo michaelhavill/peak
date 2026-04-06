@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const PERSONAS = [
-  { id: "general", label: "General" },
+  { id: "general", label: "Generalist" },
   { id: "founder", label: "Founder" },
   { id: "product-builder", label: "Product Builder" },
   { id: "product-designer", label: "Product Designer" },
