@@ -114,9 +114,9 @@ export default function ArticleBody({
                   border: "1px solid var(--border-subtle)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "var(--accent-highlight)";
+                  e.currentTarget.style.borderColor = "var(--text-secondary)";
                   e.currentTarget.style.boxShadow =
-                    "0 0 0 1px var(--accent-highlight)";
+                    "0 0 0 1px var(--text-secondary)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = "var(--border-subtle)";
@@ -126,8 +126,11 @@ export default function ArticleBody({
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex-1 min-w-0">
                     <p
-                      className="text-[11px] font-medium uppercase tracking-widest mb-1"
-                      style={{ color: "var(--accent-highlight)" }}
+                      className="text-[15px] mb-1 italic"
+                      style={{
+                        color: "var(--text-secondary)",
+                        fontFamily: "var(--font-instrument-serif)",
+                      }}
                     >
                       How to
                     </p>
