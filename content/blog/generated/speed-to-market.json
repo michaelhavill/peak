@@ -123,6 +123,47 @@
         }
       ]
     },
+    "product-designer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Monday morning. 40 minutes opening Figma files to remember where you left off. 30 minutes re-reading last week's usability findings in Dovetail. 20 minutes scrolling the #design-review Slack channel for critique you missed. Another 30 minutes cross-referencing the sprint board against the journey map. You haven't drawn a single frame and the morning is gone. That's not design work. That's overhead masquerading as work.</p><p>Picture this. A product designer on a competing team walks in Monday morning holding a synthesized brief that already mapped the latest usability findings to the in-flight flows, flagged the three components that need new variants this sprint, and surfaced the accessibility issues that cropped up in the last QA pass. She's starting the critical IA pass by 9am while you're still opening files. By Friday, she's shipped two interaction experiments. You've shipped none.</p><p>The design teams shipping fastest aren't using better AI. They've eliminated the dead time between decisions. Context assembly is the silent killer of design velocity. Fix that ratio and everything changes - including the time you have left over for deep IA work, research synthesis, and the strategic design thinking that moves activation and retention.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Overnight Sprint Brief",
+          "triggerText": "See how to start Monday with context instead of assembly",
+          "html": "<h3>The Current State</h3><p>70% of your day is spent assembling context - opening files, re-reading research, tracking critique threads, hunting for the latest component variant. 30% is actual design work. That ratio is backwards.</p><h3>The Overnight Brief</h3><p>Set up an automation that runs Sunday night. Pull the latest usability findings from Dovetail, unresolved design review threads from Slack, new Linear tickets tagged design-qa, and the current sprint's journey-map touchpoints. Feed into Claude to synthesize a decision-ready brief: key user signals, accessibility issues, components needing new variants, and the design decisions that need to happen this week.</p><h3>The Impact</h3><p>Deep design work starts at 9am instead of 2pm. That's a half-day reclaimed every week. Over a year, six extra weeks for the craft that actually moves the needle - IA passes, interaction exploration, research synthesis, and the strategic flows competitors don't have time to get right.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Design velocity increased 30% for one team - not because they worked harder, but because decisions deployed 3x faster. Multiply that across 52 weeks and you've underwritten an entirely different design trajectory for the product.</p><p>Imagine if every design review started with full context already loaded and the first 15 minutes were spent debating the interaction instead of re-explaining the persona. That's what kills most design orgs: the critique before the critique before the critique, each one burning five calendars to re-establish what everyone already figured out last week. Eliminate the re-establishment tax and your calendar opens up by 30% overnight. Not because you work less - because you stop paying the same context rent on every flow.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Kill Context Loss at Every Handoff",
+          "triggerText": "Learn how to preserve context across design stages",
+          "html": "<h3>The Handoff Problem</h3><p>Research waits for a debrief. The brief waits for persona review. Design waits for critique. Critique waits for engineering feedback. Each handoff loses the rationale behind the last decision. By the time the flow ships, nobody had the full picture - not the research, not the IA logic, not the accessibility states, not the activation metric.</p><h3>One Living Doc Per Flow</h3><p>Create a \"Flow Context\" Notion page for each feature. Research adds the key findings and persona priorities. You add the IA rationale, interaction decisions, and component choices. Engineering adds implementation notes and accessibility behavior. Connect via MCP. When engineering starts building, they get the designer's actual thinking - the \"why\" behind every interaction, not a two-week-old Slack summary.</p><h3>Cross-Functional Speed</h3><p>The brief includes engineering constraints because AI pulled them. The design spec includes WCAG states because AI referenced the accessibility baseline. The engineering implementation respects the component library because AI surfaced the right variants. Nobody re-establishes what the last person already figured out.</p><h3>The Result</h3><p>One product design team cut idea-to-production from 6 weeks to 8 days. Same people. Same Figma library. Different architecture for how design rationale flows between stages.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A design team shipping weekly runs 12 interaction experiments per quarter versus 3 for a team shipping monthly. That's 4x the learning velocity on flows, funnels, and components. But the fast team also has more time for strategic depth between shipments - deeper IA work, richer research synthesis, more ambitious interaction patterns. Speed gives you both: more data AND more time to think about what the data means for users.</p><p>Think about it like this. When your cycle is 8 days, you can ship interaction experiments on flows you're only 60% confident about and learn from real activation data. When your cycle is 6 weeks, you only bet on the sure things and converge on the same safe patterns as every other product. Slow cycles force conservatism - you hedge on interaction choices. Fast cycles allow curiosity - you try the weird, category-defining pattern that risk-averse competitors would never approve. The speed isn't the strategy. The speed is what makes a braver design strategy affordable.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Product Design Teams Shipping at Speed",
+          "triggerText": "See how design teams are compressing cycles",
+          "html": "<h3>Linear</h3><p>Ships interaction refinements at a velocity that surprises their market. Small design team, massive system output. Every handoff carries full design rationale. Critique starts at 9am with context already loaded.</p><h3>Shopify</h3><p>Design teams that spent days assembling context now have AI pre-assemble sprint briefs and flag accessibility issues before anyone opens Figma. Flows that took 6 weeks from research to ship now take 8 days.</p><h3>Vercel</h3><p>Design work goes from research insight to production in days. AI across every stage with shared context through each handoff. The \"wait for\" gaps between research, design, and engineering close to near zero.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Eliminate assembly time. Invest craft time. The product designer who ships 4x faster doesn't just win on output - she wins on insight. Every flow shipped is a research signal, an activation data point, a usability check on the system itself. The designer who learns fastest ships the patterns that define the category.</p><p>What's stopping you from rebuilding your week around this principle starting Monday? Not headcount - the slowest designers I see are on the biggest teams with the thickest process. Not budget - the cheapest interventions have the highest ROI. The blocker is the comfort of the critique cadence and the handoff ritual you inherited. Automate the assembly and the design timeline collapses. The designer who breaks the comfort first wins the next 18 months of interaction ground.</p>"
+        }
+      ]
+    },
     "design-engineer": {
       "sections": [
         {

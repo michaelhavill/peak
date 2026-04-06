@@ -123,6 +123,47 @@
         }
       ]
     },
+    "product-designer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your design taste took years to build. The eye that catches a 2px misalignment in a data table. The IA instinct that knows a nav problem is actually a mental-model problem. The visual judgment that separates refined from generic at a glance. And the product sense layered on top: which flows move activation, which features are vanity, and which interaction pattern will survive first-week drop-off. You ask AI for a screen concept and get a competent, characterless layout with zero conviction about the user it's for.</p><p>Here's the thing. The AI isn't bad at UI - it's uninformed about YOUR taste. Your spacing scale, your type hierarchy, your accessibility bar, your persona priorities, your opinion about what \"done\" means. None of it is accessible. That 30-minute cleanup pass you run on every AI draft? That's the tax on undocumented taste. Do the math: 30 minutes times every screen, every component variant, every empty state - run that across 200 artifacts a year and you're burning weeks of senior design thinking just translating generic output into your system.</p><p>Imagine if every concept came back already carrying your type scale, your token palette, your persona framing, and your activation metric. The 30 minutes of cleanup? Gone. What's stopping you from putting your design brain into the system this week?</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Write Your Product Taste Doc",
+          "triggerText": "See how to encode your design and product judgment",
+          "html": "<h3>Your Design Rules</h3><p>Write 15-20 specific rules that capture how you actually decide: \"Primary CTAs are filled, never outlined. Body copy never exceeds 18px on desktop. Section padding is 80px minimum. Empty states always teach the next action. Progressive disclosure over feature density. IA mirrors the user's mental model, never the database schema. WCAG 2.2 AA is a floor, not a goal.\"</p><h3>Your Product Judgment</h3><p>Document how you weigh persona priority against business value, your threshold for \"enough research,\" and how you tie each major flow to a north-star metric. One product designer encoded this and her screen concepts started shipping 80% of the way to final. That's hours reclaimed per week, compounding across every artifact she touches.</p><h3>Deploy Immediately</h3><p>Upload to a Claude Project along with your three strongest specs, your Figma token file, and your top personas. Test it by asking for a new onboarding flow in your domain. If the framing, hierarchy, and interaction choices match your thinking, you're there.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>One product designer financialized her craft this way. AI concepts now match her quality bar and product framing on the first draft. The 30-minute cleanup tax? Gone. But the real win is what she does with those 30 minutes - deeper journey mapping, richer research synthesis, the tough IA problems that actually move retention. That's a fundamentally different job.</p><p>Think about it like this. A master typographer who's set 10,000 pages has micro-judgments no textbook captures. A product designer who's shipped 50 flows has a model of user intent no framework explains. The question isn't whether you have it - you do. The question is whether you've taken an afternoon to write it down. One designer wrote 40 specific principles spanning persona-driven content hierarchy, UX flow logic, progressive disclosure patterns, and visual taste. AI-generated concepts matched her thinking without a single correction. First try. Like a typographer who finally wrote down her micro-rules - now the AI sets the page in her voice.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Team Product Taste Infrastructure",
+          "triggerText": "Learn how to scale design quality without bottlenecks",
+          "html": "<h3>The Problem</h3><p>Your design lead's critique arrives as Figma comments three days after the PR merged. The designer's \"done\" and the engineer's \"done\" measure against different bars. Quality only exists in the head of whoever reviews it. Design system governance is a Notion doc nobody opens.</p><h3>The Three Layers</h3><p><strong>Company:</strong> Brand principles, accessibility baseline, and the north-star metrics every product is accountable to.<br/><strong>Team:</strong> How design evaluates opportunities, how the system is governed, how critique is run, how specs are structured.<br/><strong>Individual:</strong> The designer who's strong on IA. The one with the sharpest interaction instincts. The one who knows every empty state edge case. Personal alpha that layers on top.</p><h3>Deploy via Notion</h3><p>Create a Notion database of taste docs, principles, and system governance by domain. Connect to Claude via MCP and wire in your Figma library. A new designer's first AI-assisted concept matches the team's quality bar because the context carries the org's collective craft automatically.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Design taste at scale means consistency without bottlenecks. The design lead doesn't need to review every artifact. The head of design doesn't need to enforce the accessibility bar manually. The critique quality bar is in the system. Picture this: a new designer joins on Monday. By Wednesday, her first screen looks like it was drawn by someone who's been in the system for two years. Not because she's a prodigy, but because the AI she's working with carries every principle, token, and persona your senior designers spent years refining.</p><p>And the leads whose calendars cleared? They invest in the deep craft work that differentiates - original interaction patterns, research programs, the thorny IA problems that have been sitting on the backlog because nobody had time. Speed unlocks time. Time unlocks depth. That's derisking design quality while raising the ceiling on what your best designers can accomplish. A 3x velocity improvement isn't just faster - it's a different kind of design org.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Product Taste in the Wild",
+          "triggerText": "See how product design teams are encoding taste",
+          "html": "<h3>Apple HIG / Material Guidelines</h3><p>Decades of opinionated, specific interaction rules documented publicly. These aren't vague values - they're concrete judgment calls that constrain every pattern decision. The teams that ship best encode their own HIG-style doc internally.</p><h3>Figma Config Talks and Design System Docs</h3><p>The best product design teams publish not just visual tokens but product thinking: \"progressive disclosure over feature density,\" \"IA mirrors the user's mental model, not the database schema,\" \"every empty state teaches the next action.\" These rules travel straight into AI prompts.</p><h3>Custom Claude Projects with Figma Libraries</h3><p>Product designers are building AI configurations loaded with their design principles, token files, persona docs, and research repositories. Visual rules, interaction rules, accessibility rules, activation metrics. The pattern is consistent: document specificity, connect it, and the cleanup tax disappears.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A design system without taste is just a component library. Taste without research is just personal preference. The product designer who deploys both - their visual craft, their product judgment, and AI as an extension of their principles - produces work that's not just consistent but opinionated. That's what makes your design thinking defensible and your position irreplaceable. Every rule you refine compounds across every future interaction. After 6 months, your AI carries judgment that would take a new designer a year to absorb. That's not a productivity hack. That's a moat.</p>"
+        }
+      ]
+    },
     "design-engineer": {
       "sections": [
         {

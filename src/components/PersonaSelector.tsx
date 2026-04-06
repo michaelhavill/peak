@@ -7,6 +7,7 @@ const PERSONAS = [
   { id: "general", label: "General" },
   { id: "founder", label: "Founder" },
   { id: "product-builder", label: "Product Builder" },
+  { id: "product-designer", label: "Product Designer" },
   { id: "design-engineer", label: "Design Engineer" },
   { id: "solo-operator", label: "Solo Operator" },
   { id: "technical-leader", label: "Technical Leader" },

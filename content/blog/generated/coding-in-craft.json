@@ -123,6 +123,47 @@
         }
       ]
     },
+    "product-designer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>You hand off a spec. Engineering builds something that technically matches the red lines but misses the interaction intent. The focus state is wrong. The empty state got skipped. The token you explicitly called out became a one-off hex value. Design QA becomes a rescue mission: you file 40 Linear tickets for issues that should have been prevented at the spec stage. And the worst part? Nobody catches it until staging, when the activation metric this flow was supposed to move is already at risk.</p><p>Imagine if every spec you wrote automatically surfaced the components already in the library, the accessibility requirements for each state, and the utilities engineering built for adjacent flows. Before you hit save in Figma, you already know which parts map cleanly to existing components and which parts need new primitives. No wasted sprint cycles on interactions that can't survive first-party auth. No design QA backlog full of issues you flagged in the spec and nobody read.</p><p>The problem isn't communication skills - your specs aren't bad. It's that your design system and product intent live in one universe and the engineering reality lives in another. When AI can bridge that gap, the entire design-to-code pipeline transforms. Specs become executable. Engineering gets the token file, the component variants, the WCAG states, and the north-star metric embedded in the brief. Design QA drops 70%. That's not optimization - it's a different operating model for design craft.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Link Product Specs to Engineering Reality",
+          "triggerText": "See how to eliminate the design-engineering gap",
+          "html": "<h3>Connect Specs to the Knowledge Base</h3><p>When you spec \"add an inline editing state to the data table,\" the AI should surface the existing table component, the three interaction patterns the system already uses for inline edits, and the accessibility states you need to cover. That context belongs in the Figma spec, not discovered three days into the sprint when engineering asks why you didn't use the existing component.</p><h3>How to Set This Up</h3><p>Connect your Notion workspace, your Figma library, and your token file to Claude via MCP. Have engineering add their component implementations, architecture decisions, and anti-patterns to the same workspace. When you write a spec, ask Claude to surface the existing components, tokens, and accessibility requirements that apply.</p><h3>The Result</h3><p>One product designer started linking specs to the engineering knowledge base and her component library governance. Design QA cycles dropped 70%. Engineers ship with the correct tokens and variants on the first pass. No more wasted sprint cycles on one-off hex values and reinvented components.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The entire team benefits. When your design system connects to engineering context, AI-generated code uses your actual components with your actual tokens. The \"that's not how it was designed\" QA cycle shrinks to near zero. Everyone working from the same reality, at the same time. Think about what that unlocks - designers spec things that are buildable, engineers build things that match the design, and design QA stops being a rescue mission for mistakes that should have been prevented at the critique stage.</p><p>The downstream effect is the product you ship actually matches the product you imagined. No more \"close enough\" compromises baked in during engineering translation. No more flows that launched with broken focus rings and inconsistent spacing because the team ran out of polish budget on the Friday before release. When context flows, craft flows with it - and the metrics this flow was supposed to move stop being hostage to design debt.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Build Cross-Functional Engineering Context",
+          "triggerText": "Learn how to make design and engineering constraints visible to everyone",
+          "html": "<h3>For Design Teams</h3><p>Create a <code>/docs/design-context/</code> folder in the repo with your design tokens, component API documentation, accessibility standards, and the design principles doc. Sync your Figma library and connect via MCP so engineers can query design rationale without pinging you in Slack, and so you can query component implementation details without opening a PR.</p><h3>For Cross-Functional Work</h3><p>When the component library, design tokens, and accessibility rules connect to engineering context, the gap between design and production closes. Designers spec things that are buildable because the AI surfaces existing components. Engineers build things that match the design because the AI enforces tokens and WCAG states. The translation layer disappears.</p><h3>The Sprint Improvement</h3><p>One design-engineering team saw sprint velocity increase 30% without a single additional hour worked. Engineers start building on day 1 because the component mapping is pre-loaded. Design review cycles drop from two days to four hours because AI-generated code already matches the system. Design QA tickets drop 60% because the AI catches token drift before the PR.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Every sprint you ship with full context compounds into better design decisions. When you can see engineering constraints while in Figma, you make better interaction tradeoffs. When engineering can see design rationale while building, they make better implementation choices. That feedback loop is where great products come from - not from heroic design QA, but from a system where every role has the context the other roles need.</p><p>Picture this. You finalize a spec on Monday. By Wednesday, engineering has shipped it. By Friday, it's in production with the correct tokens, states, and accessibility behavior on the first pass. Not because anyone worked harder, but because nobody wasted a cycle on a misalignment that should have been caught at critique. That's the shape of a high-velocity product design team - and it only becomes possible when design system governance, research context, and engineering reality are shared infrastructure, not tribal knowledge locked in Figma comments.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Tools for Design-Engineering Alignment",
+          "triggerText": "See the tools that bridge design and code",
+          "html": "<h3>Figma + Design Tokens + MCP</h3><p>Your published library and token file become queryable context. AI-generated code references your actual color ramp, spacing scale, type system, and component variants - not generic defaults.</p><h3>Notion + Linear + Claude</h3><p>Connect your spec docs, design principles, research repo, and issue tracker. When you prompt for a new flow, the AI already knows the persona priorities, the north-star metric, and which engineering debt items touch this area.</p><h3>Claude Code + CLAUDE.md</h3><p>Design context committed to the repo alongside engineering context. Every AI coding interaction respects your tokens, accessibility rules, and component API. Fewer design QA tickets, faster shipping, cleaner handoffs.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The shared knowledge base captures institutional design memory. Why did we kill the modal pattern for destructive actions? What happened last time someone tried a mega-menu? Which components are load-bearing across the product? This context prevents expensive mistakes and enables better design decisions. Without it, every designer who joins has to rediscover the same usability landmines that burned the last designer. With it, institutional design scar tissue becomes a guided tour that protects every future flow.</p><p>The cost is a few hours of documentation. The return is permanently cleaner design QA, faster shipping, and design judgment that compounds. Multiply that across 52 weeks a year and you're looking at a product design team that operates in a different gear than the one that has to pause every sprint to chase token drift and component reinvention. That gear difference is what separates the design orgs that ship category-defining products from the ones that ship \"roughly what was specced.\"</p>"
+        }
+      ]
+    },
     "design-engineer": {
       "sections": [
         {

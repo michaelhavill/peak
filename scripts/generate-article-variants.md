@@ -5,7 +5,7 @@ Run this in Claude Code when you add a new blog post.
 ## Usage
 
 ```
-claude "Read content/blog/NEW-SLUG.md and generate a persona-variants JSON file at content/blog/generated/NEW-SLUG.json following the exact structure of the existing generated files. Use content/blog/generated/taste-through-ai.json as a reference for format. The 8 personas are: general, founder, product-builder, design-engineer, solo-operator, technical-leader, creative-director, vibe-coder. Restructure the article into WHY sections (short, compelling narrative) alternating with METHOD sections (detailed how-to in modals). Aim for 3-5 methods per persona. Never use em dashes. Use hyphens instead."
+claude "Read content/blog/NEW-SLUG.md and generate a persona-variants JSON file at content/blog/generated/NEW-SLUG.json following the exact structure of the existing generated files. Use content/blog/generated/taste-through-ai.json as a reference for format. The 9 personas are: general, founder, product-builder, product-designer, design-engineer, solo-operator, technical-leader, creative-director, vibe-coder. Restructure the article into WHY sections (short, compelling narrative) alternating with METHOD sections (detailed how-to in modals). Aim for 3-5 methods per persona. Never use em dashes. Use hyphens instead."
 ```
 
 ## What it does
@@ -24,6 +24,7 @@ claude "Read content/blog/NEW-SLUG.md and generate a persona-variants JSON file 
 | general | Broad examples, universal applicability |
 | founder | Strategy, fundraising, competitive moats, team building |
 | product-builder | Product decisions, user research, prioritization, shipping |
+| product-designer | UX/UI craft at IC level plus product strategy, metrics, foundations, design systems thinking |
 | design-engineer | Design systems, craft quality, visual taste, code aesthetics |
 | solo-operator | Efficiency, bootstrapping, wearing all hats, leverage |
 | technical-leader | Architecture, team scaling, tech debt, engineering culture |

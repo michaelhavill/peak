@@ -123,6 +123,47 @@
         }
       ]
     },
+    "product-designer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>The PM prompts Claude with the latest interview notes. You open a fresh Figma session without them. The engineer is writing the component from a spec that misses the interaction rationale. Three people working on the same flow - with three completely disconnected knowledge graphs. The information asymmetry inside your own team is the bottleneck nobody is measuring, and it is where design intent quietly dies between handoffs.</p><p>Picture this. The PM finishes a usability test and the finding flows automatically into a shared layer tagged against the journey step it affects. Your AI picks it up for the next IA exploration. The engineer's AI is already stress-testing the interaction pattern against the component library. Nobody forwarded a Loom. Nobody scheduled a walkthrough. That is the design machine most product teams are leaving on the table.</p><p><strong>When you ask AI about users and it does not know about the PM's research - that is not an AI problem. That is an architecture problem.</strong> The delta between 10% and 100% context is where the real design alpha lives. A flow exploration that used to take four hours of context assembly - pulling the persona doc, re-reading the transcript, checking the design system, confirming the token values - now takes 40 minutes. Same craft, same taste, one-sixth the time.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Shared Product Research Surface",
+          "triggerText": "See how to make research available to every team member's AI",
+          "html": "<h3>Structure your product knowledge base</h3><p>In Notion (or Dovetail plus Notion), create databases for: Usability Tests, Customer Interviews, Journey Maps, Design Decisions, Design System Governance, and Activation and Retention dashboards. Use consistent tagging: persona, journey stage, surface, accessibility impact.</p><h3>Connect to your team's AI</h3><p>Install the Notion and Dovetail MCP servers. Every team member's Claude now queries the full research corpus and the design decision log when working on product tasks.</p><h3>The transformation</h3><p>When you ask \"What did users say about the empty state on onboarding?\" the answer draws from every interview, not the 15% slice one person remembers. When the engineer asks \"Why is the hover state designed this way?\" it references your actual documented rationale from the decision log - not a Slack message from six weeks ago.</p><p><strong>The information asymmetry inside your own team drops to near zero.</strong> That alone eliminates two weekly design walkthroughs that existed only to transfer context.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>A design critique starts as an AI-drafted packet grounded in journey maps, research transcripts, and the relevant activation funnel. You refine the IA calls and push the interaction detail. The PM pressure-tests against strategy. The AI incorporates those inputs into the next iteration. The engineer flags the component constraints that feed back into the design before you spec something impossible. Everyone sees the full history. Zero information loss between handoffs - which is where design intent usually dies.</p><p>Think about it like this. The best product teams do not win because they have more talented designers or faster engineers. They win because design, product, and engineering work from the same picture. Your team is already talented. The question is whether your tools let them build as a unit or force them to rebuild shared context from scratch at every critique and every handoff.</p><p><strong>This is network effects on design knowledge.</strong> Every participant makes the shared context more valuable for every other participant. The \"that is not technically feasible\" feedback loop that used to eat 3-5 days per design cycle drops to near zero because your AI already knows the engineering constraints before the Figma file even opens.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Connect Design, Engineering, and Product Context",
+          "triggerText": "See how to dissolve the walls between product functions",
+          "html": "<h3>Three critical connections</h3><ol><li><strong>Figma + GitHub:</strong> Connect your design tokens, component library, and codebase. The wall between design and engineering dissolves because AI carries token drift, accessibility state, and component availability across both.</li><li><strong>Linear + Slack:</strong> Connect your issue tracker and design channels. When anyone prompts AI, it already knows the backlog, the current design debt, and the last critique discussion.</li><li><strong>Dovetail and Notion + everything:</strong> Your research repository and design system governance docs feed into every tool via MCP. Journey maps, personas, principles, tokens - all queryable.</li></ol><h3>The feedback loop accelerator</h3><p>The \"that component does not exist yet\" feedback loop used to cost 3-5 days per design cycle. With shared context, your AI already knows the component library status and the accessibility constraints. The engineer's AI already knows the interaction rationale and the token spec. The cycle drops to near zero, and design QA catches regressions before handoff instead of three days after release.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Product teams that built shared research and design surfaces report that the information asymmetry inside their own team dropped to near zero. Not the 15% slice one person remembers - the full corpus of interviews, usability tests, journey maps, and design decisions. That alone eliminated weekly walkthroughs and made design decisions measurably faster, and more importantly, measurably sharper against the activation and retention metrics they were supposed to move.</p><p>Imagine if every design decision your team made this quarter drew from every usability test, every interview, every accessibility audit, every design system entry you have ever captured. Not the slice somebody remembered to paste into the prompt window - the whole corpus. That is not a productivity gain. That is a different product, with a different activation curve and a different retention story.</p><p><strong>Design collaboration scales when context is shared, not when critiques are more frequent.</strong> Build the shared surface and let your product team's collective intelligence compound. Every research insight and every design decision captured today compounds into every flow, interaction, and IA exploration for the next two years.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Replace Product Syncs with Shared Surfaces",
+          "triggerText": "See which meetings you can eliminate with better context sharing",
+          "html": "<h3>The product meeting audit</h3><p>Tag each recurring meeting: \"decision\" or \"context transfer.\" Common context transfer meetings in product design:</p><ul><li>Design-engineering handoff walkthrough</li><li>Research readout</li><li>Design system office hours</li><li>Cross-functional alignment on flow state</li></ul><h3>Build the replacement surfaces</h3><p>For each context transfer meeting, build the shared surface that makes it unnecessary. A research repository where usability findings flow automatically tagged against the journey step. A design-engineering bridge where token drift, accessibility status, and component availability are visible in real time. A design system governance dashboard where AI surfaces drift and deprecations without anyone running a manual audit.</p><h3>Keep what matters</h3><p>Critiques where the team pressure-tests IA, interaction nuance, and visual craft - those stay. But they start richer because every AI in the room has the full research, system, and metric context before anyone opens Figma.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>The tools exist today. Notion and Dovetail plus MCP for the research and decision layer. Figma plus GitHub plus a token connector for the design-engineering bridge. Granola for capturing critique and user interview context automatically. The product team that connects these first compounds design advantages every quarter - in activation numbers, retention, and the craft quality that separates a product users tolerate from a product users love.</p><p>What is stopping you from wiring these tools together this week? The blocker is almost never technical - it is the comfort of working in Figma tabs the way you always have, and the assumption that context loss at handoffs is a law of nature. It is not. It is a tooling choice. The product teams that break that comfort compound. The ones that do not pay the context tax forever. Every design cycle on disconnected tools is a cycle where your connected competitor ships two flows and moves their north-star metric while yours stands still.</p>"
+        }
+      ]
+    },
     "design-engineer": {
       "sections": [
         {
