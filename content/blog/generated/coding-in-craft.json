@@ -4,7 +4,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Most AI-generated code is dead on arrival. Copilot autocompletes a function, the code compiles, and then your senior engineer spends 15 minutes fixing it - wrong naming conventions, a pattern you deprecated last quarter, zero awareness of the shared utility that already does the same thing.</p><p><strong>The gap between 60% acceptance rate and 95% acceptance rate is not an AI capability problem - it's a context deployment problem.</strong> AI that doesn't know your codebase ships code that breaks on contact with your reality. AI that carries your constraints, your patterns, your scars? It ships code that belongs.</p>"
+          "html": "<p>Most AI-generated code is dead on arrival. Copilot autocompletes a function, the code compiles, and then your senior engineer spends 15 minutes fixing it - wrong naming conventions, a pattern you deprecated last quarter, zero awareness of the shared utility that already does the same thing. Multiply that by every engineer, every day, across your entire org. That is insanity.</p><p>Picture this. Your AI doesn't just compile - it understands your codebase the way your most senior engineer does. Every suggestion lands inside your patterns, references your utilities, respects your constraints. Code review stops being a style debate and starts being a strategy conversation. What's stopping you from getting there? It isn't model capability. It's a single document sitting unwritten in your repo.</p><p><strong>The gap between 60% acceptance rate and 95% acceptance rate is not an AI capability problem - it's a context deployment problem.</strong> AI that doesn't know your codebase ships code that breaks on contact with your reality. AI that carries your constraints, your patterns, your scars? It ships code that belongs - because it's building with you, not instead of you. Your knowledge store and your ongoing judgment are what make AI an extension of your engineering craft. You're not outsourcing code quality. You're amplifying it. Full stop.</p>"
         },
         {
           "type": "method",
@@ -15,7 +15,7 @@
         },
         {
           "type": "why",
-          "html": "<p>An engineering lead built this context doc and acceptance rate jumped from 60% to 95%. If your team has 8 engineers generating 20 suggestions per day, that's 14 hours of senior engineering time recovered daily. From a document.</p><p>A design engineer connected his component library, design tokens, and accessibility requirements. Generated code uses his actual components with his actual tokens. The gap between Figma and production closed.</p>"
+          "html": "<p>Look - the ROI on this is not subtle. An engineering lead built a context doc covering his team's patterns and connected it to Claude Code via MCP. Acceptance rate jumped from 60% to 95%. Do the math. If your team has 8 engineers generating 20 suggestions per day, and each rejected suggestion costs 15 minutes of senior time to fix, that's 14 hours of senior engineering time recovered daily. At blended cost, $2,800/day back in your pocket. From a document.</p><p>Annualize that. $2,800 per day times 240 working days is $672,000 a year in recovered senior capacity. For a team of 8 engineers. From one markdown file in a repo. What other investment in your engineering org returns that kind of yield on that kind of capital outlay? Nothing. Not your next hire. Not your IDE license upgrade. Nothing comes close. A design engineer connected his component library, design tokens, and accessibility requirements. Generated code uses his actual components with his actual tokens. The gap between Figma and production closed.</p>"
         },
         {
           "type": "method",
@@ -26,7 +26,7 @@
         },
         {
           "type": "why",
-          "html": "<p>One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards - by raising the floor. The reclaimed review time went into architecture discussions, performance investigations, and the deep technical thinking that had been perpetually deprioritized.</p>"
+          "html": "<p>One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards - by raising the floor. Every AI-assisted PR already follows the team's patterns because the AI has the context. The reclaimed review time didn't disappear into more tickets - it went into architecture discussions, performance investigations, and the deep technical thinking that had been perpetually deprioritized. Time to ship, faster. Time for the engineering work that really matters? Finally unlocked.</p><p>Think about it like this. Every senior engineer on your team is carrying around an invisible rulebook in their head - the patterns, the scars, the unwritten \"we don't do that here\" reasons. Right now that rulebook leaves the building when they go home. What if it stayed? What if it onboarded the next hire while your seniors slept? That's what an engineering context package actually is.</p>"
         },
         {
           "type": "method",
@@ -37,7 +37,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Every architectural decision you document, every pattern you codify, every \"we tried this and it failed\" note compounds into richer context. After 6 months, your AI is the most context-aware collaborator on your team - but you're still the one directing it. You're not writing documentation. You're deploying your expertise as infrastructure.</p>"
+          "html": "<p>Every architectural decision you document, every pattern you codify, every \"we tried this and it failed\" note compounds into richer context. After a month, your AI has read every PR, every ADR, every incident postmortem. After 6 months, it's the most context-aware collaborator on your team - but you're still the one directing it, refining its output, and deciding what ships. You're not writing documentation. You're deploying your expertise as infrastructure.</p><p>The value is the triad: you, your knowledge store, and AI working as one system. Your agents build with you, as an extension of your engineering craft. Not a replacement for it. And the brutal part is that almost every team has the raw material sitting in Slack threads, buried postmortems, and senior engineer muscle memory. They just haven't written it down where the AI can read it.</p>"
         }
       ]
     },
@@ -45,7 +45,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your startup's engineering velocity is bleeding out through AI-generated code that doesn't fit your codebase. Every engineer prompting Copilot gets suggestions that violate your stack constraints, reinvent utilities you already have, and ignore the three services that absolutely cannot go down. You're burning senior engineering time on pattern violations instead of product velocity.</p><p>The gap between teams that ship fast and teams that are stuck isn't talent. It's whether the AI knows your engineering reality.</p>"
+          "html": "<p>Your startup's engineering velocity is bleeding out through AI-generated code that doesn't fit your codebase. Every engineer prompting Copilot gets suggestions that violate your stack constraints, reinvent utilities you already have, and ignore the three services that absolutely cannot go down. You're burning senior engineering time on pattern violations instead of product velocity. At startup burn rates, that is the most expensive form of waste you can possibly tolerate.</p><p>Picture this. Your next hire ships their first PR on day two. Not week two. Not month two. Day two. And it's clean. It uses your patterns, your utilities, your conventions. Code review is a 20-minute conversation about approach, not a 2-day slog through style fixes. What's stopping you from getting there? A single markdown file you could write between meetings this afternoon.</p><p>The gap between teams that ship fast and teams that are stuck isn't talent - every YC batch hires from the same pool. It's whether the AI knows your engineering reality. The teams that win are the ones that treat context deployment as the highest-leverage move in the org. The teams that don't are still wondering why their acceptance rate is stuck at 60% six months in.</p>"
         },
         {
           "type": "method",
@@ -56,7 +56,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Onboarding at 2 weeks instead of 3 months means your next hire is productive 10 weeks sooner. At startup burn rates, that's the difference between shipping the feature that closes the round and running out of runway trying to get new engineers up to speed.</p>"
+          "html": "<p>Onboarding at 2 weeks instead of 3 months means your next hire is productive 10 weeks sooner. At startup burn rates - call it $15k/month fully loaded for a mid-level engineer - that's roughly $35k in recovered productivity per hire. For a team growing from 5 to 15 engineers over 18 months, that compounds to $350k+ in pure velocity recovery. From writing one document.</p><p>And that's just the direct cost math. The real unlock is this: a new engineer productive in week 2 is contributing to the feature that closes your next round. Not grinding through onboarding while your seniors answer Slack questions. That's the difference between shipping the thing that closes the round and running out of runway trying to get new engineers up to speed. Velocity compounds. Drag compounds. Choose which side of that equation your team lives on.</p>"
         },
         {
           "type": "method",
@@ -67,7 +67,7 @@
         },
         {
           "type": "why",
-          "html": "<p>After 12 months, your engineering knowledge base is a competitive moat. Competitors can hire the same engineers. They can't buy the institutional knowledge that prevents expensive mistakes from recurring. The system remembers what individuals forget. That is infrastructure.</p>"
+          "html": "<p>After 12 months, your engineering knowledge base is a competitive moat. Competitors can hire the same engineers from the same bootcamps and the same FAANG referral networks. They can't buy the institutional knowledge that prevents expensive mistakes from recurring. The system remembers what individuals forget. That is infrastructure.</p><p>Imagine if every decision your team made - every architecture debate, every failed refactor, every production incident - became permanent context for every future AI interaction. Your tenth engineer inherits the scar tissue of your first nine. Your twentieth engineer inherits the scar tissue of your first nineteen. That isn't a knowledge base. That's a competitive advantage that accrues interest. The longer you run, the harder you are to catch.</p>"
         },
         {
           "type": "method",
@@ -78,7 +78,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The cost is hours of documentation. The return is thousands of hours of engineering time recovered, permanently. For a startup burning cash and racing competitors, there is no higher-ROI investment in your engineering capability.</p>"
+          "html": "<p>The cost is hours of documentation. The return is thousands of hours of engineering time recovered, permanently. For a startup burning cash and racing competitors, there is no higher-ROI investment in your engineering capability. Not your next senior hire. Not your tooling upgrade. Not your infrastructure refactor. Nothing comes close to the yield of one committed markdown file that codifies how your team actually builds.</p><p>The founders who understand this move early. They write the doc before they have 8 engineers - they write it when they have 2. And every engineer who joins after that inherits a compounding advantage. By the time competitors figure out what's happening, you've already got a year of accumulated context they can't replicate by throwing money at the problem. That's the game.</p>"
         }
       ]
     },
@@ -86,7 +86,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You write a spec. Engineering builds something that technically matches the requirements but misses the intent. The \"we can't do it that way\" feedback loop takes days. Specs get lost in translation. Sprint cycles burn on proposals that were architecturally impossible from the start.</p><p>The problem isn't communication skills. It's that your specs exist in one universe and the engineering reality exists in another. When AI can bridge that gap, the entire product-to-code pipeline transforms.</p>"
+          "html": "<p>You write a spec. Engineering builds something that technically matches the requirements but misses the intent. The \"we can't do it that way\" feedback loop takes days. Specs get lost in translation. Sprint cycles burn on proposals that were architecturally impossible from the start. And the worst part? Nobody catches it until the third review cycle, when shipping has already slipped by a week.</p><p>Imagine if every spec you wrote automatically surfaced the architectural constraints that matter, the previous failed attempts, and the utilities the team already built for adjacent problems. Before you hit save on the Notion doc, you already know what's buildable and what isn't. No wasted sprint cycles. No \"we should have caught this earlier\" postmortems. Just clean handoffs from product to code.</p><p>The problem isn't communication skills - your PMs aren't bad at writing specs. It's that your specs exist in one universe and the engineering reality exists in another. When AI can bridge that gap, the entire product-to-code pipeline transforms. Specs become executable. Engineering gets the full picture embedded in the brief. The back-and-forth drops 70%. That's not optimization - that's a different operating model.</p>"
         },
         {
           "type": "method",
@@ -97,7 +97,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The designer benefits too. When the design system connects to engineering context, AI-generated code uses actual components with actual tokens. The \"that's not how it was designed\" QA cycle shrinks to near zero. Everyone working from the same reality, at the same time.</p>"
+          "html": "<p>The designer benefits too. When the design system connects to engineering context, AI-generated code uses actual components with actual tokens. The \"that's not how it was designed\" QA cycle shrinks to near zero. Everyone working from the same reality, at the same time. Think about what that unlocks - designers spec things that are buildable, engineers build things that match the design, and QA stops being a rescue mission for mistakes that should have been prevented at the spec stage.</p><p>The downstream effect is the product you ship actually matches the product you imagined. No more \"close enough\" compromises baked in during engineering translation. No more features that launched with the rough edges intact because the team ran out of polish budget. When context flows, quality flows with it.</p>"
         },
         {
           "type": "method",
@@ -108,7 +108,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Every sprint you ship with full context compounds into better product decisions. When you can see engineering constraints while writing specs, you make better trade-offs. When engineering can see product rationale while building, they make better implementation choices. That feedback loop is where great products come from.</p>"
+          "html": "<p>Every sprint you ship with full context compounds into better product decisions. When you can see engineering constraints while writing specs, you make better tradeoffs. When engineering can see product rationale while building, they make better implementation choices. That feedback loop is where great products come from - not from heroic individual effort, but from a system where every role has the context the other roles need.</p><p>Picture this. The PM writes a spec on Monday. By Wednesday, engineering has shipped it. By Friday, it's in production. Not because anyone worked harder, but because nobody wasted a cycle on a misalignment that should have been caught upfront. That's the shape of a high-velocity product team - and it only becomes possible when the context is shared infrastructure, not tribal knowledge locked in individual heads.</p>"
         },
         {
           "type": "method",
@@ -119,7 +119,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The engineering knowledge base captures institutional memory. Why was this decision made? What happened last time someone tried this approach? Which systems are load-bearing? This context prevents expensive mistakes and enables better product decisions. The cost is hours of documentation. The return is permanently faster shipping with fewer surprises.</p>"
+          "html": "<p>The engineering knowledge base captures institutional memory. Why was this decision made? What happened last time someone tried this approach? Which systems are load-bearing? This context prevents expensive mistakes and enables better product decisions. Without it, every PM who joins has to rediscover the same landmines that burned the last PM. With it, institutional scar tissue becomes a guided tour that protects every future decision.</p><p>The cost is hours of documentation. The return is permanently faster shipping with fewer surprises. Multiply that across 52 weeks a year and you're talking about a product team that operates in a different gear than the one that has to pause every sprint to figure out what's actually buildable. That gear difference is what separates the teams that ship category-defining products from the ones that ship \"roughly what was specced.\"</p>"
         }
       ]
     },
@@ -127,7 +127,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You live at the intersection of design and code. And that intersection is where AI falls apart hardest. It generates React that looks nothing like your system. It uses generic components instead of your library. It ignores your tokens, your spacing scale, your accessibility requirements. Every AI-generated component needs 30 minutes of translation before it fits your reality.</p><p>The gap between generic code and your code isn't capability - it's context. The AI doesn't know your design system exists.</p>"
+          "html": "<p>You live at the intersection of design and code. And that intersection is where AI falls apart hardest. It generates React that looks nothing like your system. It uses generic components instead of your library. It ignores your tokens, your spacing scale, your accessibility requirements. Every AI-generated component needs 30 minutes of translation before it fits your reality. And you can feel it - the drift between what you designed and what shipped, accumulating every sprint.</p><p>Picture this. You ask the AI for a new pricing card. It returns code that uses your exact tokens, your exact component library, your exact spacing scale, your exact interaction timing. No translation. No fixing. No \"close enough.\" It just fits. Because the AI knows your system the way you know your system - not as an abstraction, but as a lived reality encoded in every decision. What's stopping you from getting there? Not model capability. One document that codifies the craft you've been building for years.</p><p>The gap between generic code and your code isn't capability - it's context. The AI doesn't know your design system exists. Fix that, and the gap between Figma and production collapses to nothing. Your aesthetic intent survives the production pipeline intact. That is what craft-quality AI actually looks like.</p>"
         },
         {
           "type": "method",
@@ -138,7 +138,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The gap between Figma and production closed. No more translating from generic React to your design system. When you ask for a component, the AI uses your tokens, your spacing, your patterns. The 30-minute fix cycle per component disappears.</p><p>That time goes back to the craft - refining interactions, exploring design directions, solving the hard UX problems that make your product feel different from everything else.</p>"
+          "html": "<p>The gap between Figma and production closed. No more translating from generic React to your design system. When you ask for a component, the AI uses your tokens, your spacing, your patterns. The 30-minute fix cycle per component disappears. Run the numbers - if you're building 10 components a week and each one was taking 30 minutes to rework, that's 5 hours a week of pure translation labor. Recovered. Permanently.</p><p>And that time doesn't disappear into more tickets. It goes back to the craft - refining interactions, exploring design directions, solving the hard UX problems that make your product feel different from everything else. The things that separate a product with taste from a product that's merely functional. That's the work that was getting crowded out by AI cleanup. Now it's the work you actually get to do.</p>"
         },
         {
           "type": "method",
@@ -149,7 +149,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Every component pattern you codify, every token you document, every accessibility rule you encode - these compound. After a month, your AI has absorbed every pattern in your system. After 6 months, it's the most context-aware design-engineering collaborator you've ever worked with. You're still directing - but the execution matches your craft.</p>"
+          "html": "<p>Every component pattern you codify, every token you document, every accessibility rule you encode - these compound. After a month, your AI has absorbed every pattern in your system. After 6 months, it's the most context-aware design-engineering collaborator you've ever worked with. You're still directing - but the execution matches your craft. You're not micromanaging style. You're making design decisions and watching them ship with fidelity.</p><p>Think about it like this. The invisible rulebook in your head - the 200 small decisions about spacing, typography, color, interaction, timing that define your system's feel - right now that rulebook only influences code when you personally touch it. What if it influenced every piece of code everyone on your team shipped, automatically? That's the multiplier. That's how one design engineer with taste becomes infrastructure for an entire product's quality.</p>"
         },
         {
           "type": "method",
@@ -160,7 +160,7 @@
         },
         {
           "type": "why",
-          "html": "<p>You're not writing documentation. You're deploying your design-engineering craft as infrastructure. The system carries your standards, your aesthetic, your quality bar. Every AI interaction gets better because the context gets richer. That's the compound effect - and it's what makes the difference between a design engineer who fights AI output and one who ships with it.</p>"
+          "html": "<p>You're not writing documentation. You're deploying your design-engineering craft as infrastructure. The system carries your standards, your aesthetic, your quality bar. Every AI interaction gets better because the context gets richer. That's the compound effect - and it's what makes the difference between a design engineer who fights AI output and one who ships with it.</p><p>The teams that figure this out early get to spend their time on the hard, interesting problems that actually differentiate their product. The teams that don't spend their time translating generic code into system-compliant code, forever, at great emotional and financial cost. That gap isn't about capability. It's about whether someone took 30 minutes to write down the rules the craft already knows.</p>"
         }
       ]
     },
@@ -168,7 +168,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You're building the whole thing yourself. And every time AI generates code, you spend 15 minutes fixing it to match your stack, your conventions, your way of building. When you're the only engineer, that 15 minutes per suggestion adds up to hours per day. Hours you need for shipping, not for teaching AI what your codebase looks like.</p><p>The fix takes 30 minutes. One document. Your AI goes from generic code generator to a collaborator who respects your reality.</p>"
+          "html": "<p>You're building the whole thing yourself. And every time AI generates code, you spend 15 minutes fixing it to match your stack, your conventions, your way of building. When you're the only engineer, that 15 minutes per suggestion adds up to hours per day. Hours you need for shipping, not for teaching AI what your codebase looks like. Every hour you lose to AI cleanup is an hour not spent on the thing that actually moves the needle on your product.</p><p>Picture this. You wake up with an idea for a feature. By lunch you've shipped it. Not because you worked fast - you didn't have to. The AI wrote code that already matched your conventions, referenced your utilities, followed your patterns. You just directed the work. What's stopping you from operating at that tempo? Not the model. A single file you could write before your first coffee.</p><p>The fix takes 30 minutes. One document. Your AI goes from generic code generator to a collaborator who respects your reality. For a solo operator, that's the difference between shipping a feature in an afternoon and losing a day to AI code cleanup. It's the difference between a side project that ships and a side project that dies in a folder on your laptop.</p>"
         },
         {
           "type": "method",
@@ -179,7 +179,7 @@
         },
         {
           "type": "why",
-          "html": "<p>A founder-CTO encoded his constraints and new code respected all of them from the first AI interaction. No more fixing. No more explaining. The AI just knows your codebase. For a solo operator, that's the difference between shipping a feature in an afternoon and losing a day to AI code cleanup.</p>"
+          "html": "<p>A founder-CTO encoded his constraints and new code respected all of them from the first AI interaction. No more fixing. No more explaining. The AI just knows your codebase. For a solo operator, that's the difference between shipping a feature in an afternoon and losing a day to AI code cleanup.</p><p>Do the math on your own workflow. If you're writing 20 AI-assisted features a month and each one used to need 15 minutes of cleanup, that's 5 hours of pure drag every month. Recovered, that's enough time to ship an entire extra feature - the kind of feature that might be the one that turns your side project into a business. One document. Multiplied by every AI interaction, forever.</p>"
         },
         {
           "type": "method",
@@ -190,7 +190,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Every pattern you codify, every decision you document, every anti-pattern you flag - these compound into a richer context. You're not writing documentation for someone else. You're building an engineering partner that gets smarter every day. For a solo operator, that's the closest thing to having a co-founder who knows your code as well as you do.</p>"
+          "html": "<p>Every pattern you codify, every decision you document, every anti-pattern you flag - these compound into a richer context. You're not writing documentation for someone else. You're building an engineering partner that gets smarter every day. For a solo operator, that's the closest thing to having a co-founder who knows your code as well as you do.</p><p>Think about it like this. The biggest disadvantage of being solo is you don't have another senior engineer to bounce ideas off of - someone who knows the codebase, remembers why decisions were made, can catch the subtle stuff before it ships. A well-tuned engineering context gives you most of that, asynchronously, for the cost of writing stuff down as you go. That's not just leverage. That's the unfair advantage that lets a single operator compete with a funded team.</p>"
         }
       ]
     },
@@ -198,7 +198,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your team's AI tools are generating code that compiles and culture-clashes. Wrong naming conventions. Deprecated patterns. Zero awareness of shared utilities. Your senior engineers spend 30% of their time in code review catching violations of patterns the author didn't know existed. Your highest-leverage people are functioning as human linters.</p><p>The gap between 60% and 95% acceptance rate is a context deployment problem. Solve it once, recover 14 hours of senior engineering time per day across an 8-person team. From a document.</p>"
+          "html": "<p>Your team's AI tools are generating code that compiles and culture-clashes. Wrong naming conventions. Deprecated patterns. Zero awareness of shared utilities. Your senior engineers spend 30% of their time in code review catching violations of patterns the author didn't know existed. Your highest-leverage people are functioning as human linters. That is a terrible deployment of talent, and it's happening on your watch every single day.</p><p>Imagine if your staff engineers got those 30% of their hours back. The architectural work that's been sitting in the backlog for six months - the refactor nobody had time to design, the performance problem nobody had time to investigate, the system redesign that would unlock the next wave of product velocity - suddenly it's all on the table. Not because you hired more people. Because you stopped wasting the people you have on style enforcement.</p><p>The gap between 60% and 95% acceptance rate is a context deployment problem. Solve it once, recover 14 hours of senior engineering time per day across an 8-person team. Annualized, that's $672,000 in recovered senior capacity. From a document. What other infrastructure investment in your engineering org returns that kind of yield on that kind of capital outlay? The honest answer is nothing. Not your next hire. Not your observability upgrade. Nothing.</p>"
         },
         {
           "type": "method",
@@ -209,7 +209,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Code review shifts from \"please follow our patterns\" to \"let's discuss the architectural tradeoff here.\" That's defense to offense. And the senior engineering time you reclaim goes to architecture decisions, system design, and the hardest technical problems that have been sitting in the backlog because nobody had the headspace.</p>"
+          "html": "<p>Code review shifts from \"please follow our patterns\" to \"let's discuss the architectural tradeoff here.\" That's defense to offense. And the senior engineering time you reclaim goes to architecture decisions, system design, and the hardest technical problems that have been sitting in the backlog because nobody had the headspace. The work that actually differentiates great engineering orgs from ones that just grind.</p><p>A staff engineer maintaining a legacy Rails monolith at a 10-year-old company encoded the hidden rules - the modules you don't touch without three reviewers, the query patterns that crash under load, the background job conventions, and the migrations that have to happen in sequence. Before the context doc existed, every newcomer spent their first month breaking things the team's institutional memory had quietly warned them about. After the context doc, newcomers contribute clean PRs in week two. Tribal knowledge became portable. That's the shift.</p>"
         },
         {
           "type": "method",
@@ -220,7 +220,7 @@
         },
         {
           "type": "why",
-          "html": "<p>One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards - by raising the floor. Every AI-assisted PR follows the team's patterns because the AI has the context. That's the shift from reviewing style to reviewing substance.</p>"
+          "html": "<p>One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards - by raising the floor. Every AI-assisted PR follows the team's patterns because the AI has the context. That's the shift from reviewing style to reviewing substance. Your senior engineers stop being human linters and start being the architects and mentors they were hired to be.</p><p>Picture this. A new engineer joins on Monday. Her AI already knows your conventions, your scars, your three services that absolutely cannot go down, the refactor your team tried last year that nearly broke production. By Wednesday she's writing code that fits the codebase the way a 5-year tenured engineer would. By Friday she's catching architectural risks her senior teammates wouldn't have flagged until review. That isn't onboarding. That's teleportation. And the only reason it works is because someone, at some point, decided to write the rules down where the AI could read them.</p>"
         },
         {
           "type": "method",
@@ -231,7 +231,7 @@
         },
         {
           "type": "why",
-          "html": "<p>After 12 months, your engineering knowledge base is institutional memory that walks out the door with nobody. Every architectural decision documented, every pattern codified, every scar recorded. New engineers inherit the full context. The compound loop between your team's growing expertise and the growing knowledge base is the moat competitors cannot buy. The cost is hours of documentation. The return is permanently better engineering.</p>"
+          "html": "<p>After 12 months, your engineering knowledge base is institutional memory that walks out the door with nobody. Every architectural decision documented, every pattern codified, every scar recorded. New engineers inherit the full context. The compound loop between your team's growing expertise and the growing knowledge base is the moat competitors cannot buy.</p><p>The cost is hours of documentation. The return is permanently better engineering. And here's the brutal asymmetry - this isn't a 6-month project that needs executive buy-in and a task force. It's a markdown file one of your staff engineers could draft between meetings today. The teams that treat this as an urgent infrastructure investment will be at 90% acceptance by the end of the month. The teams that treat it as a \"nice to have\" will still be stuck at 60% in six months, wondering why their velocity never improves. That gap is entirely execution velocity on something with zero technical complexity.</p>"
         }
       ]
     },
@@ -239,7 +239,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your brand's digital expression depends on code - and the code AI generates has zero awareness of your brand system. Generic components. Default colors. Stock interaction patterns that feel like every other website. The craft you've built into your visual identity doesn't survive the translation from design to production.</p><p>The bridge between your creative vision and shipped code is engineering context. When AI knows your design system, your brand tokens, your interaction standards - the gap between what you designed and what shipped closes.</p>"
+          "html": "<p>Your brand's digital expression depends on code - and the code AI generates has zero awareness of your brand system. Generic components. Default colors. Stock interaction patterns that feel like every other website. The craft you've built into your visual identity doesn't survive the translation from design to production. Every shipped feature is a small concession. Every shipped component is a tiny dilution of the brand you've spent years building.</p><p>Imagine if every line of code that touched your brand already knew your system. The exact shade of your primary color, referenced as a token, never hardcoded. The exact timing of your signature transition, applied automatically. The exact spacing rhythm that defines your layouts, enforced before the code even compiles. What's stopping you from getting there? Not capability. One document that codifies the aesthetic decisions your creative team has been making for years.</p><p>The bridge between your creative vision and shipped code is engineering context. When AI knows your design system, your brand tokens, your interaction standards - the gap between what you designed and what shipped closes. Your brand ships intact. That is the difference between a brand that feels intentional and one that feels assembled from defaults.</p>"
         },
         {
           "type": "method",
@@ -250,7 +250,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The gap between Figma and production is where brand quality dies. When code carries your design system context, that gap closes. Designers spec things that are buildable. Engineers build things that match the design. Your creative vision ships intact.</p>"
+          "html": "<p>The gap between Figma and production is where brand quality dies. When code carries your design system context, that gap closes. Designers spec things that are buildable. Engineers build things that match the design. Your creative vision ships intact. The expensive QA rescue missions, the late-stage \"make it match the mocks\" scrambles, the polish budget that got consumed by rework - all of that just stops happening.</p><p>Think about it like this. Every creative director has a mental image of how the product should feel - the weight of typography, the choreography of transitions, the breathing room around important elements. Right now, that mental image only influences work you personally touch. What if it influenced every pixel everyone on your team shipped? That's what design system context actually unlocks. It's your taste, operating as infrastructure.</p>"
         },
         {
           "type": "method",
@@ -261,7 +261,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Every brand expression you codify into the engineering context compounds across every feature, every page, every interaction. The cost is a few hours of documentation. The return is brand consistency in production - permanently. That's what makes the difference between a brand that feels intentional and one that feels assembled.</p>"
+          "html": "<p>Every brand expression you codify into the engineering context compounds across every feature, every page, every interaction. The cost is a few hours of documentation. The return is brand consistency in production - permanently. That's what makes the difference between a brand that feels intentional and one that feels assembled from parts that almost match.</p><p>Run this out over a year. Every feature that ships carries your brand DNA instead of diluting it. Every engineer that joins the team contributes work that reinforces the identity instead of drifting from it. The brand you spent years building doesn't erode under the weight of shipping pressure - it gets sharper, because the system is working for you instead of against you. That's the compound advantage of putting creative direction into infrastructure.</p>"
         }
       ]
     },
@@ -269,7 +269,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You have opinions about code. Strong ones. The framework you reach for, the naming style you like, the component patterns that feel right. But AI doesn't know any of that. It gives you generic React, default Next.js boilerplate, components that work but don't feel like yours. Then you spend 30 minutes per feature massaging it into your style.</p><p>When you're building on weekends and evenings, those 30 minutes are the difference between shipping and abandoning the project.</p>"
+          "html": "<p>You have opinions about code. Strong ones. The framework you reach for, the naming style you like, the component patterns that feel right. But AI doesn't know any of that. It gives you generic React, default Next.js boilerplate, components that work but don't feel like yours. Then you spend 30 minutes per feature massaging it into your style. The vibe dies somewhere between prompt and production.</p><p>Picture this. Saturday morning. Coffee. You open your editor with an idea for a weekend project. You prompt, and the code comes back already in your voice - your naming, your patterns, your aesthetic. You stay in the flow all morning. By lunch you've shipped something you actually like. No fighting. No cleanup. Just the pure creative momentum that made you fall in love with coding in the first place. What's stopping you from getting there? Not the model. One file that codifies the way you build.</p><p>When you're building on weekends and evenings, those 30 minutes of cleanup per feature are the difference between shipping and abandoning the project. Side projects die from friction, not from lack of ambition. Remove the friction and the projects ship themselves.</p>"
         },
         {
           "type": "method",
@@ -280,7 +280,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The magic is momentum. When AI generates code that's already in your style, you stay in the flow. No context-switching to fix naming. No restructuring components. No hunting for the utility you already wrote. You go from idea to working feature without the friction that kills side projects.</p>"
+          "html": "<p>The magic is momentum. When AI generates code that's already in your style, you stay in the flow. No context-switching to fix naming. No restructuring components. No hunting for the utility you already wrote. You go from idea to working feature without the friction that kills side projects. That's the whole game when you're indie hacking - flow state is your most valuable resource and anything that breaks it is stealing from your ship rate.</p><p>Do the math. If you typically lose 30 minutes per feature to AI cleanup, and you ship 10 features a weekend when the vibe is right, that's 5 hours of pure drag you're recovering. 5 hours is the difference between shipping a project and leaving it half-done in a folder. Over a year of side projects, that's the difference between 12 shipped things and 24 shipped things. At some point, one of those doubles hits.</p>"
         },
         {
           "type": "method",
@@ -291,7 +291,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Every pattern you document, every opinion you encode, every anti-pattern you flag - these compound. Your AI becomes a coding partner that knows your style better than any collaborator you've worked with. For a vibe coder, that's the dream: AI that doesn't kill the vibe, but amplifies it.</p>"
+          "html": "<p>Every pattern you document, every opinion you encode, every anti-pattern you flag - these compound. Your AI becomes a coding partner that knows your style better than any collaborator you've worked with. For a vibe coder, that's the dream: AI that doesn't kill the vibe, but amplifies it. The tool finally keeps up with the idea. The code finally matches the taste. The friction between imagination and shipping finally collapses.</p><p>Think about it like this. The reason most side projects never ship isn't that they're bad ideas - it's that every small friction compounds until the energy runs out. AI that codes in your style eliminates the single biggest friction in the modern indie hacking workflow. Not because the AI got smarter. Because you took 30 minutes to write down how you actually like to build. That's the cheapest unlock in your entire creative stack.</p>"
         }
       ]
     }

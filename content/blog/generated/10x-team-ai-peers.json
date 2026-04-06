@@ -4,7 +4,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>The math on headcount is broken. Your team is 5 people and your roadmap demands 50. Hiring takes months, onboarding burns more, and by the time someone is productive you have lost half a year of runway.</p><p>But when your AI has your knowledge base, your taste docs, and your domain constraints - it stops being a tool and starts being an extension of you. Not a replacement. A capital-efficient team member that carries your judgment and compounds output while producing work grounded in your specific situation.</p><p>The value is the triad: <strong>you, your knowledge store, and AI working together.</strong> This is not incremental. This is a step-function change in the economics of building.</p>"
+          "html": "<p>The math on headcount is broken. Your team is 5 people and your roadmap demands 50. Hiring takes 3 months per role, onboarding burns another 2, and by the time someone is productive you have lost half a year of runway. In a startup burning $200K/month, that is $1.2M before you see a single deliverable. That is insanity.</p><p>But when your AI has your knowledge base, your taste docs, and your domain constraints - it stops being a tool and starts being an extension of you. Not a replacement. Not an outsourced brain. A capital-efficient team member that carries your judgment and compounds output at 3am while producing work grounded in your specific situation. Same burn rate. 3x the throughput. Every week that passes, the system gets sharper.</p><p>Picture this. Your roadmap is 50-people big. Your team is 5 people deep. And by Friday, the first three workstreams that have been languishing for months are actually moving - not because you cloned yourself, but because each workstream has an AI peer that knows your context as well as any senior hire. The hiring math you have been losing for two years just inverted.</p><p>The value is the triad: <strong>you, your knowledge store, and AI working together.</strong> This is not incremental. This is a step-function change in the economics of building.</p>"
         },
         {
           "type": "method",
@@ -15,7 +15,7 @@
         },
         {
           "type": "why",
-          "html": "<p>At the team level, AI peers fundamentally rewire headcount economics. The traditional scaling model is linear and brutal - more work requires more people. Each person costs months to hire, onboard, and ramp. In a startup burning $200K/month, that is $1.2M before you see a single deliverable.</p><p>The AI peer model breaks the linear curve. Each human team member operates with 2-5 AI peers handling context-heavy work in their domain. A product team of 4 humans plus their AI peers produces the output of 15 - because humans deploy judgment and decisions while AI handles research, synthesis, drafting, and assembly. Same burn rate, 3x the throughput.</p><p><strong>The hiring implication is enormous.</strong> You hire for judgment, taste, and domain expertise - not for throughput. One senior person directing 5 AI peers outproduces 5 junior people working independently. The bottleneck moves from \"not enough hands\" to \"not enough judgment.\"</p>"
+          "html": "<p>At the team level, AI peers fundamentally rewire headcount economics. The traditional scaling model is linear and brutal - more work requires more people. Each person costs 3 months to hire, 1 month to onboard, 2 months to ramp. Six months from \"we need help\" to \"help is productive.\" In a startup burning $200K/month, that is $1.2M before you see a single deliverable. That is insanity.</p><p>The AI peer model breaks the linear curve. Each human team member operates with 2-5 AI peers handling context-heavy work in their domain. A product team of 4 humans plus their AI peers produces the output of 15 - because humans deploy judgment and decisions while AI handles research, synthesis, drafting, and assembly. Same burn rate, 3x the throughput. That is a fundraising story.</p><p>Run the unit economics. Seven avoided hires at a blended loaded cost of $120K each is $840K a year recycled straight into product development, market expansion, or runway extension. This is not a productivity story. It is a balance sheet story.</p><p><strong>The hiring implication is enormous.</strong> You hire for judgment, taste, and domain expertise - not for throughput. One senior person directing 5 AI peers outproduces 5 junior people working independently. The bottleneck moves from \"not enough hands\" to \"not enough judgment.\" What is stopping you from rewiring this today?</p>"
         },
         {
           "type": "method",
@@ -26,7 +26,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The pattern shows up everywhere. A product design team of 2 produces the output of 8 by running AI peers through their user research, UX flows, and design system. An engineering lead uses AI peers for code review prep, test generation, and documentation - review cycles dropped from days to hours. A product manager covers 3 product areas at the quality of covering 1.</p><p><strong>The pattern: AI peers multiplied by your context, directed by your judgment, equals scaled output. AI peers multiplied by nothing equals scaled noise.</strong> The unit economics work because of all three - you, your knowledge store, and AI. Not one without the others.</p>"
+          "html": "<p>The pattern shows up everywhere. A product design team of 2 produces the output of 8 by running AI peers through their user research, UX flows, and design system. An engineering lead uses AI peers for code review prep, test generation, and documentation - review cycles dropped from days to hours. A product manager covers 3 product areas at the quality of covering 1. A clinical operations team of 3 manages the patient load of 10 coordinators.</p><p>Think about it like this. Every senior person you know is bottlenecked by the same thing: not enough hands to execute the ideas in their head. The best operators in your industry are not smarter than you. They have just stopped accepting that bottleneck as fixed. The gap between you and them is one architectural decision.</p><p><strong>The pattern: AI peers multiplied by your context, directed by your judgment, equals scaled output. AI peers multiplied by nothing equals scaled noise.</strong> The unit economics work because of all three - you, your knowledge store, and AI. Not one without the others. You are not handing the playbook to a stranger. You are running your own plays through more players.</p>"
         },
         {
           "type": "method",
@@ -37,7 +37,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Real builders are already deploying this. Klarna replaced the equivalent of 700 customer service agents with context-loaded AI peers. Harvey AI built legal peers that let one lawyer produce the research output of a team of three. Intercom's Fin handles 50%+ of customer conversations by drawing from the company's entire knowledge base.</p><p>The knowledge base is the multiplier. The human's judgment is the quality layer. The AI peer is the execution engine. All three together - that is where the returns compound.</p>"
+          "html": "<p>Real builders are already deploying this at industrial scale. Klarna replaced the equivalent of 700 customer service agents with context-loaded AI peers - same resolution quality, radically different output. Harvey AI built legal peers that let one lawyer produce the research output of a team of three. Intercom's Fin handles 50%+ of customer conversations by drawing from the company's entire knowledge base. Devin by Cognition executes multi-step engineering tasks like a junior engineer you direct.</p><p>These are not hypotheticals. These are production systems generating measurable ROI right now. The knowledge base is the multiplier. The human's judgment is the quality layer. The AI peer is the execution engine. All three together - that is where the returns compound. The companies that figure this out first end up operating like organizations 10x their headcount. That is the new game.</p>"
         }
       ]
     },
@@ -45,7 +45,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You are burning $200K a month and your roadmap demands 10x your current team. Hiring takes months per role. Onboarding burns more. By the time someone is productive, you have lost half a year of runway and your competitor has already shipped.</p><p>AI peers change the fundraising math entirely. When your AI has your pitch deck context, your customer data, and your strategic constraints - it produces work grounded in your specific situation. Five humans with AI peers producing the output of fifteen? <strong>That is a fundraising story.</strong> That is capital efficiency investors actually want to see.</p>"
+          "html": "<p>You are burning $200K a month and your roadmap demands 10x your current team. Hiring takes 3 months per role. Onboarding burns 2 more. By the time someone is productive, you have lost half a year of runway and your competitor has already shipped. In a startup, 6 months is a lifetime. That is insanity.</p><p>AI peers change the fundraising math entirely. When your AI has your pitch deck context, your customer data, and your strategic constraints - it produces work grounded in your specific situation. Five humans with AI peers producing the output of fifteen? <strong>That is a fundraising story.</strong> That is capital efficiency investors actually want to see. That is how you raise on favorable terms instead of dilutive ones.</p><p>Imagine if every workstream on your plate - fundraising, product, hiring, customer development, competitive analysis - was actively moving this week. Not because you cloned yourself. Because each one has an AI peer loaded with your context, working alongside you, ready for your 20-minute review when you wake up. What changes about the trajectory of your company in 90 days? That is the question worth sitting with.</p>"
         },
         {
           "type": "method",
@@ -56,7 +56,7 @@
         },
         {
           "type": "why",
-          "html": "<p>At the company level, AI peers break the linear headcount curve. The traditional model: more work requires more people. Each person costs 3 months to hire, 1 month to onboard, 2 months to ramp. Six months from \"we need help\" to \"help is productive.\"</p><p>Your burn rate stays the same while throughput triples. <strong>One senior hire directing 5 AI peers outproduces 5 juniors working independently.</strong> You hire for judgment, taste, and domain expertise - not for throughput. That is how you extend runway while accelerating output.</p>"
+          "html": "<p>At the company level, AI peers break the linear headcount curve. The traditional model: more work requires more people. Each person costs 3 months to hire, 1 month to onboard, 2 months to ramp. Six months from \"we need help\" to \"help is productive.\" For a Series A burning $200K/month, that is $1.2M before the first deliverable lands.</p><p>The AI peer model inverts the math. Your burn rate stays the same while throughput triples. Run the unit economics: seven avoided hires at $120K loaded cost each is $840K per year recycled into product, market expansion, or runway extension. That is the difference between raising on favorable terms in 12 months and raising on dilutive ones next quarter.</p><p><strong>One senior hire directing 5 AI peers outproduces 5 juniors working independently.</strong> You hire for judgment, taste, and domain expertise - not for throughput. That is how you extend runway while accelerating output. That is how you tell the capital efficiency story that makes Tier 1 funds lean in.</p>"
         },
         {
           "type": "method",
@@ -67,7 +67,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Replit Agent lets founders describe what they want to build and the agent handles execution. Y Combinator's latest batches show 2-3 person teams producing output that legacy companies need 20+ people for. The signal is clear: the founders who deploy AI peers with deep context are operating at a fundamentally different speed.</p><p><strong>Your headcount math changes permanently.</strong> Your team's quality of work goes up because they have space to think. The gap widens every quarter.</p>"
+          "html": "<p>Replit Agent lets founders describe what they want to build and the agent handles execution. Y Combinator's latest batches show 2-3 person teams producing output that legacy companies need 20+ people for. The signal is clear: the founders who deploy AI peers with deep context are operating at a fundamentally different speed.</p><p>Think about it like this. The best CEOs in the world do not write every memo, draft every deck, or pull every report. They have chiefs of staff who know how they think. AI peers are now that function for every founder - without the $250K salary line item. One weekend of articulation buys you the chief-of-staff function for life.</p><p><strong>Your headcount math changes permanently.</strong> Your team's quality of work goes up because they have space to think. The gap between you and competitors still running the old playbook widens every quarter. What is stopping you from shifting today?</p>"
         },
         {
           "type": "method",
@@ -78,7 +78,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The AI peer model is not theoretical. Klarna replaced 700 customer service agents with context-loaded AI. Harvey AI lets one lawyer produce the output of three. These are not assistants - they are team members carrying your specific knowledge, constraints, and quality bar.</p><p><strong>The pattern: your people, your knowledge store, and AI working as one system.</strong> That is how you build a company that moves at startup speed regardless of headcount.</p>"
+          "html": "<p>The AI peer model is not theoretical. Klarna replaced 700 customer service agents with context-loaded AI. Harvey AI lets one lawyer produce the output of three. Devin by Cognition carries full codebase context and executes engineering work like a junior you direct. These are not assistants - they are team members carrying your specific knowledge, constraints, and quality bar.</p><p>Picture what your cap table looks like in 18 months if you make this shift now. Same burn. Triple the throughput. Better unit economics than any competitor still playing the old game. That is a fundraising story that closes itself.</p><p><strong>The pattern: your people, your knowledge store, and AI working as one system.</strong> That is how you build a company that moves at startup speed regardless of headcount. That is the moat that compounds every week you run it.</p>"
         }
       ]
     },
@@ -86,7 +86,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You are covering 3 product areas and only one is getting real strategic attention. The other two get triage - crisis response and whatever you can squeeze in between meetings. Your backlog of user research sits unread. Your competitive analysis is two months stale. That is not product management. That is firefighting.</p><p>AI peers loaded with your persona research, competitive context, and user interview transcripts change the game. <strong>When your AI draws on everything you have ever learned about your users - not the 10% you remember to paste into a prompt - that is where the real alpha lives.</strong></p>"
+          "html": "<p>You are covering 3 product areas and only one is getting real strategic attention. The other two get triage - crisis response and whatever you can squeeze in between meetings. Your backlog of user research sits unread. Your competitive analysis is two months stale. Your briefs get written on the plane. That is not product management. That is firefighting with a losing hand.</p><p>AI peers loaded with your persona research, competitive context, and user interview transcripts change the game. <strong>When your AI draws on everything you have ever learned about your users - not the 10% you remember to paste into a prompt - that is where the real alpha lives.</strong> Research synthesis, brief drafting, and competitive monitoring running in parallel while you focus on the hard product decisions nobody else can make.</p><p>Picture this. It is Monday morning. Normally you would be staring at three areas that each need a week of attention you do not have. Instead, your AI peers have been running research synthesis, drafting briefs from your frameworks, and tracking competitive moves all weekend. You spend your Monday making decisions, not assembling context. What does that change about your product roadmap this quarter?</p>"
         },
         {
           "type": "method",
@@ -97,7 +97,7 @@
         },
         {
           "type": "why",
-          "html": "<p>At the team level, shared AI peers mean the product designer's AI knows about your customer research. The engineer's AI references the product brief. Information asymmetry inside your own team drops to near zero - and that alone eliminates weekly syncs that exist only to transfer context.</p><p><strong>The human's job shifts from \"do the work\" to \"direct and refine the work.\"</strong> That is a dramatically higher-ROI use of PM time. You focus on the hard product decisions - what to build, what to kill, which trade-offs to make. AI handles the research synthesis, draft production, and competitive monitoring.</p>"
+          "html": "<p>At the team level, shared AI peers mean the product designer's AI knows about your customer research. The engineer's AI references the product brief. Information asymmetry inside your own team drops to near zero - and that alone eliminates 2+ weekly syncs that existed solely to transfer context. Every PM knows: those meetings are where calendar time goes to die.</p><p>Run the math on that. Two 30-minute syncs per week times five people is five hours of reclaimed product team capacity. Over a quarter, that is 65 hours - almost two full work weeks - redeployed to actual decision-making. And that is just the context-transfer tax. Add the time saved on research synthesis, brief drafting, and competitive monitoring and the ROI on a single PM's comp triples.</p><p><strong>The human's job shifts from \"do the work\" to \"direct and refine the work.\"</strong> That is a dramatically higher-ROI use of PM time. You focus on the hard product decisions - what to build, what to kill, which trade-offs to make. AI handles the research synthesis, draft production, and competitive monitoring.</p>"
         },
         {
           "type": "method",
@@ -108,7 +108,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The ROI on a PM's comp triples when they can deploy strategic bandwidth across all their product areas simultaneously. Research synthesis, brief drafting, competitive monitoring - all running in parallel. One PM deploying the strategic bandwidth of three.</p><p><strong>The pattern: AI peers multiplied by your product context, directed by your product judgment, equals scaled output.</strong> You are not outsourcing product decisions. You are extending your reach into every corner of your product surface.</p>"
+          "html": "<p>The ROI on a PM's comp triples when they can deploy strategic bandwidth across all their product areas simultaneously. Research synthesis, brief drafting, competitive monitoring - all running in parallel. One PM deploying the strategic bandwidth of three. The product areas that used to rot in triage mode actually get the attention they deserve.</p><p>Think about it like this. Every product area you neglect because you do not have bandwidth is a bet you are losing by default. Your competitors are not waiting for you to catch up. But when your AI peer keeps that area alive with research, synthesis, and drafts - you stop losing bets you never placed.</p><p><strong>The pattern: AI peers multiplied by your product context, directed by your product judgment, equals scaled output.</strong> You are not outsourcing product decisions. You are extending your reach into every corner of your product surface. The judgment stays yours. The reach multiplies.</p>"
         },
         {
           "type": "method",
@@ -119,7 +119,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Teams using this pattern report eliminating 2+ weekly syncs that existed solely to transfer context. The information asymmetry inside their own team dropped to near zero. Decisions got faster because everyone's AI carried the same product context.</p><p><strong>Your AI peers are not autonomous.</strong> Every output routes through human judgment. But the judgment layer is where your real value lives - and AI peers give you the bandwidth to actually deploy it.</p>"
+          "html": "<p>Teams using this pattern report eliminating 2+ weekly syncs that existed solely to transfer context. The information asymmetry inside their own team dropped to near zero. Decisions got faster because everyone's AI carried the same product context. Brief cycles shortened from 5 days to 2. Competitive blind spots shrank because monitoring finally ran continuously instead of when someone had time.</p><p><strong>Your AI peers are not autonomous.</strong> Every output routes through human judgment. But the judgment layer is where your real value lives - and AI peers give you the bandwidth to actually deploy it. The work that only you can do finally gets the time it deserves.</p>"
         }
       ]
     },
@@ -127,7 +127,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You are the only designer on the team. Every UX flow, every research synthesis, every competitive analysis, every layout variation - it all runs through you. Your backlog is not a backlog. It is a graveyard of good ideas that never got attention.</p><p>AI peers loaded with your user research, persona docs, UX flows, and design system specs change the equation. <strong>You focus on information architecture decisions, UX strategy, and finding the right solution between competing constraints. AI handles the volume work.</strong> A product design team of 1 producing the output of 4. Your taste and judgment compound without burning out.</p>"
+          "html": "<p>You are the only designer on the team. Every UX flow, every research synthesis, every competitive analysis, every layout variation - it all runs through you. Your backlog is not a backlog. It is a graveyard of good ideas that never got attention. Your taste is the bottleneck and your calendar is the prison.</p><p>AI peers loaded with your user research, persona docs, UX flows, and design system specs change the equation. <strong>You focus on information architecture decisions, UX strategy, and finding the right solution between competing constraints. AI handles the volume work.</strong> A product design team of 1 producing the output of 4. Your taste and judgment compound without burning out. The craft deepens because the grind finally has a home.</p><p>Picture this. You wake up Monday and the research synthesis you needed from last week's user interviews is already drafted. Three layout explorations sit waiting for your review. Competitive UX analysis from two rivals is ready. You spend Monday making the hard calls instead of assembling the raw material. That is the unlock - not speed, but the reclaimed space for actual design thinking.</p>"
         },
         {
           "type": "method",
@@ -138,7 +138,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The real power is when your design context informs code generation and your code constraints inform design suggestions. A design engineer with connected tools operates at a different speed entirely. The wall between design and engineering dissolves because the AI carries context across both domains.</p><p><strong>The \"that's not technically feasible\" feedback loop - which used to cost 3-5 days per cycle - drops to near zero.</strong> Your AI peer already knows both the design system and the codebase.</p>"
+          "html": "<p>The real power is when your design context informs code generation and your code constraints inform design suggestions. A design engineer with connected tools operates at a different speed entirely. The wall between design and engineering dissolves because the AI carries context across both domains - the exact wall that usually costs 3-5 days per cycle to climb.</p><p>Do the math. If you run 4 design-to-code handoffs per sprint and each one currently loses half a day to \"wait, this is not technically feasible\" cycles, that is 8 hours of clean design time reclaimed per sprint. Over a year of 2-week sprints, that is 208 hours - more than 5 full work weeks of creative capacity returned to actual craft.</p><p><strong>The \"that's not technically feasible\" feedback loop - which used to cost 3-5 days per cycle - drops to near zero.</strong> Your AI peer already knows both the design system and the codebase. You propose, it flags constraints instantly, you refine. The design-engineering bridge becomes a single conversation instead of a week of Slack threads.</p>"
         },
         {
           "type": "method",
@@ -149,7 +149,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Two designers with connected AI peers produce the output of eight. They focus on the craft that actually differentiates - information architecture, the hard UX trade-offs, the aesthetic calls that define quality. AI handles the volume.</p><p><strong>Your taste and judgment are the multiplier.</strong> An AI peer with your design context produces work that reflects your standards. An AI peer with no context produces generic noise. The design system, the research corpus, the principles doc - that is what turns a tool into a teammate.</p>"
+          "html": "<p>Two designers with connected AI peers produce the output of eight. They focus on the craft that actually differentiates - information architecture, the hard UX trade-offs, the aesthetic calls that define quality. AI handles the volume: variations, research synthesis, competitive analysis, and the repetitive layout work that used to eat their best creative hours.</p><p>Imagine if the design decisions you make this month made every future design decision easier. That is what happens when your AI peer carries your taste archive. The wait-for-me bottleneck disappears. The same aesthetic mistake never happens twice.</p><p><strong>Your taste and judgment are the multiplier.</strong> An AI peer with your design context produces work that reflects your standards. An AI peer with no context produces generic noise. The design system, the research corpus, the principles doc - that is what turns a tool into a teammate. That is the difference between AI slop and AI craft.</p>"
         },
         {
           "type": "method",
@@ -160,7 +160,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The best design engineers are not replacing craft with AI. They are using AI to do more craft. More exploration, more variation, more research depth - all while maintaining the quality bar that defines their work. The grind is handled. The taste compounds.</p>"
+          "html": "<p>The best design engineers are not replacing craft with AI. They are using AI to do more craft. More exploration, more variation, more research depth - all while maintaining the quality bar that defines their work. The grind is handled. The taste compounds. The work gets deeper every month because the context archive gets richer every week.</p><p>This is the new shape of design work. Not fewer decisions. Better decisions, made from more context, with more raw material explored. The designers who figure this out first produce work that competitors cannot match at any headcount. That is the craft moat.</p>"
         }
       ]
     },
@@ -168,7 +168,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>40 items on your plate. One pair of hands. The default play is triage - do 5, let 35 rot. That is not strategy. That is playing defense with a losing hand.</p><p>AI peers flip the economics entirely. Build context for each work domain, deploy agents across the domains you cannot touch, and suddenly <strong>your throughput curve bends.</strong> You are not outsourcing your thinking. You are running your own plays through more players.</p>"
+          "html": "<p>40 items on your plate. One pair of hands. The default play is triage - do 5, let 35 rot. That is not strategy. That is playing defense with a losing hand. Every week the backlog grows. Every month the \"important but not urgent\" pile quietly kills opportunities you never even knew you had.</p><p>AI peers flip the economics entirely. Build context for each work domain, deploy agents across the domains you cannot touch, and suddenly <strong>your throughput curve bends.</strong> You are not outsourcing your thinking. You are running your own plays through more players. Your voice, your judgment, your standards - extended into every corner of your work.</p><p>Do the math in hard dollars. A competent operator's time is worth at least $300 per hour when you weigh opportunity cost, decisions unblocked, and revenue protected. Reclaim 25 hours a week and you have generated $7,500 of value. Every week. Compounding. Over a year that is nearly $400K of recovered capacity - from a system that costs less than a single SaaS subscription. The ROI math is not close. It is a rout.</p>"
         },
         {
           "type": "method",
@@ -179,7 +179,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The real win is not doing 40 things instead of 5. It is having time for deep craft on the 5 things that truly matter while nothing else rots. Your customer outreach stays current. Your competitive research stays fresh. Your technical documentation stays accurate. Everything gets attention because the throughput bottleneck disappeared.</p><p><strong>A solo operator with AI peers is not working harder. They are working at a fundamentally different scale.</strong></p>"
+          "html": "<p>The real win is not doing 40 things instead of 5. It is having time for deep craft on the 5 things that truly matter while nothing else rots. Your customer outreach stays current. Your competitive research stays fresh. Your technical documentation stays accurate. Everything gets attention because the throughput bottleneck disappeared.</p><p>Picture this. It is Friday afternoon. Normally you would be staring at a backlog that quietly haunted your weekend. Instead, your AI peers have been working alongside you all week, and the things that usually rotted are actually shipping. What do you do with that mental space? That is the real prize. Not the throughput. The freedom to think again.</p><p><strong>A solo operator with AI peers is not working harder. They are working at a fundamentally different scale.</strong> The same brain. The same 8 hours. 10x the ground covered. That is leverage you cannot buy with more time - only with a better architecture.</p>"
         },
         {
           "type": "method",
@@ -190,7 +190,7 @@
         },
         {
           "type": "why",
-          "html": "<p>When your AI peer has access to your customer research, technical constraints, and taste docs - it produces work you would actually ship. Not because the AI is brilliant. Because it is building with your context, not from scratch.</p><p><strong>The punchline: you, your knowledge, and your AI working as one system.</strong> An AI peer with no context produces noise. The knowledge base is what turns a tool into a teammate. Your judgment is what keeps the teammate accountable.</p>"
+          "html": "<p>When your AI peer has access to your customer research, technical constraints, and taste docs - it produces work you would actually ship. Not because the AI is brilliant. Because it is building with your context, not from scratch. That is the difference between an assistant that gives you generic drafts you have to rewrite and a teammate that gives you drafts you actually refine.</p><p>Think about it like this. The best chiefs of staff in the world do not do the work of their principals. They extend the principal's judgment into places the principal cannot physically be. That is exactly the role AI peers now play for every solo operator - without the $200K salary line item. One weekend of articulation and you have the chief-of-staff function for life.</p><p><strong>The punchline: you, your knowledge, and your AI working as one system.</strong> An AI peer with no context produces noise. The knowledge base is what turns a tool into a teammate. Your judgment is what keeps the teammate accountable.</p>"
         },
         {
           "type": "method",
@@ -201,7 +201,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Real operators are already doing this. Founders running 12 simultaneous projects without coordination overhead. Solo builders producing the output of small teams. The pattern is the same: load your AI with your knowledge, direct with your judgment, and let the throughput math work in your favor.</p>"
+          "html": "<p>Real operators are already doing this. Founders running 12 simultaneous projects without coordination overhead. Solo builders producing the output of small teams. Content-led solopreneurs replacing their entire production teams with AI peers grounded in their archives. The pattern is the same: load your AI with your knowledge, direct with your judgment, and let the throughput math work in your favor.</p><p>What is stopping you from rewiring this today? Not next quarter. Not after you finish the current sprint. The tools exist right now. The setup takes a weekend. The only thing standing between you and a 10x output curve is the assumption that your current workload is fixed. Drop that assumption and the whole game changes.</p>"
         }
       ]
     },
@@ -209,7 +209,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your team is 5 engineers and your backlog demands 20. Code reviews take 2 days. Documentation is perpetually stale. Test coverage is a running joke. And you are spending your time on assembly work instead of architecture decisions.</p><p>AI peers loaded with your architecture docs, coding standards, and codebase context change the economics entirely. <strong>Review cycles drop from days to hours. Test coverage doubles. Documentation stays current.</strong> That is capital deployed against maintenance drag - freeing your team for the engineering work that actually moves the product forward.</p>"
+          "html": "<p>Your team is 5 engineers and your backlog demands 20. Code reviews take 2 days. Documentation is perpetually stale. Test coverage is a running joke. And you are spending your time on assembly work instead of architecture decisions. The maintenance tax is eating 40% of your engineering capacity and every PM asks \"why are we so slow?\" while the grind compounds.</p><p>AI peers loaded with your architecture docs, coding standards, and codebase context change the economics entirely. <strong>Review cycles drop from days to hours. Test coverage doubles. Documentation stays current.</strong> That is capital deployed against maintenance drag - freeing your team for the engineering work that actually moves the product forward.</p><p>Do the math. A $180K engineer spending 30% less time on review overhead is $54K per year of reclaimed capacity. Multiply across a team of five and you have recovered $270K annually - more than a senior hire's comp - without adding a single headcount line. That is a balance sheet story, not a productivity story.</p>"
         },
         {
           "type": "method",
@@ -220,7 +220,7 @@
         },
         {
           "type": "why",
-          "html": "<p>At the team level, AI peers let you hire for judgment instead of throughput. One senior engineer directing 5 AI peers outproduces 5 juniors working independently. The bottleneck moves from \"not enough hands\" to \"not enough architectural judgment.\"</p><p><strong>The team ships more because they maintain less.</strong> Velocity compounds when the grind of maintenance, documentation, and review prep is handled by AI peers that know your codebase.</p>"
+          "html": "<p>At the team level, AI peers let you hire for judgment instead of throughput. One senior engineer directing 5 AI peers outproduces 5 juniors working independently. The bottleneck moves from \"not enough hands\" to \"not enough architectural judgment.\" That is the shift that actually unblocks your roadmap.</p><p>Think about it like this. The best engineering leaders do not ship more code. They ship better decisions. AI peers give you the bandwidth to deploy that judgment across every PR, every refactor, every system change - instead of rationing it to the 20% of work that fits in your calendar.</p><p><strong>The team ships more because they maintain less.</strong> Velocity compounds when the grind of maintenance, documentation, and review prep is handled by AI peers that know your codebase. Your best engineers finally have space for the architecture work they joined to do - performance optimization, system design, the hard problems that define product quality.</p>"
         },
         {
           "type": "method",
@@ -231,7 +231,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Claude Code operates as an engineering peer, not an autocomplete engine. It reads your repo, understands your architecture, follows your conventions, and executes multi-file changes with judgment. Devin by Cognition carries full codebase context and executes multi-step tasks.</p><p><strong>The pattern: engineering AI peers with your codebase context, your architecture decisions, and your quality standards produce work your team would actually ship.</strong> The knowledge base is the multiplier. Without it, you get generic suggestions. With it, you get a team member.</p>"
+          "html": "<p>Claude Code operates as an engineering peer, not an autocomplete engine. It reads your repo, understands your architecture, follows your conventions, and executes multi-file changes with judgment. Devin by Cognition carries full codebase context and executes multi-step tasks. These are not experiments. They are production tools generating measurable velocity gains right now for teams that deploy them with context.</p><p>Imagine if your team's architectural knowledge was captured in a place AI could actually leverage - not buried in Slack threads, retro docs, and the heads of two senior engineers. Every decision compounding. Every postmortem enriching future work. Every new engineer ramping in two weeks instead of two months because their AI peer carries the team's collective memory.</p><p><strong>The pattern: engineering AI peers with your codebase context, your architecture decisions, and your quality standards produce work your team would actually ship.</strong> The knowledge base is the multiplier. Without it, you get generic suggestions. With it, you get a team member who knows your conventions better than your last hire.</p>"
         },
         {
           "type": "method",
@@ -242,7 +242,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The teams that deploy this pattern reclaim engineering time for the deep technical work that has been permanently deprioritized. Architecture improvements. Performance optimization. The hard problems that make the difference between a good product and a great one. That is where your best engineers want to spend their time - and AI peers make it possible.</p>"
+          "html": "<p>The teams that deploy this pattern reclaim engineering time for the deep technical work that has been permanently deprioritized. Architecture improvements. Performance optimization. The hard problems that make the difference between a good product and a great one. That is where your best engineers want to spend their time - and AI peers make it possible.</p><p>What is stopping you from rewiring this today? The tools exist. The setup is a weekend. The only thing standing between your team and a 60-70% reduction in maintenance tax is the assumption that engineering velocity is fixed. Drop that assumption and your entire roadmap math changes - permanently.</p>"
         }
       ]
     },
@@ -250,7 +250,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your creative team is drowning in production work. Every campaign needs 20 variations. Every brand touchpoint needs quality control. Your best people spend their days on assembly instead of the creative thinking that actually differentiates your brand.</p><p>AI peers loaded with your brand voice, visual guidelines, and campaign history change the ratio entirely. <strong>The assembly layer gets automated. The taste layer gets more time.</strong> A creative team producing the output of a team three times their size - without sacrificing the quality bar that defines your brand.</p>"
+          "html": "<p>Your creative team is drowning in production work. Every campaign needs 20 variations. Every brand touchpoint needs quality control. Your best people spend their days on assembly instead of the creative thinking that actually differentiates your brand. The production grind is eating the taste layer - which is the only thing that makes your work worth anything.</p><p>AI peers loaded with your brand voice, visual guidelines, and campaign history change the ratio entirely. <strong>The assembly layer gets automated. The taste layer gets more time.</strong> A creative team producing the output of a team three times their size - without sacrificing the quality bar that defines your brand. Your best thinkers finally get to do the creative work they joined to do.</p><p>Imagine if every campaign variation, every social adaptation, every first-pass concept draft was already waiting for your creative judgment when you walked in Monday morning. What changes about the work you make when 80% of the grind is handled and 100% of your time goes to the decisions only your eye can make? That is the question worth sitting with.</p>"
         },
         {
           "type": "method",
@@ -261,7 +261,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The real power is consistency at scale. When your brand guidelines, voice docs, and creative standards live in your AI's context, every output starts from the right foundation. No more drift between what the brand is supposed to sound like and what actually ships.</p><p><strong>Your creative process becomes the multiplier.</strong> AI does not replace your eye. It gives your eye more to work with - more variations, more directions, more raw material for the decisions only you can make.</p>"
+          "html": "<p>The real power is consistency at scale. When your brand guidelines, voice docs, and creative standards live in your AI's context, every output starts from the right foundation. No more drift between what the brand is supposed to sound like and what actually ships. No more juniors accidentally using last year's tone doc. No more 3am edits to work that should have been right the first time.</p><p>Think about it like this. The brands that move markets do not win because they have bigger creative teams. They win because their brand judgment compounds across every touchpoint, every channel, every campaign - without dilution. AI peers make that compounding mechanical instead of heroic.</p><p><strong>Your creative process becomes the multiplier.</strong> AI does not replace your eye. It gives your eye more to work with - more variations, more directions, more raw material for the decisions only you can make. The volume explodes. The quality bar holds. That is the dream.</p>"
         },
         {
           "type": "method",
@@ -272,7 +272,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Creative teams using this pattern report that their best people finally have time for the thinking that matters - brand strategy, creative direction, the ideas that move markets. The production grind is handled. The craft gets more space.</p><p><strong>You are not outsourcing creativity to AI. You are extending your creative team's reach through AI.</strong> The brand voice stays yours. The creative judgment stays yours. The volume multiplies.</p>"
+          "html": "<p>Creative teams using this pattern report that their best people finally have time for the thinking that matters - brand strategy, creative direction, the ideas that move markets. The production grind is handled. The craft gets more space. The junior team members who used to spend 80% of their time on variations now spend it learning judgment from the output you are actually shipping.</p><p>Picture what your creative department looks like in 12 months if the taste layer gets 3x the time it currently gets. The work that ships is better. The work that does not ship is explored instead of skipped. The portfolio strengthens every quarter because every decision enriches the next.</p><p><strong>You are not outsourcing creativity to AI. You are extending your creative team's reach through AI.</strong> The brand voice stays yours. The creative judgment stays yours. The volume multiplies. The craft deepens. That is a compounding creative advantage competitors cannot catch.</p>"
         },
         {
           "type": "method",
@@ -283,7 +283,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The brands that will win are not the ones with the biggest creative teams. They are the ones whose creative judgment compounds through AI at a pace competitors cannot match. Your brand context, your creative process, and your quality standards - deployed at scale through AI peers. That is the moat.</p>"
+          "html": "<p>The brands that will win are not the ones with the biggest creative teams. They are the ones whose creative judgment compounds through AI at a pace competitors cannot match. Your brand context, your creative process, and your quality standards - deployed at scale through AI peers. That is the moat.</p><p>What is stopping you from building this today? Not next quarter. Not after the next brand refresh. The tools exist right now. The brand guidelines you already have are 80% of the context you need. One focused week of loading, tagging, and tuning buys you a creative production engine that compounds forever.</p>"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You have a side project list longer than your arm. Ideas pile up. Weekends are not long enough. You start something, get excited, hit the grind phase, and abandon it for the next shiny thing. Sound familiar?</p><p>AI peers change the math on side projects. <strong>The boring parts - boilerplate, research, scaffolding, docs - get handled while you focus on the creative coding that got you excited in the first place.</strong> One person producing the output of a small team. Not because the AI writes your code. Because it handles everything around the code.</p>"
+          "html": "<p>You have a side project list longer than your arm. Ideas pile up. Weekends are not long enough. You start something, get excited, hit the grind phase, and abandon it for the next shiny thing. Sound familiar? Every creative coder knows this graveyard - and every one of us has watched great ideas die there because the boring parts ate the excitement.</p><p>AI peers change the math on side projects. <strong>The boring parts - boilerplate, research, scaffolding, docs - get handled while you focus on the creative coding that got you excited in the first place.</strong> One person producing the output of a small team. Not because the AI writes your code. Because it handles everything around the code. The interesting stays interesting. The tedious gets delegated.</p><p>Picture this. It is Saturday morning. Normally you would spend the first two hours fighting the build system, setting up the scaffolding, or reading library docs before you could write a single line of the actual idea. Instead, your AI peer has already handled all of it. You open the editor and go straight to the creative problem. What gets built this year if every weekend starts that way?</p>"
         },
         {
           "type": "method",
@@ -302,7 +302,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The real magic is running multiple projects simultaneously without the context-switching tax killing you. Each project has its own AI peer with its own context. You bounce between projects based on energy and interest, and each peer remembers exactly where you left off.</p><p><strong>Twelve simultaneous side projects is not a fantasy.</strong> It is what happens when the setup cost per project drops to 30 minutes and the AI carries all the context you would otherwise lose between sessions.</p>"
+          "html": "<p>The real magic is running multiple projects simultaneously without the context-switching tax killing you. Each project has its own AI peer with its own context. You bounce between projects based on energy and interest, and each peer remembers exactly where you left off. No more \"wait, what was I doing here?\" when you return after a week away. No more abandoned projects because the mental reload cost got too high.</p><p>Do the math on what that means for your year. If the context-switching tax used to cost you 2 hours every time you picked up an old project, and you pick up 30 projects a year, that is 60 hours of reload time eliminated. All of it redeployed to actual building. That is more than a full work week returned to creative coding.</p><p><strong>Twelve simultaneous side projects is not a fantasy.</strong> It is what happens when the setup cost per project drops to 30 minutes and the AI carries all the context you would otherwise lose between sessions. The number of shipped projects goes up. The quality goes up. The range of what you explore explodes.</p>"
         },
         {
           "type": "method",
@@ -313,7 +313,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Replit Agent lets you describe what you want to build and handles the execution layer. Claude Code reads your repo and executes multi-file changes with judgment. The tools exist right now to make one creative coder as productive as a small team.</p><p><strong>The key: your AI peer needs your context to be useful.</strong> Load it with your coding style, your past projects, your preferences. Without context, you get generic autocomplete. With context, you get a collaborator who knows your taste.</p>"
+          "html": "<p>Replit Agent lets you describe what you want to build and handles the execution layer. Claude Code reads your repo and executes multi-file changes with judgment. The tools exist right now to make one creative coder as productive as a small team. The indie hackers who figure this out first are shipping at a rate nobody can match with pure grit.</p><p>Think about it like this. The gap between a hobby project and a shipped product has always been the boring 80% - the deployment, the docs, the testing, the edge cases. AI peers close that gap. What used to be a ratio of 20% fun to 80% tedium becomes 80% fun and 20% direction. That inversion is the unlock. That is why the best vibe coders ship 10x more than they used to.</p><p><strong>The key: your AI peer needs your context to be useful.</strong> Load it with your coding style, your past projects, your preferences. Without context, you get generic autocomplete. With context, you get a collaborator who knows your taste, your patterns, and your quirks.</p>"
         },
         {
           "type": "method",
@@ -324,7 +324,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The vibe coders who figure this out first have an unfair advantage. More projects shipped, faster iteration cycles, broader technical range. The knowledge compounds, the skills compound, and the portfolio speaks for itself. AI peers are the leverage that makes one creative builder as dangerous as a funded startup team.</p>"
+          "html": "<p>The vibe coders who figure this out first have an unfair advantage. More projects shipped, faster iteration cycles, broader technical range. The knowledge compounds, the skills compound, and the portfolio speaks for itself. AI peers are the leverage that makes one creative builder as dangerous as a funded startup team.</p><p>What is stopping you from setting this up this weekend? Two hours of configuration and you have a system that compounds for years. Every project you build feeds the next. Every new library you learn stays in the system forever. The gap between you and coders still working the old way widens every month you run it. That is the indie hacker moat.</p>"
         }
       ]
     }

@@ -4,7 +4,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your $50K AI budget is generating a 10% return. You deployed the tools, ran the training, built the prompt library. Three people use AI daily. Five tried it once. The rest never logged in. A 90% loss on deployed capital.</p><p>This is not a technology problem. <strong>It is a people problem.</strong> The 20% who adopted AI were already doers. The tools just made the trait impossible to ignore. AI did not create the gap between your best people and everyone else. It made the gap undeniable.</p>"
+          "html": "<p>Your $50K AI budget is generating a 10% return. That is insanity. You deployed the tools, ran the training, built the prompt library, and sent the Slack message. Three people use AI daily. Five tried it once. The rest never logged in. A 90% loss on deployed capital. Any investor would fire you for that portfolio.</p><p>Now scale that math to the enterprise level. A 500-person company deploys $2M worth of seats and extracts maybe $200K of real productivity. That is $1.8M of shelfware every year, compounding as renewals auto-bill. Meanwhile the competitor down the street is extracting $8M of value from the same $2M budget. Same tools. Same price. Forty-times the return. That is not a margin of victory. That is the gap between a market leader and an acquisition target.</p><p>This is not a technology problem. <strong>It is a people problem.</strong> But not the way you think. The 20% who adopted AI were already doers. The tools just made the trait impossible to ignore. AI did not create the gap between your best people and everyone else. It made the gap undeniable. Full stop.</p><p>Imagine if every person on your team treated AI the way your top performer already does - as an infinitely patient pair-programmer, brief writer, design partner, and research analyst rolled into one. Imagine the same $50K budget producing $500K of compounding output instead of $5K of dust. The tools have not changed. The talent has not changed. The only variable is who picks them up and runs.</p>"
         },
         {
           "type": "method",
@@ -15,7 +15,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The culture problem is the one that kills you. The doers-versus-talkers gap. People attend meetings about work instead of shipping it. AI amplifies this gap exponentially - it is a leverage tool, and leverage magnifies whatever is already there.</p><p><strong>A team of doers with AI ships 10x more.</strong> A team of talkers with AI produces 10x more slide decks about what they plan to ship. You do not bluff your way to shipped code. Production is the cards flipping.</p>"
+          "html": "<p>The culture problem is the one that kills you. The doers-versus-talkers gap. People attend meetings about work instead of shipping it. AI amplifies this gap exponentially - it is a leverage tool, and leverage magnifies whatever is already there.</p><p><strong>A team of doers with AI ships 10x more</strong> - and uses the reclaimed time for deep thinking, deep craft, and the hardest problems in their domain. A team of talkers with AI produces 10x more slide decks about what they plan to ship. The doers are not just faster. They have time for the work that actually makes a difference because the grind is handled.</p><p>Look - you do not bluff your way to shipped code. You do not talk your way to a deployed feature. Poker players know: when the cards flip, you either have the hand or you do not. Production is the cards flipping. Picture this. A year from now, your team is half the size and three times the output. Not because you fired anyone - but because the doers compounded so fast that the talkers either followed or self-selected out. That is a team you would run through walls for.</p>"
         },
         {
           "type": "method",
@@ -26,7 +26,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The most expensive mistake is hiring wrong. Fractional CTOs are the worst version - they produce architecture docs and roadmaps while shipping exactly nothing. Six months and $80K later, you have strategy decks and zero deployed code.</p><p><strong>Prioritize startup mentality over domain experience.</strong> Someone comfortable with their role changing every 90 days outperforms a domain expert who needs stability. The knowledge base carries domain context. You need humans who handle ambiguity and execute at speed.</p>"
+          "html": "<p>The most expensive mistake is hiring wrong. Fractional CTOs are the worst version - they create a dangerous illusion of progress. They produce architecture docs and roadmaps. They delegate without executing. They create feedback loops without resolution. Six months and $80K later, you have strategy decks and shipped exactly nothing.</p><p>Run the math on the alternative. That $80K spent on a fractional strategist could have paid a full-time doer for 9 months at a good salary. Nine months of shipped work versus six months of decks. You are not saving money by hiring fractional. You are paying a premium to not have the work get done. The fractional model made sense when the constraint was access to rare expertise. AI dissolved that constraint. The new constraint is execution velocity.</p><p><strong>Prioritize startup mentality over domain experience.</strong> Every time. Someone comfortable with their role changing every 90 days outperforms a domain expert who needs stability. What is stopping you from rewriting your job descriptions this week? Replace \"10 years of experience\" with \"shipped something in the last 30 days we can look at.\" The market for agency is wide open. The market for credentials is saturated.</p>"
         },
         {
           "type": "method",
@@ -37,7 +37,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The technology is the accelerant. The knowledge store is the fuel. The team is the engine. Get the engine wrong and the accelerant is wasted capital. Get it right - hire people who execute, build the knowledge infrastructure, layer AI as an extension of their skills - and you get compounding returns that widen every quarter.</p>"
+          "html": "<p>The technology is the accelerant. The knowledge store is the fuel. The team is the engine. All three together - that is where the value lives. Get the engine wrong and the accelerant is wasted capital. Get it right - hire people who execute, build the knowledge infrastructure, layer AI as an extension of their skills - and you get compounding returns that widen every quarter.</p><p>Think about it like this. You are not outsourcing your differentiators. You are empowering your people to deploy them at a scale no headcount plan could match. Your knowledge base carries context. AI executes. Your team directs and refines. That is the sequence. That is the whole game. And the teams that get it right now build advantages that compound week over week for years.</p>"
         }
       ]
     },
@@ -45,7 +45,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You spent $50K on AI tools this year. Three people use them daily. The rest never logged in. That is a 90% loss on deployed capital. Any investor would question that portfolio.</p><p><strong>The people who adopted AI were already your best executors.</strong> AI did not create the performance gap on your team. It made the gap impossible to ignore. The question is not \"how do we get adoption up.\" It is \"do we have the right team for the era we are entering?\"</p>"
+          "html": "<p>You spent $50K on AI tools this year. Three people use them daily. The rest never logged in. That is a 90% loss on deployed capital. Any investor would question that portfolio allocation in your next board meeting.</p><p>Now run the math on what your competitors are doing with the same dollars. A 500-person rival deploys $2M in seats and extracts $8M of value because they hired for agency instead of credentials. You deploy the same $2M and extract $200K because your team is still attending webinars about prompt engineering. Forty-times the return on identical capital. That is not a rounding error. That is the gap between a market leader and an acquisition target, and it widens every single week.</p><p><strong>The people who adopted AI were already your best executors.</strong> AI did not create the performance gap on your team. It made the gap impossible to ignore. The question is not \"how do we get adoption up.\" It is \"do we have the right team for the era we are entering?\" Imagine walking into your next investor update and showing 4x shipped output on flat headcount. That is the founder-level story AI-native teams tell. That is the story your competitors are preparing to tell on you.</p>"
         },
         {
           "type": "method",
@@ -56,7 +56,7 @@
         },
         {
           "type": "why",
-          "html": "<p>AI amplifies what is already there. A team of doers ships 10x more. A team of talkers produces 10x more decks about what they plan to ship. This distinction is existential for a startup burning cash.</p><p><strong>Ship to production weekly.</strong> Not \"made progress on.\" Shipped. Deployed. Live. With AI tools available, this is the minimum bar. If your team cannot hit it, the tools are not the bottleneck.</p>"
+          "html": "<p>AI amplifies what is already there. A team of doers ships 10x more. A team of talkers produces 10x more decks about what they plan to ship. This distinction is existential for a startup burning cash. Every month of runway you spend on people who describe work instead of doing it is a month you do not get back.</p><p><strong>Ship to production weekly.</strong> Not \"made progress on.\" Shipped. Deployed. Live. With AI tools available, this is the minimum bar. If your team cannot hit it, the tools are not the bottleneck.</p><p>Think about it like this. Poker players know: when the cards flip, you either have the hand or you do not. Your next fundraise, your next product review, your next board meeting - that is the cards flipping. What is stopping you from running the filter this Friday? The doers on your team want this filter applied. They are tired of carrying teammates whose entire output is meeting attendance. And frankly - you owe it to your investors to know which is which before your next hiring decision.</p>"
         },
         {
           "type": "method",
@@ -67,7 +67,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The companies in Y Combinator's latest batches have 2-3 person teams producing output that legacy companies need 20+ people for. The pattern: hire one senior doer with AI tools over five juniors without them. Prioritize startup mentality over domain experience. The knowledge base carries domain context - you need humans who execute.</p>"
+          "html": "<p>The companies in Y Combinator's latest batches have 2-3 person teams producing output that legacy companies need 20+ people for. The pattern is unmistakable: hire one senior doer with AI tools over five juniors without them. Prioritize startup mentality over domain experience. The knowledge base carries domain context - you need humans who execute.</p><p>Run the math on one great hire versus five mediocre ones. The great hire costs you $180K all-in. Five juniors cost you $450K plus management overhead plus office drag plus the 6-month ramp time on every one of them. The great hire ships in week one. The five juniors collectively ship in month four. That is a 16-week velocity gap times five versus one - and the great hire is still cheaper.</p><p>Picture this. Your next board deck shows a 3-person team hitting the milestones you once needed 15 people to hit. Your investors ask how. You explain you stopped hiring for pedigree and started hiring for agency. They forward your deck to every other CEO in their portfolio. That is the meeting founders in the AI era actually get to have - if they hire correctly now.</p>"
         },
         {
           "type": "method",
@@ -78,7 +78,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The team is the engine. The knowledge store is the fuel. AI is the accelerant. Get the engine wrong and everything else is wasted capital. Hire doers, build the knowledge infrastructure, layer AI as an extension of their skills. That is the sequence. That is the whole game.</p>"
+          "html": "<p>The team is the engine. The knowledge store is the fuel. AI is the accelerant. Get the engine wrong and everything else is wasted capital. Hire doers, build the knowledge infrastructure, layer AI as an extension of their skills. That is the sequence. That is the whole game.</p><p>Think about it like this. Every founder in your peer group is solving the same equation: how do I compound faster with less capital? The answer is not more tools - everyone has the tools. The answer is the humans who wield them. The founders who nail this sequence build companies that feel 10 years ahead of peers who never figured it out. And the advantage widens every quarter because the compounding runs on both sides of the hiring decision you make this month.</p>"
         }
       ]
     },
@@ -86,7 +86,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your team has AI tools. Three people actually use them. The PM who uses AI daily ships briefs 5x faster. The PM who tried it once is still writing everything from scratch. Same tools. Same training. Different humans.</p><p><strong>The difference is not prompting skill. It is iteration.</strong> Most people treat AI like a vending machine - insert query, accept output. AI-native product builders treat it like onboarding a junior PM with perfect recall. Context, review, course-correct, iterate. The third version beats what you would write from scratch.</p>"
+          "html": "<p>Your team has AI tools. Three people actually use them. The PM who uses AI daily ships briefs 5x faster, runs research synthesis in hours instead of weeks, and writes specs while peers are still scheduling alignment meetings. The PM who tried it once is still writing everything from scratch. Same tools. Same training. Different humans.</p><p><strong>The difference is not prompting skill. It is iteration.</strong> Most people treat AI like a vending machine - insert query, accept output. AI-native product builders treat it like onboarding a junior PM with perfect recall. Context, review, course-correct, iterate. The third version beats what you would write from scratch.</p><p>Imagine if every product decision you made was informed by a synthesis of 100% of your user research, not the 10% you had time to re-read. Imagine every brief started from a draft informed by your persona docs, competitive context, and historical bets. That is what AI-native product work looks like, and the PMs who build this habit now are pulling away from peers at a rate that will be impossible to catch in a year.</p>"
         },
         {
           "type": "method",
@@ -97,7 +97,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The culture gap is bigger than the capability gap. People attend meetings about product decisions instead of making them. AI amplifies this - a product builder who ships gets 10x more done. A product builder who describes their process produces 10x more decks.</p><p><strong>Ship to production weekly.</strong> Briefs produced. Specs delivered. Decisions documented. Shipped output is the only evidence that matters.</p>"
+          "html": "<p>The culture gap is bigger than the capability gap. People attend meetings about product decisions instead of making them. PMs spend hours polishing status updates instead of shipping specs. AI amplifies all of this - a product builder who ships gets 10x more done. A product builder who describes their process produces 10x more decks about their framework and zero more shipped features.</p><p><strong>Ship to production weekly.</strong> Briefs produced. Specs delivered. Decisions documented. Shipped output is the only evidence that matters. Not \"I aligned stakeholders.\" Not \"I explored options.\" Delivered artifacts with links.</p><p>Think about it like this. Your engineering team can tell instantly which PMs actually write specs and which ones run meetings. Your designers can tell which PMs bring clear problems and which ones bring vague briefs. The filter already exists in everyone's head. The shipping cadence just makes it visible in writing. What is stopping you from making it visible this Friday?</p>"
         },
         {
           "type": "method",
@@ -108,7 +108,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Hiring for product roles in the AI era means hiring for taste, not throughput. A PM with strong product judgment directing AI peers outperforms three PMs who process tasks without conviction. The knowledge base carries domain context. You need PMs who have opinions and ship.</p>"
+          "html": "<p>Hiring for product roles in the AI era means hiring for taste, not throughput. A PM with strong product judgment directing AI peers outperforms three PMs who process tasks without conviction. The knowledge base carries domain context. You need PMs who have opinions and ship.</p><p>Picture this. One senior PM with sharp instincts runs three concurrent product areas because AI handles the volume work - research synthesis, competitive tracking, first-draft briefs, stakeholder follow-ups. The PM focuses on the decisions that actually require human judgment: which problem matters, what tradeoffs to make, when to kill a feature. That is 3x the product leverage on the same headcount cost, and the output quality goes up, not down, because the judgment layer has room to breathe.</p>"
         },
         {
           "type": "method",
@@ -119,7 +119,7 @@
         },
         {
           "type": "why",
-          "html": "<p>AI-native product teams ship faster, research deeper, and make better decisions because the grind is handled and the judgment layer has room to breathe. The technology is the accelerant. The team's product taste is the engine. Get the engine right and everything compounds.</p>"
+          "html": "<p>AI-native product teams ship faster, research deeper, and make better decisions because the grind is handled and the judgment layer has room to breathe. The technology is the accelerant. The team's product taste is the engine. Get the engine right and everything compounds.</p><p>Imagine if your product org was half the size and shipping twice the features. Not through hustle culture - through taste and leverage. The PMs on that team would be the highest-paid product builders at their level because they would demonstrably outproduce peers at larger companies. That is the team you are building toward. And the first step is the 20-minute iteration habit. The rest compounds from there.</p>"
         }
       ]
     },
@@ -127,7 +127,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>The designer who experiments with side projects adopted AI in a week - exploring UX flows, testing assumptions, prototyping at 3x speed. The designer waiting for \"official AI design tools\" is still waiting. Same access. Same training. Different disposition.</p><p><strong>The skill is not prompt engineering. It is knowing what good looks like in your domain.</strong> Taste. Craft. Judgment. The AI executes. You direct and refine. Together you produce work that is unmistakably yours at a pace that used to be impossible.</p>"
+          "html": "<p>The designer who experiments with side projects adopted AI in a week - exploring UX flows, testing assumptions, prototyping at 3x speed, shipping interactive mocks before peers finished their Figma frames. The designer waiting for \"official AI design tools\" is still waiting. Same access. Same training. Different disposition.</p><p><strong>The skill is not prompt engineering. It is knowing what good looks like in your domain.</strong> Taste. Craft. Judgment. The AI executes. You direct and refine. Together you produce work that is unmistakably yours at a pace that used to be impossible. You are not outsourcing taste - you are amplifying it across more surfaces than you could ever hand-touch alone.</p><p>Think about it like this. The best chess players do not beat AI by playing harder. They beat lesser opponents by playing WITH AI in centaur chess formats where the human-plus-AI team consistently outperforms either alone. Your design work is centaur work now. The question is not whether AI is better than you at design. It is whether you have learned to play in the new format. Designers who learn it in a week pull away from designers who spend a year writing Medium posts about why AI cannot do real design work.</p>"
         },
         {
           "type": "method",
@@ -138,7 +138,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Design teams split organically around AI adoption. The designers already experimenting adopted in a week. The ones waiting for official tools are still waiting. AI rewards the curious, the experimental, the people who learn by doing.</p><p><strong>The design engineer who treats AI like a pair programmer loaded with their design system and codebase operates at a fundamentally different level.</strong> Not because the AI is brilliant. Because the AI has their context.</p>"
+          "html": "<p>Design teams split organically around AI adoption. The designers already experimenting adopted in a week. The ones waiting for official tools are still waiting. AI rewards the curious, the experimental, the people who learn by doing - the exact traits that made them great designers in the first place.</p><p><strong>The design engineer who treats AI like a pair programmer loaded with their design system and codebase operates at a fundamentally different level.</strong> Not because the AI is brilliant. Because the AI has their context. It knows the components. It knows the tokens. It knows the patterns the team has already debated and settled.</p><p>Imagine if you could explore 10 design directions in the time you currently explore 2. Imagine if your prototypes were interactive, built in real code, and testable with users by end of day instead of next week. That is not fantasy - that is what design engineers who have internalized the iteration habit already do today. The gap is not in the tools. It is in the thousand small reps of pushing back on mediocre output until the AI produces work you would actually ship.</p>"
         },
         {
           "type": "method",
@@ -149,7 +149,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The best design engineers are not replacing craft with AI. They are using AI to do more craft. More exploration, more research depth, more considered decisions. The grind gets automated. The taste gets more room to breathe.</p>"
+          "html": "<p>The best design engineers are not replacing craft with AI. They are using AI to do more craft. More exploration, more research depth, more considered decisions. The grind gets automated. The taste gets more room to breathe. And the work gets better because you are spending your hours on the parts that actually require your judgment.</p><p>Picture this. You sit down Monday morning. By noon you have explored five UX directions, synthesized last week's user interviews, and drafted a component proposal that references every related pattern in your design system. By end of day you have a prototype in real code, running in the browser, ready for teammates to click through. A year ago that would have taken two weeks. Now it takes a day. And the difference is not longer hours - it is the iteration habit compounding across every surface of the craft.</p>"
         },
         {
           "type": "method",
@@ -160,7 +160,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The designers who develop AI-native habits first have a compounding advantage every week. More exploration, higher quality, faster shipping. The skill is taste. The tool is AI. The combination is a career moat that widens with every project.</p>"
+          "html": "<p>The designers who develop AI-native habits first have a compounding advantage every week. More exploration, higher quality, faster shipping. The skill is taste. The tool is AI. The combination is a career moat that widens with every project.</p><p>Think about it like this. Five years from now, when everyone on every design team uses AI fluently, the designers who started building these habits now will be the ones running the teams, writing the playbooks, and getting paid at the top of the band. The advantage is not the AI. The advantage is the thousand hours of iteration reps between now and then. Start the reps this week.</p>"
         }
       ]
     },
@@ -168,7 +168,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You are a team of one. You do not have an adoption problem - you do not need to convince anyone. But you might have a depth problem. Are you using AI like a search engine, or like a teammate? The difference is 10x output.</p><p><strong>Most solo operators treat AI like a vending machine.</strong> Insert query, accept output. That is playing checkers. The AI-native solo operator treats it like onboarding a junior partner with perfect recall. Context, review, course-correct, iterate. Completely different expected value.</p>"
+          "html": "<p>You are a team of one. You do not have an adoption problem - you do not need to convince anyone. But you might have a depth problem. Are you using AI like a search engine, or like a teammate? The difference is 10x output on the same 8-hour day.</p><p><strong>Most solo operators treat AI like a vending machine.</strong> Insert query, accept output. That is playing checkers. The AI-native solo operator treats it like onboarding a junior partner with perfect recall. Context, review, course-correct, iterate. Completely different expected value.</p><p>Imagine if every one of the 40 tasks on your plate moved forward this week instead of the 10 you actually have time for. Imagine if the quality of the work went up, not down, because you had AI peers handling the grind while you spent your best hours on the decisions that actually require your judgment. That is the difference between a solo operator who is drowning and one who is compounding. Both have the same tools. Only one of them has built the habits.</p>"
         },
         {
           "type": "method",
@@ -179,7 +179,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Being a solo operator with AI is like being a one-person startup with a team of silent partners. But those partners are only as good as the context you give them. Load them with your knowledge, your taste, your constraints - and they produce work you would actually ship. Leave them empty and they produce noise.</p><p><strong>You are the team.</strong> Building an AI-native workflow is not optional. It is the difference between drowning in 40 tasks and actually shipping on all of them.</p>"
+          "html": "<p>Being a solo operator with AI is like being a one-person startup with a team of silent partners. But those partners are only as good as the context you give them. Load them with your knowledge, your taste, your constraints - and they produce work you would actually ship. Leave them empty and they produce noise.</p><p><strong>You are the team.</strong> Building an AI-native workflow is not optional. It is the difference between drowning in 40 tasks and actually shipping on all of them. It is the difference between running a business and running from a business.</p><p>Think about it like this. Every hour you spend on work that AI could handle with the right context is an hour you are not spending on the decisions that actually differentiate you. The research, the voice, the client relationships, the creative judgment calls - those are the things nobody can outsource. Everything else? That is exactly what the iteration habit is for. Reclaim those hours and your whole operation levels up.</p>"
         },
         {
           "type": "method",
@@ -190,7 +190,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The solo operators winning right now are not the ones with the best tools. They are the ones with the best habits. The 20-minute iteration loop. The weekly shipping cadence. The knowledge base that compounds. Tools are commodities. Execution habits are moats.</p>"
+          "html": "<p>The solo operators winning right now are not the ones with the best tools. They are the ones with the best habits. The 20-minute iteration loop. The weekly shipping cadence. The knowledge base that compounds. Tools are commodities. Execution habits are moats.</p><p>Picture this. A year from now, you are running a solo operation that produces the output of a 5-person team. Clients assume you have a staff. You do not. You have AI peers, a knowledge base that has learned your taste, and a shipping cadence that never misses. That is not a fantasy - that is what the top 1% of solo operators already do today, and the gap widens every month because their habits compound while everyone else is still dabbling.</p>"
         },
         {
           "type": "method",
@@ -201,7 +201,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Being AI-native is not about the tools you use. It is about how you use them. The solo operator who masters iteration, builds a knowledge base, and ships weekly has an unfair advantage that compounds every single week. That is the whole game when you are a team of one.</p>"
+          "html": "<p>Being AI-native is not about the tools you use. It is about how you use them. The solo operator who masters iteration, builds a knowledge base, and ships weekly has an unfair advantage that compounds every single week. That is the whole game when you are a team of one.</p><p>What is stopping you from running the 20-minute iteration habit starting Monday morning? Not budget - you already have the tools. Not difficulty - the loop is four steps. The blocker is the ten minutes between reading this and opening your next task with fresh eyes. Run the loop on one task today. Then another tomorrow. Two weeks from now the habit is yours forever, and the leverage compounds from there.</p>"
         }
       ]
     },
@@ -209,7 +209,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your engineering team has AI tools. Half your engineers use autocomplete and nothing else. The engineer who treats AI like a pair programmer who has read every PR in the repo ships 3x more than the one who accepts the first suggestion. Same tools. Same license cost. Wildly different ROI.</p><p><strong>The skill is not prompt engineering. It is knowing what good engineering looks like in your codebase.</strong> The engineer who pushes back - \"That violates our naming conventions. Use the pattern from services/\" - gets compound returns. The AI learns the codebase. The suggestions improve. Quality goes up.</p>"
+          "html": "<p>Your engineering team has AI tools. Half your engineers use autocomplete and nothing else. The engineer who treats AI like a pair programmer who has read every PR in the repo ships 3x more than the one who accepts the first suggestion. Same tools. Same license cost. Wildly different ROI. At $50/seat/month across a 30-engineer team, that is $18K/year in licenses producing maybe $2K of value from the bottom half of your team. That is not a tooling problem. That is a culture signal.</p><p><strong>The skill is not prompt engineering. It is knowing what good engineering looks like in your codebase.</strong> The engineer who pushes back - \"That violates our naming conventions. Use the pattern from services/\" - gets compound returns. The AI learns the codebase. The suggestions improve. Quality goes up. The engineer who accepts the first suggestion produces generic code and blames the tool.</p><p>Imagine if every engineer on your team treated AI the way your top 10% already does - as an infinitely patient collaborator that has read every file, every ADR, every post-mortem. Imagine the velocity of a team where every PR starts from a draft informed by your architecture docs and style guide. That is the team you are building toward. And the only variable between where you are now and there is whether your engineers have built the iteration habit.</p>"
         },
         {
           "type": "method",
@@ -220,7 +220,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The culture problem shows up as the doer-talker gap. The engineer who shipped three things this week while learning a new domain is worth 5x the expert who has been \"getting up to speed\" for a month. AI makes this gap visible because it is a leverage tool - and leverage magnifies whatever is already there.</p><p><strong>Ship to production weekly.</strong> Not \"made progress.\" Deployed. Live. That is the minimum bar for any engineer with AI tools available.</p>"
+          "html": "<p>The culture problem shows up as the doer-talker gap. The engineer who shipped three things this week while learning a new domain is worth 5x the expert who has been \"getting up to speed\" for a month. AI makes this gap visible because it is a leverage tool - and leverage magnifies whatever is already there. Curious engineers get faster. Passive engineers stay passive but now have a fancier tool to hide behind.</p><p><strong>Ship to production weekly.</strong> Not \"made progress.\" Deployed. Live. That is the minimum bar for any engineer with AI tools available. If an engineer on your team cannot hit that bar, the bottleneck is not the tool. It is how they approach the work.</p><p>Think about it like this. Poker players know: when the cards flip, you either have the hand or you do not. Production deploys are the cards flipping. What is stopping you from running the shipping filter on your team this Friday? The data is already in your repos, your deploy logs, your merge history. The doers on your team want this filter applied. They are tired of carrying teammates whose output is meeting attendance.</p>"
         },
         {
           "type": "method",
@@ -231,7 +231,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The most expensive hiring mistake is deploying capital on strategic oversight when you need execution capability. A full-time engineer who designs systems and implements them is worth 5x a fractional CTO who produces architecture docs without shipping code.</p>"
+          "html": "<p>The most expensive hiring mistake is deploying capital on strategic oversight when you need execution capability. A full-time engineer who designs systems and implements them is worth 5x a fractional CTO who produces architecture docs without shipping code.</p><p>Run the math. That fractional CTO costs you $160K/year for architecture decks and Slack availability. A full-time senior engineer costs $200K/year and ships production code every week. Over a year, the full-time engineer produces maybe 40 shipped improvements to the system. The fractional produces 40 documents. One of those delivers value to users. The other lives in a Confluence space nobody reads. And you can stop renewing the fractional contract the moment you realize what you are paying for.</p>"
         },
         {
           "type": "method",
@@ -242,7 +242,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The technology is the accelerant. The engineering culture is the engine. Hire people who ship. Measure deployed output. Build the knowledge infrastructure that makes AI useful. That sequence - team, knowledge, tools - is what produces engineering teams that compound their advantage every sprint.</p>"
+          "html": "<p>The technology is the accelerant. The engineering culture is the engine. Hire people who ship. Measure deployed output. Build the knowledge infrastructure that makes AI useful. That sequence - team, knowledge, tools - is what produces engineering teams that compound their advantage every sprint.</p><p>Picture this. A year from now, your engineering org is 30% smaller but shipping 2x the features. Not because you ran layoffs. Because the doers compounded so fast that the organization could afford to let the talkers self-select out. The team that remains is people who ship weekly, iterate relentlessly, and treat AI as the colleague who never sleeps. Your best engineers love working there because the culture finally rewards the behaviors they were already doing. That is the engineering team you build by starting the shipping cadence this Monday.</p>"
         }
       ]
     },
@@ -250,7 +250,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your creative team has AI tools. The copywriter who experiments ships 3x more variations. The copywriter who tried it once and got generic output gave up. Same tools. Same training. The difference is iteration - treating AI like a creative partner to shape, not a vending machine to accept.</p><p><strong>AI amplifies what is already there.</strong> Give it to a team of creative doers and you get 10x more shipped creative work. Give it to a team that talks about creative process and you get 10x more mood boards that never become campaigns.</p>"
+          "html": "<p>Your creative team has AI tools. The copywriter who experiments ships 3x more variations and lands sharper hooks. The copywriter who tried it once, got generic output, and gave up is still grinding one headline at a time. Same tools. Same training. The difference is iteration - treating AI like a creative partner to shape, not a vending machine to accept.</p><p><strong>AI amplifies what is already there.</strong> Give it to a team of creative doers and you get 10x more shipped creative work. Give it to a team that talks about creative process and you get 10x more mood boards that never become campaigns. The leverage tool magnifies whatever it meets.</p><p>Imagine if your team could explore 10 campaign concept directions in the time it currently takes to lock one. Imagine every headline going through five rounds of real refinement instead of one. Imagine brand voice exercises that actually produced shipped assets by end of day. That is the creative output ceiling AI-native teams already operate at. The only thing separating your team from that ceiling is the iteration habit, and two weeks of daily reps is enough to build it.</p>"
         },
         {
           "type": "method",
@@ -261,7 +261,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The doer-versus-talker gap in creative teams shows up as: people who ship creative work versus people who discuss creative process. With AI, the doers produce exponentially more. The talkers produce exponentially more decks about their creative approach.</p><p><strong>Ship creative work weekly.</strong> Campaign variations delivered. Copy produced. Concepts explored and presented. The evidence is the work itself, not the process that led to it.</p>"
+          "html": "<p>The doer-versus-talker gap in creative teams shows up as: people who ship creative work versus people who discuss creative process. With AI, the doers produce exponentially more. The talkers produce exponentially more decks about their creative approach and zero more shipped campaigns.</p><p><strong>Ship creative work weekly.</strong> Campaign variations delivered. Copy produced. Concepts explored and presented. The evidence is the work itself, not the process that led to it. Not \"aligned on brand voice\" - but \"shipped the new voice guide with examples.\" Not \"explored the brief\" - but \"delivered five concept directions with rationale.\"</p><p>Think about it like this. Your clients do not pay for creative process. They pay for creative output. The agencies and in-house teams that win the next round of pitches will be the ones that can show they ship more, iterate faster, and produce better work per dollar than the competition. AI is the difference between running that race and losing it.</p>"
         },
         {
           "type": "method",
@@ -272,7 +272,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Hiring for creative roles in the AI era means hiring for creative judgment and execution speed. Someone who produces and iterates beats someone who conceives but never executes. The knowledge base carries brand context. You need creatives who ship.</p>"
+          "html": "<p>Hiring for creative roles in the AI era means hiring for creative judgment and execution speed. Someone who produces and iterates beats someone who conceives but never executes. The knowledge base carries brand context. You need creatives who ship.</p><p>Picture this. One creative director with sharp taste runs the creative output of what used to be a 6-person team. Not because the director works harder. Because AI handles the variations, the first drafts, the research synthesis, the competitive scans. The director spends every hour on the decisions that actually require creative judgment: which idea is distinctive, which hook lands, which direction earns the client's trust. That is where the real leverage lives, and the team composition follows the leverage. Fewer people. Higher taste. More shipped work. Better margins.</p>"
         },
         {
           "type": "method",
@@ -283,7 +283,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The creative teams that thrive in the AI era will be small, opinionated, and fast. They will hire for taste and agency. They will measure shipped work. And they will use AI to amplify their creative vision at a scale that was previously impossible. That is the team worth building.</p>"
+          "html": "<p>The creative teams that thrive in the AI era will be small, opinionated, and fast. They will hire for taste and agency. They will measure shipped work. And they will use AI to amplify their creative vision at a scale that was previously impossible. That is the team worth building.</p><p>What is stopping you from rewriting your creative job descriptions this week? Replace \"10 years of agency experience\" with \"show me five campaigns you shipped in the last six months.\" Replace \"strong portfolio\" with \"walk us through how you iterated with AI on a real brief.\" The creatives you want will recognize themselves instantly in the new description. The ones you do not want will filter themselves out. That is the cheapest and fastest creative team upgrade you will ever make.</p>"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You do not need anyone's permission to adopt AI. You are already experimenting. But are you getting 10% of the value or 90%? The gap between \"I use AI sometimes\" and \"AI is embedded in my workflow\" is the gap between dabbling and shipping.</p><p><strong>The skill is not prompting. It is taste.</strong> Knowing what good code looks like. Knowing when the AI's suggestion is clever but wrong. Knowing when to push back and when to accept. That judgment is what makes the 20-minute iteration loop produce great work instead of mediocre work.</p>"
+          "html": "<p>You do not need anyone's permission to adopt AI. You are already experimenting. But are you getting 10% of the value or 90%? The gap between \"I use AI sometimes\" and \"AI is embedded in my workflow\" is the gap between dabbling and shipping. Between 2 side projects a year and 12.</p><p><strong>The skill is not prompting. It is taste.</strong> Knowing what good code looks like. Knowing when the AI's suggestion is clever but wrong. Knowing when to push back and when to accept. That judgment is what makes the 20-minute iteration loop produce great work instead of mediocre work.</p><p>Imagine if every side project you started actually shipped. Imagine a portfolio of 12 deployed things a year from now, each one teaching you something new, each one building your AI workflow into something more powerful than the last. That is not fantasy for vibe coders who have built the iteration habit - that is their normal Tuesday. The only thing between you and that output is whether you decide to stop accepting first drafts and start treating every session like a 20-minute collaboration with a tireless pair programmer.</p>"
         },
         {
           "type": "method",
@@ -302,7 +302,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The vibe coders shipping the most projects treat AI like a creative partner, not a code generator. They iterate. They push back. They bring their own taste to every session. That is why the same tool produces wildly different results for different people.</p><p><strong>It is a leverage tool. Leverage magnifies whatever is already there.</strong> Curiosity, experimentation, and creative ambition get amplified. Passivity and acceptance of mediocre output also get amplified.</p>"
+          "html": "<p>The vibe coders shipping the most projects treat AI like a creative partner, not a code generator. They iterate. They push back. They bring their own taste to every session. That is why the same tool produces wildly different results for different people.</p><p><strong>It is a leverage tool. Leverage magnifies whatever is already there.</strong> Curiosity, experimentation, and creative ambition get amplified. Passivity and acceptance of mediocre output also get amplified. The tool does not decide which way you go. Your habits do.</p><p>Think about it like this. Every indie hacker with a Twitter bio mentioning \"building in public\" has the same tools you do. The ones who ship constantly are not smarter or more talented. They have just built the iteration muscle. Twenty minutes of pushback per task. Four tasks per day. Six days a week. That is 480 reps a month, and after three months the AI output quality gap between them and everyone else is impossible to close.</p>"
         },
         {
           "type": "method",
@@ -313,7 +313,7 @@
         },
         {
           "type": "why",
-          "html": "<p>You do not need a team to ship at startup speed. You need AI tools, a knowledge base, and the discipline to iterate instead of accept. One vibe coder with good habits outships a team of three who are still debating their tech stack.</p>"
+          "html": "<p>You do not need a team to ship at startup speed. You need AI tools, a knowledge base, and the discipline to iterate instead of accept. One vibe coder with good habits outships a team of three who are still debating their tech stack.</p><p>Picture this. A year from now, you have shipped 12 projects. Three of them found users. One of them has 500 people paying you $10/month. That is $60K ARR from a single side project, running alongside your day job, built by one person with AI habits. That outcome is not reserved for the 10x engineers at Google. It is available to anyone who commits to monthly shipping and the 20-minute iteration loop. Your next year starts with the project you pick this weekend.</p>"
         },
         {
           "type": "method",
@@ -324,7 +324,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The vibe coders who build AI-native habits now have an unfair advantage that compounds every week. Better output, faster shipping, broader technical range. The tools are available to everyone. The habits are what separate the shippers from the dabblers.</p>"
+          "html": "<p>The vibe coders who build AI-native habits now have an unfair advantage that compounds every week. Better output, faster shipping, broader technical range. The tools are available to everyone. The habits are what separate the shippers from the dabblers.</p><p>What is stopping you from opening a blank project tonight and running the 20-minute iteration loop on it? Not time - 20 minutes is 20 minutes. Not talent - the loop works for any level. Not tools - you already have Claude, you already have a code editor, you already have the internet. The only blocker is the decision to stop accepting first drafts. Make that decision once this week and the compounding runs on autopilot from there.</p>"
         }
       ]
     }

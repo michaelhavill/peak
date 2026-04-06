@@ -4,7 +4,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Every person on your team is destroying value right now. The PM prompts Claude, copies the output, pastes it into Notion, then Slacks the designer. The designer opens a fresh AI session with zero inherited context. The engineer starts a third session - tabula rasa. Three people using AI. Three completely isolated knowledge graphs.</p><p><strong>The cost is not \"inefficiency.\" It is compounding information loss at every single handoff.</strong> Each copy-paste is a context tax. Each re-prompt from scratch is value destruction. And nobody is accounting for it.</p>"
+          "html": "<p>Every person on your team is destroying value right now. The PM prompts Claude, copies the output, pastes it into Notion, then Slacks the designer. The designer opens a fresh AI session with zero inherited context. The engineer starts a third session - tabula rasa. Three people using AI. Three completely isolated knowledge graphs. That is insanity.</p><p>Picture this. Your PM finishes a customer call and before she even closes her laptop, the insight has flowed into a shared layer where the designer's AI is already weaving it into a flow exploration and the engineer's AI is already pressure-testing it against the architecture. Nobody forwarded a Slack message. Nobody scheduled a sync. The work just kept moving.</p><p><strong>The cost is not \"inefficiency.\" It is compounding information loss at every single handoff.</strong> Each copy-paste is a context tax. Each re-prompt from scratch is value destruction. Multiply 30 handoffs a day by 10 team members by 250 working days - that is 75,000 micro-context-losses per year that show up nowhere in your P&L but quietly drag every output toward generic. You are paying for AI and getting half the value because it never sees the full picture.</p>"
         },
         {
           "type": "method",
@@ -15,7 +15,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Most teams run two parallel worlds: the human world (Slack, meetings, docs) and the AI world (individual prompt sessions). Information flows between them through copy-paste, manual summaries, and meetings where someone explains \"what the AI said.\" This doubles communication overhead instead of cutting it.</p><p>Shared workspaces where human contributions and AI contributions live side by side, drawing from the same knowledge base - that is the architecture. A product brief starts as an AI draft grounded in persona research. The PM refines judgment calls. The designer adds UX direction. The AI incorporates those inputs into the next iteration. Everyone sees the full history. <strong>Zero information loss.</strong></p>"
+          "html": "<p>Most teams run two parallel worlds: the human world (Slack, meetings, docs) and the AI world (individual prompt sessions). Information flows between them through copy-paste, manual summaries, and meetings where someone explains \"what the AI said.\" This doubles communication overhead instead of cutting it. That is like buying a dishwasher and then hand-washing every plate before you load it.</p><p>What is stopping you from collapsing those two worlds into one this quarter? Not the tools - they exist and most of them are free or near-free. The blocker is almost always the comfort of working in tabs the way you have always worked.</p><p>Shared workspaces where human contributions and AI contributions live side by side, drawing from the same knowledge base - that is the architecture. A product brief starts as an AI draft grounded in persona research. The PM refines judgment calls. The designer adds UX direction. The AI incorporates those inputs into the next iteration. Everyone sees the full history. <strong>Zero information loss.</strong> That is network effects on knowledge - every participant makes the shared context more valuable for every other participant.</p>"
         },
         {
           "type": "method",
@@ -26,7 +26,7 @@
         },
         {
           "type": "why",
-          "html": "<p>One team deployed custom interfaces for three groups - business, clinical, and operations. All three read from and write to the same central platform. When the business team updates a customer insight, the clinical team's AI immediately has that context. When operations identifies a bottleneck, the engineering team's AI factors it into sprint planning. No meetings. No Slack threads. No \"can you send me that doc?\"</p><p><strong>The critical design principle: AI is a participant in your system, not a replacement for your team.</strong> It surfaces relevant context when needed. The humans direct, decide, and refine. That is how you deploy intelligence at scale.</p>"
+          "html": "<p>One team deployed custom interfaces for three groups - business, clinical, and operations. All three read from and write to the same central platform. When the business team updates a customer insight, the clinical team's AI immediately has that context. When operations identifies a bottleneck, the engineering team's AI factors it into sprint planning. No meetings. No Slack threads. No \"can you send me that doc?\" The marginal cost of sharing context dropped to zero.</p><p>Imagine if every tool you opened tomorrow already knew what you decided yesterday, what your team agreed last week, what your customers said last month. The mental load you currently spend remembering where things live - gone. The cognitive context-switching tax - gone.</p><p><strong>The critical design principle: AI is a participant in your system, not a replacement for your team.</strong> It surfaces relevant context when needed. The humans direct, decide, and refine. You are not outsourcing your team's intelligence to AI. You are empowering agents to build with your team as an extension of your collective skills. That is how you deploy intelligence at scale.</p>"
         },
         {
           "type": "method",
@@ -37,7 +37,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Collaboration scales when context is shared, not when meetings are more frequent. Every meeting that exists solely to transfer information is a tax on your organization. Build the shared surface. Let AI and humans both contribute - with humans directing and AI extending.</p><p><strong>The value is the triad: your people, your shared knowledge, and AI working together.</strong> You are not handing collaboration to AI. You are making your team's collaboration compound through AI.</p>"
+          "html": "<p>Collaboration scales when context is shared, not when meetings are more frequent. Every meeting that exists solely to transfer information is a tax on your organization. Build the shared surface. Let AI and humans both contribute - with humans directing and AI extending.</p><p>Think about it like this. The best sports teams in the world do not win because their players are individually better. They win because the players read the same plays, see the same field, anticipate each other's moves. Your team is already talented. The question is whether your tools let them play as a unit or force them to play as five individuals on the same court.</p><p><strong>The value is the triad: your people, your shared knowledge, and AI working together.</strong> You are not handing collaboration to AI. You are making your team's collaboration compound through AI. Same tools, different leverage. The alpha was never in the technology. It was in the wiring.</p>"
         }
       ]
     },
@@ -45,7 +45,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your team is using AI in parallel silos. The PM prompts Claude, copies output to Notion, Slacks the designer. The designer starts a fresh session. The engineer starts another. Three completely disconnected knowledge graphs. You are paying for AI and then paying again to manually distribute its output.</p><p><strong>Every meeting that exists solely to share context is a tax on your burn rate.</strong> And right now, most of your meetings are exactly that. Shared context layers are not a nice-to-have - they are how you cut coordination overhead while scaling output.</p>"
+          "html": "<p>Your team is using AI in parallel silos. The PM prompts Claude, copies output to Notion, Slacks the designer. The designer starts a fresh session. The engineer starts another. Three completely disconnected knowledge graphs. You are paying for AI and then paying again to manually distribute its output.</p><p>Do the maths in dollars. If your average fully-loaded knowledge worker costs $150K per year, every hour of context assembly costs you about $75. A team of 10 losing 90 minutes per day to copy-paste and re-prompting is burning around $280K per year on work that produces exactly zero value. That is a senior hire's entire compensation. Gone. Quietly. Every year.</p><p><strong>Every meeting that exists solely to share context is a tax on your burn rate.</strong> And right now, most of your meetings are exactly that. Shared context layers are not a nice-to-have - they are how you cut coordination overhead while scaling output. What is stopping you from closing that $280K leak this quarter?</p>"
         },
         {
           "type": "method",
@@ -56,7 +56,7 @@
         },
         {
           "type": "why",
-          "html": "<p>At the company level, shared surfaces mean the PM's insight enriches the designer's AI automatically. The engineer's constraints flow to product without a meeting. The speed of context-sharing is not just about moving faster - it is about unlocking time for strategic decisions that have been perpetually deferred.</p><p><strong>The meetings that disappear are your biggest cost savings.</strong> Not the subscription fees. The hours of senior people sitting in rooms transferring information that should already be shared.</p>"
+          "html": "<p>At the company level, shared surfaces mean the PM's insight enriches the designer's AI automatically. The engineer's constraints flow to product without a meeting. The speed of context-sharing is not just about moving faster - it is about unlocking time for strategic decisions that have been perpetually deferred.</p><p>Picture this. A new hire starts on Monday. By Tuesday afternoon, her AI has access to every customer interview your research team has conducted, every architecture decision your engineers have made, every design principle your product team has debated. She asks her first real question and gets an answer grounded in the accumulated judgment of your entire company. No two-month onboarding purgatory where she is billable in theory but contributing nothing in practice.</p><p><strong>The meetings that disappear are your biggest cost savings.</strong> Not the subscription fees. The hours of senior people sitting in rooms transferring information that should already be shared. That is compounding burn-rate leverage no competitor on a traditional stack can match.</p>"
         },
         {
           "type": "method",
@@ -67,7 +67,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The companies winning this race built shared context layers where every team member's AI draws from the full organizational intelligence. New hires ramp in weeks instead of months. Decisions happen faster because context is already shared. The information asymmetry inside the team drops to near zero.</p><p><strong>Your team's collaboration compounds through shared context.</strong> That is how you build a company that moves at startup speed regardless of headcount.</p>"
+          "html": "<p>The companies winning this race built shared context layers where every team member's AI draws from the full organizational intelligence. New hires ramp in weeks instead of months. Decisions happen faster because context is already shared. The information asymmetry inside the team drops to near zero.</p><p>Think about it like this. Like a poker player who can see every card on the table - that is the edge you hand your team when you wire context together. The teams showing 3x and 5x output gains are not using smarter models than you. They are feeding the same models a dramatically richer context. Same tools, different leverage.</p><p><strong>Your team's collaboration compounds through shared context.</strong> That is how you build a company that moves at startup speed regardless of headcount. The alpha was never in the technology. It was in the wiring. And the wiring is a single afternoon of founder-level work.</p>"
         },
         {
           "type": "method",
@@ -78,7 +78,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The tools exist today. Notion plus MCP integrations. Linear plus Slack plus Claude. Granola capturing meeting context automatically. The architecture is not theoretical - teams are deploying it and the coordination overhead is collapsing.</p><p><strong>AI is a participant in your system, not a replacement for your team.</strong> Build the shared surface. The value compounds from there.</p>"
+          "html": "<p>The tools exist today. Notion plus MCP integrations. Linear plus Slack plus Claude. Granola capturing meeting context automatically. The architecture is not theoretical - teams are deploying it and the coordination overhead is collapsing.</p><p>Imagine if you never had to sit in a status meeting again. Imagine if every investor update wrote itself from the actual work your team shipped. Imagine if every strategic pivot flowed to every function in the same hour instead of leaking through Slack threads over a week. That is not science fiction - that is one afternoon of wiring and a Notion workspace.</p><p><strong>AI is a participant in your system, not a replacement for your team.</strong> Build the shared surface. The value compounds from there. The founders who wire this first will compound advantages every month their competitors are still copy-pasting between tabs.</p>"
         }
       ]
     },
@@ -86,7 +86,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your PM prompts Claude with customer research. The designer opens a fresh session without it. The engineer starts from zero. Three people using AI on the same product - with three completely disconnected knowledge graphs. The information asymmetry inside your own team is the bottleneck nobody is measuring.</p><p><strong>When the designer asks AI about users and it does not know about the PM's research - that is not an AI problem. That is an architecture problem.</strong> The delta between 10% and 100% context is where the real product alpha lives.</p>"
+          "html": "<p>Your PM prompts Claude with customer research. The designer opens a fresh session without it. The engineer starts from zero. Three people using AI on the same product - with three completely disconnected knowledge graphs. The information asymmetry inside your own team is the bottleneck nobody is measuring.</p><p>Picture this. Your PM finishes a customer interview and the insight flows automatically into a shared layer. The designer's AI picks it up for the next flow exploration. The engineer's AI is already stress-testing it against the architecture. Nobody forwarded anything. Nobody scheduled a sync. That is the product machine most teams are leaving on the table.</p><p><strong>When the designer asks AI about users and it does not know about the PM's research - that is not an AI problem. That is an architecture problem.</strong> The delta between 10% and 100% context is where the real product alpha lives. A single strategy doc that used to take four hours of context assembly now takes 40 minutes. Same judgment, same quality, one-sixth the time.</p>"
         },
         {
           "type": "method",
@@ -97,7 +97,7 @@
         },
         {
           "type": "why",
-          "html": "<p>A product brief starts as an AI draft grounded in persona research and competitive context. The PM refines judgment calls. The designer adds UX direction. The AI incorporates those inputs into the next iteration. The engineer flags technical constraints that feed back into design. Everyone sees the full history. Zero information loss.</p><p><strong>This is network effects on knowledge.</strong> Every participant makes the shared context more valuable for every other participant.</p>"
+          "html": "<p>A product brief starts as an AI draft grounded in persona research and competitive context. The PM refines judgment calls. The designer adds UX direction. The AI incorporates those inputs into the next iteration. The engineer flags technical constraints that feed back into design. Everyone sees the full history. Zero information loss.</p><p>Think about it like this. The best product teams do not win because they have smarter PMs, more talented designers, or faster engineers. They win because their people work from the same picture. Your team is already talented. The question is whether your tools let them build as a unit or force them to rebuild shared context from scratch in every meeting.</p><p><strong>This is network effects on knowledge.</strong> Every participant makes the shared context more valuable for every other participant. The \"that is not technically feasible\" feedback loop that used to eat 3-5 days per cycle drops to near zero because the designer's AI already knows the engineering constraints before the design even starts.</p>"
         },
         {
           "type": "method",
@@ -108,7 +108,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Product teams that built shared research surfaces report that the information asymmetry inside their own team dropped to near zero. Not the 15% slice one person remembers - the full research context. That alone eliminated weekly syncs and made product decisions measurably faster.</p><p><strong>Collaboration scales when context is shared, not when meetings are more frequent.</strong> Build the shared surface and let your product team's collective intelligence compound.</p>"
+          "html": "<p>Product teams that built shared research surfaces report that the information asymmetry inside their own team dropped to near zero. Not the 15% slice one person remembers - the full research context. That alone eliminated weekly syncs and made product decisions measurably faster.</p><p>Imagine if every product decision your team made this quarter drew from every customer interview, every usage signal, every support ticket, every competitive insight you have ever gathered. Not the slice somebody remembered to paste into the prompt window - the whole corpus. That is not a productivity gain. That is a different product.</p><p><strong>Collaboration scales when context is shared, not when meetings are more frequent.</strong> Build the shared surface and let your product team's collective intelligence compound. Every insight captured today compounds into every product decision for the next two years.</p>"
         },
         {
           "type": "method",
@@ -119,7 +119,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The tools exist today. Notion plus MCP for the knowledge layer. Figma plus GitHub plus Cursor for the design-engineering bridge. Granola for capturing meeting context automatically. The product team that connects these first compounds advantages every quarter.</p>"
+          "html": "<p>The tools exist today. Notion plus MCP for the knowledge layer. Figma plus GitHub plus Cursor for the design-engineering bridge. Granola for capturing meeting context automatically. The product team that connects these first compounds advantages every quarter.</p><p>What is stopping you from wiring these tools together this week? The blocker is almost never technical - it is the comfort of working in tabs the way you always have. The product teams that break that comfort compound. The ones that do not pay the context tax forever. Every ship cycle on disconnected tools is a cycle your connected competitor ships two of.</p>"
         }
       ]
     },
@@ -127,7 +127,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your design context lives in Figma. Your code lives in GitHub. Your project context lives in Notion. Your backlog lives in Linear. Four tools, four isolated databases. You are the copy-paste bridge between all of them - dozens of times a day. That cost compounds.</p><p><strong>When your tools share a brain, everything changes.</strong> Your design context informs your code generation. Your code constraints inform your design suggestions. Your customer research informs both. The network effects on knowledge kick in the moment the walls come down.</p>"
+          "html": "<p>Your design context lives in Figma. Your code lives in GitHub. Your project context lives in Notion. Your backlog lives in Linear. Four tools, four isolated databases. You are the copy-paste bridge between all of them - dozens of times a day. That cost compounds.</p><p>Picture this. You sit down to build a new component and your AI already knows your design tokens, your code patterns, your current sprint priorities, your accessibility standards, and the research behind every recent design decision. You describe what you want. The AI produces something that actually fits the system on the first try. No revisions because it did not know the spacing scale. No re-writes because it used the wrong component. Just craft.</p><p><strong>When your tools share a brain, everything changes.</strong> Your design context informs your code generation. Your code constraints inform your design suggestions. Your customer research informs both. The network effects on knowledge kick in the moment the walls come down. ROI on a two-hour setup: 6-8 hours saved per week, every week, compounding.</p>"
         },
         {
           "type": "method",
@@ -138,7 +138,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The shift is from \"I use AI in this tool\" to \"AI flows across all my tools.\" Your design system's logic persists regardless of which tool renders it. When a better editor launches, you adopt it without losing your design system investment. The hub is your knowledge. The tools are spokes.</p><p><strong>The \"that is not technically feasible\" feedback loop drops to near zero</strong> because the AI carries context across both design and engineering domains.</p>"
+          "html": "<p>The shift is from \"I use AI in this tool\" to \"AI flows across all my tools.\" Your design system's logic persists regardless of which tool renders it. When a better editor launches, you adopt it without losing your design system investment. The hub is your knowledge. The tools are spokes.</p><p>Think about it like this. Every design engineer who built their craft inside one tool is locked into that tool's future. Every design engineer who built their craft inside a shared context layer can swap tools the day a better one appears and lose nothing. That portability is not a nice-to-have. It is how you make your craft appreciate as an asset instead of depreciate as a tool subscription.</p><p><strong>The \"that is not technically feasible\" feedback loop drops to near zero</strong> because the AI carries context across both design and engineering domains. The translation tax between designer brain and engineer brain - the single most expensive cognitive cost in your week - collapses when both modes draw from the same knowledge base.</p>"
         },
         {
           "type": "method",
@@ -149,7 +149,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Design engineering teams that connected Figma, GitHub, Notion, and Linear through shared context report that the walls between design and engineering dissolved. The AI carries context across both domains. Quality went up. Speed went up. The grind of translation between tools disappeared.</p><p><strong>Your collaboration surface is your knowledge infrastructure.</strong> When your tools share a brain, you stop being a copy-paste bridge and start being a creative force multiplied by connected context.</p>"
+          "html": "<p>Design engineering teams that connected Figma, GitHub, Notion, and Linear through shared context report that the walls between design and engineering dissolved. The AI carries context across both domains. Quality went up. Speed went up. The grind of translation between tools disappeared.</p><p>Imagine if every component you touched tomorrow carried the full history of why it exists. The accessibility debate behind the button hit area. The performance tradeoff behind the animation timing. The user research behind the empty state copy. All of it, available to your AI the moment you open the file. That is not a faster workflow. That is a fundamentally different craft.</p><p><strong>Your collaboration surface is your knowledge infrastructure.</strong> When your tools share a brain, you stop being a copy-paste bridge and start being a creative force multiplied by connected context. The design engineers who wire this compound craft at a rate the tool-hoppers will never catch.</p>"
         },
         {
           "type": "method",
@@ -160,7 +160,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The design engineer with connected tools operates at a fundamentally different speed. Not because the AI is smarter - because the AI has the full picture. Design tokens, code patterns, user research, sprint priorities - all flowing into every interaction. That is the collaborative space that actually works.</p>"
+          "html": "<p>The design engineer with connected tools operates at a fundamentally different speed. Not because the AI is smarter - because the AI has the full picture. Design tokens, code patterns, user research, sprint priorities - all flowing into every interaction. That is the collaborative space that actually works.</p><p>What is stopping you from wiring this in an afternoon? The connections are free. The documentation already exists (in scattered form). The only blocker is the comfort of grinding through copy-paste the way you always have. Every day you wait, a connected design engineer is compounding craft you cannot catch up to by working harder on disconnected tools.</p>"
         }
       ]
     },
@@ -168,7 +168,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You are the PM, the designer, the engineer, and the ops person. Every time you switch hats, you lose context. You prompt AI for design work, then switch to coding and start from zero. You research a market question, then cannot find the insight when you need it for a pitch.</p><p><strong>When you are one person playing every role, disconnected tools are not just inefficient - they are crippling.</strong> The context you generated as a researcher is invisible to you as a builder. The customer insight you captured last week is buried in a thread you cannot find.</p>"
+          "html": "<p>You are the PM, the designer, the engineer, and the ops person. Every time you switch hats, you lose context. You prompt AI for design work, then switch to coding and start from zero. You research a market question, then cannot find the insight when you need it for a pitch.</p><p>Picture this. You finish a customer call in the morning. By the afternoon, when you sit down to code, your AI already knows the user's pain point, the feature they asked for, and the technical constraint you flagged in a note last week. No context rebuild. No searching through old notes. Just build.</p><p><strong>When you are one person playing every role, disconnected tools are not just inefficient - they are crippling.</strong> The context you generated as a researcher is invisible to you as a builder. The customer insight you captured last week is buried in a thread you cannot find. A team of 10 can absorb context leaks. A solo operator cannot - every lost insight is a feature that does not ship, a pitch that does not land, a bug that sneaks back in. Your tools sharing a brain is the leverage that turns one person into an output factory.</p>"
         },
         {
           "type": "method",
@@ -179,7 +179,7 @@
         },
         {
           "type": "why",
-          "html": "<p>For a solo operator, the shared context layer is even more powerful than for a team - because you are every function. The research you do as a PM informs the code you write as an engineer. The technical constraints you discover inform the product decisions you make. Everything connects because you are the throughline.</p><p><strong>Your tools need to share a brain because you are the only brain they have.</strong></p>"
+          "html": "<p>For a solo operator, the shared context layer is even more powerful than for a team - because you are every function. The research you do as a PM informs the code you write as an engineer. The technical constraints you discover inform the product decisions you make. Everything connects because you are the throughline.</p><p>Think about it like this. A 10-person team has 10 brains. You have one brain plus however much context your tools can carry for you. Every disconnected tool is a cognitive fragment you cannot hold in your head at the same time. Every connected tool is a teammate that remembers for you.</p><p><strong>Your tools need to share a brain because you are the only brain they have.</strong> The solo operator who wires this is not 2x more productive than the one who does not. They are playing a different game entirely.</p>"
         },
         {
           "type": "method",
@@ -190,7 +190,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Solo operators who build connected context layers report that the biggest win is not speed - it is coherence. The product decisions, design decisions, and technical decisions all draw from the same base. Nothing contradicts because everything is connected.</p><p><strong>The shared surface for a solo operator is the integration between your own roles.</strong> Build it once, and every work session makes the next one more productive.</p>"
+          "html": "<p>Solo operators who build connected context layers report that the biggest win is not speed - it is coherence. The product decisions, design decisions, and technical decisions all draw from the same base. Nothing contradicts because everything is connected.</p><p>Imagine if every morning your AI already had the full state of your business loaded - every customer conversation, every open bug, every strategic bet, every half-finished experiment. No 30 minutes of \"where was I?\" Just pick up the highest-leverage thread and go. That is not productivity. That is operating at a scale that used to require a team.</p><p><strong>The shared surface for a solo operator is the integration between your own roles.</strong> Build it once, and every work session makes the next one more productive. The solo operators who wire this are the ones shipping product quality that looks like a 10-person team produced it.</p>"
         },
         {
           "type": "method",
@@ -201,7 +201,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The solo operators who connect their tools first have a structural advantage that compounds every week. Their AI gets smarter as they work. Their context deepens. Their output improves. And they never lose an insight to a forgotten Slack thread again.</p>"
+          "html": "<p>The solo operators who connect their tools first have a structural advantage that compounds every week. Their AI gets smarter as they work. Their context deepens. Their output improves. And they never lose an insight to a forgotten Slack thread again.</p><p>What is stopping you from spending one afternoon this week on the wiring? Not the tools - they are already on your laptop. Not the skill - if you can prompt Claude, you can install an MCP server. The only blocker is the comfort of working the way you already work. Every week you delay, a connected solo operator compounds leverage you cannot catch up to on a disconnected stack.</p>"
         }
       ]
     },
@@ -209,7 +209,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your distributed engineering team runs in silos. Each engineer's AI starts from zero. Architecture decisions live in one person's head. Onboarding takes months because tribal knowledge is locked in Slack threads nobody can find. The \"ask the senior person\" bottleneck is killing your velocity.</p><p><strong>A shared architecture surface where every technical decision, ADR, and incident learning feeds one AI-accessible layer changes everything.</strong> New team members get answers grounded in actual decisions, not generic Stack Overflow patterns. Onboarding time drops by 40%.</p>"
+          "html": "<p>Your distributed engineering team runs in silos. Each engineer's AI starts from zero. Architecture decisions live in one person's head. Onboarding takes months because tribal knowledge is locked in Slack threads nobody can find. The \"ask the senior person\" bottleneck is killing your velocity.</p><p>Do the maths in dollars. At $180K average fully-loaded engineering cost, a three-month onboarding ramp is $45K of mostly wasted time per hire. Multiply by 10 hires a year and you are burning $450K on an onboarding process that a shared context layer compresses to 6 weeks. That is a senior staff engineer's full comp vanishing into the gap between \"team knowledge exists\" and \"new hires can access it.\"</p><p><strong>A shared architecture surface where every technical decision, ADR, and incident learning feeds one AI-accessible layer changes everything.</strong> New team members get answers grounded in actual decisions, not generic Stack Overflow patterns. Onboarding time drops by 40%. That is not a productivity gain. That is a structural change in how your team scales.</p>"
         },
         {
           "type": "method",
@@ -220,7 +220,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The real cost of disconnected engineering tools is not inefficiency - it is repeated mistakes. The same architectural trap gets sprung because the last person who hit it documented the fix in a Slack thread that nobody can find. The same design patterns get debated because the reasoning behind past decisions is locked in someone's head.</p><p><strong>Shared architecture surfaces turn tribal knowledge into institutional memory.</strong> The \"ask the senior person\" bottleneck disappears because the AI carries the senior person's context.</p>"
+          "html": "<p>The real cost of disconnected engineering tools is not inefficiency - it is repeated mistakes. The same architectural trap gets sprung because the last person who hit it documented the fix in a Slack thread that nobody can find. The same design patterns get debated because the reasoning behind past decisions is locked in someone's head.</p><p>Think about it like this. Every time a senior engineer explains the same architectural decision in a new code review, that is tribal knowledge failing to scale. Multiply by 50 reviews a week and you are watching the most expensive engineers on your team burn their attention on context transfer instead of hard technical problems. That is not engineering culture. That is engineering culture leakage.</p><p><strong>Shared architecture surfaces turn tribal knowledge into institutional memory.</strong> The \"ask the senior person\" bottleneck disappears because the AI carries the senior person's context. Every architectural decision documented today compounds into every PR review, every new hire onboarding, and every incident response for the next five years.</p>"
         },
         {
           "type": "method",
@@ -231,7 +231,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Engineering teams that built shared architecture surfaces report that the \"ask the senior person\" bottleneck disappeared. New engineers reached productive velocity 40% faster. Code review quality improved because every reviewer had access to the same architectural context. The team shipped more because they debated less.</p><p><strong>The marginal cost of sharing engineering context dropped to zero.</strong> That is how you scale an engineering team without proportionally scaling coordination overhead.</p>"
+          "html": "<p>Engineering teams that built shared architecture surfaces report that the \"ask the senior person\" bottleneck disappeared. New engineers reached productive velocity 40% faster. Code review quality improved because every reviewer had access to the same architectural context. The team shipped more because they debated less.</p><p>Imagine if every engineer on your team could ask \"why is this code structured this way?\" and get an answer from the actual reasoning of the person who built it - even if that person left the company two years ago. No archeology. No guessing. No tribal knowledge risk. That is not documentation. That is institutional memory that actually works.</p><p><strong>The marginal cost of sharing engineering context dropped to zero.</strong> That is how you scale an engineering team without proportionally scaling coordination overhead. The architectural discipline that made you fast at 5 engineers does not evaporate at 50 - it propagates automatically through a shared context layer that every new hire inherits on day one.</p>"
         },
         {
           "type": "method",
@@ -242,7 +242,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Shared engineering surfaces are how you scale a team without losing the architectural discipline that made you fast in the first place. The context compounds. The conventions propagate. The mistakes do not repeat. That is engineering culture at scale.</p>"
+          "html": "<p>Shared engineering surfaces are how you scale a team without losing the architectural discipline that made you fast in the first place. The context compounds. The conventions propagate. The mistakes do not repeat. That is engineering culture at scale.</p><p>What is stopping you from starting the wiring this week? The cost is one engineer-week of setup. The payoff is a structural change in how your team scales. Every month you delay, you are burning senior engineer attention on tribal knowledge transfer that a shared context layer would eliminate. The technical leaders who wire this first will out-scale the ones still running onboarding the old way.</p>"
         }
       ]
     },
@@ -250,7 +250,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>Your creative team is running AI in isolated sessions. The copywriter's AI does not know about the designer's mood board. The designer's AI does not know the brand voice guidelines the copywriter follows. The strategist's insights stay in their head until the next meeting. Three creatives using AI. Three completely disconnected creative visions.</p><p><strong>When your brand context, creative direction, and campaign history live in a shared layer, every AI interaction starts from the same creative foundation.</strong> No drift. No inconsistency. No re-establishing the brief in every conversation.</p>"
+          "html": "<p>Your creative team is running AI in isolated sessions. The copywriter's AI does not know about the designer's mood board. The designer's AI does not know the brand voice guidelines the copywriter follows. The strategist's insights stay in their head until the next meeting. Three creatives using AI. Three completely disconnected creative visions.</p><p>Picture this. A campaign brief lands on Monday. Your copywriter's AI already knows the brand voice, the audience psychographics, the headlines that worked in the last three campaigns, and the strategic positioning debated in last week's review. Your designer's AI already knows the visual language, the color decisions behind the last rebrand, and the layouts that converted in the last test. Nobody rebuilds the brief. Nobody re-establishes the voice. The work just starts - and it is all on-brand.</p><p><strong>When your brand context, creative direction, and campaign history live in a shared layer, every AI interaction starts from the same creative foundation.</strong> No drift. No inconsistency. No re-establishing the brief in every conversation. That is the difference between a creative team that compounds and a creative team that redoes its own work every quarter.</p>"
         },
         {
           "type": "method",
@@ -261,7 +261,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The real cost of disconnected creative tools is brand inconsistency. When every team member's AI starts from scratch, the output drifts. Voice varies. Visual language fragments. The brand feels different across every touchpoint - and audiences feel it even when they cannot articulate it.</p><p><strong>Shared creative surfaces are how you maintain brand coherence at scale.</strong> The AI enforces consistency because it carries the same creative DNA into every interaction.</p>"
+          "html": "<p>The real cost of disconnected creative tools is brand inconsistency. When every team member's AI starts from scratch, the output drifts. Voice varies. Visual language fragments. The brand feels different across every touchpoint - and audiences feel it even when they cannot articulate it.</p><p>Think about it like this. The brands that feel most coherent are not built by bigger teams or bigger budgets. They are built by teams that all work from the same picture. Every campaign, every touchpoint, every piece of copy speaks with the same voice because the voice lives in a shared layer everyone draws from. That coherence is the asset competitors cannot buy.</p><p><strong>Shared creative surfaces are how you maintain brand coherence at scale.</strong> The AI enforces consistency because it carries the same creative DNA into every interaction. Your brand stops being something your team tries to remember and becomes something your tools carry automatically.</p>"
         },
         {
           "type": "method",
@@ -272,7 +272,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Creative teams that built shared context layers report that brand consistency improved measurably across channels. The time spent re-establishing creative direction in meetings dropped dramatically. New team members produced on-brand work faster because their AI carried the creative DNA from day one.</p><p><strong>The creative process compounds when context is shared.</strong> Every campaign makes the next one better because the learning never gets lost.</p>"
+          "html": "<p>Creative teams that built shared context layers report that brand consistency improved measurably across channels. The time spent re-establishing creative direction in meetings dropped dramatically. New team members produced on-brand work faster because their AI carried the creative DNA from day one.</p><p>Imagine if every new campaign your team shipped drew from every insight you have ever gathered - every audience test, every headline that converted, every visual that bombed, every strategic pivot that worked. Not the 10% your CD remembers. The whole library. That is not a faster creative process. That is a creative process that cannot lose what it has already learned.</p><p><strong>The creative process compounds when context is shared.</strong> Every campaign makes the next one better because the learning never gets lost. The creative teams that wire this compound taste and brand equity at a rate their disconnected competitors cannot match.</p>"
         },
         {
           "type": "method",
@@ -283,7 +283,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The creative teams that connect their tools first will produce more consistent, more informed, and more effective work. Not because the AI is more creative - because the AI carries the team's full creative context into every interaction. The shared surface is how creative intelligence compounds.</p>"
+          "html": "<p>The creative teams that connect their tools first will produce more consistent, more informed, and more effective work. Not because the AI is more creative - because the AI carries the team's full creative context into every interaction. The shared surface is how creative intelligence compounds.</p><p>What is stopping you from wiring this together? Not the tools. Not the skill. The only blocker is the instinct to keep briefing the way you always have - in meetings, in decks, in slack threads that evaporate. The creative directors who break that habit build brands that feel like one mind shaped them. The ones that do not will keep chasing consistency their competitors already achieved.</p>"
         }
       ]
     },
@@ -291,7 +291,7 @@
       "sections": [
         {
           "type": "why",
-          "html": "<p>You have side projects scattered across different tools, different folders, different AI sessions. Each time you pick one back up, you spend 30 minutes re-establishing context. Your design ideas live in Figma. Your code lives in GitHub. Your notes live in Apple Notes or wherever. Nothing connects.</p><p><strong>For a vibe coder, disconnected tools are the number one project killer.</strong> Not lack of motivation. Not lack of skill. The friction of re-establishing context every time you sit down is what turns a promising side project into an abandoned repo.</p>"
+          "html": "<p>You have side projects scattered across different tools, different folders, different AI sessions. Each time you pick one back up, you spend 30 minutes re-establishing context. Your design ideas live in Figma. Your code lives in GitHub. Your notes live in Apple Notes or wherever. Nothing connects.</p><p>Picture this. Saturday morning. Coffee. You open your laptop and your AI already knows exactly where you left off last weekend - the half-built feature, the bug you were chasing, the idea you had in the shower on Wednesday. No context rebuild. No digging through old tabs. Thirty seconds and you are back in flow. That is not productivity software. That is the difference between a shipped side project and another abandoned repo.</p><p><strong>For a vibe coder, disconnected tools are the number one project killer.</strong> Not lack of motivation. Not lack of skill. The friction of re-establishing context every time you sit down is what turns a promising side project into an abandoned repo. Every lost context rebuild is a weekend your project did not move forward. Multiply by 20 weekends a year and you are watching a shipped product evaporate into startup friction.</p>"
         },
         {
           "type": "method",
@@ -302,7 +302,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The magic happens when your tools share context across projects. The cool animation technique you figured out in Project A is available when you are building Project B. The API integration pattern you nailed last month shows up when you need it today. Nothing gets lost. Everything compounds.</p><p><strong>A connected context layer turns a graveyard of abandoned side projects into a portfolio that compounds.</strong></p>"
+          "html": "<p>The magic happens when your tools share context across projects. The cool animation technique you figured out in Project A is available when you are building Project B. The API integration pattern you nailed last month shows up when you need it today. Nothing gets lost. Everything compounds.</p><p>Think about it like this. Every vibe coder on a disconnected stack starts every project from zero. Every vibe coder on a connected stack starts every project with the accumulated craft of every project they have ever touched. Over a year, that gap becomes unbridgeable. The connected vibe coder is not working harder. They are building on a foundation that keeps growing while the disconnected one keeps flattening it.</p><p><strong>A connected context layer turns a graveyard of abandoned side projects into a portfolio that compounds.</strong> Every weekend you code adds to a knowledge base your future self will thank you for. That is the closest thing to compound interest a creative practice can offer.</p>"
         },
         {
           "type": "method",
@@ -313,7 +313,7 @@
         },
         {
           "type": "why",
-          "html": "<p>The vibe coders shipping the most are not working harder. They are working with connected tools that remember everything. Every session builds on the last. Every project benefits from every other project. The compound effect over a year is massive.</p><p><strong>Your tools sharing a brain is the difference between 5 abandoned repos and 5 shipped side projects.</strong></p>"
+          "html": "<p>The vibe coders shipping the most are not working harder. They are working with connected tools that remember everything. Every session builds on the last. Every project benefits from every other project. The compound effect over a year is massive.</p><p>Imagine if your shower-idea from Wednesday morning was already captured, tagged, and available when you opened your laptop on Saturday. Imagine if the elegant solution you found last month for Project A automatically surfaced when you hit the same problem in Project C. Imagine if every clever hack you have ever figured out compounded into a personal craft library that made your AI smarter every week.</p><p><strong>Your tools sharing a brain is the difference between 5 abandoned repos and 5 shipped side projects.</strong> Not talent. Not time. Wiring. The vibe coders who figure this out first are the ones whose GitHub looks like a creative practice instead of a graveyard.</p>"
         },
         {
           "type": "method",
@@ -324,7 +324,7 @@
         },
         {
           "type": "why",
-          "html": "<p>Connected tools are the multiplier that turns hobby coding into a real creative practice. Your context compounds. Your patterns accumulate. Your AI gets smarter with every project. The friction drops and the shipping rate goes up. That is how vibe coding becomes a superpower.</p>"
+          "html": "<p>Connected tools are the multiplier that turns hobby coding into a real creative practice. Your context compounds. Your patterns accumulate. Your AI gets smarter with every project. The friction drops and the shipping rate goes up. That is how vibe coding becomes a superpower.</p><p>What is stopping you from wiring this together next weekend instead of starting another half-finished project? One Saturday of setup for a lifetime of compounding craft. The vibe coders who wire this first will look back in a year at a shipped portfolio. The ones that do not will look back at the same set of half-finished repos they started with.</p>"
         }
       ]
     }
