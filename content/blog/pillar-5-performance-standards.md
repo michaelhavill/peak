@@ -50,15 +50,15 @@ Imagine if a year from now your work didn't compete with anyone. Imagine if the 
 │                                         before the brief even started"          │
 │                                                                                 │
 │  ┌─────────────────────────┐           ┌─────────────────────────┐              │
-│  │  You: faster executor    │           │  You: the orchestrator   │            │
-│  │  AI: does the typing     │           │  AI: extends your reach  │            │
-│  │                          │           │                          │            │
-│  │  Output: same as before  │           │  Output: work you could  │            │
-│  │  just quicker            │           │  never have done alone   │            │
-│  │                          │           │                          │            │
-│  │  Value: depreciating     │           │  Value: compounding      │            │
-│  │  (everyone else can too) │           │  (nobody else has your   │            │
-│  │                          │           │   context + judgment)    │            │
+│  │  You: faster executor   │           │  You: the orchestrator  │              │
+│  │  AI: does the typing    │           │  AI: extends your reach │              │
+│  │                         │           │                         │              │
+│  │  Output: same as before │           │  Output: work you could │              │
+│  │  just quicker           │           │  never have done alone  │              │
+│  │                         │           │                         │              │
+│  │  Value: depreciating    │           │  Value: compounding     │              │
+│  │  (everyone else can too)│           │  (nobody else has your  │              │
+│  │                         │           │   context + judgment)   │              │
 │  └─────────────────────────┘           └──────────────────────────┘             │
 │                                                                                 │
 │  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │

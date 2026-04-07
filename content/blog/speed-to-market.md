@@ -39,19 +39,19 @@ Run the math on what dead time actually costs. Your senior engineer makes $200k 
 │  Each "wait" = context assembly + handoff loss                                  │
 │                                                                                 │
 │  ┌──────────────────────┐              ┌──────────────────────┐                 │
-│  │  YOUR DAY             │              │  YOUR DAY             │               │
-│  │                       │              │                       │               │
-│  │  ████████████████ 70% │              │  ████ 30% assembly    │               │
-│  │  Assembly: pulling    │              │  AI handles overnight  │              │
-│  │  dashboards, reading  │              │                       │               │
-│  │  Slack, gathering     │              │  ████████████████ 70% │               │
-│  │  context              │              │  Judgment: decisions,  │              │
-│  │                       │              │  strategy, shipping    │              │
-│  │  ██████ 30%           │              │                       │               │
-│  │  Judgment: actual     │              │  Context flows across  │              │
-│  │  decisions            │              │  every handoff. No one │              │
-│  │                       │              │  re-establishes what   │              │
-│  └──────────────────────┘              │  the last person knew. │               │
+│  │  YOUR DAY            │              │  YOUR DAY            │                 │
+│  │                      │              │                      │                 │
+│  │  ████████████████ 70%│              │  ████ 30% assembly   │                 │
+│  │  Assembly: pulling   │              │  AI handles overnight│                 │
+│  │  dashboards, reading │              │                      │                 │
+│  │  Slack, gathering    │              │  ████████████████ 70%│                 │
+│  │  context             │              │  Judgment: decisions,│                 │
+│  │                      │              │  strategy, shipping  │                 │
+│  │  ██████ 30%          │              │                      │                 │
+│  │  Judgment: actual    │              │  Context flows across│                 │
+│  │  decisions           │              │ every handoff. No one│                 │
+│  │                      │              │  re-establishes what │                 │
+│  └──────────────────────┘              │ the last person knew.│                 │
 │                                        └──────────────────────┘                 │
 │  Idea to prod: 6 weeks                                                          │
 │                                        Idea to prod: 8 days                     │

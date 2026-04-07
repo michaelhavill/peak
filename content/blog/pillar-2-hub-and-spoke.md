@@ -39,9 +39,9 @@ The builder down the hall swaps AI providers over lunch. Her workflows keep runn
 │                                                                                 │
 │  ┌─────────────────────────┐           ┌─────────────────────────┐              │
 │  │    VENDOR PLATFORM      │           │     YOUR HUB            │              │
-│  │  ┌───┐ ┌───┐ ┌───┐     │           │  Knowledge base         │               │
-│  │  │ A │ │ B │ │ C │     │           │  Workflow logic          │              │
-│  │  └─┬─┘ └─┬─┘ └─┬─┘     │           │  Orchestration rules    │               │
+│  │  ┌───┐ ┌───┐ ┌───┐      │           │  Knowledge base         │              │
+│  │  │ A │ │ B │ │ C │      │           │  Workflow logic         │              │
+│  │  └─┬─┘ └─┬─┘ └─┬─┘      │           │  Orchestration rules    │              │
 │  │    └──┬───┘───┬──┘      │           │  Business rules         │              │
 │  │       │ LOCKED │        │           └──────────┬──────────────┘              │
 │  │       │  IN    │        │                ┌─────┼─────┐                       │

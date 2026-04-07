@@ -41,7 +41,7 @@ Imagine if every person on your team treated AI the way your top performer alrea
 │  │   TEAM AI ADOPTION         │        │   TEAM AI ADOPTION         │           │
 │  │                            │        │                            │           │
 │  │   ██ 3 people use daily    │        │   ████████████████ doers   │           │
-│  │   ░░ 5 tried it once      │        │   Ship weekly. No excuses. │            │
+│  │   ░░ 5 tried it once       │        │   Ship weekly. No excuses. │           │
 │  │   ░░ rest never logged in  │        │                            │           │
 │  │                            │        │   Hire: agency > domain    │           │
 │  │   $50K budget              │        │   Train: 1:1 tutoring      │           │

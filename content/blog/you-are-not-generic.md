@@ -54,7 +54,7 @@ Imagine if every piece of work you produced this year carried the unmistakable f
 │      prompt tips                       │  + Taste & craft rules   │             │
 │                                        │                          │             │
 │                                        │  = Output that's         │             │
-│                                        │    unmistakably yours     │            │
+│                                        │    unmistakably yours    │             │
 │                                        └──────────────────────────┘             │
 │                                                                                 │
 │  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─    │

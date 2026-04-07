@@ -43,10 +43,10 @@ Imagine if your judgment could be in three places at once. Imagine if the brief 
 │                                                                                 │
 │  You ──→ Client/Employer             You ──→ Knowledge Base ──→ AI Agents       │
 │                                            ┌──────────────┐                     │
-│  Access: 1 person at a time                │ Your taste    │                    │
-│  Format: Meetings & deliverables           │ Your craft    │                    │
-│  Scale: Linear (more hours = more $)       │ Your opinion  │                    │
-│  Liquidity: Zero                           │ Your judgment │                    │
+│  Access: 1 person at a time                │ Your taste   │                     │
+│  Format: Meetings & deliverables           │ Your craft   │                     │
+│  Scale: Linear (more hours = more $)       │ Your opinion │                     │
+│  Liquidity: Zero                           │ Your judgment│                     │
 │                                            └──────┬───────┘                     │
 │  You trade TIME for MONEY.                        ↓                             │
 │  The oldest, worst deal                                                         │

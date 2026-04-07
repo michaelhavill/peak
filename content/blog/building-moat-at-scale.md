@@ -33,16 +33,16 @@ Here's the thing. **Scaling a knowledge moat is not about distributing the same 
 │  Individual silos:                     Compounding knowledge loop:              │
 │                                                                                 │
 │  ┌─────┐ ┌─────┐ ┌─────┐              ┌─────────────────────────┐               │
-│  │ PM  │ │ Eng │ │ Des │              │   SHARED KNOWLEDGE BASE  │              │
+│  │ PM  │ │ Eng │ │ Des │              │   SHARED KNOWLEDGE BASE │               │
 │  │  ·  │ │  ·  │ │  ·  │              │                         │               │
-│  │ own │ │ own │ │ own │              │  ←── PM deposits calls   │              │
-│  │ AI  │ │ AI  │ │ AI  │              │  ←── Eng deposits ADRs   │              │
-│  └──┬──┘ └──┬──┘ └──┬──┘              │  ←── Des deposits taste  │              │
-│     │       │       │                  │  ←── Ops deposits flows  │             │
-│     ↓       ↓       ↓                  │                         │              │
-│  Each starts from zero.                │  Everyone's AI draws     │             │
-│  No one benefits from                  │  from everything.        │             │
-│  anyone else's context.                └────────────┬────────────┘              │
+│  │ own │ │ own │ │ own │              │  ←── PM deposits calls  │               │
+│  │ AI  │ │ AI  │ │ AI  │              │  ←── Eng deposits ADRs  │               │
+│  └──┬──┘ └──┬──┘ └──┬──┘              │  ←── Des deposits taste │               │
+│     │       │       │                 │  ←── Ops deposits flows │               │
+│     ↓       ↓       ↓                 │                         │               │
+│  Each starts from zero.               │  Everyone's AI draws    │               │
+│  No one benefits from                 │  from everything.       │               │
+│  anyone else's context.               └────────────┬────────────┘               │
 │                                                     ↓                           │
 │  PM doesn't know Eng                   20 people × 5 artifacts/wk               │
 │  constraints. Des doesn't              = 5,200/year                             │

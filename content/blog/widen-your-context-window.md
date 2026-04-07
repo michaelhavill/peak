@@ -49,12 +49,12 @@ Imagine if every decision you made tomorrow was informed by every relevant persp
 │  Your Experience ──→ Decision          Your Experience ──┐                      │
 │                                        200 customer calls ──┐                   │
 │  ┌─────────────────────────┐           Behavioral psych ──┐  │                  │
-│  │  Your 10 years           │           Pricing theory ──┐ │  │                 │
-│  │  3 colleagues' opinions  │           Adjacent markets ─┤ ├──→ Decision       │
-│  │  An article you recall   │           Failure patterns ─┤ │  │                │
-│  │  Your gut instinct       │           Domain expertise ──┘ │  │               │
-│  │                          │           Team context ────────┘  │               │
-│  │  = 4 inputs              │           Historical data ────────┘               │
+│  │  Your 10 years          │           Pricing theory ──┐ │  │                  │
+│  │  3 colleagues' opinions │           Adjacent markets ─┤ ├──→ Decision        │
+│  │  An article you recall  │           Failure patterns ─┤ │  │                 │
+│  │  Your gut instinct      │           Domain expertise ──┘ │  │                │
+│  │                         │           Team context ────────┘  │                │
+│  │  = 4 inputs             │           Historical data ────────┘                │
 │  └─────────────────────────┘                                                    │
 │                                        = unlimited inputs, synthesized          │
 │                                                                                 │

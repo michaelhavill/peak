@@ -44,7 +44,7 @@ Imagine if every draft you got back already sounded like you. Your framing, your
 │  Everyone's opinions.                  │ "Lead with customer  │                 │
 │  No one's judgment.                    │  pain, not TAM"      │                 │
 │                                        │ "Kill features that  │                 │
-│           ↓                            │  don't move retention │                │
+│           ↓                            │  don't move retention│                 │
 │                                        │  within 2 sprints"   │                 │
 │  Output:                               │ "Pricing: value-based│                 │
 │  McKinsey intern's first               │  never cost-plus"    │                 │

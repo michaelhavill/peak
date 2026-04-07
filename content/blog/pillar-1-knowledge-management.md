@@ -40,8 +40,8 @@ Imagine if every instinct you've spent two decades sharpening was actually deplo
 │                                              ┌──────────────┐                   │
 │  "Write me a product brief"                  │ 12 yrs taste │                   │
 │                                              │ 200+ calls   │                   │
-│           ↓                                  │ Team context  │                  │
-│                                              │ Domain rules  │                  │
+│           ↓                                  │ Team context │                   │
+│                                              │ Domain rules │                   │
 │  Generic output that                         └──────┬───────┘                   │
 │  sounds like everyone                               ↓                           │
 │  and no one.                                                                    │
