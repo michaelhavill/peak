@@ -129,11 +129,22 @@ function ThemeSection({
                   "var(--bg-secondary)")
               }
             >
-              <div
-                className="text-[10px] font-medium uppercase tracking-[0.18em] mb-4"
-                style={{ color: themeColor?.text ?? "var(--text-secondary)" }}
-              >
-                Article {String(i + 1).padStart(2, "0")}
+              <div className="flex items-center gap-2 mb-4">
+                <span
+                  className="text-[10px] font-medium uppercase tracking-[0.18em]"
+                  style={{ color: themeColor?.text ?? "var(--text-secondary)" }}
+                >
+                  Path to 100x
+                </span>
+                <span
+                  className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full text-[10px] font-semibold"
+                  style={{
+                    backgroundColor: themeColor?.text ?? "var(--text-primary)",
+                    color: themeColor?.bg ?? "var(--bg-primary)",
+                  }}
+                >
+                  {i + 1}
+                </span>
               </div>
               <div
                 className="text-[16px] md:text-[17px] font-semibold mb-3 leading-[1.4]"
