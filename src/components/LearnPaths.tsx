@@ -24,30 +24,81 @@ function ThemeSection({
   sectionIndex: number;
 }) {
   const baseDelay = sectionIndex * 0.1;
+  const themeColor = THEME_COLORS[theme.id];
+  const chapterNum = String(sectionIndex + 1).padStart(2, "0");
 
   return (
-    <div className="mb-16 last:mb-0">
-      <motion.h3
-        initial={{ opacity: 0, y: 12 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: baseDelay }}
-        className="text-[24px] md:text-[30px] leading-[1.15] mb-2"
+    <div className="mb-28 last:mb-0">
+      {/* Chapter header band */}
+      <div
+        className="relative mb-10 pt-10 pl-6 md:pl-10"
         style={{
-          fontFamily: "var(--font-instrument-serif)",
-          color: "var(--text-primary)",
+          borderTop: `1px solid var(--border-subtle)`,
         }}
       >
-        {theme.heading}
-      </motion.h3>
-      <motion.p
-        initial={{ opacity: 0, y: 12 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: baseDelay + 0.05 }}
-        className="text-[14px] max-w-2xl mb-8 leading-relaxed"
-        style={{ color: "var(--text-secondary)" }}
-      >
-        {theme.description}
-      </motion.p>
+        {/* Color accent bar */}
+        <motion.div
+          initial={{ scaleY: 0 }}
+          animate={isInView ? { scaleY: 1 } : {}}
+          transition={{ duration: 0.6, delay: baseDelay }}
+          className="absolute left-0 top-10 bottom-0 w-1 rounded-full origin-top"
+          style={{ backgroundColor: themeColor?.text ?? "var(--text-primary)" }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4, delay: baseDelay }}
+          className="flex items-center gap-3 mb-5"
+        >
+          <span
+            className="text-[11px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 rounded-full"
+            style={{
+              backgroundColor: themeColor?.bg ?? "var(--bg-elevated)",
+              color: themeColor?.text ?? "var(--text-secondary)",
+            }}
+          >
+            Chapter {chapterNum}
+          </span>
+          <span
+            className="text-[11px] font-medium uppercase tracking-[0.18em]"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            {theme.label}
+          </span>
+        </motion.div>
+
+        <motion.h3
+          initial={{ opacity: 0, y: 14 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: baseDelay + 0.05 }}
+          className="text-[34px] md:text-[48px] leading-[1.05] mb-5 max-w-3xl tracking-tight"
+          style={{
+            fontFamily: "var(--font-instrument-serif)",
+            color: "var(--text-primary)",
+          }}
+        >
+          {theme.heading}
+        </motion.h3>
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: baseDelay + 0.1 }}
+          className="text-[16px] md:text-[17px] max-w-2xl leading-[1.6]"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          {theme.description}
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.4, delay: baseDelay + 0.15 }}
+          className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em]"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          {paths.length} {paths.length === 1 ? "article" : "articles"} in this chapter
+        </motion.div>
+      </div>
 
       <div
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-px rounded-xl overflow-hidden"
@@ -56,59 +107,56 @@ function ThemeSection({
           border: "1px solid var(--border-subtle)",
         }}
       >
-        {paths.map((path, i) => (
-          <motion.a
-            key={path.slug}
-            href={`/blog/${path.slug}`}
-            initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              duration: 0.4,
-              delay: baseDelay + 0.1 + i * 0.06,
-            }}
-            className="flex flex-col p-6 transition-colors duration-200 group"
-            style={{ backgroundColor: "var(--bg-secondary)" }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                "var(--bg-elevated)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                "var(--bg-secondary)")
-            }
-          >
-            <div className="flex flex-wrap gap-1.5 mb-3">
-              {path.themes.map((t) => {
-                const th = LEARN_THEMES.find((x) => x.id === t);
-                const color = THEME_COLORS[t];
-                return (
-                  <span
-                    key={t}
-                    className="text-[10px] px-2 py-0.5 rounded-full font-medium uppercase tracking-wider"
-                    style={{
-                      backgroundColor: color?.bg ?? "var(--bg-elevated)",
-                      color: color?.text ?? "var(--text-secondary)",
-                    }}
-                  >
-                    {th?.label ?? t}
-                  </span>
-                );
-              })}
-            </div>
-            <div
-              className="text-[15px] font-medium mb-2 group-hover:underline leading-snug"
-              style={{ color: "var(--text-primary)" }}
+        {paths.map((path, i) => {
+          return (
+            <motion.a
+              key={path.slug}
+              href={`/blog/${path.slug}`}
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.4,
+                delay: baseDelay + 0.1 + i * 0.06,
+              }}
+              className="flex flex-col p-7 transition-colors duration-200 group relative"
+              style={{ backgroundColor: "var(--bg-secondary)" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "var(--bg-elevated)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "var(--bg-secondary)")
+              }
             >
-              {path.title}
-            </div>
-            <p
-              className="text-[13px] leading-relaxed flex-1"
-              style={{ color: "var(--text-secondary)" }}
-            >
-              {path.description}
-            </p>
-          </motion.a>
-        ))}
+              <div
+                className="text-[10px] font-medium uppercase tracking-[0.18em] mb-4"
+                style={{ color: themeColor?.text ?? "var(--text-secondary)" }}
+              >
+                Article {String(i + 1).padStart(2, "0")}
+              </div>
+              <div
+                className="text-[16px] md:text-[17px] font-semibold mb-3 leading-[1.4]"
+                style={{ color: "var(--text-primary)" }}
+              >
+                {path.title}
+              </div>
+              <p
+                className="text-[13px] leading-[1.6] flex-1 mb-5"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {path.description}
+              </p>
+              <div
+                className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.14em] transition-transform duration-200 group-hover:translate-x-0.5"
+                style={{ color: "var(--text-primary)" }}
+              >
+                Read article
+                <span aria-hidden="true">→</span>
+              </div>
+            </motion.a>
+          );
+        })}
       </div>
     </div>
   );
