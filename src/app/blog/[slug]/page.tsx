@@ -4,6 +4,7 @@ import PersonaPathway from "@/components/PersonaPathway";
 import EmailCapture from "@/components/EmailCapture";
 import ShareBar from "@/components/ShareBar";
 import ArticleBody from "@/components/ArticleBody";
+import AuthorBio from "@/components/AuthorBio";
 import Link from "next/link";
 
 export function generateStaticParams() {
@@ -183,6 +184,8 @@ export default async function BlogPostPage({
             dangerouslySetInnerHTML={{ __html: post.htmlCtas }}
           />
         )}
+
+        <AuthorBio />
 
         <div
           className="mt-10 pt-6 flex justify-end"
