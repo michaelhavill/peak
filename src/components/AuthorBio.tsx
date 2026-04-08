@@ -23,7 +23,17 @@ export default function AuthorBio() {
         className="text-[14px] leading-[1.65] mb-4"
         style={{ color: "var(--text-secondary)" }}
       >
-        Building the future of cognitive care at Mindspan as CPDO. Past and
+        Building the future of cognitive care at{" "}
+        <a
+          href="https://mindspan.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+          style={{ color: "var(--text-primary)" }}
+        >
+          Mindspan
+        </a>{" "}
+        as CPDO. Past and
         present advisor to Harvard&rsquo;s Mittal Institute, Zus Health, Doro
         Mind and a handful of other exciting health tech companies. Founder of
         The Department of Doing, a product studio that&rsquo;s shipped
