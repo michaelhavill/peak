@@ -32,8 +32,7 @@ export default function AuthorBio() {
           style={{ color: "var(--text-primary)" }}
         >
           Mindspan
-        </a>{" "}
-        as CPDO. Past and
+        </a>. Past and
         present advisor to Harvard&rsquo;s Mittal Institute, Zus Health, Doro
         Mind and a handful of other exciting health tech companies. Founder of
         The Department of Doing, a product studio that&rsquo;s shipped
