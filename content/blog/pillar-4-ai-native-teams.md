@@ -208,6 +208,3 @@ These questions reveal whether your team is AI-native -- or just AI-equipped.
 - [Follow the Path to Adding 10 Team Members - Without a Single Hire →](/blog/10x-team-ai-peers)
 - [Build the Path to Workspaces Where Humans and AI Actually Collaborate →](/blog/collaborative-spaces)
 - [Chart the Path from Individual Moat to Company Moat →](/blog/building-moat-at-scale)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

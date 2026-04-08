@@ -189,6 +189,3 @@ These questions reveal whether your team's knowledge is compounding - or evapora
 - [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
 - [See the Path to Owning the Center and Renting the Edges →](/blog/pillar-2-hub-and-spoke)
 - [Follow the Path to Monetising Your Expertise →](/blog/monetise-your-expertise)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

@@ -207,6 +207,3 @@ These questions reveal whether your AI is coding in your reality -- or in a text
 - [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
 - [The Path to Shipping in Weeks What Used to Take Quarters →](/blog/speed-to-market)
 - [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

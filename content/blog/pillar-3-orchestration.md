@@ -210,6 +210,3 @@ These questions reveal whether you're using AI for the easy parts and still doin
 - [Follow the Path to Adding 10 Team Members - Without a Single Hire →](/blog/10x-team-ai-peers)
 - [See the Path to Owning the Center and Renting the Edges →](/blog/pillar-2-hub-and-spoke)
 - [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

@@ -206,6 +206,3 @@ These questions reveal whether your AI is an assistant you prompt -- or a peer t
 - [Map the Path from AI Tasks to AI Workflows →](/blog/pillar-3-orchestration)
 - [Build the Path to Workspaces Where Humans and AI Actually Collaborate →](/blog/collaborative-spaces)
 - [Learn the Path to Hiring Doers Over Talkers →](/blog/pillar-4-ai-native-teams)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

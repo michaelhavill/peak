@@ -189,6 +189,3 @@ These questions reveal whether your team is actually collaborating with AI - or 
 - [Follow the Path to Adding 10 Team Members - Without a Single Hire →](/blog/10x-team-ai-peers)
 - [Learn the Path to Hiring Doers Over Talkers →](/blog/pillar-4-ai-native-teams)
 - [Chart the Path from Individual Moat to Company Moat →](/blog/building-moat-at-scale)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

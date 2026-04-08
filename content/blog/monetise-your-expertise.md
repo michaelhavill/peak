@@ -208,6 +208,3 @@ Before you move on, sit with these. They'll tell you exactly where the unrealise
 - [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
 - [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
 - [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

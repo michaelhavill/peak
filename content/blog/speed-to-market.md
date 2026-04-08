@@ -191,6 +191,3 @@ These questions will expose exactly where your dead time lives - and whether you
 - [Map the Path from AI Tasks to AI Workflows →](/blog/pillar-3-orchestration)
 - [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
 - [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

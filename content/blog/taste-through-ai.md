@@ -225,6 +225,3 @@ These questions will expose exactly how much of your judgment is locked in your 
 - [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
 - [Walk the Path to Code That Carries Your Craft →](/blog/coding-in-craft)
 - [The Path from Commoditized to Irreplaceable →](/blog/pillar-5-performance-standards)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

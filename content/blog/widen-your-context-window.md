@@ -204,6 +204,3 @@ These questions reveal how wide - or narrow - your current context window is.
 - [The Path to Building Your Moat: Why Knowledge Bases Are the New Career Capital →](/blog/pillar-1-knowledge-management)
 - [Find the Path to Making AI Carry Your Taste →](/blog/taste-through-ai)
 - [Follow the Path to Monetising Your Expertise →](/blog/monetise-your-expertise)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)

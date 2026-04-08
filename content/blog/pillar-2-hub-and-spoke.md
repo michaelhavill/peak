@@ -203,6 +203,3 @@ These questions reveal whether you own your infrastructure - or your vendors own
 - [Map the Path from AI Tasks to AI Workflows →](/blog/pillar-3-orchestration)
 - [Chart the Path from Individual Moat to Company Moat →](/blog/building-moat-at-scale)
 - [The Path to Shipping in Weeks What Used to Take Quarters →](/blog/speed-to-market)
-
-
-**Chat with me:** [LinkedIn](https://www.linkedin.com/in/michaelvanhavill/)
