@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { LEARN_THEMES, LEARN_PATHS } from "@/lib/constants";
 
@@ -28,7 +28,7 @@ function ThemeSection({
   const chapterNum = String(sectionIndex + 1).padStart(2, "0");
 
   return (
-    <div className="mb-28 last:mb-0">
+    <div id={theme.id} className="mb-28 last:mb-0 scroll-mt-28 md:scroll-mt-32">
       {/* Chapter header band */}
       <div
         className="relative mb-10 pt-10 pl-6 md:pl-10"
@@ -177,6 +177,41 @@ export default function LearnPaths() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeTheme, setActiveTheme] = useState("all");
+
+  // When someone navigates to #<theme-id> (e.g. from the top nav), reset the
+  // filter so every chapter renders and scroll the chapter into view. Because
+  // the chapter list is wrapped in <AnimatePresence mode="wait">, the old
+  // panel has to finish exiting before the target element mounts - so we poll
+  // for the element with rAF and scroll as soon as it appears.
+  useEffect(() => {
+    const themeIds = new Set(LEARN_THEMES.map((t) => t.id));
+
+    const scrollToHashWhenReady = (id: string) => {
+      let attempts = 0;
+      const tick = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+        if (attempts++ < 60) {
+          requestAnimationFrame(tick);
+        }
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const handleHash = () => {
+      const hash = window.location.hash.replace(/^#/, "");
+      if (themeIds.has(hash)) {
+        setActiveTheme("all");
+        scrollToHashWhenReady(hash);
+      }
+    };
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
 
   const visibleThemes =
     activeTheme === "all"

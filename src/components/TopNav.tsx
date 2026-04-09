@@ -3,8 +3,16 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { NAV_ITEMS } from "@/lib/constants";
+import { LEARN_THEMES } from "@/lib/constants";
 import SubscribeModal from "./SubscribeModal";
+
+// Build chapter nav items from the canonical learning-path themes so the
+// header menu stays in sync with LearnPaths. Hrefs resolve to /#<theme-id>
+// so they work from any route (blog posts included).
+const CHAPTER_NAV_ITEMS = LEARN_THEMES.map((t) => ({
+  label: t.label,
+  href: `/#${t.id}`,
+}));
 
 export default function TopNav() {
   const pathname = usePathname();
@@ -75,7 +83,9 @@ export default function TopNav() {
         className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-3 md:pt-4"
       >
         <div
-          className="mx-auto flex items-center justify-between gap-4 md:gap-8 h-12 md:h-14 pl-5 pr-2 md:pl-6 md:pr-2.5 rounded-full max-w-[1100px]"
+          className={`mx-auto flex items-center justify-between gap-4 md:gap-8 h-12 md:h-14 pl-5 pr-2 md:pl-6 md:pr-2.5 rounded-full ${
+            hasDarkHero ? "w-full" : "max-w-[1100px]"
+          }`}
           style={glassStyle}
         >
           {/* Brand */}
@@ -115,12 +125,12 @@ export default function TopNav() {
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-5 lg:gap-7">
-            {NAV_ITEMS.map((item) => (
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
+            {CHAPTER_NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-[13px] transition-colors duration-200"
+                className="text-[13px] whitespace-nowrap transition-colors duration-200"
                 style={{
                   color: textSecondary,
                   textShadow: useDarkTheme ? "none" : "0 1px 8px rgba(0,0,0,0.35)",
@@ -141,7 +151,7 @@ export default function TopNav() {
             {/* Sign up button (desktop) */}
             <button
               onClick={() => setShowSubscribe(true)}
-              className="hidden md:inline-flex items-center justify-center h-9 px-5 rounded-full text-[13px] font-medium cursor-pointer transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              className="hidden lg:inline-flex items-center justify-center h-9 px-5 rounded-full text-[13px] font-medium cursor-pointer transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
               style={{
                 backgroundColor: useDarkTheme
                   ? "var(--text-primary)"
@@ -157,12 +167,12 @@ export default function TopNav() {
               Sign up
             </button>
 
-            {/* Mobile toggle */}
+            {/* Mobile / tablet toggle */}
             <button
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
-              className="md:hidden flex items-center justify-center h-10 w-10 rounded-full cursor-pointer"
+              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-full cursor-pointer"
               style={{
                 color: textColor,
               }}
@@ -197,11 +207,13 @@ export default function TopNav() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.98 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="md:hidden mx-auto mt-2 rounded-3xl overflow-hidden max-w-[1100px]"
+              className={`lg:hidden mx-auto mt-2 rounded-3xl overflow-hidden ${
+                hasDarkHero ? "w-full" : "max-w-[1100px]"
+              }`}
               style={glassStyle}
             >
               <nav className="flex flex-col py-3">
-                {NAV_ITEMS.map((item, i) => (
+                {CHAPTER_NAV_ITEMS.map((item, i) => (
                   <motion.a
                     key={item.href}
                     href={item.href}
