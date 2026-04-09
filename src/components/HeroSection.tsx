@@ -8,9 +8,7 @@ const CF = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1
 
 const HERO_VIDEOS = [
   `${CF}/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4`,
-  `${CF}/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4`,
   `${CF}/hf_20260319_055001_8e16d972-3b2b-441c-86ad-2901a54682f9.mp4`,
-  `${CF}/hf_20260404_050931_6b868bbb-85a4-498d-921e-e815d5a55906.mp4`,
   `${CF}/hf_20260402_054547_9875cfc5-155a-4229-8ec8-b7ba7125cbf8.mp4`,
   `${CF}/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4`,
   `${CF}/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4`,
