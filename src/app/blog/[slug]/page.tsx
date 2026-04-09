@@ -21,7 +21,7 @@ export default async function BlogPostPage({
   const variants = getPostVariants(slug);
 
   return (
-    <main className="min-h-screen px-6 md:px-16 lg:px-20 py-16 lg:ml-[180px]">
+    <main className="min-h-screen px-6 md:px-16 lg:px-20 pt-28 pb-16">
       <div className="max-w-2xl mx-auto">
         <Link
           href="/#learn"
