@@ -244,11 +244,10 @@ function ThemeSection({
                   </span>
                 </div>
                 <div
-                  className="text-[19px] md:text-[22px] font-semibold mb-3 leading-[1.3]"
+                  className="text-[22px] md:text-[26px] font-normal mb-4 leading-[1.35]"
                   style={{
                     color: "var(--text-primary)",
                     fontFamily: "var(--font-instrument-serif)",
-                    letterSpacing: "-0.01em",
                   }}
                 >
                   {path.title}
