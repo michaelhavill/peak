@@ -77,12 +77,25 @@ body {
   line-height: 1.15;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 0.85rem;
+}
+.prose-100x h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  bottom: 0.3em;
+  width: 3px;
+  background: var(--article-accent, var(--text-primary));
+  border-radius: 2px;
 }
 .prose-100x h3 {
   font-size: 21px;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
+  color: var(--article-accent, var(--text-primary));
 }
 .prose-100x p {
   margin-bottom: 1rem;
@@ -93,12 +106,14 @@ body {
   font-weight: 600;
 }
 .prose-100x a {
-  color: var(--text-primary);
+  color: var(--article-accent, var(--text-primary));
   text-decoration: underline;
+  text-decoration-color: rgba(var(--article-accent-rgb, 26, 26, 26), 0.35);
   text-underline-offset: 2px;
+  transition: text-decoration-color 150ms ease;
 }
 .prose-100x a:hover {
-  color: var(--text-secondary);
+  text-decoration-color: var(--article-accent, var(--text-primary));
 }
 .prose-100x hr {
   border: none;
@@ -115,11 +130,23 @@ body {
   margin-bottom: 0.35rem;
 }
 .prose-100x blockquote {
-  border-left: 2px solid var(--border-medium);
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-  color: var(--text-secondary);
-  font-style: italic;
+  border-left: 3px solid var(--article-accent, var(--border-medium));
+  padding: 0.85rem 1.25rem;
+  margin: 1.75rem 0;
+  color: var(--text-primary);
+  background: rgba(var(--article-accent-rgb, 26, 26, 26), 0.05);
+  border-radius: 0 6px 6px 0;
+  font-style: normal;
+}
+.prose-100x blockquote p {
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+.prose-100x blockquote strong {
+  color: var(--article-accent, var(--text-primary));
+}
+.prose-100x blockquote a {
+  color: var(--article-accent, var(--text-primary));
 }
 
 /* ASCII illustrations in blog posts */

@@ -157,6 +157,19 @@ export const TESTIMONIALS = [
   },
 ];
 
+/**
+ * Chapter color tokens - each learning-path theme owns a tinted background
+ * and a saturated accent. Used on homepage cards and article pages so the
+ * same article visually belongs to its primary chapter wherever it appears.
+ */
+export const THEME_COLORS: Record<string, { bg: string; text: string }> = {
+  "build-your-moat": { bg: "#EAF0E8", text: "#4A7550" },
+  "craft-and-taste": { bg: "#EDE8F5", text: "#6B5A8A" },
+  "ship-faster":     { bg: "#F5EDE6", text: "#8A5A38" },
+  "ai-teams":        { bg: "#E6EEF5", text: "#3A5C8A" },
+  "scale":           { bg: "#F5E8EE", text: "#8A3A5C" },
+};
+
 export const LEARN_THEMES = [
   {
     id: "build-your-moat",

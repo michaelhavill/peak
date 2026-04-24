@@ -32,14 +32,15 @@ export default function PersonaSelector({
     <div
       className="mb-10 py-5 px-5 md:px-6 rounded-xl"
       style={{
-        backgroundColor: "var(--bg-elevated)",
+        backgroundColor:
+          "color-mix(in srgb, var(--article-accent-bg, var(--bg-elevated)) 60%, var(--bg-elevated))",
         border: "1px solid var(--border-subtle)",
       }}
     >
       <div className="flex items-center justify-between mb-3">
         <p
           className="text-[13px] font-medium uppercase tracking-widest"
-          style={{ color: "var(--text-tertiary)" }}
+          style={{ color: "var(--article-accent, var(--text-tertiary))" }}
         >
           Read this as a...
         </p>
@@ -66,13 +67,13 @@ export default function PersonaSelector({
               className="relative h-[34px] px-4 rounded-full text-[15px] font-medium transition-colors whitespace-nowrap"
               style={{
                 backgroundColor: isSelected
-                  ? "var(--text-primary)"
+                  ? "var(--article-accent, var(--text-primary))"
                   : "var(--bg-secondary)",
                 color: isSelected
-                  ? "var(--bg-primary)"
+                  ? "#FFFFFF"
                   : "var(--text-secondary)",
                 border: isSelected
-                  ? "1px solid var(--text-primary)"
+                  ? "1px solid var(--article-accent, var(--text-primary))"
                   : "1px solid var(--border-medium)",
               }}
             >
