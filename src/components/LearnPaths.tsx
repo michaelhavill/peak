@@ -407,7 +407,7 @@ export default function LearnPaths() {
       className="py-20 md:py-28 px-8 md:px-16 lg:px-20"
       style={{ borderTop: "1px solid var(--border-subtle)" }}
     >
-      <div className="max-w-5xl" ref={ref}>
+      <div className="max-w-5xl mx-auto" ref={ref}>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

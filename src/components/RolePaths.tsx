@@ -10,7 +10,7 @@ export default function RolePaths() {
 
   return (
     <section className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-      <div className="max-w-5xl" ref={ref}>
+      <div className="max-w-5xl mx-auto" ref={ref}>
         <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-4">From commoditized to irreplaceable</motion.h2>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.05 }} className="text-[15px] mb-12" style={{ color: "var(--text-secondary)" }}>
           Let&apos;s be honest - 99% of people use AI the same way. You&apos;re building the moat that puts you in the 1%. For your career and every company you touch. That&apos;s the path.

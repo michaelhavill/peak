@@ -11,7 +11,7 @@ export default function TestimonialsCarousel() {
 
   return (
     <section id="builders" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-      <div className="max-w-5xl" ref={ref}>
+      <div className="max-w-5xl mx-auto" ref={ref}>
         <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">Builders in the 1%</motion.h2>
       </div>
       <div className="overflow-hidden">

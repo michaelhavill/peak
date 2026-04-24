@@ -11,7 +11,7 @@ export default function FooterCTA() {
 
   return (
     <section className="py-24 md:py-32 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-      <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="max-w-3xl">
+      <motion.div ref={ref} initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="max-w-5xl mx-auto">
         <PretextReveal
           text="The 99% are getting commoditized. Build your moat."
           font="56px 'Instrument Serif'"

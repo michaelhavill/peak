@@ -38,7 +38,7 @@ export default function CommandCenter() {
 
   return (
     <section id="surfaces" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
-      <div className="max-w-5xl" ref={ref}>
+      <div className="max-w-5xl mx-auto" ref={ref}>
         <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">Where your moat compounds - shared surfaces for humans and AI</motion.h2>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }}>
           <div className="flex gap-3 mb-8">
