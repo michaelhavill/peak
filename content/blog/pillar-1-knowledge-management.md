@@ -159,38 +159,6 @@ Different domains. Same pattern. Same economics. The moat isn't the knowledge ba
 
 ---
 
-## The Wiki-as-Code Workflow
-
-Here's the tactical pattern that turns this from philosophy into muscle memory. Stop thinking of a knowledge base as a tool you write into. Start thinking of it as a repository the LLM compiles, maintains, and queries - the way an engineer thinks about a codebase.
-
-**This is not RAG.** Most people's mental model for LLMs plus documents is upload a pile of files and let the model retrieve chunks at query time. That works, barely. The LLM rediscovers your knowledge from scratch on every question. Nothing accumulates. Ask a subtle question that requires synthesizing five documents and the model has to find and piece together the fragments every single time. The wiki-as-code pattern flips that. The LLM reads each new source once, integrates the key claims into a persistent, interlinked set of markdown pages, flags contradictions, and files the synthesis back. The cross-references are already there. The contradictions have already been surfaced. The next query doesn't re-derive - it builds on everything that came before. That is the difference between a search box and a compiler.
-
-**The shape of the system is three layers.** One: a `raw/` directory for source documents - articles, papers, repos, datasets, screenshots, meeting transcripts, whatever feeds your thinking. Immutable. Two: a `wiki/` directory of LLM-generated markdown files - concept pages, entity pages, comparisons, an overview, an evolving synthesis. The LLM owns this layer entirely. Three: a schema file (`CLAUDE.md` for Claude Code, `AGENTS.md` for Codex) that tells the LLM how the wiki is structured, what conventions to follow, and what workflows to run on ingest, query, and maintenance. That schema is the single configuration that makes the LLM a disciplined wiki maintainer instead of a generic chatbot. You and the LLM co-evolve it as you figure out what actually works for your domain.
-
-Ingest is the boring part and the whole game. Web articles flow in through the Obsidian Web Clipper extension - one hotkey converts a page into a clean markdown file with all the related images pulled down locally. Meeting notes flow in through a Granola-style capture loop. Papers get dropped into `raw/papers/`. Codebases get indexed by Cursor or Claude Code. The bar to add a source should be friction-free - if it isn't, you won't, and the base won't compound.
-
-Compilation is where the LLM earns its keep. Once the raw folder has real volume, you point an agent at it with instructions like "summarize every new document, extract key concepts, write concept pages with backlinks to source material, keep the index current." The agent does this as a background loop. You wake up to a wiki that's been weeded, cross-linked, and organized while you slept. No fancy RAG. At the ~100-source, hundreds-of-pages scale, the agent happily navigates the markdown directly. The infrastructure you thought you needed is a pile of markdown files and a decent agent loop.
-
-Two special files do a lot of quiet work. `index.md` is content-oriented - a catalog of every page with a one-line summary, organized by category, updated on every ingest. The agent reads it first to figure out where to drill in. `log.md` is chronological - an append-only record of every ingest, query, and lint pass, each entry prefixed consistently (`## [2026-04-02] ingest | Article Title`) so it parses with `grep` and `tail`. One gives you the shape of the knowledge. The other gives you the timeline. Together they let both you and the agent orient at any moment without rebuilding context from zero.
-
-Obsidian is the frontend. The raw data, the compiled wiki, the derived visualizations - all viewable in one place. The LLM writes. You read. Occasionally you curate. Plugins like Marp render slide decks straight from markdown when you need to present. Mermaid diagrams render inline. The editor becomes your IDE for knowledge the same way VS Code is your IDE for code.
-
-Q&A is where it pays for itself. Ask a complex question against the base - "what are the three ways my interview notes and the last six founder letters disagree about retention?" - and the agent actually goes off and answers it. Not by guessing. By reading the relevant markdown, cross-referencing, and writing the answer back. Often the answer is itself a new markdown file, a new Marp deck, a new matplotlib chart - all of which gets filed back into the wiki. **Every exploration adds up.** Your own queries become the next generation of knowledge assets.
-
-Linting closes the loop. Run periodic "health checks" - tell the LLM to find inconsistent data, impute missing values with web searches, flag interesting connections that could become new concept pages, suggest new questions to ask. The wiki gets cleaner and denser with every pass. That is a Ray Dalio "principles" document on a compounding curve you couldn't run by hand.
-
-Extra tools emerge naturally. A search engine over the wiki is the obvious one - at small scale the index file is enough, but as things grow you want real search. Tools like [qmd](https://github.com/tobi/qmd) give you hybrid BM25/vector search and LLM re-ranking on-device, exposed as both a CLI (so agents can shell out to it) and an MCP server (so agents can use it as a native tool). You can also just vibe-code a naive search script with the LLM when the need arises. Custom report generators, slide builders, dashboard outputs - none of it is strategic. All of it is leverage. The base plus a half-dozen scrappy tools around it is the entire product.
-
-The whole thing is a git repo of markdown files, so you get version history, branching, diffs, and collaboration for free. No proprietary database to migrate off. No vendor to get locked into. If you ever move tools, you copy a folder.
-
-And the destination is clear. Once the wiki is big enough, synthetic data generation and fine-tuning become real options - bake the knowledge into the weights instead of the context window. You don't have to get there for this to pay. But it's the horizon this is pointing at.
-
-This is closer in spirit to Vannevar Bush's 1945 Memex than it is to anything most people call a knowledge management tool. Bush's vision was a personal, curated store with associative trails between documents - private, actively maintained, with the connections as valuable as the documents themselves. The piece he couldn't solve was who does the maintenance. Humans abandon wikis because the bookkeeping burden grows faster than the value. LLMs don't get bored, don't forget to update a cross-reference, and can touch 15 files in one pass. The Memex finally has its maintainer.
-
-**Net-net:** raw sources in, compiled wiki out, agents operating over both, outputs filed back in, everything viewable in Obsidian. You rarely write the wiki. You curate and query it. That is the 20-minute-a-day habit that compounds into a career-defining asset.
-
----
-
 ## Where This Connects
 
 Knowledge management isn't one idea among five. It's the foundation the other four build on - and that distinction matters more than most people realize.
@@ -221,12 +189,6 @@ These aren't hypotheticals. Real builders and companies are turning knowledge ba
 
 - **Linear + Slack + Claude** - product teams connect their issue tracker and communication channels to AI via integrations. When the PM prompts for sprint priorities, the AI already knows the backlog, the recent conversations, and the customer feedback without anyone copy-pasting a thing.
 
-- **Obsidian + Claude Code as a personal wiki compiler** - a growing number of operators treat their knowledge base like a codebase: a `raw/` directory for source docs, a `wiki/` directory the LLM maintains, and an agent loop that summarizes, backlinks, and indexes in the background. At the ~100-article, ~400K-word scale, no fancy RAG is needed - the LLM navigates the markdown directly. Ingest happens through the Obsidian Web Clipper for articles and auto-captured images, Granola for meetings, and direct drops for papers and datasets.
-
-- **Marp + matplotlib + LLM output** - Q&A against the wiki isn't just text out. Agents render slide decks in Marp format, generate matplotlib charts, or draft new concept pages - all filed back into the wiki itself. The knowledge store grows denser with every query you run against it. Your explorations don't evaporate. They accumulate.
-
-- **Wiki health checks as institutional linting** - operators run periodic agent passes over the wiki to find inconsistencies, impute missing data with live web searches, surface connections between disparate concepts, and suggest new article candidates. Think of it as a linter for your institutional memory. The wiki gets cleaner and more connected every week, without a human doing the weeding.
-
 ---
 
 ## Ask Yourself
@@ -244,8 +206,6 @@ Before you move on, sit with these. They'll tell you exactly where you stand - a
 5. **What would a new hire's AI know on day one?** If the answer is "nothing about how we actually work here" - you don't have institutional memory. You have institutional amnesia with good intentions. [Explore the full framework →](/#philosophy)
 
 6. **What's your 20-minute investment?** Pick one domain of your expertise right now. What would you document first? That's the one that's costing you the most every time you prompt without it.
-
-7. **Does your LLM write back into your knowledge base, or just read from it?** Read-only is static. Read-write is compounding. When the agent can summarize a new source, extract a concept, draft a backlinked page, and file it into the wiki - your exploration loop itself becomes the accumulation engine. Every query deposits. Every answer is also an asset.
 
 ---
 

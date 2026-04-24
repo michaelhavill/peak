@@ -6,25 +6,24 @@ theme:
   - craft-and-taste
   - ship-faster
 description: >-
-  One engineering team's full case study - from 60% acceptance rate to 95%,
-  from 3-month onboarding to 2-week, from senior-as-human-linter to senior as
-  architect. Told in detail.
+  Generic AI ships generic code. AI with your stack constraints, patterns, and
+  quality bar ships code that works in your reality.
 date: 2026-03-28T00:00:00.000Z
 author: 100xpath
 tags:
   - engineering
-  - case study
-  - AI coding
   - code quality
+  - craft
+  - AI coding
   - developer workflow
 heroImage: /blog/coding-in-craft/hero.png
 ---
 
-> **Foundations assumed:** [Knowledge bases are the new career capital](/blog/pillar-1-knowledge-management) · [Encode your specificity](/blog/you-are-not-generic)
+Most AI-generated code is dead on arrival. Copilot autocompletes a function, the code compiles, and then your senior engineer spends 15 minutes fixing it -- wrong naming conventions, a pattern you deprecated last quarter, zero awareness of the shared utility that already does the same thing. Multiply that by every engineer, every day, across your entire org. That is insanity.
 
-Most articles about AI coding are hypothetical. This one is a single case study, told at the level of detail you'd need to run the same playbook yourself. The team: a 14-person product engineering org at a Series B SaaS company. The window: November to March. The outcome: acceptance rate on AI-generated code from 60% to 95%, onboarding from 3 months to 2 weeks, senior engineers reclaiming an average of 11 hours per week from code review. The playbook follows.
+Picture this. Your AI doesn't just compile - it understands your codebase the way your most senior engineer does. Every suggestion lands inside your patterns, references your utilities, respects your constraints. Code review stops being a style debate and starts being a strategy conversation. What's stopping you from getting there? It isn't model capability. It's a single document sitting unwritten in your repo.
 
-Names and product details are abstracted. Everything else is real.
+Here's the thing. **The gap between 60% acceptance rate and 95% acceptance rate is not an AI capability problem -- it's a context deployment problem.** AI that doesn't know your codebase ships code that breaks on contact with your reality. AI that carries your constraints, your patterns, your scars? It ships code that belongs - because it's building with you, not instead of you. Your knowledge store and your ongoing judgment are what make AI an extension of your engineering craft. You're not outsourcing code quality. You're amplifying it. Full stop.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -72,106 +71,135 @@ Names and product details are abstracted. Everything else is real.
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
----
+<!-- toggle: individual -->
 
-## The Starting Position (November)
+## The 100x Individual
 
-The team had adopted Cursor nine months earlier. Acceptance rate on AI-generated code had plateaued at ~60%. Every engineer loved the tool individually. In aggregate it was dragging them down. Three senior engineers had started a Slack thread titled "Is Cursor actually helping us?" that nobody wanted to answer out loud.
+Your engineering craft is not knowing how to code. It's knowing how to code *in this codebase*, with *these constraints*, for *these users*. That specificity is your edge -- and it's exactly what generic AI tools throw away. They're playing poker without looking at the board.
 
-Code review logs told the honest story. Of every 100 AI-generated suggestions, roughly 40 got rejected outright, another 25 got accepted-with-fixes, and only 35 shipped clean. Every "accepted-with-fix" burned 10-15 minutes of senior time. The math was miserable: the senior engineers were spending 30% of their working hours functioning as human linters for code the AI should have written correctly the first time.
+The fix is building an engineering context package. Not a "best practices" wiki that nobody reads -- a deployable artifact that encodes your team's reality.
 
-Onboarding was where it hurt worst. New hires took 3 months to write idiomatic code. They leaned on Cursor from day one and shipped garbage. Senior reviewers caught it all, explained it all, re-explained it. The new hire learned the patterns eventually. The seniors were exhausted. The pipeline kept delivering new hires and the cycle repeated.
+**How to build your context package in 30 minutes:** Create a `CLAUDE.md` file in the root of your repo - Claude Code reads this automatically before every interaction. Or create a `.cursorrules` file if you use Cursor. Write 5 sections covering: (1) how your system is wired, (2) what you call things, (3) what utilities already exist, (4) what your deploy pipeline needs, (5) what broke production and why. Be specific - not "use good naming" but "services are named by verb, e.g. `processPayment`, not `PaymentProcessor`." Commit it to the repo. Every AI interaction now respects your reality.
 
----
+Five things matter:
 
-## The Diagnosis (Late November)
+1. **Architecture patterns** -- how your system is actually wired, not how a textbook says it should be
+2. **Naming conventions** -- what you call things and why, so AI stops inventing its own vocabulary
+3. **Shared utilities** -- the stuff that already exists, so AI stops reinventing wheels at $200/hour
+4. **Deployment constraints** -- what your pipeline can and can't handle
+5. **The anti-patterns** -- the scars. The things that broke production and the postmortems that taught you why
 
-The lead engineer ran a two-week audit on rejected PRs. Every rejection got tagged with its root cause. The distribution was clarifying:
+Look -- the ROI on this is not subtle. An **engineering lead** built a context doc covering his team's patterns -- state management, API conventions, component standards, and the 5 things you never do. Connected it to Claude Code via MCP. Acceptance rate jumped from 60% to 95%. Do the math on that. If your team has 8 engineers generating 20 suggestions per day, and each rejected suggestion costs 15 minutes of senior time to fix -- that's 35% fewer rejections times 160 daily suggestions times 15 minutes. You're recovering 14 hours of senior engineering time per day. At blended cost, that's $2,800/day back in your pocket. From a document.
 
-- **Wrong naming convention** - 32%
-- **Reinvented an existing utility** - 21%
-- **Used a deprecated pattern** - 18%
-- **Missed an architectural constraint** - 14%
-- **Violated a "we learned not to do that" scar** - 9%
-- **Actual logic error** - 6%
+Annualize that. $2,800 per day times 240 working days is $672,000 a year in recovered senior capacity. For a team of 8 engineers. From one markdown file in a repo. What other investment in your engineering org returns that kind of yield on that kind of capital outlay? The answer is nothing. Not your next hire. Not your IDE license upgrade. Not your build system refactor. Nothing comes close. And the brutal part is that almost every team has the raw material sitting in Slack threads, buried postmortems, and senior engineer muscle memory. They just haven't written it down where the AI can read it.
 
-Read the list. Ninety-four percent of rejections were context failures. The AI wasn't wrong because it couldn't code. It was wrong because it had no idea what this specific codebase considered correct. Generic AI, generic output, generic rejections.
+A **founder/CTO** encoded his startup's constraints -- deploy pipeline, database conventions, API versioning, and the 3 services that absolutely cannot go down. New engineers' AI-generated code respected all of it from day one. Onboarding dropped from 3 months to 2 weeks. That's not incremental improvement -- that's a structural advantage.
 
-The fix was obvious in retrospect and almost nobody thinks of it first: write the context down where the AI can read it.
+A **design engineer** connected his component library, design tokens, and accessibility requirements to his coding AI. Generated code uses his actual components with his actual tokens. No more translating from generic React to his design system. The gap between Figma and production closed.
 
----
+A **staff engineer** maintaining a legacy Rails monolith at a 10-year-old company encoded the hidden rules - the 6 modules you don't touch without three reviewers, the query patterns that crash in production under load, the background job conventions, and the 4 migrations that have to happen in a specific sequence or the whole thing locks up. Before the context doc existed, every newcomer spent their first month breaking things the team's institutional memory had quietly warned them about through PR comments. After the context doc, newcomers contribute clean PRs in week two. The tribal knowledge is now portable. And the best senior engineer on the team, who used to spend 4 hours a day explaining context in code reviews, reclaimed that time for the architectural work only she could do.
 
-## The Build (December)
+A **platform engineer** at a fintech encoded the compliance rules that govern everything her team ships - PCI boundaries, data residency constraints, audit logging requirements, the specific services that must never log PII, and the 3 endpoints that require dual-review before merging. Her AI now flags violations before the PR is opened. The compliance team went from "surprise rejections in review" to "zero compliance rejections for 4 consecutive months." That is the kind of move that earns a promotion, not because it's flashy, but because it removes an entire category of friction from the engineering org permanently.
 
-The team allocated two weeks and a single repo file. They called it `CLAUDE.md` at first, then added a `.cursorrules` alongside it. The content settled into five sections.
+Imagine if every AI suggestion in your repo arrived already wearing your team's uniform. No translation step. No "I'll fix this later." No quiet accumulation of drift between what was designed and what shipped. That's not a future state - it's a Tuesday afternoon for the teams who took the time to write things down.
 
-**Section 1: Architecture patterns.** How the system was actually wired. Not an idealised diagram - the real one. Which services talked to which, what the event bus was called, where the boundary between the monolith and the new microservices lived.
+A **product manager** started linking specs to the engineering knowledge base. When she writes "add offline mode," the AI surfaces 3 architecture constraints and 2 previous failed attempts. Engineering gets the full picture embedded in the spec. Back-and-forth clarification dropped 70%.
 
-**Section 2: Naming conventions.** Services named by verb (`processPayment`, not `PaymentProcessor`). Database columns snake_case, variables camelCase, constants SCREAMING_SNAKE. Every deviation from standard was documented with the reason.
+**The punchline is compounding.** Every architectural decision you document, every pattern you codify, every "we tried this and it failed" note -- these compound into a richer context that makes every future suggestion better. After a month, your AI has read every PR, every ADR, every incident postmortem. After 6 months, it's the most context-aware collaborator on your team - but you're still the one directing it, refining its output, and deciding what ships. You're not writing documentation -- you're deploying your expertise as infrastructure. The value is the triad: you, your knowledge store, and AI working as one system. Your agents build with you, as an extension of your engineering craft. Not a replacement for it.
 
-**Section 3: Shared utilities that already exist.** A running list of every util library, helper, or internal package the team used, with a one-sentence description of what each did. This section alone killed the "reinvent an existing utility" error class.
+<!-- toggle: team -->
 
-**Section 4: Deployment constraints.** What the pipeline required. Which environment variables were sacred. Which services absolutely could not go down during deploys. Which migrations had to happen in a specific sequence. All the tribal knowledge that had been passed down orally.
+## The 100x Team & Business
 
-**Section 5: Anti-patterns and scars.** The things they had tried and regretted. The pattern that looked elegant and caused the Thursday outage in June. The "never do X because Y" list that lived in senior engineers' heads. Every scar got documented.
+![](/blog/coding-in-craft/section-1.png)
 
-Total length: 47KB. Committed to the repo root. Version-controlled. Reviewable through pull requests like any other code.
 
----
+Here's where the economics get interesting. At the team level, engineering context packages solve the consistency problem that code review was supposed to fix but never actually did.
 
-## The Rollout (December-January)
+Every team has a style. Naming patterns, error handling, testing philosophy, architecture boundaries. That style lives in the heads of 2-3 senior **engineers** and gets enforced through code review -- which means every PR is an expensive teaching moment instead of a quality gate. Senior engineers spend 30% of their time reviewing code that violates patterns the author didn't know existed. Net-net, your highest-leverage people are functioning as human linters. That is a terrible deployment of talent.
 
-Every engineer pulled it on their next `git pull`. Cursor picked it up automatically via `.cursorrules`. Claude Code read it through the `CLAUDE.md` convention. No training session. No change management. The tool changed quietly.
+**How to share engineering context across your team:** Add your `CLAUDE.md` or `.cursorrules` to the repo - every engineer gets it on `git pull`. For deeper context, create a `/docs/engineering-context/` folder with files like `architecture-decisions.md`, `anti-patterns.md`, and `naming-conventions.md`. Claude Code and Cursor both index these automatically. For cross-functional teams, connect your docs repo to Notion via MCP so PMs and designers can query engineering constraints without pinging an engineer.
 
-Acceptance rate moved within a week. From 60% to 78% almost immediately. The biggest wins were in the categories the context doc addressed head-on: naming conventions, shared utilities, deprecated patterns. The AI stopped getting them wrong because it finally had the information to get them right.
+When the team's engineering context feeds into everyone's AI, the floor rises. Junior **engineers** produce code that matches senior standards on the first draft. New hires write idiomatic code in week one instead of month three. Code review shifts from "please follow our patterns" to "let's discuss the architectural tradeoff here." That's the shift from defense to offense. And the time your senior engineers reclaim from pattern-policing? That goes to the work that actually makes a difference - architecture decisions, system design, the hardest most interesting technical problems that have been sitting in the backlog because nobody had time to think deeply about them. Faster reviews aren't just about shipping more. They're about unlocking time for the deep craft that differentiates great engineering teams from ones that just grind.
 
-But there was a second-order shift nobody had predicted. The team started editing the context doc during code review. When a senior caught a pattern violation that wasn't yet documented, instead of leaving a comment on the PR, they added the rule to `CLAUDE.md` and committed it. Three months in, the doc had doubled in length - not because anyone scheduled writing time, but because the loop of "catch in review → codify in the doc → never see that class of error again" was its own reward.
+What's stopping you from shipping this by Friday? The context doc isn't some artifact that requires a task force, a quarterly planning cycle, or executive buy-in. It's a markdown file. Start with 5 sections. Fill in what you already know. Commit it. Ship it. Iterate weekly. The teams that treat this as a side project that "we'll get to next quarter" are the teams still stuck on a 60% acceptance rate in six months. The teams that treat it as an urgent infrastructure investment will be at 90% by the end of the month. The gap between those two outcomes is entirely execution velocity on something that has zero technical complexity.
 
----
+**Designers** benefit enormously -- when the design system connects to engineering context, AI-generated code uses actual components with actual tokens. The "that's not how it was designed" QA cycle shrinks to near zero.
 
-## The Compounding (February-March)
+**PMs** benefit because specs auto-reference engineering constraints. The "we can't do it that way" feedback loop compresses from days to the moment the spec is written. No more wasted sprint cycles on impossible proposals.
 
-By February the acceptance rate had climbed to 91%. By early March it stabilised at 95%.
+**Operations leaders** benefit because internal tools built with engineering context match real workflows. One team saw adoption jump from 40% to 90% -- because the tools finally fit how ops actually works. That's the difference between software people tolerate and software people choose.
 
-Onboarding dropped from 3 months to 2 weeks. New hires pulled the repo, read the context doc on day one, and wrote idiomatic code by end of week one. Their PRs went through the same review process as anyone else's. The "explain our patterns one more time" loop - the one that had burned out the seniors for years - effectively ended.
+Think about it like this. Every senior engineer on your team is carrying around an invisible rulebook in their head - the patterns, the scars, the unwritten "we don't do that here" reasons. Right now that rulebook leaves the building when they go home. What if it stayed? What if it onboarded the next hire while your seniors slept? That's what an engineering context package actually is.
 
-The senior engineers reclaimed roughly 11 hours per week each. Eleven hours. Per week. That wasn't redirected into more reviews. It went into architecture work, performance investigations, and mentoring conversations that had nothing to do with style. The character of their jobs shifted. They stopped being linters and started being architects.
+**Clinical teams** compound the value even further. One team encoded HIPAA compliance patterns, audit logging requirements, and data handling conventions into their context package. Every AI-generated code change automatically follows compliance patterns. Security review flags dropped from 40% of PRs to 5%. Think about what that means -- compliance built in, not bolted on. That derisks the entire development process.
 
-The lead engineer tracked one metric nobody had previously tracked: average time from PR opened to PR merged. It dropped from 2 days to 4 hours. Same team. Same codebase. Same rigor. The difference was entirely the quality of the first draft.
+One team reduced code review cycles from 2-day average to 4 hours. Not by lowering standards -- by raising the floor. Every AI-assisted PR already follows the team's patterns because the AI has the context. The reclaimed review time didn't disappear into more tickets - it went into architecture discussions, performance investigations, and the deep technical thinking that had been perpetually deprioritized. Time to ship, faster. Time for the engineering work that really matters? Finally unlocked. Like giving every player on your roster the same scouting report before the game starts - so the coach can spend prep time on strategy instead of fundamentals.
 
----
+**The engineering knowledge base also captures institutional memory.** Why did we choose this database? What happened last time someone tried to refactor auth? Which API endpoints are load-bearing and can never go down? This context prevents the same expensive mistakes from recurring every time a new engineer joins. The system remembers what individuals forget. That is infrastructure.
 
-## The Numbers That Changed
-
-| Metric | November | March | Delta |
-|--------|---------|-------|-------|
-| AI suggestion acceptance rate | 60% | 95% | +35pts |
-| Average PR-to-merge time | 2 days | 4 hours | -83% |
-| Senior time on style-fix reviews | 30% | 6% | -80% |
-| Onboarding to first idiomatic PR | 3 months | 2 weeks | -83% |
-| Production incidents from pattern violations | 4/quarter | 0 | -100% |
-
-None of those numbers came from better AI. All of them came from one 47KB file that encoded what the team already knew but had never written down.
+Picture this. A new engineer joins on Monday. Her AI already knows your conventions, your scars, your three services that absolutely cannot go down, the refactor your team tried last year that nearly broke production. By Wednesday she's writing code that fits the codebase the way a 5-year tenured engineer would. By Friday she's catching architectural risks her senior teammates wouldn't have flagged until review. That isn't onboarding. That's teleportation. And the only reason it works is because someone, at some point, decided to write the rules down where the AI could read them.
 
 ---
 
-## The Playbook
+## Where This Applies
 
-If you want to run this move on your team, here's the shape.
+![](/blog/coding-in-craft/section-2.png)
 
-**Week 1.** Audit your last 200 AI-generated PRs. Tag every rejection by root cause. Confirm what the team above found: the overwhelming majority of rejections are context failures, not capability failures.
 
-**Week 2.** Write the five-section `CLAUDE.md` (or `.cursorrules`) file. Architecture, naming, shared utilities, deploy constraints, scars. Don't over-engineer it. Don't schedule a "documentation sprint." One engineer writes a draft in a day; another reviews it in an hour.
+The pattern is universal: your engineering context is what turns AI from a generic code generator into a team member who respects your craft. The investment is documentation. The return is compounding quality at scale.
 
-**Weeks 3-4.** Commit it. Let the team pull it. Watch the acceptance rate shift.
+A **startup CTO** encoded his entire stack's constraints. New engineers' AI code respected all of them from day one. Onboarding at a completely different velocity.
 
-**Ongoing.** Every time a reviewer catches a pattern violation, add the rule to the doc in the same PR that fixes it. The doc grows through the natural review loop. No separate writing budget required.
+A **design engineer** connected component library, tokens, and accessibility requirements. Generated code uses actual components, not generic ones. The gap between design and production -- gone.
+
+Here's the thing about compounding context. The first week, your AI catches naming convention slips. The first month, it's avoiding deprecated patterns. By month six, it's flagging architectural decisions that would have caused incidents your team only learned about the hard way. The investment is one document. The return is a system that gets smarter every time you ship.
+
+Picture this. It's 2am and your on-call engineer is debugging a database query that's melting a production replica. Normally, she'd be paging the one person who knows the quirks of this particular index - the senior engineer who onboarded her six months ago and has been carrying the institutional memory since the original outage two years back. Instead, she asks her AI, which pulls the postmortem from the shared knowledge base, references the exact query shape that caused the last incident, and suggests the mitigation that worked. 15 minutes from "something is wrong" to "we're back." No paging. No waking up the senior. No recreating the investigation from scratch. That is what institutional memory looks like when it's loaded into the AI every engineer uses, every day. It is not just faster. It is a different category of operational maturity.
+
+A **clinical software team** encoded HIPAA patterns and audit logging. Compliance became automatic, not a review gate. Security flags dropped 87%. That's not optimization -- that's a category change.
+
+An **ops leader** encoded workflow logic and decision criteria. AI-generated internal tools finally matched operational reality. Adoption numbers proved it.
+
+A **product manager** linked specs to the engineering knowledge base. Requirements stopped getting lost in translation between product and engineering.
+
+**Every person on the team -- engineer, product designer, PM, ops, clinical -- compounds the value when engineering context is real and specific.** The cost is hours of documentation. The return is thousands of hours of engineering time recovered, permanently.
 
 ---
 
-## What This Is Really About
+## Examples How Others Have Made This Real
 
-The case study is engineering, but the pattern is not. Every function on the team that ever rejected "AI slop" output has the same root cause: the AI didn't know the real rules. The fix is always the same: write the real rules down where the AI can read them. What takes weeks is not the writing. It's the accepting that your team's institutional knowledge has been sitting unwritten, unshared, and undeployable for years - and that the cheapest weekend you ever spent was the one that changed that.
+These aren't hypotheticals. Real teams and builders are deploying engineering context right now - and the tools to do it already exist.
+
+- **Shopify** mandated that every developer use AI coding tools - then discovered the bottleneck wasn't the model, it was the context. Their internal "Sidekick" system feeds codebase-specific patterns, conventions, and institutional knowledge into every AI interaction. Engineers write code that fits the monolith because the AI knows the monolith.
+
+- **Cursor + .cursorrules files** - thousands of engineering teams now ship a `.cursorrules` file in their repo that encodes naming conventions, framework preferences, banned patterns, and architecture constraints. The AI reads it before generating a single line. One file. Immediate acceptance rate jump. The pattern has spread across open-source projects on GitHub because the ROI is obvious.
+
+- **Claude Code with CLAUDE.md** - Anthropic's own coding agent reads project-level context files that encode your stack constraints, testing philosophy, and "never do this" rules. Engineering teams write a single markdown file and every AI interaction respects their reality. The 60%-to-95% acceptance rate shift is real and repeatable.
+
+- **Vercel's v0** generates frontend code - but teams that connect their design system tokens and component libraries get output that actually ships. Teams without context get generic React. Teams with context get their React, their patterns, their components. Same model. Different economics.
+
+- **GitLab Duo** embeds engineering context from merge request history, CI pipeline configs, and code review patterns directly into AI suggestions. Teams that invest in structured engineering documentation see measurably fewer "fix it to match our style" review cycles.
+
+- **Stripe** built internal AI tools that reference their API design principles - a document encoding 10+ years of opinions about naming, versioning, error handling, and backwards compatibility. New engineers' AI-generated code follows Stripe's API philosophy from day one because the philosophy is in the system, not just in senior engineers' heads.
+
+---
+
+## Ask Yourself
+
+These questions reveal whether your AI is coding in your reality -- or in a textbook that doesn't know your codebase exists.
+
+1. **Does your AI know about the shared utilities that already exist in your codebase?** If it keeps reinventing functions you already have, it's working blind. That's not bad AI -- it's missing context. How much duplicate code has your team accepted because fixing it felt faster than teaching?
+
+2. **What's your code review acceptance rate on AI-generated code?** If it's below 80%, the gap is context -- not capability. The AI doesn't know your naming conventions, your deprecated patterns, your "never do this" list. [See how knowledge bases change the math →](/#moat)
+
+3. **Where do your architecture decisions live?** In ADRs nobody reads? In a senior engineer's head? In the git blame history? If a new hire asked "why did we build it this way?" -- would the AI know the answer? [Explore how agents carry your context →](/#agents)
+
+4. **Can your AI access your anti-patterns -- the scars?** Every codebase has them. The things you tried that broke production. The patterns that looked elegant but didn't scale. If your AI doesn't know about the scars, it will reopen every healed wound.
+
+5. **How long does it take a new engineer to write idiomatic code on your team?** If the answer is "months" -- that's the gap between your team's knowledge and what's documented. An engineering context package closes it in days. [See how the stack connects →](/#stack)
+
+6. **Do your designers and PMs have access to engineering constraints before they spec?** If the "we can't do it that way" feedback loop takes days, your tools aren't sharing context. Connected tools eliminate impossible proposals before they waste anyone's time. [Explore shared surfaces →](/#surfaces)
 
 ---
 

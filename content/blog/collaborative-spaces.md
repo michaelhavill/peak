@@ -19,8 +19,6 @@ tags:
 heroImage: /blog/collaborative-spaces/hero.png
 ---
 
-> **Foundations assumed:** [Knowledge bases are the new career capital](/blog/pillar-1-knowledge-management) · [Encode your specificity](/blog/you-are-not-generic)
-
 Every person on your team is destroying value right now. The **product manager** prompts Claude, copies the output, pastes it into Notion, then Slacks the **product designer**. The **product designer** opens a fresh AI session with zero inherited context. The **engineer** starts a third session - tabula rasa. Three people using AI. Three completely isolated knowledge graphs. That is insanity.
 
 Picture this. Your PM finishes a customer call. Before she even closes her laptop, the insight has flowed into a shared layer where the designer's AI is already weaving it into a flow exploration, and the engineer's AI is already pressure-testing it against the architecture. Nobody forwarded a Slack message. Nobody scheduled a sync. The work just kept moving. That isn't a futuristic vision. That's what one connected workspace looks like the day you wire it together.
