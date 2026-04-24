@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import RoleRotator from "./RoleRotator";
 
 const CF = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P";
@@ -16,6 +16,12 @@ const HERO_VIDEOS = [
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollReady, setScrollReady] = useState(false);
+
+  // Scroll cue fades out as the user starts scrolling past the hero.
+  const { scrollY } = useScroll();
+  const cueOpacity = useTransform(scrollY, [0, 120], [1, 0]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -24,10 +30,15 @@ export default function HeroSection() {
     video.src = url;
     video.playbackRate = 0.70;
     video.load();
+    // Delay scroll cue until hero content has landed so it doesn't fight
+    // with the entrance choreography.
+    const t = setTimeout(() => setScrollReady(true), 900);
+    return () => clearTimeout(t);
   }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="relative min-h-screen flex items-center px-8 md:px-16 lg:px-20 overflow-hidden"
       style={{
@@ -103,6 +114,45 @@ export default function HeroSection() {
           </motion.a>
         </div>
       </div>
+
+      {/* Scroll cue - fades out as the reader starts scrolling */}
+      <motion.div
+        aria-hidden="true"
+        style={{ opacity: cueOpacity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: -4 }}
+          animate={scrollReady ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex flex-col items-center gap-2"
+        >
+          <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/55">
+            Scroll
+          </span>
+          <motion.svg
+            width="14"
+            height="20"
+            viewBox="0 0 14 20"
+            fill="none"
+            animate={{ y: [0, 6, 0] }}
+            transition={{
+              duration: 1.8,
+              repeat: Infinity,
+              ease: [0.25, 1, 0.5, 1],
+            }}
+          >
+            <path
+              d="M7 2v14m0 0l-5-5m5 5l5-5"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-white/55"
+            />
+          </motion.svg>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

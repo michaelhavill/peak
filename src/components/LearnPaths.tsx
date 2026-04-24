@@ -211,7 +211,7 @@ function ThemeSection({
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[700ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
                   style={{ filter: isRead ? "saturate(0.85)" : "none" }}
                 />
                 {isRead && (
@@ -220,6 +220,17 @@ function ThemeSection({
                   </div>
                 )}
               </div>
+
+              {/* Chapter-colored accent line - draws in on hover */}
+              <div
+                aria-hidden="true"
+                className="absolute left-0 right-0 h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none"
+                style={{
+                  bottom: 0,
+                  backgroundColor:
+                    themeColor?.text ?? "var(--text-primary)",
+                }}
+              />
 
               {/* Text content */}
               <div className="flex flex-col p-7 flex-1">
@@ -259,11 +270,16 @@ function ThemeSection({
                   {path.description}
                 </p>
                 <div
-                  className="flex items-center gap-1.5 text-[13px] font-medium uppercase tracking-[0.14em] transition-transform duration-200 group-hover:translate-x-0.5"
+                  className="flex items-center gap-1.5 text-[13px] font-medium uppercase tracking-[0.14em]"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {isRead ? "Revisit article" : "Read article"}
-                  <span aria-hidden="true">→</span>
+                  <span
+                    aria-hidden="true"
+                    className="inline-block transition-transform duration-[300ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
                 </div>
               </div>
             </motion.a>
@@ -371,10 +387,19 @@ function ThemeSection({
                       )}
                     </div>
                     <div
-                      className="text-[16px] md:text-[17px] font-semibold leading-[1.4] mb-1 group-hover:translate-x-0.5 transition-transform duration-200"
+                      className="text-[16px] md:text-[17px] font-semibold leading-[1.4] mb-1 flex items-start gap-1.5"
                       style={{ color: "var(--text-primary)" }}
                     >
-                      {path.title}
+                      <span>{path.title}</span>
+                      <span
+                        aria-hidden="true"
+                        className="mt-[3px] -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-[300ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+                        style={{
+                          color: homeColor?.text ?? "var(--text-secondary)",
+                        }}
+                      >
+                        →
+                      </span>
                     </div>
                   </div>
                 </a>
