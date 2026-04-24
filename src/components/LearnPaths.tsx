@@ -12,20 +12,61 @@ const THEME_COLORS: Record<string, { bg: string; text: string }> = {
   "scale":           { bg: "#F5E8EE", text: "#8A3A5C" },
 };
 
+const READ_STORAGE_KEY = "read_articles";
+
+function ReadBadge({
+  themeColor,
+}: {
+  themeColor?: { bg: string; text: string };
+}) {
+  return (
+    <span
+      className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-full"
+      style={{
+        backgroundColor: themeColor?.bg ?? "var(--bg-elevated)",
+        color: themeColor?.text ?? "var(--text-secondary)",
+      }}
+    >
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+        <path
+          d="M1.5 5.5L4 8l4.5-6"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      Read
+    </span>
+  );
+}
+
 function ThemeSection({
   theme,
-  paths,
+  primaryPaths,
+  relatedPaths,
   isInView,
   sectionIndex,
+  readSlugs,
+  mounted,
 }: {
   theme: (typeof LEARN_THEMES)[number];
-  paths: typeof LEARN_PATHS;
+  primaryPaths: typeof LEARN_PATHS;
+  relatedPaths: typeof LEARN_PATHS;
   isInView: boolean;
   sectionIndex: number;
+  readSlugs: Set<string>;
+  mounted: boolean;
 }) {
   const baseDelay = sectionIndex * 0.1;
   const themeColor = THEME_COLORS[theme.id];
   const chapterNum = String(sectionIndex + 1).padStart(2, "0");
+
+  const totalPaths = primaryPaths.length + relatedPaths.length;
+  const readCount = mounted
+    ? [...primaryPaths, ...relatedPaths].filter((p) => readSlugs.has(p.slug))
+        .length
+    : 0;
 
   return (
     <div id={theme.id} className="mb-28 last:mb-0 scroll-mt-28 md:scroll-mt-32">
@@ -93,13 +134,39 @@ function ThemeSection({
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: baseDelay + 0.15 }}
-          className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em]"
+          className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] flex items-center gap-3"
           style={{ color: "var(--text-secondary)" }}
         >
-          {paths.length} {paths.length === 1 ? "article" : "articles"} in this chapter
+          <span>
+            {primaryPaths.length}{" "}
+            {primaryPaths.length === 1 ? "flagship" : "flagships"}
+            {relatedPaths.length > 0 && (
+              <>
+                {" "}&middot; {relatedPaths.length} related
+              </>
+            )}
+          </span>
+          {mounted && totalPaths > 0 && (
+            <span
+              className="px-2 py-0.5 rounded-full text-[10px] font-semibold"
+              style={{
+                backgroundColor:
+                  readCount > 0
+                    ? themeColor?.bg ?? "var(--bg-elevated)"
+                    : "var(--bg-elevated)",
+                color:
+                  readCount > 0
+                    ? themeColor?.text ?? "var(--text-secondary)"
+                    : "var(--text-tertiary)",
+              }}
+            >
+              {readCount} of {totalPaths} read
+            </span>
+          )}
         </motion.div>
       </div>
 
+      {/* Primary (flagship) cards */}
       <div
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-px rounded-xl overflow-hidden"
         style={{
@@ -107,7 +174,8 @@ function ThemeSection({
           border: "1px solid var(--border-subtle)",
         }}
       >
-        {paths.map((path, i) => {
+        {primaryPaths.map((path, i) => {
+          const isRead = mounted && readSlugs.has(path.slug);
           return (
             <motion.a
               key={path.slug}
@@ -119,7 +187,10 @@ function ThemeSection({
                 delay: baseDelay + 0.1 + i * 0.06,
               }}
               className="flex flex-col p-7 transition-colors duration-200 group relative"
-              style={{ backgroundColor: "var(--bg-secondary)" }}
+              style={{
+                backgroundColor: "var(--bg-secondary)",
+                opacity: isRead ? 0.78 : 1,
+              }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.backgroundColor =
                   "var(--bg-elevated)")
@@ -134,7 +205,7 @@ function ThemeSection({
                   className="text-[10px] font-medium uppercase tracking-[0.18em]"
                   style={{ color: themeColor?.text ?? "var(--text-secondary)" }}
                 >
-                  Path to 100x
+                  Flagship
                 </span>
                 <span
                   className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full text-[10px] font-semibold"
@@ -145,6 +216,11 @@ function ThemeSection({
                 >
                   {i + 1}
                 </span>
+                {isRead && (
+                  <span className="ml-auto">
+                    <ReadBadge themeColor={themeColor} />
+                  </span>
+                )}
               </div>
               <div
                 className="text-[16px] md:text-[17px] font-semibold mb-3 leading-[1.4]"
@@ -162,13 +238,106 @@ function ThemeSection({
                 className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.14em] transition-transform duration-200 group-hover:translate-x-0.5"
                 style={{ color: "var(--text-primary)" }}
               >
-                Read article
+                {isRead ? "Revisit article" : "Read article"}
                 <span aria-hidden="true">→</span>
               </div>
             </motion.a>
           );
         })}
       </div>
+
+      {/* Related reading */}
+      {relatedPaths.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4, delay: baseDelay + 0.2 }}
+          className="mt-10"
+        >
+          <div
+            className="flex items-center gap-3 mb-4 pl-6 md:pl-10"
+          >
+            <span
+              className="text-[10px] font-medium uppercase tracking-[0.18em]"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Related reading from other chapters
+            </span>
+            <span
+              className="flex-1 h-px"
+              style={{ backgroundColor: "var(--border-subtle)" }}
+            />
+          </div>
+          <div
+            className="grid md:grid-cols-2 gap-px rounded-xl overflow-hidden"
+            style={{
+              backgroundColor: "var(--border-subtle)",
+              border: "1px solid var(--border-subtle)",
+            }}
+          >
+            {relatedPaths.map((path) => {
+              const isRead = mounted && readSlugs.has(path.slug);
+              const homeTheme =
+                LEARN_THEMES.find((t) => t.id === path.primaryTheme) ?? null;
+              const homeColor = homeTheme
+                ? THEME_COLORS[homeTheme.id]
+                : undefined;
+              return (
+                <a
+                  key={path.slug}
+                  href={`/blog/${path.slug}`}
+                  className="flex flex-col p-5 transition-colors duration-200 group"
+                  style={{
+                    backgroundColor: "var(--bg-secondary)",
+                    opacity: isRead ? 0.78 : 1,
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor =
+                      "var(--bg-elevated)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.backgroundColor =
+                      "var(--bg-secondary)")
+                  }
+                >
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <span
+                      className="text-[10px] font-medium uppercase tracking-[0.18em] px-2 py-0.5 rounded-full"
+                      style={{
+                        backgroundColor: "var(--bg-elevated)",
+                        color: "var(--text-secondary)",
+                      }}
+                    >
+                      Related
+                    </span>
+                    {homeTheme && (
+                      <span
+                        className="text-[10px] font-medium uppercase tracking-[0.14em]"
+                        style={{
+                          color: homeColor?.text ?? "var(--text-secondary)",
+                        }}
+                      >
+                        from {homeTheme.label}
+                      </span>
+                    )}
+                    {isRead && (
+                      <span className="ml-auto">
+                        <ReadBadge themeColor={homeColor} />
+                      </span>
+                    )}
+                  </div>
+                  <div
+                    className="text-[14px] md:text-[15px] font-semibold leading-[1.4] mb-1 group-hover:translate-x-0.5 transition-transform duration-200"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {path.title}
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 }
@@ -177,6 +346,8 @@ export default function LearnPaths() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeTheme, setActiveTheme] = useState("all");
+  const [readSlugs, setReadSlugs] = useState<Set<string>>(new Set());
+  const [mounted, setMounted] = useState(false);
 
   // When someone navigates to #<theme-id> (e.g. from the top nav), reset the
   // filter so every chapter renders and scroll the chapter into view. Because
@@ -211,6 +382,18 @@ export default function LearnPaths() {
     handleHash();
     window.addEventListener("hashchange", handleHash);
     return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
+
+  // Read localStorage once on mount so cards and counters can render as read.
+  useEffect(() => {
+    setMounted(true);
+    try {
+      const raw = localStorage.getItem(READ_STORAGE_KEY);
+      const list: string[] = raw ? JSON.parse(raw) : [];
+      setReadSlugs(new Set(list));
+    } catch {
+      // ignore
+    }
   }, []);
 
   const visibleThemes =
@@ -253,9 +436,9 @@ export default function LearnPaths() {
           className="text-[15px] max-w-2xl mb-10 leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
-          Each article is a mental model - a new way of thinking about yourself,
-          your craft, and how AI amplifies both. Read one, change how you work.
-          Read them all, become someone who can&apos;t be copied.
+          Each chapter has a handful of flagship reads plus related articles
+          from nearby chapters. Articles you&apos;ve already read are marked
+          so you can see progress at a glance.
         </motion.p>
 
         {/* Theme filters */}
@@ -312,17 +495,25 @@ export default function LearnPaths() {
             transition={{ duration: 0.3 }}
           >
             {visibleThemes.map((theme, si) => {
-              const paths = LEARN_PATHS.filter((p) =>
-                p.themes.includes(theme.id)
+              const primaryPaths = LEARN_PATHS.filter(
+                (p) => p.primaryTheme === theme.id
               );
-              if (paths.length === 0) return null;
+              const relatedPaths = LEARN_PATHS.filter(
+                (p) =>
+                  p.themes.includes(theme.id) && p.primaryTheme !== theme.id
+              );
+              if (primaryPaths.length === 0 && relatedPaths.length === 0)
+                return null;
               return (
                 <ThemeSection
                   key={theme.id}
                   theme={theme}
-                  paths={paths}
+                  primaryPaths={primaryPaths}
+                  relatedPaths={relatedPaths}
                   isInView={isInView}
                   sectionIndex={si}
+                  readSlugs={readSlugs}
+                  mounted={mounted}
                 />
               );
             })}

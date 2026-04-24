@@ -5,6 +5,7 @@ import EmailCapture from "@/components/EmailCapture";
 import ShareBar from "@/components/ShareBar";
 import ArticleBody from "@/components/ArticleBody";
 import AuthorBio from "@/components/AuthorBio";
+import MarkAsRead from "@/components/MarkAsRead";
 import Link from "next/link";
 
 export function generateStaticParams() {
@@ -22,6 +23,7 @@ export default async function BlogPostPage({
 
   return (
     <main className="min-h-screen px-6 md:px-16 lg:px-20 pt-28 pb-16">
+      <MarkAsRead slug={slug} />
       <div className="max-w-2xl mx-auto">
         <Link
           href="/#learn"
