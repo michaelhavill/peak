@@ -119,27 +119,22 @@ export default function ArticleBody({
               <button
                 key={section.id ?? `method-${i}`}
                 onClick={() => setOpenMethod(section)}
-                className="group w-full text-left my-6 py-4 pl-6 pr-5 md:pl-7 md:pr-6 rounded-lg transition-all relative overflow-hidden"
+                className="group w-full text-left my-6 py-4 px-5 md:px-6 rounded-lg transition-all"
                 style={{
                   backgroundColor:
                     "color-mix(in srgb, var(--article-accent-bg, var(--bg-elevated)) 55%, var(--bg-elevated))",
                   border: "1px solid var(--border-subtle)",
-                  borderLeft:
-                    "3px solid var(--article-accent, var(--text-secondary))",
                 }}
                 onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "var(--article-accent-bg, var(--bg-elevated))";
                   e.currentTarget.style.borderColor =
-                    "var(--article-accent, var(--text-secondary))";
-                  e.currentTarget.style.borderLeftColor =
-                    "var(--article-accent, var(--text-secondary))";
-                  e.currentTarget.style.boxShadow =
-                    "0 0 0 1px var(--article-accent, var(--text-secondary))";
+                    "color-mix(in srgb, var(--article-accent, var(--text-secondary)) 35%, var(--border-medium))";
                 }}
                 onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "color-mix(in srgb, var(--article-accent-bg, var(--bg-elevated)) 55%, var(--bg-elevated))";
                   e.currentTarget.style.borderColor = "var(--border-subtle)";
-                  e.currentTarget.style.borderLeftColor =
-                    "var(--article-accent, var(--text-secondary))";
-                  e.currentTarget.style.boxShadow = "none";
                 }}
               >
                 <div className="flex items-center justify-between gap-3">

@@ -77,18 +77,6 @@ body {
   line-height: 1.15;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
-  position: relative;
-  padding-left: 0.85rem;
-}
-.prose-100x h2::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.3em;
-  bottom: 0.3em;
-  width: 3px;
-  background: var(--article-accent, var(--text-primary));
-  border-radius: 2px;
 }
 .prose-100x h3 {
   font-size: 21px;
@@ -130,12 +118,11 @@ body {
   margin-bottom: 0.35rem;
 }
 .prose-100x blockquote {
-  border-left: 3px solid var(--article-accent, var(--border-medium));
-  padding: 0.85rem 1.25rem;
+  padding: 1rem 1.35rem;
   margin: 1.75rem 0;
   color: var(--text-primary);
-  background: rgba(var(--article-accent-rgb, 26, 26, 26), 0.05);
-  border-radius: 0 6px 6px 0;
+  background: rgba(var(--article-accent-rgb, 26, 26, 26), 0.06);
+  border-radius: 8px;
   font-style: normal;
 }
 .prose-100x blockquote p {
