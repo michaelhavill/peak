@@ -28,7 +28,7 @@ export default function IntegrationsGrid() {
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-[12px] font-medium uppercase tracking-widest mb-5"
+          className="text-[14px] font-medium uppercase tracking-widest mb-5"
           style={{ color: "var(--text-secondary)" }}
         >
           The stack
@@ -37,7 +37,7 @@ export default function IntegrationsGrid() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="text-[32px] md:text-[42px] leading-[1.1] mb-4"
+          className="text-[38px] md:text-[50px] leading-[1.1] mb-4"
           style={{
             fontFamily: "var(--font-instrument-serif)",
             color: "var(--text-primary)",
@@ -49,7 +49,7 @@ export default function IntegrationsGrid() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-[15px] max-w-2xl mb-12 leading-relaxed"
+          className="text-[17px] max-w-2xl mb-12 leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
           Every method in the playbook has a specific stack behind it -
@@ -81,7 +81,7 @@ export default function IntegrationsGrid() {
                 style={{ backgroundColor: "var(--accent-highlight)" }}
               />
               <span
-                className="text-[13px] font-medium"
+                className="text-[15px] font-medium"
                 style={{ color: "var(--text-primary)" }}
               >
                 {label}
@@ -98,7 +98,7 @@ export default function IntegrationsGrid() {
           className="max-w-md"
         >
           <p
-            className="text-[12px] font-medium uppercase tracking-wider mb-3"
+            className="text-[14px] font-medium uppercase tracking-wider mb-3"
             style={{ color: "var(--text-tertiary)" }}
           >
             Get early access

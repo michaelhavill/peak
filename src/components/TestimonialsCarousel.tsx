@@ -12,7 +12,7 @@ export default function TestimonialsCarousel() {
   return (
     <section id="builders" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <div className="max-w-5xl mx-auto" ref={ref}>
-        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">Builders in the 1%</motion.h2>
+        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-2xl md:text-3xl font-medium mb-12">Builders in the 1%</motion.h2>
       </div>
       <div className="overflow-hidden">
         <motion.div
@@ -22,12 +22,12 @@ export default function TestimonialsCarousel() {
         >
           {doubled.map((t, i) => (
             <div key={`${t.name}-${i}`} className="flex-shrink-0 w-[340px] md:w-[400px] rounded-xl p-6" style={{ border: "1px solid var(--border-subtle)" }}>
-              <p className="text-[14px] leading-relaxed mb-6" style={{ color: "var(--text-primary)" }}>&ldquo;{t.quote}&rdquo;</p>
+              <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--text-primary)" }}>&ldquo;{t.quote}&rdquo;</p>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full flex items-center justify-center text-[12px] font-semibold text-white" style={{ backgroundColor: t.color }}>{t.initials}</div>
+                <div className="w-9 h-9 rounded-full flex items-center justify-center text-[14px] font-semibold text-white" style={{ backgroundColor: t.color }}>{t.initials}</div>
                 <div>
-                  <div className="text-[13px] font-medium" style={{ color: "var(--text-primary)" }}>{t.name}</div>
-                  <div className="text-[12px]" style={{ color: "var(--text-secondary)" }}>{t.role}</div>
+                  <div className="text-[15px] font-medium" style={{ color: "var(--text-primary)" }}>{t.name}</div>
+                  <div className="text-[14px]" style={{ color: "var(--text-secondary)" }}>{t.role}</div>
                 </div>
               </div>
             </div>

@@ -101,7 +101,7 @@ export default function TopNav() {
             }}
           >
             <span
-              className="text-[19px] md:text-[22px] leading-none"
+              className="text-[22px] md:text-[26px] leading-none"
               style={{
                 fontFamily: "var(--font-instrument-serif), serif",
                 fontStyle: "italic",
@@ -111,7 +111,7 @@ export default function TopNav() {
               Path to
             </span>
             <span
-              className="text-[14px] md:text-[16px] leading-none font-semibold"
+              className="text-[16px] md:text-[18px] leading-none font-semibold"
               style={{
                 fontFamily:
                   "var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif",
@@ -130,7 +130,7 @@ export default function TopNav() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-[13px] whitespace-nowrap transition-colors duration-200"
+                className="text-[15px] whitespace-nowrap transition-colors duration-200"
                 style={{
                   color: textSecondary,
                   textShadow: useDarkTheme ? "none" : "0 1px 8px rgba(0,0,0,0.35)",
@@ -151,7 +151,7 @@ export default function TopNav() {
             {/* Sign up button (desktop) */}
             <button
               onClick={() => setShowSubscribe(true)}
-              className="hidden lg:inline-flex items-center justify-center h-9 px-5 rounded-full text-[13px] font-medium cursor-pointer transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              className="hidden lg:inline-flex items-center justify-center h-9 px-5 rounded-full text-[15px] font-medium cursor-pointer transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
               style={{
                 backgroundColor: useDarkTheme
                   ? "var(--text-primary)"
@@ -221,7 +221,7 @@ export default function TopNav() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.04 + i * 0.03, duration: 0.25 }}
                     onClick={() => setMobileOpen(false)}
-                    className="px-6 py-3 text-[15px] transition-colors"
+                    className="px-6 py-3 text-[17px] transition-colors"
                     style={{
                       color: textColor,
                       fontFamily: "var(--font-instrument-serif)",
@@ -237,7 +237,7 @@ export default function TopNav() {
                       setMobileOpen(false);
                       setShowSubscribe(true);
                     }}
-                    className="w-full inline-flex items-center justify-center h-11 px-5 rounded-full text-[14px] font-medium cursor-pointer"
+                    className="w-full inline-flex items-center justify-center h-11 px-5 rounded-full text-[16px] font-medium cursor-pointer"
                     style={{
                       backgroundColor: useDarkTheme
                         ? "var(--text-primary)"

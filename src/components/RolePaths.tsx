@@ -11,8 +11,8 @@ export default function RolePaths() {
   return (
     <section className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <div className="max-w-5xl mx-auto" ref={ref}>
-        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-4">From commoditized to irreplaceable</motion.h2>
-        <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.05 }} className="text-[15px] mb-12" style={{ color: "var(--text-secondary)" }}>
+        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-2xl md:text-3xl font-medium mb-4">From commoditized to irreplaceable</motion.h2>
+        <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.05 }} className="text-[17px] mb-12" style={{ color: "var(--text-secondary)" }}>
           Let&apos;s be honest - 99% of people use AI the same way. You&apos;re building the moat that puts you in the 1%. For your career and every company you touch. That&apos;s the path.
         </motion.p>
         <div className="grid md:grid-cols-2 gap-5 items-start">
@@ -25,17 +25,17 @@ export default function RolePaths() {
                       <path d="M2.5 6L5 8.5L9.5 3.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </motion.svg>
                   </motion.div>
-                  <span className="text-[14px]" style={{ color: "var(--text-primary)" }}>{task}</span>
+                  <span className="text-[16px]" style={{ color: "var(--text-primary)" }}>{task}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 16 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5, delay: 0.15 }} className="rounded-xl p-7" style={{ border: "1px solid var(--border-subtle)" }}>
-            <h3 className="text-2xl mb-3" style={{ fontFamily: "var(--font-instrument-serif)" }}>The Moat Builder</h3>
-            <p className="text-[14px] leading-relaxed mb-5" style={{ color: "var(--text-secondary)" }}>You become the person who makes AI defensible. For yourself and for every company you work with. Your knowledge base is the competitive advantage no one can replicate or outsource. That&apos;s the answer.</p>
+            <h3 className="text-3xl mb-3" style={{ fontFamily: "var(--font-instrument-serif)" }}>The Moat Builder</h3>
+            <p className="text-[16px] leading-relaxed mb-5" style={{ color: "var(--text-secondary)" }}>You become the person who makes AI defensible. For yourself and for every company you work with. Your knowledge base is the competitive advantage no one can replicate or outsource. That&apos;s the answer.</p>
             <div className="flex flex-wrap gap-2">
               {["Founder", "Design Engineer", "Solo Operator", "Tech Lead", "Vibe Coder"].map((role) => (
-                <span key={role} className="text-[12px] px-3 py-1 rounded-full font-medium" style={{ backgroundColor: "var(--bg-elevated)", color: "var(--text-secondary)" }}>{role}</span>
+                <span key={role} className="text-[14px] px-3 py-1 rounded-full font-medium" style={{ backgroundColor: "var(--bg-elevated)", color: "var(--text-secondary)" }}>{role}</span>
               ))}
             </div>
           </motion.div>

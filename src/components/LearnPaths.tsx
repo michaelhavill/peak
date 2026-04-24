@@ -21,7 +21,7 @@ function ReadBadge({
 }) {
   return (
     <span
-      className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-full"
+      className="inline-flex items-center gap-1 text-[12px] font-semibold uppercase tracking-[0.14em] px-2 py-0.5 rounded-full"
       style={{
         backgroundColor: themeColor?.bg ?? "var(--bg-elevated)",
         color: themeColor?.text ?? "var(--text-secondary)",
@@ -93,7 +93,7 @@ function ThemeSection({
           className="flex items-center gap-3 mb-5"
         >
           <span
-            className="text-[11px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 rounded-full"
+            className="text-[13px] font-semibold uppercase tracking-[0.18em] px-2.5 py-1 rounded-full"
             style={{
               backgroundColor: themeColor?.bg ?? "var(--bg-elevated)",
               color: themeColor?.text ?? "var(--text-secondary)",
@@ -102,7 +102,7 @@ function ThemeSection({
             Chapter {chapterNum}
           </span>
           <span
-            className="text-[11px] font-medium uppercase tracking-[0.18em]"
+            className="text-[13px] font-medium uppercase tracking-[0.18em]"
             style={{ color: "var(--text-secondary)" }}
           >
             {theme.label}
@@ -113,7 +113,7 @@ function ThemeSection({
           initial={{ opacity: 0, y: 14 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: baseDelay + 0.05 }}
-          className="text-[34px] md:text-[48px] leading-[1.05] mb-5 max-w-3xl tracking-tight"
+          className="text-[40px] md:text-[58px] leading-[1.05] mb-5 max-w-3xl tracking-tight"
           style={{
             fontFamily: "var(--font-instrument-serif)",
             color: "var(--text-primary)",
@@ -125,7 +125,7 @@ function ThemeSection({
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: baseDelay + 0.1 }}
-          className="text-[16px] md:text-[17px] max-w-2xl leading-[1.6]"
+          className="text-[18px] md:text-[19px] max-w-2xl leading-[1.6]"
           style={{ color: "var(--text-secondary)" }}
         >
           {theme.description}
@@ -134,7 +134,7 @@ function ThemeSection({
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: baseDelay + 0.15 }}
-          className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] flex items-center gap-3"
+          className="mt-6 text-[13px] font-medium uppercase tracking-[0.18em] flex items-center gap-3"
           style={{ color: "var(--text-secondary)" }}
         >
           <span>
@@ -148,7 +148,7 @@ function ThemeSection({
           </span>
           {mounted && totalPaths > 0 && (
             <span
-              className="px-2 py-0.5 rounded-full text-[10px] font-semibold"
+              className="px-2 py-0.5 rounded-full text-[12px] font-semibold"
               style={{
                 backgroundColor:
                   readCount > 0
@@ -225,7 +225,7 @@ function ThemeSection({
               <div className="flex flex-col p-7 flex-1">
                 <div className="flex items-center gap-2 mb-4">
                   <span
-                    className="text-[10px] font-medium uppercase tracking-[0.18em]"
+                    className="text-[12px] font-medium uppercase tracking-[0.18em]"
                     style={{
                       color: themeColor?.text ?? "var(--text-secondary)",
                     }}
@@ -233,7 +233,7 @@ function ThemeSection({
                     Core learning path
                   </span>
                   <span
-                    className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full text-[10px] font-semibold"
+                    className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full text-[12px] font-semibold"
                     style={{
                       backgroundColor:
                         themeColor?.text ?? "var(--text-primary)",
@@ -244,7 +244,7 @@ function ThemeSection({
                   </span>
                 </div>
                 <div
-                  className="text-[17px] md:text-[19px] font-semibold mb-3 leading-[1.3]"
+                  className="text-[19px] md:text-[22px] font-semibold mb-3 leading-[1.3]"
                   style={{
                     color: "var(--text-primary)",
                     fontFamily: "var(--font-instrument-serif)",
@@ -254,13 +254,13 @@ function ThemeSection({
                   {path.title}
                 </div>
                 <p
-                  className="text-[13px] leading-[1.6] flex-1 mb-5"
+                  className="text-[15px] leading-[1.6] flex-1 mb-5"
                   style={{ color: "var(--text-secondary)" }}
                 >
                   {path.description}
                 </p>
                 <div
-                  className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.14em] transition-transform duration-200 group-hover:translate-x-0.5"
+                  className="flex items-center gap-1.5 text-[13px] font-medium uppercase tracking-[0.14em] transition-transform duration-200 group-hover:translate-x-0.5"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {isRead ? "Revisit article" : "Read article"}
@@ -284,7 +284,7 @@ function ThemeSection({
             className="flex items-center gap-3 mb-4 pl-6 md:pl-10"
           >
             <span
-              className="text-[10px] font-medium uppercase tracking-[0.18em]"
+              className="text-[12px] font-medium uppercase tracking-[0.18em]"
               style={{ color: "var(--text-secondary)" }}
             >
               Related reading from other chapters
@@ -347,7 +347,7 @@ function ThemeSection({
                   <div className="flex-1 min-w-0 flex flex-col">
                     <div className="flex items-center gap-2 mb-2 flex-wrap">
                       <span
-                        className="text-[10px] font-medium uppercase tracking-[0.18em] px-2 py-0.5 rounded-full"
+                        className="text-[12px] font-medium uppercase tracking-[0.18em] px-2 py-0.5 rounded-full"
                         style={{
                           backgroundColor: "var(--bg-elevated)",
                           color: "var(--text-secondary)",
@@ -357,7 +357,7 @@ function ThemeSection({
                       </span>
                       {homeTheme && (
                         <span
-                          className="text-[10px] font-medium uppercase tracking-[0.14em]"
+                          className="text-[12px] font-medium uppercase tracking-[0.14em]"
                           style={{
                             color: homeColor?.text ?? "var(--text-secondary)",
                           }}
@@ -372,7 +372,7 @@ function ThemeSection({
                       )}
                     </div>
                     <div
-                      className="text-[14px] md:text-[15px] font-semibold leading-[1.4] mb-1 group-hover:translate-x-0.5 transition-transform duration-200"
+                      className="text-[16px] md:text-[17px] font-semibold leading-[1.4] mb-1 group-hover:translate-x-0.5 transition-transform duration-200"
                       style={{ color: "var(--text-primary)" }}
                     >
                       {path.title}
@@ -458,7 +458,7 @@ export default function LearnPaths() {
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-[12px] font-medium uppercase tracking-widest mb-5"
+          className="text-[14px] font-medium uppercase tracking-widest mb-5"
           style={{ color: "var(--text-secondary)" }}
         >
           Your learning path
@@ -467,7 +467,7 @@ export default function LearnPaths() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="text-[32px] md:text-[42px] leading-[1.1] mb-4"
+          className="text-[38px] md:text-[50px] leading-[1.1] mb-4"
           style={{
             fontFamily: "var(--font-instrument-serif)",
             color: "var(--text-primary)",
@@ -479,7 +479,7 @@ export default function LearnPaths() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-[15px] max-w-2xl mb-10 leading-relaxed"
+          className="text-[17px] max-w-2xl mb-10 leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
           Each chapter has a handful of core reads plus related articles
@@ -496,7 +496,7 @@ export default function LearnPaths() {
         >
           <button
             onClick={() => setActiveTheme("all")}
-            className="text-[12px] px-4 py-1.5 rounded-full font-medium transition-all duration-200"
+            className="text-[14px] px-4 py-1.5 rounded-full font-medium transition-all duration-200"
             style={{
               backgroundColor:
                 activeTheme === "all"
@@ -514,7 +514,7 @@ export default function LearnPaths() {
             <button
               key={theme.id}
               onClick={() => setActiveTheme(theme.id)}
-              className="text-[12px] px-4 py-1.5 rounded-full font-medium transition-all duration-200"
+              className="text-[14px] px-4 py-1.5 rounded-full font-medium transition-all duration-200"
               style={{
                 backgroundColor:
                   activeTheme === theme.id

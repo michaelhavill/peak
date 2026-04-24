@@ -15,13 +15,13 @@ export default function PersonaPathway({ slug }: { slug: string }) {
   return (
     <section className="mt-16 pt-12" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <p
-        className="text-[12px] font-medium uppercase tracking-widest mb-4"
+        className="text-[14px] font-medium uppercase tracking-widest mb-4"
         style={{ color: "var(--text-secondary)" }}
       >
         What this means for you
       </p>
       <h2
-        className="text-[24px] md:text-[30px] leading-[1.15] mb-3"
+        className="text-[28px] md:text-[36px] leading-[1.15] mb-3"
         style={{
           fontFamily: "var(--font-instrument-serif)",
           color: "var(--text-primary)",
@@ -30,7 +30,7 @@ export default function PersonaPathway({ slug }: { slug: string }) {
         Pick your role. See the difference.
       </h2>
       <p
-        className="text-[14px] mb-8 leading-relaxed"
+        className="text-[16px] mb-8 leading-relaxed"
         style={{ color: "var(--text-secondary)" }}
       >
         The same path, applied to your world. Click your role to see how this changes your work.
@@ -42,7 +42,7 @@ export default function PersonaPathway({ slug }: { slug: string }) {
           <button
             key={p.id}
             onClick={() => setActiveId(activeId === p.id ? null : p.id)}
-            className="text-[12px] px-4 py-1.5 rounded-full font-medium transition-all duration-200"
+            className="text-[14px] px-4 py-1.5 rounded-full font-medium transition-all duration-200"
             style={{
               backgroundColor:
                 activeId === p.id
@@ -80,13 +80,13 @@ export default function PersonaPathway({ slug }: { slug: string }) {
                   style={{ backgroundColor: "var(--bg-primary)" }}
                 >
                   <div
-                    className="text-[11px] font-medium uppercase tracking-widest mb-3"
+                    className="text-[13px] font-medium uppercase tracking-widest mb-3"
                     style={{ color: "var(--text-secondary)" }}
                   >
                     How it works today
                   </div>
                   <p
-                    className="text-[14px] leading-relaxed"
+                    className="text-[16px] leading-relaxed"
                     style={{ color: "var(--text-secondary)" }}
                   >
                     {active.today}
@@ -105,13 +105,13 @@ export default function PersonaPathway({ slug }: { slug: string }) {
                   style={{ backgroundColor: "var(--bg-secondary)" }}
                 >
                   <div
-                    className="text-[11px] font-medium uppercase tracking-widest mb-3"
+                    className="text-[13px] font-medium uppercase tracking-widest mb-3"
                     style={{ color: "var(--text-primary)" }}
                   >
                     The 100x way
                   </div>
                   <p
-                    className="text-[14px] leading-relaxed"
+                    className="text-[16px] leading-relaxed"
                     style={{ color: "var(--text-primary)" }}
                     dangerouslySetInnerHTML={{
                       __html: active.hundredX.replace(
@@ -133,13 +133,13 @@ export default function PersonaPathway({ slug }: { slug: string }) {
                 }}
               >
                 <div
-                  className="text-[11px] font-medium uppercase tracking-widest mb-3"
+                  className="text-[13px] font-medium uppercase tracking-widest mb-3"
                   style={{ color: "var(--text-secondary)" }}
                 >
                   The impact
                 </div>
                 <p
-                  className="text-[14px] leading-relaxed font-medium"
+                  className="text-[16px] leading-relaxed font-medium"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {active.impact}
@@ -152,13 +152,13 @@ export default function PersonaPathway({ slug }: { slug: string }) {
                 }}
               >
                 <div
-                  className="text-[11px] font-medium uppercase tracking-widest mb-3"
+                  className="text-[13px] font-medium uppercase tracking-widest mb-3"
                   style={{ color: "var(--text-secondary)" }}
                 >
                   Real example
                 </div>
                 <p
-                  className="text-[14px] leading-relaxed"
+                  className="text-[16px] leading-relaxed"
                   style={{ color: "var(--text-secondary)" }}
                 >
                   {active.example}

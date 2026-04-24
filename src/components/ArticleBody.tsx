@@ -137,7 +137,7 @@ export default function ArticleBody({
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex-1 min-w-0">
                     <p
-                      className="text-[15px] mb-1 italic"
+                      className="text-[17px] mb-1 italic"
                       style={{
                         color: "var(--text-secondary)",
                         fontFamily: "var(--font-instrument-serif)",
@@ -146,7 +146,7 @@ export default function ArticleBody({
                       How to
                     </p>
                     <p
-                      className="text-[15px] font-medium"
+                      className="text-[17px] font-medium"
                       style={{ color: "var(--text-primary)" }}
                     >
                       {section.triggerText ?? section.title ?? "See the details"}

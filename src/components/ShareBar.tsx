@@ -23,7 +23,7 @@ export default function ShareBar({ title, slug }: ShareBarProps) {
   return (
     <div className="flex items-center gap-3">
       <span
-        className="text-[11px] uppercase tracking-wider font-medium"
+        className="text-[13px] uppercase tracking-wider font-medium"
         style={{ color: "var(--text-tertiary)" }}
       >
         Share

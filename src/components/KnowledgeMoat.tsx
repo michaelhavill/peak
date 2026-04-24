@@ -40,7 +40,7 @@ export default function KnowledgeMoat() {
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-[12px] font-medium uppercase tracking-widest mb-5"
+          className="text-[14px] font-medium uppercase tracking-widest mb-5"
           style={{ color: "var(--text-secondary)" }}
         >
           The next moat
@@ -48,7 +48,7 @@ export default function KnowledgeMoat() {
         <PretextReveal
           text="Everyone has access to the same AI. Your taste, craft, and knowledge are what make it yours. That's the whole moat."
           font="42px 'Instrument Serif'"
-          className="text-[32px] md:text-[42px] leading-[1.1] mb-5"
+          className="text-[38px] md:text-[50px] leading-[1.1] mb-5"
           style={{
             fontFamily: "var(--font-instrument-serif)",
             color: "var(--text-primary)",
@@ -61,7 +61,7 @@ export default function KnowledgeMoat() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-[15px] max-w-2xl mb-16 leading-relaxed"
+          className="text-[17px] max-w-2xl mb-16 leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
           Here&apos;s what&apos;s actually happening: the models are commoditizing. The prompts are public. The tools are the same. So what can&apos;t be copied? The knowledge you put into your AI stack - years of judgment, domain expertise, creative instinct. That&apos;s the moat. For your career and your business.
@@ -78,7 +78,7 @@ export default function KnowledgeMoat() {
               style={{ backgroundColor: "var(--bg-secondary)" }}
             >
               <div
-                className="text-[42px] md:text-[54px] leading-none mb-4"
+                className="text-[50px] md:text-[64px] leading-none mb-4"
                 style={{
                   fontFamily: "var(--font-instrument-serif)",
                   color: "var(--text-primary)",
@@ -87,13 +87,13 @@ export default function KnowledgeMoat() {
                 {pillar.title}
               </div>
               <div
-                className="text-[14px] font-medium mb-3"
+                className="text-[16px] font-medium mb-3"
                 style={{ color: "var(--text-primary)" }}
               >
                 {pillar.subtitle}
               </div>
               <p
-                className="text-[13px] leading-relaxed"
+                className="text-[15px] leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
                 {pillar.description}
@@ -112,13 +112,13 @@ export default function KnowledgeMoat() {
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
             <div className="flex-1">
               <h3
-                className="text-[15px] font-medium mb-2"
+                className="text-[17px] font-medium mb-2"
                 style={{ color: "var(--text-primary)" }}
               >
                 Without your knowledge base
               </h3>
               <p
-                className="text-[13px] leading-relaxed"
+                className="text-[15px] leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
                 Generic output anyone could get. Same prompts, same results, same commoditized work. You&apos;re competing on speed alone - and that&apos;s a race to the bottom.
@@ -130,13 +130,13 @@ export default function KnowledgeMoat() {
             />
             <div className="flex-1">
               <h3
-                className="text-[15px] font-medium mb-2"
+                className="text-[17px] font-medium mb-2"
                 style={{ color: "var(--text-primary)" }}
               >
                 With your knowledge base
               </h3>
               <p
-                className="text-[13px] leading-relaxed"
+                className="text-[15px] leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
                 Work that carries your judgment. Matches your taste. Respects your constraints. You&apos;re competing on depth - and depth compounds. That&apos;s the answer.

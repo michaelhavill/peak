@@ -51,7 +51,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-[14px] font-medium"
+              className="text-[16px] font-medium"
               style={{ color: "var(--text-primary)" }}
             >
               You&apos;re in. Welcome to the 1%.
@@ -59,7 +59,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
           ) : (
             <motion.div key="form" exit={{ opacity: 0 }}>
               <p
-                className="text-[14px] mb-4"
+                className="text-[16px] mb-4"
                 style={{ color: "var(--text-secondary)" }}
               >
                 Sign up to learn how to implement these concepts at work - or for yourself.
@@ -74,7 +74,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                   }}
                   placeholder="Your email address"
                   required
-                  className="h-10 px-4 rounded-full text-[13px] flex-1 min-w-0 outline-none transition-shadow"
+                  className="h-10 px-4 rounded-full text-[15px] flex-1 min-w-0 outline-none transition-shadow"
                   style={{
                     border: `1px solid ${state === "error" ? "#C85450" : "var(--border-medium)"}`,
                     backgroundColor: "var(--bg-secondary)",
@@ -92,7 +92,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                 <button
                   type="submit"
                   disabled={state === "loading"}
-                  className="h-10 px-6 rounded-full text-[13px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
+                  className="h-10 px-6 rounded-full text-[15px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
                   style={{
                     backgroundColor: "var(--text-primary)",
                     color: "var(--bg-primary)",
@@ -102,7 +102,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                 </button>
               </form>
               {state === "error" && errorMsg && (
-                <p className="text-[12px] mt-2" style={{ color: "#C85450" }}>
+                <p className="text-[14px] mt-2" style={{ color: "#C85450" }}>
                   {errorMsg}
                 </p>
               )}
@@ -124,7 +124,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-[14px] font-medium h-11 flex items-center"
+              className="text-[16px] font-medium h-11 flex items-center"
               style={{ color: "var(--text-primary)" }}
             >
               You&apos;re in. Check your inbox.
@@ -147,7 +147,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                 }}
                 placeholder="Enter your email"
                 required
-                className="h-11 px-5 rounded-full text-[14px] flex-1 min-w-0 outline-none transition-shadow"
+                className="h-11 px-5 rounded-full text-[16px] flex-1 min-w-0 outline-none transition-shadow"
                 style={{
                   border: `1px solid ${state === "error" ? "#C85450" : "var(--border-medium)"}`,
                   backgroundColor: "var(--bg-secondary)",
@@ -165,7 +165,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
               <button
                 type="submit"
                 disabled={state === "loading"}
-                className="h-11 px-7 rounded-full text-[14px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
+                className="h-11 px-7 rounded-full text-[16px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
                 style={{
                   backgroundColor: "var(--text-primary)",
                   color: "var(--bg-primary)",
@@ -177,7 +177,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
           )}
         </AnimatePresence>
         {state === "error" && errorMsg && (
-          <p className="text-[12px] mt-2" style={{ color: "#C85450" }}>
+          <p className="text-[14px] mt-2" style={{ color: "#C85450" }}>
             {errorMsg}
           </p>
         )}
@@ -208,7 +208,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
             className="text-center py-4"
           >
             <p
-              className="text-[20px] md:text-[24px] mb-2"
+              className="text-[24px] md:text-[28px] mb-2"
               style={{
                 fontFamily: "var(--font-instrument-serif)",
                 color: "var(--text-primary)",
@@ -216,20 +216,20 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
             >
               Check your inbox.
             </p>
-            <p className="text-[14px]" style={{ color: "var(--text-secondary)" }}>
+            <p className="text-[16px]" style={{ color: "var(--text-secondary)" }}>
               Welcome to the 1%.
             </p>
           </motion.div>
         ) : (
           <motion.div key="form" exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
             <p
-              className="text-[11px] font-medium uppercase tracking-widest mb-4"
+              className="text-[13px] font-medium uppercase tracking-widest mb-4"
               style={{ color: "var(--text-tertiary)" }}
             >
               Newsletter
             </p>
             <h3
-              className="text-[24px] md:text-[28px] leading-[1.1] mb-3"
+              className="text-[28px] md:text-[34px] leading-[1.1] mb-3"
               style={{
                 fontFamily: "var(--font-instrument-serif)",
                 color: "var(--text-primary)",
@@ -238,7 +238,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
               Stay ahead of the 99%
             </h3>
             <p
-              className="text-[15px] leading-relaxed mb-8 max-w-lg"
+              className="text-[17px] leading-relaxed mb-8 max-w-lg"
               style={{ color: "var(--text-secondary)" }}
             >
               Frameworks, strategies, and real examples for building your
@@ -255,7 +255,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
                 }}
                 placeholder="Your email address"
                 required
-                className="h-11 px-5 rounded-full text-[14px] flex-1 min-w-0 outline-none transition-shadow"
+                className="h-11 px-5 rounded-full text-[16px] flex-1 min-w-0 outline-none transition-shadow"
                 style={{
                   border: `1px solid ${state === "error" ? "#C85450" : "var(--border-medium)"}`,
                   backgroundColor: "var(--bg-secondary)",
@@ -273,7 +273,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
               <button
                 type="submit"
                 disabled={state === "loading"}
-                className="h-11 px-7 rounded-full text-[14px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
+                className="h-11 px-7 rounded-full text-[16px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
                 style={{
                   backgroundColor: "var(--text-primary)",
                   color: "var(--bg-primary)",
@@ -284,7 +284,7 @@ export default function EmailCapture({ variant }: EmailCaptureProps) {
             </form>
 
             {state === "error" && errorMsg && (
-              <p className="text-[12px] mt-3" style={{ color: "#C85450" }}>
+              <p className="text-[14px] mt-3" style={{ color: "#C85450" }}>
                 {errorMsg}
               </p>
             )}

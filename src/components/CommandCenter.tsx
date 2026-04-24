@@ -39,17 +39,17 @@ export default function CommandCenter() {
   return (
     <section id="surfaces" className="py-20 md:py-28 px-8 md:px-16 lg:px-20" style={{ borderTop: "1px solid var(--border-subtle)" }}>
       <div className="max-w-5xl mx-auto" ref={ref}>
-        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-xl md:text-2xl font-medium mb-12">Where your moat compounds - shared surfaces for humans and AI</motion.h2>
+        <motion.h2 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }} className="text-2xl md:text-3xl font-medium mb-12">Where your moat compounds - shared surfaces for humans and AI</motion.h2>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.1 }}>
           <div className="flex gap-3 mb-8">
             {COMMAND_TABS.map((tab) => (
-              <button key={tab.id} onClick={() => setActiveTab(tab.id)} className="h-9 px-5 rounded-full text-[13px] font-medium transition-all duration-200" style={{ backgroundColor: activeTab === tab.id ? "var(--text-primary)" : "transparent", color: activeTab === tab.id ? "var(--bg-primary)" : "var(--text-secondary)", border: activeTab === tab.id ? "1px solid var(--text-primary)" : "1px solid var(--border-medium)" }}>
+              <button key={tab.id} onClick={() => setActiveTab(tab.id)} className="h-9 px-5 rounded-full text-[15px] font-medium transition-all duration-200" style={{ backgroundColor: activeTab === tab.id ? "var(--text-primary)" : "transparent", color: activeTab === tab.id ? "var(--bg-primary)" : "var(--text-secondary)", border: activeTab === tab.id ? "1px solid var(--text-primary)" : "1px solid var(--border-medium)" }}>
                 {tab.title}
               </button>
             ))}
           </div>
           <AnimatePresence mode="wait">
-            <motion.p key={active.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="max-w-lg mb-8 text-[15px] leading-relaxed" style={{ color: "var(--text-secondary)" }}>{active.description}</motion.p>
+            <motion.p key={active.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="max-w-lg mb-8 text-[17px] leading-relaxed" style={{ color: "var(--text-secondary)" }}>{active.description}</motion.p>
           </AnimatePresence>
           <div className="rounded-xl overflow-hidden p-1.5" style={{ border: "1px solid var(--border-subtle)" }}>
             <AnimatePresence mode="wait">

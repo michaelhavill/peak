@@ -60,7 +60,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-[36px] sm:text-[48px] md:text-[70px] lg:text-[90px] leading-[110%] tracking-tight mb-8 text-white"
+            className="text-[44px] sm:text-[58px] md:text-[82px] lg:text-[104px] leading-[110%] tracking-tight mb-8 text-white"
             style={{ fontFamily: "var(--font-instrument-serif)", textShadow: "0 2px 40px rgba(0,0,0,0.55), 0 0 80px rgba(0,0,0,0.3)" }}
           >
             Your path to becoming a 100x{" "}
@@ -70,7 +70,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-            className="text-[15px] max-w-md mb-8 leading-[140%] text-white/70"
+            className="text-[17px] max-w-md mb-8 leading-[140%] text-white/70"
             style={{ textShadow: "0 1px 20px rgba(0,0,0,0.6)" }}
           >
             Frameworks, mental models, and real resources to 100x your craft. No
@@ -81,7 +81,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 text-[15px] font-medium group text-white/70 hover:text-white transition-colors px-4 py-2 rounded-full backdrop-blur-sm"
+            className="inline-flex items-center gap-2 text-[17px] font-medium group text-white/70 hover:text-white transition-colors px-4 py-2 rounded-full backdrop-blur-sm"
             style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
           >
             Explore the learning paths

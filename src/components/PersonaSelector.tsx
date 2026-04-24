@@ -38,14 +38,14 @@ export default function PersonaSelector({
     >
       <div className="flex items-center justify-between mb-3">
         <p
-          className="text-[11px] font-medium uppercase tracking-widest"
+          className="text-[13px] font-medium uppercase tracking-widest"
           style={{ color: "var(--text-tertiary)" }}
         >
           Read this as a...
         </p>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-[12px] md:hidden transition-colors"
+          className="text-[14px] md:hidden transition-colors"
           style={{ color: "var(--text-secondary)" }}
         >
           {isExpanded ? "Show less" : "Show all"}
@@ -63,7 +63,7 @@ export default function PersonaSelector({
             <button
               key={persona.id}
               onClick={() => onChange(persona.id)}
-              className="relative h-[34px] px-4 rounded-full text-[13px] font-medium transition-colors whitespace-nowrap"
+              className="relative h-[34px] px-4 rounded-full text-[15px] font-medium transition-colors whitespace-nowrap"
               style={{
                 backgroundColor: isSelected
                   ? "var(--text-primary)"

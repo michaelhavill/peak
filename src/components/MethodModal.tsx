@@ -138,7 +138,7 @@ export default function MethodModal({
 
             {/* Label */}
             <p
-              className="text-[11px] font-medium uppercase tracking-widest mb-3"
+              className="text-[13px] font-medium uppercase tracking-widest mb-3"
               style={{ color: "var(--text-tertiary)" }}
             >
               How to
@@ -146,7 +146,7 @@ export default function MethodModal({
 
             {/* Title */}
             <h2
-              className="text-[24px] md:text-[32px] leading-[1.15] mb-8"
+              className="text-[28px] md:text-[38px] leading-[1.15] mb-8"
               style={{
                 fontFamily: "var(--font-instrument-serif)",
                 color: "var(--text-primary)",
@@ -178,7 +178,7 @@ export default function MethodModal({
                   className="text-center py-6"
                 >
                   <p
-                    className="text-[24px] md:text-[28px] mb-2"
+                    className="text-[28px] md:text-[34px] mb-2"
                     style={{
                       fontFamily: "var(--font-instrument-serif)",
                       color: "var(--text-primary)",
@@ -187,7 +187,7 @@ export default function MethodModal({
                     Request received.
                   </p>
                   <p
-                    className="text-[14px]"
+                    className="text-[16px]"
                     style={{ color: "var(--text-secondary)" }}
                   >
                     I&apos;ll be in touch within 24 hours.
@@ -196,13 +196,13 @@ export default function MethodModal({
               ) : (
                 <motion.div key="form" exit={{ opacity: 0 }}>
                   <p
-                    className="text-[11px] font-medium uppercase tracking-widest mb-3"
+                    className="text-[13px] font-medium uppercase tracking-widest mb-3"
                     style={{ color: "var(--text-tertiary)" }}
                   >
                     Want to go deeper?
                   </p>
                   <h3
-                    className="text-[20px] md:text-[24px] leading-[1.15] mb-2"
+                    className="text-[24px] md:text-[28px] leading-[1.15] mb-2"
                     style={{
                       fontFamily: "var(--font-instrument-serif)",
                       color: "var(--text-primary)",
@@ -211,7 +211,7 @@ export default function MethodModal({
                     Request a consultation call
                   </h3>
                   <p
-                    className="text-[14px] leading-relaxed mb-6"
+                    className="text-[16px] leading-relaxed mb-6"
                     style={{ color: "var(--text-secondary)" }}
                   >
                     Want help implementing this for your specific situation?
@@ -228,7 +228,7 @@ export default function MethodModal({
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Your name"
                       required
-                      className="h-11 px-5 rounded-full text-[14px] w-full outline-none transition-shadow"
+                      className="h-11 px-5 rounded-full text-[16px] w-full outline-none transition-shadow"
                       style={{
                         border: "1px solid var(--border-medium)",
                         backgroundColor: "var(--bg-secondary)",
@@ -252,7 +252,7 @@ export default function MethodModal({
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Your email address"
                       required
-                      className="h-11 px-5 rounded-full text-[14px] w-full outline-none transition-shadow"
+                      className="h-11 px-5 rounded-full text-[16px] w-full outline-none transition-shadow"
                       style={{
                         border: `1px solid ${formState === "error" ? "#C85450" : "var(--border-medium)"}`,
                         backgroundColor: "var(--bg-secondary)",
@@ -278,7 +278,7 @@ export default function MethodModal({
                       placeholder="What would you like to consult about?"
                       required
                       rows={3}
-                      className="px-5 py-3 rounded-2xl text-[14px] w-full outline-none transition-shadow resize-none"
+                      className="px-5 py-3 rounded-2xl text-[16px] w-full outline-none transition-shadow resize-none"
                       style={{
                         border: "1px solid var(--border-medium)",
                         backgroundColor: "var(--bg-secondary)",
@@ -299,7 +299,7 @@ export default function MethodModal({
                     <button
                       type="submit"
                       disabled={formState === "loading"}
-                      className="h-11 px-7 rounded-full text-[14px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
+                      className="h-11 px-7 rounded-full text-[16px] font-medium inline-flex items-center justify-center transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
                       style={{
                         backgroundColor: "var(--text-primary)",
                         color: "var(--bg-primary)",
@@ -313,7 +313,7 @@ export default function MethodModal({
 
                   {formState === "error" && errorMsg && (
                     <p
-                      className="text-[12px] mt-3"
+                      className="text-[14px] mt-3"
                       style={{ color: "#C85450" }}
                     >
                       {errorMsg}

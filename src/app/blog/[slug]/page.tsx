@@ -27,7 +27,7 @@ export default async function BlogPostPage({
       <div className="max-w-2xl mx-auto">
         <Link
           href="/#learn"
-          className="inline-flex items-center gap-1.5 text-[13px] mb-10 transition-colors hover:text-[var(--text-primary)]"
+          className="inline-flex items-center gap-1.5 text-[15px] mb-10 transition-colors hover:text-[var(--text-primary)]"
           style={{ color: "var(--text-secondary)" }}
         >
           <svg
@@ -54,7 +54,7 @@ export default async function BlogPostPage({
             return (
               <span
                 key={t}
-                className="text-[10px] px-2 py-0.5 rounded-full font-medium uppercase tracking-wider"
+                className="text-[12px] px-2 py-0.5 rounded-full font-medium uppercase tracking-wider"
                 style={{
                   backgroundColor: "var(--bg-elevated)",
                   color: "var(--text-secondary)",
@@ -67,7 +67,7 @@ export default async function BlogPostPage({
         </div>
 
         <h1
-          className="text-[32px] md:text-[42px] leading-[1.1] mb-4"
+          className="text-[38px] md:text-[50px] leading-[1.1] mb-4"
           style={{
             fontFamily: "var(--font-instrument-serif)",
             color: "var(--text-primary)",
@@ -93,14 +93,14 @@ export default async function BlogPostPage({
         </h1>
 
         <p
-          className="text-[15px] mb-4"
+          className="text-[17px] mb-4"
           style={{ color: "var(--text-secondary)" }}
         >
           {post.description}
         </p>
 
         {post.authorName && (
-          <p className="text-[13px] mb-8" style={{ color: "var(--text-secondary)" }}>
+          <p className="text-[15px] mb-8" style={{ color: "var(--text-secondary)" }}>
             By{" "}
             {post.authorUrl ? (
               <a
