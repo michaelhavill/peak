@@ -140,7 +140,7 @@ function ThemeSection({
           </span>
           {mounted && totalPaths > 0 && (
             <span
-              className="px-2 py-0.5 rounded-full text-[12px] font-semibold"
+              className="px-2 py-0.5 rounded-full text-[12px] font-semibold inline-flex items-center gap-1"
               style={{
                 backgroundColor:
                   readCount > 0
@@ -152,7 +152,28 @@ function ThemeSection({
                     : "var(--text-tertiary)",
               }}
             >
-              {readCount} of {totalPaths} read
+              {readCount === totalPaths ? (
+                <>
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M1.5 5.5L4 8l4.5-6"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Chapter complete
+                </>
+              ) : (
+                <>{readCount} of {totalPaths} read</>
+              )}
             </span>
           )}
         </motion.div>
@@ -404,6 +425,30 @@ function ThemeSection({
   );
 }
 
+/**
+ * Progress-aware intro copy. Reads one way if you haven't started, another
+ * if you're partway through, another when you've finished. Keeps the site
+ * feeling responsive to you without being obsequious about it.
+ */
+function introCopyFor(readCount: number, total: number): string {
+  if (readCount === 0) {
+    return "Each chapter has a handful of core reads plus related articles from nearby chapters. Articles you've already read are marked so you can see progress at a glance.";
+  }
+  if (readCount === total) {
+    return "You've read every path. Rare company. Send me what landed and what didn't - mvh@mindspan.co.";
+  }
+  if (readCount === 1) {
+    return "One down. Momentum compounds. Pick the next one - the related reading under each chapter is where the connections sharpen.";
+  }
+  if (readCount < total * 0.4) {
+    return `${readCount} articles in. The related-reading links under each chapter are usually where the next click pays best.`;
+  }
+  if (readCount < total * 0.75) {
+    return `${readCount} of ${total} - running the whole course. Keep going.`;
+  }
+  return `${readCount} of ${total}. Close to the finish. The last few usually connect the earlier ones in hindsight.`;
+}
+
 export default function LearnPaths() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -498,9 +543,9 @@ export default function LearnPaths() {
           className="text-[17px] max-w-2xl mb-10 leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
-          Each chapter has a handful of core reads plus related articles
-          from nearby chapters. Articles you&apos;ve already read are marked
-          so you can see progress at a glance.
+          {mounted
+            ? introCopyFor(readSlugs.size, LEARN_PATHS.length)
+            : "Each chapter has a handful of core reads plus related articles from nearby chapters. Articles you've already read are marked so you can see progress at a glance."}
         </motion.p>
 
         {/* Theme filters */}

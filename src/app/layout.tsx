@@ -4,6 +4,7 @@ import { Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import TopNav from "@/components/TopNav";
 import ScrollProgress from "@/components/ScrollProgress";
+import ConsoleGreeting from "@/components/ConsoleGreeting";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${instrumentSerif.variable} antialiased`}
     >
       <body>
+        <ConsoleGreeting />
         <ScrollProgress />
         <TopNav />
         {children}
