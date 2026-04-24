@@ -139,7 +139,7 @@ function ThemeSection({
         >
           <span>
             {primaryPaths.length}{" "}
-            {primaryPaths.length === 1 ? "flagship" : "flagships"}
+            core {primaryPaths.length === 1 ? "article" : "articles"}
             {relatedPaths.length > 0 && (
               <>
                 {" "}&middot; {relatedPaths.length} related
@@ -202,7 +202,7 @@ function ThemeSection({
             >
               {/* Editorial hero image */}
               <div
-                className="relative aspect-[4/3] overflow-hidden"
+                className="relative aspect-square overflow-hidden"
                 style={{ backgroundColor: themeColor?.bg ?? "var(--bg-elevated)" }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -211,7 +211,7 @@ function ThemeSection({
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   style={{ filter: isRead ? "saturate(0.85)" : "none" }}
                 />
                 {isRead && (
@@ -230,7 +230,7 @@ function ThemeSection({
                       color: themeColor?.text ?? "var(--text-secondary)",
                     }}
                   >
-                    Flagship
+                    Core learning path
                   </span>
                   <span
                     className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full text-[10px] font-semibold"
@@ -482,7 +482,7 @@ export default function LearnPaths() {
           className="text-[15px] max-w-2xl mb-10 leading-relaxed"
           style={{ color: "var(--text-secondary)" }}
         >
-          Each chapter has a handful of flagship reads plus related articles
+          Each chapter has a handful of core reads plus related articles
           from nearby chapters. Articles you&apos;ve already read are marked
           so you can see progress at a glance.
         </motion.p>
