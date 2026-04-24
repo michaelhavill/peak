@@ -186,10 +186,10 @@ function ThemeSection({
                 duration: 0.4,
                 delay: baseDelay + 0.1 + i * 0.06,
               }}
-              className="flex flex-col p-7 transition-colors duration-200 group relative"
+              className="flex flex-col transition-colors duration-200 group relative"
               style={{
                 backgroundColor: "var(--bg-secondary)",
-                opacity: isRead ? 0.78 : 1,
+                opacity: isRead ? 0.85 : 1,
               }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.backgroundColor =
@@ -200,46 +200,72 @@ function ThemeSection({
                   "var(--bg-secondary)")
               }
             >
-              <div className="flex items-center gap-2 mb-4">
-                <span
-                  className="text-[10px] font-medium uppercase tracking-[0.18em]"
-                  style={{ color: themeColor?.text ?? "var(--text-secondary)" }}
-                >
-                  Flagship
-                </span>
-                <span
-                  className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full text-[10px] font-semibold"
-                  style={{
-                    backgroundColor: themeColor?.text ?? "var(--text-primary)",
-                    color: themeColor?.bg ?? "var(--bg-primary)",
-                  }}
-                >
-                  {i + 1}
-                </span>
+              {/* Editorial hero image */}
+              <div
+                className="relative aspect-[4/3] overflow-hidden"
+                style={{ backgroundColor: themeColor?.bg ?? "var(--bg-elevated)" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/blog/${path.slug}/hero.png`}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  style={{ filter: isRead ? "saturate(0.85)" : "none" }}
+                />
                 {isRead && (
-                  <span className="ml-auto">
+                  <div className="absolute top-3 right-3">
                     <ReadBadge themeColor={themeColor} />
-                  </span>
+                  </div>
                 )}
               </div>
-              <div
-                className="text-[16px] md:text-[17px] font-semibold mb-3 leading-[1.4]"
-                style={{ color: "var(--text-primary)" }}
-              >
-                {path.title}
-              </div>
-              <p
-                className="text-[13px] leading-[1.6] flex-1 mb-5"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {path.description}
-              </p>
-              <div
-                className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.14em] transition-transform duration-200 group-hover:translate-x-0.5"
-                style={{ color: "var(--text-primary)" }}
-              >
-                {isRead ? "Revisit article" : "Read article"}
-                <span aria-hidden="true">→</span>
+
+              {/* Text content */}
+              <div className="flex flex-col p-7 flex-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <span
+                    className="text-[10px] font-medium uppercase tracking-[0.18em]"
+                    style={{
+                      color: themeColor?.text ?? "var(--text-secondary)",
+                    }}
+                  >
+                    Flagship
+                  </span>
+                  <span
+                    className="inline-flex items-center justify-center w-[18px] h-[18px] rounded-full text-[10px] font-semibold"
+                    style={{
+                      backgroundColor:
+                        themeColor?.text ?? "var(--text-primary)",
+                      color: themeColor?.bg ?? "var(--bg-primary)",
+                    }}
+                  >
+                    {i + 1}
+                  </span>
+                </div>
+                <div
+                  className="text-[17px] md:text-[19px] font-semibold mb-3 leading-[1.3]"
+                  style={{
+                    color: "var(--text-primary)",
+                    fontFamily: "var(--font-instrument-serif)",
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {path.title}
+                </div>
+                <p
+                  className="text-[13px] leading-[1.6] flex-1 mb-5"
+                  style={{ color: "var(--text-secondary)" }}
+                >
+                  {path.description}
+                </p>
+                <div
+                  className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.14em] transition-transform duration-200 group-hover:translate-x-0.5"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {isRead ? "Revisit article" : "Read article"}
+                  <span aria-hidden="true">→</span>
+                </div>
               </div>
             </motion.a>
           );
@@ -286,10 +312,10 @@ function ThemeSection({
                 <a
                   key={path.slug}
                   href={`/blog/${path.slug}`}
-                  className="flex flex-col p-5 transition-colors duration-200 group"
+                  className="flex items-stretch gap-4 p-4 transition-colors duration-200 group"
                   style={{
                     backgroundColor: "var(--bg-secondary)",
-                    opacity: isRead ? 0.78 : 1,
+                    opacity: isRead ? 0.85 : 1,
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.backgroundColor =
@@ -300,37 +326,57 @@ function ThemeSection({
                       "var(--bg-secondary)")
                   }
                 >
-                  <div className="flex items-center gap-2 mb-2 flex-wrap">
-                    <span
-                      className="text-[10px] font-medium uppercase tracking-[0.18em] px-2 py-0.5 rounded-full"
-                      style={{
-                        backgroundColor: "var(--bg-elevated)",
-                        color: "var(--text-secondary)",
-                      }}
-                    >
-                      Related
-                    </span>
-                    {homeTheme && (
+                  {/* Thumbnail */}
+                  <div
+                    className="relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 rounded-md overflow-hidden"
+                    style={{
+                      backgroundColor: homeColor?.bg ?? "var(--bg-elevated)",
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`/blog/${path.slug}/hero.png`}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      style={{ filter: isRead ? "saturate(0.85)" : "none" }}
+                    />
+                  </div>
+
+                  <div className="flex-1 min-w-0 flex flex-col">
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
                       <span
-                        className="text-[10px] font-medium uppercase tracking-[0.14em]"
+                        className="text-[10px] font-medium uppercase tracking-[0.18em] px-2 py-0.5 rounded-full"
                         style={{
-                          color: homeColor?.text ?? "var(--text-secondary)",
+                          backgroundColor: "var(--bg-elevated)",
+                          color: "var(--text-secondary)",
                         }}
                       >
-                        from {homeTheme.label}
+                        Related
                       </span>
-                    )}
-                    {isRead && (
-                      <span className="ml-auto">
-                        <ReadBadge themeColor={homeColor} />
-                      </span>
-                    )}
-                  </div>
-                  <div
-                    className="text-[14px] md:text-[15px] font-semibold leading-[1.4] mb-1 group-hover:translate-x-0.5 transition-transform duration-200"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    {path.title}
+                      {homeTheme && (
+                        <span
+                          className="text-[10px] font-medium uppercase tracking-[0.14em]"
+                          style={{
+                            color: homeColor?.text ?? "var(--text-secondary)",
+                          }}
+                        >
+                          from {homeTheme.label}
+                        </span>
+                      )}
+                      {isRead && (
+                        <span className="ml-auto">
+                          <ReadBadge themeColor={homeColor} />
+                        </span>
+                      )}
+                    </div>
+                    <div
+                      className="text-[14px] md:text-[15px] font-semibold leading-[1.4] mb-1 group-hover:translate-x-0.5 transition-transform duration-200"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      {path.title}
+                    </div>
                   </div>
                 </a>
               );
