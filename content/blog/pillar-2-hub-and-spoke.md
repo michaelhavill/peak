@@ -7,28 +7,24 @@ theme:
   - scale
   - ship-faster
 description: >-
-  The builders who own their orchestration layer can swap any tool overnight.
-  Everyone else is locked in.
+  Ten failure modes of vendor lock-in that are quietly costing real companies
+  real money - and the hub-and-spoke move that retires each one.
 date: 2026-03-28T00:00:00.000Z
 author: 100xpath
 tags:
   - architecture
-  - hub-and-spoke
-  - vendor independence
+  - vendor lock-in
   - infrastructure
   - antifragile
+  - lock-in failure modes
 heroImage: /blog/pillar-2-hub-and-spoke/hero.png
 ---
 
-Six months ago you picked an AI platform. Your team shipped 14 workflows on top of it. Now a competitor launches something 3x faster at half the price. You cannot switch. Your workflows are fused to the vendor's data model. Your prompts call proprietary APIs. Your team learned one UI. You didn't notice the lock-in because the first 90 days were free - and that is exactly how the incentive structure was designed.
+> **Foundations assumed:** [Knowledge bases are the new career capital](/blog/pillar-1-knowledge-management) · [Encode your specificity](/blog/you-are-not-generic)
 
-Run the numbers honestly. A 6-month migration for a team of 15 costs you roughly $540,000 in loaded salary before you count the features you didn't ship, the customers you didn't win, and the competitor velocity you didn't match. Then add the opportunity cost of your two best engineers spending half their quarter on yak-shaving instead of the roadmap. The vendor who locked you in booked that loss as their revenue. That is not a partnership. That is a toll road where you paid to build the asphalt.
+Every company I've worked with that got trapped in a bad AI vendor situation got trapped the same way: one small architectural choice, made under deadline pressure, that quietly welded the core of their business to a platform they didn't control. The lock-in never felt like lock-in at the time. It felt like progress. Then six months later a better tool launched, the vendor's roadmap drifted, or the pricing doubled - and they discovered they couldn't move without rebuilding.
 
-Imagine if every time a better AI tool launched, you could adopt it on the same day - no migration project, no rebuild, no lost context, no procurement committee. Imagine if your stack got measurably better every quarter without you ever doing the painful work of switching. The architecture that makes this possible is not exotic. It is not expensive. It is one design decision applied consistently. The teams that made it 18 months ago are now compounding speed advantages competitors will never close.
-
-The builder down the hall swaps AI providers over lunch. Her workflows keep running. Her knowledge base doesn't move. Her team barely notices. She's playing a different game entirely.
-
-**The difference is not technical sophistication. It's architectural discipline.** One structure is fragile - one bad vendor quarter and you're rebuilding from scratch. The other is antifragile - every market disruption makes you faster. Full stop.
+Below are ten failure modes of vendor lock-in I see over and over, across **CTOs**, **technical leaders**, and **ops leaders**. Each one has a specific cost. Each one has a specific architectural fix. Read the list. Run it against your stack. Where you recognise yourself, you have work to do.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
@@ -71,131 +67,105 @@ The builder down the hall swaps AI providers over lunch. Her workflows keep runn
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-<!-- toggle: individual -->
+---
 
-## The 100x Individual
+## The Ten Failure Modes
 
-Here's the thing. Your relationship with tools defines your speed ceiling. Every tool you adopt is either a spoke you can replace in an afternoon - or a dependency that owns you for 18 months. The question is brutally simple: "If this disappeared tomorrow, what breaks?"
+### 1. The Data Model Prison
 
-If the answer is "everything" - you don't have architecture. You have a hostage situation. If the answer is "I swap the spoke and the hub keeps running" - you've derisked your entire workflow. That is the discipline that compounds.
+**The pattern.** You built your workflows directly against a vendor's data model - their customer object, their event schema, their entity structure. Your logic assumes their shape. Their shape is now your shape.
 
-Picture this. Two builders wake up tomorrow to news that the AI provider they depend on just got acquired and the roadmap is being rewritten. One spends the next four months in migration hell while the market moves on without her. The other shrugs, opens her config file, points it at a new model, and is back to shipping by lunch. Same news. Same morning. Two completely different careers from that point forward. Which builder do you want to be in 18 months?
+**What it costs.** A 6-month migration whenever you switch. Every query, every report, every downstream integration has to be rewritten. A team I worked with estimated this at $540K in loaded salary just to port their analytics off one vendor.
 
-A **design engineer** structured his entire stack around one principle: **own the center, rent the edges.** His knowledge base and workflow logic live in systems he controls - the hub. Design tools, code editors, AI models, deployment platforms - all spokes. When Cursor shipped a feature that outperformed his previous editor, he swapped that spoke in one afternoon.
+**The fix.** Define your own canonical data model in the hub. Every vendor plugs in via an adapter that translates their schema to yours on the way in and out. The vendor changes. Your hub doesn't.
 
-**How to start building your hub today:** Put your core knowledge in a system you own - Notion, Obsidian, or even a well-structured folder of markdown files. Then connect it to your AI tools via MCP. Your Notion workspace connects to Claude. Your markdown files connect to Cursor via `.cursorrules` and project docs. Your knowledge stays in your system. The AI tools are spokes you swap without losing a single insight. Zero rebuilding. Zero retraining. Zero lost context. Like a poker player with deep chip stacks - he can play any hand because he's never pot-committed to one tool.
+### 2. The Proprietary Workflow Trap
 
-A **solo founder** took this further. She built her customer data model, workflow logic, and orchestration rules in her own system. Salesforce, Stripe, and her analytics platform plug in as spokes. When her analytics provider tripled pricing - from $400/month to $1,200 - she swapped to a competitor over a weekend. Her hub didn't change. Her data stayed clean. Her workflows kept running. Net-net: she saved $9,600 a year and upgraded her analytics in 48 hours.
+**The pattern.** Your automation logic is built inside a vendor's workflow engine - their drag-and-drop canvas, their custom DSL, their no-code tool. The logic is valuable; it's also now the vendor's format.
 
-An **engineering lead** built the team's architecture docs, ADRs, and deployment patterns as the hub. CI/CD tools, monitoring platforms, and cloud services are spokes. When a better CI tool shipped, they swapped it in a day. When cloud pricing changed, they migrated the compute spoke without touching a single line of application logic.
+**What it costs.** You cannot version-control it properly. You cannot test it outside the vendor's environment. You cannot lift it to another platform without rebuilding from scratch. When the vendor degrades, you're stuck.
 
-A **product manager** made her research corpus and persona data the hub. Analytics tools, survey platforms, and A/B testing services are spokes. When a vendor got acquired and the product degraded - which happens on a 2-3 year cycle like clockwork - she migrated in a week. Dashboards, experiments, feature flags: all kept running.
+**The fix.** Keep business logic in code you own. Vendor workflow engines should only orchestrate steps that reference your logic, not contain it. If your critical workflow would die with the vendor tomorrow, you don't have architecture - you have a hostage situation.
 
-A **clinical leader** built care coordination logic as the hub. The EHR is a spoke. When the EHR falls short, she builds extensions. When a better scheduling tool launched, she swapped it without disrupting a single clinical workflow.
+### 3. The Prompt Entanglement
 
-A **marketing operator** made her customer journey map, messaging architecture, and segment definitions the hub. Email platforms, ad tools, analytics, and CDPs are spokes. When her email provider raised prices 45% overnight, she migrated in a weekend and kept every automation, every segment, every template intact. The next week she swapped her analytics spoke to something 3x better. Same hub. Two upgrades. Zero drama. Her competitors were still in vendor evaluation meetings six weeks later.
+**The pattern.** Your prompts are tuned to one model's quirks. They reference vendor-specific features. They depend on response formats that are slightly different on every other provider.
 
-A **researcher** running experiments across five different labs made his data schema and analysis pipelines the hub. The instruments that generate the data, the storage platforms, and the visualization tools are all spokes. When a sensor vendor discontinued their SDK, he swapped hardware in an afternoon. Three years of longitudinal data stayed perfectly consistent because the hub never moved.
+**What it costs.** The day a 40%-better model launches on another provider, switching requires retuning every prompt in your codebase. The team that built it is the only team that knows how. They're now a single point of failure.
 
-Imagine if every tool in your stack could be replaced in an afternoon without losing a single insight, a single workflow, or a single hour of context. Imagine if the next big AI release wasn't a threat to your roadmap but a free upgrade to your operation. That is not a fantasy. That is what owning the center actually feels like once you've built it. The builders who live there don't fear the next platform shift. They wait for it.
+**The fix.** Prompts as code, checked into the repo, parameterised by model. An abstraction layer between your agents and any specific provider. Benchmarks you run against every candidate model whenever a new one ships. Swap the spoke. Your agent layer doesn't notice.
 
-Consider this - it matters more for AI tools than any other category. The landscape reshapes itself every 90 days. Models improve by 40% per generation. New providers emerge monthly. Pricing drops 10x in 18 months. The builder who can swap AI tools without rebuilding workflows has a structural speed advantage that compounds with every market shift. But the speed isn't the whole story - the real payoff is what you do with the time you're not spending on migration projects. Every 6-month migration you avoid is 6 months reclaimed for deep thinking, deep craft, and the hardest most interesting problems in your domain. Time to adopt new capabilities, faster. Time for the strategic work that actually differentiates? Unlocked. That is the moat no vendor can take from you.
+### 4. The SSO/Auth Anchor
 
-<!-- toggle: team -->
+**The pattern.** You built SSO, permissions, and identity on top of a vendor's specific scheme. It was easy at the time. Now every other tool you adopt has to bend to that scheme.
 
-## The 100x Team & Business
+**What it costs.** Every subsequent vendor evaluation quietly privileges the incumbent's integration story. You stop evaluating the best tool for the job and start evaluating the tool that integrates cleanest with your auth anchor. That is vendor-driven strategy dressed up as due diligence.
 
-![](/blog/pillar-2-hub-and-spoke/section-1.png)
+**The fix.** SSO through a provider you consider *neutral infrastructure*, not strategic platform. Okta, Auth0, or equivalent. Every tool plugs in. Your identity layer is a spoke, not a hub.
 
+### 5. The Pricing-Cliff Dependency
 
-At the company level, hub-and-spoke is the difference between strategic flexibility and slow death by vendor dependency. Let me be very clear about what usually happens.
+**The pattern.** The vendor priced the first tier aggressively. You deployed widely. Now you're at the seat count, usage threshold, or feature tier where pricing gets ugly - and they know it.
 
-Most enterprise AI strategies follow a playbook designed to fail: evaluate vendors for 6 months, pick one, sign a 3-year contract worth $500K+, build everything on the platform. Then the vendor's roadmap diverges from yours. Feature requests vanish into a backlog you cannot see or influence. But switching costs are now $2M and 18 months of migration - so you stay. You've outsourced your strategic flexibility to a company whose incentive structure is to keep you locked in. That is insanity.
+**What it costs.** A 45-60% overnight price hike when the renewal comes. Or a 3x jump at the seat threshold. One company I watched had analytics spend go from $400/mo to $1,200/mo on renewal because they were too deep to move. Every customer that got there knew in advance. Nobody had a migration plan.
 
-The math gets worse when you look at what the lock-in actually costs over a full contract cycle. A 3-year enterprise deal at $500K a year that you're stuck with for two years past the point of regret is $1M of committed spend on tools you know are behind. Add the $2M migration you're delaying and you're carrying $3M of dead weight against a balance sheet you're trying to grow. That is not a vendor relationship. That is a leveraged bet on a horse whose best days are behind it.
+**The fix.** Annual migration drills. Actually simulate moving to a competitor twice a year. Confirm the hub's integration still holds. The threat is the leverage that keeps vendor pricing honest.
 
-One company took the opposite approach. Their own platform is the hub - data, workflows, task orchestration, and cross-system coordination all live there. Their EHR, CRM, documentation tools, and AI models are all spokes. **All current infrastructure is considered replaceable.** That is the principle that changes everything.
+### 6. The Feature Backlog You Can't Influence
 
-When their EHR vendor stalled a critical integration for 8 weeks, they built a bridge through their hub in 48 hours. When a better documentation tool launched, they piloted it as a spoke without touching the hub. When an AI model showed 30% better accuracy on a key task, they swapped it with a configuration change - not a 6-month migration project. This is what antifragile looks like when you deploy it at the organizational level.
+**The pattern.** You filed a feature request 18 months ago. Then another. Then another. None shipped. The vendor's roadmap is driven by their top 5 enterprise accounts, and you are not one of them.
 
-What's stopping you from building this exact architecture today? Not budget. The tools to do it are mostly free or near-free. Not talent. Your existing engineers can wire this up in a sprint. The honest answer is inertia and the comfort of a vendor relationship that feels safe right up until it isn't. Think about it like this: every quarter you delay is another quarter of compounding lock-in your competitors are escaping while you stand still.
+**What it costs.** Your strategic plans quietly bend around feature gaps you couldn't close. Your competitive position takes losses you shouldn't take because you're waiting on a vendor that is not waiting on you.
 
-The organizational discipline: **tools are chosen for speed-to-integrate, not permanence.** The **engineering team** evaluates tools by asking "how fast can we integrate and how fast can we rip it out?" - not "how comprehensive is the platform?" The **product team** treats analytics providers as replaceable spokes. The **ops team** treats workflow tools the same way. The **clinical team** treats everything except their care coordination logic as a spoke. Think of it like reading the table in poker - you're always assessing which position gives you the most optionality, not committing your stack to one hand.
+**The fix.** Build the missing feature as a spoke against your hub. If the hub is properly defined, 80% of "feature gaps" become short internal builds. The vendor becomes optional for any capability you're willing to build once.
 
-This requires building custom interfaces for different teams - **business**, **clinical**, **operations** - each reading from and writing to the same central system. The upfront investment is real. But the payoff is an architecture that outlasts any individual tool decision by 10x. In AI, where the landscape reshapes itself quarterly, this is not a luxury. It is the thing that separates teams shipping on day one from competitors stuck in procurement cycles measuring 12-18 months. And the teams that aren't stuck in procurement? They're spending that time on the work that actually makes a difference - deep strategy, hard product problems, the craft that differentiates. The punchline is: speed compounds, lock-in is the tax that destroys compounding, and the real win is reclaiming time for the work only your team can do.
+### 7. The Team-Knowledge Trap
 
-Picture this. Your AI budget for next year is $1.2M. A hub-and-spoke org deploys that same budget across six different providers, plugs each one into the hub, and runs a quarterly bake-off for each category. The best model wins the next quarter's traffic. The worst gets swapped for whatever shipped since the last review. Your locked-in competitor signs a 3-year deal for $1.5M with one vendor and prays the roadmap holds. In year two, a new model arrives that is 8x better at half the price. You adopt it on Monday. Your competitor waits 14 months for their contract to expire. That gap is measured not in percentage points but in generations. It is the difference between a trading desk running live markets and a pension fund rebalancing once a year.
+**The pattern.** Your team mastered the vendor's UI, the vendor's terminology, the vendor's quirks. Institutional knowledge is now vendor-specific. Every hire trains on the vendor. Every hour of internal documentation references the vendor.
+
+**What it costs.** When you migrate, you retrain the team. When someone leaves, their replacement needs vendor-specific onboarding before they contribute. Your team's productivity has been implicitly collateralised against the vendor's continued existence.
+
+**The fix.** Invest in portable skills, not vendor-specific ones. Document workflows in terms of outcomes and logic, not vendor UI steps. A **technical leader** I know audits their onboarding docs annually and rips out every vendor-specific instruction, replacing it with a principle the next vendor will also honour.
+
+### 8. The Acquisition Shock
+
+**The pattern.** Your vendor got acquired. The acquirer has different priorities. The product you loved starts degrading within 90 days: features deprecated, pricing changed, support quality halved, support staff departed.
+
+**What it costs.** A business-as-usual quarter turns into a fire drill. A team I worked with lost three weeks of product roadmap responding to a vendor acquisition they hadn't seen coming. Cost: roughly $180K of engineering time and a feature that shipped two cycles late.
+
+**The fix.** Assume every vendor will eventually get acquired. The hub survives; the spoke changes hands. Monitor for signs - slowed shipping, silent support, LinkedIn departures. Treat vendor health as a real quarterly metric. Plan to move before the shock, not after.
+
+### 9. The Integration Orphan
+
+**The pattern.** You built a custom integration with a vendor that's now 3 platform-versions behind. The integration still works - barely. Every month brings a new edge case. The engineer who wrote it left. Nobody wants to touch it.
+
+**What it costs.** A slow, grinding tax. One bug a quarter. One outage a year. A team that delays any related feature because the integration is considered haunted code.
+
+**The fix.** Integrations live at the hub's adapter boundary, with clear contracts and test coverage. If a vendor changes and your adapter breaks, the adapter is a half-day fix - not an archaeological dig. Treat integrations as first-class code, not glue.
+
+### 10. The "We're Already Too Deep" Lie
+
+**The pattern.** You know the vendor is wrong for you. You can list the problems. You won't move because "we're already too deep." Sunk costs become strategy.
+
+**What it costs.** Every quarter you stay is another quarter of compounding lock-in and another quarter your competitors who moved earlier pull further ahead. A CFO-approved decision to defer migration is, in most cases, a decision to pay the vendor a retention tax for the privilege of falling behind.
+
+**The fix.** Compute the sunk cost honestly. Compute the forward cost of staying honestly. Compute the migration cost. The migration cost is almost always smaller than the three-year forward cost of staying. The longer you wait, the worse the math gets. Full stop.
 
 ---
 
-## The Same Pattern, Different Domains
+## The Architectural Discipline That Retires All Ten
 
-![](/blog/pillar-2-hub-and-spoke/section-2.png)
+Every failure mode above has the same root cause: your core logic lives somewhere you don't own. The fix is the same in every case: move the core to a hub you control. Treat every vendor as a spoke that can be swapped without touching the hub.
 
-
-Why does this pattern show up everywhere? Because the underlying economics are identical across every domain. There are only two categories: the thing that generates your core value - the hub - and everything else - spokes. Once you see it, you cannot unsee it.
-
-A **product team** at a fintech startup built their feature flag system and customer data model as the hub. A/B testing, analytics, and user research tools are spokes. When their analytics vendor got acquired and the product degraded within 90 days, they migrated in a week. Dashboards, experiments, and feature flags kept running while competitors spent 4 months on the same migration.
-
-A **design team** made their design principles and tokens the hub. Figma, code editors, and prototyping tools are spokes. Their design system's logic persists regardless of which tool renders it. When a better editor launched, they adopted it without losing 3 years of design system investment. The hub preserved $250K+ worth of institutional knowledge.
-
-An **operations leader** structured care coordination logic as the hub. The EHR handles 80% of clinical needs - where it falls short, she builds extensions. Scheduling, referrals, and communication are spokes upgraded independently. A new care model deployed in 48 hours. Not the typical 6-month IT project. That is a 90x speed advantage.
-
-An **engineering lead** built the workflow engine and data model as the hub. Cloud services, CI/CD tools, and monitoring are spokes. Cost optimization, performance improvements, and new capabilities manifest as configuration changes - not migrations that burn $200K in engineering time.
-
-A **founder** made her business logic the hub. Every SaaS subscription is a spoke. When something better launches, she adopts it on day one while competitors are still scheduling their vendor evaluation kickoff. That gap compounds every single quarter.
-
-A **sales leader** running a 12-person team built her playbook, ICP definitions, and deal intelligence as the hub. The CRM is a spoke. The dialer is a spoke. The call recording platform is a spoke. When her CRM vendor hiked seat pricing 60% at renewal, she moved the entire team to a competitor in two weeks and kept every single account, every single note, every single pipeline position exactly where it belonged. The CRM vendor thought they had her trapped. They had nothing but a rented connection.
-
-**The pattern: whatever generates your core value is the hub. Everything else is a spoke.** Your hub is where the triad lives - your people's judgment, your accumulated knowledge, and AI working as extensions of your team's skills. The moment you let a vendor tool become your hub, you've outsourced your differentiators and handed the deed to someone else. That is the structural mistake that kills companies slowly - then all at once.
-
-Think about it like this. Every great hedge fund of the last 30 years built its edge on proprietary infrastructure that survived the constant churn of tools, models, and data providers underneath it. Renaissance didn't win because they had the best data feed. They won because their analytical engine - the hub - could plug into any data source without rewriting itself. Bridgewater didn't win because they had the best portfolio software. They won because their decision-making framework lived in their own system. Your company is running the same playbook whether you know it or not. The only question is whether you own your hub or rent it from a vendor whose incentives diverge from yours every quarter.
+That is not a technical exercise. It is an organisational discipline. The **CTOs** who run it well have one rule: *any time we're about to build something directly against a vendor's shape, we stop and ask what the hub version would look like first.* Five minutes of that conversation, applied consistently, is what separates teams that adopt the best model on day one from teams that are still in procurement six quarters later.
 
 ---
 
-## Where This Connects
+## Run the Audit This Week
 
-Architecture is the container that holds everything else. Your knowledge base needs a hub to live in - a system you control, not one a vendor might deprecate on 30 days' notice. Your orchestration engine needs flexibility to route work across tools that change quarterly. Your team experiments faster when tool-swapping costs $0 in lost context. Your performance standards depend on infrastructure that moves as fast as your ambitions.
+Walk through your stack. For each tool, ask: if this vendor disappeared tomorrow, what breaks? If the answer is "everything," that tool is a hub - not a spoke - and the lock-in is already priced in. If the answer is "a spoke we swap in an afternoon," you're antifragile on that axis.
 
-**The hub is what you own. The spokes are what you rent. The discipline to maintain that boundary is what makes you antifragile** - not just resilient to stress, but genuinely better because of it. And the hub's value comes from the triad: you, your knowledge store, and AI working together. You're not outsourcing your differentiators to a platform. You're empowering your agents to build with you - through infrastructure you control. Every disruption is an upgrade opportunity. Every vendor misstep is a free option to improve. That is how you compound advantages while everyone else is filing procurement requests.
-
----
-
-## Examples How Others Have Made This Real
-
-These aren't hypotheticals. Real builders and companies are deploying hub-and-spoke architecture right now - and the antifragile advantage is already compounding.
-
-- **Anthropic's Model Context Protocol (MCP)** is the hub-and-spoke pattern made into an open standard. Your knowledge base and workflow logic are the hub. AI models, tools, and data sources plug in as spokes via MCP. When a better tool launches, you swap the spoke. The hub - your context, your logic, your intelligence - never moves. Thousands of teams are building on this architecture today.
-
-- **Notion as hub** - product teams use Notion as their knowledge and workflow hub, with AI tools, project trackers, design tools, and communication platforms plugged in as spokes. When Linear replaced Asana, the hub didn't move. When Claude replaced a previous AI tool, the knowledge base stayed intact. The switching cost dropped to near zero.
-
-- **Vercel's architecture** - Next.js apps deploy to Vercel, but the application logic and data model are portable. Teams swap hosting providers, databases, and AI services without rewriting application code. The hub (your code, your data model) survives every spoke change. That's antifragile engineering.
-
-- **Zapier / Make as orchestration hubs** - operations teams build workflow logic in Zapier, connecting CRM, email, AI, analytics, and communication tools as spokes. When a spoke vendor raises prices or degrades, the replacement plugs into the same workflow. One team swapped their email provider in an afternoon. Their 40+ automated workflows never noticed.
-
-- **Terraform / Infrastructure as Code** - engineering teams encode their infrastructure logic as the hub. Cloud providers - AWS, GCP, Azure - are spokes. When cloud pricing shifts or a better service launches, teams migrate the spoke without rewriting infrastructure logic. The pattern is the same at every layer: own the center, rent the edges.
-
-- **dbt as the analytics hub** - data teams build transformation logic in dbt (the hub) and connect data warehouses, BI tools, and reporting platforms as spokes. When Looker got acquired and the product direction shifted, teams using dbt as their hub migrated to a new BI spoke without losing a single transformation. Years of analytical logic, preserved.
-
-- **PostHog, Plausible, and the analytics unbundling** - product teams moving away from Google Analytics are discovering the hub-and-spoke principle firsthand. Teams whose analytics logic lived in GA's proprietary system faced months of migration. Teams with their own data model and event taxonomy (the hub) swapped analytics providers in days. The lesson: if your core logic lives in a vendor's system, you don't have architecture. You have a dependency.
-
----
-
-## Ask Yourself
-
-These questions reveal whether you own your infrastructure - or your vendors own you.
-
-1. **If your AI provider disappeared tomorrow, what breaks?** Run the exercise seriously. Your workflows, your prompts, your integrations - how much is entangled with one vendor's data model? If the answer is "everything" - you don't have architecture. You have a dependency. [See how the hub protects you →](/#philosophy)
-
-2. **Where does your core knowledge actually live?** In Notion? In your AI vendor's system? In a platform you don't control? Your knowledge base, orchestration logic, and business rules should live in systems you own. Everything else is a spoke you can swap. [See how the knowledge moat stays yours →](/#moat)
-
-3. **How fast can you swap a tool?** Pick any tool in your stack. How long would it take to replace it - an afternoon, a week, or 6 months of migration? That migration timeline is the measure of your lock-in. The builder who can swap in an afternoon is antifragile. [Explore the integrations stack →](/#stack)
-
-4. **Are your workflows built on vendor features or on your own logic?** If your automation depends on a specific vendor's proprietary workflow engine, you've given away control. If your orchestration logic lives in your hub and the vendor is just a spoke - you're free to move.
-
-5. **Can multiple agents across different providers access the same knowledge?** Your hub should feed context to Claude, to your coding tools, to your design tools - regardless of provider. If your knowledge only works with one AI, that's lock-in disguised as integration. [See how agents connect to the hub →](/#agents)
-
-6. **What's your "speed to integrate" test for new tools?** When something better launches, can you pilot it in a day? Or does evaluation take 6 months and procurement another 6? The team that can adopt new tools on day one compounds advantages that locked-in competitors can never close.
+The audit takes two hours. The decisions it surfaces will shape your next two years. Nothing on your calendar this week has a better ROI than that.
 
 ---
 

@@ -20,6 +20,8 @@ tags:
 heroImage: /blog/pillar-3-orchestration/hero.png
 ---
 
+> **Foundations assumed:** [Knowledge bases are the new career capital](/blog/pillar-1-knowledge-management) · [Encode your specificity](/blog/you-are-not-generic)
+
 The average knowledge worker spends 62% of their day on context assembly, status updates, and information routing. Not thinking. Not deciding. Not creating. Assembling. At a fully-loaded cost of $85/hour, that is $110,000 per employee per year burned on work a machine should do. That is insanity.
 
 Now multiply that across a 50-person team. That is $5.5M a year you are paying skilled professionals to do clerical work. Five and a half million dollars in loaded salary, disappearing into Slack threads, status decks, meeting prep, and the quiet misery of Ctrl+C/Ctrl+V between six browser tabs. If an investor told you they were burning $5.5M a year on a line item that produced no customer value, you would pull the plug on the fund by Friday. Yet you tolerate it in your own operation because it has always been there. Orchestration is not a nice-to-have. It is the structural fix to a hole in the bottom of your P&L.
