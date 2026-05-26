@@ -44,6 +44,16 @@ const POST_PROMPTS = {
     ],
   },
 
+  // Accent: burnt sienna + warm amber
+  // Theme: AI leadership rests on three foundational investments - knowledge, token costs, token value
+  "ai-leadership-foundations": {
+    hero: "burnt sienna and warm amber accents - a leader figure kneeling on rich dark soil, carefully placing three large geometric foundation stones into the earth in front of them, while above the stones a vivid garden of varied geometric blooms is just beginning to flourish - the foundations precede the flourishing, the leader's posture quietly deliberate, the contrast between hidden foundation work below and visible bloom above made plain, no people in the bloom, the focus on the deliberate placement of the three stones",
+    sections: [
+      "warm amber accent - a grand central well or reservoir built from interlocking knowledge-shaped blocks contributed by every team, with small figures around its rim lowering buckets in and pulling out glowing structured insights - the contributions flowing inward and the access flowing outward in one continuous gesture, the single access layer made visible, every team's contribution visibly distinct yet part of the same coherent vessel",
+      "burnt sienna accent - a pair of beautifully calibrated scales: on one side a precise stack of glowing tokens or coins, on the other a constellation of varied business outcomes - a shipped product, a closed deal, a satisfied customer, a finished blueprint - the scale perfectly level, a leader's hand resting on the fulcrum, the math finally legible, the relationship between spend and outcome clear and balanced",
+    ],
+  },
+
   // Accent: burnt sienna + terracotta
   // Theme: personal knowledge moat → company competitive moat, compounding like a fund
   "building-moat-at-scale": {
