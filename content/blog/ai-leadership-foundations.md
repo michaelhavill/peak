@@ -90,11 +90,13 @@ How does a team or an individual understand spend vs outcomes?
 
 Every business will be different. But without some simple scaffolding, you'll struggle to know if $1K on tokens is the deal of the century or a waste of money.
 
-Ask a founder what their AI spending actually produced last quarter and most can't answer beyond "the team is faster." Faster at what? Compared to what? At what cost? A product leader I work with only approves AI spending when the team attaches three lines: the specific result they expect, the number it was at before, and the number that would prove the spend was worth it. Three lines. Six months in, the budget conversation takes 15 minutes and every dollar is defended.
+Ask a founder what their AI spending actually produced last quarter and most can't answer beyond "the team is faster." Faster at what? Compared to what? Toward what?
+
+A product leader I work with thinks about value in two columns and ignores anyone who only fills out the first. Column one is the obvious stuff - hours saved, headcount avoided, tasks compressed. Easy to measure. Easy to defend at a budget meeting. Uninteresting to her as a decision driver. Column two is the question she actually cares about: what can the team do this quarter that they could not have done last quarter? Not faster - different. Three sprints in, her marketing lead's answer ran like this: we can ship a positioning experiment the same day a competitor publishes their earnings; we can read patterns across our entire customer base instead of sampling the last fifteen calls; we can stress-test bets against six markets we never had the bandwidth to study. None of that fits on a spend-vs-savings spreadsheet. All of it is the actual return. When a tool only moves column one, she cuts it. When it moves column two, she doubles down even if column one says it's expensive.
 
 What counts as value is a call only leadership can make. If you don't make it, your teams are guessing. And you're paying for the guesses.
 
-And here is the trap most leaders fall into: they only count the automation. Work done faster. Headcount avoided. Time saved. That is half the picture, and the cheaper half. The other half is elevation - what your team can do now that they could not do last quarter, which KPIs that used to be out of reach are suddenly on the table, which level of scope previously reserved for senior leaders your team is now operating at. [Don't just automate. Elevate →](/blog/pillar-5-performance-standards) Leaders who only count time saved are funding compression. Leaders who also count new capability are funding compounding. The first plateaus. The second pulls away.
+That two-column thinking has a name: automation versus elevation. Column one - the easy math - plateaus. Column two - new capability, new KPI ceiling, new scope your team could not reach a quarter ago - compounds. [Don't just automate. Elevate →](/blog/pillar-5-performance-standards) Leaders who fund both columns win the decade.
 
 AI will transform your business, but only if you can be more and more precise with where you fund the investments and the adventures.
 
