@@ -51,6 +51,7 @@ Right now, AI leadership rests on three foundational investments. The knowledge 
 │  10% of tool value                    1% AI-infused business                    │
 │  Budget surprises                     Real bets, clean cost data                │
 │  Expensive vibes                      Spend funded against real outcomes        │
+│  1-10x optimization bets only         100x asymmetric bets in play              │
 │  ░░░░░░░░░░░░░░░░░░░░                ████████████████████                       │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
@@ -96,7 +97,11 @@ A product leader I work with thinks about value in two columns and ignores anyon
 
 What counts as value is a call only leadership can make. If you don't make it, your teams are guessing. And you're paying for the guesses.
 
-That two-column thinking has a name: automation versus elevation. Column one - the easy math - plateaus. Column two - new capability, new KPI ceiling, new scope your team could not reach a quarter ago - compounds. [Don't just automate. Elevate →](/blog/pillar-5-performance-standards) Leaders who fund both columns win the decade.
+That two-column thinking has a name: automation versus elevation. Column one - the easy math - plateaus. Column two - new capability, new KPI ceiling, new scope your team could not reach a quarter ago - compounds. [Don't just automate. Elevate →](/blog/pillar-5-performance-standards)
+
+And here is the third dimension most leaders miss entirely: the bets. The same capacity that lets your team elevate also lets your business place wagers it could never have justified before. The team that tested two hypotheses a quarter can test fifty. The founder who explored one adjacent market can stress-test six. The product org that could afford one moonshot a year can run three. Most of those bets will not work - that is the math of asymmetric upside. But the one that does is not a 2x or a 10x. It is a 100x. That is the value most spreadsheets cannot see and most leaders never measure. The teams running asymmetric portfolios are not just outproducing the teams running optimization portfolios - they are landing in markets the optimizers never even tried to enter.
+
+Leaders who fund compression alone are funding optimization. Leaders who fund elevation are funding compounding. Leaders who fund the bets too are funding the next decade.
 
 AI will transform your business, but only if you can be more and more precise with where you fund the investments and the adventures.
 
@@ -124,11 +129,13 @@ These questions cut to whether you're leading AI usage or just picking tools alo
 
 3. **Can your teams tell you what a good AI outcome looks like in your business?** Not generally - specifically. And not just "faster at the old work" - what new capability, what new KPI level, what new scope. If they can't, that's a value-definition gap, and only you can close it. Every guess they make is a guess you're funding. [See how elevation beats automation →](/blog/pillar-5-performance-standards)
 
-4. **Are you funding investments or adventures?** Both have a place, but you need to know which is which. Without value scaffolding, every spend looks the same and the wrong ones survive the longest.
+4. **Is your AI investment opening up bets you previously couldn't justify?** The biggest wins from AI rarely show up in the savings column. They show up when your team can place wagers it could never afford before - more hypotheses tested, more markets explored, more moonshots in flight. If your AI spending is only producing 1-10x optimizations and never a 100x outlier, you are funding the safe lane and missing the prize.
 
-5. **Can your product team's knowledge be pulled by your sales team's agents?** If not, you have silos masquerading as a knowledge layer. The flow between teams is where compounding lives. [Explore how collaborative spaces connect them →](/blog/collaborative-spaces)
+5. **Are you funding investments or adventures?** Both have a place, but you need to know which is which. Without value scaffolding, every spend looks the same and the wrong ones survive the longest.
 
-6. **If you were starting tomorrow, who would own each of the three foundations?** Name them. If you can't, the foundations don't exist yet - you have three things nobody owns.
+6. **Can your product team's knowledge be pulled by your sales team's agents?** If not, you have silos masquerading as a knowledge layer. The flow between teams is where compounding lives. [Explore how collaborative spaces connect them →](/blog/collaborative-spaces)
+
+7. **If you were starting tomorrow, who would own each of the three foundations?** Name them. If you can't, the foundations don't exist yet - you have three things nobody owns.
 
 ---
 
