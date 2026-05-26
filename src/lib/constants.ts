@@ -273,6 +273,13 @@ export const LEARN_PATHS = [
     slug: "pillar-4-ai-native-teams",
   },
   {
+    title: "Picking AI tools while ignoring the foundations? Build the soil that lets AI bloom across your business.",
+    description: "Career: leaders who set AI direction get promoted past leaders who just pick vendors. Team: a single knowledge access layer plus clean token tracking replaces guesswork with judgment. Business: AI spend converts into measurable outcomes instead of expensive vibes.",
+    themes: ["scale", "ai-teams"],
+    primaryTheme: "scale",
+    slug: "ai-leadership-foundations",
+  },
+  {
     title: "Locked into tools that keep raising prices? Own your orchestration layer and rent everything else.",
     description: "Career: a stack that travels with you between jobs. Team: swap any vendor overnight without downtime. Business: stop being held hostage by vendor pricing or roadmap delays - buy what's convenient, own what's strategic.",
     themes: ["scale", "ship-faster"],

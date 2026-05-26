@@ -1,0 +1,373 @@
+{
+  "personas": {
+    "general": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>So many of us are doing this wrong. We are tasked with leading AI usage at our companies or in our teams, and we are getting it totally wrong. It is not as much about which tools you choose anymore.</p><p>Right now, AI leadership rests on three foundational investments. The knowledge layer. Token costs. Token value. Get these right and everything else compounds. Get them wrong and you are paying for the latest models to do the work of an intern, while your sharpest competitors are infusing AI into the bones of their business.</p><p>This is not a tooling problem. It is a leadership problem. The leaders who get this right are not the ones with the longest vendor evaluation spreadsheets. They are the ones who built the soil. <strong>The tools change every quarter. The foundations compound for years.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Audit Your Knowledge Layer in 30 Minutes",
+          "triggerText": "See how to assess your current knowledge layer",
+          "html": "<h3>The Diagnostic</h3><p>Open a doc. Answer these honestly:</p><ul><li>If a new team member joined tomorrow, where would they go to get the context they need? Name the URL, not the vibe.</li><li>How many separate tools hold meaningful business knowledge right now? Count them.</li><li>Can your sales team's AI pull from your product team's knowledge today, with no human in the loop?</li><li>What percentage of your team's daily AI prompts could draw from your knowledge layer if it existed?</li></ul><h3>The Score</h3><p>If you have one access point your AI can pull from, score yourself 80%. If you have a Notion workspace and Slack and email and Drive and a CRM and 3 wikis, score yourself 20% - that is not a knowledge layer, that is sediment.</p><h3>The First Move</h3><p>Pick ONE leader to own the access layer. Their first 30-day goal: every team contributes their top 10 docs into the single source. Their second 30-day goal: every AI agent in the org can pull from it via MCP or equivalent. That is the foundation.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without a knowledge base is just a race to be like everyone else and getting 10% of the value of your tools. AI with knowledge of your business is how you become a 1% AI-infused business or team.</p><p>How wide and how deep is the knowledge in your business? How easily can your AI-infused teams pull on it to elevate their work? <strong>This is the single biggest differentiator between businesses doing incredible things with AI and the ones who can't figure out why they're not.</strong></p><p>Leadership's job here is to build the structure that captures knowledge, and to lead the initiatives that get each team capturing their own. All of it flowing into a single access layer. Siloed knowledge is useful, but it holds back the true value of AI infusion.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Stand Up Token Cost Tracking From the Top",
+          "triggerText": "Learn how to install token cost discipline",
+          "html": "<h3>Why Top-Down Matters</h3><p>Token spend touches every team. If you are not setting how it gets tracked from the top, every team tracks it differently, or not at all. You end up flying blind on a spend line that only gets bigger.</p><h3>The Standard to Set</h3><p>Mandate these three columns in every team's tracking, monthly:</p><ul><li><strong>Spend by provider</strong> - OpenAI, Anthropic, Google, internal eval costs. One number per provider per month.</li><li><strong>Spend by workflow</strong> - which workflows consumed the budget. Customer support agent, code review agent, content drafting, etc.</li><li><strong>Spend per active user</strong> - so you can see whether $50K is 100 people getting massive leverage or 5 people running experiments.</li></ul><h3>The Reporting Cadence</h3><p>Monthly review at the leadership level. Quarterly review with the board if you are at a stage where AI spend is a board topic (it should be by Series A). Every team reports into the same shared template - this is what stops the whiplash.</p><h3>The Tools</h3><p>Most providers expose usage APIs. Pipe them into a single dashboard - Looker, Metabase, or a simple Google Sheet refreshed weekly. The tool matters less than the discipline. Pick one and start.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline is a budget surprise waiting to happen. AI with clean cost tracking is how you stop reacting and start placing real bets.</p><p>Without this, you get whiplash. Underspend. Overspend. Pull back. Underspend again. Over and over.</p><p>And then there is value. AI without a way to measure value is just expensive vibes. AI with a clear read on spend vs outcomes is how you fund the work that's actually moving the business. <strong>What counts as value is a call only leadership can make. If you don't make it, your teams are guessing. And you're paying for the guesses.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Define Value So Teams Can Score Their Own Work",
+          "triggerText": "See how to install token value measurement",
+          "html": "<h3>The Question Only You Can Answer</h3><p>What does a good AI outcome look like in your business? Not generally. Specifically. Without your answer, every team is guessing. And you are paying for the guesses.</p><h3>A Simple Value Scaffolding</h3><p>For each major AI investment, require three lines:</p><ul><li><strong>Outcome</strong> - the specific business result you expect (faster ticket resolution, more shipped features, lower cost per closed deal, more research synthesized per week).</li><li><strong>Baseline</strong> - what the number was before the AI investment. If you can't measure baseline, you can't measure delta.</li><li><strong>Threshold</strong> - the level at which this investment is clearly worth the spend. Below it, you cut. Above it, you double down.</li></ul><h3>The Cultural Move</h3><p>Make every team that wants AI budget answer those three lines. Not in a 12-page memo - in three bullets. Teams that can't articulate value don't get budget. Teams that can, get rewarded with more. This is how you fund investments and not adventures.</p><h3>The Compounding Effect</h3><p>Within a quarter, your teams will start thinking in spend-vs-outcome terms automatically. Within two quarters, your AI spend portfolio will look like a venture portfolio - some big bets, some small experiments, all of it legible.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil. The ever-changing AI landscape will bloom a thousand flowers in it.</p><p>If you were starting tomorrow, run it like this. One leader owns the knowledge layer and ships a single access point that pulls from every team. One leader owns token costs and stands up a shared tracking standard everyone reports into. One leader owns token value and defines what a good outcome looks like in your business, so teams can actually score their own work.</p><p>These foundations allow AI to flourish in your business and set you up with an incredible springboard. <strong>What are you doing in your business to build these foundations?</strong></p>"
+        }
+      ]
+    },
+    "founder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>Your investors are asking how you're using AI. Your board is asking what the spend looks like. Your team is asking why competitors are shipping faster. And right now you're answering with vendor names and seat counts - not foundations. That's not leadership. That's vendor management dressed as strategy.</p><p>Three foundational investments separate the founders who turn AI into capital efficiency from the ones who turn it into a line item that just keeps growing. The knowledge layer. Token costs. Token value. Get these right and your next board update has a story. Get them wrong and you are showing up to board meetings with a spend line your AI vendors love and your CFO doesn't understand.</p><p><strong>This is not about which model your team uses. This is about whether your company has the foundations to convert AI spend into enterprise value.</strong> Competitors who get this right will compound past you. The math is brutal and the window is open right now.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build a Knowledge Layer Your Whole Company Can Pull From",
+          "triggerText": "See how founders are wiring the knowledge layer",
+          "html": "<h3>The Founder's Audit</h3><p>Answer in one sentence each. Where does your company knowledge live? Who can access it? Can your sales agents pull from your product roadmap today, with no human in the loop?</p><p>If your answers involve three tools, two Slack channels, and an email thread, you do not have a knowledge layer. You have sediment.</p><h3>The 90-Day Move</h3><p>Appoint one leader - not a vendor, a person on your team - to own the knowledge access layer. Their mandate: every team contributes their top 10 docs into a single Notion or Obsidian workspace, connected to your AI stack via MCP or equivalent. Within 90 days, every agent in your company pulls from the same source.</p><h3>The Compounding Bet</h3><p>This is not an IT project. This is a moat. Your competitors can buy the same models. They cannot buy your accumulated company knowledge in one queryable place. Twelve months of compounded judgment is the most underrated competitive asset in the AI era.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without a knowledge base is just a race to be like everyone else and getting 10% of the value of your tools. AI with knowledge of your business is how you become a 1% AI-infused business. The single biggest differentiator between companies doing incredible things with AI and the ones who can't figure out why they're not.</p><p>Leadership's job is to build the structure that captures knowledge and to lead the initiatives that get each team capturing their own. <strong>This is what board members mean when they ask about your AI strategy. They are not asking which model you use. They are asking whether you are building an asset.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Install Token Cost Discipline Before It Becomes a Board Topic",
+          "triggerText": "Learn the cost tracking standard to set as founder",
+          "html": "<h3>Why You Set This From the Top</h3><p>Token spend touches every team. If you are not setting how it gets tracked from the top, every team tracks it differently, or not at all. By the time your CFO flags it, you are six months into a spend line you can't explain - and your investors are going to ask.</p><h3>The Founder Standard</h3><p>Require these three numbers monthly, in the same template, from every team:</p><ul><li><strong>Spend by provider</strong> - OpenAI, Anthropic, internal eval costs, agent infrastructure.</li><li><strong>Spend by workflow</strong> - which workflows consumed budget. Customer support, code generation, research synthesis, etc.</li><li><strong>Spend per active user</strong> - so you can see leverage per person, not just totals.</li></ul><h3>The Board Slide</h3><p>One slide in every board deck: AI spend by category, trend over the last 3 months, and the top 3 workflows driving cost. This turns AI spend from a surprise into a managed line. Investors love this. CFOs love this. Your future self loves this.</p><h3>The Tools</h3><p>Most providers expose usage APIs. Pipe them into a single dashboard - whatever stack your finance team already uses. The discipline matters more than the tool.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline is a budget surprise waiting to happen. AI with clean cost tracking is how you stop reacting and start placing real bets. Without this, you get whiplash. Underspend. Overspend. Pull back. Underspend again. Over and over.</p><p>Now layer value. AI without a way to measure value is just expensive vibes. AI with a clear read on spend vs outcomes is how you fund the work that's actually moving the business. <strong>Every guess your teams make on AI value is a guess you are funding. Multiply that by 18 months and you have a P&amp;L problem nobody can untangle.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Define What a Good AI Outcome Looks Like in Your Business",
+          "triggerText": "See how to install value measurement as founder",
+          "html": "<h3>The Founder's Call</h3><p>What counts as value is a call only leadership can make. If you don't make it, your teams are guessing. And you're paying for the guesses. So make the call.</p><h3>The Scaffolding</h3><p>For every major AI investment in your company, require three lines from the team that owns it:</p><ul><li><strong>Outcome</strong> - the specific business result expected. Faster sales cycles, lower CAC, more shipped features, lower support cost per ticket.</li><li><strong>Baseline</strong> - the number before the AI investment. No baseline, no investment.</li><li><strong>Threshold</strong> - the level above which you double down, below which you cut. Decided upfront, not in hindsight.</li></ul><h3>The Cultural Move</h3><p>Teams that can articulate value get more budget. Teams that can't get coached, then cut. This is portfolio management. You already do this with marketing channels and hiring bets. AI is just one more category.</p><h3>The Board Story</h3><p>Within two quarters, your board updates have a paragraph that reads: \"AI spend is $X. Top three outcomes attributed to it are Y, Z, W. Outcome per dollar is up Q% quarter over quarter.\" That is a fundraising story. That is the narrative competitors who skipped the foundations cannot tell.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil. The ever-changing AI landscape will bloom a thousand flowers in it. If you were starting tomorrow, one leader owns the knowledge layer and ships a single access point. One leader owns token costs and the shared standard. One leader owns token value and defines what good looks like. Three named owners. That is the operating model.</p><p>These foundations allow AI to flourish in your company and set you up with an incredible springboard - the kind that turns capital efficiency into a story investors actually pay for. <strong>What are you doing in your business to build these foundations?</strong></p>"
+        }
+      ]
+    },
+    "product-builder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>So many product teams are doing this wrong. We picked tools - Claude, Cursor, ChatGPT, half a dozen Notion AI extensions - and assumed the productivity would follow. It didn't. Half the team uses AI for everything. Half won't touch it. Nobody can tell you whether the spend is paying off in shipped features or just paying off in tabs.</p><p>The fix is not a better tool. The fix is three foundational investments your product org needs to lead deliberately. The knowledge layer - so your AI peers can pull from research, specs, decisions, and customer signals as one body. Token costs - so you know what AI spend is actually buying per product area. Token value - so you can tell whether AI is shipping features faster or just generating more drafts that never reach customers.</p><p><strong>The product teams that get this right are not the ones with the most AI seats. They are the ones whose AI is grounded in their product's reality.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build the Product Knowledge Layer Your AI Peers Can Pull From",
+          "triggerText": "See how product teams are wiring the knowledge layer",
+          "html": "<h3>What Belongs in the Layer</h3><ul><li><strong>User research</strong> - interview transcripts, persona docs, behavioural data, churn analyses.</li><li><strong>Product decisions</strong> - the why behind shipped features, the why behind killed ones, current strategic bets.</li><li><strong>Specs and constraints</strong> - PRDs, design docs, technical constraints, dependencies.</li><li><strong>Customer signals</strong> - support tickets, NPS comments, sales call notes, churn reasons.</li></ul><h3>The Access Pattern</h3><p>One workspace - Notion is the most common - that holds everything. Connect to your AI stack via MCP. Now your product team's AI peer can answer \"what did we decide about X\" by pulling the actual decision doc, not by hallucinating.</p><h3>The Cultural Habit</h3><p>Every decision worth making gets a 1-page doc that lands in the workspace. Every research session gets a synthesis doc. No doc, no decision. This sounds heavy. It pays back the first time a new PM joins and ramps in two weeks instead of two months.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without a knowledge base is just a race to be like everyone else. Your product team's AI peers pull from generic training data. Your competitor's pull from their actual product context. The output gap is enormous and visible on day one.</p><p>Leadership's job is to build the structure that captures product knowledge and lead the initiatives that get each squad capturing their own. <strong>Siloed product knowledge is useful. But it holds back the true value of AI in your product org.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Track Token Spend Per Product Area",
+          "triggerText": "Learn how to install token cost discipline in product",
+          "html": "<h3>The Common Failure</h3><p>Most product orgs track AI spend at the org level - a single number that gets compared to last month. That number tells you nothing about which product areas are getting leverage and which are just expensive.</p><h3>The Breakdown to Install</h3><p>Track spend at three levels:</p><ul><li><strong>By product area</strong> - growth, core, platform, mobile.</li><li><strong>By workflow type</strong> - research synthesis, spec drafting, code generation, design exploration, customer support.</li><li><strong>By active user</strong> - who is actually getting leverage, who has a seat sitting idle.</li></ul><h3>The Monthly Ritual</h3><p>One PM, one engineer, one designer per product area review the spend together. 30 minutes. Look for the patterns. Where is AI shipping features? Where is it generating drafts that never ship? That is the data you need to redirect budget intelligently.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline in product is a budget surprise waiting to happen. AI with clean cost tracking is how you start placing real bets - which product areas should get more AI investment, which should pull back. Without this, every product area negotiates separately, and your AI spend ends up reflecting which PM is loudest, not which area is getting the most leverage.</p><p>And then value. AI without value measurement is just expensive vibes. <strong>Are your AI peers shipping features or generating drafts that rot in Notion? You need to know.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Define Product Value Per AI Dollar",
+          "triggerText": "See how to measure shipped value from AI in product",
+          "html": "<h3>What to Measure</h3><p>For each product area, define what an AI-leveraged outcome looks like. Examples:</p><ul><li><strong>Growth</strong> - experiments shipped per week, lift per shipped experiment.</li><li><strong>Core product</strong> - features shipped per quarter, time from spec to ship, defect rate per shipped feature.</li><li><strong>Research</strong> - synthesized insights per week, decisions informed per insight, cycle time from interview to decision.</li><li><strong>Customer support</strong> - resolution time per ticket, CSAT per resolved ticket, deflection rate.</li></ul><h3>The Comparison</h3><p>Take the same metric pre-AI-investment and post-AI-investment. The delta is the value. If the delta is meaningful, double down. If the delta is noise, redirect that budget to a product area where it's not.</p><h3>The Compounding Effect</h3><p>Within a quarter, your product org will start prioritizing AI investments the way it prioritizes engineering investments - against expected outcome, baseline, and threshold. That is what mature product leadership in the AI era looks like.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil for your product team. The ever-changing AI tooling landscape will bloom a thousand flowers in it. One product leader owns the knowledge layer. One owns token costs. One owns token value. Three named owners across your product org and the foundations actually get built.</p><p>These foundations allow AI to flourish in your product work and set the team up with an incredible springboard - the kind that lets a 5-person product team ship like a 15-person one. <strong>What are you doing in your product org to build these foundations?</strong></p>"
+        }
+      ]
+    },
+    "product-designer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>So many of us in design are doing this wrong. We picked Figma's AI features, ChatGPT for copy, Midjourney for moodboards, Claude for research synthesis. And we still can't tell whether AI is making our work sharper or just making more variations that don't ship.</p><p>The fix is not picking better tools. It's three foundational investments any design leader needs to lead. The knowledge layer - so your AI pulls from your design system, your research, your patterns. Token costs - so you know whether AI spend is buying shipped UX quality or burning budget on exploration nobody uses. Token value - so you can prove that AI-leveraged design is shipping work users actually feel.</p><p><strong>The design teams that get this right are not the ones with the trendiest AI tools. They are the ones whose AI carries their actual design system and research as one body.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Wire the Design Knowledge Layer Into AI",
+          "triggerText": "See how to make AI carry your design context",
+          "html": "<h3>What Goes Into the Layer</h3><ul><li><strong>Design system</strong> - components, tokens, spacing rules, motion patterns, accessibility constraints.</li><li><strong>Research library</strong> - interviews, persona docs, journey maps, usability findings.</li><li><strong>Pattern library</strong> - layouts that work for your product, layouts you've tried and killed.</li><li><strong>Voice and tone</strong> - microcopy patterns, voice principles, do-and-don't examples.</li></ul><h3>The Access Pattern</h3><p>One source of truth - Notion, Confluence, or a custom design site - that holds everything in plain text and structured docs. Connect to Claude or your AI stack via MCP. Your AI design peer now drafts UX with your actual constraints loaded.</p><h3>The Test</h3><p>Ask your AI peer to draft a flow for a real feature on your roadmap. If the result uses your spacing, your patterns, your voice - the layer is wired. If it produces generic Material-design-meets-Bootstrap output, your layer is empty.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without a design knowledge base is just a race to look like every other AI-designed product. AI with knowledge of your system, patterns, and research is how you ship UX that feels unmistakably yours.</p><p>Design leadership's job here is to build the structure that captures the design system and the research, and to make sure both flow into one place AI can pull from. <strong>Siloed design knowledge is useful for humans. It is useless for AI peers, which is why your AI output still looks generic even after you adopted three new tools.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Track AI Spend on Design Exploration",
+          "triggerText": "Learn how to install cost discipline for design AI",
+          "html": "<h3>The Hidden Cost</h3><p>Design exploration with AI is cheap per query but expensive at scale. 50 variations per feature, 20 features per quarter, 6 designers - the costs add up to a line your design ops lead never planned for.</p><h3>What to Track</h3><ul><li><strong>Spend by tool</strong> - Figma AI, Midjourney, Claude, ChatGPT, internal eval tools.</li><li><strong>Spend by activity</strong> - exploration, draft generation, copy iteration, research synthesis.</li><li><strong>Spend per shipped artifact</strong> - the ratio of AI spend to artifacts that actually ship. This is the number that matters.</li></ul><h3>The Pattern to Watch</h3><p>If 80% of AI spend goes to exploration that gets discarded, that is a process problem, not a cost problem. Maybe your team is over-exploring instead of converging. Maybe the AI is producing too many variations because nobody has tightened the prompt. The cost data surfaces the issue.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline in design is a budget surprise waiting to happen, especially as image generation costs rise. AI with clean cost tracking is how you stop reacting and start placing real bets on which design workflows deserve more AI investment and which don't.</p><p>And then value. <strong>Is your AI-leveraged design shipping UX users actually notice and remember? Or is it just shipping faster mediocrity?</strong> The answer determines whether AI is making your design team valuable or fungible.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Measure AI-Leveraged Design Quality",
+          "triggerText": "See how to measure shipped value from AI in design",
+          "html": "<h3>What Counts as Value in Design</h3><p>Not \"variations explored.\" Not \"comps produced.\" Shipped UX quality that users feel. The metrics:</p><ul><li><strong>Time from problem to shipped UX</strong> - shorter cycles are valuable if quality holds.</li><li><strong>Quality at ship</strong> - design QA pass rate, accessibility compliance, brand consistency.</li><li><strong>User signal post-ship</strong> - task completion, time-on-task, qualitative reactions in research.</li><li><strong>Design debt avoided</strong> - components built on the design system instead of one-offs.</li></ul><h3>The Comparison</h3><p>Run the same metrics pre- and post-AI investment. If cycle time drops without quality dropping, you have value. If quality drops, the AI is shipping faster mediocrity and you need to tighten the foundations.</p><h3>The Cultural Move</h3><p>Make AI-leveraged design quality a quarterly review topic. Not \"how cool was the AI tool\" - \"what shipped, what did users feel, what was the spend.\" That is how AI investment gets defended at the leadership level.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil for your design team. The ever-changing AI design tooling will bloom a thousand flowers in it. One design leader owns the knowledge layer wiring. One owns token cost tracking. One owns shipped-value measurement.</p><p>These foundations allow AI to flourish in your design work and set the team up with an incredible springboard - the kind that lets a small design team ship work that feels distinctively yours, at the pace a much larger team would manage. <strong>What are you doing in your design org to build these foundations?</strong></p>"
+        }
+      ]
+    },
+    "design-engineer": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>So many design engineers are doing this wrong. We picked Cursor, Claude, GitHub Copilot, and a parade of AI plugins. The shipped components feel slightly off. The design system drifts a little each sprint. Token costs are nobody's job. The team can't tell you whether AI is compounding the component library or quietly fragmenting it.</p><p>The fix is three foundational investments your design-engineering function needs to lead. The knowledge layer - one unified body where the design system and the codebase patterns live together. Token costs - so you know what AI is spending per shipped component. Token value - so you know whether the components AI helps build are compounding or accumulating as debt.</p><p><strong>Design engineering is the discipline where code and design knowledge have to live as one. Your AI peers are useless until that body is unified.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Unify the Design System and Codebase Knowledge",
+          "triggerText": "See how to wire code + design context into AI",
+          "html": "<h3>What to Unify</h3><ul><li><strong>Design tokens</strong> - colors, type, spacing, motion - in one source of truth (a token file the design system and the codebase both consume).</li><li><strong>Component patterns</strong> - the actual TSX/JSX patterns your design system implements, with do-and-don't examples.</li><li><strong>Accessibility constraints</strong> - WCAG levels, keyboard interaction patterns, ARIA conventions.</li><li><strong>Performance budgets</strong> - bundle size constraints, render budgets, what counts as too heavy.</li></ul><h3>The Stack</h3><p>Storybook plus a CLAUDE.md or AGENT.md at the repo root that points to the design system, the token file, the component patterns, and the constraints. AI agents (Claude Code, Cursor) read it on every session. Result: AI-generated components match your system on the first try, not the fifth.</p><h3>The Test</h3><p>Ask Claude Code to build a new component. If the output uses your tokens, your patterns, your accessibility conventions - the knowledge layer is wired. If it ships a one-off with hardcoded values, the layer is empty.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without a unified knowledge layer ships components that drift from your system. Every drift is design debt - a one-off color, a slightly different spacing, a new spinner where you already have three. AI with the unified layer ships components that compound the system instead of fragmenting it.</p><p><strong>Design engineering leadership's job is to make sure code and design knowledge live in one place AI can pull from on every call.</strong> Siloed knowledge is the reason your shipped UI still looks subtly inconsistent two years after you stood up the design system.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Track AI Spend Per Shipped Component",
+          "triggerText": "Learn the cost discipline for AI-assisted component work",
+          "html": "<h3>What to Track</h3><ul><li><strong>Spend by tool</strong> - Cursor, Claude Code, Copilot, internal eval tools.</li><li><strong>Spend by component area</strong> - which parts of the system are getting AI investment.</li><li><strong>Spend per shipped component</strong> - the ratio that matters. AI cost divided by components that landed in production.</li><li><strong>Rework cost</strong> - AI-generated components that got rewritten manually. Those are the gaps in your knowledge layer.</li></ul><h3>The Cadence</h3><p>Monthly review at the design-engineering level. 30 minutes. Look at the rework rate - that is the leading indicator of knowledge layer quality.</p><h3>The Move</h3><p>If rework is high in one component area, the knowledge layer is missing patterns there. Document them. Re-run. Watch the rework rate drop. The cost discipline directly improves the quality of AI output.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline in design engineering is invisible drift in your design system and surprise bills at the end of the quarter. AI with clean cost tracking is how you place real bets on which component areas deserve more AI investment.</p><p>And value. <strong>The components AI helps build - are they compounding your system or quietly adding debt?</strong> Without measurement, you can't tell. With it, AI investment becomes a feedback loop that strengthens the foundation each sprint.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Measure Component Library Compounding",
+          "triggerText": "See how to measure shipped value in design engineering",
+          "html": "<h3>What Compounding Looks Like</h3><ul><li><strong>Reuse rate</strong> - the percentage of new feature work that uses existing components versus building new ones. Higher is better.</li><li><strong>System coverage</strong> - the percentage of shipped UI that comes from system components versus one-offs.</li><li><strong>Cycle time per component</strong> - shorter is better, if quality holds.</li><li><strong>AI-shipped quality</strong> - design QA pass rate, accessibility, performance budget compliance.</li></ul><h3>The Comparison</h3><p>Track these metrics before and after AI investment. If reuse rises and cycle time drops without quality slipping, AI is compounding the system. If reuse stays flat while cycle time drops, AI is shipping one-offs fast - that is debt, not value.</p><h3>The Cultural Move</h3><p>Quarterly design system health review. Not \"which tools we use\" - \"what shipped, what's the rework, what's the reuse rate.\" That is how AI investment in design engineering earns its budget.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil for your design engineering work. The AI tooling landscape will bloom a thousand flowers in it. One leader owns unifying the code + design knowledge. One owns token cost discipline. One owns the compounding measurement.</p><p>These foundations let AI flourish as a true peer to your design-engineering practice - shipping components that match the system, compound the library, and ship at a pace a much larger team would need. <strong>What are you doing in your design-engineering function to build these foundations?</strong></p>"
+        }
+      ]
+    },
+    "solo-operator": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>So many solo operators are doing this wrong. We pick the trendiest AI tools, run six concurrent subscriptions, and assume the productivity will follow. It does, for about two weeks. Then the spend creeps. The output gets generic because nothing carries our context. We're still operating like everyone else, just with more tabs open.</p><p>The fix is three foundational investments you make as the one-person leadership of your operation. The knowledge layer - everything you know in one place AI can pull from. Token costs - one tracker, monthly, no surprise bills. Token value - a simple read on which AI work is shipping outcomes and which is just expensive.</p><p><strong>When you're solo, you are all three foundation owners. The good news is you can build all three in a weekend.</strong> The leverage compounds for the life of the operation.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build Your Personal Knowledge Layer",
+          "triggerText": "See how solo operators build a usable knowledge layer",
+          "html": "<h3>What Goes In</h3><ul><li><strong>Your context</strong> - what you're working on, who you're serving, what you're avoiding.</li><li><strong>Your craft notes</strong> - the rules, patterns, and quality bars you've earned the hard way.</li><li><strong>Your client and project context</strong> - one doc per active project, kept current.</li><li><strong>Your decisions</strong> - the why behind your bigger calls, so AI can echo your judgment.</li></ul><h3>The Stack</h3><p>One Notion workspace or one Obsidian vault. Connect via MCP to your AI peer of choice (Claude is the most common). Every conversation starts with your context loaded. Test it - ask your AI to draft something. If it sounds like you, the layer is real.</p><h3>The Weekend Build</h3><p>Saturday morning: dump everything in your head into the workspace. Sunday morning: wire MCP, test it on a real piece of work. By Sunday night, every future AI session pulls your context. That is the highest-leverage 8 hours you'll spend this year.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without your context is a race to be like everyone else, getting 10% of the value of your tools. AI with your knowledge loaded is how you become a 1% solo operator - not because the tools are better, but because the inputs are.</p><p>You are the leadership and the team. <strong>Your knowledge layer is the difference between your AI sounding like a generic intern and sounding like a senior version of you.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Run One Token Cost Tracker, Monthly",
+          "triggerText": "See how solo operators avoid AI spend surprises",
+          "html": "<h3>The Solo Reality</h3><p>You probably have 4-8 AI subscriptions. Each one bills you separately. Nobody is reconciling. Your AI budget is whatever Stripe charges this month.</p><h3>The Simple Tracker</h3><p>One Google Sheet. Three columns. Tool, monthly cost, what it is for. Update once a month, end of month, takes 10 minutes. Total at the bottom.</p><h3>The Discipline</h3><p>End of each month, ask: which of these would I miss if I cancelled tomorrow? Cancel the bottom one. Add only when there is a workflow that earns the spend. Over a year, this is how solo operators stay in the 95th percentile of AI leverage without ending up in the 95th percentile of AI spend.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline as a solo operator is invisible bleeding. You won't notice until the annual review of your card statement. AI with even basic tracking is how you stop reacting to surprise charges and start placing real bets on the tools that compound your work.</p><p>And value. <strong>Every hour of AI work that doesn't ship is a hidden cost.</strong> When you are solo, every hour matters. Value tracking is just being honest about what AI work earns its place.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Score Your AI Work by Shipped Outcomes",
+          "triggerText": "Learn how solo operators measure AI value",
+          "html": "<h3>The Simple Score</h3><p>Every Friday, look at the week. Three columns:</p><ul><li><strong>What I shipped</strong> - finished deliverables, client work, content, products, features.</li><li><strong>What AI helped with</strong> - which AI tools touched which shipped work.</li><li><strong>What didn't ship</strong> - work that got AI-assisted but never reached the world.</li></ul><h3>The Pattern</h3><p>Over a month, you'll see which AI tools are tied to shipped outcomes and which are tied to drafts that sit. The shipped ones earn their subscription. The other ones get cut or get redirected to workflows that actually finish.</p><h3>The Compounding Effect</h3><p>This is how solo operators run a portfolio approach to AI without needing a CFO. Within a quarter, your AI stack reflects what's actually working, not what looked exciting in a launch tweet.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil for your one-person operation. The AI landscape will bloom a thousand flowers in it - new tools, new agents, new workflows - and you'll have the foundations to evaluate them on whether they fit your context, your spend, your outcomes.</p><p>You are the leader of all three foundations. A weekend of setup buys you years of compounding leverage. <strong>What are you doing this weekend to build these foundations?</strong></p>"
+        }
+      ]
+    },
+    "technical-leader": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>So many engineering leaders are doing this wrong. We rolled out Copilot to 100 engineers. We added Cursor seats. We're piloting Claude Code in three teams. And we can't tell anyone whether engineering throughput is up because of AI, down because of AI, or holding steady while we burn budget either way.</p><p>The fix is three foundational investments any engineering leader needs to make. The knowledge layer - architecture docs, ADRs, conventions, runbooks - all flowing into a place AI can pull from. Token costs - tracked by team and workflow, not as a single org-level number. Token value - measured against engineering outcomes that already matter: throughput, defect rate, time to ship, MTTR.</p><p><strong>The engineering orgs that get this right will compound past the ones that don't. The window is open right now, and it's measured in quarters, not years.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Make Your Architecture Knowledge AI-Readable",
+          "triggerText": "See how to wire engineering knowledge into AI",
+          "html": "<h3>What Belongs in the Layer</h3><ul><li><strong>Architecture docs</strong> - system diagrams, service boundaries, data flows.</li><li><strong>ADRs</strong> - architectural decision records, with the why preserved.</li><li><strong>Conventions</strong> - naming, error handling, testing, observability, security patterns.</li><li><strong>Runbooks</strong> - common operations, common incidents, common recoveries.</li></ul><h3>The Stack</h3><p>Repo-level: a CLAUDE.md or AGENT.md at the root pointing to the design docs and conventions. Org-level: a Confluence or Notion workspace with the architecture knowledge, connected via MCP. Result: when Claude Code or Cursor opens a session, it pulls your architecture context automatically. Generated code matches your conventions on the first try.</p><h3>The Test</h3><p>Ask Claude Code to add a new endpoint or a new service. If it uses your conventions, your error handling, your testing patterns - the layer is wired. If it produces generic Express-meets-Spring-Boot output, the layer is empty.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without your architecture context ships generic code that breaks the moment it hits your reality. Every break is engineering tax - rework cycles, review thrash, defects in production. AI with your context loaded ships code that belongs in your codebase from the first draft.</p><p>Engineering leadership's job is to make sure that context exists, is current, and is pullable by every AI tool the team uses. <strong>Siloed architecture knowledge is what makes your AI-generated code feel slightly off. Unifying it is what makes it ship-quality.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Track Token Costs By Team and Workflow",
+          "triggerText": "Learn the cost discipline to install across engineering",
+          "html": "<h3>The Common Failure</h3><p>Most engineering orgs see AI spend as one number. That number tells you nothing about which teams or workflows are getting leverage and which are just expensive.</p><h3>The Breakdown</h3><p>Track at three levels:</p><ul><li><strong>By team</strong> - platform, application, infra, data, mobile.</li><li><strong>By workflow</strong> - code generation, code review, test generation, documentation, incident response, infra automation.</li><li><strong>By active engineer</strong> - so you can see leverage per person, not aggregate.</li></ul><h3>The Cadence</h3><p>Monthly review at the EM/staff level. 30 minutes. The conversation is \"what is this spend actually buying us this month\" - not \"approve the spend.\"</p><h3>The Tools</h3><p>Most providers expose usage APIs. Pipe them into a dashboard your engineering org already uses. Discipline matters more than the tool.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline in engineering is whiplash - underspend, overspend, pull back, underspend again. Teams negotiate AI budget separately and the spend ends up reflecting which EM is loudest, not which workflows are compounding. Top-down cost discipline solves this in one quarter.</p><p>And value. <strong>Is AI shipping more features per week, or just shipping more lines of code that get rewritten?</strong> The answer determines whether AI is making your engineering org more valuable or more brittle.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Tie AI Spend to Engineering Outcomes",
+          "triggerText": "See how to measure value in engineering AI work",
+          "html": "<h3>What to Measure</h3><p>Engineering already measures the right outcomes. Tie AI spend to them:</p><ul><li><strong>Throughput</strong> - PRs merged per engineer per week, features shipped per sprint.</li><li><strong>Quality</strong> - defect rate per shipped feature, escape rate to production.</li><li><strong>Cycle time</strong> - lead time for changes, time from PR open to merge.</li><li><strong>Reliability</strong> - MTTR, incident rate, change failure rate.</li></ul><h3>The Comparison</h3><p>Same metrics pre- and post-AI investment, per team. The delta is the value. If throughput rises without quality dropping, AI is real value. If throughput rises but defect rate climbs, AI is shipping faster fragility.</p><h3>The Engineering Story</h3><p>Within two quarters, your engineering leadership can say \"AI spend is $X. Team Y's throughput is up Z%, defect rate is flat, cycle time is down Q%.\" That is a story your CTO can take to the CEO. That is how engineering AI investment earns its budget and grows it.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil for your engineering org. The AI tooling landscape will bloom a thousand flowers in it - new agents, new IDEs, new code review tools - and you'll have the foundations to evaluate them on what they ship, what they cost, and what they compound.</p><p>One engineering leader owns the architecture knowledge wiring. One owns token cost discipline. One owns engineering-outcome value measurement. Three named owners and your engineering org compounds AI leverage instead of just spending on it. <strong>What are you doing in your engineering function to build these foundations?</strong></p>"
+        }
+      ]
+    },
+    "creative-director": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>So many creative leaders are doing this wrong. We picked the AI image tools, the AI copy tools, the AI moodboard tools. Half of what comes out feels off-brand. The other half feels generic. Token costs are creeping. And we can't prove that AI is making our creative team sharper or just making more variations that get rejected.</p><p>The fix is three foundational investments any creative leader needs to make. The knowledge layer - brand, voice, visual system, references - in one place AI can pull from. Token costs - tracked so creative exploration doesn't become a runaway bill. Token value - measured by shipped creative quality, not by how much AI we used.</p><p><strong>The creative teams that get this right are not the ones with the most AI tools. They are the ones whose AI carries the brand's actual point of view.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Encode the Brand Into an AI-Readable Layer",
+          "triggerText": "See how to make AI carry your brand voice",
+          "html": "<h3>What Goes In</h3><ul><li><strong>Brand strategy</strong> - positioning, audience, tone, what you stand for.</li><li><strong>Voice principles</strong> - how you write, with do-and-don't examples on real copy.</li><li><strong>Visual system</strong> - color, type, motion principles, photography style, illustration approach.</li><li><strong>Reference work</strong> - the campaigns and assets that defined the brand, with annotated why-this-works notes.</li></ul><h3>The Stack</h3><p>One Notion or Frontify workspace with everything in plain text and well-tagged images. Connect via MCP to Claude or your creative AI stack. Now your AI peer drafts copy that sounds like your brand and proposes visuals that fit the system on the first try.</p><h3>The Test</h3><p>Ask AI to draft a headline for a real campaign. If it sounds like your brand - your voice, your point of view, your specific way of cutting through - the layer is real. If it sounds like every other AI-written headline, the layer is empty.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without brand context is a race to look and sound like every other AI-generated campaign. AI with the brand encoded is how you ship work that's unmistakably yours - the difference between commodity creative and creative that builds equity.</p><p>Creative leadership's job is to make sure the brand lives in a place AI can pull from on every call. <strong>Siloed brand knowledge means your AI keeps sounding off-brand even after you trained the team on the new tools.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Track Token Spend on Creative Exploration",
+          "triggerText": "Learn how to install cost discipline in creative",
+          "html": "<h3>The Hidden Cost</h3><p>Image generation, video generation, and AI copy iterations are cheap per query and expensive at scale. 100 explorations per campaign, 30 campaigns per quarter, 6 creatives - the costs add up fast, and most teams have no idea what the line item looks like.</p><h3>What to Track</h3><ul><li><strong>Spend by tool</strong> - Midjourney, Runway, Claude, ChatGPT, eval tools.</li><li><strong>Spend by stage</strong> - exploration, refinement, final production assets.</li><li><strong>Spend per shipped asset</strong> - the ratio that matters. Spend divided by assets that actually reached the audience.</li></ul><h3>The Pattern to Watch</h3><p>If exploration spend dominates and shipped asset count stays flat, the team is over-exploring instead of converging. That is a process issue, not a cost issue. The cost data surfaces it before the budget surprise does.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline in creative is a budget surprise waiting to happen, especially with image and video generation pricing. AI with clean tracking is how you stop reacting to month-end bills and start placing real creative bets on the tools and workflows that are compounding the work.</p><p>And value. <strong>Is your AI-assisted creative shipping work that's on-brand and culturally resonant, or just shipping more variations that get rejected?</strong> The answer separates AI as a creative multiplier from AI as a creative tax.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Measure Shipped Creative Quality, Not AI Usage",
+          "triggerText": "See how to measure value in creative AI work",
+          "html": "<h3>What Counts as Creative Value</h3><p>Not \"variations explored.\" Not \"hours saved.\" Shipped creative that performs:</p><ul><li><strong>On-brand at ship</strong> - approval rate without major rework.</li><li><strong>Time from brief to shipped</strong> - shorter is valuable if quality holds.</li><li><strong>Performance in market</strong> - engagement, conversion, qualitative reception.</li><li><strong>Brand consistency</strong> - the work feels like the same brand across creative pieces.</li></ul><h3>The Comparison</h3><p>Run these metrics pre- and post-AI investment. If quality holds and cycle time drops, AI is real value. If quality drops, AI is shipping faster mediocrity and your brand equity is paying for it.</p><h3>The Cultural Move</h3><p>Quarterly creative-output review where the topic is \"what shipped, how did it perform, what was the AI spend.\" Not \"which AI tool we tried.\" That is how creative AI investment earns its budget and grows it.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil for your creative team. The AI creative tooling landscape will bloom a thousand flowers in it - new tools every month - and you'll have the foundations to evaluate them on what they ship, not on what they promise.</p><p>One creative leader owns the brand knowledge wiring. One owns token cost discipline. One owns shipped-creative-value measurement. Three named owners and your creative function compounds AI leverage without losing the brand. <strong>What are you doing in your creative function to build these foundations?</strong></p>"
+        }
+      ]
+    },
+    "vibe-coder": {
+      "sections": [
+        {
+          "type": "why",
+          "html": "<p>So many of us indie builders are doing this wrong. We chase the trendiest AI tools, run six subscriptions, ship side projects that look like every other AI-built side project. Then we wonder why the work doesn't feel like ours and why our card statement keeps creeping.</p><p>The fix is three foundational investments that scale down beautifully to one-person indie operations. The knowledge layer - your style, your patterns, your past projects encoded so AI carries your voice. Token costs - one simple tracker so the spend doesn't sneak up. Token value - a personal read on whether AI is shipping projects you're proud of or just shipping more demos.</p><p><strong>Vibe coding gets way better when the AI carries your context. The foundations are what make the AI peer feel like a creative collaborator instead of an autocomplete that's overconfident.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-1",
+          "title": "Build the Knowledge Layer of Your Indie Practice",
+          "triggerText": "See how indie builders make AI carry their context",
+          "html": "<h3>What Goes In</h3><ul><li><strong>Your style</strong> - the kinds of projects you build, the aesthetics you reach for, the constraints you set.</li><li><strong>Your tech preferences</strong> - the stack, the patterns, the libraries you reach for, the ones you avoid.</li><li><strong>Your past projects</strong> - a short doc per project: what you built, what you learned, what worked.</li><li><strong>Your personal craft notes</strong> - the patterns and quality bars that make your work feel like your work.</li></ul><h3>The Stack</h3><p>One Obsidian vault or Notion workspace. Add a CLAUDE.md at the root of every project repo that points to your style and your stack preferences. Connect Notion via MCP for cross-project context. Result: every new project starts with your context loaded, not from zero.</p><h3>The Test</h3><p>Spin up a new side project. Let Claude Code or Cursor work with your context loaded. If the output feels like the next thing you'd build, the layer is real. If it feels like a generic tutorial demo, the layer is empty.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without your context ships indie projects that look like every other AI-built indie project. AI with your context loaded ships projects that feel like the next chapter of your portfolio, not a side quest.</p><p>You're the only leader of your indie practice. <strong>Your knowledge layer is the difference between AI sounding like a generic copilot and sounding like the version of you that's been honing this craft for years.</strong></p>"
+        },
+        {
+          "type": "method",
+          "id": "method-2",
+          "title": "Run One Simple Indie Token Tracker",
+          "triggerText": "Learn how indie builders avoid AI spend creep",
+          "html": "<h3>The Indie Reality</h3><p>You probably have ChatGPT Plus, Claude Pro, Cursor Pro, maybe Midjourney, maybe Replit, maybe a Vercel AI tier. Each one bills separately. None of it shows up as one number.</p><h3>The Simple Tracker</h3><p>One Google Sheet. Three columns. Tool, monthly cost, what it actively earns you (a project shipped, a feature built, a problem solved). Update once a month, 10 minutes.</p><h3>The Discipline</h3><p>End of each month: which of these would you actually miss if you cancelled tomorrow? Cancel the bottom one. Add only when a workflow earns it. Over a year, this is how indie builders run a lean AI stack that compounds without bleeding cash.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>AI without cost discipline as an indie is invisible bleeding. You don't notice until you scan the year's card statement. AI with even basic tracking is how you stay in the leverage tier of indie builders without ending up in the cost tier.</p><p>And value. <strong>For indie builders, value is what shipped and whether you're proud of it.</strong> Hours of AI work that never ship aren't free - they're hidden costs in motivation, momentum, and joy.</p>"
+        },
+        {
+          "type": "method",
+          "id": "method-3",
+          "title": "Score Your AI Work by Joy + Shipped",
+          "triggerText": "See how to measure indie AI value",
+          "html": "<h3>The Indie Score</h3><p>Once a week, look at the work. Three columns:</p><ul><li><strong>What I shipped</strong> - finished side projects, finished features, finished posts, finished demos that went public.</li><li><strong>What AI helped with</strong> - which AI tool touched the shipped work.</li><li><strong>How it felt</strong> - did the AI work compound your craft, or did you ship a thing that doesn't feel like yours?</li></ul><h3>The Pattern</h3><p>Over a month, the AI tools tied to shipped work AND joy earn their place. The ones tied to half-finished demos that don't feel like you go on the cancel list. This is portfolio management for one - and it keeps your indie practice from becoming a graveyard of AI experiments.</p><h3>The Compounding Effect</h3><p>Your indie portfolio grows in a direction that's recognizably yours. AI becomes a multiplier on your style instead of a flattener. The shipped work becomes the moat.</p>"
+        },
+        {
+          "type": "why",
+          "html": "<p>Build these foundations and you're laying down strong soil for your indie practice. The AI tooling landscape will keep changing every quarter, and you'll have the foundations to ride it without losing your voice.</p><p>You are the leadership and the team. A weekend of foundation work buys you years of indie leverage that compounds in your style, your spend, your shipped portfolio. <strong>What are you doing this weekend to build these foundations?</strong></p>"
+        }
+      ]
+    }
+  }
+}
