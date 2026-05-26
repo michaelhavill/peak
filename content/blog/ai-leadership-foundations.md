@@ -94,6 +94,8 @@ Ask a founder what their AI spending actually produced last quarter and most can
 
 What counts as value is a call only leadership can make. If you don't make it, your teams are guessing. And you're paying for the guesses.
 
+And here is the trap most leaders fall into: they only count the automation. Work done faster. Headcount avoided. Time saved. That is half the picture, and the cheaper half. The other half is elevation - what your team can do now that they could not do last quarter, which KPIs that used to be out of reach are suddenly on the table, which level of scope previously reserved for senior leaders your team is now operating at. [Don't just automate. Elevate →](/blog/pillar-5-performance-standards) Leaders who only count time saved are funding compression. Leaders who also count new capability are funding compounding. The first plateaus. The second pulls away.
+
 AI will transform your business, but only if you can be more and more precise with where you fund the investments and the adventures.
 
 ![](/blog/ai-leadership-foundations/section-2.png)
@@ -118,7 +120,7 @@ These questions cut to whether you're leading AI usage or just picking tools alo
 
 2. **Who owns token cost tracking in your org?** If the answer is "every team tracks it differently" or "we'll figure that out at the next budget review," you're flying blind. The leader who stands up the shared tracking standard is the leader who stops the whiplash.
 
-3. **Can your teams tell you what a good AI outcome looks like in your business?** Not generally - specifically. If they can't, that's a value-definition gap, and only you can close it. Every guess they make is a guess you're funding.
+3. **Can your teams tell you what a good AI outcome looks like in your business?** Not generally - specifically. And not just "faster at the old work" - what new capability, what new KPI level, what new scope. If they can't, that's a value-definition gap, and only you can close it. Every guess they make is a guess you're funding. [See how elevation beats automation →](/blog/pillar-5-performance-standards)
 
 4. **Are you funding investments or adventures?** Both have a place, but you need to know which is which. Without value scaffolding, every spend looks the same and the wrong ones survive the longest.
 
@@ -132,3 +134,4 @@ These questions cut to whether you're leading AI usage or just picking tools alo
 - [Build the Path to the Knowledge Base That Makes You Inimitable →](/blog/pillar-1-knowledge-management)
 - [Map the Path from AI Tasks to AI Workflows →](/blog/pillar-3-orchestration)
 - [Own the Path to a Stack You Control Instead of Rent →](/blog/pillar-2-hub-and-spoke)
+- [Walk the Path from Commoditized to Irreplaceable - Don't Just Automate, Elevate →](/blog/pillar-5-performance-standards)
