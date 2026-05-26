@@ -64,7 +64,7 @@ How wide and how deep is the knowledge in your business? How easily can your AI-
 
 This is the single biggest differentiator between businesses doing incredible things with AI and the ones who can't figure out why they're not.
 
-Picture two CTOs at the same stage. One unifies architecture docs, runbooks, and ADRs into a single workspace their AI peers can pull from on every call. New engineers ship code that matches the team's conventions on the first PR. The other lets four pods each maintain their own Notion. Same engineers. Same models. Wildly different output. The difference is one leadership decision about where knowledge lives.
+Picture two leaders at the same stage. One puts every team's decisions, playbooks, and hard-won lessons into one shared place their AI can read from on every conversation. New hires produce work that matches the team's standards from day one. The other lets each team keep its own notes scattered in its own corner. Same people. Same tools. Very different output. The difference is one leadership decision about where the company's knowledge lives.
 
 Leadership's job here is to build the structure that captures knowledge, and to lead the initiatives that get each team capturing their own. All of it flowing into a single access layer. Siloed knowledge is useful, but it holds back the true value of AI infusion.
 
@@ -78,7 +78,7 @@ How are you tracking them? How are you managing them?
 
 Without this, you get whiplash. Underspend. Overspend. Pull back. Underspend again. Over and over.
 
-I watched a CRO greenlight a $30K-a-month AI sales tool, then kill it at the next budget review because nobody had tracked what it actually replaced. Six weeks later the team asked for a different tool that did the same job. That is the whiplash tax in practice - paid in cycles, paid in trust, paid in calendar time nobody wanted to spend. Compare that to a head of ops I know who logs every team's AI spend in one shared table, reviews monthly, and never gets surprised. Same companies. Same tools. Very different decisions.
+I watched a sales leader sign off on a $30,000-a-month AI tool, then cancel it three months later because nobody had tracked what it actually replaced. Six weeks after that the team asked for a different tool that did the same job. That is the whiplash tax in practice - paid in wasted weeks, paid in trust, paid in time nobody wanted to spend. Compare that to an operations head who lists every team's AI spend in one shared table, reviews it monthly, and never gets surprised. Same companies. Same tools. Very different decisions.
 
 Token spend touches every team. If you're not setting how it gets tracked from the top, every team tracks it differently, or not at all. You end up flying blind on a spend line that only gets bigger.
 
@@ -90,7 +90,7 @@ How does a team or an individual understand spend vs outcomes?
 
 Every business will be different. But without some simple scaffolding, you'll struggle to know if $1K on tokens is the deal of the century or a waste of money.
 
-Ask a founder what their AI budget actually produced last quarter and most can't answer beyond "the team is faster." Faster at what? Compared to what? At what cost? A product leader I work with only greenlights AI investment when the team attaches three lines: outcome (the specific business result), baseline (the number before AI), and threshold (the number that justifies the spend). Three lines. Six months in, the budget review takes 15 minutes and every dollar is defended.
+Ask a founder what their AI spending actually produced last quarter and most can't answer beyond "the team is faster." Faster at what? Compared to what? At what cost? A product leader I work with only approves AI spending when the team attaches three lines: the specific result they expect, the number it was at before, and the number that would prove the spend was worth it. Three lines. Six months in, the budget conversation takes 15 minutes and every dollar is defended.
 
 What counts as value is a call only leadership can make. If you don't make it, your teams are guessing. And you're paying for the guesses.
 
