@@ -56,7 +56,7 @@ Right now, AI leadership rests on three foundational investments. The knowledge 
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-## Foundation 1: The Knowledge Layer
+## Knowledge
 
 AI without a knowledge base is just a race to be like everyone else and getting 10% of the value of your tools. **AI with knowledge of your business is how you become a 1% AI-infused business or team.**
 
@@ -70,7 +70,7 @@ Leadership's job here is to build the structure that captures knowledge, and to 
 
 ![](/blog/ai-leadership-foundations/section-1.png)
 
-## Foundation 2: Token Costs
+## Token Costs
 
 AI without cost discipline is a budget surprise waiting to happen. **AI with clean cost tracking is how you stop reacting and start placing real bets.**
 
@@ -82,7 +82,7 @@ I watched a sales leader sign off on a $30,000-a-month AI tool, then cancel it t
 
 Token spend touches every team. If you're not setting how it gets tracked from the top, every team tracks it differently, or not at all. You end up flying blind on a spend line that only gets bigger.
 
-## Foundation 3: Token Value
+## Token Value
 
 AI without a way to measure value is just expensive vibes. **AI with a clear read on spend vs outcomes is how you fund the work that's actually moving the business.**
 
