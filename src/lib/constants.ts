@@ -301,6 +301,13 @@ export const LEARN_PATHS = [
     slug: "pillar-5-performance-standards",
   },
   {
+    title: "Pointing AI only at what to cut? Aim it at the work you don't yet know you can do.",
+    description: "Career: stop optimizing a job that's shrinking and reach capabilities two levels past your title. Team: produce work that used to need a vendor, a budget, or a department you don't have. Business: redraw what your operation is even for - before a competitor redraws it for you.",
+    themes: ["ai-teams", "build-your-moat"],
+    primaryTheme: "ai-teams",
+    slug: "elevation-not-automation",
+  },
+  {
     title: "Sitting on 10,000 hours of expertise nobody pays for? Turn it into a monetisable asset that compounds.",
     description: "Career: ten years of craft becomes a deployable asset with a price tag. Team: clients buy outputs, not hours. Business: earning ceiling stops being capped by your calendar - revenue compounds on top of reputation.",
     themes: ["build-your-moat", "craft-and-taste"],

@@ -34,6 +34,16 @@ const STYLE =
 // ---------------------------------------------------------------------------
 const POST_PROMPTS = {
 
+  // Accent: deep navy + steel blue
+  // Theme: elevation - redraw the box of the possible; the wall you mistook for physics
+  "elevation-not-automation": {
+    hero: "deep navy and steel blue accents with a warm amber glow - a lone figure standing inside a chalk-drawn box on the floor, calmly stepping through one wall that is dissolving into a vast open landscape of floating geometric possibilities and half-built structures, the three intact walls plain and grey, the dissolving wall glowing amber at its crumbling edge, the contrast between the cramped box and the open beyond made vivid, quietly liberating",
+    sections: [
+      "steel blue accent with amber warmth - a doctor and patient in a small examination room whose walls have opened outward to reveal a vast surrounding presence of an entire research library, a pharmacist, and a care team compressed into glowing geometric forms gathered around the single patient, the context of a whole hospital arriving inside one quiet consultation, the human scale intact at the centre",
+      "burnt sienna and steel blue accents - an old industrial CNC woodworking machine with a crusty mechanical control panel, a glowing modern interface layer grafted gently onto the old panel like new growth on an old trunk, an operator feeding in a long ribbon of richly detailed instructions, dormant capacity visibly switching on as warm light spreads through the old steel - the machine unchanged, the possibility transformed",
+    ],
+  },
+
   // Accent: amber + golden yellow
   // Theme: 5 people doing the work of 50 via AI peers who carry your context
   "10x-team-ai-peers": {
