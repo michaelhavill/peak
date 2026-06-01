@@ -29,6 +29,8 @@ The other 80% has a name nobody leads with: elevation. Not doing your job faster
 
 Here's the frame for this whole piece. Everything you believe you can do sits inside a box. The walls of that box got built by constraints - your time, your headcount, your tools, what your machines shipped with, what a "normal" person at your level is allowed to attempt. Automation polishes the inside of the box. Elevation redraws the walls. And the most valuable wall is the one you can't see, because it hasn't moved in your entire career, so you've mistaken it for physics.
 
+And here's the part that should keep you up at night: understanding elevation doesn't mean you can see your own walls. You can finish this article nodding along and still walk back to your desk and miss the biggest moves available to you - because you can't elevate past a limit you don't know is there. The most valuable constraints aren't the ones you complain about. They're the ones you've never once questioned, because they were built into your profession long before you arrived - in an era that never imagined you'd have this much context and capability sitting at your desk. Your field drew its boundaries for a version of you that didn't have any of this. Those boundaries are still standing. Most of them are now optional. And almost nobody is looking, because the whole point of an assumption that old is that it stopped feeling like a choice.
+
 That last wall is where the money is. It's also why most people never get there. Let me show you the whole board.
 
 ```
