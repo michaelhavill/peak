@@ -308,6 +308,13 @@ export const LEARN_PATHS = [
     slug: "elevation-not-automation",
   },
   {
+    title: "Using AI to execute faster while everyone else does too? The next moat isn't speed - it's the ambition to find and break your own ceilings.",
+    description: "Career: stop racing on a speed advantage anyone can lease and become the operator who sets the ceiling. Team: rally around the people redrawing the board, not just clearing the backlog faster. Business: win the next decade by changing what the game is, not running the old one more efficiently.",
+    themes: ["build-your-moat", "ai-teams"],
+    primaryTheme: "build-your-moat",
+    slug: "your-ambition-is-your-moat",
+  },
+  {
     title: "Sitting on 10,000 hours of expertise nobody pays for? Turn it into a monetisable asset that compounds.",
     description: "Career: ten years of craft becomes a deployable asset with a price tag. Team: clients buy outputs, not hours. Business: earning ceiling stops being capped by your calendar - revenue compounds on top of reputation.",
     themes: ["build-your-moat", "craft-and-taste"],

@@ -44,6 +44,16 @@ const POST_PROMPTS = {
     ],
   },
 
+  // Accent: deep pine green + warm amber
+  // Theme: execution is now cheap; ambition - finding and breaking your ceilings - is the new moat
+  "your-ambition-is-your-moat": {
+    hero: "deep pine green and warm amber accents - a lone figure standing on top of a neat finished structure that small geometric AI helpers are still calmly building and tending below them, the figure reaching up with a piece of chalk to draw a new and higher ceiling line across the open sky, the freshly drawn line glowing warm amber, the vast space above the line empty and unclaimed, the machinery below orderly and self-running, the posture one of quiet ambition reaching past the level just reached",
+    sections: [
+      "warm amber and pine green accents - an old-style balance scale: one pan piled high with identical dull grey tokens that have lost their shine, drawn faded and almost weightless; the other pan holding a single warm glowing distinctly-cut gem that vastly outweighs the whole pile, the beam tipping hard toward the small bright object, value visibly migrating from the abundant heap to the one scarce thing, elegant and clear",
+      "burnt sienna and pine green accents - two figures starting from the same line: one runs faster and faster along a flat circular track that loops back on itself going nowhere, a blur of motion with no progress; the other has stopped running and is instead lifting the entire finish line upward into new territory, a few small geometric AI companions helping hoist it, the horizon expanding to reveal fresh landscape above, the contrast between racing the old course and redrawing it",
+    ],
+  },
+
   // Accent: amber + golden yellow
   // Theme: 5 people doing the work of 50 via AI peers who carry your context
   "10x-team-ai-peers": {
