@@ -1,6 +1,6 @@
 ---
-title: Your Ambition Is Your New Moat
-titleHighlight: Ambition
+title: Ambition Is the New Scarce Resource for Hiring and Winning
+titleHighlight: Scarce Resource
 slug: your-ambition-is-your-moat
 theme:
   - build-your-moat
