@@ -24,9 +24,17 @@ For two centuries the deal in knowledge work was simple. Your value was your out
 
 That deal just expired.
 
-The grinding daily discipline of professional work - the repetitive execution that used to eat most of your week - is now largely assistable. This isn't a forecast. Erik Brynjolfsson and his co-authors at Stanford and MIT studied 5,179 customer support agents using an AI assistant and found productivity up 14% on average, and up 34% for the newest, least experienced workers. The tool worked by taking the tacit know-how of the best agents and handing it to everyone else. Klarna put a number on the ceiling of that idea: in its first month, its assistant handled two-thirds of customer service chats and did the work of 700 full-time agents, cutting resolution time from eleven minutes to under two.
+Be honest about what the deal cost you. The grind - the formatting, the chasing down, the reconciling, the assembling, the endless reconstruction of context someone else already had - ate most of your day. Call it 80 to 100% of it. The work you were actually hired for, the judgment that took a decade to build, got the scraps: a precious hour on a good day, fifteen stolen minutes on a normal one. You were special in the cracks. The rest of you went to machine-work that needed a human only because no machine could do it yet.
 
-So the grind is going. The question nobody is asking with enough seriousness is the only one that matters: what's left, and what do you do with it?
+The walls between disciplines were just as fixed. You could see over them; you almost never crossed them. The designer didn't build. The founder couldn't hold the whole business in their head while chasing a single idea. The engineer inherited an architecture full of decisions they had no time to understand and a regulatory landscape they were told to leave to legal. Crossing a line meant years of retraining or headcount you couldn't get, so the lines held and everyone stayed in their lane.
+
+Both of those facts stopped being true at the same time.
+
+The grind is now largely assistable. This isn't a forecast. Erik Brynjolfsson and his co-authors at Stanford and MIT studied 5,179 customer support agents using an AI assistant and found productivity up 14% on average, and up 34% for the newest, least experienced workers - the tool took the tacit know-how of the best agents and handed it to everyone else. Klarna put a number on the ceiling of that idea: in its first month, its assistant handled two-thirds of customer service chats and did the work of 700 full-time agents, cutting resolution time from eleven minutes to under two.
+
+And the walls came down with it. A designer can now think with the assistance of code, prototyping the real thing instead of describing it. A founder can hold every depth of the business in view while testing a single idea - the contracts, the unit economics, the support tickets, the regulatory edge cases, all at once. An engineer finally has the room to understand the regulation they build inside, and the decisions that hardened into the architecture long before they arrived. Work that used to demand a whole other discipline now fits inside an afternoon.
+
+So the grind is going and the lanes are dissolving. The question nobody is asking with enough seriousness is the only one that matters: what's left, and what do you do with it?
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
