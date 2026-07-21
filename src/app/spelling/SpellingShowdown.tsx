@@ -36,9 +36,27 @@ type Save = {
   playerLevel: number;
   recentAcc: number;
   hotStreak: number; // consecutive rounds at 80%+ first-try accuracy
+  coldStreak: number; // consecutive losing betting rounds
   stats: Record<string, WordStat>;
   cashouts: Cashout[];
   history: HistoryEntry[];
+};
+
+// In-progress round, persisted so a reload or closed tab never loses the bet
+// or re-deals the question set.
+type RoundSnapshot = {
+  queue: Entry[];
+  idx: number;
+  bet: number;
+  isPractice: boolean;
+  missed: Entry[];
+  redo: Entry[];
+  firstTryCorrect: number;
+  streak: number;
+  bestStreak: number;
+  roundTotal: number;
+  roundWords: string[];
+  answered: boolean; // current word already answered (phase was right/wrong)
 };
 
 type Payout = {
@@ -51,7 +69,7 @@ type Payout = {
   newBank: number;
 };
 
-const BANK: Entry[] = [
+export const BANK: Entry[] = [
   // Level 1
   { w: "because", l: 1, p: "letter patterns", s: "Nate can't sit near the art cupboard because of the glue incident. Nobody talks about the glue incident.", h: "For the reason that.", d: "ecau", t: "Big Elephants Can Always Understand Small Elephants. First letters spell BECAUSE. Nate would ride the elephant." },
   { w: "beautiful", l: 1, p: "letter patterns", s: "Nate framed his most beautiful doodle and awarded it first prize. The judge was Nate.", h: "Very lovely to look at.", d: "eau", t: "Big Ears Aren't Ugly: B-E-A-U. Then -tiful with one L." },
@@ -214,7 +232,14 @@ const MAX_LEVEL = 4;
 // stats) live in the save, so they survive cashouts - only the bankroll resets.
 const HOT_ROUND_ACC = 0.8;
 const HOT_ROUNDS_TO_LEVEL_UP = 2;
+// Comfort mode: after two losing bets in a row, half the next round is words
+// he reliably gets right - but only while the bank is at $10 or less. Above
+// $10 he plays on merit. The broke bailout ($5) is a floor, never a boost,
+// so no assistance ever lifts him past $10.
+const COLD_ROUNDS_FOR_COMFORT = 2;
+const COMFORT_BANK_CAP = 10;
 const STORE_KEY = "spelling-showdown-v1";
+const ROUND_KEY = "spelling-showdown-round-v1";
 
 // Graduated payout: soft landings for near misses, full bust only for a blowout.
 // Bands are miss-rate based so short custom lists stay fair.
@@ -263,6 +288,7 @@ const FRESH_SAVE: Save = {
   playerLevel: 1,
   recentAcc: 0.7,
   hotStreak: 0,
+  coldStreak: 0,
   stats: {},          // word -> {a: attempts, m: misses, cs: correctStreak, seen: roundNumber}
   cashouts: [],
   history: [],        // ledger rows: {d, type, label, net, bank}
@@ -306,12 +332,21 @@ function strugglingWords(stats: Record<string, WordStat>) {
     });
 }
 
-function buildRound(save: Save): Entry[] {
+export function buildRound(save: Save): Entry[] {
   const { stats, playerLevel, rounds, recentAcc } = save;
   const chosen: Entry[] = [];
   const used = new Set<string>();
   const take = (e: Entry | undefined) => { if (e && !used.has(e.w)) { chosen.push(e); used.add(e.w); } };
   const seenAgo = (w: string) => (stats[w] && stats[w].a > 0) ? rounds - (stats[w].seen || 0) : Infinity;
+
+  // 0. Comfort mix: after two losing bets in a row with the bank at
+  //    $COMFORT_BANK_CAP or less, half the round is words he reliably gets
+  //    right (correct streak of 2+), to bank some wins and lift spirits.
+  if ((save.coldStreak || 0) >= COLD_ROUNDS_FOR_COMFORT && save.bank <= COMFORT_BANK_CAP) {
+    shuffle(BANK.filter((e) => { const st = stats[e.w]; return !!st && st.cs >= 2; }))
+      .slice(0, Math.floor(ROUND_SIZE / 2))
+      .forEach(take);
+  }
 
   // 1. Struggle words, max 3, with spaced-repetition timing:
   //    missed last attempt -> comes back next round;
@@ -365,6 +400,86 @@ function buildRound(save: Save): Entry[] {
     }
   }
   return shuffle(chosen.slice(0, ROUND_SIZE));
+}
+
+// Everything that happens when a round ends, as a pure function so it can be
+// applied both live (finishRound) and when settling an orphaned round found
+// at load time (the reload-mid-round bug).
+type SettleInput = {
+  isPractice: boolean;
+  bet: number;
+  roundTotal: number;
+  firstTryCorrect: number;
+  roundWords: string[];
+  missedWords: string[];
+};
+
+export function settleRound(save: Save, p: SettleInput): { next: Save; payout: Payout; bailedOut: boolean; leveledUp: boolean } {
+  const misses = p.missedWords.length;
+  const pay = p.isPractice
+    ? { label: "practice", amount: 0, mult: 0 }
+    : payoutFor(misses, p.roundTotal, p.bet);
+  const newBank = p.isPractice ? save.bank : Math.max(0, save.bank - p.bet + pay.amount);
+
+  // Update word stats (first-try outcomes only; revenge laps are practice)
+  const stats = { ...save.stats };
+  const roundNum = save.rounds + 1;
+  for (const w of p.roundWords) {
+    const st = stats[w] || { a: 0, m: 0, cs: 0, seen: 0 };
+    const missed = p.missedWords.includes(w);
+    stats[w] = {
+      a: st.a + 1,
+      m: st.m + (missed ? 1 : 0),
+      cs: missed ? 0 : st.cs + 1,
+      seen: roundNum,
+    };
+  }
+
+  // Difficulty tuning: promote after HOT_ROUNDS_TO_LEVEL_UP consecutive
+  // rounds at 80%+ first-try accuracy; demote only on a sustained slump.
+  const roundAcc = p.roundTotal ? p.firstTryCorrect / p.roundTotal : 0.7;
+  const recentAcc = 0.6 * roundAcc + 0.4 * save.recentAcc;
+  let hotStreak = roundAcc >= HOT_ROUND_ACC ? (save.hotStreak || 0) + 1 : 0;
+  let playerLevel = save.playerLevel;
+  let leveledUp = false;
+  if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel < MAX_LEVEL) {
+    playerLevel += 1;
+    hotStreak = 0;
+    leveledUp = true;
+  } else if (recentAcc < 0.55 && playerLevel > 1) {
+    playerLevel -= 1;
+  }
+
+  // Losing streak drives comfort mode; only betting rounds count either way
+  const lost = !p.isPractice && pay.amount < p.bet;
+  const coldStreak = p.isPractice ? (save.coldStreak || 0) : lost ? (save.coldStreak || 0) + 1 : 0;
+
+  // Daily streak
+  const today = todayStr();
+  let dayStreak = save.dayStreak;
+  if (save.day !== today) {
+    dayStreak = save.day === yesterdayStr() ? dayStreak + 1 : 1;
+  }
+
+  let bank = newBank;
+  let history = save.history || [];
+  if (p.isPractice) {
+    history = withHistory(history, { d: today, type: "practice", label: `Practice: ${p.firstTryCorrect}/${p.roundTotal} first try`, net: 0, bank });
+  } else {
+    history = withHistory(history, { d: today, type: "round", label: `Bet $${p.bet}, ${misses} ${misses === 1 ? "miss" : "misses"} (${pay.label})`, net: pay.amount - p.bet, bank });
+  }
+  // Never leave him on $0: the bailout floors a busted bank at $5. It is a
+  // floor only - assistance never lifts the bank above $10.
+  let bailedOut = false;
+  if (!p.isPractice && bank < 1) {
+    bank = BROKE_BAILOUT;
+    bailedOut = true;
+    history = withHistory(history, { d: today, type: "bailout", label: "Cheez Doodle fund bailout", net: BROKE_BAILOUT, bank });
+  }
+
+  const payout: Payout = { result: pay.label, amount: pay.amount, misses, net: p.isPractice ? 0 : pay.amount - p.bet, betAmt: p.bet, prevBank: save.bank, newBank: bank };
+  const next: Save = { ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, coldStreak, day: today, dayStreak, history };
+  return { next, payout, bailedOut, leveledUp };
 }
 
 // Doodle-burst sparks for a correct answer: fixed fan-out so the animation
@@ -473,6 +588,7 @@ export default function SpellingShowdown() {
   const [showLedger, setShowLedger] = useState(false);
   const [bailoutMsg, setBailoutMsg] = useState("");
   const [levelMsg, setLevelMsg] = useState("");
+  const [resumed, setResumed] = useState(false);
   const [speechOk, setSpeechOk] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
   const retypeRef = useRef<HTMLInputElement>(null);
@@ -496,8 +612,80 @@ export default function SpellingShowdown() {
       loaded.history = withHistory(loaded.history, { d: todayStr(), type: "bailout", label: "Cheez Doodle fund bailout", net: BROKE_BAILOUT, bank: BROKE_BAILOUT });
       setBailoutMsg("You were broke, so Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
     }
+
+    // Restore an unfinished round. Previously a reload or closed tab mid-round
+    // lost the round without scoring it and dealt a fresh question set.
+    try {
+      const rawRound = localStorage.getItem(ROUND_KEY);
+      const sn: RoundSnapshot | null = rawRound ? JSON.parse(rawRound) : null;
+      if (sn && Array.isArray(sn.queue) && sn.queue.length > 0) {
+        let q: Entry[] = sn.queue;
+        let i = Math.min(Math.max(sn.idx || 0, 0), q.length - 1);
+        let rd: Entry[] = Array.isArray(sn.redo) ? sn.redo : [];
+        let complete = false;
+        if (sn.answered) {
+          // The current word was already answered; advance the way next() would
+          if (i + 1 < q.length) i += 1;
+          else if (rd.length > 0) { q = shuffle(rd); rd = []; i = 0; }
+          else complete = true;
+        }
+        setBet(sn.bet || 0);
+        setIsPractice(!!sn.isPractice);
+        setMissedWords(sn.missed || []);
+        setFirstTryCorrect(sn.firstTryCorrect || 0);
+        setBestStreak(sn.bestStreak || 0);
+        setRoundTotal(sn.roundTotal || q.length);
+        roundWordsRef.current = sn.roundWords || [];
+        if (complete) {
+          // Every word was answered but the round never got scored: settle it
+          // now so the bet and the word stats aren't lost.
+          const res = settleRound(loaded, {
+            isPractice: !!sn.isPractice,
+            bet: sn.bet || 0,
+            roundTotal: sn.roundTotal || q.length,
+            firstTryCorrect: sn.firstTryCorrect || 0,
+            roundWords: sn.roundWords || [],
+            missedWords: (sn.missed || []).map((m) => m.w),
+          });
+          loaded = res.next;
+          if (res.leveledUp) setLevelMsg(`LEVEL UP. Two hot rounds in a row - Chip is moving you to level ${res.next.playerLevel} words.`);
+          if (res.bailedOut) setBailoutMsg("Busted to zero. Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
+          setPayout(res.payout);
+          savedThisRound.current = true;
+          try { localStorage.setItem(STORE_KEY, JSON.stringify(loaded)); } catch {}
+          localStorage.removeItem(ROUND_KEY);
+          setScreen("done");
+        } else {
+          setQueue(q);
+          setRedo(rd);
+          setIdx(i);
+          setStreak(sn.streak || 0);
+          setPhase("ask");
+          setHintShown(loaded.playerLevel === 1);
+          setResumed(true);
+          setScreen("play");
+        }
+      }
+    } catch {
+      try { localStorage.removeItem(ROUND_KEY); } catch {}
+    }
     setSave(loaded);
   }, []);
+
+  // Snapshot the in-progress round on every change so nothing is lost if the
+  // tab closes or reloads mid-round.
+  useEffect(() => {
+    if (screen !== "play" || queue.length === 0) return;
+    try {
+      const sn: RoundSnapshot = {
+        queue, idx, bet, isPractice,
+        missed: missedWords, redo, firstTryCorrect, streak, bestStreak,
+        roundTotal, roundWords: roundWordsRef.current,
+        answered: phase !== "ask",
+      };
+      localStorage.setItem(ROUND_KEY, JSON.stringify(sn));
+    } catch {}
+  }, [screen, queue, idx, phase, bet, isPractice, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal]);
 
   function persist(next: Save) {
     setSave(next);
@@ -562,6 +750,7 @@ export default function SpellingShowdown() {
     setHintShown(save.playerLevel === 1);
     setBailoutMsg("");
     setLevelMsg("");
+    setResumed(false);
     setScreen("play");
   }
 
@@ -591,63 +780,19 @@ export default function SpellingShowdown() {
   function finishRound() {
     if (savedThisRound.current || !save) return;
     savedThisRound.current = true;
-    const misses = missedWords.length;
-    const pay = isPractice
-      ? { label: "practice", amount: 0, mult: 0 }
-      : payoutFor(misses, roundTotal, bet);
-    const newBank = isPractice ? save.bank : Math.max(0, save.bank - bet + pay.amount);
-
-    // Update word stats (first-try outcomes only; revenge laps are practice)
-    const stats = { ...save.stats };
-    const roundNum = save.rounds + 1;
-    for (const w of roundWordsRef.current) {
-      const st = stats[w] || { a: 0, m: 0, cs: 0, seen: 0 };
-      const missed = missedWords.some((m) => m.w === w);
-      stats[w] = {
-        a: st.a + 1,
-        m: st.m + (missed ? 1 : 0),
-        cs: missed ? 0 : st.cs + 1,
-        seen: roundNum,
-      };
-    }
-
-    // Difficulty tuning: promote after HOT_ROUNDS_TO_LEVEL_UP consecutive
-    // rounds at 80%+ first-try accuracy; demote only on a sustained slump.
-    const roundAcc = roundTotal ? firstTryCorrect / roundTotal : 0.7;
-    const recentAcc = 0.6 * roundAcc + 0.4 * save.recentAcc;
-    let hotStreak = roundAcc >= HOT_ROUND_ACC ? (save.hotStreak || 0) + 1 : 0;
-    let playerLevel = save.playerLevel;
-    if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel < MAX_LEVEL) {
-      playerLevel += 1;
-      hotStreak = 0;
-      setLevelMsg(`LEVEL UP. Two hot rounds in a row - Chip is moving you to level ${playerLevel} words.`);
-    } else if (recentAcc < 0.55 && playerLevel > 1) {
-      playerLevel -= 1;
-      setLevelMsg("");
-    }
-
-    // Daily streak
-    const today = todayStr();
-    let dayStreak = save.dayStreak;
-    if (save.day !== today) {
-      dayStreak = save.day === yesterdayStr() ? dayStreak + 1 : 1;
-    }
-
-    let bank = newBank;
-    let history = save.history || [];
-    if (isPractice) {
-      history = withHistory(history, { d: today, type: "practice", label: `Practice: ${firstTryCorrect}/${roundTotal} first try`, net: 0, bank });
-    } else {
-      history = withHistory(history, { d: today, type: "round", label: `Bet $${bet}, ${misses} ${misses === 1 ? "miss" : "misses"} (${pay.label})`, net: pay.amount - bet, bank });
-    }
-    if (!isPractice && bank < 1) {
-      bank = BROKE_BAILOUT;
-      history = withHistory(history, { d: today, type: "bailout", label: "Cheez Doodle fund bailout", net: BROKE_BAILOUT, bank });
-      setBailoutMsg("Busted to zero. Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
-    }
-
-    setPayout({ result: pay.label, amount: pay.amount, misses, net: isPractice ? 0 : pay.amount - bet, betAmt: bet, prevBank: save.bank, newBank: bank });
-    persist({ ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, day: today, dayStreak, history });
+    const res = settleRound(save, {
+      isPractice,
+      bet,
+      roundTotal,
+      firstTryCorrect,
+      roundWords: roundWordsRef.current,
+      missedWords: missedWords.map((m) => m.w),
+    });
+    if (res.leveledUp) setLevelMsg(`LEVEL UP. Two hot rounds in a row - Chip is moving you to level ${res.next.playerLevel} words.`);
+    if (res.bailedOut) setBailoutMsg("Busted to zero. Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
+    setPayout(res.payout);
+    try { localStorage.removeItem(ROUND_KEY); } catch {}
+    persist(res.next);
   }
 
   function next() {
@@ -960,6 +1105,7 @@ export default function SpellingShowdown() {
             </div>
 
             {isRedoLap && <div className="lap">REVENGE ROUND - clear these to keep 1.5x alive.</div>}
+            {resumed && <div className="lap" style={{ color: "#2B5FD9" }}>Found your unfinished round. Picking up right where you left off.</div>}
 
             <div className="row">
               <Chip mood={phase === "right" ? "happy" : phase === "wrong" ? "sad" : "neutral"} />

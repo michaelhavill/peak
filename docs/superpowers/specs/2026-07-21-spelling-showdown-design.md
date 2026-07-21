@@ -67,6 +67,25 @@ he progresses instead of farming one level.
   displayed on the start screen ("Spelling level: N / 4", plus a "one more hot
   round" hint) and a LEVEL UP callout shows on the results screen.
 
+## Round resilience and comfort mode (added 2026-07-21, third pass)
+
+- **Round resume (bug fix):** the in-progress round (words, position, misses,
+  bet) is snapshotted to localStorage on every change. A reload or closed tab
+  used to lose the round unscored and re-deal a fresh question set; now the
+  game resumes exactly where he left off, and a round whose last word was
+  answered but never scored is settled automatically at load (settleRound is
+  a pure function shared by the live path and the load path).
+- **Comfort mode:** after 2 losing betting rounds in a row AND with the bank
+  at $10 or less, half the next round is words he reliably gets right
+  (correct streak 2+). Silent - the game never says the words got easier.
+  A winning or break-even betting round resets the losing streak; practice
+  rounds leave it unchanged. Above $10 there is no comfort mix: he plays on
+  merit.
+- **Bankroll guardrails:** the bank can never rest at $0 (busting triggers
+  the existing $5 bailout), and no assistance ever lifts the bank above $10 -
+  the bailout is a floor, not a boost. Covered by a logic test suite run with
+  tsx against the exported pure functions.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,
