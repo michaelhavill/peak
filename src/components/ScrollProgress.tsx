@@ -17,8 +17,13 @@ export default function ScrollProgress() {
     mass: 0.25,
   });
 
-  // The spelling game is a self-contained full-page app - no reading progress
-  if (pathname?.startsWith("/spelling")) return null;
+  // The spelling game is a self-contained full-page app - no reading progress.
+  // It lives at /spelling on the main site and at the root of the spelling.
+  // subdomain, so check both.
+  const onSpellingHost =
+    typeof window !== "undefined" &&
+    window.location.hostname.startsWith("spelling.");
+  if (pathname?.startsWith("/spelling") || onSpellingHost) return null;
 
   return (
     <motion.div
