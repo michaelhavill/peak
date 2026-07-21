@@ -48,6 +48,25 @@ working" warning.
    (Workers & Pages -> peak -> Settings -> Domains & Routes). DNS is created
    automatically because the 100xpath.com zone lives on the same account.
 
+## Difficulty progression (added 2026-07-21, second pass)
+
+Requirement from MVH: if he wins at over 80% across multiple runs, raise the
+difficulty a reasonable amount; remember his level between cashouts; make sure
+he progresses instead of farming one level.
+
+- **Promotion:** two consecutive rounds at 80%+ first-try accuracy move him up
+  one level (`hotStreak` counter in the save). Practice rounds count.
+- **Demotion:** unchanged - blended accuracy below 55% drops a level.
+- **Stretch words:** once blended accuracy is at 80%+, the round filler
+  reaches UP one level before reaching down, so next-level words get tested
+  while he's hot rather than after promotion.
+- **Headroom:** new Level 4 word bank (26 words: accommodate, conscience,
+  manoeuvre, pronunciation, etc.) so level 3 can't be farmed. MAX_LEVEL = 4.
+- **Persistence:** playerLevel, hotStreak, and word stats live in the save and
+  are untouched by cashOut (which only resets the bankroll). Level is now
+  displayed on the start screen ("Spelling level: N / 4", plus a "one more hot
+  round" hint) and a LEVEL UP callout shows on the results screen.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,
