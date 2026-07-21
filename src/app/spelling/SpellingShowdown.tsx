@@ -20,11 +20,21 @@ type WordStat = { a: number; m: number; cs: number; seen: number };
 
 type HistoryEntry = {
   d: string;
-  type: "round" | "practice" | "bailout" | "cashout";
+  type: "round" | "practice" | "bailout" | "cashout" | "bonus";
   label: string;
   net: number;
   bank: number;
 };
+
+type Records = {
+  bestStreak: number;
+  biggestWin: number;
+  bestCashout: number;
+  perfectRounds: number;
+  bestDayStreak: number;
+};
+
+type ChipRecord = { w: number; l: number; d: number };
 
 type Cashout = { amount: number; date: string };
 
@@ -40,6 +50,10 @@ type Save = {
   stats: Record<string, WordStat>;
   cashouts: Cashout[];
   history: HistoryEntry[];
+  records: Records;
+  chip: ChipRecord; // career record vs Chip (adaptive betting rounds only)
+  doodles: string[]; // collected doodle-drop ids
+  soundOn: boolean;
 };
 
 // In-progress round, persisted so a reload or closed tab never loses the bet
@@ -49,6 +63,7 @@ type RoundSnapshot = {
   idx: number;
   bet: number;
   isPractice: boolean;
+  isCustom: boolean;
   missed: Entry[];
   redo: Entry[];
   firstTryCorrect: number;
@@ -57,6 +72,8 @@ type RoundSnapshot = {
   roundTotal: number;
   roundWords: string[];
   answered: boolean; // current word already answered (phase was right/wrong)
+  bonusWord: string | null;
+  bonusWon: boolean;
 };
 
 type Payout = {
@@ -210,6 +227,21 @@ const PRAISE = [
   "Right. You've earned one imaginary Cheez Doodle.",
   "Correct. Mrs. Godfrey has nothing on you.",
   "Flawless. P.S. 38 spelling legend status.",
+  "Yep. Chip's wallet just flinched.",
+  "Correct. Somewhere, Artur is nervous.",
+  "That's the one. Teddy owes me a dollar, he bet against you.",
+  "Right again. Dee Dee is composing a musical about it.",
+  "Correct. Write that on the whiteboard and sign it 'definitely not Nate'.",
+];
+
+// Streak 3+: the trash talk heats up with the streak
+const PRAISE_HOT = [
+  "You're ON FIRE. The sprinklers are worried.",
+  "Another one?! Chip is checking the rulebook for a way out.",
+  "Unstoppable. Mrs. Godfrey just filed a complaint.",
+  "This is getting embarrassing. For Chip. Keep going.",
+  "The streak lives! Gina has started a rumor that you're cheating.",
+  "Chip is sweating actual pencil shavings.",
 ];
 
 const ROASTS = [
@@ -219,6 +251,10 @@ const ROASTS = [
   "Oof. Gina just got another A plus somewhere.",
   "Incorrect. The word goes back in the pile for revenge.",
   "Nope. Locker avalanche of shame.",
+  "Wrong, and Chip is doing his little victory doodle about it.",
+  "Missed. The word is telling all its friends.",
+  "Nope. That spelling goes on the fridge of shame.",
+  "Incorrect. Somewhere a dictionary just sighed.",
 ];
 
 const GENERIC_TRICK = "No cheat sheet for this one. Stare at the letters. Take a brain photo. Nate calls that studying.";
@@ -238,8 +274,196 @@ const HOT_ROUNDS_TO_LEVEL_UP = 2;
 // so no assistance ever lifts him past $10.
 const COLD_ROUNDS_FOR_COMFORT = 2;
 const COMFORT_BANK_CAP = 10;
+// Payday goal shown as a progress bar on the betting desk - a finish line to
+// run at instead of a shapeless grind.
+const PAYDAY_GOAL = 40;
+// Custom school lists play as ONE round covering the whole list (no silent
+// 8-word truncation), capped for sanity.
+const CUSTOM_ROUND_CAP = 20;
+// Day-streak milestone bonuses (real money - calendar-capped, so cheap for Dad)
+const STREAK_BONUS: Record<number, number> = { 3: 1, 7: 3, 14: 5, 30: 10 };
+// Secret bonus word: one word per adaptive betting round pays +$1 on a
+// first-try correct. Reward-side variability on top of the skill bet.
+const BONUS_WORD_CASH = 1;
+// At max level, every 2 consecutive hot rounds pay Chip's respect bonus
+// instead of a level-up, so the hot-streak counter never goes dead.
+const RESPECT_BONUS = 1;
+const DOODLE_DROP_CHANCE = 0.3;
 const STORE_KEY = "spelling-showdown-v1";
 const ROUND_KEY = "spelling-showdown-round-v1";
+
+// -------------------------------------------------------------
+// RANK LADDER: permanent progression driven by career WINS vs
+// Chip (adaptive betting rounds finished net-positive). Levels
+// 1-4 are word difficulty; rank is the thing he climbs forever.
+// -------------------------------------------------------------
+const RANKS: { wins: number; title: string }[] = [
+  { wins: 0, title: "Rookie of Room 216" },
+  { wins: 3, title: "Doodle Cadet" },
+  { wins: 7, title: "Cheez Doodle Champ" },
+  { wins: 12, title: "Prank Captain" },
+  { wins: 18, title: "Locker Legend" },
+  { wins: 25, title: "Detention Hall of Famer" },
+  { wins: 35, title: "P.S. 38 Superstar" },
+  { wins: 50, title: "Showdown Boss" },
+  { wins: 75, title: "Big Time Big Shot" },
+  { wins: 100, title: "Immortal Doodler" },
+];
+
+export function rankFor(wins: number) {
+  let current = RANKS[0];
+  let next: { title: string; winsNeeded: number } | null = null;
+  for (const r of RANKS) {
+    if (wins >= r.wins) current = r;
+    else { next = { title: r.title, winsNeeded: r.wins - wins }; break; }
+  }
+  return { title: current.title, next };
+}
+
+// -------------------------------------------------------------
+// DOODLE DROPS: a 12-piece collection. On a won betting round
+// there's a chance Chip hands over a doodle he hasn't got yet.
+// -------------------------------------------------------------
+type Doodle = { id: string; icon: string; name: string; cap: string; rare: boolean };
+const DOODLES: Doodle[] = [
+  { id: "golden-doodle", icon: "🧀", name: "The Golden Cheez Doodle", cap: "One in a million. Do not eat.", rare: true },
+  { id: "glue-incident", icon: "🧴", name: "The Glue Incident File", cap: "CLASSIFIED. Nobody talks about it.", rare: true },
+  { id: "red-pen", icon: "🖊️", name: "Mrs. Godfrey's Red Pen", cap: "Runs dry twice a week. Entirely Nate's fault.", rare: false },
+  { id: "detention-slip", icon: "📄", name: "Signed Detention Slip", cap: "Framed. Nate's most common trophy.", rare: false },
+  { id: "lucky-pencil", icon: "✏️", name: "Nate's Lucky Pencil", cap: "Chewed on one end. Genius on the other.", rare: false },
+  { id: "spitsy-cone", icon: "🐶", name: "Spitsy's Cone of Shame", cap: "He wears it with zero shame.", rare: false },
+  { id: "fleece-ball", icon: "🧶", name: "Fleeceball Game Ball", cap: "MVP: not Gina. Never Gina.", rare: false },
+  { id: "locker-medal", icon: "🏅", name: "Locker Avalanche Survivor Medal", cap: "Awarded for surviving Nate's locker. Twice.", rare: false },
+  { id: "gina-aplus", icon: "💯", name: "One of Gina's A-Pluses", cap: "She has hundreds. She counted.", rare: false },
+  { id: "joke-notebook", icon: "📓", name: "Teddy's Joke Notebook", cap: "Half the jokes are about egg salad.", rare: false },
+  { id: "fact-book", icon: "📘", name: "Francis's Book of Facts", cap: "Volume 9 of 40. Jellyfish edition.", rare: false },
+  { id: "hall-pass", icon: "🎫", name: "The Eternal Hall Pass", cap: "Expired in 2009. Still works.", rare: false },
+];
+
+export function pickDoodleDrop(owned: string[], roll: () => number = Math.random): string | null {
+  const unowned = DOODLES.filter((d) => !owned.includes(d.id));
+  if (unowned.length === 0) return null;
+  // rares weigh 1, commons weigh 3
+  const weighted: Doodle[] = unowned.flatMap((d) => (d.rare ? [d] : [d, d, d]));
+  return weighted[Math.floor(roll() * weighted.length)].id;
+}
+
+// -------------------------------------------------------------
+// HOMOPHONE SAFETY for pasted school lists: the words teachers
+// love are the ones TTS can't disambiguate. Each gets a spoken
+// meaning line so the bet is never a coin flip.
+// -------------------------------------------------------------
+const HOMOPHONE_HINTS: Record<string, string> = {
+  their: "The one that means it belongs to them.",
+  there: "The one that means in that place.",
+  "they're": "The one that is short for they are.",
+  to: "The one you go TO school with.",
+  too: "The one that means also, or too much.",
+  two: "The number after one.",
+  your: "The one that means it belongs to you.",
+  "you're": "The one that is short for you are.",
+  its: "The one that means belonging to it. No apostrophe.",
+  "it's": "The one that is short for it is.",
+  weather: "The one with rain and sunshine.",
+  whether: "The one that means if.",
+  where: "The one that asks about a place.",
+  wear: "The one you do with clothes.",
+  hear: "The one you do with your ears.",
+  here: "The one that means this place.",
+  right: "The one that means correct, or the opposite of left.",
+  write: "The one you do with a pencil.",
+  knew: "The past of know. Starts with a silent K.",
+  new: "The opposite of old.",
+  know: "The one about knowing things. Silent K.",
+  no: "The opposite of yes.",
+  week: "Seven days.",
+  weak: "The opposite of strong.",
+  board: "The flat piece of wood.",
+  bored: "What Nate is in social studies.",
+  brake: "The one that stops a bike.",
+  break: "The one that means to smash, or a rest.",
+  piece: "A piece of pie. Pie starts it: P I E.",
+  peace: "The calm one.",
+  plain: "The ordinary one.",
+  plane: "The flying one.",
+  principal: "The head of the school. Your PAL, allegedly.",
+  principle: "The rule you live by.",
+  aloud: "The one that means out loud.",
+  allowed: "The one that means permitted.",
+  passed: "The one where you went past, or passed a test.",
+  past: "The one about history, or beyond.",
+};
+
+// -------------------------------------------------------------
+// SOUND: tiny WebAudio synth - no assets, fails silently.
+// -------------------------------------------------------------
+let audioCtx: AudioContext | null = null;
+function playSfx(kind: "correct" | "wrong" | "bonus" | "win" | "lose" | "rankup" | "record", on: boolean) {
+  if (!on || typeof window === "undefined") return;
+  try {
+    const AC = window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AC) return;
+    if (!audioCtx) audioCtx = new AC();
+    if (audioCtx.state === "suspended") void audioCtx.resume();
+    const ctx = audioCtx;
+    const t0 = ctx.currentTime;
+    const note = (freq: number, start: number, dur: number, type: OscillatorType = "triangle", gain = 0.12) => {
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = type;
+      o.frequency.value = freq;
+      g.gain.setValueAtTime(gain, t0 + start);
+      g.gain.exponentialRampToValueAtTime(0.001, t0 + start + dur);
+      o.connect(g).connect(ctx.destination);
+      o.start(t0 + start);
+      o.stop(t0 + start + dur + 0.02);
+    };
+    if (kind === "correct") { note(660, 0, 0.09); note(880, 0.09, 0.13); }
+    else if (kind === "wrong") { note(170, 0, 0.16, "sawtooth", 0.07); }
+    else if (kind === "bonus") { note(1046, 0, 0.08); note(1318, 0.08, 0.16); }
+    else if (kind === "win") { [523, 659, 784, 1046].forEach((f, i) => note(f, i * 0.09, 0.13)); }
+    else if (kind === "lose") { note(220, 0, 0.14, "sawtooth", 0.06); note(174, 0.14, 0.22, "sawtooth", 0.06); }
+    else if (kind === "rankup") { [392, 523, 659, 784, 1046, 1318].forEach((f, i) => note(f, i * 0.08, 0.15)); }
+    else if (kind === "record") { note(1046, 0, 0.07); note(1568, 0.07, 0.2); }
+  } catch { /* sound is a garnish, never an error */ }
+}
+
+// -------------------------------------------------------------
+// ALIGNMENT DIFF: edit-distance backtrace so a dropped letter
+// shows as a gap at the right spot instead of a wall of red.
+// -------------------------------------------------------------
+export type DiffOp = { ch: string; kind: "ok" | "wrong" | "extra" | "missing" };
+export function alignDiff(guess: string, answer: string): DiffOp[] {
+  const g = guess.toLowerCase();
+  const a = answer.toLowerCase();
+  const m = g.length, n = a.length;
+  const dp: number[][] = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      dp[i][j] = Math.min(
+        dp[i - 1][j - 1] + (g[i - 1] === a[j - 1] ? 0 : 1),
+        dp[i - 1][j] + 1,
+        dp[i][j - 1] + 1
+      );
+    }
+  }
+  const ops: DiffOp[] = [];
+  let i = m, j = n;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && g[i - 1] === a[j - 1] && dp[i][j] === dp[i - 1][j - 1]) {
+      ops.unshift({ ch: g[i - 1], kind: "ok" }); i--; j--;
+    } else if (i > 0 && j > 0 && dp[i][j] === dp[i - 1][j - 1] + 1) {
+      ops.unshift({ ch: g[i - 1], kind: "wrong" }); i--; j--;
+    } else if (i > 0 && dp[i][j] === dp[i - 1][j] + 1) {
+      ops.unshift({ ch: g[i - 1], kind: "extra" }); i--;
+    } else {
+      ops.unshift({ ch: a[j - 1], kind: "missing" }); j--;
+    }
+  }
+  return ops;
+}
 
 // Graduated payout: soft landings for near misses, full bust only for a blowout.
 // Bands are miss-rate based so short custom lists stay fair.
@@ -292,6 +516,10 @@ const FRESH_SAVE: Save = {
   stats: {},          // word -> {a: attempts, m: misses, cs: correctStreak, seen: roundNumber}
   cashouts: [],
   history: [],        // ledger rows: {d, type, label, net, bank}
+  records: { bestStreak: 0, biggestWin: 0, bestCashout: 0, perfectRounds: 0, bestDayStreak: 0 },
+  chip: { w: 0, l: 0, d: 0 },
+  doodles: [],
+  soundOn: true,
 };
 
 const HISTORY_CAP = 200;
@@ -407,14 +635,31 @@ export function buildRound(save: Save): Entry[] {
 // at load time (the reload-mid-round bug).
 type SettleInput = {
   isPractice: boolean;
+  isCustom: boolean; // custom school-list rounds never move rank, records, or the Chip record
   bet: number;
   roundTotal: number;
   firstTryCorrect: number;
   roundWords: string[];
   missedWords: string[];
+  bestStreakRound: number;
+  bonusWon: boolean;
+  doodleDrop: string | null;
 };
 
-export function settleRound(save: Save, p: SettleInput): { next: Save; payout: Payout; bailedOut: boolean; leveledUp: boolean } {
+export type SettleResult = {
+  next: Save;
+  payout: Payout;
+  bailedOut: boolean;
+  leveledUp: boolean;
+  leveledDown: boolean;
+  rankUp: string | null;
+  newRecords: string[];
+  streakBonus: number;
+  streakBroken: number;
+  respectBonus: number;
+};
+
+export function settleRound(save: Save, p: SettleInput): SettleResult {
   const misses = p.missedWords.length;
   const pay = p.isPractice
     ? { label: "practice", amount: 0, mult: 0 }
@@ -437,36 +682,99 @@ export function settleRound(save: Save, p: SettleInput): { next: Save; payout: P
 
   // Difficulty tuning: promote after HOT_ROUNDS_TO_LEVEL_UP consecutive
   // rounds at 80%+ first-try accuracy; demote only on a sustained slump.
+  // Custom school-list rounds are excluded: a hard teacher list must never
+  // demote him, and a trivial pasted list must never farm the ladder.
+  const ranked = !p.isCustom;
   const roundAcc = p.roundTotal ? p.firstTryCorrect / p.roundTotal : 0.7;
-  const recentAcc = 0.6 * roundAcc + 0.4 * save.recentAcc;
-  let hotStreak = roundAcc >= HOT_ROUND_ACC ? (save.hotStreak || 0) + 1 : 0;
+  const recentAcc = ranked ? 0.6 * roundAcc + 0.4 * save.recentAcc : save.recentAcc;
+  let hotStreak = ranked ? (roundAcc >= HOT_ROUND_ACC ? (save.hotStreak || 0) + 1 : 0) : (save.hotStreak || 0);
   let playerLevel = save.playerLevel;
   let leveledUp = false;
-  if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel < MAX_LEVEL) {
-    playerLevel += 1;
-    hotStreak = 0;
-    leveledUp = true;
-  } else if (recentAcc < 0.55 && playerLevel > 1) {
-    playerLevel -= 1;
+  let leveledDown = false;
+  let respectBonus = 0;
+  if (ranked) {
+    if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel < MAX_LEVEL) {
+      playerLevel += 1;
+      hotStreak = 0;
+      leveledUp = true;
+    } else if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel === MAX_LEVEL) {
+      // Max level: the hot streak converts to cash so the counter never dies
+      hotStreak = 0;
+      respectBonus = RESPECT_BONUS;
+    } else if (recentAcc < 0.55 && playerLevel > 1) {
+      playerLevel -= 1;
+      leveledDown = true;
+    }
   }
 
   // Losing streak drives comfort mode; only betting rounds count either way
-  const lost = !p.isPractice && pay.amount < p.bet;
+  const net = p.isPractice ? 0 : pay.amount - p.bet;
+  const lost = !p.isPractice && net < 0;
   const coldStreak = p.isPractice ? (save.coldStreak || 0) : lost ? (save.coldStreak || 0) + 1 : 0;
 
-  // Daily streak
+  // Career record vs Chip: adaptive betting rounds only. Win = net positive.
+  const chip: ChipRecord = { ...(save.chip || { w: 0, l: 0, d: 0 }) };
+  let rankUp: string | null = null;
+  if (!p.isPractice && ranked) {
+    const beforeTitle = rankFor(chip.w).title;
+    if (net > 0) chip.w += 1;
+    else if (net < 0) chip.l += 1;
+    else chip.d += 1;
+    const afterTitle = rankFor(chip.w).title;
+    if (afterTitle !== beforeTitle) rankUp = afterTitle;
+  }
+
+  // Daily streak, with milestone bonuses and honest break detection
   const today = todayStr();
   let dayStreak = save.dayStreak;
+  let streakBonus = 0;
+  let streakBroken = 0;
   if (save.day !== today) {
-    dayStreak = save.day === yesterdayStr() ? dayStreak + 1 : 1;
+    if (save.day === yesterdayStr()) {
+      dayStreak = dayStreak + 1;
+      if (STREAK_BONUS[dayStreak]) streakBonus = STREAK_BONUS[dayStreak];
+    } else {
+      if (save.day !== null && save.dayStreak >= 3) streakBroken = save.dayStreak;
+      dayStreak = 1;
+    }
   }
+
+  // Personal records (adaptive rounds only, so they can't be farmed).
+  // First-ever values seed silently; announcements only for beaten records.
+  const records: Records = { ...(save.records || FRESH_SAVE.records) };
+  const newRecords: string[] = [];
+  if (ranked) {
+    if (p.bestStreakRound > records.bestStreak) {
+      if (records.bestStreak >= 5) newRecords.push(`Best streak: ${p.bestStreakRound} (was ${records.bestStreak})`);
+      records.bestStreak = Math.max(records.bestStreak, p.bestStreakRound);
+    }
+    if (!p.isPractice && net > 0 && net > records.biggestWin) {
+      if (records.biggestWin > 0) newRecords.push(`Biggest win: +$${net} (was +$${records.biggestWin})`);
+      records.biggestWin = net;
+    }
+    if (misses === 0 && p.roundTotal >= 6) records.perfectRounds += 1;
+  }
+  if (dayStreak > records.bestDayStreak) records.bestDayStreak = dayStreak;
 
   let bank = newBank;
   let history = save.history || [];
   if (p.isPractice) {
     history = withHistory(history, { d: today, type: "practice", label: `Practice: ${p.firstTryCorrect}/${p.roundTotal} first try`, net: 0, bank });
   } else {
-    history = withHistory(history, { d: today, type: "round", label: `Bet $${p.bet}, ${misses} ${misses === 1 ? "miss" : "misses"} (${pay.label})`, net: pay.amount - p.bet, bank });
+    history = withHistory(history, { d: today, type: "round", label: `Bet $${p.bet}, ${misses} ${misses === 1 ? "miss" : "misses"} (${pay.label})`, net, bank });
+  }
+  // Earned extras land after the round entry so the ledger reads in order
+  if (p.bonusWon) {
+    bank += BONUS_WORD_CASH;
+    history = withHistory(history, { d: today, type: "bonus", label: "Bonus word hit", net: BONUS_WORD_CASH, bank });
+  }
+  if (respectBonus > 0) {
+    bank += respectBonus;
+    history = withHistory(history, { d: today, type: "bonus", label: "Chip's respect bonus (2 hot rounds at max level)", net: respectBonus, bank });
+  }
+  if (streakBonus > 0) {
+    bank += streakBonus;
+    history = withHistory(history, { d: today, type: "bonus", label: `Day streak bonus (day ${dayStreak})`, net: streakBonus, bank });
   }
   // Never leave him on $0: the bailout floors a busted bank at $5. It is a
   // floor only - assistance never lifts the bank above $10.
@@ -477,9 +785,11 @@ export function settleRound(save: Save, p: SettleInput): { next: Save; payout: P
     history = withHistory(history, { d: today, type: "bailout", label: "Cheez Doodle fund bailout", net: BROKE_BAILOUT, bank });
   }
 
-  const payout: Payout = { result: pay.label, amount: pay.amount, misses, net: p.isPractice ? 0 : pay.amount - p.bet, betAmt: p.bet, prevBank: save.bank, newBank: bank };
-  const next: Save = { ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, coldStreak, day: today, dayStreak, history };
-  return { next, payout, bailedOut, leveledUp };
+  const doodles = p.doodleDrop ? [...(save.doodles || []), p.doodleDrop] : (save.doodles || []);
+
+  const payout: Payout = { result: pay.label, amount: pay.amount, misses, net, betAmt: p.bet, prevBank: save.bank, newBank: bank };
+  const next: Save = { ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, coldStreak, day: today, dayStreak, history, records, chip, doodles };
+  return { next, payout, bailedOut, leveledUp, leveledDown, rankUp, newRecords, streakBonus, streakBroken, respectBonus };
 }
 
 // Doodle-burst sparks for a correct answer: fixed fan-out so the animation
@@ -550,12 +860,16 @@ function MarkedWord({ word, danger }: { word: string; danger: string | null }) {
 }
 
 function DiffGuess({ guess, answer }: { guess: string; answer: string }) {
-  const g = guess.toLowerCase();
-  const a = answer.toLowerCase();
+  // Alignment-aware: a dropped letter shows as a yellow gap at the right
+  // spot instead of turning the whole tail of the word red.
+  const ops = alignDiff(guess, answer);
   return (
     <div className="diffline" aria-label={`You wrote ${guess}`}>
-      {g.split("").map((ch, i) => (
-        <span key={i} className={ch === a[i] ? "" : "diffbad"}>{ch}</span>
+      {ops.map((op, i) => (
+        <span
+          key={i}
+          className={op.kind === "ok" ? "" : op.kind === "missing" ? "diffmiss" : "diffbad"}
+        >{op.ch}</span>
       ))}
     </div>
   );
@@ -589,6 +903,20 @@ export default function SpellingShowdown() {
   const [bailoutMsg, setBailoutMsg] = useState("");
   const [levelMsg, setLevelMsg] = useState("");
   const [resumed, setResumed] = useState(false);
+  const [isCustomRound, setIsCustomRound] = useState(false);
+  const [customError, setCustomError] = useState("");
+  const [customNote, setCustomNote] = useState("");
+  const [bonusWord, setBonusWord] = useState<string | null>(null);
+  const [bonusWon, setBonusWon] = useState(false);
+  const [extras, setExtras] = useState<{
+    rankUp: string | null;
+    newRecords: string[];
+    streakBonus: number;
+    streakBroken: number;
+    respectBonus: number;
+    leveledDown: number;
+    doodleDrop: string | null;
+  } | null>(null);
   const [speechOk, setSpeechOk] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
   const retypeRef = useRef<HTMLInputElement>(null);
@@ -631,25 +959,41 @@ export default function SpellingShowdown() {
         }
         setBet(sn.bet || 0);
         setIsPractice(!!sn.isPractice);
+        setIsCustomRound(!!sn.isCustom);
         setMissedWords(sn.missed || []);
         setFirstTryCorrect(sn.firstTryCorrect || 0);
         setBestStreak(sn.bestStreak || 0);
         setRoundTotal(sn.roundTotal || q.length);
+        setBonusWord(sn.bonusWord || null);
+        setBonusWon(!!sn.bonusWon);
         roundWordsRef.current = sn.roundWords || [];
         if (complete) {
           // Every word was answered but the round never got scored: settle it
           // now so the bet and the word stats aren't lost.
           const res = settleRound(loaded, {
             isPractice: !!sn.isPractice,
+            isCustom: !!sn.isCustom,
             bet: sn.bet || 0,
             roundTotal: sn.roundTotal || q.length,
             firstTryCorrect: sn.firstTryCorrect || 0,
             roundWords: sn.roundWords || [],
             missedWords: (sn.missed || []).map((m) => m.w),
+            bestStreakRound: sn.bestStreak || 0,
+            bonusWon: !!sn.bonusWon,
+            doodleDrop: null,
           });
           loaded = res.next;
           if (res.leveledUp) setLevelMsg(`LEVEL UP. Two hot rounds in a row - Chip is moving you to level ${res.next.playerLevel} words.`);
           if (res.bailedOut) setBailoutMsg("Busted to zero. Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
+          setExtras({
+            rankUp: res.rankUp,
+            newRecords: res.newRecords,
+            streakBonus: res.streakBonus,
+            streakBroken: res.streakBroken,
+            respectBonus: res.respectBonus,
+            leveledDown: res.leveledDown ? res.next.playerLevel : 0,
+            doodleDrop: null,
+          });
           setPayout(res.payout);
           savedThisRound.current = true;
           try { localStorage.setItem(STORE_KEY, JSON.stringify(loaded)); } catch {}
@@ -678,14 +1022,15 @@ export default function SpellingShowdown() {
     if (screen !== "play" || queue.length === 0) return;
     try {
       const sn: RoundSnapshot = {
-        queue, idx, bet, isPractice,
+        queue, idx, bet, isPractice, isCustom: isCustomRound,
         missed: missedWords, redo, firstTryCorrect, streak, bestStreak,
         roundTotal, roundWords: roundWordsRef.current,
         answered: phase !== "ask",
+        bonusWord, bonusWon,
       };
       localStorage.setItem(ROUND_KEY, JSON.stringify(sn));
     } catch {}
-  }, [screen, queue, idx, phase, bet, isPractice, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal]);
+  }, [screen, queue, idx, phase, bet, isPractice, isCustomRound, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal, bonusWord, bonusWon]);
 
   function persist(next: Save) {
     setSave(next);
@@ -727,16 +1072,44 @@ export default function SpellingShowdown() {
     if (!practice && (bet < 1 || bet > save.bank)) return;
     if (practice) setBet(0);
     setIsPractice(practice);
+    setCustomError("");
+    setCustomNote("");
     let round: Entry[];
     if (mode === "custom") {
-      const words = customText.split(/[\n,;]+/)
-        .map((w) => w.trim().toLowerCase())
-        .filter((w) => /^[a-z''-]{2,}$/i.test(w));
-      if (words.length === 0) return;
-      round = shuffle(words.map((w): Entry => ({ w, l: 2, p: "your list", s: `Spell the word: ${w}.`, h: "From your own list.", d: null, t: null }))).slice(0, ROUND_SIZE);
+      // Tolerant of how school lists actually arrive: numbered lines,
+      // bullets, tabs, spaces, commas - strip decoration, then split wide.
+      const words = [...new Set(
+        customText
+          .split(/\n+/)
+          .map((line) => line.replace(/^\s*(?:\d+[.):]?|[-*•·])\s*/, ""))
+          .join(" ")
+          .split(/[\s,;]+/)
+          .map((w) => w.trim().toLowerCase())
+          .filter((w) => /^[a-z''-]{2,}$/i.test(w))
+      )];
+      if (words.length === 0) {
+        setCustomError("Couldn't find any words in that. Paste them one per line, or separated by commas or spaces.");
+        return;
+      }
+      const mkCustom = (w: string): Entry => ({
+        w, l: 2, p: "your list",
+        s: HOMOPHONE_HINTS[w] || `Spell the word: ${w}.`,
+        h: HOMOPHONE_HINTS[w] || "From your own list.",
+        d: null, t: null,
+      });
+      // One round covers the whole list (no silent 8-word truncation)
+      round = shuffle(words.map(mkCustom)).slice(0, CUSTOM_ROUND_CAP);
+      if (words.length > CUSTOM_ROUND_CAP) {
+        setCustomNote(`Big list! Playing ${CUSTOM_ROUND_CAP} of your ${words.length} words this round.`);
+      }
     } else {
       round = buildRound(save);
     }
+    setIsCustomRound(mode === "custom");
+    // Secret bonus word: adaptive betting rounds only, revealed on a first-try hit
+    setBonusWord(mode === "adaptive" && !practice ? pick(round).w : null);
+    setBonusWon(false);
+    setExtras(null);
     savedThisRound.current = false;
     roundWordsRef.current = round.map((e) => e.w);
     setQueue(round);
@@ -760,12 +1133,15 @@ export default function SpellingShowdown() {
     const answer = current.w.toLowerCase();
     if (guess === answer) {
       const wasMissed = missedWords.some((m) => m.w === current.w);
+      const hitBonus = !wasMissed && !bonusWon && bonusWord === current.w;
       if (!wasMissed) setFirstTryCorrect((n) => n + 1);
+      if (hitBonus) setBonusWon(true);
       const ns = streak + 1;
       setStreak(ns);
       setBestStreak((b) => Math.max(b, ns));
-      setFlash(pick(PRAISE));
+      setFlash(pick(ns >= 3 ? PRAISE_HOT : PRAISE));
       setPhase("right");
+      playSfx(hitBonus ? "bonus" : "correct", !!save?.soundOn);
     } else {
       setStreak(0);
       setFlash(pick(ROASTS));
@@ -774,23 +1150,46 @@ export default function SpellingShowdown() {
       if (!missedWords.some((m) => m.w === current.w)) setMissedWords((m) => [...m, current]);
       setRedo((r) => [...r, current]);
       setPhase("wrong");
+      playSfx("wrong", !!save?.soundOn);
     }
   }
 
   function finishRound() {
     if (savedThisRound.current || !save) return;
     savedThisRound.current = true;
+    // Doodle drops are decided here (random, win-gated, adaptive bets only)
+    // so settleRound stays a pure function.
+    const payPreview = isPractice ? { amount: 0 } : payoutFor(missedWords.length, roundTotal, bet);
+    const wonBet = !isPractice && !isCustomRound && payPreview.amount - bet > 0;
+    const doodleDrop = wonBet && Math.random() < DOODLE_DROP_CHANCE ? pickDoodleDrop(save.doodles || []) : null;
     const res = settleRound(save, {
       isPractice,
+      isCustom: isCustomRound,
       bet,
       roundTotal,
       firstTryCorrect,
       roundWords: roundWordsRef.current,
       missedWords: missedWords.map((m) => m.w),
+      bestStreakRound: bestStreak,
+      bonusWon,
+      doodleDrop,
     });
     if (res.leveledUp) setLevelMsg(`LEVEL UP. Two hot rounds in a row - Chip is moving you to level ${res.next.playerLevel} words.`);
     if (res.bailedOut) setBailoutMsg("Busted to zero. Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
+    setExtras({
+      rankUp: res.rankUp,
+      newRecords: res.newRecords,
+      streakBonus: res.streakBonus,
+      streakBroken: res.streakBroken,
+      respectBonus: res.respectBonus,
+      leveledDown: res.leveledDown ? res.next.playerLevel : 0,
+      doodleDrop,
+    });
     setPayout(res.payout);
+    const snd = !!save.soundOn;
+    if (res.rankUp || res.leveledUp) playSfx("rankup", snd);
+    else if (res.newRecords.length > 0 || doodleDrop) playSfx("record", snd);
+    else if (!isPractice) playSfx(res.payout.net >= 0 ? "win" : "lose", snd);
     try { localStorage.removeItem(ROUND_KEY); } catch {}
     persist(res.next);
   }
@@ -828,20 +1227,33 @@ export default function SpellingShowdown() {
   function cashOut() {
     if (!save) return;
     const record = { amount: save.bank, date: todayStr() };
+    const records: Records = { ...(save.records || FRESH_SAVE.records) };
+    let recordNote = "";
+    if (record.amount > records.bestCashout) {
+      if (records.bestCashout > 0) recordNote = ` ⭐ NEW RECORD payday (old best: $${records.bestCashout}).`;
+      records.bestCashout = record.amount;
+    }
     persist({
       ...save,
       bank: STARTING_BANK,
+      records,
       cashouts: [...save.cashouts, record],
       history: withHistory(save.history, { d: record.date, type: "cashout", label: `CASHED OUT $${record.amount} - reset to $${STARTING_BANK}`, net: -record.amount + STARTING_BANK, bank: STARTING_BANK }),
     });
     setConfirmCashout(false);
-    setBailoutMsg(`CASHED OUT $${record.amount}. Go collect from Dad. Bankroll reset to $${STARTING_BANK}.`);
+    setBailoutMsg(`CASHED OUT $${record.amount}. Go collect from Dad.${recordNote} Bankroll reset to $${STARTING_BANK}.`);
+    playSfx(recordNote ? "record" : "win", !!save.soundOn);
     setBet(0);
   }
 
   const isRedoLap = current && queue.length < roundTotal;
   // What the round pays if he finishes at the current miss count
   const potential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
+  const chipRec: ChipRecord = save?.chip || { w: 0, l: 0, d: 0 };
+  const rank = rankFor(chipRec.w);
+  const recs: Records = save?.records || FRESH_SAVE.records;
+  const ownedDoodles = save?.doodles || [];
+  const masteredCount = save ? BANK.filter((e) => (save.stats[e.w]?.cs ?? 0) >= 3).length : 0;
   const weak = save ? weakestPatterns(save.stats).slice(0, 2) : [];
   const struggles = save ? strugglingWords(save.stats).slice(0, 3) : [];
 
@@ -925,7 +1337,25 @@ export default function SpellingShowdown() {
         }
         .winline { font-size: 21px; color: #2E8B57; margin: 12px 0 0; transform: rotate(-1deg); animation: winpop 0.3s ease-out; }
         @keyframes winpop { from { transform: scale(0.6) rotate(-1deg); opacity: 0; } to { transform: scale(1) rotate(-1deg); opacity: 1; } }
-        @media (prefers-reduced-motion: reduce) { .stamp { animation: none; } .btn { transition: none; } .spark { display: none; } .winline { animation: none; } }
+        .sentline { font-size: 15px; color: #4A4A45; margin: 10px 0 0; font-style: italic; }
+        .bonusline { font-size: 20px; color: #B8860B; margin: 10px 0 0; transform: rotate(-1deg); animation: winpop 0.3s ease-out; }
+        .warnline { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; color: #D63B2F; font-size: 17px; margin: 8px 0 0; }
+        .rankup {
+          font-size: 26px; color: #B8860B; border: 3px solid #B8860B; display: inline-block;
+          padding: 3px 14px; border-radius: 8px; transform: rotate(-2deg); margin: 12px 0 0;
+          background: #FFFDF0; animation: stampIn 0.25s ease-out;
+        }
+        .recordline { font-size: 20px; color: #2E8B57; margin: 6px 0 0; animation: winpop 0.3s ease-out; }
+        .leveldown { font-size: 19px; color: #D63B2F; margin: 8px 0 0; }
+        .goalwrap { height: 12px; background: #EEF3FF; border: 2px solid #1D2A44; border-radius: 8px; overflow: hidden; margin-top: 12px; }
+        .goalbar { height: 100%; background: #2E8B57; transition: width 0.4s ease; }
+        .goalbar.blue { background: #2B5FD9; }
+        .statchip { display: inline-block; background: #fff; border: 2px solid #1D2A44; border-radius: 8px; padding: 2px 10px; margin: 4px 6px 0 0; font-size: 13px; font-weight: 700; }
+        .vsline { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 22px; }
+        .doodleshelf { font-size: 22px; letter-spacing: 4px; margin: 4px 0 0; }
+        .doodledrop { display: flex; gap: 12px; align-items: center; background: #FFFDF0; border: 3px dashed #B8860B; border-radius: 10px; padding: 12px 14px; margin-top: 12px; animation: winpop 0.3s ease-out; }
+        .doodleicon { font-size: 42px; }
+        @media (prefers-reduced-motion: reduce) { .stamp { animation: none; } .btn { transition: none; } .spark { display: none; } .winline, .bonusline, .recordline, .rankup, .doodledrop { animation: none; } .goalbar { transition: none; } }
         .flash { font-size: 17px; margin-top: 8px; font-weight: 700; }
         .missrow { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px dashed #C9D8F0; font-size: 16px; }
         .tag { font-size: 12px; font-weight: 900; text-transform: uppercase; background: #FFE24A; border: 2px solid #1D2A44; border-radius: 20px; padding: 1px 10px; }
@@ -938,6 +1368,7 @@ export default function SpellingShowdown() {
         .mark { background: #FFE24A; border-radius: 4px; padding: 0 2px; box-shadow: 0 0 0 2px #FFE24A; }
         .diffline { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 22px; letter-spacing: 4px; margin: 0 0 8px; word-break: break-all; }
         .diffbad { color: #D63B2F; text-decoration: line-through; }
+        .diffmiss { background: #FFE24A; border-radius: 4px; padding: 0 2px; box-shadow: 0 0 0 2px #FFE24A; color: #1D2A44; }
         .tricktext { font-size: 16px; margin: 8px 0 0; line-height: 1.45; }
         .retypelabel { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 19px; margin: 14px 0 2px; }
         .retypeinput { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 26px; letter-spacing: 3px; width: 100%; box-sizing: border-box; border: none; border-bottom: 3px dashed #D63B2F; background: transparent; padding: 4px; color: #1D2A44; }
@@ -958,7 +1389,12 @@ export default function SpellingShowdown() {
       `}</style>
 
       <div className="page">
-        <h1 className="hand">Spelling Showdown</h1>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+          <h1 className="hand">Spelling Showdown</h1>
+          <button className="toggle" style={{ marginTop: 10, whiteSpace: "nowrap" }} onClick={() => persist({ ...save, soundOn: !save.soundOn })}>
+            {save.soundOn ? "🔊 sound on" : "🔇 sound off"}
+          </button>
+        </div>
         <p className="sub">Chip says the word. You spell it. Real(ish) money on the line.</p>
 
         {screen === "start" && (
@@ -970,12 +1406,23 @@ export default function SpellingShowdown() {
                   <div className="wallet">${save.bank}</div>
                 </div>
                 <div style={{ textAlign: "right", fontWeight: 900, fontSize: 14 }}>
-                  Spelling level: {save.playerLevel} / {MAX_LEVEL}{save.hotStreak > 0 && save.playerLevel < MAX_LEVEL ? " 🔥 one more hot round to level up" : ""}<br />
+                  Spelling level: {save.playerLevel} / {MAX_LEVEL}
+                  {save.hotStreak > 0 && save.playerLevel < MAX_LEVEL ? " 🔥 one more hot round to level up" : ""}
+                  {save.hotStreak > 0 && save.playerLevel === MAX_LEVEL ? " 🔥 one more hot round = respect bonus" : ""}<br />
                   Day streak: {save.dayStreak} {save.dayStreak >= 3 ? "🔥" : ""}<br />
                   Rounds played: {save.rounds}<br />
                   {save.cashouts.length > 0 && <>Cashed out so far: ${save.cashouts.reduce((s, c) => s + c.amount, 0)}</>}
                 </div>
               </div>
+              <div className="goalwrap" aria-hidden="true"><div className="goalbar" style={{ width: `${Math.min(100, (save.bank / PAYDAY_GOAL) * 100)}%` }} /></div>
+              <p className="payline" style={{ fontWeight: 900 }}>
+                {save.bank >= PAYDAY_GOAL
+                  ? `PAYDAY READY: $${save.bank} in the bank. Cash out and make Dad pay up, or keep stacking.`
+                  : `Payday goal: $${PAYDAY_GOAL} - you're $${PAYDAY_GOAL - save.bank} away.`}
+              </p>
+              {save.day && save.day !== todayStr() && save.dayStreak >= 2 && (
+                <p className="warnline">⚠️ Play a round today or your {save.dayStreak}-day streak resets.</p>
+              )}
               {bailoutMsg && <p className="bailout">{bailoutMsg}</p>}
               {!storageOk && <p className="savewarn">Heads up: saving isn&apos;t working on this device, so the bankroll resets when you close this.</p>}
 
@@ -1015,6 +1462,35 @@ export default function SpellingShowdown() {
             </div>
 
             <div className="card">
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+                <span className="cheatlabel hand" style={{ margin: 0, fontSize: 18, color: "#B8860B" }}>THE TROPHY SHELF</span>
+                <span className="vsline">YOU {chipRec.w} - {chipRec.l} CHIP{chipRec.d > 0 ? ` (${chipRec.d} draws)` : ""}</span>
+              </div>
+              <p className="payline" style={{ fontWeight: 900, marginTop: 8 }}>
+                Rank: <span className="hand" style={{ fontSize: 20 }}>{rank.title}</span>
+                {rank.next && <> · {rank.next.winsNeeded} more {rank.next.winsNeeded === 1 ? "win" : "wins"} vs Chip to become <b>{rank.next.title}</b></>}
+                {!rank.next && <> · top of the ladder. Nobody outdoodles you.</>}
+              </p>
+              <div style={{ marginTop: 6 }}>
+                {recs.bestStreak > 0 && <span className="statchip">🔥 Best streak: {recs.bestStreak}</span>}
+                {recs.biggestWin > 0 && <span className="statchip">💰 Biggest win: +${recs.biggestWin}</span>}
+                {recs.bestCashout > 0 && <span className="statchip">🤑 Best payday: ${recs.bestCashout}</span>}
+                {recs.perfectRounds > 0 && <span className="statchip">✨ Perfect rounds: {recs.perfectRounds}</span>}
+                {recs.bestDayStreak > 1 && <span className="statchip">📅 Longest day streak: {recs.bestDayStreak}</span>}
+                {recs.bestStreak === 0 && recs.biggestWin === 0 && recs.bestCashout === 0 && recs.perfectRounds === 0 && recs.bestDayStreak <= 1 && (
+                  <span className="statchip">Empty shelf. Chip says that&apos;s embarrassing.</span>
+                )}
+              </div>
+              <p className="payline" style={{ fontWeight: 900, marginTop: 10, marginBottom: 2 }}>Word collection: {masteredCount} / {BANK.length} captured</p>
+              <div className="goalwrap" aria-hidden="true"><div className="goalbar blue" style={{ width: `${(masteredCount / BANK.length) * 100}%` }} /></div>
+              <p className="payline" style={{ fontWeight: 900, marginTop: 10, marginBottom: 2 }}>Doodle collection: {ownedDoodles.length} / {DOODLES.length}</p>
+              <p className="doodleshelf" title="Win betting rounds for a chance at doodle drops">
+                {DOODLES.map((d) => (ownedDoodles.includes(d.id) ? d.icon : "▢")).join(" ")}
+              </p>
+              <p style={{ fontSize: 12, color: "#4A4A45", margin: "4px 0 0" }}>Doodles drop from winning bet rounds. Two are rare. Chip won&apos;t say which.</p>
+            </div>
+
+            <div className="card">
               <button className="toggle" onClick={() => setShowCustom(!showCustom)}>
                 {showCustom ? "Hide" : "Use this week's school list instead"}
               </button>
@@ -1035,6 +1511,10 @@ export default function SpellingShowdown() {
                       Practice My List (no bet)
                     </button>
                   </div>
+                  {customError && <p className="savewarn" style={{ marginTop: 8 }}>{customError}</p>}
+                  <p style={{ fontSize: 12, color: "#4A4A45", marginTop: 8 }}>
+                    One round covers your whole list (up to {CUSTOM_ROUND_CAP} words). List rounds pay real money but don&apos;t move your level or rank - Chip only ranks his own words.
+                  </p>
                 </>
               )}
             </div>
@@ -1106,6 +1586,7 @@ export default function SpellingShowdown() {
 
             {isRedoLap && <div className="lap">REVENGE ROUND - clear these to keep 1.5x alive.</div>}
             {resumed && <div className="lap" style={{ color: "#2B5FD9" }}>Found your unfinished round. Picking up right where you left off.</div>}
+            {customNote && <div className="lap" style={{ color: "#2B5FD9" }}>{customNote}</div>}
 
             <div className="row">
               <Chip mood={phase === "right" ? "happy" : phase === "wrong" ? "sad" : "neutral"} />
@@ -1143,8 +1624,11 @@ export default function SpellingShowdown() {
             {phase === "right" && (
               <>
                 <div style={{ marginTop: 10 }} className="burst" key={`burst-${idx}-${queue.length}`}>
-                  <span className="stamp good hand">CORRECT ✓</span>
-                  {SPARKS.map((s, i) => (
+                  <span className="stamp good hand">CORRECT ✓{streak >= 3 ? ` ×${streak}` : ""}</span>
+                  {(streak >= 3
+                    ? [...SPARKS, ...SPARKS.map((s) => ({ c: "🔥", x: s.x * 1.6, y: s.y * 1.6, r: -s.r }))]
+                    : SPARKS
+                  ).map((s, i) => (
                     <span
                       key={i}
                       className="spark"
@@ -1153,7 +1637,11 @@ export default function SpellingShowdown() {
                     >{s.c}</span>
                   ))}
                 </div>
+                {bonusWon && bonusWord === current.w && (
+                  <p className="bonusline hand">🎯 BONUS WORD! +$1 stashed for the payout.</p>
+                )}
                 {potential && <p className="winline hand">{potLine(potential)}</p>}
+                <p className="sentline">&quot;{current.s}&quot;</p>
                 <div className="btnrow">
                   <button className="btn" onClick={next} onKeyDown={handleKey} autoFocus>Next Word →</button>
                 </div>
@@ -1233,10 +1721,46 @@ export default function SpellingShowdown() {
               </div>
             )}
             {bailoutMsg && <p className="bailout">{bailoutMsg}</p>}
+            {extras?.rankUp && <p className="rankup hand">🏆 RANK UP: {extras.rankUp}</p>}
             {levelMsg && <p className="escaped" style={{ fontSize: 20 }}>{levelMsg}</p>}
+            {extras && extras.leveledDown > 0 && (
+              <p className="leveldown hand">LEVEL DOWN. Chip dropped you to level {extras.leveledDown} words. Two hot rounds wins it back.</p>
+            )}
+            {extras?.newRecords.map((r) => (
+              <p key={r} className="recordline hand">⭐ NEW RECORD - {r}</p>
+            ))}
+            {bonusWon && <p className="bonusline hand">🎯 Bonus word banked: +${BONUS_WORD_CASH}</p>}
+            {extras && extras.respectBonus > 0 && (
+              <p className="escaped">Chip&apos;s respect bonus: +${extras.respectBonus}. Two hot rounds at max level. He hates paying this.</p>
+            )}
+            {extras && extras.streakBonus > 0 && (
+              <p className="escaped">Day streak bonus: +${extras.streakBonus} for day {save.dayStreak}. Showing up pays.</p>
+            )}
+            {extras && extras.streakBroken > 0 && (
+              <p className="warnline">Your {extras.streakBroken}-day streak ended. Chip noticed. New one starts today.</p>
+            )}
+            {extras?.doodleDrop && (() => {
+              const d = DOODLES.find((x) => x.id === extras.doodleDrop);
+              return d ? (
+                <div className="doodledrop">
+                  <span className="doodleicon" aria-hidden="true">{d.icon}</span>
+                  <div>
+                    <p className="cheatlabel" style={{ color: "#B8860B", margin: 0 }}>DOODLE DROP{d.rare ? " - RARE!" : ""}</p>
+                    <p style={{ margin: "2px 0", fontWeight: 900 }}>{d.name}</p>
+                    <p style={{ margin: 0, fontSize: 14 }}>{d.cap} · Collection: {ownedDoodles.length}/{DOODLES.length}</p>
+                  </div>
+                </div>
+              ) : null;
+            })()}
             <p className="payline" style={{ fontWeight: 900, marginTop: 10 }}>
               First-try: {firstTryCorrect}/{roundTotal} · Best streak: {bestStreak} · Day streak: {save.dayStreak} {save.dayStreak >= 3 ? "🔥" : ""} · Level: {save.playerLevel}/{MAX_LEVEL}
             </p>
+            {!isPractice && !isCustomRound && (
+              <p className="payline" style={{ fontWeight: 900 }}>
+                YOU {chipRec.w} - {chipRec.l} CHIP · Rank: {rank.title}
+                {rank.next && <> · {rank.next.winsNeeded} {rank.next.winsNeeded === 1 ? "win" : "wins"} to {rank.next.title}</>}
+              </p>
+            )}
 
             {missedWords.length > 0 && (
               <>
@@ -1267,7 +1791,13 @@ export default function SpellingShowdown() {
             </div>
 
             <div className="btnrow">
-              <button className="btn" onClick={() => { setScreen("start"); setBet(0); }}>Back to the Betting Desk</button>
+              {!isPractice && !isCustomRound && bet >= 1 && bet <= save.bank && (
+                <button className="btn blue" onClick={() => startRound("adaptive")}>REMATCH CHIP (bet ${bet})</button>
+              )}
+              {isPractice && (
+                <button className="btn" onClick={() => startRound("adaptive", true)}>Run it back (practice)</button>
+              )}
+              <button className="btn ghost" onClick={() => { setScreen("start"); setBet(0); }}>Back to the Betting Desk</button>
             </div>
           </div>
         )}

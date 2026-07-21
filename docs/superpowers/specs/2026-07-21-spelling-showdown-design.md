@@ -86,6 +86,41 @@ he progresses instead of farming one level.
   the bailout is a floor, not a boost. Covered by a logic test suite run with
   tsx against the exported pure functions.
 
+## Gamification pass (added 2026-07-21, fourth pass - from the adversarial audit)
+
+Scope agreed with MVH: cash-out and the bailout economy stay as designed (Dad
+audits the ledger and resets periodically); no iPad-specific work (Hunter
+plays on a Chromebook); Big Nate character references stay (family use).
+
+- **Rank ladder:** career wins vs Chip (adaptive betting rounds ending net
+  positive) climb 10 Big Nate ranks, Rookie of Room 216 -> Immortal Doodler.
+  Permanent progression beyond the level-4 word ceiling.
+- **You vs Chip:** persistent W-L-D record, shown on the start and results
+  screens, plus a one-tap REMATCH at the same bet.
+- **Records:** best streak, biggest win, best payday, perfect rounds, longest
+  day streak persist in the save with NEW RECORD announcements (first values
+  seed silently).
+- **Variable rewards:** a secret bonus word per adaptive betting round (+$1
+  on a first-try hit) and doodle drops - a 12-item collection, 2 rares, ~30%
+  chance on a won bet, shown on a trophy shelf.
+- **Streak teeth:** cash bonuses at 3/7/14/30 days, an at-risk warning on the
+  start screen, an honest "streak ended" note, and longest-streak record.
+- **Max-level hot streaks** convert to Chip's respect bonus (+$1 per 2 hot
+  rounds) so the counter never goes dead.
+- **Rank integrity:** custom list rounds move money but never move
+  level/recentAcc/hotStreak/chip record/records - a trivial pasted list can't
+  farm the ladder and a hard school list can't demote him. Demotions on
+  adaptive rounds are now announced (LEVEL DOWN line).
+- **Honest feedback:** the letter diff is alignment-based (dropped letters
+  render as yellow gaps, not cascading red), and the joke sentence renders as
+  text on every correct answer.
+- **School lists:** tolerant parsing (numbered/bulleted/tab/space input),
+  visible error instead of a dead button, one round covers the whole list (up
+  to 20 words), homophone disambiguation lines for ~19 school staples.
+- **Juice:** WebAudio synth SFX (correct/wrong/bonus/win/lose/rankup/record)
+  with a persistent sound toggle, escalating spark bursts + streak-tiered
+  praise lines at streak 3+, payday-goal progress bar ($40).
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,
