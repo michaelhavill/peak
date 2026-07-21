@@ -30,6 +30,14 @@ export default {
       }
     }
 
+    // spelling.100xpath.com serves the Spelling Showdown game at its root.
+    // Only the root path is rewritten (to the static export's spelling.html);
+    // /_next/* and other asset requests pass through so JS/CSS load normally.
+    if (url.hostname.startsWith("spelling.") && url.pathname === "/") {
+      url.pathname = "/spelling";
+      return env.ASSETS.fetch(new Request(url.toString(), request));
+    }
+
     return env.ASSETS.fetch(request);
   },
 } satisfies ExportedHandler<Env>;

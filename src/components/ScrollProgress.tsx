@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 /**
  * Thin accent line pinned to the very top of the viewport. Width follows
@@ -8,12 +9,16 @@ import { motion, useScroll, useSpring } from "framer-motion";
  * doesn't jitter. Sits above every section but below the top nav glass.
  */
 export default function ScrollProgress() {
+  const pathname = usePathname();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 120,
     damping: 30,
     mass: 0.25,
   });
+
+  // The spelling game is a self-contained full-page app - no reading progress
+  if (pathname?.startsWith("/spelling")) return null;
 
   return (
     <motion.div
