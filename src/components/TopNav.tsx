@@ -20,8 +20,10 @@ export default function TopNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Hide on dev-only preview routes where an overlay would be intrusive
-  const hidden = pathname?.startsWith("/social-cards");
+  // Hide on dev-only preview routes where an overlay would be intrusive,
+  // and on the full-page spelling game (served at spelling.100xpath.com)
+  const hidden =
+    pathname?.startsWith("/social-cards") || pathname?.startsWith("/spelling");
 
   // Only the home page has a dark hero video behind the nav.
   // On every other route, treat the nav as if it were scrolled so the
