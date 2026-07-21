@@ -35,6 +35,7 @@ type Save = {
   rounds: number;
   playerLevel: number;
   recentAcc: number;
+  hotStreak: number; // consecutive rounds at 80%+ first-try accuracy
   stats: Record<string, WordStat>;
   cashouts: Cashout[];
   history: HistoryEntry[];
@@ -155,6 +156,33 @@ const BANK: Entry[] = [
   { w: "queue", l: 3, p: "silent letters", s: "Nate cut the lunch queue. Once.", h: "A line of people waiting.", d: "ueue", t: "Q does all the work while U-E-U-E queue up silently behind it. The most patient word in English." },
   { w: "strength", l: 3, p: "letter pileups", s: "Opening the sports cupboard takes real strength.", h: "Being strong.", d: "ngth", t: "STRONG becomes STRENGTH: an N-G-T-H pile-up at the end. Flex all four consonants." },
   { w: "tongue", l: 3, p: "silent letters", s: "Nate burnt his tongue racing to finish lunch first.", h: "The thing you taste with.", d: "gue", t: "TON + GUE: ends in -GUE like league. The UE is silent, just showing off." },
+  // Level 4
+  { w: "accommodate", l: 4, p: "double letters", s: "The school hall can accommodate every kid and one very loud Dee Dee.", h: "To have room for.", d: "ccomm", t: "Two C's AND two M's. It's a big word with room for everyone: a-CC-o-MM-odate." },
+  { w: "conscience", l: 4, p: "hidden letters", s: "Nate's conscience showed up three pranks too late.", h: "The little voice that knows right from wrong.", d: "science", t: "CON + SCIENCE. Your conscience is the SCIENCE of knowing better." },
+  { w: "conscious", l: 4, p: "unstressed vowels", s: "Nate is barely conscious during first period.", h: "Awake and aware.", d: "sci", t: "CON-SCI-OUS: the SCI hides in the middle, like science with the end bitten off." },
+  { w: "exaggerate", l: 4, p: "double letters", s: "Nate would never exaggerate. He's told us a billion times.", h: "To make something sound bigger than it is.", d: "gg", t: "One X, then a double G: exa-GG-erate. Exaggerating needs extra letters. Obviously." },
+  { w: "guarantee", l: 4, p: "silent letters", s: "Chip can guarantee nothing except more spelling.", h: "A promise that something will happen.", d: "gua", t: "GUA at the start, like GUARD, then -RANTEE. A guarantee always guards its silent U." },
+  { w: "noticeable", l: 4, p: "hidden letters", s: "The smell from Nate's locker is noticeable from the gym.", h: "Easy to see or notice.", d: "cea", t: "NOTICE keeps its E before -ABLE: notice-able. The E stays so the C stays soft." },
+  { w: "occurrence", l: 4, p: "double letters", s: "A quiet day at P.S. 38 is a rare occurrence.", h: "Something that happens.", d: "ccurr", t: "Like occurred, but ending in -ENCE: two C's, two R's, then ENCE. Everything doubles except the ending." },
+  { w: "parallel", l: 4, p: "double letters", s: "Nate and Gina live in parallel universes. Thankfully.", h: "Lines that never meet.", d: "llel", t: "The twin L's in the middle ARE parallel lines: para-LL-el. The word draws itself." },
+  { w: "parliament", l: 4, p: "hidden letters", s: "Class president is one step from parliament, according to Nate.", h: "Where a country's laws get made.", d: "lia", t: "par-LIA-ment: I before A in the middle. Say par-LI-A-ment like a very posh robot." },
+  { w: "persuade", l: 4, p: "unstressed vowels", s: "Nobody can persuade Mrs. Godfrey to cancel a test.", h: "To talk someone into something.", d: "suade", t: "PER + SUADE: the SUA squad in the middle. Per-SUA-de someone smoothly." },
+  { w: "physically", l: 4, p: "silent letters", s: "Nate is physically incapable of tidying his locker.", h: "To do with the body.", d: "hys", t: "PH makes the F sound, then the Y sneaks in early: PH-Y-SIC-ALLY. Physical + LY, both L's included." },
+  { w: "pronunciation", l: 4, p: "hidden letters", s: "Francis corrects Nate's pronunciation. Nate pronounces revenge.", h: "The way a word is said.", d: "nunci", t: "Pro-NUN-ciation, not pro-NOUN-ciation. The O from pronounce gets left in detention." },
+  { w: "questionnaire", l: 4, p: "double letters", s: "Nate answered the careers questionnaire with 'cartoonist' fifteen times.", h: "A list of questions to answer.", d: "nn", t: "QUESTION + NAIRE with a double N handshake in the middle: question-naire." },
+  { w: "recognise", l: 4, p: "hidden letters", s: "Teddy didn't recognise Nate in a tie. Nobody did.", h: "To know someone when you see them.", d: "gn", t: "RE-COG-NISE: there's a COG turning in the middle. Drop the G and the machine breaks." },
+  { w: "sincerely", l: 4, p: "hidden letters", s: "Nate signed the apology letter 'sincerely unsorry'.", h: "Meaning it truly.", d: "cere", t: "SINCERE + LY: keep the whole word, just add LY. Sin-CERE-ly yours, Nate." },
+  { w: "sufficient", l: 4, p: "double letters", s: "One bag of Cheez Doodles is never sufficient.", h: "Enough for the job.", d: "ffici", t: "Double F, then -ICIENT: su-FF-icient. The CI makes a SH sound, like special's sneaky cousin." },
+  { w: "temperature", l: 4, p: "hidden letters", s: "The cafeteria soup has one temperature: volcano.", h: "How hot or cold something is.", d: "pera", t: "TEM-PER-A-TURE: say all four chunks out loud. The middle PERA is quiet but it's there." },
+  { w: "thorough", l: 4, p: "ought words", s: "Mrs. Godfrey's homework checks are extremely thorough.", h: "Complete, with nothing missed.", d: "orough", t: "THOROUGH is THROUGH with an extra O near the front: tho-ROUGH. The OUGH gang's longest member." },
+  { w: "unnecessary", l: 4, p: "double letters", s: "Nate finds most rules deeply unnecessary.", h: "Not needed at all.", d: "nn", t: "UN + NECESSARY: the UN brings its own N, so it's u-NN-ecessary. One collar, two sleeves still applies." },
+  { w: "manoeuvre", l: 4, p: "silent letters", s: "Dodging Mrs. Godfrey takes an expert manoeuvre.", h: "A skilful move.", d: "oeuv", t: "man-OEU-vre: the OEU is French and refuses to explain itself. Memorise the vowel pile: O, E, U." },
+  { w: "millennium", l: 4, p: "double letters", s: "Cleaning Nate's locker is the project of the millennium.", h: "A thousand years.", d: "llenn", t: "Two L's AND two N's: mi-LL-e-NN-ium. A thousand years needs double everything." },
+  { w: "apparently", l: 4, p: "double letters", s: "Apparently doodling counts as 'not listening'. Says Mrs. Godfrey.", h: "It seems that way.", d: "pp", t: "a-PP-arently: double P, and there's a PARENT hiding inside apparently. Don't tell Dad." },
+  { w: "committee", l: 4, p: "double letters", s: "The prank planning committee meets behind the bins.", h: "A group that makes decisions.", d: "mmittee", t: "The greediest word in English: double M, double T, double E. Commi-TT-EE keeps them all." },
+  { w: "desperate", l: 4, p: "unstressed vowels", s: "By Friday, Nate is desperate for the weekend.", h: "Wanting something very badly.", d: "sper", t: "des-PER-ate: PER, not PAR. A RAT lives in sepArate, but desperate stays PER-fect." },
+  { w: "curiosity", l: 4, p: "hidden letters", s: "Curiosity got Nate into the teachers' lounge. Detention got him out.", h: "Wanting to know things.", d: "osi", t: "CURIOUS drops its U-S for -ITY: curi-OS-ity. The extra U from curious doesn't make the trip." },
+  { w: "disastrous", l: 4, p: "hidden letters", s: "The volcano project was disastrous. Award-winningly disastrous.", h: "Terrible, like a disaster.", d: "strous", t: "DISASTER drops its E before -OUS: disastr-ous. The E saw the disaster coming and fled." },
 ];
 
 const PRAISE = [
@@ -180,6 +208,12 @@ const GENERIC_TRICK = "No cheat sheet for this one. Stare at the letters. Take a
 const ROUND_SIZE = 8;
 const STARTING_BANK = 20;
 const BROKE_BAILOUT = 5;
+const MAX_LEVEL = 4;
+// Promotion: two consecutive rounds at 80%+ first-try accuracy moves him up a
+// level. Blended accuracy under 55% moves him down. The level (and all word
+// stats) live in the save, so they survive cashouts - only the bankroll resets.
+const HOT_ROUND_ACC = 0.8;
+const HOT_ROUNDS_TO_LEVEL_UP = 2;
 const STORE_KEY = "spelling-showdown-v1";
 
 // Graduated payout: soft landings for near misses, full bust only for a blowout.
@@ -228,6 +262,7 @@ const FRESH_SAVE: Save = {
   rounds: 0,
   playerLevel: 1,
   recentAcc: 0.7,
+  hotStreak: 0,
   stats: {},          // word -> {a: attempts, m: misses, cs: correctStreak, seen: roundNumber}
   cashouts: [],
   history: [],        // ledger rows: {d, type, label, net, bank}
@@ -272,7 +307,7 @@ function strugglingWords(stats: Record<string, WordStat>) {
 }
 
 function buildRound(save: Save): Entry[] {
-  const { stats, playerLevel, rounds } = save;
+  const { stats, playerLevel, rounds, recentAcc } = save;
   const chosen: Entry[] = [];
   const used = new Set<string>();
   const take = (e: Entry | undefined) => { if (e && !used.has(e.w)) { chosen.push(e); used.add(e.w); } };
@@ -300,7 +335,12 @@ function buildRound(save: Save): Entry[] {
   // 4. Fill with diversity guaranteed: never-seen words first, then words resting 3+ rounds.
   //    Nothing seen in the last 2 rounds can enter this bucket.
   const eligible = (e: Entry) => !used.has(e.w) && (!stats[e.w] || stats[e.w].cs < 3) && seenAgo(e.w) >= 3;
-  const levelOrder = [playerLevel, Math.max(1, playerLevel - 1), Math.min(3, playerLevel + 1)];
+  // When he's winning at 80%+, reach UP a level for fill words before reaching
+  // down, so the next level gets tested while he's hot instead of coasting.
+  const stretching = recentAcc >= HOT_ROUND_ACC && playerLevel < MAX_LEVEL;
+  const levelOrder = stretching
+    ? [playerLevel, Math.min(MAX_LEVEL, playerLevel + 1), Math.max(1, playerLevel - 1)]
+    : [playerLevel, Math.max(1, playerLevel - 1), Math.min(MAX_LEVEL, playerLevel + 1)];
   for (const lvl of levelOrder) {
     const fresh = shuffle(BANK.filter((e) => eligible(e) && e.l === lvl && seenAgo(e.w) === Infinity));
     const rested = shuffle(BANK.filter((e) => eligible(e) && e.l === lvl && seenAgo(e.w) !== Infinity));
@@ -405,6 +445,7 @@ export default function SpellingShowdown() {
   const [confirmCashout, setConfirmCashout] = useState(false);
   const [showLedger, setShowLedger] = useState(false);
   const [bailoutMsg, setBailoutMsg] = useState("");
+  const [levelMsg, setLevelMsg] = useState("");
   const [speechOk, setSpeechOk] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
   const retypeRef = useRef<HTMLInputElement>(null);
@@ -493,6 +534,7 @@ export default function SpellingShowdown() {
     setPhase("ask");
     setHintShown(save.playerLevel === 1);
     setBailoutMsg("");
+    setLevelMsg("");
     setScreen("play");
   }
 
@@ -542,12 +584,20 @@ export default function SpellingShowdown() {
       };
     }
 
-    // Difficulty tuning: blend accuracy, adjust level
+    // Difficulty tuning: promote after HOT_ROUNDS_TO_LEVEL_UP consecutive
+    // rounds at 80%+ first-try accuracy; demote only on a sustained slump.
     const roundAcc = roundTotal ? firstTryCorrect / roundTotal : 0.7;
     const recentAcc = 0.6 * roundAcc + 0.4 * save.recentAcc;
+    let hotStreak = roundAcc >= HOT_ROUND_ACC ? (save.hotStreak || 0) + 1 : 0;
     let playerLevel = save.playerLevel;
-    if (recentAcc > 0.85 && playerLevel < 3) playerLevel += 1;
-    else if (recentAcc < 0.55 && playerLevel > 1) playerLevel -= 1;
+    if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel < MAX_LEVEL) {
+      playerLevel += 1;
+      hotStreak = 0;
+      setLevelMsg(`LEVEL UP. Two hot rounds in a row - Chip is moving you to level ${playerLevel} words.`);
+    } else if (recentAcc < 0.55 && playerLevel > 1) {
+      playerLevel -= 1;
+      setLevelMsg("");
+    }
 
     // Daily streak
     const today = todayStr();
@@ -570,7 +620,7 @@ export default function SpellingShowdown() {
     }
 
     setPayout({ result: pay.label, amount: pay.amount, misses, net: isPractice ? 0 : pay.amount - bet, betAmt: bet, prevBank: save.bank, newBank: bank });
-    persist({ ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, day: today, dayStreak, history });
+    persist({ ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, day: today, dayStreak, history });
   }
 
   function next() {
@@ -734,6 +784,7 @@ export default function SpellingShowdown() {
                   <div className="wallet">${save.bank}</div>
                 </div>
                 <div style={{ textAlign: "right", fontWeight: 900, fontSize: 14 }}>
+                  Spelling level: {save.playerLevel} / {MAX_LEVEL}{save.hotStreak > 0 && save.playerLevel < MAX_LEVEL ? " 🔥 one more hot round to level up" : ""}<br />
                   Day streak: {save.dayStreak} {save.dayStreak >= 3 ? "🔥" : ""}<br />
                   Rounds played: {save.rounds}<br />
                   {save.cashouts.length > 0 && <>Cashed out so far: ${save.cashouts.reduce((s, c) => s + c.amount, 0)}</>}
@@ -984,8 +1035,9 @@ export default function SpellingShowdown() {
               </div>
             )}
             {bailoutMsg && <p className="bailout">{bailoutMsg}</p>}
+            {levelMsg && <p className="escaped" style={{ fontSize: 20 }}>{levelMsg}</p>}
             <p className="payline" style={{ fontWeight: 900, marginTop: 10 }}>
-              First-try: {firstTryCorrect}/{roundTotal} · Best streak: {bestStreak} · Day streak: {save.dayStreak} {save.dayStreak >= 3 ? "🔥" : ""}
+              First-try: {firstTryCorrect}/{roundTotal} · Best streak: {bestStreak} · Day streak: {save.dayStreak} {save.dayStreak >= 3 ? "🔥" : ""} · Level: {save.playerLevel}/{MAX_LEVEL}
             </p>
 
             {missedWords.length > 0 && (
