@@ -121,6 +121,22 @@ plays on a Chromebook); Big Nate character references stay (family use).
   with a persistent sound toggle, escalating spark bursts + streak-tiered
   praise lines at streak 3+, payday-goal progress bar ($40).
 
+## Boss battles (added 2026-07-21, fifth pass)
+
+Semi-frequent free-entry challenges from Chip. After a normal adaptive round,
+once at least 4 rounds have passed since the last battle, there's a 45%
+chance Chip slaps a challenge on the betting desk. It stays pending until
+accepted (a return hook), announced with a teaser on the results screen and
+a red challenge card with a rotating taunt on the betting desk.
+
+The battle: 5 of Chip's nastiest words (player level or one above,
+unmastered first), no hints, one miss allowed. Free entry - losing costs
+nothing, not even the Chip record. Winning pays $5 of "Chip's own money",
+counts as a win on the rank ladder, and tracks in a separate boss W-L record
+on the trophy shelf. Boss rounds never move level/recentAcc/hotStreak/
+coldStreak; missed words still feed the learning stats and revenge system.
+Chip gloats on a win and sulks when he pays out.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,

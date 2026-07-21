@@ -20,11 +20,13 @@ type WordStat = { a: number; m: number; cs: number; seen: number };
 
 type HistoryEntry = {
   d: string;
-  type: "round" | "practice" | "bailout" | "cashout" | "bonus";
+  type: "round" | "practice" | "bailout" | "cashout" | "bonus" | "boss";
   label: string;
   net: number;
   bank: number;
 };
+
+type BossState = { pending: boolean; lastRound: number; wins: number; losses: number };
 
 type Records = {
   bestStreak: number;
@@ -54,6 +56,7 @@ type Save = {
   chip: ChipRecord; // career record vs Chip (adaptive betting rounds only)
   doodles: string[]; // collected doodle-drop ids
   soundOn: boolean;
+  boss: BossState;
 };
 
 // In-progress round, persisted so a reload or closed tab never loses the bet
@@ -64,6 +67,7 @@ type RoundSnapshot = {
   bet: number;
   isPractice: boolean;
   isCustom: boolean;
+  isBoss: boolean;
   missed: Entry[];
   redo: Entry[];
   firstTryCorrect: number;
@@ -289,8 +293,24 @@ const BONUS_WORD_CASH = 1;
 // instead of a level-up, so the hot-streak counter never goes dead.
 const RESPECT_BONUS = 1;
 const DOODLE_DROP_CHANCE = 0.3;
+// Boss battles: semi-frequent free-entry challenges from Chip. Five of his
+// nastiest words, no hints, one miss allowed. Win: +$5 of Chip's own money
+// and a win on the rank ladder. Lose: nothing but Chip's gloating.
+const BOSS_WORD_COUNT = 5;
+const BOSS_MISS_ALLOWED = 1;
+const BOSS_PRIZE = 5;
+const BOSS_MIN_GAP = 4; // rounds since last battle before one can trigger
+const BOSS_CHANCE = 0.45; // per eligible round
 const STORE_KEY = "spelling-showdown-v1";
 const ROUND_KEY = "spelling-showdown-round-v1";
+
+const BOSS_TAUNTS = [
+  "I picked five words so nasty even Francis flinched. Free entry. Scared?",
+  "Beat my gauntlet and I'll pay you out of my own Cheez Doodle fund. That's how confident I am.",
+  "Five words. One miss allowed. My money says you choke on word three.",
+  "The boss battle stands. Every day you don't accept, I doodle you losing.",
+  "No bet, no excuses. Just you, me, and five words with detention energy.",
+];
 
 // -------------------------------------------------------------
 // RANK LADDER: permanent progression driven by career WINS vs
@@ -398,7 +418,7 @@ const HOMOPHONE_HINTS: Record<string, string> = {
 // SOUND: tiny WebAudio synth - no assets, fails silently.
 // -------------------------------------------------------------
 let audioCtx: AudioContext | null = null;
-function playSfx(kind: "correct" | "wrong" | "bonus" | "win" | "lose" | "rankup" | "record", on: boolean) {
+function playSfx(kind: "correct" | "wrong" | "bonus" | "win" | "lose" | "rankup" | "record" | "boss", on: boolean) {
   if (!on || typeof window === "undefined") return;
   try {
     const AC = window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
@@ -425,6 +445,7 @@ function playSfx(kind: "correct" | "wrong" | "bonus" | "win" | "lose" | "rankup"
     else if (kind === "lose") { note(220, 0, 0.14, "sawtooth", 0.06); note(174, 0.14, 0.22, "sawtooth", 0.06); }
     else if (kind === "rankup") { [392, 523, 659, 784, 1046, 1318].forEach((f, i) => note(f, i * 0.08, 0.15)); }
     else if (kind === "record") { note(1046, 0, 0.07); note(1568, 0.07, 0.2); }
+    else if (kind === "boss") { note(196, 0, 0.18, "sawtooth", 0.09); note(147, 0.2, 0.3, "sawtooth", 0.09); }
   } catch { /* sound is a garnish, never an error */ }
 }
 
@@ -520,6 +541,7 @@ const FRESH_SAVE: Save = {
   chip: { w: 0, l: 0, d: 0 },
   doodles: [],
   soundOn: true,
+  boss: { pending: false, lastRound: 0, wins: 0, losses: 0 },
 };
 
 const HISTORY_CAP = 200;
@@ -630,12 +652,29 @@ export function buildRound(save: Save): Entry[] {
   return shuffle(chosen.slice(0, ROUND_SIZE));
 }
 
+// Boss battle round: Chip's nastiest words at his level or one above,
+// unmastered words first so the fight is real.
+export function buildBossRound(save: Save): Entry[] {
+  const { stats, playerLevel } = save;
+  const lvlMax = Math.min(MAX_LEVEL, playerLevel + 1);
+  const hard = BANK.filter((e) => e.l >= playerLevel && e.l <= lvlMax);
+  const unmastered = shuffle(hard.filter((e) => (stats[e.w]?.cs ?? 0) < 3));
+  const mastered = shuffle(hard.filter((e) => (stats[e.w]?.cs ?? 0) >= 3));
+  const chosen = [...unmastered, ...mastered].slice(0, BOSS_WORD_COUNT);
+  for (const e of shuffle(BANK)) {
+    if (chosen.length >= BOSS_WORD_COUNT) break;
+    if (!chosen.some((c) => c.w === e.w)) chosen.push(e);
+  }
+  return shuffle(chosen);
+}
+
 // Everything that happens when a round ends, as a pure function so it can be
 // applied both live (finishRound) and when settling an orphaned round found
 // at load time (the reload-mid-round bug).
 type SettleInput = {
   isPractice: boolean;
   isCustom: boolean; // custom school-list rounds never move rank, records, or the Chip record
+  isBoss: boolean; // free-entry challenge: prize on <= BOSS_MISS_ALLOWED misses, no rank/level effects except a ladder win
   bet: number;
   roundTotal: number;
   firstTryCorrect: number;
@@ -661,10 +700,15 @@ export type SettleResult = {
 
 export function settleRound(save: Save, p: SettleInput): SettleResult {
   const misses = p.missedWords.length;
-  const pay = p.isPractice
-    ? { label: "practice", amount: 0, mult: 0 }
-    : payoutFor(misses, p.roundTotal, p.bet);
-  const newBank = p.isPractice ? save.bank : Math.max(0, save.bank - p.bet + pay.amount);
+  const bossWon = p.isBoss && misses <= BOSS_MISS_ALLOWED;
+  const pay = p.isBoss
+    ? { label: bossWon ? "bosswin" : "bossloss", amount: bossWon ? BOSS_PRIZE : 0, mult: 0 }
+    : p.isPractice
+      ? { label: "practice", amount: 0, mult: 0 }
+      : payoutFor(misses, p.roundTotal, p.bet);
+  const newBank = p.isBoss
+    ? save.bank + pay.amount
+    : p.isPractice ? save.bank : Math.max(0, save.bank - p.bet + pay.amount);
 
   // Update word stats (first-try outcomes only; revenge laps are practice)
   const stats = { ...save.stats };
@@ -684,7 +728,7 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   // rounds at 80%+ first-try accuracy; demote only on a sustained slump.
   // Custom school-list rounds are excluded: a hard teacher list must never
   // demote him, and a trivial pasted list must never farm the ladder.
-  const ranked = !p.isCustom;
+  const ranked = !p.isCustom && !p.isBoss;
   const roundAcc = p.roundTotal ? p.firstTryCorrect / p.roundTotal : 0.7;
   const recentAcc = ranked ? 0.6 * roundAcc + 0.4 * save.recentAcc : save.recentAcc;
   let hotStreak = ranked ? (roundAcc >= HOT_ROUND_ACC ? (save.hotStreak || 0) + 1 : 0) : (save.hotStreak || 0);
@@ -707,21 +751,39 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
     }
   }
 
-  // Losing streak drives comfort mode; only betting rounds count either way
+  // Losing streak drives comfort mode; only real betting rounds count either
+  // way (boss battles are free entries and leave it untouched)
   const net = p.isPractice ? 0 : pay.amount - p.bet;
-  const lost = !p.isPractice && net < 0;
-  const coldStreak = p.isPractice ? (save.coldStreak || 0) : lost ? (save.coldStreak || 0) + 1 : 0;
+  const lost = !p.isPractice && !p.isBoss && net < 0;
+  const coldStreak = (p.isPractice || p.isBoss) ? (save.coldStreak || 0) : lost ? (save.coldStreak || 0) + 1 : 0;
 
-  // Career record vs Chip: adaptive betting rounds only. Win = net positive.
+  // Career record vs Chip: adaptive betting rounds, plus boss battle WINS
+  // (losing a free challenge costs nothing, not even the record).
   const chip: ChipRecord = { ...(save.chip || { w: 0, l: 0, d: 0 }) };
   let rankUp: string | null = null;
-  if (!p.isPractice && ranked) {
+  if (p.isBoss) {
+    if (bossWon) {
+      const beforeTitle = rankFor(chip.w).title;
+      chip.w += 1;
+      const afterTitle = rankFor(chip.w).title;
+      if (afterTitle !== beforeTitle) rankUp = afterTitle;
+    }
+  } else if (!p.isPractice && ranked) {
     const beforeTitle = rankFor(chip.w).title;
     if (net > 0) chip.w += 1;
     else if (net < 0) chip.l += 1;
     else chip.d += 1;
     const afterTitle = rankFor(chip.w).title;
     if (afterTitle !== beforeTitle) rankUp = afterTitle;
+  }
+
+  // Boss ledger: battle resolved, cooldown restarts from this round
+  const boss: BossState = { ...(save.boss || FRESH_SAVE.boss) };
+  if (p.isBoss) {
+    boss.pending = false;
+    boss.lastRound = roundNum;
+    if (bossWon) boss.wins += 1;
+    else boss.losses += 1;
   }
 
   // Daily streak, with milestone bonuses and honest break detection
@@ -758,7 +820,13 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
 
   let bank = newBank;
   let history = save.history || [];
-  if (p.isPractice) {
+  if (p.isBoss) {
+    history = withHistory(history, {
+      d: today, type: "boss",
+      label: bossWon ? `BOSS BATTLE: beat Chip, ${misses} ${misses === 1 ? "miss" : "misses"}` : "BOSS BATTLE: Chip survives (free entry)",
+      net: pay.amount, bank,
+    });
+  } else if (p.isPractice) {
     history = withHistory(history, { d: today, type: "practice", label: `Practice: ${p.firstTryCorrect}/${p.roundTotal} first try`, net: 0, bank });
   } else {
     history = withHistory(history, { d: today, type: "round", label: `Bet $${p.bet}, ${misses} ${misses === 1 ? "miss" : "misses"} (${pay.label})`, net, bank });
@@ -788,7 +856,7 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   const doodles = p.doodleDrop ? [...(save.doodles || []), p.doodleDrop] : (save.doodles || []);
 
   const payout: Payout = { result: pay.label, amount: pay.amount, misses, net, betAmt: p.bet, prevBank: save.bank, newBank: bank };
-  const next: Save = { ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, coldStreak, day: today, dayStreak, history, records, chip, doodles };
+  const next: Save = { ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, coldStreak, day: today, dayStreak, history, records, chip, doodles, boss };
   return { next, payout, bailedOut, leveledUp, leveledDown, rankUp, newRecords, streakBonus, streakBroken, respectBonus };
 }
 
@@ -904,6 +972,8 @@ export default function SpellingShowdown() {
   const [levelMsg, setLevelMsg] = useState("");
   const [resumed, setResumed] = useState(false);
   const [isCustomRound, setIsCustomRound] = useState(false);
+  const [isBossRound, setIsBossRound] = useState(false);
+  const [bossTeaser, setBossTeaser] = useState(false);
   const [customError, setCustomError] = useState("");
   const [customNote, setCustomNote] = useState("");
   const [bonusWord, setBonusWord] = useState<string | null>(null);
@@ -960,6 +1030,7 @@ export default function SpellingShowdown() {
         setBet(sn.bet || 0);
         setIsPractice(!!sn.isPractice);
         setIsCustomRound(!!sn.isCustom);
+        setIsBossRound(!!sn.isBoss);
         setMissedWords(sn.missed || []);
         setFirstTryCorrect(sn.firstTryCorrect || 0);
         setBestStreak(sn.bestStreak || 0);
@@ -973,6 +1044,7 @@ export default function SpellingShowdown() {
           const res = settleRound(loaded, {
             isPractice: !!sn.isPractice,
             isCustom: !!sn.isCustom,
+            isBoss: !!sn.isBoss,
             bet: sn.bet || 0,
             roundTotal: sn.roundTotal || q.length,
             firstTryCorrect: sn.firstTryCorrect || 0,
@@ -1022,7 +1094,7 @@ export default function SpellingShowdown() {
     if (screen !== "play" || queue.length === 0) return;
     try {
       const sn: RoundSnapshot = {
-        queue, idx, bet, isPractice, isCustom: isCustomRound,
+        queue, idx, bet, isPractice, isCustom: isCustomRound, isBoss: isBossRound,
         missed: missedWords, redo, firstTryCorrect, streak, bestStreak,
         roundTotal, roundWords: roundWordsRef.current,
         answered: phase !== "ask",
@@ -1030,7 +1102,7 @@ export default function SpellingShowdown() {
       };
       localStorage.setItem(ROUND_KEY, JSON.stringify(sn));
     } catch {}
-  }, [screen, queue, idx, phase, bet, isPractice, isCustomRound, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal, bonusWord, bonusWon]);
+  }, [screen, queue, idx, phase, bet, isPractice, isCustomRound, isBossRound, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal, bonusWord, bonusWon]);
 
   function persist(next: Save) {
     setSave(next);
@@ -1067,11 +1139,12 @@ export default function SpellingShowdown() {
     }
   }, [screen, phase, idx, current, speak]);
 
-  function startRound(mode: "adaptive" | "custom", practice = false) {
+  function startRound(mode: "adaptive" | "custom" | "boss", practice = false) {
     if (!save) return;
-    if (!practice && (bet < 1 || bet > save.bank)) return;
-    if (practice) setBet(0);
-    setIsPractice(practice);
+    const boss = mode === "boss";
+    if (!boss && !practice && (bet < 1 || bet > save.bank)) return;
+    if (practice || boss) setBet(0);
+    setIsPractice(practice && !boss);
     setCustomError("");
     setCustomNote("");
     let round: Entry[];
@@ -1102,10 +1175,15 @@ export default function SpellingShowdown() {
       if (words.length > CUSTOM_ROUND_CAP) {
         setCustomNote(`Big list! Playing ${CUSTOM_ROUND_CAP} of your ${words.length} words this round.`);
       }
+    } else if (boss) {
+      round = buildBossRound(save);
+      playSfx("boss", !!save.soundOn);
     } else {
       round = buildRound(save);
     }
     setIsCustomRound(mode === "custom");
+    setIsBossRound(boss);
+    setBossTeaser(false);
     // Secret bonus word: adaptive betting rounds only, revealed on a first-try hit
     setBonusWord(mode === "adaptive" && !practice ? pick(round).w : null);
     setBonusWon(false);
@@ -1120,7 +1198,7 @@ export default function SpellingShowdown() {
     setInput(""); setRetype(""); setLastGuess("");
     setPayout(null);
     setPhase("ask");
-    setHintShown(save.playerLevel === 1);
+    setHintShown(!boss && save.playerLevel === 1);
     setBailoutMsg("");
     setLevelMsg("");
     setResumed(false);
@@ -1159,12 +1237,13 @@ export default function SpellingShowdown() {
     savedThisRound.current = true;
     // Doodle drops are decided here (random, win-gated, adaptive bets only)
     // so settleRound stays a pure function.
-    const payPreview = isPractice ? { amount: 0 } : payoutFor(missedWords.length, roundTotal, bet);
-    const wonBet = !isPractice && !isCustomRound && payPreview.amount - bet > 0;
+    const payPreview = isPractice || isBossRound ? { amount: 0 } : payoutFor(missedWords.length, roundTotal, bet);
+    const wonBet = !isPractice && !isCustomRound && !isBossRound && payPreview.amount - bet > 0;
     const doodleDrop = wonBet && Math.random() < DOODLE_DROP_CHANCE ? pickDoodleDrop(save.doodles || []) : null;
     const res = settleRound(save, {
       isPractice,
       isCustom: isCustomRound,
+      isBoss: isBossRound,
       bet,
       roundTotal,
       firstTryCorrect,
@@ -1187,16 +1266,29 @@ export default function SpellingShowdown() {
     });
     setPayout(res.payout);
     const snd = !!save.soundOn;
-    if (res.rankUp || res.leveledUp) playSfx("rankup", snd);
+    if (isBossRound) playSfx(res.payout.result === "bosswin" ? "rankup" : "lose", snd);
+    else if (res.rankUp || res.leveledUp) playSfx("rankup", snd);
     else if (res.newRecords.length > 0 || doodleDrop) playSfx("record", snd);
     else if (!isPractice) playSfx(res.payout.net >= 0 ? "win" : "lose", snd);
     try { localStorage.removeItem(ROUND_KEY); } catch {}
-    persist(res.next);
+    // Semi-frequent boss battles: after a normal adaptive round, once the
+    // cooldown has passed, Chip has a chance of slapping a challenge on the
+    // desk. It stays pending until accepted - a reason to come back.
+    let nextSave = res.next;
+    if (!isBossRound && !isCustomRound) {
+      const b: BossState = nextSave.boss || FRESH_SAVE.boss;
+      if (!b.pending && nextSave.rounds - b.lastRound >= BOSS_MIN_GAP && Math.random() < BOSS_CHANCE) {
+        nextSave = { ...nextSave, boss: { ...b, pending: true } };
+        setBossTeaser(true);
+        playSfx("boss", snd);
+      }
+    }
+    persist(nextSave);
   }
 
   function next() {
     setInput("");
-    setHintShown(save?.playerLevel === 1);
+    setHintShown(!isBossRound && save?.playerLevel === 1);
     setRetype("");
     setLastGuess("");
     if (idx + 1 < queue.length) {
@@ -1399,6 +1491,25 @@ export default function SpellingShowdown() {
 
         {screen === "start" && (
           <>
+            {save.boss?.pending && (
+              <div className="card" style={{ borderColor: "#D63B2F", boxShadow: "4px 4px 0 #D63B2F" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ BOSS BATTLE</span>
+                  <span className="tag">FREE ENTRY · WIN ${BOSS_PRIZE}</span>
+                </div>
+                <div className="row" style={{ marginTop: 10 }}>
+                  <Chip mood="neutral" />
+                  <div className="bubble hand">{BOSS_TAUNTS[save.rounds % BOSS_TAUNTS.length]}</div>
+                </div>
+                <p className="payline" style={{ fontWeight: 900, marginTop: 10 }}>
+                  {BOSS_WORD_COUNT} of Chip&apos;s nastiest words · no hints · miss more than {BOSS_MISS_ALLOWED} and he keeps the cash.
+                  You risk nothing, and a win counts on the rank ladder.
+                </p>
+                <div className="btnrow">
+                  <button className="btn red" onClick={() => startRound("boss")}>ACCEPT THE CHALLENGE</button>
+                </div>
+              </div>
+            )}
             <div className="card">
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
                 <div>
@@ -1477,6 +1588,7 @@ export default function SpellingShowdown() {
                 {recs.bestCashout > 0 && <span className="statchip">🤑 Best payday: ${recs.bestCashout}</span>}
                 {recs.perfectRounds > 0 && <span className="statchip">✨ Perfect rounds: {recs.perfectRounds}</span>}
                 {recs.bestDayStreak > 1 && <span className="statchip">📅 Longest day streak: {recs.bestDayStreak}</span>}
+                {((save.boss?.wins || 0) + (save.boss?.losses || 0)) > 0 && <span className="statchip">⚔️ Boss battles: {save.boss.wins}-{save.boss.losses}</span>}
                 {recs.bestStreak === 0 && recs.biggestWin === 0 && recs.bestCashout === 0 && recs.perfectRounds === 0 && recs.bestDayStreak <= 1 && (
                   <span className="statchip">Empty shelf. Chip says that&apos;s embarrassing.</span>
                 )}
@@ -1579,12 +1691,20 @@ export default function SpellingShowdown() {
           <div className="card">
             <div className="statbar">
               <span>Word {Math.min(idx + 1, queue.length)} / {queue.length}</span>
-              <span>{isPractice || !potential ? "Practice" : `Bet $${bet} · Pot $${potential.amount}`}</span>
+              <span>{isBossRound ? `⚔️ BOSS · Prize $${BOSS_PRIZE}` : isPractice || !potential ? "Practice" : `Bet $${bet} · Pot $${potential.amount}`}</span>
               <span>Streak: {streak} {streak >= 3 ? "🔥" : ""}</span>
-              <span>Misses: {missedWords.length}</span>
+              <span>{isBossRound ? `Misses: ${missedWords.length} / ${BOSS_MISS_ALLOWED} allowed` : `Misses: ${missedWords.length}`}</span>
             </div>
 
-            {isRedoLap && <div className="lap">REVENGE ROUND - clear these to keep 1.5x alive.</div>}
+            {isBossRound && (
+              <div className="lap">
+                {missedWords.length > BOSS_MISS_ALLOWED
+                  ? "BOSS BATTLE - the prize is gone, but finish the fight for pride."
+                  : "BOSS BATTLE - Chip's nastiest words. No hints. He's watching."}
+              </div>
+            )}
+            {isRedoLap && !isBossRound && <div className="lap">REVENGE ROUND - clear these to keep 1.5x alive.</div>}
+            {isRedoLap && isBossRound && <div className="lap">REVENGE ROUND - the boss makes you spell your misses again. House rules.</div>}
             {resumed && <div className="lap" style={{ color: "#2B5FD9" }}>Found your unfinished round. Picking up right where you left off.</div>}
             {customNote && <div className="lap" style={{ color: "#2B5FD9" }}>{customNote}</div>}
 
@@ -1614,7 +1734,7 @@ export default function SpellingShowdown() {
                   <button className="btn" onClick={submit}>Check It</button>
                   <button className="btn ghost" onClick={() => speak(current)}>Hear Again</button>
                   <button className="btn ghost" onClick={() => speak(current, true)}>Just the Word</button>
-                  {!hintShown && (
+                  {!hintShown && !isBossRound && (
                     <button className="btn ghost" onClick={() => setHintShown(true)}>Hint</button>
                   )}
                 </div>
@@ -1686,8 +1806,10 @@ export default function SpellingShowdown() {
         {screen === "done" && payout && (
           <div className="card">
             <div className="row">
-              <Chip mood={payout.result === "bust" || payout.result === "rough" ? "sad" : "happy"} />
+              <Chip mood={payout.result === "bosswin" ? "sad" : payout.result === "bossloss" ? "happy" : payout.result === "bust" || payout.result === "rough" ? "sad" : "happy"} />
               <div className="bubble hand">
+                {payout.result === "bosswin" && `FINE. Take the $${BOSS_PRIZE}. Out of my own fund. I'm picking WORSE words next time.`}
+                {payout.result === "bossloss" && `HA! The boss remains undefeated. My money stays mine, and I'm drawing this moment for the fridge.`}
                 {payout.result === "practice" && `Practice round done. ${payout.misses === 0 ? "Perfect, and it cost you nothing. Imagine if money had been on that." : "No money moved, but I took notes. Those words are marked."}`}
                 {payout.result === "clean" && `PERFECT ROUND. Your $${bet} just became $${payout.amount}. I want a rematch.`}
                 {payout.result === "good" && `One slip, cleaned up in the Revenge Round. $${bet} pays $${payout.amount}. Solid.`}
@@ -1699,7 +1821,19 @@ export default function SpellingShowdown() {
               </div>
             </div>
 
-            {isPractice ? (
+            {isBossRound ? (
+              <div style={{ marginTop: 14 }}>
+                {payout.result === "bosswin" ? (
+                  <span className="stamp good hand" style={{ transform: "rotate(-3deg)" }}>BOSS BEATEN · +${BOSS_PRIZE} FREE</span>
+                ) : (
+                  <span className="stamp hand">THE BOSS STANDS</span>
+                )}
+                <p className="payline" style={{ fontWeight: 900, marginTop: 8 }}>
+                  {payout.misses} {payout.misses === 1 ? "miss" : "misses"} of {BOSS_MISS_ALLOWED} allowed · free entry
+                  {payout.result === "bosswin" ? ` · Chip pays $${BOSS_PRIZE} · counts as a rank-ladder win` : " · nothing lost - he'll be back with a new challenge"}
+                </p>
+              </div>
+            ) : isPractice ? (
               <div style={{ marginTop: 14 }}>
                 <span className="stamp good hand" style={{ transform: "rotate(-3deg)" }}>PRACTICE - NO MONEY MOVED</span>
               </div>
@@ -1738,6 +1872,9 @@ export default function SpellingShowdown() {
             )}
             {extras && extras.streakBroken > 0 && (
               <p className="warnline">Your {extras.streakBroken}-day streak ended. Chip noticed. New one starts today.</p>
+            )}
+            {bossTeaser && (
+              <p className="warnline" style={{ color: "#1D2A44" }}>⚔️ Chip just slapped a BOSS BATTLE on the betting desk. Free entry, ${BOSS_PRIZE} if you beat him.</p>
             )}
             {extras?.doodleDrop && (() => {
               const d = DOODLES.find((x) => x.id === extras.doodleDrop);
