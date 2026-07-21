@@ -53,126 +53,126 @@ type Payout = {
 
 const BANK: Entry[] = [
   // Level 1
-  { w: "because", l: 1, p: "letter patterns", s: "Nate got detention because of the glue incident.", h: "For the reason that.", d: "ecau", t: "Big Elephants Can Always Understand Small Elephants. First letters spell BECAUSE. Nate would ride the elephant." },
-  { w: "beautiful", l: 1, p: "letter patterns", s: "Nate drew a beautiful comic. He says so himself.", h: "Very lovely to look at.", d: "eau", t: "Big Ears Aren't Ugly: B-E-A-U. Then -tiful with one L." },
+  { w: "because", l: 1, p: "letter patterns", s: "Nate can't sit near the art cupboard because of the glue incident. Nobody talks about the glue incident.", h: "For the reason that.", d: "ecau", t: "Big Elephants Can Always Understand Small Elephants. First letters spell BECAUSE. Nate would ride the elephant." },
+  { w: "beautiful", l: 1, p: "letter patterns", s: "Nate framed his most beautiful doodle and awarded it first prize. The judge was Nate.", h: "Very lovely to look at.", d: "eau", t: "Big Ears Aren't Ugly: B-E-A-U. Then -tiful with one L." },
   { w: "favourite", l: 1, p: "our words", s: "Cheez Doodles are Nate's favourite food group.", h: "The one you like best.", d: "our", t: "favOURite has OUR in it. Cheez Doodles are OUR favourite. Don't drop the U." },
-  { w: "finally", l: 1, p: "double letters", s: "Nate finally cleaned his locker. Last year's sandwich was in there.", h: "After a long time.", d: "lly", t: "FINAL + LY. The two L's meet in the middle: final-ly." },
-  { w: "friend", l: 1, p: "ie / ei", s: "Francis is Nate's best friend, even during maths.", h: "Someone you like and trust.", d: "end", t: "A frIEnd sticks with you until the END. The END is right there: fri-END." },
-  { w: "until", l: 1, p: "single letters", s: "Nate is grounded until further notice.", h: "Up to the time that.", d: "til", t: "Until has only one L. It's not fuLL yet. Detention isn't over unTIL it's over." },
-  { w: "Wednesday", l: 1, p: "silent letters", s: "Detention on Wednesday. Again.", h: "The day after Tuesday.", d: "dnes", t: "Say it like a robot: WED. NES. DAY. The sneaky D and S hide in the middle, like Nate hiding homework." },
-  { w: "February", l: 1, p: "silent letters", s: "February is too cold for outdoor pranks. Nate does them anyway.", h: "The second month of the year.", d: "ru", t: "Feb-RU-ary. The RU is freezing and hiding: Feb-BRR-uary. Say the R out loud when you write it." },
-  { w: "different", l: 1, p: "double letters", s: "Gina and Nate could not be more different.", h: "Not the same.", d: "ffe", t: "Two F's, then ER: di-FFE-rent. And there's a RENT at the end: diffe-RENT." },
+  { w: "finally", l: 1, p: "double letters", s: "Nate finally cleaned his locker. The sandwich at the bottom had grown a beard.", h: "After a long time.", d: "lly", t: "FINAL + LY. The two L's meet in the middle: final-ly." },
+  { w: "friend", l: 1, p: "ie / ei", s: "Francis has been Nate's best friend since the sandpit incident. Neither of them will say what happened.", h: "Someone you like and trust.", d: "end", t: "A frIEnd sticks with you until the END. The END is right there: fri-END." },
+  { w: "until", l: 1, p: "single letters", s: "Nate is grounded until he is approximately forty-five.", h: "Up to the time that.", d: "til", t: "Until has only one L. It's not fuLL yet. Detention isn't over unTIL it's over." },
+  { w: "Wednesday", l: 1, p: "silent letters", s: "Nate has a reserved seat in Wednesday detention. It has his name scratched into it.", h: "The day after Tuesday.", d: "dnes", t: "Say it like a robot: WED. NES. DAY. The sneaky D and S hide in the middle, like Nate hiding homework." },
+  { w: "February", l: 1, p: "silent letters", s: "February is the shortest month, but Nate's detention list still needed extra pages.", h: "The second month of the year.", d: "ru", t: "Feb-RU-ary. The RU is freezing and hiding: Feb-BRR-uary. Say the R out loud when you write it." },
+  { w: "different", l: 1, p: "double letters", s: "Gina and Nate are so different they can't even agree on how to spell 'different'.", h: "Not the same.", d: "ffe", t: "Two F's, then ER: di-FFE-rent. And there's a RENT at the end: diffe-RENT." },
   { w: "thought", l: 1, p: "ought words", s: "Nate thought the test was next week. It was today.", h: "Used your brain, past tense.", d: "ought", t: "The OUGHT gang: thOUGHT, bOUGHT, brOUGHT. Learn OUGHT once and you own the whole gang." },
-  { w: "caught", l: 1, p: "ought words", s: "Mrs. Godfrey caught Nate mid-doodle.", h: "Grabbed or discovered someone.", d: "augh", t: "You get cAUGHT, you get tAUGHT. Same -AUGHT ending. Mrs. Godfrey does both." },
-  { w: "surprise", l: 1, p: "hidden letters", s: "The pop quiz was a surprise to everyone except Gina.", h: "Something unexpected.", d: "rpr", t: "Don't lose the first R: suR-prise. A quiz can surprise you, but it can never 'suprise' you." },
+  { w: "caught", l: 1, p: "ought words", s: "Mrs. Godfrey caught Nate drawing her as a T. rex. The likeness did not help his case.", h: "Grabbed or discovered someone.", d: "augh", t: "You get cAUGHT, you get tAUGHT. Same -AUGHT ending. Mrs. Godfrey does both." },
+  { w: "surprise", l: 1, p: "hidden letters", s: "The teacher announced a surprise quiz, so Nate announced a surprise headache.", h: "Something unexpected.", d: "rpr", t: "Don't lose the first R: suR-prise. A quiz can surprise you, but it can never 'suprise' you." },
   { w: "chocolate", l: 1, p: "hidden letters", s: "Nate traded his chocolate for a comic. Bold move.", h: "The best kind of sweet.", d: "co", t: "CHOC-O-LATE. The middle O is quiet but it's there. Never trade away the middle O." },
   { w: "colour", l: 1, p: "our words", s: "Nate's favourite colour is whatever Gina hates.", h: "Red, blue, green, and friends.", d: "our", t: "colOUR has OUR in it too. It's OUR colour, with a U. Same club as favOURite." },
-  { w: "remember", l: 1, p: "letter patterns", s: "Remember to feed Spitsy. Nate forgot. Twice.", h: "To keep something in your mind.", d: "mem", t: "re-MEM-ber: there's a MEMory in the middle. MEM. Even Nate can hold three letters." },
-  { w: "minute", l: 1, p: "hidden letters", s: "Nate can empty a bag of Cheez Doodles in one minute.", h: "Sixty seconds.", d: "ute", t: "A tiny newt lives at the end: min-UTE. Sixty seconds, one newt." },
-  { w: "island", l: 1, p: "silent letters", s: "Nate would bring Cheez Doodles to a desert island.", h: "Land surrounded by water.", d: "isl", t: "An ISland IS LAND with water around it. The S is silent, like Nate when Mrs. Godfrey asks who did it." },
+  { w: "remember", l: 1, p: "letter patterns", s: "Nate can remember every Cheez Doodle flavour ever made, but not his own locker code.", h: "To keep something in your mind.", d: "mem", t: "re-MEM-ber: there's a MEMory in the middle. MEM. Even Nate can hold three letters." },
+  { w: "minute", l: 1, p: "hidden letters", s: "Nate's record for emptying a bag of Cheez Doodles is one minute. He is furious it isn't faster.", h: "Sixty seconds.", d: "ute", t: "A tiny newt lives at the end: min-UTE. Sixty seconds, one newt." },
+  { w: "island", l: 1, p: "silent letters", s: "Stranded on a desert island, Nate would build a raft, then use it as a table for Cheez Doodles.", h: "Land surrounded by water.", d: "isl", t: "An ISland IS LAND with water around it. The S is silent, like Nate when Mrs. Godfrey asks who did it." },
   { w: "answer", l: 1, p: "silent letters", s: "Nate guessed the answer. Confidently. Wrongly.", h: "The reply to a question.", d: "sw", t: "an-SW-er: the W is silent. It's there, just not talking. Very unlike Dee Dee." },
   { w: "people", l: 1, p: "letter patterns", s: "The cafeteria fits two hundred people and one food fight.", h: "More than one person.", d: "eo", t: "PEO: People Eat Oranges. Then -PLE. The O sneaks in before the P can stop it." },
   { w: "whole", l: 1, p: "silent letters", s: "Nate ate the whole bag. Obviously.", h: "All of it, complete.", d: "wh", t: "Silent W at the front, like WHO. WHO ate the WHOle bag? We all know who." },
-  { w: "enough", l: 1, p: "ought words", s: "One detention was enough. Nate got three.", h: "As much as is needed.", d: "ough", t: "e-NOUGH: the OUGH gang making an UFF sound this time." },
-  { w: "guess", l: 1, p: "silent letters", s: "Take a guess who got detention.", h: "An answer without knowing.", d: "gue", t: "GU-ESS: silent U after the G, then a double S." },
-  { w: "heard", l: 1, p: "ear words", s: "Nate heard the ice cream van from three streets away.", h: "Listened, past tense.", d: "ear", t: "You HEAR with your EAR: h-EAR-d. The ear stays in." },
-  { w: "laugh", l: 1, p: "augh words", s: "Teddy tried not to laugh. He failed.", h: "What you do at a good joke.", d: "augh", t: "L-AUGH: AUGH makes the AFF sound. Laughing is tough, like enough." },
+  { w: "enough", l: 1, p: "ought words", s: "In the history of the world, nobody has ever said 'enough Cheez Doodles'. Nate checked.", h: "As much as is needed.", d: "ough", t: "e-NOUGH: the OUGH gang making an UFF sound this time." },
+  { w: "guess", l: 1, p: "silent letters", s: "Guess who set off the fire alarm with an egg salad sandwich. Correct first time.", h: "An answer without knowing.", d: "gue", t: "GU-ESS: silent U after the G, then a double S." },
+  { w: "heard", l: 1, p: "ear words", s: "Nate heard the ice cream van from three streets away. He cannot hear Mrs. Godfrey from one metre.", h: "Listened, past tense.", d: "ear", t: "You HEAR with your EAR: h-EAR-d. The ear stays in." },
+  { w: "laugh", l: 1, p: "augh words", s: "Teddy tried not to laugh in assembly. He lasted four seconds. A school record.", h: "What you do at a good joke.", d: "augh", t: "L-AUGH: AUGH makes the AFF sound. Laughing is tough, like enough." },
   { w: "listen", l: 1, p: "silent letters", s: "Listen for Mrs. Godfrey's footsteps. Then run.", h: "To pay attention with your ears.", d: "ten", t: "Silent T: lis-T-en. The T listens quietly and says nothing." },
   { w: "often", l: 1, p: "silent letters", s: "Nate visits detention often. It's basically his office.", h: "Many times.", d: "ten", t: "Silent T, same as listen: of-T-en. The T clocks in but doesn't speak." },
   { w: "question", l: 1, p: "tion words", s: "Nate's answer had nothing to do with the question.", h: "Something you ask.", d: "tion", t: "QUEST + ION: every question is a QUEST. Nate treats them as optional quests." },
   { w: "trouble", l: 1, p: "ouble words", s: "Nate can find trouble in an empty room.", h: "Problems or difficulty.", d: "ouble", t: "TR + OUBLE. Double trouble: OUBLE is in both words." },
   { w: "young", l: 1, p: "ou words", s: "Nate plans to retire young. From homework.", h: "Not old.", d: "oun", t: "Y-OUNG: the OU makes an UH sound. Just memorise the OU. It's young and rebellious." },
-  { w: "promise", l: 1, p: "ise words", s: "Nate made a promise to behave. It lasted an hour.", h: "Saying you will definitely do something.", d: "ise", t: "PROM + ISE: it ends in -ISE, not -iss. A promise you can spell is a promise you can break politely." },
+  { w: "promise", l: 1, p: "ise words", s: "Nate made a promise to behave all day. It lasted eleven minutes, a personal best.", h: "Saying you will definitely do something.", d: "ise", t: "PROM + ISE: it ends in -ISE, not -iss. A promise you can spell is a promise you can break politely." },
   // Level 2
-  { w: "recommend", l: 2, p: "double letters", s: "Teddy does not recommend the cafeteria egg salad. Ever.", h: "To suggest something as good.", d: "comm", t: "RE + COMMEND. One C, two M's. Warn people about the egg salad twice as hard." },
-  { w: "tomorrow", l: 2, p: "double letters", s: "The social studies test is tomorrow, and Nate has not opened the book.", h: "The day after today.", d: "morr", t: "One M, two R's: to-MOR-ROW. Tomorrow is too far away to carry two M's." },
-  { w: "receive", l: 2, p: "ie / ei", s: "Nate is about to receive his third detention slip this week.", h: "To get something.", d: "cei", t: "I before E, except after C. That C flips it: re-CEI-ve. Gina never misses this one, so you can't either." },
-  { w: "believe", l: 2, p: "ie / ei", s: "Nate cannot believe Gina got another A plus.", h: "To accept something as true.", d: "lie", t: "Never beLIEve a LIE. The LIE is sitting right there in the middle." },
+  { w: "recommend", l: 2, p: "double letters", s: "Teddy would not recommend the egg salad to his worst enemy. And Teddy keeps a list.", h: "To suggest something as good.", d: "comm", t: "RE + COMMEND. One C, two M's. Warn people about the egg salad twice as hard." },
+  { w: "tomorrow", l: 2, p: "double letters", s: "The test is tomorrow. Nate's entire plan is for tomorrow to never arrive.", h: "The day after today.", d: "morr", t: "One M, two R's: to-MOR-ROW. Tomorrow is too far away to carry two M's." },
+  { w: "receive", l: 2, p: "ie / ei", s: "Nate is about to receive his third detention slip this week. He is collecting the full set.", h: "To get something.", d: "cei", t: "I before E, except after C. That C flips it: re-CEI-ve. Gina never misses this one, so you can't either." },
+  { w: "believe", l: 2, p: "ie / ei", s: "Nate cannot believe Artur won the raffle too. Nobody can. Artur wins everything.", h: "To accept something as true.", d: "lie", t: "Never beLIEve a LIE. The LIE is sitting right there in the middle." },
   { w: "weird", l: 2, p: "ie / ei", s: "Spitsy is a weird dog. He is scared of cats.", h: "Strange or unusual.", d: "ei", t: "Weird is weird. It breaks the I-before-E rule, the way Spitsy breaks all dog rules." },
   { w: "achieve", l: 2, p: "ie / ei", s: "Nate plans to achieve greatness, right after this nap.", h: "To succeed at something.", d: "chie", t: "I before E: a-CHIE-ve. It has CHIE in it, like CHIEF. Chief of doodles." },
-  { w: "ceiling", l: 2, p: "ie / ei", s: "A wad of Nate's gum is still stuck to the classroom ceiling.", h: "The top surface of a room.", d: "cei", t: "After C comes EI: CEI-ling. The gum stuck up there has had years to learn this." },
+  { w: "ceiling", l: 2, p: "ie / ei", s: "Nate's gum has been on the classroom ceiling so long it should pay rent.", h: "The top surface of a room.", d: "cei", t: "After C comes EI: CEI-ling. The gum stuck up there has had years to learn this." },
   { w: "vacuum", l: 2, p: "double vowels", s: "Nate's locker needs a vacuum, a shovel, and possibly a hazmat suit.", h: "A machine that sucks up dirt.", d: "uu", t: "One C, two U's. A vacUUm sucks Up, Up. Nate's locker would break it anyway." },
-  { w: "calendar", l: 2, p: "unstressed vowels", s: "Nate's calendar counts down the days until the summer holidays.", h: "A chart of days and months.", d: "dar", t: "It ends in -dAR. Read it like a pirate counting down to summer: calend-ARRR." },
+  { w: "calendar", l: 2, p: "unstressed vowels", s: "Nate's calendar has one entry: summer. Every other day is labelled 'obstacle'.", h: "A chart of days and months.", d: "dar", t: "It ends in -dAR. Read it like a pirate counting down to summer: calend-ARRR." },
   { w: "category", l: 2, p: "unstressed vowels", s: "In the category of doodling during class, Nate is world class.", h: "A group of similar things.", d: "cat", t: "It starts with CAT. Spitsy is terrified of the first three letters." },
   { w: "government", l: 2, p: "silent letters", s: "Class president today, running the whole government tomorrow. Nate has plans.", h: "The group that runs a country.", d: "rnm", t: "GOVERN + MENT. The N hides between R and M, like Nate hiding from Mrs. Godfrey." },
-  { w: "immediately", l: 2, p: "double letters", s: "Mrs. Godfrey sent Nate to detention immediately.", h: "Right away, without delay.", d: "mm", t: "Two M's: i-MM-ediately. Detention starts i-MM-ediately. There is no time to drop an M." },
-  { w: "jealous", l: 2, p: "unstressed vowels", s: "Nate is a little jealous of Artur, who wins at everything.", h: "Wanting what someone else has.", d: "ea", t: "j-EA-lous. The EA is jealous nobody notices it. Then it ends in -OUS like famous." },
-  { w: "knowledge", l: 2, p: "silent letters", s: "Francis has endless knowledge of completely random facts.", h: "Facts and information you know.", d: "know", t: "KNOW + LEDGE. You KNOW a fact, then park it on a LEDGE. Francis has about nine thousand ledges." },
-  { w: "lightning", l: 2, p: "silent letters", s: "Nate dodged the falling locker pile like lightning.", h: "Electric flash in the sky.", d: "htn", t: "Lightning is too fast for an extra E. LIGHT + NING. Add an E and you get 'lightening', which is what hair does." },
-  { w: "neighbour", l: 2, p: "ie / ei", s: "Nate's neighbour asked him to walk Spitsy again.", h: "Someone who lives next door.", d: "eighbour", t: "EIGH like a horse saying neigh over the fence at Spitsy. And don't drop the U: good neighbOURs always bring U something." },
+  { w: "immediately", l: 2, p: "double letters", s: "Mrs. Godfrey saw the drawing and gave out detention immediately. Light travels slower.", h: "Right away, without delay.", d: "mm", t: "Two M's: i-MM-ediately. Detention starts i-MM-ediately. There is no time to drop an M." },
+  { w: "jealous", l: 2, p: "unstressed vowels", s: "Nate is not jealous of Artur. He just keeps a folder of everything Artur wins. For science.", h: "Wanting what someone else has.", d: "ea", t: "j-EA-lous. The EA is jealous nobody notices it. Then it ends in -OUS like famous." },
+  { w: "knowledge", l: 2, p: "silent letters", s: "Francis shares his knowledge of jellyfish facts every single day. Nobody has ever asked.", h: "Facts and information you know.", d: "know", t: "KNOW + LEDGE. You KNOW a fact, then park it on a LEDGE. Francis has about nine thousand ledges." },
+  { w: "lightning", l: 2, p: "silent letters", s: "When the lunch bell rings, Nate moves like lightning. In lessons, more like fog.", h: "Electric flash in the sky.", d: "htn", t: "Lightning is too fast for an extra E. LIGHT + NING. Add an E and you get 'lightening', which is what hair does." },
+  { w: "neighbour", l: 2, p: "ie / ei", s: "Nate's neighbour pays him to walk Spitsy. In practice, Spitsy walks Nate.", h: "Someone who lives next door.", d: "eighbour", t: "EIGH like a horse saying neigh over the fence at Spitsy. And don't drop the U: good neighbOURs always bring U something." },
   { w: "pigeon", l: 2, p: "unstressed vowels", s: "A pigeon swiped Nate's last Cheez Doodle. Unforgivable.", h: "A common grey city bird.", d: "geo", t: "pi-GE-on. A sneaky E slips in before the ON, the same way that pigeon slipped in and took the Cheez Doodle." },
-  { w: "scissors", l: 2, p: "double letters", s: "Dee Dee borrowed the scissors for another dramatic art project.", h: "A tool for cutting paper.", d: "sciss", t: "SC at the start, double S in the middle: SCi-SS-ors. The SC is silent. Dee Dee is not." },
-  { w: "stomach", l: 2, p: "silent letters", s: "Nate's stomach can hold an entire bag of Cheez Doodles.", h: "The organ that digests food.", d: "ach", t: "It ends in -ACH but sounds like K. Easy to remember: stomACHe is what the cafeteria gives you." },
+  { w: "scissors", l: 2, p: "double letters", s: "Dee Dee borrowed scissors for a quiet little art project. The glitter reached three classrooms.", h: "A tool for cutting paper.", d: "sciss", t: "SC at the start, double S in the middle: SCi-SS-ors. The SC is silent. Dee Dee is not." },
+  { w: "stomach", l: 2, p: "silent letters", s: "Scientists should study Nate's stomach. It fears nothing, not even the canteen curry.", h: "The organ that digests food.", d: "ach", t: "It ends in -ACH but sounds like K. Easy to remember: stomACHe is what the cafeteria gives you." },
   { w: "actually", l: 2, p: "double letters", s: "Nate actually studied. The world did not end.", h: "In real fact.", d: "lly", t: "ACTUAL + LY. Two L's collide in the middle: actual-ly. Same crash as finally." },
   { w: "address", l: 2, p: "double letters", s: "Nate wrote the wrong address on the envelope. On purpose.", h: "Where someone lives.", d: "ddress", t: "ADD your aDDress: double D, double S. Generous word." },
-  { w: "although", l: 2, p: "ought words", s: "Although it rained, the prank went ahead.", h: "Even though.", d: "ough", t: "AL with one L, then THOUGH. The OUGH gang strikes again." },
-  { w: "decide", l: 2, p: "c and s sounds", s: "Nate can't decide which prank comes first.", h: "To make a choice.", d: "cide", t: "de-CIDE: the C does the S sound, like in deCision. The referee has deCided." },
-  { w: "disappear", l: 2, p: "double letters", s: "Nate's homework tends to disappear.", h: "To vanish from sight.", d: "sapp", t: "DIS + APPEAR: one S, two P's. The homework disappears. The P's never do." },
-  { w: "disappoint", l: 2, p: "double letters", s: "A cancelled snow day will disappoint the entire school.", h: "To let someone down.", d: "sapp", t: "DIS + APPOINT: one S, two P's. Same family as disappear. They travel together." },
+  { w: "although", l: 2, p: "ought words", s: "Although the plan was clearly terrible, Teddy voted yes before Nate finished the sentence.", h: "Even though.", d: "ough", t: "AL with one L, then THOUGH. The OUGH gang strikes again." },
+  { w: "decide", l: 2, p: "c and s sounds", s: "Nate couldn't decide between two pranks, so he did both. His detention was also doubled.", h: "To make a choice.", d: "cide", t: "de-CIDE: the C does the S sound, like in deCision. The referee has deCided." },
+  { w: "disappear", l: 2, p: "double letters", s: "Nate's homework can disappear in broad daylight, in front of witnesses.", h: "To vanish from sight.", d: "sapp", t: "DIS + APPEAR: one S, two P's. The homework disappears. The P's never do." },
+  { w: "disappoint", l: 2, p: "double letters", s: "The vending machine ran out of Cheez Doodles. No machine has ever managed to disappoint so many.", h: "To let someone down.", d: "sapp", t: "DIS + APPOINT: one S, two P's. Same family as disappear. They travel together." },
   { w: "doubt", l: 2, p: "silent letters", s: "There is no doubt who set up the bucket prank.", h: "Not being sure.", d: "bt", t: "Silent B: dou-B-t. The B hides, like Nate behind the bins." },
   { w: "forty", l: 2, p: "hidden letters", s: "Nate owes Francis forty cents. The interest is growing.", h: "The number 40.", d: "for", t: "FORTY loses the U that FOUR has. Four, fourteen... then forty goes rogue. No U." },
-  { w: "guard", l: 2, p: "silent letters", s: "Nate stands guard over his snack drawer.", h: "To protect something.", d: "gua", t: "GU-ARD: silent U after the G, like in GUess. The U is the quiet bodyguard." },
+  { w: "guard", l: 2, p: "silent letters", s: "Nate stands guard over his snack drawer like it holds the crown jewels. It holds one biscuit.", h: "To protect something.", d: "gua", t: "GU-ARD: silent U after the G, like in GUess. The U is the quiet bodyguard." },
   { w: "humour", l: 2, p: "our words", s: "Mrs. Godfrey does not share Nate's sense of humour.", h: "Being funny.", d: "our", t: "humOUR: the OUR club again, with favOURite and colOUR. Membership requires a U." },
-  { w: "important", l: 2, p: "ant words", s: "Snack scheduling is important business.", h: "Mattering a lot.", d: "ant", t: "import-ANT: there's an ANT at the end carrying something important. Ants always are." },
+  { w: "important", l: 2, p: "ant words", s: "Nate missed the important part of the instructions. Also the start. And the end.", h: "Mattering a lot.", d: "ant", t: "import-ANT: there's an ANT at the end carrying something important. Ants always are." },
   { w: "library", l: 2, p: "hidden letters", s: "Nate got shushed in the library for laughing at his own comic.", h: "A building full of books.", d: "rar", t: "li-BRAR-y: two R's with only an A between them. Say lib-RA-ry slowly, like the librarian is watching." },
-  { w: "opposite", l: 2, p: "double letters", s: "Gina is the opposite of Nate in every possible way.", h: "Completely different.", d: "pp", t: "o-PP-osite: double P, single S. Opposites attract double P's." },
+  { w: "opposite", l: 2, p: "double letters", s: "Gina and Nate sit on opposite sides of the classroom. Mrs. Godfrey measured it herself.", h: "Completely different.", d: "pp", t: "o-PP-osite: double P, single S. Opposites attract double P's." },
   { w: "potatoes", l: 2, p: "es plurals", s: "The canteen mashed potatoes could stop a door.", h: "More than one spud.", d: "oes", t: "One potato, two potat-OES: add ES, like heroes. The canteen potatoes are not heroes." },
   { w: "probably", l: 2, p: "hidden letters", s: "It was probably Nate. It was definitely Nate.", h: "Most likely.", d: "bab", t: "PROB-AB-LY: say all three chunks out loud. Don't squash the AB, even if Nate would." },
   { w: "science", l: 2, p: "ie / ei", s: "Nate's science project involved a volcano and regret.", h: "The study of how things work.", d: "cie", t: "SC first, then IE: sci-ence. Science breaks the I-before-E rule and writes its own." },
-  { w: "special", l: 2, p: "cial words", s: "Today's lunch special: mystery meat. Again.", h: "Better or different from normal.", d: "cial", t: "spe-CIAL: the CIAL makes the SHUL sound. Special words get special endings." },
+  { w: "special", l: 2, p: "cial words", s: "The lunch special is called 'Chef's Surprise'. The surprise is the chef won't eat it.", h: "Better or different from normal.", d: "cial", t: "spe-CIAL: the CIAL makes the SHUL sound. Special words get special endings." },
   { w: "straight", l: 2, p: "aigh words", s: "Nate can't draw a straight line without a ruler. Or with one.", h: "Not bent or curved.", d: "aigh", t: "str-AIGH-t: the AIGH gang, borrowed from eight. A straight line of silent letters." },
   { w: "suppose", l: 2, p: "double letters", s: "I suppose the fire drill wasn't Nate's fault. This time.", h: "To think something is likely.", d: "pp", t: "su-PP-ose: double P, like oPPosite. Suppose both P's showed up? They did." },
   { w: "through", l: 2, p: "ought words", s: "The paper plane sailed through the open door. Into Mrs. Godfrey.", h: "From one side to the other.", d: "ough", t: "THR + OUGH: the OUGH gang making an OO sound this time. Same gang, new disguise." },
   { w: "usually", l: 2, p: "double letters", s: "Nate is usually late. Punctually late.", h: "Most of the time.", d: "ually", t: "USUAL + LY: usual-ly. Two L's meet, just like actually and finally. It's a club." },
   { w: "vegetable", l: 2, p: "hidden letters", s: "Nate treats every vegetable as a personal insult.", h: "Plant food like carrots and peas.", d: "eta", t: "veg-E-TABLE: there's a TABLE at the end. Put the vegetables on the TABLE, then don't eat them. Classic Nate." },
-  { w: "cousin", l: 2, p: "hidden letters", s: "Nate's cousin visits and eats all the snacks.", h: "Your aunt or uncle's child.", d: "ousi", t: "c-OUSI-n: the O-U-S-I squad in the middle. A cousin always brings extra vowels." },
+  { w: "cousin", l: 2, p: "hidden letters", s: "Nate's cousin found the emergency Cheez Doodles. Some things cannot be forgiven.", h: "Your aunt or uncle's child.", d: "ousi", t: "c-OUSI-n: the O-U-S-I squad in the middle. A cousin always brings extra vowels." },
   // Level 3
-  { w: "separate", l: 3, p: "unstressed vowels", s: "Mrs. Godfrey made Nate and Teddy sit at separate desks. Again.", h: "To divide or keep apart.", d: "ara", t: "There's A RAT in sepARATe. Nate would name it Mr. Cheez." },
-  { w: "definitely", l: 3, p: "unstressed vowels", s: "Nate is definitely getting detention for that.", h: "Without any doubt.", d: "finite", t: "It's de-FINITE-ly. FINITE is hiding inside. There is no letter A in it, no matter what Nate scribbles." },
-  { w: "embarrassed", l: 3, p: "double letters", s: "Nate was embarrassed when Ellen showed everyone his baby photos.", h: "Feeling awkward or ashamed.", d: "rrass", t: "Double R, double S. Twice as embarrassing, like Ellen showing the baby photos. Both albums." },
-  { w: "necessary", l: 3, p: "double letters", s: "Francis says studying is necessary. Nate strongly disagrees.", h: "Absolutely needed.", d: "cess", t: "One Collar, two Sleeves: one C, two S's. Even Nate's wrinkled shirt follows this rule." },
+  { w: "separate", l: 3, p: "unstressed vowels", s: "Mrs. Godfrey moved Nate and Teddy to separate desks, then separate rooms. Separate schools are being discussed.", h: "To divide or keep apart.", d: "ara", t: "There's A RAT in sepARATe. Nate would name it Mr. Cheez." },
+  { w: "definitely", l: 3, p: "unstressed vowels", s: "Someone drew on the whiteboard. It was definitely not Nate, says a note signed by Nate.", h: "Without any doubt.", d: "finite", t: "It's de-FINITE-ly. FINITE is hiding inside. There is no letter A in it, no matter what Nate scribbles." },
+  { w: "embarrassed", l: 3, p: "double letters", s: "Nate was embarrassed when Ellen showed his baby bath photos to the whole class. With commentary.", h: "Feeling awkward or ashamed.", d: "rrass", t: "Double R, double S. Twice as embarrassing, like Ellen showing the baby photos. Both albums." },
+  { w: "necessary", l: 3, p: "double letters", s: "Francis carries three spare pencils because it's necessary. Nate has never owned a pencil by Friday.", h: "Absolutely needed.", d: "cess", t: "One Collar, two Sleeves: one C, two S's. Even Nate's wrinkled shirt follows this rule." },
   { w: "occasionally", l: 3, p: "double letters", s: "Occasionally, Nate's locker avalanche misses him completely.", h: "Once in a while.", d: "ccas", t: "Two C's, one S. C's travel in pairs, like Nate and detention." },
-  { w: "restaurant", l: 3, p: "silent letters", s: "Dad took them to a restaurant instead of cooking. Everyone cheered.", h: "A place where meals are served.", d: "au", t: "Rest-AU-rant. The sneaky AU in the middle is where Dad's wallet goes to rest." },
+  { w: "restaurant", l: 3, p: "silent letters", s: "Dad took them to a restaurant instead of cooking. The smoke alarm finally got a night off.", h: "A place where meals are served.", d: "au", t: "Rest-AU-rant. The sneaky AU in the middle is where Dad's wallet goes to rest." },
   { w: "rhythm", l: 3, p: "silent letters", s: "Nate's band has volume. Rhythm is still a work in progress.", h: "A repeated pattern of beats.", d: "hyth", t: "Rhythm Helps Your Two Hips Move. First letters spell it. No real vowels, just Y. Nate's band still can't find it." },
-  { w: "licence", l: 3, p: "c and s sounds", s: "Ellen just got her driver's licence, and Nate refuses to ride with her.", h: "An official permit.", d: "cence", t: "The noun ends in -CE: li-CEN-CE, like advICE. You would give Ellen advice about her licence. License with an S is only the verb." },
+  { w: "licence", l: 3, p: "c and s sounds", s: "Ellen earned her driver's licence on the fourth attempt. Nate walks everywhere now.", h: "An official permit.", d: "cence", t: "The noun ends in -CE: li-CEN-CE, like advICE. You would give Ellen advice about her licence. License with an S is only the verb." },
   { w: "privilege", l: 3, p: "unstressed vowels", s: "Sitting far away from Gina is a privilege Nate has earned.", h: "A special right or advantage.", d: "lege", t: "It ends in -LEGE, like coLLEGE. No D anywhere. Detention has a D. Privilege doesn't." },
   { w: "environment", l: 3, p: "silent letters", s: "Detention is basically Nate's natural environment.", h: "The surroundings you live in.", d: "iron", t: "There's IRON in the middle: env-IRON-ment. The N before M is quiet but it's there." },
   { w: "independent", l: 3, p: "unstressed vowels", s: "Nate is an independent artist. His teachers call it doodling in class.", h: "Not needing help from others.", d: "dent", t: "It ends in -ENT, and every vowel after the first I is an E: independ-E-nt. E's all the way down." },
-  { w: "mischievous", l: 3, p: "unstressed vowels", s: "Nate's mischievous grin means a prank is coming.", h: "Playfully causing trouble.", d: "chie", t: "MIS-CHIE-VOUS. Three syllables only. No extra I after the V, no matter how mischievous that grin is." },
+  { w: "mischievous", l: 3, p: "unstressed vowels", s: "When Nate gets his mischievous grin, Francis starts writing the apology letter early.", h: "Playfully causing trouble.", d: "chie", t: "MIS-CHIE-VOUS. Three syllables only. No extra I after the V, no matter how mischievous that grin is." },
   { w: "occurred", l: 3, p: "double letters", s: "The cafeteria food fight occurred right after the egg salad appeared.", h: "Happened.", d: "ccurr", t: "Doubles everywhere: two C's AND two R's. The food fight was big enough to double everything." },
   { w: "argument", l: 3, p: "hidden letters", s: "The argument was about the last Cheez Doodle. Obviously.", h: "A disagreement.", d: "gum", t: "There's GUM stuck in the middle of ar-GUM-ent. Argue drops its E before the fight starts." },
-  { w: "awkward", l: 3, p: "letter pileups", s: "Nate waved at someone who wasn't waving at him. Awkward.", h: "Uncomfortable and clumsy.", d: "wkw", t: "Awkward is spelled awkwardly: W-K-W in a row. The word demonstrates itself." },
-  { w: "business", l: 3, p: "hidden letters", s: "Selling doodles at lunch is Nate's side business.", h: "Buying, selling, or work.", d: "busi", t: "BUSY becomes BUSI-ness: the Y turns into an I when the NESS arrives. Business makes you busy." },
+  { w: "awkward", l: 3, p: "letter pileups", s: "Nate waved back at someone who was waving at Gina, then finished the whole wave anyway. Awkward.", h: "Uncomfortable and clumsy.", d: "wkw", t: "Awkward is spelled awkwardly: W-K-W in a row. The word demonstrates itself." },
+  { w: "business", l: 3, p: "hidden letters", s: "Nate's doodle business is booming. All profits are paid in Cheez Doodles.", h: "Buying, selling, or work.", d: "busi", t: "BUSY becomes BUSI-ness: the Y turns into an I when the NESS arrives. Business makes you busy." },
   { w: "character", l: 3, p: "ch as k", s: "Doctor Cesspool is Nate's greatest character.", h: "A person in a story.", d: "ch", t: "CH sounds like K: CHaracter. Same disguise as stomaCH. The CH is in character." },
   { w: "eighth", l: 3, p: "letter pileups", s: "Nate came eighth in the spelling bee. Ironic.", h: "Position number 8 in a line.", d: "ghth", t: "EIGHT + H: eigh-TH keeps all of eight, then adds an H. Four consonants queue at the end." },
   { w: "especially", l: 3, p: "cial words", s: "Nate hates tests, especially surprise ones.", h: "More than usual.", d: "ciall", t: "E + SPECIAL + LY: e-SPECIAL-ly. Special is hiding inside, wearing an E as a hat." },
   { w: "exercise", l: 3, p: "c and s sounds", s: "Coach John says exercise builds character. Nate remains unconvinced.", h: "Moving your body to stay fit.", d: "xerc", t: "e-XERC-ise: X first, then C. No S until the very end. The S skipped the workout." },
-  { w: "experience", l: 3, p: "ence words", s: "Detention is quite the experience.", h: "Something that happens to you.", d: "ience", t: "exper-I-ENCE: ends in -ENCE. An experience you sit through, like science's boring cousin." },
+  { w: "experience", l: 3, p: "ence words", s: "Nate has so much detention experience he offers guided tours.", h: "Something that happens to you.", d: "ience", t: "exper-I-ENCE: ends in -ENCE. An experience you sit through, like science's boring cousin." },
   { w: "grammar", l: 3, p: "ar endings", s: "Gina corrects everyone's grammar. Everyone's.", h: "The rules of a language.", d: "mar", t: "grammAR ends in -AR. Bad gramm-ER is the trap. Gina would circle it in red." },
   { w: "height", l: 3, p: "ie / ei", s: "Nate's height ranking in class: not up for discussion.", h: "How tall something is.", d: "eigh", t: "HEIGHT borrows EIGH from EIGHT, then ends in T. High and eight had a baby." },
-  { w: "interrupt", l: 3, p: "double letters", s: "Never interrupt Nate mid-doodle.", h: "To butt in while someone talks.", d: "rr", t: "inte-RR-upt: double R. You barge in with both R's or not at all." },
+  { w: "interrupt", l: 3, p: "double letters", s: "Never interrupt Nate mid-doodle. Dee Dee did it once. Once.", h: "To butt in while someone talks.", d: "rr", t: "inte-RR-upt: double R. You barge in with both R's or not at all." },
   { w: "peculiar", l: 3, p: "unstressed vowels", s: "A peculiar smell led everyone straight to Nate's locker.", h: "Odd or strange.", d: "liar", t: "A LIAR hides at the end of pecu-LIAR. Peculiar, but true." },
   { w: "possess", l: 3, p: "double letters", s: "Nate does not possess a single tidy habit.", h: "To own or have.", d: "ssess", t: "Four S's total: po-SS-e-SS. A greedy word. It possesses all the S's." },
-  { w: "queue", l: 3, p: "silent letters", s: "Nate cut the lunch queue. Once.", h: "A line of people waiting.", d: "ueue", t: "Q does all the work while U-E-U-E queue up silently behind it. The most patient word in English." },
-  { w: "strength", l: 3, p: "letter pileups", s: "Opening the sports cupboard takes real strength.", h: "Being strong.", d: "ngth", t: "STRONG becomes STRENGTH: an N-G-T-H pile-up at the end. Flex all four consonants." },
-  { w: "tongue", l: 3, p: "silent letters", s: "Nate burnt his tongue racing to finish lunch first.", h: "The thing you taste with.", d: "gue", t: "TON + GUE: ends in -GUE like league. The UE is silent, just showing off." },
+  { w: "queue", l: 3, p: "silent letters", s: "Nate cut the lunch queue on pizza day. Survivors still talk about it.", h: "A line of people waiting.", d: "ueue", t: "Q does all the work while U-E-U-E queue up silently behind it. The most patient word in English." },
+  { w: "strength", l: 3, p: "letter pileups", s: "It took the combined strength of Nate, Teddy and Francis to open Nate's locker. The locker fought back.", h: "Being strong.", d: "ngth", t: "STRONG becomes STRENGTH: an N-G-T-H pile-up at the end. Flex all four consonants." },
+  { w: "tongue", l: 3, p: "silent letters", s: "Nate burnt his tongue on canteen soup that was somehow both frozen and volcanic.", h: "The thing you taste with.", d: "gue", t: "TON + GUE: ends in -GUE like league. The UE is silent, just showing off." },
   // Level 4
   { w: "accommodate", l: 4, p: "double letters", s: "The school hall can accommodate every kid and one very loud Dee Dee.", h: "To have room for.", d: "ccomm", t: "Two C's AND two M's. It's a big word with room for everyone: a-CC-o-MM-odate." },
   { w: "conscience", l: 4, p: "hidden letters", s: "Nate's conscience showed up three pranks too late.", h: "The little voice that knows right from wrong.", d: "science", t: "CON + SCIENCE. Your conscience is the SCIENCE of knowing better." },
-  { w: "conscious", l: 4, p: "unstressed vowels", s: "Nate is barely conscious during first period.", h: "Awake and aware.", d: "sci", t: "CON-SCI-OUS: the SCI hides in the middle, like science with the end bitten off." },
+  { w: "conscious", l: 4, p: "unstressed vowels", s: "Nate is technically conscious in first period. Technically.", h: "Awake and aware.", d: "sci", t: "CON-SCI-OUS: the SCI hides in the middle, like science with the end bitten off." },
   { w: "exaggerate", l: 4, p: "double letters", s: "Nate would never exaggerate. He's told us a billion times.", h: "To make something sound bigger than it is.", d: "gg", t: "One X, then a double G: exa-GG-erate. Exaggerating needs extra letters. Obviously." },
   { w: "guarantee", l: 4, p: "silent letters", s: "Chip can guarantee nothing except more spelling.", h: "A promise that something will happen.", d: "gua", t: "GUA at the start, like GUARD, then -RANTEE. A guarantee always guards its silent U." },
   { w: "noticeable", l: 4, p: "hidden letters", s: "The smell from Nate's locker is noticeable from the gym.", h: "Easy to see or notice.", d: "cea", t: "NOTICE keeps its E before -ABLE: notice-able. The E stays so the C stays soft." },
   { w: "occurrence", l: 4, p: "double letters", s: "A quiet day at P.S. 38 is a rare occurrence.", h: "Something that happens.", d: "ccurr", t: "Like occurred, but ending in -ENCE: two C's, two R's, then ENCE. Everything doubles except the ending." },
   { w: "parallel", l: 4, p: "double letters", s: "Nate and Gina live in parallel universes. Thankfully.", h: "Lines that never meet.", d: "llel", t: "The twin L's in the middle ARE parallel lines: para-LL-el. The word draws itself." },
   { w: "parliament", l: 4, p: "hidden letters", s: "Class president is one step from parliament, according to Nate.", h: "Where a country's laws get made.", d: "lia", t: "par-LIA-ment: I before A in the middle. Say par-LI-A-ment like a very posh robot." },
-  { w: "persuade", l: 4, p: "unstressed vowels", s: "Nobody can persuade Mrs. Godfrey to cancel a test.", h: "To talk someone into something.", d: "suade", t: "PER + SUADE: the SUA squad in the middle. Per-SUA-de someone smoothly." },
+  { w: "persuade", l: 4, p: "unstressed vowels", s: "Teddy tried to persuade the canteen to serve pizza daily. His petition got four signatures. Two were his.", h: "To talk someone into something.", d: "suade", t: "PER + SUADE: the SUA squad in the middle. Per-SUA-de someone smoothly." },
   { w: "physically", l: 4, p: "silent letters", s: "Nate is physically incapable of tidying his locker.", h: "To do with the body.", d: "hys", t: "PH makes the F sound, then the Y sneaks in early: PH-Y-SIC-ALLY. Physical + LY, both L's included." },
   { w: "pronunciation", l: 4, p: "hidden letters", s: "Francis corrects Nate's pronunciation. Nate pronounces revenge.", h: "The way a word is said.", d: "nunci", t: "Pro-NUN-ciation, not pro-NOUN-ciation. The O from pronounce gets left in detention." },
   { w: "questionnaire", l: 4, p: "double letters", s: "Nate answered the careers questionnaire with 'cartoonist' fifteen times.", h: "A list of questions to answer.", d: "nn", t: "QUESTION + NAIRE with a double N handshake in the middle: question-naire." },
   { w: "recognise", l: 4, p: "hidden letters", s: "Teddy didn't recognise Nate in a tie. Nobody did.", h: "To know someone when you see them.", d: "gn", t: "RE-COG-NISE: there's a COG turning in the middle. Drop the G and the machine breaks." },
   { w: "sincerely", l: 4, p: "hidden letters", s: "Nate signed the apology letter 'sincerely unsorry'.", h: "Meaning it truly.", d: "cere", t: "SINCERE + LY: keep the whole word, just add LY. Sin-CERE-ly yours, Nate." },
-  { w: "sufficient", l: 4, p: "double letters", s: "One bag of Cheez Doodles is never sufficient.", h: "Enough for the job.", d: "ffici", t: "Double F, then -ICIENT: su-FF-icient. The CI makes a SH sound, like special's sneaky cousin." },
+  { w: "sufficient", l: 4, p: "double letters", s: "One warning is sufficient for most kids. Nate's teachers order warnings in bulk.", h: "Enough for the job.", d: "ffici", t: "Double F, then -ICIENT: su-FF-icient. The CI makes a SH sound, like special's sneaky cousin." },
   { w: "temperature", l: 4, p: "hidden letters", s: "The cafeteria soup has one temperature: volcano.", h: "How hot or cold something is.", d: "pera", t: "TEM-PER-A-TURE: say all four chunks out loud. The middle PERA is quiet but it's there." },
   { w: "thorough", l: 4, p: "ought words", s: "Mrs. Godfrey's homework checks are extremely thorough.", h: "Complete, with nothing missed.", d: "orough", t: "THOROUGH is THROUGH with an extra O near the front: tho-ROUGH. The OUGH gang's longest member." },
   { w: "unnecessary", l: 4, p: "double letters", s: "Nate finds most rules deeply unnecessary.", h: "Not needed at all.", d: "nn", t: "UN + NECESSARY: the UN brings its own N, so it's u-NN-ecessary. One collar, two sleeves still applies." },
@@ -365,6 +365,33 @@ function buildRound(save: Save): Entry[] {
     }
   }
   return shuffle(chosen.slice(0, ROUND_SIZE));
+}
+
+// Doodle-burst sparks for a correct answer: fixed fan-out so the animation
+// is identical every time (no Math.random in render).
+const SPARKS = [
+  { c: "⭐", x: -70, y: -45, r: -20 },
+  { c: "✨", x: 60, y: -60, r: 15 },
+  { c: "💥", x: 95, y: 0, r: 30 },
+  { c: "⭐", x: -100, y: 5, r: -35 },
+  { c: "✨", x: -50, y: 50, r: 10 },
+  { c: "🎉", x: 80, y: 45, r: 25 },
+  { c: "⚡", x: 15, y: -75, r: 45 },
+  { c: "⭐", x: -10, y: 65, r: -15 },
+];
+
+// One-liner shown under a correct answer in a betting round: what the round
+// pays if he holds this pace to the end.
+function potLine(p: { label: string; amount: number }) {
+  switch (p.label) {
+    case "clean": return `Pot: $${p.amount}. Perfect pace, that's DOUBLE your bet!`;
+    case "good": return `Pot: $${p.amount}. One slip, still winning!`;
+    case "even": return `Pot: $${p.amount}. Money back so far, keep pushing!`;
+    case "graze":
+    case "half":
+    case "rough": return `$${p.amount} still on the table. Rescue mission!`;
+    default: return "The bet's gone, but glory is still available. Finish strong.";
+  }
 }
 
 // -- Doodle mascot: original character "Chip" --
@@ -668,6 +695,8 @@ export default function SpellingShowdown() {
   }
 
   const isRedoLap = current && queue.length < roundTotal;
+  // What the round pays if he finishes at the current miss count
+  const potential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
   const weak = save ? weakestPatterns(save.stats).slice(0, 2) : [];
   const struggles = save ? strugglingWords(save.stats).slice(0, 3) : [];
 
@@ -739,7 +768,19 @@ export default function SpellingShowdown() {
         }
         .stamp.good { border-color: #2E8B57; color: #2E8B57; transform: rotate(4deg); }
         @keyframes stampIn { from { transform: scale(2.2) rotate(-6deg); opacity: 0; } to { transform: scale(1) rotate(-6deg); opacity: 1; } }
-        @media (prefers-reduced-motion: reduce) { .stamp { animation: none; } .btn { transition: none; } }
+        .burst { position: relative; display: inline-block; }
+        .spark {
+          position: absolute; left: 45%; top: 25%; font-size: 20px;
+          pointer-events: none; opacity: 0; animation: sparkfly 0.8s ease-out forwards;
+        }
+        @keyframes sparkfly {
+          0% { transform: translate(0, 0) scale(0.3) rotate(0deg); opacity: 1; }
+          75% { opacity: 1; }
+          100% { transform: translate(var(--dx), var(--dy)) scale(1.2) rotate(var(--rot)); opacity: 0; }
+        }
+        .winline { font-size: 21px; color: #2E8B57; margin: 12px 0 0; transform: rotate(-1deg); animation: winpop 0.3s ease-out; }
+        @keyframes winpop { from { transform: scale(0.6) rotate(-1deg); opacity: 0; } to { transform: scale(1) rotate(-1deg); opacity: 1; } }
+        @media (prefers-reduced-motion: reduce) { .stamp { animation: none; } .btn { transition: none; } .spark { display: none; } .winline { animation: none; } }
         .flash { font-size: 17px; margin-top: 8px; font-weight: 700; }
         .missrow { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px dashed #C9D8F0; font-size: 16px; }
         .tag { font-size: 12px; font-weight: 900; text-transform: uppercase; background: #FFE24A; border: 2px solid #1D2A44; border-radius: 20px; padding: 1px 10px; }
@@ -913,7 +954,7 @@ export default function SpellingShowdown() {
           <div className="card">
             <div className="statbar">
               <span>Word {Math.min(idx + 1, queue.length)} / {queue.length}</span>
-              <span>{isPractice ? "Practice" : `At stake: $${bet}`}</span>
+              <span>{isPractice || !potential ? "Practice" : `Bet $${bet} · Pot $${potential.amount}`}</span>
               <span>Streak: {streak} {streak >= 3 ? "🔥" : ""}</span>
               <span>Misses: {missedWords.length}</span>
             </div>
@@ -955,7 +996,18 @@ export default function SpellingShowdown() {
 
             {phase === "right" && (
               <>
-                <div style={{ marginTop: 10 }}><span className="stamp good hand">CORRECT ✓</span></div>
+                <div style={{ marginTop: 10 }} className="burst" key={`burst-${idx}-${queue.length}`}>
+                  <span className="stamp good hand">CORRECT ✓</span>
+                  {SPARKS.map((s, i) => (
+                    <span
+                      key={i}
+                      className="spark"
+                      aria-hidden="true"
+                      style={{ "--dx": `${s.x}px`, "--dy": `${s.y}px`, "--rot": `${s.r}deg`, animationDelay: `${i * 0.03}s` } as React.CSSProperties}
+                    >{s.c}</span>
+                  ))}
+                </div>
+                {potential && <p className="winline hand">{potLine(potential)}</p>}
                 <div className="btnrow">
                   <button className="btn" onClick={next} onKeyDown={handleKey} autoFocus>Next Word →</button>
                 </div>
