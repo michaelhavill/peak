@@ -21,9 +21,16 @@ export default function TopNav() {
   const [scrolled, setScrolled] = useState(false);
 
   // Hide on dev-only preview routes where an overlay would be intrusive,
-  // and on the full-page spelling game (served at spelling.100xpath.com)
+  // and on the full-page spelling game. The game is served at the ROOT of
+  // spelling.100xpath.com (worker rewrite), so the pathname check alone
+  // misses it there - check the hostname as well.
+  const onSpellingHost =
+    typeof window !== "undefined" &&
+    window.location.hostname.startsWith("spelling.");
   const hidden =
-    pathname?.startsWith("/social-cards") || pathname?.startsWith("/spelling");
+    pathname?.startsWith("/social-cards") ||
+    pathname?.startsWith("/spelling") ||
+    onSpellingHost;
 
   // Only the home page has a dark hero video behind the nav.
   // On every other route, treat the nav as if it were scrolled so the
