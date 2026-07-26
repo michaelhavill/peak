@@ -137,6 +137,48 @@ on the trophy shelf. Boss rounds never move level/recentAcc/hotStreak/
 coldStreak; missed words still feed the learning stats and revenge system.
 Chip gloats on a win and sulks when he pays out.
 
+## Two players (added 2026-07-26, sixth pass)
+
+Hunter and Millie both play, each with their own everything. Requirement from
+MVH: make the player selectable, keep Hunter's ledger consistent with him, and
+mirror the whole game for Millie with a cat-and-dog word list for a 9-year-old.
+
+**Structure.** The single component was split into modules, since one file was
+doing content, engine and UI:
+- `engine.ts` - types, economy, adaptive round building, settlement. Pure
+  functions, parameterised by word bank and rank ladder, no React or storage.
+- `words-hunter.ts` / `words-millie.ts` - each player's word bank and persona
+  copy (praise, roasts, boss taunts, ranks, collectibles).
+- `themes.ts` - the `Theme` type, both themes, and the per-player storage keys.
+- `SpellingShowdown.tsx` - React only.
+
+**Player picker.** Shown on load every time, deliberately: one tap is cheaper
+than two kids sharing a bankroll by accident. "Played last" is badged. A
+"switch player" link in the header returns to the picker mid-session.
+
+**Save isolation.** Keys are `spelling-showdown-v1:<id>` and
+`spelling-showdown-round-v1:<id>`. Hunter's pre-profiles save at the old
+unsuffixed key is adopted as his on first load (only when his key is absent,
+so it is idempotent), carrying bankroll, ledger, rank, records, doodles, boss
+state and word stats. Verified in the browser with a realistic legacy save.
+
+**Millie's version.** Mirrors every mechanic (bets, payout ladder, comfort
+mode, bailout floor, levels 1-4, rank ladder, records, streak bonuses, bonus
+word, collectibles, boss battles). Her host is Princess Donut, a doodle cat
+who is certain she is royalty, with her own SVG mascot, pink accent, ranks
+(Wobbly Puppy -> Legend of the Treat Jar), sticker album, and the "ROYAL FIVE"
+boss battle. Her 110-word bank is cat, dog and pet themed at a 9-year-old
+level, including the family's own animals (Hatchi, Barley, Rosie, Mable,
+Fluffington, Kumo, Norman, Donut) and famous cartoon pets.
+
+**Content checks.** A validator asserts, for both banks: no duplicates, every
+sentence contains its word, no hint leaks the answer (even after safeHint
+masking), every danger zone is a real substring, no em dashes, all four levels
+populated, the family pets and at least ten cartoon pets present, and Millie's
+average level at or below Hunter's. A few words (favourite, separate, tongue)
+appear in both banks; the tests assert each player always gets their own
+themed sentence and trick for those.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,
