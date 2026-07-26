@@ -1,422 +1,21 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import {
+  ROUND_SIZE, STARTING_BANK, BROKE_BAILOUT, MAX_LEVEL, PAYDAY_GOAL,
+  CUSTOM_ROUND_CAP, BONUS_WORD_CASH, DOODLE_DROP_CHANCE,
+  BOSS_WORD_COUNT, BOSS_MISS_ALLOWED, BOSS_PRIZE, BOSS_MIN_GAP, BOSS_CHANCE,
+  FRESH_SAVE, HOMOPHONE_HINTS,
+  payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
+  weakestPatterns, strugglingWords, buildRound, buildBossRound,
+  settleRound, rankFor, pickDoodleDrop, alignDiff,
+} from "./engine";
+import type {
+  Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot,
+} from "./engine";
+import { THEMES, PROFILES, PROFILE_KEY, storeKey, roundKey, LEGACY_STORE_KEY, LEGACY_ROUND_KEY } from "./themes";
+import type { ProfileId, Theme } from "./themes";
 
-// -------------------------------------------------------------
-// WORD BANK: ~100 words. w=word, l=level(1-3), p=pattern,
-// s=sentence, h=hint, d=danger letters, t=Chip's cheat trick
-// -------------------------------------------------------------
-type Entry = {
-  w: string;
-  l: number;
-  p: string;
-  s: string;
-  h: string;
-  d: string | null;
-  t: string | null;
-};
-
-type WordStat = { a: number; m: number; cs: number; seen: number };
-
-type HistoryEntry = {
-  d: string;
-  type: "round" | "practice" | "bailout" | "cashout" | "bonus" | "boss";
-  label: string;
-  net: number;
-  bank: number;
-};
-
-type BossState = { pending: boolean; lastRound: number; wins: number; losses: number };
-
-type Records = {
-  bestStreak: number;
-  biggestWin: number;
-  bestCashout: number;
-  perfectRounds: number;
-  bestDayStreak: number;
-};
-
-type ChipRecord = { w: number; l: number; d: number };
-
-type Cashout = { amount: number; date: string };
-
-type Save = {
-  bank: number;
-  day: string | null;
-  dayStreak: number;
-  rounds: number;
-  playerLevel: number;
-  recentAcc: number;
-  hotStreak: number; // consecutive rounds at 80%+ first-try accuracy
-  coldStreak: number; // consecutive losing betting rounds
-  stats: Record<string, WordStat>;
-  cashouts: Cashout[];
-  history: HistoryEntry[];
-  records: Records;
-  chip: ChipRecord; // career record vs Chip (adaptive betting rounds only)
-  doodles: string[]; // collected doodle-drop ids
-  soundOn: boolean;
-  boss: BossState;
-};
-
-// In-progress round, persisted so a reload or closed tab never loses the bet
-// or re-deals the question set.
-type RoundSnapshot = {
-  queue: Entry[];
-  idx: number;
-  bet: number;
-  isPractice: boolean;
-  isCustom: boolean;
-  isBoss: boolean;
-  missed: Entry[];
-  redo: Entry[];
-  firstTryCorrect: number;
-  streak: number;
-  bestStreak: number;
-  roundTotal: number;
-  roundWords: string[];
-  answered: boolean; // current word already answered (phase was right/wrong)
-  bonusWord: string | null;
-  bonusWon: boolean;
-};
-
-type Payout = {
-  result: string;
-  amount: number;
-  misses: number;
-  net: number;
-  betAmt: number;
-  prevBank: number;
-  newBank: number;
-};
-
-export const BANK: Entry[] = [
-  // Level 1
-  { w: "because", l: 1, p: "letter patterns", s: "Nate can't sit near the art cupboard because of the glue incident. Nobody talks about the glue incident.", h: "For the reason that.", d: "ecau", t: "Big Elephants Can Always Understand Small Elephants. First letters spell BECAUSE. Nate would ride the elephant." },
-  { w: "beautiful", l: 1, p: "letter patterns", s: "Nate framed his most beautiful doodle and awarded it first prize. The judge was Nate.", h: "Very lovely to look at.", d: "eau", t: "Big Ears Aren't Ugly: B-E-A-U. Then -tiful with one L." },
-  { w: "favourite", l: 1, p: "our words", s: "Cheez Doodles are Nate's favourite food group.", h: "The one you like best.", d: "our", t: "favOURite has OUR in it. Cheez Doodles are OUR favourite. Don't drop the U." },
-  { w: "finally", l: 1, p: "double letters", s: "Nate finally cleaned his locker. The sandwich at the bottom had grown a beard.", h: "After a long time.", d: "lly", t: "FINAL + LY. The two L's meet in the middle: final-ly." },
-  { w: "friend", l: 1, p: "ie / ei", s: "Francis has been Nate's best friend since the sandpit incident. Neither of them will say what happened.", h: "Someone you like and trust.", d: "end", t: "A frIEnd sticks with you until the END. The END is right there: fri-END." },
-  { w: "until", l: 1, p: "single letters", s: "Nate is grounded until he is approximately forty-five.", h: "Up to the time that.", d: "til", t: "Until has only one L. It's not fuLL yet. Detention isn't over unTIL it's over." },
-  { w: "Wednesday", l: 1, p: "silent letters", s: "Nate has a reserved seat in Wednesday detention. It has his name scratched into it.", h: "The day after Tuesday.", d: "dnes", t: "Say it like a robot: WED. NES. DAY. The sneaky D and S hide in the middle, like Nate hiding homework." },
-  { w: "February", l: 1, p: "silent letters", s: "February is the shortest month, but Nate's detention list still needed extra pages.", h: "The second month of the year.", d: "ru", t: "Feb-RU-ary. The RU is freezing and hiding: Feb-BRR-uary. Say the R out loud when you write it." },
-  { w: "different", l: 1, p: "double letters", s: "Gina and Nate are so different they can't even agree on how to spell 'different'.", h: "Not the same.", d: "ffe", t: "Two F's, then ER: di-FFE-rent. And there's a RENT at the end: diffe-RENT." },
-  { w: "thought", l: 1, p: "ought words", s: "Nate thought the test was next week. It was today.", h: "Used your brain, past tense.", d: "ought", t: "The OUGHT gang: thOUGHT, bOUGHT, brOUGHT. Learn OUGHT once and you own the whole gang." },
-  { w: "caught", l: 1, p: "ought words", s: "Mrs. Godfrey caught Nate drawing her as a T. rex. The likeness did not help his case.", h: "Grabbed or discovered someone.", d: "augh", t: "You get cAUGHT, you get tAUGHT. Same -AUGHT ending. Mrs. Godfrey does both." },
-  { w: "surprise", l: 1, p: "hidden letters", s: "The teacher announced a surprise quiz, so Nate announced a surprise headache.", h: "Something unexpected.", d: "rpr", t: "Don't lose the first R: suR-prise. A quiz can surprise you, but it can never 'suprise' you." },
-  { w: "chocolate", l: 1, p: "hidden letters", s: "Nate traded his chocolate for a comic. Bold move.", h: "The best kind of sweet.", d: "co", t: "CHOC-O-LATE. The middle O is quiet but it's there. Never trade away the middle O." },
-  { w: "colour", l: 1, p: "our words", s: "Nate's favourite colour is whatever Gina hates.", h: "Red, blue, green, and friends.", d: "our", t: "colOUR has OUR in it too. It's OUR colour, with a U. Same club as favOURite." },
-  { w: "remember", l: 1, p: "letter patterns", s: "Nate can remember every Cheez Doodle flavour ever made, but not his own locker code.", h: "To keep something in your mind.", d: "mem", t: "re-MEM-ber: there's a MEMory in the middle. MEM. Even Nate can hold three letters." },
-  { w: "minute", l: 1, p: "hidden letters", s: "Nate's record for emptying a bag of Cheez Doodles is one minute. He is furious it isn't faster.", h: "Sixty seconds.", d: "ute", t: "A tiny newt lives at the end: min-UTE. Sixty seconds, one newt." },
-  { w: "island", l: 1, p: "silent letters", s: "Stranded on a desert island, Nate would build a raft, then use it as a table for Cheez Doodles.", h: "Land surrounded by water.", d: "isl", t: "An ISland IS LAND with water around it. The S is silent, like Nate when Mrs. Godfrey asks who did it." },
-  { w: "answer", l: 1, p: "silent letters", s: "Nate guessed the answer. Confidently. Wrongly.", h: "The reply to a question.", d: "sw", t: "an-SW-er: the W is silent. It's there, just not talking. Very unlike Dee Dee." },
-  { w: "people", l: 1, p: "letter patterns", s: "The cafeteria fits two hundred people and one food fight.", h: "More than one person.", d: "eo", t: "PEO: People Eat Oranges. Then -PLE. The O sneaks in before the P can stop it." },
-  { w: "whole", l: 1, p: "silent letters", s: "Nate ate the whole bag. Obviously.", h: "All of it, complete.", d: "wh", t: "Silent W at the front, like WHO. WHO ate the WHOle bag? We all know who." },
-  { w: "enough", l: 1, p: "ought words", s: "In the history of the world, nobody has ever said 'enough Cheez Doodles'. Nate checked.", h: "As much as is needed.", d: "ough", t: "e-NOUGH: the OUGH gang making an UFF sound this time." },
-  { w: "guess", l: 1, p: "silent letters", s: "Guess who set off the fire alarm with an egg salad sandwich. Correct first time.", h: "An answer without knowing.", d: "gue", t: "GU-ESS: silent U after the G, then a double S." },
-  { w: "heard", l: 1, p: "ear words", s: "Nate heard the ice cream van from three streets away. He cannot hear Mrs. Godfrey from one metre.", h: "Listened, past tense.", d: "ear", t: "You HEAR with your EAR: h-EAR-d. The ear stays in." },
-  { w: "laugh", l: 1, p: "augh words", s: "Teddy tried not to laugh in assembly. He lasted four seconds. A school record.", h: "What you do at a good joke.", d: "augh", t: "L-AUGH: AUGH makes the AFF sound. Laughing is tough, like enough." },
-  { w: "listen", l: 1, p: "silent letters", s: "Listen for Mrs. Godfrey's footsteps. Then run.", h: "To pay attention with your ears.", d: "ten", t: "Silent T: lis-T-en. The T listens quietly and says nothing." },
-  { w: "often", l: 1, p: "silent letters", s: "Nate visits detention often. It's basically his office.", h: "Many times.", d: "ten", t: "Silent T, same as listen: of-T-en. The T clocks in but doesn't speak." },
-  { w: "question", l: 1, p: "tion words", s: "Nate's answer had nothing to do with the question.", h: "Something you ask.", d: "tion", t: "QUEST + ION: every question is a QUEST. Nate treats them as optional quests." },
-  { w: "trouble", l: 1, p: "ouble words", s: "Nate can find trouble in an empty room.", h: "Problems or difficulty.", d: "ouble", t: "TR + OUBLE. Double trouble: OUBLE is in both words." },
-  { w: "young", l: 1, p: "ou words", s: "Nate plans to retire young. From homework.", h: "Not old.", d: "oun", t: "Y-OUNG: the OU makes an UH sound. Just memorise the OU. It's young and rebellious." },
-  { w: "promise", l: 1, p: "ise words", s: "Nate made a promise to behave all day. It lasted eleven minutes, a personal best.", h: "Saying you will definitely do something.", d: "ise", t: "PROM + ISE: it ends in -ISE, not -iss. A promise you can spell is a promise you can break politely." },
-  // Level 2
-  { w: "recommend", l: 2, p: "double letters", s: "Teddy would not recommend the egg salad to his worst enemy. And Teddy keeps a list.", h: "To suggest something as good.", d: "comm", t: "RE + COMMEND. One C, two M's. Warn people about the egg salad twice as hard." },
-  { w: "tomorrow", l: 2, p: "double letters", s: "The test is tomorrow. Nate's entire plan is for tomorrow to never arrive.", h: "The day after today.", d: "morr", t: "One M, two R's: to-MOR-ROW. Tomorrow is too far away to carry two M's." },
-  { w: "receive", l: 2, p: "ie / ei", s: "Nate is about to receive his third detention slip this week. He is collecting the full set.", h: "To get something.", d: "cei", t: "I before E, except after C. That C flips it: re-CEI-ve. Gina never misses this one, so you can't either." },
-  { w: "believe", l: 2, p: "ie / ei", s: "Nate cannot believe Artur won the raffle too. Nobody can. Artur wins everything.", h: "To accept something as true.", d: "lie", t: "Never beLIEve a LIE. The LIE is sitting right there in the middle." },
-  { w: "weird", l: 2, p: "ie / ei", s: "Spitsy is a weird dog. He is scared of cats.", h: "Strange or unusual.", d: "ei", t: "Weird is weird. It breaks the I-before-E rule, the way Spitsy breaks all dog rules." },
-  { w: "achieve", l: 2, p: "ie / ei", s: "Nate plans to achieve greatness, right after this nap.", h: "To succeed at something.", d: "chie", t: "I before E: a-CHIE-ve. It has CHIE in it, like CHIEF. Chief of doodles." },
-  { w: "ceiling", l: 2, p: "ie / ei", s: "Nate's gum has been on the classroom ceiling so long it should pay rent.", h: "The top surface of a room.", d: "cei", t: "After C comes EI: CEI-ling. The gum stuck up there has had years to learn this." },
-  { w: "vacuum", l: 2, p: "double vowels", s: "Nate's locker needs a vacuum, a shovel, and possibly a hazmat suit.", h: "A machine that sucks up dirt.", d: "uu", t: "One C, two U's. A vacUUm sucks Up, Up. Nate's locker would break it anyway." },
-  { w: "calendar", l: 2, p: "unstressed vowels", s: "Nate's calendar has one entry: summer. Every other day is labelled 'obstacle'.", h: "A chart of days and months.", d: "dar", t: "It ends in -dAR. Read it like a pirate counting down to summer: calend-ARRR." },
-  { w: "category", l: 2, p: "unstressed vowels", s: "In the category of doodling during class, Nate is world class.", h: "A group of similar things.", d: "cat", t: "It starts with CAT. Spitsy is terrified of the first three letters." },
-  { w: "government", l: 2, p: "silent letters", s: "Class president today, running the whole government tomorrow. Nate has plans.", h: "The group that runs a country.", d: "rnm", t: "GOVERN + MENT. The N hides between R and M, like Nate hiding from Mrs. Godfrey." },
-  { w: "immediately", l: 2, p: "double letters", s: "Mrs. Godfrey saw the drawing and gave out detention immediately. Light travels slower.", h: "Right away, without delay.", d: "mm", t: "Two M's: i-MM-ediately. Detention starts i-MM-ediately. There is no time to drop an M." },
-  { w: "jealous", l: 2, p: "unstressed vowels", s: "Nate is not jealous of Artur. He just keeps a folder of everything Artur wins. For science.", h: "Wanting what someone else has.", d: "ea", t: "j-EA-lous. The EA is jealous nobody notices it. Then it ends in -OUS like famous." },
-  { w: "knowledge", l: 2, p: "silent letters", s: "Francis shares his knowledge of jellyfish facts every single day. Nobody has ever asked.", h: "Facts and information you know.", d: "know", t: "KNOW + LEDGE. You KNOW a fact, then park it on a LEDGE. Francis has about nine thousand ledges." },
-  { w: "lightning", l: 2, p: "silent letters", s: "When the lunch bell rings, Nate moves like lightning. In lessons, more like fog.", h: "Electric flash in the sky.", d: "htn", t: "Lightning is too fast for an extra E. LIGHT + NING. Add an E and you get 'lightening', which is what hair does." },
-  { w: "neighbour", l: 2, p: "ie / ei", s: "Nate's neighbour pays him to walk Spitsy. In practice, Spitsy walks Nate.", h: "Someone who lives next door.", d: "eighbour", t: "EIGH like a horse saying neigh over the fence at Spitsy. And don't drop the U: good neighbOURs always bring U something." },
-  { w: "pigeon", l: 2, p: "unstressed vowels", s: "A pigeon swiped Nate's last Cheez Doodle. Unforgivable.", h: "A common grey city bird.", d: "geo", t: "pi-GE-on. A sneaky E slips in before the ON, the same way that pigeon slipped in and took the Cheez Doodle." },
-  { w: "scissors", l: 2, p: "double letters", s: "Dee Dee borrowed scissors for a quiet little art project. The glitter reached three classrooms.", h: "A tool for cutting paper.", d: "sciss", t: "SC at the start, double S in the middle: SCi-SS-ors. The SC is silent. Dee Dee is not." },
-  { w: "stomach", l: 2, p: "silent letters", s: "Scientists should study Nate's stomach. It fears nothing, not even the canteen curry.", h: "The organ that digests food.", d: "ach", t: "It ends in -ACH but sounds like K. Easy to remember: stomACHe is what the cafeteria gives you." },
-  { w: "actually", l: 2, p: "double letters", s: "Nate actually studied. The world did not end.", h: "In real fact.", d: "lly", t: "ACTUAL + LY. Two L's collide in the middle: actual-ly. Same crash as finally." },
-  { w: "address", l: 2, p: "double letters", s: "Nate wrote the wrong address on the envelope. On purpose.", h: "Where someone lives.", d: "ddress", t: "ADD your aDDress: double D, double S. Generous word." },
-  { w: "although", l: 2, p: "ought words", s: "Although the plan was clearly terrible, Teddy voted yes before Nate finished the sentence.", h: "Even though.", d: "ough", t: "AL with one L, then THOUGH. The OUGH gang strikes again." },
-  { w: "decide", l: 2, p: "c and s sounds", s: "Nate couldn't decide between two pranks, so he did both. His detention was also doubled.", h: "To make a choice.", d: "cide", t: "de-CIDE: the C does the S sound, like in deCision. The referee has deCided." },
-  { w: "disappear", l: 2, p: "double letters", s: "Nate's homework can disappear in broad daylight, in front of witnesses.", h: "To vanish from sight.", d: "sapp", t: "DIS + APPEAR: one S, two P's. The homework disappears. The P's never do." },
-  { w: "disappoint", l: 2, p: "double letters", s: "The vending machine ran out of Cheez Doodles. No machine has ever managed to disappoint so many.", h: "To let someone down.", d: "sapp", t: "DIS + APPOINT: one S, two P's. Same family as disappear. They travel together." },
-  { w: "doubt", l: 2, p: "silent letters", s: "There is no doubt who set up the bucket prank.", h: "Not being sure.", d: "bt", t: "Silent B: dou-B-t. The B hides, like Nate behind the bins." },
-  { w: "forty", l: 2, p: "hidden letters", s: "Nate owes Francis forty cents. The interest is growing.", h: "The number 40.", d: "for", t: "FORTY loses the U that FOUR has. Four, fourteen... then forty goes rogue. No U." },
-  { w: "guard", l: 2, p: "silent letters", s: "Nate stands guard over his snack drawer like it holds the crown jewels. It holds one biscuit.", h: "To protect something.", d: "gua", t: "GU-ARD: silent U after the G, like in GUess. The U is the quiet bodyguard." },
-  { w: "humour", l: 2, p: "our words", s: "Mrs. Godfrey does not share Nate's sense of humour.", h: "Being funny.", d: "our", t: "humOUR: the OUR club again, with favOURite and colOUR. Membership requires a U." },
-  { w: "important", l: 2, p: "ant words", s: "Nate missed the important part of the instructions. Also the start. And the end.", h: "Mattering a lot.", d: "ant", t: "import-ANT: there's an ANT at the end carrying something important. Ants always are." },
-  { w: "library", l: 2, p: "hidden letters", s: "Nate got shushed in the library for laughing at his own comic.", h: "A building full of books.", d: "rar", t: "li-BRAR-y: two R's with only an A between them. Say lib-RA-ry slowly, like the librarian is watching." },
-  { w: "opposite", l: 2, p: "double letters", s: "Gina and Nate sit on opposite sides of the classroom. Mrs. Godfrey measured it herself.", h: "Completely different.", d: "pp", t: "o-PP-osite: double P, single S. Opposites attract double P's." },
-  { w: "potatoes", l: 2, p: "es plurals", s: "The canteen mashed potatoes could stop a door.", h: "More than one spud.", d: "oes", t: "One potato, two potat-OES: add ES, like heroes. The canteen potatoes are not heroes." },
-  { w: "probably", l: 2, p: "hidden letters", s: "It was probably Nate. It was definitely Nate.", h: "Most likely.", d: "bab", t: "PROB-AB-LY: say all three chunks out loud. Don't squash the AB, even if Nate would." },
-  { w: "science", l: 2, p: "ie / ei", s: "Nate's science project involved a volcano and regret.", h: "The study of how things work.", d: "cie", t: "SC first, then IE: sci-ence. Science breaks the I-before-E rule and writes its own." },
-  { w: "special", l: 2, p: "cial words", s: "The lunch special is called 'Chef's Surprise'. The surprise is the chef won't eat it.", h: "Better or different from normal.", d: "cial", t: "spe-CIAL: the CIAL makes the SHUL sound. Special words get special endings." },
-  { w: "straight", l: 2, p: "aigh words", s: "Nate can't draw a straight line without a ruler. Or with one.", h: "Not bent or curved.", d: "aigh", t: "str-AIGH-t: the AIGH gang, borrowed from eight. A straight line of silent letters." },
-  { w: "suppose", l: 2, p: "double letters", s: "I suppose the fire drill wasn't Nate's fault. This time.", h: "To think something is likely.", d: "pp", t: "su-PP-ose: double P, like oPPosite. Suppose both P's showed up? They did." },
-  { w: "through", l: 2, p: "ought words", s: "The paper plane sailed through the open door. Into Mrs. Godfrey.", h: "From one side to the other.", d: "ough", t: "THR + OUGH: the OUGH gang making an OO sound this time. Same gang, new disguise." },
-  { w: "usually", l: 2, p: "double letters", s: "Nate is usually late. Punctually late.", h: "Most of the time.", d: "ually", t: "USUAL + LY: usual-ly. Two L's meet, just like actually and finally. It's a club." },
-  { w: "vegetable", l: 2, p: "hidden letters", s: "Nate treats every vegetable as a personal insult.", h: "Plant food like carrots and peas.", d: "eta", t: "veg-E-TABLE: there's a TABLE at the end. Put the vegetables on the TABLE, then don't eat them. Classic Nate." },
-  { w: "cousin", l: 2, p: "hidden letters", s: "Nate's cousin found the emergency Cheez Doodles. Some things cannot be forgiven.", h: "Your aunt or uncle's child.", d: "ousi", t: "c-OUSI-n: the O-U-S-I squad in the middle. A cousin always brings extra vowels." },
-  // Level 3
-  { w: "separate", l: 3, p: "unstressed vowels", s: "Mrs. Godfrey moved Nate and Teddy to separate desks, then separate rooms. Separate schools are being discussed.", h: "To divide or keep apart.", d: "ara", t: "There's A RAT in sepARATe. Nate would name it Mr. Cheez." },
-  { w: "definitely", l: 3, p: "unstressed vowels", s: "Someone drew on the whiteboard. It was definitely not Nate, says a note signed by Nate.", h: "Without any doubt.", d: "finite", t: "It's de-FINITE-ly. FINITE is hiding inside. There is no letter A in it, no matter what Nate scribbles." },
-  { w: "embarrassed", l: 3, p: "double letters", s: "Nate was embarrassed when Ellen showed his baby bath photos to the whole class. With commentary.", h: "Feeling awkward or ashamed.", d: "rrass", t: "Double R, double S. Twice as embarrassing, like Ellen showing the baby photos. Both albums." },
-  { w: "necessary", l: 3, p: "double letters", s: "Francis carries three spare pencils because it's necessary. Nate has never owned a pencil by Friday.", h: "Absolutely needed.", d: "cess", t: "One Collar, two Sleeves: one C, two S's. Even Nate's wrinkled shirt follows this rule." },
-  { w: "occasionally", l: 3, p: "double letters", s: "Occasionally, Nate's locker avalanche misses him completely.", h: "Once in a while.", d: "ccas", t: "Two C's, one S. C's travel in pairs, like Nate and detention." },
-  { w: "restaurant", l: 3, p: "silent letters", s: "Dad took them to a restaurant instead of cooking. The smoke alarm finally got a night off.", h: "A place where meals are served.", d: "au", t: "Rest-AU-rant. The sneaky AU in the middle is where Dad's wallet goes to rest." },
-  { w: "rhythm", l: 3, p: "silent letters", s: "Nate's band has volume. Rhythm is still a work in progress.", h: "A repeated pattern of beats.", d: "hyth", t: "Rhythm Helps Your Two Hips Move. First letters spell it. No real vowels, just Y. Nate's band still can't find it." },
-  { w: "licence", l: 3, p: "c and s sounds", s: "Ellen earned her driver's licence on the fourth attempt. Nate walks everywhere now.", h: "An official permit.", d: "cence", t: "The noun ends in -CE: li-CEN-CE, like advICE. You would give Ellen advice about her licence. License with an S is only the verb." },
-  { w: "privilege", l: 3, p: "unstressed vowels", s: "Sitting far away from Gina is a privilege Nate has earned.", h: "A special right or advantage.", d: "lege", t: "It ends in -LEGE, like coLLEGE. No D anywhere. Detention has a D. Privilege doesn't." },
-  { w: "environment", l: 3, p: "silent letters", s: "Detention is basically Nate's natural environment.", h: "The surroundings you live in.", d: "iron", t: "There's IRON in the middle: env-IRON-ment. The N before M is quiet but it's there." },
-  { w: "independent", l: 3, p: "unstressed vowels", s: "Nate is an independent artist. His teachers call it doodling in class.", h: "Not needing help from others.", d: "dent", t: "It ends in -ENT, and every vowel after the first I is an E: independ-E-nt. E's all the way down." },
-  { w: "mischievous", l: 3, p: "unstressed vowels", s: "When Nate gets his mischievous grin, Francis starts writing the apology letter early.", h: "Playfully causing trouble.", d: "chie", t: "MIS-CHIE-VOUS. Three syllables only. No extra I after the V, no matter how mischievous that grin is." },
-  { w: "occurred", l: 3, p: "double letters", s: "The cafeteria food fight occurred right after the egg salad appeared.", h: "Happened.", d: "ccurr", t: "Doubles everywhere: two C's AND two R's. The food fight was big enough to double everything." },
-  { w: "argument", l: 3, p: "hidden letters", s: "The argument was about the last Cheez Doodle. Obviously.", h: "A disagreement.", d: "gum", t: "There's GUM stuck in the middle of ar-GUM-ent. Argue drops its E before the fight starts." },
-  { w: "awkward", l: 3, p: "letter pileups", s: "Nate waved back at someone who was waving at Gina, then finished the whole wave anyway. Awkward.", h: "Uncomfortable and clumsy.", d: "wkw", t: "Awkward is spelled awkwardly: W-K-W in a row. The word demonstrates itself." },
-  { w: "business", l: 3, p: "hidden letters", s: "Nate's doodle business is booming. All profits are paid in Cheez Doodles.", h: "Buying, selling, or work.", d: "busi", t: "BUSY becomes BUSI-ness: the Y turns into an I when the NESS arrives. Business makes you busy." },
-  { w: "character", l: 3, p: "ch as k", s: "Doctor Cesspool is Nate's greatest character.", h: "A person in a story.", d: "ch", t: "CH sounds like K: CHaracter. Same disguise as stomaCH. The CH is in character." },
-  { w: "eighth", l: 3, p: "letter pileups", s: "Nate came eighth in the spelling bee. Ironic.", h: "Position number 8 in a line.", d: "ghth", t: "EIGHT + H: eigh-TH keeps all of eight, then adds an H. Four consonants queue at the end." },
-  { w: "especially", l: 3, p: "cial words", s: "Nate hates tests, especially surprise ones.", h: "More than usual.", d: "ciall", t: "E + SPECIAL + LY: e-SPECIAL-ly. Special is hiding inside, wearing an E as a hat." },
-  { w: "exercise", l: 3, p: "c and s sounds", s: "Coach John says exercise builds character. Nate remains unconvinced.", h: "Moving your body to stay fit.", d: "xerc", t: "e-XERC-ise: X first, then C. No S until the very end. The S skipped the workout." },
-  { w: "experience", l: 3, p: "ence words", s: "Nate has so much detention experience he offers guided tours.", h: "Something that happens to you.", d: "ience", t: "exper-I-ENCE: ends in -ENCE. An experience you sit through, like science's boring cousin." },
-  { w: "grammar", l: 3, p: "ar endings", s: "Gina corrects everyone's grammar. Everyone's.", h: "The rules of a language.", d: "mar", t: "grammAR ends in -AR. Bad gramm-ER is the trap. Gina would circle it in red." },
-  { w: "height", l: 3, p: "ie / ei", s: "Nate's height ranking in class: not up for discussion.", h: "How tall something is.", d: "eigh", t: "HEIGHT borrows EIGH from EIGHT, then ends in T. High and eight had a baby." },
-  { w: "interrupt", l: 3, p: "double letters", s: "Never interrupt Nate mid-doodle. Dee Dee did it once. Once.", h: "To butt in while someone talks.", d: "rr", t: "inte-RR-upt: double R. You barge in with both R's or not at all." },
-  { w: "peculiar", l: 3, p: "unstressed vowels", s: "A peculiar smell led everyone straight to Nate's locker.", h: "Odd or strange.", d: "liar", t: "A LIAR hides at the end of pecu-LIAR. Peculiar, but true." },
-  { w: "possess", l: 3, p: "double letters", s: "Nate does not possess a single tidy habit.", h: "To own or have.", d: "ssess", t: "Four S's total: po-SS-e-SS. A greedy word. It possesses all the S's." },
-  { w: "queue", l: 3, p: "silent letters", s: "Nate cut the lunch queue on pizza day. Survivors still talk about it.", h: "A line of people waiting.", d: "ueue", t: "Q does all the work while U-E-U-E queue up silently behind it. The most patient word in English." },
-  { w: "strength", l: 3, p: "letter pileups", s: "It took the combined strength of Nate, Teddy and Francis to open Nate's locker. The locker fought back.", h: "Being strong.", d: "ngth", t: "STRONG becomes STRENGTH: an N-G-T-H pile-up at the end. Flex all four consonants." },
-  { w: "tongue", l: 3, p: "silent letters", s: "Nate burnt his tongue on canteen soup that was somehow both frozen and volcanic.", h: "The thing you taste with.", d: "gue", t: "TON + GUE: ends in -GUE like league. The UE is silent, just showing off." },
-  // Level 4
-  { w: "accommodate", l: 4, p: "double letters", s: "The school hall can accommodate every kid and one very loud Dee Dee.", h: "To have room for.", d: "ccomm", t: "Two C's AND two M's. It's a big word with room for everyone: a-CC-o-MM-odate." },
-  { w: "conscience", l: 4, p: "hidden letters", s: "Nate's conscience showed up three pranks too late.", h: "The little voice that knows right from wrong.", d: "science", t: "CON + SCIENCE. Your conscience is the SCIENCE of knowing better." },
-  { w: "conscious", l: 4, p: "unstressed vowels", s: "Nate is technically conscious in first period. Technically.", h: "Awake and aware.", d: "sci", t: "CON-SCI-OUS: the SCI hides in the middle, like science with the end bitten off." },
-  { w: "exaggerate", l: 4, p: "double letters", s: "Nate would never exaggerate. He's told us a billion times.", h: "To make something sound bigger than it is.", d: "gg", t: "One X, then a double G: exa-GG-erate. Exaggerating needs extra letters. Obviously." },
-  { w: "guarantee", l: 4, p: "silent letters", s: "Chip can guarantee nothing except more spelling.", h: "A promise that something will happen.", d: "gua", t: "GUA at the start, like GUARD, then -RANTEE. A guarantee always guards its silent U." },
-  { w: "noticeable", l: 4, p: "hidden letters", s: "The smell from Nate's locker is noticeable from the gym.", h: "Easy to see or notice.", d: "cea", t: "NOTICE keeps its E before -ABLE: notice-able. The E stays so the C stays soft." },
-  { w: "occurrence", l: 4, p: "double letters", s: "A quiet day at P.S. 38 is a rare occurrence.", h: "Something that happens.", d: "ccurr", t: "Like occurred, but ending in -ENCE: two C's, two R's, then ENCE. Everything doubles except the ending." },
-  { w: "parallel", l: 4, p: "double letters", s: "Nate and Gina live in parallel universes. Thankfully.", h: "Lines that never meet.", d: "llel", t: "The twin L's in the middle ARE parallel lines: para-LL-el. The word draws itself." },
-  { w: "parliament", l: 4, p: "hidden letters", s: "Class president is one step from parliament, according to Nate.", h: "Where a country's laws get made.", d: "lia", t: "par-LIA-ment: I before A in the middle. Say par-LI-A-ment like a very posh robot." },
-  { w: "persuade", l: 4, p: "unstressed vowels", s: "Teddy tried to persuade the canteen to serve pizza daily. His petition got four signatures. Two were his.", h: "To talk someone into something.", d: "suade", t: "PER + SUADE: the SUA squad in the middle. Per-SUA-de someone smoothly." },
-  { w: "physically", l: 4, p: "silent letters", s: "Nate is physically incapable of tidying his locker.", h: "To do with the body.", d: "hys", t: "PH makes the F sound, then the Y sneaks in early: PH-Y-SIC-ALLY. Physical + LY, both L's included." },
-  { w: "pronunciation", l: 4, p: "hidden letters", s: "Francis corrects Nate's pronunciation. Nate pronounces revenge.", h: "The way a word is said.", d: "nunci", t: "Pro-NUN-ciation, not pro-NOUN-ciation. The O from pronounce gets left in detention." },
-  { w: "questionnaire", l: 4, p: "double letters", s: "Nate answered the careers questionnaire with 'cartoonist' fifteen times.", h: "A list of questions to answer.", d: "nn", t: "QUESTION + NAIRE with a double N handshake in the middle: question-naire." },
-  { w: "recognise", l: 4, p: "hidden letters", s: "Teddy didn't recognise Nate in a tie. Nobody did.", h: "To know someone when you see them.", d: "gn", t: "RE-COG-NISE: there's a COG turning in the middle. Drop the G and the machine breaks." },
-  { w: "sincerely", l: 4, p: "hidden letters", s: "Nate signed the apology letter 'sincerely unsorry'.", h: "Meaning it truly.", d: "cere", t: "SINCERE + LY: keep the whole word, just add LY. Sin-CERE-ly yours, Nate." },
-  { w: "sufficient", l: 4, p: "double letters", s: "One warning is sufficient for most kids. Nate's teachers order warnings in bulk.", h: "Enough for the job.", d: "ffici", t: "Double F, then -ICIENT: su-FF-icient. The CI makes a SH sound, like special's sneaky cousin." },
-  { w: "temperature", l: 4, p: "hidden letters", s: "The cafeteria soup has one temperature: volcano.", h: "How hot or cold something is.", d: "pera", t: "TEM-PER-A-TURE: say all four chunks out loud. The middle PERA is quiet but it's there." },
-  { w: "thorough", l: 4, p: "ought words", s: "Mrs. Godfrey's homework checks are extremely thorough.", h: "Complete, with nothing missed.", d: "orough", t: "THOROUGH is THROUGH with an extra O near the front: tho-ROUGH. The OUGH gang's longest member." },
-  { w: "unnecessary", l: 4, p: "double letters", s: "Nate finds most rules deeply unnecessary.", h: "Not needed at all.", d: "nn", t: "UN + NECESSARY: the UN brings its own N, so it's u-NN-ecessary. One collar, two sleeves still applies." },
-  { w: "manoeuvre", l: 4, p: "silent letters", s: "Dodging Mrs. Godfrey takes an expert manoeuvre.", h: "A skilful move.", d: "oeuv", t: "man-OEU-vre: the OEU is French and refuses to explain itself. Memorise the vowel pile: O, E, U." },
-  { w: "millennium", l: 4, p: "double letters", s: "Cleaning Nate's locker is the project of the millennium.", h: "A thousand years.", d: "llenn", t: "Two L's AND two N's: mi-LL-e-NN-ium. A thousand years needs double everything." },
-  { w: "apparently", l: 4, p: "double letters", s: "Apparently doodling counts as 'not listening'. Says Mrs. Godfrey.", h: "It seems that way.", d: "pp", t: "a-PP-arently: double P, and there's a PARENT hiding inside apparently. Don't tell Dad." },
-  { w: "committee", l: 4, p: "double letters", s: "The prank planning committee meets behind the bins.", h: "A group that makes decisions.", d: "mmittee", t: "The greediest word in English: double M, double T, double E. Commi-TT-EE keeps them all." },
-  { w: "desperate", l: 4, p: "unstressed vowels", s: "By Friday, Nate is desperate for the weekend.", h: "Wanting something very badly.", d: "sper", t: "des-PER-ate: PER, not PAR. A RAT lives in sepArate, but desperate stays PER-fect." },
-  { w: "curiosity", l: 4, p: "hidden letters", s: "Curiosity got Nate into the teachers' lounge. Detention got him out.", h: "Wanting to know things.", d: "osi", t: "CURIOUS drops its U-S for -ITY: curi-OS-ity. The extra U from curious doesn't make the trip." },
-  { w: "disastrous", l: 4, p: "hidden letters", s: "The volcano project was disastrous. Award-winningly disastrous.", h: "Terrible, like a disaster.", d: "strous", t: "DISASTER drops its E before -OUS: disastr-ous. The E saw the disaster coming and fled." },
-];
-
-const PRAISE = [
-  "Correct. Even Gina would be impressed. Don't tell her.",
-  "Nailed it. Doodle yourself a trophy.",
-  "Boom. Francis-level brain power.",
-  "Right. You've earned one imaginary Cheez Doodle.",
-  "Correct. Mrs. Godfrey has nothing on you.",
-  "Flawless. P.S. 38 spelling legend status.",
-  "Yep. Chip's wallet just flinched.",
-  "Correct. Somewhere, Artur is nervous.",
-  "That's the one. Teddy owes me a dollar, he bet against you.",
-  "Right again. Dee Dee is composing a musical about it.",
-  "Correct. Write that on the whiteboard and sign it 'definitely not Nate'.",
-];
-
-// Streak 3+: the trash talk heats up with the streak
-const PRAISE_HOT = [
-  "You're ON FIRE. The sprinklers are worried.",
-  "Another one?! Chip is checking the rulebook for a way out.",
-  "Unstoppable. Mrs. Godfrey just filed a complaint.",
-  "This is getting embarrassing. For Chip. Keep going.",
-  "The streak lives! Gina has started a rumor that you're cheating.",
-  "Chip is sweating actual pencil shavings.",
-];
-
-const ROASTS = [
-  "Nope. That earns you a Mrs. Godfrey glare.",
-  "Wrong. Straight to spelling detention.",
-  "Missed it. Even Spitsy could do better. Maybe.",
-  "Oof. Gina just got another A plus somewhere.",
-  "Incorrect. The word goes back in the pile for revenge.",
-  "Nope. Locker avalanche of shame.",
-  "Wrong, and Chip is doing his little victory doodle about it.",
-  "Missed. The word is telling all its friends.",
-  "Nope. That spelling goes on the fridge of shame.",
-  "Incorrect. Somewhere a dictionary just sighed.",
-];
-
-const GENERIC_TRICK = "No cheat sheet for this one. Stare at the letters. Take a brain photo. Nate calls that studying.";
-
-const ROUND_SIZE = 8;
-const STARTING_BANK = 20;
-const BROKE_BAILOUT = 5;
-const MAX_LEVEL = 4;
-// Promotion: two consecutive rounds at 80%+ first-try accuracy moves him up a
-// level. Blended accuracy under 55% moves him down. The level (and all word
-// stats) live in the save, so they survive cashouts - only the bankroll resets.
-const HOT_ROUND_ACC = 0.8;
-const HOT_ROUNDS_TO_LEVEL_UP = 2;
-// Comfort mode: after two losing bets in a row, half the next round is words
-// he reliably gets right - but only while the bank is at $10 or less. Above
-// $10 he plays on merit. The broke bailout ($5) is a floor, never a boost,
-// so no assistance ever lifts him past $10.
-const COLD_ROUNDS_FOR_COMFORT = 2;
-const COMFORT_BANK_CAP = 10;
-// Payday goal shown as a progress bar on the betting desk - a finish line to
-// run at instead of a shapeless grind.
-const PAYDAY_GOAL = 40;
-// Custom school lists play as ONE round covering the whole list (no silent
-// 8-word truncation), capped for sanity.
-const CUSTOM_ROUND_CAP = 20;
-// Day-streak milestone bonuses (real money - calendar-capped, so cheap for Dad)
-const STREAK_BONUS: Record<number, number> = { 3: 1, 7: 3, 14: 5, 30: 10 };
-// Secret bonus word: one word per adaptive betting round pays +$1 on a
-// first-try correct. Reward-side variability on top of the skill bet.
-const BONUS_WORD_CASH = 1;
-// At max level, every 2 consecutive hot rounds pay Chip's respect bonus
-// instead of a level-up, so the hot-streak counter never goes dead.
-const RESPECT_BONUS = 1;
-const DOODLE_DROP_CHANCE = 0.3;
-// Boss battles: semi-frequent free-entry challenges from Chip. Five of his
-// nastiest words, no hints, one miss allowed. Win: +$5 of Chip's own money
-// and a win on the rank ladder. Lose: nothing but Chip's gloating.
-const BOSS_WORD_COUNT = 5;
-const BOSS_MISS_ALLOWED = 1;
-const BOSS_PRIZE = 5;
-const BOSS_MIN_GAP = 4; // rounds since last battle before one can trigger
-const BOSS_CHANCE = 0.45; // per eligible round
-const STORE_KEY = "spelling-showdown-v1";
-const ROUND_KEY = "spelling-showdown-round-v1";
-
-const BOSS_TAUNTS = [
-  "I picked five words so nasty even Francis flinched. Free entry. Scared?",
-  "Beat my gauntlet and I'll pay you out of my own Cheez Doodle fund. That's how confident I am.",
-  "Five words. One miss allowed. My money says you choke on word three.",
-  "The boss battle stands. Every day you don't accept, I doodle you losing.",
-  "No bet, no excuses. Just you, me, and five words with detention energy.",
-];
-
-// -------------------------------------------------------------
-// RANK LADDER: permanent progression driven by career WINS vs
-// Chip (adaptive betting rounds finished net-positive). Levels
-// 1-4 are word difficulty; rank is the thing he climbs forever.
-// -------------------------------------------------------------
-const RANKS: { wins: number; title: string }[] = [
-  { wins: 0, title: "Rookie of Room 216" },
-  { wins: 3, title: "Doodle Cadet" },
-  { wins: 7, title: "Cheez Doodle Champ" },
-  { wins: 12, title: "Prank Captain" },
-  { wins: 18, title: "Locker Legend" },
-  { wins: 25, title: "Detention Hall of Famer" },
-  { wins: 35, title: "P.S. 38 Superstar" },
-  { wins: 50, title: "Showdown Boss" },
-  { wins: 75, title: "Big Time Big Shot" },
-  { wins: 100, title: "Immortal Doodler" },
-];
-
-export function rankFor(wins: number) {
-  let current = RANKS[0];
-  let next: { title: string; winsNeeded: number } | null = null;
-  for (const r of RANKS) {
-    if (wins >= r.wins) current = r;
-    else { next = { title: r.title, winsNeeded: r.wins - wins }; break; }
-  }
-  return { title: current.title, next };
-}
-
-// -------------------------------------------------------------
-// DOODLE DROPS: a 12-piece collection. On a won betting round
-// there's a chance Chip hands over a doodle he hasn't got yet.
-// -------------------------------------------------------------
-type Doodle = { id: string; icon: string; name: string; cap: string; rare: boolean };
-const DOODLES: Doodle[] = [
-  { id: "golden-doodle", icon: "🧀", name: "The Golden Cheez Doodle", cap: "One in a million. Do not eat.", rare: true },
-  { id: "glue-incident", icon: "🧴", name: "The Glue Incident File", cap: "CLASSIFIED. Nobody talks about it.", rare: true },
-  { id: "red-pen", icon: "🖊️", name: "Mrs. Godfrey's Red Pen", cap: "Runs dry twice a week. Entirely Nate's fault.", rare: false },
-  { id: "detention-slip", icon: "📄", name: "Signed Detention Slip", cap: "Framed. Nate's most common trophy.", rare: false },
-  { id: "lucky-pencil", icon: "✏️", name: "Nate's Lucky Pencil", cap: "Chewed on one end. Genius on the other.", rare: false },
-  { id: "spitsy-cone", icon: "🐶", name: "Spitsy's Cone of Shame", cap: "He wears it with zero shame.", rare: false },
-  { id: "fleece-ball", icon: "🧶", name: "Fleeceball Game Ball", cap: "MVP: not Gina. Never Gina.", rare: false },
-  { id: "locker-medal", icon: "🏅", name: "Locker Avalanche Survivor Medal", cap: "Awarded for surviving Nate's locker. Twice.", rare: false },
-  { id: "gina-aplus", icon: "💯", name: "One of Gina's A-Pluses", cap: "She has hundreds. She counted.", rare: false },
-  { id: "joke-notebook", icon: "📓", name: "Teddy's Joke Notebook", cap: "Half the jokes are about egg salad.", rare: false },
-  { id: "fact-book", icon: "📘", name: "Francis's Book of Facts", cap: "Volume 9 of 40. Jellyfish edition.", rare: false },
-  { id: "hall-pass", icon: "🎫", name: "The Eternal Hall Pass", cap: "Expired in 2009. Still works.", rare: false },
-];
-
-export function pickDoodleDrop(owned: string[], roll: () => number = Math.random): string | null {
-  const unowned = DOODLES.filter((d) => !owned.includes(d.id));
-  if (unowned.length === 0) return null;
-  // rares weigh 1, commons weigh 3
-  const weighted: Doodle[] = unowned.flatMap((d) => (d.rare ? [d] : [d, d, d]));
-  return weighted[Math.floor(roll() * weighted.length)].id;
-}
-
-// -------------------------------------------------------------
-// HOMOPHONE SAFETY for pasted school lists: the words teachers
-// love are the ones TTS can't disambiguate. Each gets a spoken
-// meaning line so the bet is never a coin flip.
-// -------------------------------------------------------------
-const HOMOPHONE_HINTS: Record<string, string> = {
-  their: "The one that means it belongs to them.",
-  there: "The one that means in that place.",
-  "they're": "The one that is short for they are.",
-  to: "The one you go TO school with.",
-  too: "The one that means also, or too much.",
-  two: "The number after one.",
-  your: "The one that means it belongs to you.",
-  "you're": "The one that is short for you are.",
-  its: "The one that means belonging to it. No apostrophe.",
-  "it's": "The one that is short for it is.",
-  weather: "The one with rain and sunshine.",
-  whether: "The one that means if.",
-  where: "The one that asks about a place.",
-  wear: "The one you do with clothes.",
-  hear: "The one you do with your ears.",
-  here: "The one that means this place.",
-  right: "The one that means correct, or the opposite of left.",
-  write: "The one you do with a pencil.",
-  knew: "The past of know. Starts with a silent K.",
-  new: "The opposite of old.",
-  know: "The one about knowing things. Silent K.",
-  no: "The opposite of yes.",
-  week: "Seven days.",
-  weak: "The opposite of strong.",
-  board: "The flat piece of wood.",
-  bored: "What Nate is in social studies.",
-  brake: "The one that stops a bike.",
-  break: "The one that means to smash, or a rest.",
-  piece: "A piece of pie. Pie starts it: P I E.",
-  peace: "The calm one.",
-  plain: "The ordinary one.",
-  plane: "The flying one.",
-  principal: "The head of the school. Your PAL, allegedly.",
-  principle: "The rule you live by.",
-  aloud: "The one that means out loud.",
-  allowed: "The one that means permitted.",
-  passed: "The one where you went past, or passed a test.",
-  past: "The one about history, or beyond.",
-};
-
-// -------------------------------------------------------------
-// SOUND: tiny WebAudio synth - no assets, fails silently.
-// -------------------------------------------------------------
 let audioCtx: AudioContext | null = null;
 function playSfx(kind: "correct" | "wrong" | "bonus" | "win" | "lose" | "rankup" | "record" | "boss", on: boolean) {
   if (!on || typeof window === "undefined") return;
@@ -449,419 +48,6 @@ function playSfx(kind: "correct" | "wrong" | "bonus" | "win" | "lose" | "rankup"
   } catch { /* sound is a garnish, never an error */ }
 }
 
-// -------------------------------------------------------------
-// ALIGNMENT DIFF: edit-distance backtrace so a dropped letter
-// shows as a gap at the right spot instead of a wall of red.
-// -------------------------------------------------------------
-export type DiffOp = { ch: string; kind: "ok" | "wrong" | "extra" | "missing" };
-export function alignDiff(guess: string, answer: string): DiffOp[] {
-  const g = guess.toLowerCase();
-  const a = answer.toLowerCase();
-  const m = g.length, n = a.length;
-  const dp: number[][] = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
-  for (let i = 0; i <= m; i++) dp[i][0] = i;
-  for (let j = 0; j <= n; j++) dp[0][j] = j;
-  for (let i = 1; i <= m; i++) {
-    for (let j = 1; j <= n; j++) {
-      dp[i][j] = Math.min(
-        dp[i - 1][j - 1] + (g[i - 1] === a[j - 1] ? 0 : 1),
-        dp[i - 1][j] + 1,
-        dp[i][j - 1] + 1
-      );
-    }
-  }
-  const ops: DiffOp[] = [];
-  let i = m, j = n;
-  while (i > 0 || j > 0) {
-    if (i > 0 && j > 0 && g[i - 1] === a[j - 1] && dp[i][j] === dp[i - 1][j - 1]) {
-      ops.unshift({ ch: g[i - 1], kind: "ok" }); i--; j--;
-    } else if (i > 0 && j > 0 && dp[i][j] === dp[i - 1][j - 1] + 1) {
-      ops.unshift({ ch: g[i - 1], kind: "wrong" }); i--; j--;
-    } else if (i > 0 && dp[i][j] === dp[i - 1][j] + 1) {
-      ops.unshift({ ch: g[i - 1], kind: "extra" }); i--;
-    } else {
-      ops.unshift({ ch: a[j - 1], kind: "missing" }); j--;
-    }
-  }
-  return ops;
-}
-
-// Graduated payout: soft landings for near misses, full bust only for a blowout.
-// Bands are miss-rate based so short custom lists stay fair.
-function payoutFor(misses: number, total: number, bet: number) {
-  const r = total > 0 ? misses / total : 1;
-  let mult: number, label: string;
-  if (misses === 0)      { mult = 2;    label = "clean"; }
-  else if (r <= 0.125 + 1e-9) { mult = 1.5;  label = "good"; }
-  else if (r <= 0.25 + 1e-9)  { mult = 1;    label = "even"; }
-  else if (r <= 0.375 + 1e-9) { mult = 0.75; label = "graze"; }
-  else if (r <= 0.5 + 1e-9)   { mult = 0.5;  label = "half"; }
-  else if (r <= 0.625 + 1e-9) { mult = 0.25; label = "rough"; }
-  else                   { mult = 0;    label = "bust"; }
-  return { label, amount: Math.round(bet * mult), mult };
-}
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-function pick<T>(arr: T[]): T { return arr[Math.floor(Math.random() * arr.length)]; }
-
-// Never let a displayed hint contain the answer (or a near-form of it).
-// Covers the built-in bank and anything from a pasted custom list.
-function safeHint(hint: string, word: string) {
-  if (!hint || !word) return hint;
-  const stem = word.length > 5 ? word.slice(0, word.length - 2) : word;
-  const re = new RegExp(`[A-Za-z]*(?:${word}|${stem})[A-Za-z]*`, "gi");
-  return hint.replace(re, "_____");
-}
-function todayStr() { return new Date().toISOString().slice(0, 10); }
-function yesterdayStr() {
-  const d = new Date(); d.setDate(d.getDate() - 1);
-  return d.toISOString().slice(0, 10);
-}
-
-const FRESH_SAVE: Save = {
-  bank: STARTING_BANK,
-  day: null,          // last played date
-  dayStreak: 0,
-  rounds: 0,
-  playerLevel: 1,
-  recentAcc: 0.7,
-  hotStreak: 0,
-  coldStreak: 0,
-  stats: {},          // word -> {a: attempts, m: misses, cs: correctStreak, seen: roundNumber}
-  cashouts: [],
-  history: [],        // ledger rows: {d, type, label, net, bank}
-  records: { bestStreak: 0, biggestWin: 0, bestCashout: 0, perfectRounds: 0, bestDayStreak: 0 },
-  chip: { w: 0, l: 0, d: 0 },
-  doodles: [],
-  soundOn: true,
-  boss: { pending: false, lastRound: 0, wins: 0, losses: 0 },
-};
-
-const HISTORY_CAP = 200;
-function withHistory(history: HistoryEntry[] | undefined, entry: HistoryEntry) {
-  return [...(history || []), entry].slice(-HISTORY_CAP);
-}
-
-// -------------------------------------------------------------
-// ADAPTIVE ENGINE
-// Picks each round to hit two KPIs: learning (drill weaknesses,
-// spaced retrieval, pattern siblings) and enjoyment (win rate
-// stays in the flow zone, fresh words, occasional easy wins).
-// -------------------------------------------------------------
-function weakestPatterns(stats: Record<string, WordStat>) {
-  const agg: Record<string, { a: number; m: number }> = {};
-  for (const entry of BANK) {
-    const st = stats[entry.w];
-    if (!st || st.a < 1) continue;
-    if (!agg[entry.p]) agg[entry.p] = { a: 0, m: 0 };
-    agg[entry.p].a += st.a;
-    agg[entry.p].m += st.m;
-  }
-  return Object.entries(agg)
-    .filter(([, v]) => v.a >= 2 && v.m / v.a > 0.3)
-    .sort((x, y) => y[1].m / y[1].a - x[1].m / x[1].a)
-    .map(([p, v]) => ({ pattern: p, rate: v.m / v.a }));
-}
-
-function strugglingWords(stats: Record<string, WordStat>) {
-  return BANK
-    .filter((e) => {
-      const st = stats[e.w];
-      return st && st.m > 0 && st.cs < 2;
-    })
-    .sort((a, b) => {
-      const sa = stats[a.w], sb = stats[b.w];
-      return (sb.m / sb.a) - (sa.m / sa.a) || (sa.seen || 0) - (sb.seen || 0);
-    });
-}
-
-export function buildRound(save: Save): Entry[] {
-  const { stats, playerLevel, rounds, recentAcc } = save;
-  const chosen: Entry[] = [];
-  const used = new Set<string>();
-  const take = (e: Entry | undefined) => { if (e && !used.has(e.w)) { chosen.push(e); used.add(e.w); } };
-  const seenAgo = (w: string) => (stats[w] && stats[w].a > 0) ? rounds - (stats[w].seen || 0) : Infinity;
-
-  // 0. Comfort mix: after two losing bets in a row with the bank at
-  //    $COMFORT_BANK_CAP or less, half the round is words he reliably gets
-  //    right (correct streak of 2+), to bank some wins and lift spirits.
-  if ((save.coldStreak || 0) >= COLD_ROUNDS_FOR_COMFORT && save.bank <= COMFORT_BANK_CAP) {
-    shuffle(BANK.filter((e) => { const st = stats[e.w]; return !!st && st.cs >= 2; }))
-      .slice(0, Math.floor(ROUND_SIZE / 2))
-      .forEach(take);
-  }
-
-  // 1. Struggle words, max 3, with spaced-repetition timing:
-  //    missed last attempt -> comes back next round;
-  //    recovering (got it right once) -> rests at least 2 rounds before its confirmation test.
-  strugglingWords(stats)
-    .filter((e) => stats[e.w].cs === 0 || seenAgo(e.w) >= 2)
-    .slice(0, 3)
-    .forEach(take);
-
-  // 2. Up to 2 NEVER-SEEN words from his weakest patterns (teach the pattern via fresh words)
-  const weak = weakestPatterns(stats).slice(0, 2).map((x) => x.pattern);
-  if (weak.length) {
-    shuffle(BANK.filter((e) => !used.has(e.w) && weak.includes(e.p) && seenAgo(e.w) === Infinity && e.l <= playerLevel + 1))
-      .slice(0, 2).forEach(take);
-  }
-
-  // 3. One confidence refresh: mastered but not seen for 6+ rounds
-  const stale = BANK.filter((e) => stats[e.w] && stats[e.w].cs >= 3 && seenAgo(e.w) >= 6 && !used.has(e.w));
-  if (stale.length) take(pick(stale));
-
-  // 4. Fill with diversity guaranteed: never-seen words first, then words resting 3+ rounds.
-  //    Nothing seen in the last 2 rounds can enter this bucket.
-  const eligible = (e: Entry) => !used.has(e.w) && (!stats[e.w] || stats[e.w].cs < 3) && seenAgo(e.w) >= 3;
-  // When he's winning at 80%+, reach UP a level for fill words before reaching
-  // down, so the next level gets tested while he's hot instead of coasting.
-  const stretching = recentAcc >= HOT_ROUND_ACC && playerLevel < MAX_LEVEL;
-  const levelOrder = stretching
-    ? [playerLevel, Math.min(MAX_LEVEL, playerLevel + 1), Math.max(1, playerLevel - 1)]
-    : [playerLevel, Math.max(1, playerLevel - 1), Math.min(MAX_LEVEL, playerLevel + 1)];
-  for (const lvl of levelOrder) {
-    const fresh = shuffle(BANK.filter((e) => eligible(e) && e.l === lvl && seenAgo(e.w) === Infinity));
-    const rested = shuffle(BANK.filter((e) => eligible(e) && e.l === lvl && seenAgo(e.w) !== Infinity));
-    for (const e of [...fresh, ...rested]) {
-      if (chosen.length >= ROUND_SIZE) break;
-      take(e);
-    }
-    if (chosen.length >= ROUND_SIZE) break;
-  }
-
-  // 5. Relax only if the bank is nearly exhausted: first allow 1-round rest, then anything
-  if (chosen.length < ROUND_SIZE) {
-    for (const e of shuffle(BANK.filter((x) => !used.has(x.w) && seenAgo(x.w) >= 1))) {
-      if (chosen.length >= ROUND_SIZE) break;
-      take(e);
-    }
-  }
-  if (chosen.length < ROUND_SIZE) {
-    for (const e of shuffle(BANK)) {
-      if (chosen.length >= ROUND_SIZE) break;
-      take(e);
-    }
-  }
-  return shuffle(chosen.slice(0, ROUND_SIZE));
-}
-
-// Boss battle round: Chip's nastiest words at his level or one above,
-// unmastered words first so the fight is real.
-export function buildBossRound(save: Save): Entry[] {
-  const { stats, playerLevel } = save;
-  const lvlMax = Math.min(MAX_LEVEL, playerLevel + 1);
-  const hard = BANK.filter((e) => e.l >= playerLevel && e.l <= lvlMax);
-  const unmastered = shuffle(hard.filter((e) => (stats[e.w]?.cs ?? 0) < 3));
-  const mastered = shuffle(hard.filter((e) => (stats[e.w]?.cs ?? 0) >= 3));
-  const chosen = [...unmastered, ...mastered].slice(0, BOSS_WORD_COUNT);
-  for (const e of shuffle(BANK)) {
-    if (chosen.length >= BOSS_WORD_COUNT) break;
-    if (!chosen.some((c) => c.w === e.w)) chosen.push(e);
-  }
-  return shuffle(chosen);
-}
-
-// Everything that happens when a round ends, as a pure function so it can be
-// applied both live (finishRound) and when settling an orphaned round found
-// at load time (the reload-mid-round bug).
-type SettleInput = {
-  isPractice: boolean;
-  isCustom: boolean; // custom school-list rounds never move rank, records, or the Chip record
-  isBoss: boolean; // free-entry challenge: prize on <= BOSS_MISS_ALLOWED misses, no rank/level effects except a ladder win
-  bet: number;
-  roundTotal: number;
-  firstTryCorrect: number;
-  roundWords: string[];
-  missedWords: string[];
-  bestStreakRound: number;
-  bonusWon: boolean;
-  doodleDrop: string | null;
-};
-
-export type SettleResult = {
-  next: Save;
-  payout: Payout;
-  bailedOut: boolean;
-  leveledUp: boolean;
-  leveledDown: boolean;
-  rankUp: string | null;
-  newRecords: string[];
-  streakBonus: number;
-  streakBroken: number;
-  respectBonus: number;
-};
-
-export function settleRound(save: Save, p: SettleInput): SettleResult {
-  const misses = p.missedWords.length;
-  const bossWon = p.isBoss && misses <= BOSS_MISS_ALLOWED;
-  const pay = p.isBoss
-    ? { label: bossWon ? "bosswin" : "bossloss", amount: bossWon ? BOSS_PRIZE : 0, mult: 0 }
-    : p.isPractice
-      ? { label: "practice", amount: 0, mult: 0 }
-      : payoutFor(misses, p.roundTotal, p.bet);
-  const newBank = p.isBoss
-    ? save.bank + pay.amount
-    : p.isPractice ? save.bank : Math.max(0, save.bank - p.bet + pay.amount);
-
-  // Update word stats (first-try outcomes only; revenge laps are practice)
-  const stats = { ...save.stats };
-  const roundNum = save.rounds + 1;
-  for (const w of p.roundWords) {
-    const st = stats[w] || { a: 0, m: 0, cs: 0, seen: 0 };
-    const missed = p.missedWords.includes(w);
-    stats[w] = {
-      a: st.a + 1,
-      m: st.m + (missed ? 1 : 0),
-      cs: missed ? 0 : st.cs + 1,
-      seen: roundNum,
-    };
-  }
-
-  // Difficulty tuning: promote after HOT_ROUNDS_TO_LEVEL_UP consecutive
-  // rounds at 80%+ first-try accuracy; demote only on a sustained slump.
-  // Custom school-list rounds are excluded: a hard teacher list must never
-  // demote him, and a trivial pasted list must never farm the ladder.
-  const ranked = !p.isCustom && !p.isBoss;
-  const roundAcc = p.roundTotal ? p.firstTryCorrect / p.roundTotal : 0.7;
-  const recentAcc = ranked ? 0.6 * roundAcc + 0.4 * save.recentAcc : save.recentAcc;
-  let hotStreak = ranked ? (roundAcc >= HOT_ROUND_ACC ? (save.hotStreak || 0) + 1 : 0) : (save.hotStreak || 0);
-  let playerLevel = save.playerLevel;
-  let leveledUp = false;
-  let leveledDown = false;
-  let respectBonus = 0;
-  if (ranked) {
-    if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel < MAX_LEVEL) {
-      playerLevel += 1;
-      hotStreak = 0;
-      leveledUp = true;
-    } else if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel === MAX_LEVEL) {
-      // Max level: the hot streak converts to cash so the counter never dies
-      hotStreak = 0;
-      respectBonus = RESPECT_BONUS;
-    } else if (recentAcc < 0.55 && playerLevel > 1) {
-      playerLevel -= 1;
-      leveledDown = true;
-    }
-  }
-
-  // Losing streak drives comfort mode; only real betting rounds count either
-  // way (boss battles are free entries and leave it untouched)
-  const net = p.isPractice ? 0 : pay.amount - p.bet;
-  const lost = !p.isPractice && !p.isBoss && net < 0;
-  const coldStreak = (p.isPractice || p.isBoss) ? (save.coldStreak || 0) : lost ? (save.coldStreak || 0) + 1 : 0;
-
-  // Career record vs Chip: adaptive betting rounds, plus boss battle WINS
-  // (losing a free challenge costs nothing, not even the record).
-  const chip: ChipRecord = { ...(save.chip || { w: 0, l: 0, d: 0 }) };
-  let rankUp: string | null = null;
-  if (p.isBoss) {
-    if (bossWon) {
-      const beforeTitle = rankFor(chip.w).title;
-      chip.w += 1;
-      const afterTitle = rankFor(chip.w).title;
-      if (afterTitle !== beforeTitle) rankUp = afterTitle;
-    }
-  } else if (!p.isPractice && ranked) {
-    const beforeTitle = rankFor(chip.w).title;
-    if (net > 0) chip.w += 1;
-    else if (net < 0) chip.l += 1;
-    else chip.d += 1;
-    const afterTitle = rankFor(chip.w).title;
-    if (afterTitle !== beforeTitle) rankUp = afterTitle;
-  }
-
-  // Boss ledger: battle resolved, cooldown restarts from this round
-  const boss: BossState = { ...(save.boss || FRESH_SAVE.boss) };
-  if (p.isBoss) {
-    boss.pending = false;
-    boss.lastRound = roundNum;
-    if (bossWon) boss.wins += 1;
-    else boss.losses += 1;
-  }
-
-  // Daily streak, with milestone bonuses and honest break detection
-  const today = todayStr();
-  let dayStreak = save.dayStreak;
-  let streakBonus = 0;
-  let streakBroken = 0;
-  if (save.day !== today) {
-    if (save.day === yesterdayStr()) {
-      dayStreak = dayStreak + 1;
-      if (STREAK_BONUS[dayStreak]) streakBonus = STREAK_BONUS[dayStreak];
-    } else {
-      if (save.day !== null && save.dayStreak >= 3) streakBroken = save.dayStreak;
-      dayStreak = 1;
-    }
-  }
-
-  // Personal records (adaptive rounds only, so they can't be farmed).
-  // First-ever values seed silently; announcements only for beaten records.
-  const records: Records = { ...(save.records || FRESH_SAVE.records) };
-  const newRecords: string[] = [];
-  if (ranked) {
-    if (p.bestStreakRound > records.bestStreak) {
-      if (records.bestStreak >= 5) newRecords.push(`Best streak: ${p.bestStreakRound} (was ${records.bestStreak})`);
-      records.bestStreak = Math.max(records.bestStreak, p.bestStreakRound);
-    }
-    if (!p.isPractice && net > 0 && net > records.biggestWin) {
-      if (records.biggestWin > 0) newRecords.push(`Biggest win: +$${net} (was +$${records.biggestWin})`);
-      records.biggestWin = net;
-    }
-    if (misses === 0 && p.roundTotal >= 6) records.perfectRounds += 1;
-  }
-  if (dayStreak > records.bestDayStreak) records.bestDayStreak = dayStreak;
-
-  let bank = newBank;
-  let history = save.history || [];
-  if (p.isBoss) {
-    history = withHistory(history, {
-      d: today, type: "boss",
-      label: bossWon ? `BOSS BATTLE: beat Chip, ${misses} ${misses === 1 ? "miss" : "misses"}` : "BOSS BATTLE: Chip survives (free entry)",
-      net: pay.amount, bank,
-    });
-  } else if (p.isPractice) {
-    history = withHistory(history, { d: today, type: "practice", label: `Practice: ${p.firstTryCorrect}/${p.roundTotal} first try`, net: 0, bank });
-  } else {
-    history = withHistory(history, { d: today, type: "round", label: `Bet $${p.bet}, ${misses} ${misses === 1 ? "miss" : "misses"} (${pay.label})`, net, bank });
-  }
-  // Earned extras land after the round entry so the ledger reads in order
-  if (p.bonusWon) {
-    bank += BONUS_WORD_CASH;
-    history = withHistory(history, { d: today, type: "bonus", label: "Bonus word hit", net: BONUS_WORD_CASH, bank });
-  }
-  if (respectBonus > 0) {
-    bank += respectBonus;
-    history = withHistory(history, { d: today, type: "bonus", label: "Chip's respect bonus (2 hot rounds at max level)", net: respectBonus, bank });
-  }
-  if (streakBonus > 0) {
-    bank += streakBonus;
-    history = withHistory(history, { d: today, type: "bonus", label: `Day streak bonus (day ${dayStreak})`, net: streakBonus, bank });
-  }
-  // Never leave him on $0: the bailout floors a busted bank at $5. It is a
-  // floor only - assistance never lifts the bank above $10.
-  let bailedOut = false;
-  if (!p.isPractice && bank < 1) {
-    bank = BROKE_BAILOUT;
-    bailedOut = true;
-    history = withHistory(history, { d: today, type: "bailout", label: "Cheez Doodle fund bailout", net: BROKE_BAILOUT, bank });
-  }
-
-  const doodles = p.doodleDrop ? [...(save.doodles || []), p.doodleDrop] : (save.doodles || []);
-
-  const payout: Payout = { result: pay.label, amount: pay.amount, misses, net, betAmt: p.bet, prevBank: save.bank, newBank: bank };
-  const next: Save = { ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, coldStreak, day: today, dayStreak, history, records, chip, doodles, boss };
-  return { next, payout, bailedOut, leveledUp, leveledDown, rankUp, newRecords, streakBonus, streakBroken, respectBonus };
-}
-
-// Doodle-burst sparks for a correct answer: fixed fan-out so the animation
-// is identical every time (no Math.random in render).
 const SPARKS = [
   { c: "⭐", x: -70, y: -45, r: -20 },
   { c: "✨", x: 60, y: -60, r: 15 },
@@ -887,475 +73,7 @@ function potLine(p: { label: string; amount: number }) {
   }
 }
 
-// -- Doodle mascot: original character "Chip" --
-function Chip({ mood }: { mood: "happy" | "sad" | "neutral" }) {
-  const mouth =
-    mood === "happy" ? "M 38 62 Q 50 74 62 62" :
-    mood === "sad" ? "M 38 68 Q 50 58 62 68" :
-    "M 40 65 L 60 65";
-  return (
-    <svg viewBox="0 0 100 110" width="86" height="95" aria-hidden="true">
-      <path d="M 25 30 L 30 12 L 38 26 L 46 8 L 52 25 L 62 10 L 66 27 L 76 18 L 74 32"
-        fill="none" stroke="#1D2A44" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-      <ellipse cx="50" cy="52" rx="28" ry="30" fill="#FDFBF4" stroke="#1D2A44" strokeWidth="3" />
-      <circle cx="40" cy="46" r={mood === "happy" ? 3.5 : 3} fill="#1D2A44" />
-      <circle cx="60" cy="46" r={mood === "happy" ? 3.5 : 3} fill="#1D2A44" />
-      {mood === "sad" && (
-        <>
-          <path d="M 34 38 L 45 42" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
-          <path d="M 66 38 L 55 42" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
-        </>
-      )}
-      <path d="M 50 50 Q 54 56 49 58" fill="none" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
-      <path d={mouth} fill="none" stroke="#1D2A44" strokeWidth="3" strokeLinecap="round" />
-      <path d="M 36 82 Q 50 78 64 82 L 68 105 Q 50 100 32 105 Z"
-        fill="#FFE24A" stroke="#1D2A44" strokeWidth="3" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function MarkedWord({ word, danger }: { word: string; danger: string | null }) {
-  if (!danger) return <div className="bigword">{word}</div>;
-  const i = word.toLowerCase().indexOf(danger.toLowerCase());
-  if (i === -1) return <div className="bigword">{word}</div>;
-  return (
-    <div className="bigword">
-      {word.slice(0, i)}
-      <span className="mark">{word.slice(i, i + danger.length)}</span>
-      {word.slice(i + danger.length)}
-    </div>
-  );
-}
-
-function DiffGuess({ guess, answer }: { guess: string; answer: string }) {
-  // Alignment-aware: a dropped letter shows as a yellow gap at the right
-  // spot instead of turning the whole tail of the word red.
-  const ops = alignDiff(guess, answer);
-  return (
-    <div className="diffline" aria-label={`You wrote ${guess}`}>
-      {ops.map((op, i) => (
-        <span
-          key={i}
-          className={op.kind === "ok" ? "" : op.kind === "missing" ? "diffmiss" : "diffbad"}
-        >{op.ch}</span>
-      ))}
-    </div>
-  );
-}
-
-export default function SpellingShowdown() {
-  const [save, setSave] = useState<Save | null>(null); // persistent state, null while loading
-  const [storageOk, setStorageOk] = useState(true);
-  const [screen, setScreen] = useState<"start" | "play" | "done">("start");
-  const [bet, setBet] = useState(0);
-  const [isPractice, setIsPractice] = useState(false);
-  const [customText, setCustomText] = useState("");
-  const [showCustom, setShowCustom] = useState(false);
-  const [queue, setQueue] = useState<Entry[]>([]);
-  const [idx, setIdx] = useState(0);
-  const [input, setInput] = useState("");
-  const [phase, setPhase] = useState<"ask" | "right" | "wrong">("ask");
-  const [streak, setStreak] = useState(0);
-  const [bestStreak, setBestStreak] = useState(0);
-  const [firstTryCorrect, setFirstTryCorrect] = useState(0);
-  const [missedWords, setMissedWords] = useState<Entry[]>([]);
-  const [redo, setRedo] = useState<Entry[]>([]);
-  const [flash, setFlash] = useState("");
-  const [hintShown, setHintShown] = useState(false);
-  const [retype, setRetype] = useState("");
-  const [lastGuess, setLastGuess] = useState("");
-  const [roundTotal, setRoundTotal] = useState(ROUND_SIZE);
-  const [payout, setPayout] = useState<Payout | null>(null); // set when round finishes
-  const [confirmCashout, setConfirmCashout] = useState(false);
-  const [showLedger, setShowLedger] = useState(false);
-  const [bailoutMsg, setBailoutMsg] = useState("");
-  const [levelMsg, setLevelMsg] = useState("");
-  const [resumed, setResumed] = useState(false);
-  const [isCustomRound, setIsCustomRound] = useState(false);
-  const [isBossRound, setIsBossRound] = useState(false);
-  const [bossTeaser, setBossTeaser] = useState(false);
-  const [customError, setCustomError] = useState("");
-  const [customNote, setCustomNote] = useState("");
-  const [bonusWord, setBonusWord] = useState<string | null>(null);
-  const [bonusWon, setBonusWon] = useState(false);
-  const [extras, setExtras] = useState<{
-    rankUp: string | null;
-    newRecords: string[];
-    streakBonus: number;
-    streakBroken: number;
-    respectBonus: number;
-    leveledDown: number;
-    doodleDrop: string | null;
-  } | null>(null);
-  const [speechOk, setSpeechOk] = useState(true);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const retypeRef = useRef<HTMLInputElement>(null);
-  const savedThisRound = useRef(false);
-  const roundWordsRef = useRef<string[]>([]);
-
-  // -- Load persistent save on mount (localStorage; per browser/device) --
-  useEffect(() => {
-    let loaded: Save = { ...FRESH_SAVE };
-    let ok = true;
-    try {
-      const raw = localStorage.getItem(STORE_KEY);
-      if (raw) loaded = { ...FRESH_SAVE, ...JSON.parse(raw) };
-      else localStorage.setItem(STORE_KEY, JSON.stringify(loaded));
-    } catch {
-      ok = false;
-    }
-    setStorageOk(ok);
-    if (loaded.bank < 1) {
-      loaded.bank = BROKE_BAILOUT;
-      loaded.history = withHistory(loaded.history, { d: todayStr(), type: "bailout", label: "Cheez Doodle fund bailout", net: BROKE_BAILOUT, bank: BROKE_BAILOUT });
-      setBailoutMsg("You were broke, so Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
-    }
-
-    // Restore an unfinished round. Previously a reload or closed tab mid-round
-    // lost the round without scoring it and dealt a fresh question set.
-    try {
-      const rawRound = localStorage.getItem(ROUND_KEY);
-      const sn: RoundSnapshot | null = rawRound ? JSON.parse(rawRound) : null;
-      if (sn && Array.isArray(sn.queue) && sn.queue.length > 0) {
-        let q: Entry[] = sn.queue;
-        let i = Math.min(Math.max(sn.idx || 0, 0), q.length - 1);
-        let rd: Entry[] = Array.isArray(sn.redo) ? sn.redo : [];
-        let complete = false;
-        if (sn.answered) {
-          // The current word was already answered; advance the way next() would
-          if (i + 1 < q.length) i += 1;
-          else if (rd.length > 0) { q = shuffle(rd); rd = []; i = 0; }
-          else complete = true;
-        }
-        setBet(sn.bet || 0);
-        setIsPractice(!!sn.isPractice);
-        setIsCustomRound(!!sn.isCustom);
-        setIsBossRound(!!sn.isBoss);
-        setMissedWords(sn.missed || []);
-        setFirstTryCorrect(sn.firstTryCorrect || 0);
-        setBestStreak(sn.bestStreak || 0);
-        setRoundTotal(sn.roundTotal || q.length);
-        setBonusWord(sn.bonusWord || null);
-        setBonusWon(!!sn.bonusWon);
-        roundWordsRef.current = sn.roundWords || [];
-        if (complete) {
-          // Every word was answered but the round never got scored: settle it
-          // now so the bet and the word stats aren't lost.
-          const res = settleRound(loaded, {
-            isPractice: !!sn.isPractice,
-            isCustom: !!sn.isCustom,
-            isBoss: !!sn.isBoss,
-            bet: sn.bet || 0,
-            roundTotal: sn.roundTotal || q.length,
-            firstTryCorrect: sn.firstTryCorrect || 0,
-            roundWords: sn.roundWords || [],
-            missedWords: (sn.missed || []).map((m) => m.w),
-            bestStreakRound: sn.bestStreak || 0,
-            bonusWon: !!sn.bonusWon,
-            doodleDrop: null,
-          });
-          loaded = res.next;
-          if (res.leveledUp) setLevelMsg(`LEVEL UP. Two hot rounds in a row - Chip is moving you to level ${res.next.playerLevel} words.`);
-          if (res.bailedOut) setBailoutMsg("Busted to zero. Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
-          setExtras({
-            rankUp: res.rankUp,
-            newRecords: res.newRecords,
-            streakBonus: res.streakBonus,
-            streakBroken: res.streakBroken,
-            respectBonus: res.respectBonus,
-            leveledDown: res.leveledDown ? res.next.playerLevel : 0,
-            doodleDrop: null,
-          });
-          setPayout(res.payout);
-          savedThisRound.current = true;
-          try { localStorage.setItem(STORE_KEY, JSON.stringify(loaded)); } catch {}
-          localStorage.removeItem(ROUND_KEY);
-          setScreen("done");
-        } else {
-          setQueue(q);
-          setRedo(rd);
-          setIdx(i);
-          setStreak(sn.streak || 0);
-          setPhase("ask");
-          setHintShown(loaded.playerLevel === 1);
-          setResumed(true);
-          setScreen("play");
-        }
-      }
-    } catch {
-      try { localStorage.removeItem(ROUND_KEY); } catch {}
-    }
-    setSave(loaded);
-  }, []);
-
-  // Snapshot the in-progress round on every change so nothing is lost if the
-  // tab closes or reloads mid-round.
-  useEffect(() => {
-    if (screen !== "play" || queue.length === 0) return;
-    try {
-      const sn: RoundSnapshot = {
-        queue, idx, bet, isPractice, isCustom: isCustomRound, isBoss: isBossRound,
-        missed: missedWords, redo, firstTryCorrect, streak, bestStreak,
-        roundTotal, roundWords: roundWordsRef.current,
-        answered: phase !== "ask",
-        bonusWord, bonusWon,
-      };
-      localStorage.setItem(ROUND_KEY, JSON.stringify(sn));
-    } catch {}
-  }, [screen, queue, idx, phase, bet, isPractice, isCustomRound, isBossRound, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal, bonusWord, bonusWon]);
-
-  function persist(next: Save) {
-    setSave(next);
-    try { localStorage.setItem(STORE_KEY, JSON.stringify(next)); }
-    catch { setStorageOk(false); }
-  }
-
-  const speak = useCallback((entry: Entry, wordOnly = false) => {
-    if (typeof window === "undefined" || !window.speechSynthesis) { setSpeechOk(false); return; }
-    window.speechSynthesis.cancel();
-    const text = wordOnly ? entry.w : `${entry.w}. ... ${entry.s} ... ${entry.w}.`;
-    const u = new SpeechSynthesisUtterance(text);
-    u.rate = 0.85;
-    u.lang = "en-GB";
-    const voices = window.speechSynthesis.getVoices();
-    const gb = voices.find((v) => v.lang === "en-GB") ||
-      voices.find((v) => (v.lang || "").startsWith("en-NZ")) ||
-      voices.find((v) => (v.lang || "").startsWith("en-AU"));
-    if (gb) u.voice = gb;
-    window.speechSynthesis.speak(u);
-  }, []);
-
-  const current = queue[idx];
-
-  useEffect(() => {
-    if (screen === "play" && phase === "ask" && current) {
-      const t = setTimeout(() => speak(current), 350);
-      inputRef.current?.focus();
-      return () => clearTimeout(t);
-    }
-    if (screen === "play" && phase === "wrong") {
-      const t = setTimeout(() => retypeRef.current?.focus(), 300);
-      return () => clearTimeout(t);
-    }
-  }, [screen, phase, idx, current, speak]);
-
-  function startRound(mode: "adaptive" | "custom" | "boss", practice = false) {
-    if (!save) return;
-    const boss = mode === "boss";
-    if (!boss && !practice && (bet < 1 || bet > save.bank)) return;
-    if (practice || boss) setBet(0);
-    setIsPractice(practice && !boss);
-    setCustomError("");
-    setCustomNote("");
-    let round: Entry[];
-    if (mode === "custom") {
-      // Tolerant of how school lists actually arrive: numbered lines,
-      // bullets, tabs, spaces, commas - strip decoration, then split wide.
-      const words = [...new Set(
-        customText
-          .split(/\n+/)
-          .map((line) => line.replace(/^\s*(?:\d+[.):]?|[-*•·])\s*/, ""))
-          .join(" ")
-          .split(/[\s,;]+/)
-          .map((w) => w.trim().toLowerCase())
-          .filter((w) => /^[a-z''-]{2,}$/i.test(w))
-      )];
-      if (words.length === 0) {
-        setCustomError("Couldn't find any words in that. Paste them one per line, or separated by commas or spaces.");
-        return;
-      }
-      const mkCustom = (w: string): Entry => ({
-        w, l: 2, p: "your list",
-        s: HOMOPHONE_HINTS[w] || `Spell the word: ${w}.`,
-        h: HOMOPHONE_HINTS[w] || "From your own list.",
-        d: null, t: null,
-      });
-      // One round covers the whole list (no silent 8-word truncation)
-      round = shuffle(words.map(mkCustom)).slice(0, CUSTOM_ROUND_CAP);
-      if (words.length > CUSTOM_ROUND_CAP) {
-        setCustomNote(`Big list! Playing ${CUSTOM_ROUND_CAP} of your ${words.length} words this round.`);
-      }
-    } else if (boss) {
-      round = buildBossRound(save);
-      playSfx("boss", !!save.soundOn);
-    } else {
-      round = buildRound(save);
-    }
-    setIsCustomRound(mode === "custom");
-    setIsBossRound(boss);
-    setBossTeaser(false);
-    // Secret bonus word: adaptive betting rounds only, revealed on a first-try hit
-    setBonusWord(mode === "adaptive" && !practice ? pick(round).w : null);
-    setBonusWon(false);
-    setExtras(null);
-    savedThisRound.current = false;
-    roundWordsRef.current = round.map((e) => e.w);
-    setQueue(round);
-    setRoundTotal(round.length);
-    setIdx(0);
-    setStreak(0); setBestStreak(0); setFirstTryCorrect(0);
-    setMissedWords([]); setRedo([]);
-    setInput(""); setRetype(""); setLastGuess("");
-    setPayout(null);
-    setPhase("ask");
-    setHintShown(!boss && save.playerLevel === 1);
-    setBailoutMsg("");
-    setLevelMsg("");
-    setResumed(false);
-    setScreen("play");
-  }
-
-  function submit() {
-    if (!current || phase !== "ask" || !input.trim()) return;
-    const guess = input.trim().toLowerCase();
-    const answer = current.w.toLowerCase();
-    if (guess === answer) {
-      const wasMissed = missedWords.some((m) => m.w === current.w);
-      const hitBonus = !wasMissed && !bonusWon && bonusWord === current.w;
-      if (!wasMissed) setFirstTryCorrect((n) => n + 1);
-      if (hitBonus) setBonusWon(true);
-      const ns = streak + 1;
-      setStreak(ns);
-      setBestStreak((b) => Math.max(b, ns));
-      setFlash(pick(ns >= 3 ? PRAISE_HOT : PRAISE));
-      setPhase("right");
-      playSfx(hitBonus ? "bonus" : "correct", !!save?.soundOn);
-    } else {
-      setStreak(0);
-      setFlash(pick(ROASTS));
-      setLastGuess(guess);
-      setRetype("");
-      if (!missedWords.some((m) => m.w === current.w)) setMissedWords((m) => [...m, current]);
-      setRedo((r) => [...r, current]);
-      setPhase("wrong");
-      playSfx("wrong", !!save?.soundOn);
-    }
-  }
-
-  function finishRound() {
-    if (savedThisRound.current || !save) return;
-    savedThisRound.current = true;
-    // Doodle drops are decided here (random, win-gated, adaptive bets only)
-    // so settleRound stays a pure function.
-    const payPreview = isPractice || isBossRound ? { amount: 0 } : payoutFor(missedWords.length, roundTotal, bet);
-    const wonBet = !isPractice && !isCustomRound && !isBossRound && payPreview.amount - bet > 0;
-    const doodleDrop = wonBet && Math.random() < DOODLE_DROP_CHANCE ? pickDoodleDrop(save.doodles || []) : null;
-    const res = settleRound(save, {
-      isPractice,
-      isCustom: isCustomRound,
-      isBoss: isBossRound,
-      bet,
-      roundTotal,
-      firstTryCorrect,
-      roundWords: roundWordsRef.current,
-      missedWords: missedWords.map((m) => m.w),
-      bestStreakRound: bestStreak,
-      bonusWon,
-      doodleDrop,
-    });
-    if (res.leveledUp) setLevelMsg(`LEVEL UP. Two hot rounds in a row - Chip is moving you to level ${res.next.playerLevel} words.`);
-    if (res.bailedOut) setBailoutMsg("Busted to zero. Chip fronted you $5 from the Cheez Doodle fund. Don't tell Mrs. Godfrey.");
-    setExtras({
-      rankUp: res.rankUp,
-      newRecords: res.newRecords,
-      streakBonus: res.streakBonus,
-      streakBroken: res.streakBroken,
-      respectBonus: res.respectBonus,
-      leveledDown: res.leveledDown ? res.next.playerLevel : 0,
-      doodleDrop,
-    });
-    setPayout(res.payout);
-    const snd = !!save.soundOn;
-    if (isBossRound) playSfx(res.payout.result === "bosswin" ? "rankup" : "lose", snd);
-    else if (res.rankUp || res.leveledUp) playSfx("rankup", snd);
-    else if (res.newRecords.length > 0 || doodleDrop) playSfx("record", snd);
-    else if (!isPractice) playSfx(res.payout.net >= 0 ? "win" : "lose", snd);
-    try { localStorage.removeItem(ROUND_KEY); } catch {}
-    // Semi-frequent boss battles: after a normal adaptive round, once the
-    // cooldown has passed, Chip has a chance of slapping a challenge on the
-    // desk. It stays pending until accepted - a reason to come back.
-    let nextSave = res.next;
-    if (!isBossRound && !isCustomRound) {
-      const b: BossState = nextSave.boss || FRESH_SAVE.boss;
-      if (!b.pending && nextSave.rounds - b.lastRound >= BOSS_MIN_GAP && Math.random() < BOSS_CHANCE) {
-        nextSave = { ...nextSave, boss: { ...b, pending: true } };
-        setBossTeaser(true);
-        playSfx("boss", snd);
-      }
-    }
-    persist(nextSave);
-  }
-
-  function next() {
-    setInput("");
-    setHintShown(!isBossRound && save?.playerLevel === 1);
-    setRetype("");
-    setLastGuess("");
-    if (idx + 1 < queue.length) {
-      setIdx(idx + 1);
-      setPhase("ask");
-    } else if (redo.length > 0) {
-      setQueue(shuffle(redo));
-      setRedo([]);
-      setIdx(0);
-      setPhase("ask");
-    } else {
-      window.speechSynthesis?.cancel();
-      finishRound();
-      setScreen("done");
-    }
-  }
-
-  const retypeMatches = current ? retype.trim().toLowerCase() === current.w.toLowerCase() : false;
-
-  function handleKey(e: { key: string }) {
-    if (e.key === "Enter") {
-      if (phase === "ask") submit();
-      else if (phase === "right") next();
-      else if (phase === "wrong" && retypeMatches) next();
-    }
-  }
-
-  function cashOut() {
-    if (!save) return;
-    const record = { amount: save.bank, date: todayStr() };
-    const records: Records = { ...(save.records || FRESH_SAVE.records) };
-    let recordNote = "";
-    if (record.amount > records.bestCashout) {
-      if (records.bestCashout > 0) recordNote = ` ⭐ NEW RECORD payday (old best: $${records.bestCashout}).`;
-      records.bestCashout = record.amount;
-    }
-    persist({
-      ...save,
-      bank: STARTING_BANK,
-      records,
-      cashouts: [...save.cashouts, record],
-      history: withHistory(save.history, { d: record.date, type: "cashout", label: `CASHED OUT $${record.amount} - reset to $${STARTING_BANK}`, net: -record.amount + STARTING_BANK, bank: STARTING_BANK }),
-    });
-    setConfirmCashout(false);
-    setBailoutMsg(`CASHED OUT $${record.amount}. Go collect from Dad.${recordNote} Bankroll reset to $${STARTING_BANK}.`);
-    playSfx(recordNote ? "record" : "win", !!save.soundOn);
-    setBet(0);
-  }
-
-  const isRedoLap = current && queue.length < roundTotal;
-  // What the round pays if he finishes at the current miss count
-  const potential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
-  const chipRec: ChipRecord = save?.chip || { w: 0, l: 0, d: 0 };
-  const rank = rankFor(chipRec.w);
-  const recs: Records = save?.records || FRESH_SAVE.records;
-  const ownedDoodles = save?.doodles || [];
-  const masteredCount = save ? BANK.filter((e) => (save.stats[e.w]?.cs ?? 0) >= 3).length : 0;
-  const weak = save ? weakestPatterns(save.stats).slice(0, 2) : [];
-  const struggles = save ? strugglingWords(save.stats).slice(0, 3) : [];
-
-  if (!save) {
-    return <div style={{ fontFamily: "sans-serif", padding: 40, textAlign: "center" }}>Opening Chip&apos;s ledger...</div>;
-  }
-
-  return (
-    <div className="wrap">
-      <style>{`
+const PAGE_CSS = `
         @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@400;700;900&display=swap');
         .wrap {
           min-height: 100vh;
@@ -1368,7 +86,7 @@ export default function SpellingShowdown() {
         }
         .wrap::before {
           content: ''; position: fixed; top: 0; bottom: 0; left: 44px;
-          width: 2px; background: #E8A5A5; z-index: 0;
+          width: 2px; background: var(--spell-accent, #E8A5A5); z-index: 0;
         }
         .page { width: 100%; max-width: 620px; position: relative; z-index: 1; }
         .hand { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; }
@@ -1478,31 +196,658 @@ export default function SpellingShowdown() {
         .coach { background: #EEF3FF; border: 3px solid #1D2A44; border-radius: 10px; padding: 14px 16px; margin-top: 14px; }
         .savewarn { font-size: 13px; color: #D63B2F; font-weight: 700; }
         .toggle { background: none; border: none; font-family: 'Nunito'; font-weight: 900; font-size: 14px; color: #2B5FD9; cursor: pointer; text-decoration: underline; padding: 0; }
-      `}</style>
+        .pickgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+        @media (max-width: 460px) { .pickgrid { grid-template-columns: 1fr; } }
+        .pickcard {
+          background: #fff; border: 3px solid #1D2A44; border-radius: 12px;
+          box-shadow: 4px 4px 0 #1D2A44; padding: 22px 16px; cursor: pointer;
+          display: flex; flex-direction: column; align-items: center; gap: 4px;
+          font-family: 'Nunito', system-ui, sans-serif; color: #1D2A44;
+          transition: transform 0.08s ease, box-shadow 0.08s ease;
+        }
+        .pickcard:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #1D2A44; }
+        .pickcard:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 #1D2A44; }
+        .pickcard:focus-visible { outline: 3px dashed #2B5FD9; outline-offset: 3px; }
+        .pickicon { font-size: 46px; line-height: 1; }
+        .pickname { font-size: 30px; }
+        .picksub { font-size: 13px; font-weight: 700; color: #4A4A45; }
+        .picklast { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; background: #FFE24A; border: 2px solid #1D2A44; border-radius: 20px; padding: 1px 10px; margin-top: 4px; }
+        .whoami { font-size: 13px; font-weight: 900; color: #4A4A45; }
+`;
+
+type Mood = "happy" | "sad" | "neutral";
+
+// -- Millie's host: Princess Donut, a doodle cat who believes she is royalty --
+function DonutCat({ mood }: { mood: Mood }) {
+  const mouth =
+    mood === "happy" ? "M 42 66 Q 50 74 58 66" :
+    mood === "sad" ? "M 42 70 Q 50 62 58 70" :
+    "M 44 68 L 56 68";
+  return (
+    <svg viewBox="0 0 100 110" width="86" height="95" aria-hidden="true">
+      {/* crown, because obviously */}
+      <path d="M 33 20 L 36 6 L 44 15 L 50 4 L 56 15 L 64 6 L 67 20 Z"
+        fill="#FFE24A" stroke="#1D2A44" strokeWidth="2.5" strokeLinejoin="round" />
+      {/* ears */}
+      <path d="M 26 44 L 24 22 L 42 32 Z" fill="#FDFBF4" stroke="#1D2A44" strokeWidth="3" strokeLinejoin="round" />
+      <path d="M 74 44 L 76 22 L 58 32 Z" fill="#FDFBF4" stroke="#1D2A44" strokeWidth="3" strokeLinejoin="round" />
+      <path d="M 29 40 L 28 29 L 38 34 Z" fill="#F3C6DC" />
+      <path d="M 71 40 L 72 29 L 62 34 Z" fill="#F3C6DC" />
+      <ellipse cx="50" cy="54" rx="29" ry="26" fill="#FDFBF4" stroke="#1D2A44" strokeWidth="3" />
+      {/* eyes: pleased slits when happy, wide when not */}
+      {mood === "happy" ? (
+        <>
+          <path d="M 34 50 Q 39 45 44 50" fill="none" stroke="#1D2A44" strokeWidth="3" strokeLinecap="round" />
+          <path d="M 56 50 Q 61 45 66 50" fill="none" stroke="#1D2A44" strokeWidth="3" strokeLinecap="round" />
+        </>
+      ) : (
+        <>
+          <circle cx="39" cy="49" r="4" fill="#1D2A44" />
+          <circle cx="61" cy="49" r="4" fill="#1D2A44" />
+        </>
+      )}
+      {mood === "sad" && (
+        <>
+          <path d="M 32 41 L 44 45" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M 68 41 L 56 45" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
+        </>
+      )}
+      {/* nose and mouth */}
+      <path d="M 47 60 L 53 60 L 50 64 Z" fill="#F3C6DC" stroke="#1D2A44" strokeWidth="1.5" />
+      <path d={mouth} fill="none" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
+      {/* whiskers */}
+      <path d="M 20 56 L 36 58 M 20 63 L 36 62" stroke="#1D2A44" strokeWidth="2" strokeLinecap="round" />
+      <path d="M 80 56 L 64 58 M 80 63 L 64 62" stroke="#1D2A44" strokeWidth="2" strokeLinecap="round" />
+      {/* fluffy chest */}
+      <path d="M 36 79 Q 50 76 64 79 Q 60 96 50 104 Q 40 96 36 79 Z"
+        fill="#F3C6DC" stroke="#1D2A44" strokeWidth="3" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+// -- Doodle mascot: original character "Chip" --
+function Chip({ mood, variant = "chip" }: { mood: Mood; variant?: "chip" | "cat" }) {
+  if (variant === "cat") return <DonutCat mood={mood} />;
+  const mouth =
+    mood === "happy" ? "M 38 62 Q 50 74 62 62" :
+    mood === "sad" ? "M 38 68 Q 50 58 62 68" :
+    "M 40 65 L 60 65";
+  return (
+    <svg viewBox="0 0 100 110" width="86" height="95" aria-hidden="true">
+      <path d="M 25 30 L 30 12 L 38 26 L 46 8 L 52 25 L 62 10 L 66 27 L 76 18 L 74 32"
+        fill="none" stroke="#1D2A44" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <ellipse cx="50" cy="52" rx="28" ry="30" fill="#FDFBF4" stroke="#1D2A44" strokeWidth="3" />
+      <circle cx="40" cy="46" r={mood === "happy" ? 3.5 : 3} fill="#1D2A44" />
+      <circle cx="60" cy="46" r={mood === "happy" ? 3.5 : 3} fill="#1D2A44" />
+      {mood === "sad" && (
+        <>
+          <path d="M 34 38 L 45 42" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M 66 38 L 55 42" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
+        </>
+      )}
+      <path d="M 50 50 Q 54 56 49 58" fill="none" stroke="#1D2A44" strokeWidth="2.5" strokeLinecap="round" />
+      <path d={mouth} fill="none" stroke="#1D2A44" strokeWidth="3" strokeLinecap="round" />
+      <path d="M 36 82 Q 50 78 64 82 L 68 105 Q 50 100 32 105 Z"
+        fill="#FFE24A" stroke="#1D2A44" strokeWidth="3" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function MarkedWord({ word, danger }: { word: string; danger: string | null }) {
+  if (!danger) return <div className="bigword">{word}</div>;
+  const i = word.toLowerCase().indexOf(danger.toLowerCase());
+  if (i === -1) return <div className="bigword">{word}</div>;
+  return (
+    <div className="bigword">
+      {word.slice(0, i)}
+      <span className="mark">{word.slice(i, i + danger.length)}</span>
+      {word.slice(i + danger.length)}
+    </div>
+  );
+}
+
+function DiffGuess({ guess, answer }: { guess: string; answer: string }) {
+  // Alignment-aware: a dropped letter shows as a yellow gap at the right
+  // spot instead of turning the whole tail of the word red.
+  const ops = alignDiff(guess, answer);
+  return (
+    <div className="diffline" aria-label={`You wrote ${guess}`}>
+      {ops.map((op, i) => (
+        <span
+          key={i}
+          className={op.kind === "ok" ? "" : op.kind === "missing" ? "diffmiss" : "diffbad"}
+        >{op.ch}</span>
+      ))}
+    </div>
+  );
+}
+
+export default function SpellingShowdown() {
+  // Who is playing. Null shows the player picker. Each player has their own
+  // save key, so bankrolls, ledgers, ranks and word stats never mix.
+  const [profileId, setProfileId] = useState<ProfileId | null>(null);
+  const [lastPlayer, setLastPlayer] = useState<ProfileId | null>(null);
+  const [save, setSave] = useState<Save | null>(null); // persistent state, null while loading
+  const [storageOk, setStorageOk] = useState(true);
+  const [screen, setScreen] = useState<"start" | "play" | "done">("start");
+  const [bet, setBet] = useState(0);
+  const [isPractice, setIsPractice] = useState(false);
+  const [customText, setCustomText] = useState("");
+  const [showCustom, setShowCustom] = useState(false);
+  const [queue, setQueue] = useState<Entry[]>([]);
+  const [idx, setIdx] = useState(0);
+  const [input, setInput] = useState("");
+  const [phase, setPhase] = useState<"ask" | "right" | "wrong">("ask");
+  const [streak, setStreak] = useState(0);
+  const [bestStreak, setBestStreak] = useState(0);
+  const [firstTryCorrect, setFirstTryCorrect] = useState(0);
+  const [missedWords, setMissedWords] = useState<Entry[]>([]);
+  const [redo, setRedo] = useState<Entry[]>([]);
+  const [flash, setFlash] = useState("");
+  const [hintShown, setHintShown] = useState(false);
+  const [retype, setRetype] = useState("");
+  const [lastGuess, setLastGuess] = useState("");
+  const [roundTotal, setRoundTotal] = useState(ROUND_SIZE);
+  const [payout, setPayout] = useState<Payout | null>(null); // set when round finishes
+  const [confirmCashout, setConfirmCashout] = useState(false);
+  const [showLedger, setShowLedger] = useState(false);
+  const [bailoutMsg, setBailoutMsg] = useState("");
+  const [levelMsg, setLevelMsg] = useState("");
+  const [resumed, setResumed] = useState(false);
+  const [isCustomRound, setIsCustomRound] = useState(false);
+  const [isBossRound, setIsBossRound] = useState(false);
+  const [bossTeaser, setBossTeaser] = useState(false);
+  const [customError, setCustomError] = useState("");
+  const [customNote, setCustomNote] = useState("");
+  const [bonusWord, setBonusWord] = useState<string | null>(null);
+  const [bonusWon, setBonusWon] = useState(false);
+  const [extras, setExtras] = useState<{
+    rankUp: string | null;
+    newRecords: string[];
+    streakBonus: number;
+    streakBroken: number;
+    respectBonus: number;
+    leveledDown: number;
+    doodleDrop: string | null;
+  } | null>(null);
+  const [speechOk, setSpeechOk] = useState(true);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const retypeRef = useRef<HTMLInputElement>(null);
+  const savedThisRound = useRef(false);
+  const roundWordsRef = useRef<string[]>([]);
+
+  // The active player's theme and storage keys. Falls back to Hunter's theme
+  // while the picker is open so the shared render paths always have copy.
+  const theme: Theme = THEMES[profileId ?? "hunter"];
+  const keys = {
+    store: storeKey(profileId ?? "hunter"),
+    round: roundKey(profileId ?? "hunter"),
+  };
+
+  // -- One-time setup: remember the last player, and adopt the pre-profiles
+  // save as Hunter's so his bankroll, ledger, rank and word stats carry over.
+  useEffect(() => {
+    try {
+      const legacy = localStorage.getItem(LEGACY_STORE_KEY);
+      if (legacy && !localStorage.getItem(storeKey("hunter"))) {
+        localStorage.setItem(storeKey("hunter"), legacy);
+        const legacyRound = localStorage.getItem(LEGACY_ROUND_KEY);
+        if (legacyRound && !localStorage.getItem(roundKey("hunter"))) {
+          localStorage.setItem(roundKey("hunter"), legacyRound);
+        }
+      }
+      const last = localStorage.getItem(PROFILE_KEY);
+      if (last === "hunter" || last === "millie") setLastPlayer(last);
+    } catch { /* storage unavailable: the picker still works, nothing persists */ }
+  }, []);
+
+  function choosePlayer(id: ProfileId) {
+    // Clear any in-flight round state from the previous player
+    setScreen("start");
+    setSave(null);
+    setBet(0);
+    setQueue([]);
+    setIdx(0);
+    setPayout(null);
+    setExtras(null);
+    setBailoutMsg("");
+    setLevelMsg("");
+    setResumed(false);
+    setBonusWord(null);
+    setBonusWon(false);
+    setCustomText("");
+    setShowCustom(false);
+    setConfirmCashout(false);
+    savedThisRound.current = false;
+    try { localStorage.setItem(PROFILE_KEY, id); } catch {}
+    setLastPlayer(id);
+    setProfileId(id);
+  }
+
+  // -- Load the chosen player's save (localStorage; per browser/device) --
+  useEffect(() => {
+    if (!profileId) return;
+    const keys = { store: storeKey(profileId), round: roundKey(profileId) };
+    let loaded: Save = { ...FRESH_SAVE };
+    let ok = true;
+    try {
+      const raw = localStorage.getItem(keys.store);
+      if (raw) loaded = { ...FRESH_SAVE, ...JSON.parse(raw) };
+      else localStorage.setItem(keys.store, JSON.stringify(loaded));
+    } catch {
+      ok = false;
+    }
+    setStorageOk(ok);
+    if (loaded.bank < 1) {
+      loaded.bank = BROKE_BAILOUT;
+      loaded.history = withHistory(loaded.history, { d: todayStr(), type: "bailout", label: `${theme.bailoutFund} bailout`, net: BROKE_BAILOUT, bank: BROKE_BAILOUT });
+      setBailoutMsg(`You were broke, so ${theme.hostFull} fronted you $${BROKE_BAILOUT} from the ${theme.bailoutFund}.`);
+    }
+
+    // Restore an unfinished round. Previously a reload or closed tab mid-round
+    // lost the round without scoring it and dealt a fresh question set.
+    try {
+      const rawRound = localStorage.getItem(keys.round);
+      const sn: RoundSnapshot | null = rawRound ? JSON.parse(rawRound) : null;
+      if (sn && Array.isArray(sn.queue) && sn.queue.length > 0) {
+        let q: Entry[] = sn.queue;
+        let i = Math.min(Math.max(sn.idx || 0, 0), q.length - 1);
+        let rd: Entry[] = Array.isArray(sn.redo) ? sn.redo : [];
+        let complete = false;
+        if (sn.answered) {
+          // The current word was already answered; advance the way next() would
+          if (i + 1 < q.length) i += 1;
+          else if (rd.length > 0) { q = shuffle(rd); rd = []; i = 0; }
+          else complete = true;
+        }
+        setBet(sn.bet || 0);
+        setIsPractice(!!sn.isPractice);
+        setIsCustomRound(!!sn.isCustom);
+        setIsBossRound(!!sn.isBoss);
+        setMissedWords(sn.missed || []);
+        setFirstTryCorrect(sn.firstTryCorrect || 0);
+        setBestStreak(sn.bestStreak || 0);
+        setRoundTotal(sn.roundTotal || q.length);
+        setBonusWord(sn.bonusWord || null);
+        setBonusWon(!!sn.bonusWon);
+        roundWordsRef.current = sn.roundWords || [];
+        if (complete) {
+          // Every word was answered but the round never got scored: settle it
+          // now so the bet and the word stats aren't lost.
+          const res = settleRound(loaded, {
+            isPractice: !!sn.isPractice,
+            isCustom: !!sn.isCustom,
+            isBoss: !!sn.isBoss,
+            bet: sn.bet || 0,
+            roundTotal: sn.roundTotal || q.length,
+            firstTryCorrect: sn.firstTryCorrect || 0,
+            roundWords: sn.roundWords || [],
+            missedWords: (sn.missed || []).map((m) => m.w),
+            ranks: theme.ranks,
+            bestStreakRound: sn.bestStreak || 0,
+            bonusWon: !!sn.bonusWon,
+            doodleDrop: null,
+          });
+          loaded = res.next;
+          if (res.leveledUp) setLevelMsg(`LEVEL UP. Two hot rounds in a row - ${theme.hostFull} is moving you to level ${res.next.playerLevel} words.`);
+          if (res.bailedOut) setBailoutMsg(`Busted to zero. ${theme.hostFull} fronted you $${BROKE_BAILOUT} from the ${theme.bailoutFund}.`);
+          setExtras({
+            rankUp: res.rankUp,
+            newRecords: res.newRecords,
+            streakBonus: res.streakBonus,
+            streakBroken: res.streakBroken,
+            respectBonus: res.respectBonus,
+            leveledDown: res.leveledDown ? res.next.playerLevel : 0,
+            doodleDrop: null,
+          });
+          setPayout(res.payout);
+          savedThisRound.current = true;
+          try { localStorage.setItem(keys.store, JSON.stringify(loaded)); } catch {}
+          localStorage.removeItem(keys.round);
+          setScreen("done");
+        } else {
+          setQueue(q);
+          setRedo(rd);
+          setIdx(i);
+          setStreak(sn.streak || 0);
+          setPhase("ask");
+          setHintShown(loaded.playerLevel === 1);
+          setResumed(true);
+          setScreen("play");
+        }
+      }
+    } catch {
+      try { localStorage.removeItem(keys.round); } catch {}
+    }
+    setSave(loaded);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profileId]);
+
+  // Snapshot the in-progress round on every change so nothing is lost if the
+  // tab closes or reloads mid-round.
+  useEffect(() => {
+    if (screen !== "play" || queue.length === 0) return;
+    try {
+      const sn: RoundSnapshot = {
+        queue, idx, bet, isPractice, isCustom: isCustomRound, isBoss: isBossRound,
+        missed: missedWords, redo, firstTryCorrect, streak, bestStreak,
+        roundTotal, roundWords: roundWordsRef.current,
+        answered: phase !== "ask",
+        bonusWord, bonusWon,
+      };
+      localStorage.setItem(keys.round, JSON.stringify(sn));
+    } catch {}
+  }, [screen, queue, idx, phase, bet, isPractice, isCustomRound, isBossRound, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal, bonusWord, bonusWon]);
+
+  function persist(next: Save) {
+    setSave(next);
+    try { localStorage.setItem(keys.store, JSON.stringify(next)); }
+    catch { setStorageOk(false); }
+  }
+
+  const speak = useCallback((entry: Entry, wordOnly = false) => {
+    if (typeof window === "undefined" || !window.speechSynthesis) { setSpeechOk(false); return; }
+    window.speechSynthesis.cancel();
+    const text = wordOnly ? entry.w : `${entry.w}. ... ${entry.s} ... ${entry.w}.`;
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 0.85;
+    u.lang = "en-GB";
+    const voices = window.speechSynthesis.getVoices();
+    const gb = voices.find((v) => v.lang === "en-GB") ||
+      voices.find((v) => (v.lang || "").startsWith("en-NZ")) ||
+      voices.find((v) => (v.lang || "").startsWith("en-AU"));
+    if (gb) u.voice = gb;
+    window.speechSynthesis.speak(u);
+  }, []);
+
+  const current = queue[idx];
+
+  useEffect(() => {
+    if (screen === "play" && phase === "ask" && current) {
+      const t = setTimeout(() => speak(current), 350);
+      inputRef.current?.focus();
+      return () => clearTimeout(t);
+    }
+    if (screen === "play" && phase === "wrong") {
+      const t = setTimeout(() => retypeRef.current?.focus(), 300);
+      return () => clearTimeout(t);
+    }
+  }, [screen, phase, idx, current, speak]);
+
+  function startRound(mode: "adaptive" | "custom" | "boss", practice = false) {
+    if (!save) return;
+    const boss = mode === "boss";
+    if (!boss && !practice && (bet < 1 || bet > save.bank)) return;
+    if (practice || boss) setBet(0);
+    setIsPractice(practice && !boss);
+    setCustomError("");
+    setCustomNote("");
+    let round: Entry[];
+    if (mode === "custom") {
+      // Tolerant of how school lists actually arrive: numbered lines,
+      // bullets, tabs, spaces, commas - strip decoration, then split wide.
+      const words = [...new Set(
+        customText
+          .split(/\n+/)
+          .map((line) => line.replace(/^\s*(?:\d+[.):]?|[-*•·])\s*/, ""))
+          .join(" ")
+          .split(/[\s,;]+/)
+          .map((w) => w.trim().toLowerCase())
+          .filter((w) => /^[a-z''-]{2,}$/i.test(w))
+      )];
+      if (words.length === 0) {
+        setCustomError("Couldn't find any words in that. Paste them one per line, or separated by commas or spaces.");
+        return;
+      }
+      const mkCustom = (w: string): Entry => ({
+        w, l: 2, p: "your list",
+        s: HOMOPHONE_HINTS[w] || `Spell the word: ${w}.`,
+        h: HOMOPHONE_HINTS[w] || "From your own list.",
+        d: null, t: null,
+      });
+      // One round covers the whole list (no silent 8-word truncation)
+      round = shuffle(words.map(mkCustom)).slice(0, CUSTOM_ROUND_CAP);
+      if (words.length > CUSTOM_ROUND_CAP) {
+        setCustomNote(`Big list! Playing ${CUSTOM_ROUND_CAP} of your ${words.length} words this round.`);
+      }
+    } else if (boss) {
+      round = buildBossRound(save, theme.bank);
+      playSfx("boss", !!save.soundOn);
+    } else {
+      round = buildRound(save, theme.bank);
+    }
+    setIsCustomRound(mode === "custom");
+    setIsBossRound(boss);
+    setBossTeaser(false);
+    // Secret bonus word: adaptive betting rounds only, revealed on a first-try hit
+    setBonusWord(mode === "adaptive" && !practice ? pick(round).w : null);
+    setBonusWon(false);
+    setExtras(null);
+    savedThisRound.current = false;
+    roundWordsRef.current = round.map((e) => e.w);
+    setQueue(round);
+    setRoundTotal(round.length);
+    setIdx(0);
+    setStreak(0); setBestStreak(0); setFirstTryCorrect(0);
+    setMissedWords([]); setRedo([]);
+    setInput(""); setRetype(""); setLastGuess("");
+    setPayout(null);
+    setPhase("ask");
+    setHintShown(!boss && save.playerLevel === 1);
+    setBailoutMsg("");
+    setLevelMsg("");
+    setResumed(false);
+    setScreen("play");
+  }
+
+  function submit() {
+    if (!current || phase !== "ask" || !input.trim()) return;
+    const guess = input.trim().toLowerCase();
+    const answer = current.w.toLowerCase();
+    if (guess === answer) {
+      const wasMissed = missedWords.some((m) => m.w === current.w);
+      const hitBonus = !wasMissed && !bonusWon && bonusWord === current.w;
+      if (!wasMissed) setFirstTryCorrect((n) => n + 1);
+      if (hitBonus) setBonusWon(true);
+      const ns = streak + 1;
+      setStreak(ns);
+      setBestStreak((b) => Math.max(b, ns));
+      setFlash(pick(ns >= 3 ? theme.praiseHot : theme.praise));
+      setPhase("right");
+      playSfx(hitBonus ? "bonus" : "correct", !!save?.soundOn);
+    } else {
+      setStreak(0);
+      setFlash(pick(theme.roasts));
+      setLastGuess(guess);
+      setRetype("");
+      if (!missedWords.some((m) => m.w === current.w)) setMissedWords((m) => [...m, current]);
+      setRedo((r) => [...r, current]);
+      setPhase("wrong");
+      playSfx("wrong", !!save?.soundOn);
+    }
+  }
+
+  function finishRound() {
+    if (savedThisRound.current || !save) return;
+    savedThisRound.current = true;
+    // Doodle drops are decided here (random, win-gated, adaptive bets only)
+    // so settleRound stays a pure function.
+    const payPreview = isPractice || isBossRound ? { amount: 0 } : payoutFor(missedWords.length, roundTotal, bet);
+    const wonBet = !isPractice && !isCustomRound && !isBossRound && payPreview.amount - bet > 0;
+    const doodleDrop = wonBet && Math.random() < DOODLE_DROP_CHANCE ? pickDoodleDrop(save.doodles || [], theme.doodles) : null;
+    const res = settleRound(save, {
+      isPractice,
+      isCustom: isCustomRound,
+      isBoss: isBossRound,
+      bet,
+      roundTotal,
+      firstTryCorrect,
+      roundWords: roundWordsRef.current,
+      missedWords: missedWords.map((m) => m.w),
+      ranks: theme.ranks,
+      bestStreakRound: bestStreak,
+      bonusWon,
+      doodleDrop,
+    });
+    if (res.leveledUp) setLevelMsg(`LEVEL UP. Two hot rounds in a row - ${theme.hostFull} is moving you to level ${res.next.playerLevel} words.`);
+    if (res.bailedOut) setBailoutMsg(`Busted to zero. ${theme.hostFull} fronted you $${BROKE_BAILOUT} from the ${theme.bailoutFund}.`);
+    setExtras({
+      rankUp: res.rankUp,
+      newRecords: res.newRecords,
+      streakBonus: res.streakBonus,
+      streakBroken: res.streakBroken,
+      respectBonus: res.respectBonus,
+      leveledDown: res.leveledDown ? res.next.playerLevel : 0,
+      doodleDrop,
+    });
+    setPayout(res.payout);
+    const snd = !!save.soundOn;
+    if (isBossRound) playSfx(res.payout.result === "bosswin" ? "rankup" : "lose", snd);
+    else if (res.rankUp || res.leveledUp) playSfx("rankup", snd);
+    else if (res.newRecords.length > 0 || doodleDrop) playSfx("record", snd);
+    else if (!isPractice) playSfx(res.payout.net >= 0 ? "win" : "lose", snd);
+    try { localStorage.removeItem(keys.round); } catch {}
+    // Semi-frequent boss battles: after a normal adaptive round, once the
+    // cooldown has passed, the host has a chance of slapping a challenge on the
+    // desk. It stays pending until accepted - a reason to come back.
+    let nextSave = res.next;
+    if (!isBossRound && !isCustomRound) {
+      const b: BossState = nextSave.boss || FRESH_SAVE.boss;
+      if (!b.pending && nextSave.rounds - b.lastRound >= BOSS_MIN_GAP && Math.random() < BOSS_CHANCE) {
+        nextSave = { ...nextSave, boss: { ...b, pending: true } };
+        setBossTeaser(true);
+        playSfx("boss", snd);
+      }
+    }
+    persist(nextSave);
+  }
+
+  function next() {
+    setInput("");
+    setHintShown(!isBossRound && save?.playerLevel === 1);
+    setRetype("");
+    setLastGuess("");
+    if (idx + 1 < queue.length) {
+      setIdx(idx + 1);
+      setPhase("ask");
+    } else if (redo.length > 0) {
+      setQueue(shuffle(redo));
+      setRedo([]);
+      setIdx(0);
+      setPhase("ask");
+    } else {
+      window.speechSynthesis?.cancel();
+      finishRound();
+      setScreen("done");
+    }
+  }
+
+  const retypeMatches = current ? retype.trim().toLowerCase() === current.w.toLowerCase() : false;
+
+  function handleKey(e: { key: string }) {
+    if (e.key === "Enter") {
+      if (phase === "ask") submit();
+      else if (phase === "right") next();
+      else if (phase === "wrong" && retypeMatches) next();
+    }
+  }
+
+  function cashOut() {
+    if (!save) return;
+    const record = { amount: save.bank, date: todayStr() };
+    const records: Records = { ...(save.records || FRESH_SAVE.records) };
+    let recordNote = "";
+    if (record.amount > records.bestCashout) {
+      if (records.bestCashout > 0) recordNote = ` ⭐ NEW RECORD payday (old best: $${records.bestCashout}).`;
+      records.bestCashout = record.amount;
+    }
+    persist({
+      ...save,
+      bank: STARTING_BANK,
+      records,
+      cashouts: [...save.cashouts, record],
+      history: withHistory(save.history, { d: record.date, type: "cashout", label: `CASHED OUT $${record.amount} - reset to $${STARTING_BANK}`, net: -record.amount + STARTING_BANK, bank: STARTING_BANK }),
+    });
+    setConfirmCashout(false);
+    setBailoutMsg(`CASHED OUT $${record.amount}. Go collect from Dad.${recordNote} Bankroll reset to $${STARTING_BANK}.`);
+    playSfx(recordNote ? "record" : "win", !!save.soundOn);
+    setBet(0);
+  }
+
+  const isRedoLap = current && queue.length < roundTotal;
+  // What the round pays if he finishes at the current miss count
+  const potential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
+  const chipRec: ChipRecord = save?.chip || { w: 0, l: 0, d: 0 };
+  const rank = rankFor(chipRec.w, theme.ranks);
+  const recs: Records = save?.records || FRESH_SAVE.records;
+  const ownedDoodles = save?.doodles || [];
+  const masteredCount = save ? theme.bank.filter((e) => (save.stats[e.w]?.cs ?? 0) >= 3).length : 0;
+  const weak = save ? weakestPatterns(save.stats, theme.bank).slice(0, 2) : [];
+  const struggles = save ? strugglingWords(save.stats, theme.bank).slice(0, 3) : [];
+
+  // -- Player picker: shown on load so nobody plays on the wrong ledger --
+  if (!profileId) {
+    return (
+      <div className="wrap">
+        <style>{PAGE_CSS}</style>
+        <div className="page">
+          <h1 className="hand">Spelling Showdown</h1>
+          <p className="sub">Two players. Two bankrolls. Who is spelling today?</p>
+          <div className="pickgrid">
+            {PROFILES.map((p) => (
+              <button key={p.id} className="pickcard" onClick={() => choosePlayer(p.id)}>
+                <span className="pickicon" aria-hidden="true">{p.playerIcon}</span>
+                <span className="pickname hand">{p.playerName}</span>
+                <span className="picksub">vs {p.hostFull}</span>
+                {lastPlayer === p.id && <span className="picklast">played last</span>}
+              </button>
+            ))}
+          </div>
+          <p className="payline" style={{ marginTop: 14, fontWeight: 900 }}>
+            Everyone keeps their own bankroll, ledger, rank and words. Nothing is shared, so no arguing.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!save) {
+    return <div style={{ fontFamily: "sans-serif", padding: 40, textAlign: "center" }}>Opening the ledger...</div>;
+  }
+
+  return (
+    <div className="wrap" style={{ "--spell-accent": theme.accent } as React.CSSProperties}>
+      <style>{PAGE_CSS}</style>
 
       <div className="page">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
           <h1 className="hand">Spelling Showdown</h1>
-          <button className="toggle" style={{ marginTop: 10, whiteSpace: "nowrap" }} onClick={() => persist({ ...save, soundOn: !save.soundOn })}>
-            {save.soundOn ? "🔊 sound on" : "🔇 sound off"}
-          </button>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2, marginTop: 8 }}>
+            <span className="whoami">{theme.playerIcon} {theme.playerName}</span>
+            <button className="toggle" style={{ whiteSpace: "nowrap" }} onClick={() => persist({ ...save, soundOn: !save.soundOn })}>
+              {save.soundOn ? "🔊 sound on" : "🔇 sound off"}
+            </button>
+            <button className="toggle" style={{ whiteSpace: "nowrap" }} onClick={() => setProfileId(null)}>
+              switch player
+            </button>
+          </div>
         </div>
-        <p className="sub">Chip says the word. You spell it. Real(ish) money on the line.</p>
+        <p className="sub">{theme.tagline}</p>
 
         {screen === "start" && (
           <>
             {save.boss?.pending && (
               <div className="card" style={{ borderColor: "#D63B2F", boxShadow: "4px 4px 0 #D63B2F" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ BOSS BATTLE</span>
+                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ {theme.bossLabel}</span>
                   <span className="tag">FREE ENTRY · WIN ${BOSS_PRIZE}</span>
                 </div>
                 <div className="row" style={{ marginTop: 10 }}>
-                  <Chip mood="neutral" />
-                  <div className="bubble hand">{BOSS_TAUNTS[save.rounds % BOSS_TAUNTS.length]}</div>
+                  <Chip mood="neutral" variant={theme.mascot} />
+                  <div className="bubble hand">{theme.bossTaunts[save.rounds % theme.bossTaunts.length]}</div>
                 </div>
                 <p className="payline" style={{ fontWeight: 900, marginTop: 10 }}>
-                  {BOSS_WORD_COUNT} of Chip&apos;s nastiest words · no hints · miss more than {BOSS_MISS_ALLOWED} and he keeps the cash.
+                  {BOSS_WORD_COUNT} of {theme.hostFull}&apos;s nastiest words · no hints · miss more than {BOSS_MISS_ALLOWED} and the cash stays theirs.
                   You risk nothing, and a win counts on the rank ladder.
                 </p>
                 <div className="btnrow">
@@ -1538,9 +883,9 @@ export default function SpellingShowdown() {
               {!storageOk && <p className="savewarn">Heads up: saving isn&apos;t working on this device, so the bankroll resets when you close this.</p>}
 
               <div className="row" style={{ marginTop: 14 }}>
-                <Chip mood="neutral" />
+                <Chip mood="neutral" variant={theme.mascot} />
                 <div className="bubble hand">
-                  Place your bet, or warm up in practice for free. The closer to perfect, the bigger the payout. Only a total blowout takes the lot.
+                  {theme.intro}
                 </div>
               </div>
 
@@ -1568,18 +913,18 @@ export default function SpellingShowdown() {
                 </button>
               </div>
               <p style={{ fontSize: 13, color: "#4A4A45", marginTop: 10 }}>
-                Round mix: up to 3 review words he&apos;s missed before, and at least 5 that are brand new or haven&apos;t appeared for several rounds. Practice rounds still teach Chip what to drill next.
+                Round mix: up to 3 review words he&apos;s missed before, and at least 5 that are brand new or haven&apos;t appeared for several rounds. Practice rounds still teach {theme.hostFull} what to drill next.
               </p>
             </div>
 
             <div className="card">
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-                <span className="cheatlabel hand" style={{ margin: 0, fontSize: 18, color: "#B8860B" }}>THE TROPHY SHELF</span>
-                <span className="vsline">YOU {chipRec.w} - {chipRec.l} CHIP{chipRec.d > 0 ? ` (${chipRec.d} draws)` : ""}</span>
+                <span className="cheatlabel hand" style={{ margin: 0, fontSize: 18, color: "#B8860B" }}>{theme.shelfLabel}</span>
+                <span className="vsline">YOU {chipRec.w} - {chipRec.l} {theme.hostName}{chipRec.d > 0 ? ` (${chipRec.d} draws)` : ""}</span>
               </div>
               <p className="payline" style={{ fontWeight: 900, marginTop: 8 }}>
                 Rank: <span className="hand" style={{ fontSize: 20 }}>{rank.title}</span>
-                {rank.next && <> · {rank.next.winsNeeded} more {rank.next.winsNeeded === 1 ? "win" : "wins"} vs Chip to become <b>{rank.next.title}</b></>}
+                {rank.next && <> · {rank.next.winsNeeded} more {rank.next.winsNeeded === 1 ? "win" : "wins"} vs {theme.hostFull} to become <b>{rank.next.title}</b></>}
                 {!rank.next && <> · top of the ladder. Nobody outdoodles you.</>}
               </p>
               <div style={{ marginTop: 6 }}>
@@ -1590,16 +935,16 @@ export default function SpellingShowdown() {
                 {recs.bestDayStreak > 1 && <span className="statchip">📅 Longest day streak: {recs.bestDayStreak}</span>}
                 {((save.boss?.wins || 0) + (save.boss?.losses || 0)) > 0 && <span className="statchip">⚔️ Boss battles: {save.boss.wins}-{save.boss.losses}</span>}
                 {recs.bestStreak === 0 && recs.biggestWin === 0 && recs.bestCashout === 0 && recs.perfectRounds === 0 && recs.bestDayStreak <= 1 && (
-                  <span className="statchip">Empty shelf. Chip says that&apos;s embarrassing.</span>
+                  <span className="statchip">{theme.emptyShelf}</span>
                 )}
               </div>
-              <p className="payline" style={{ fontWeight: 900, marginTop: 10, marginBottom: 2 }}>Word collection: {masteredCount} / {BANK.length} captured</p>
-              <div className="goalwrap" aria-hidden="true"><div className="goalbar blue" style={{ width: `${(masteredCount / BANK.length) * 100}%` }} /></div>
-              <p className="payline" style={{ fontWeight: 900, marginTop: 10, marginBottom: 2 }}>Doodle collection: {ownedDoodles.length} / {DOODLES.length}</p>
+              <p className="payline" style={{ fontWeight: 900, marginTop: 10, marginBottom: 2 }}>Word collection: {masteredCount} / {theme.bank.length} captured</p>
+              <div className="goalwrap" aria-hidden="true"><div className="goalbar blue" style={{ width: `${(masteredCount / theme.bank.length) * 100}%` }} /></div>
+              <p className="payline" style={{ fontWeight: 900, marginTop: 10, marginBottom: 2 }}>{theme.collectionLabel}: {ownedDoodles.length} / {theme.doodles.length}</p>
               <p className="doodleshelf" title="Win betting rounds for a chance at doodle drops">
-                {DOODLES.map((d) => (ownedDoodles.includes(d.id) ? d.icon : "▢")).join(" ")}
+                {theme.doodles.map((d) => (ownedDoodles.includes(d.id) ? d.icon : "▢")).join(" ")}
               </p>
-              <p style={{ fontSize: 12, color: "#4A4A45", margin: "4px 0 0" }}>Doodles drop from winning bet rounds. Two are rare. Chip won&apos;t say which.</p>
+              <p style={{ fontSize: 12, color: "#4A4A45", margin: "4px 0 0" }}>Prizes drop from winning bet rounds. Two are rare. {theme.hostFull} won&apos;t say which.</p>
             </div>
 
             <div className="card">
@@ -1625,7 +970,7 @@ export default function SpellingShowdown() {
                   </div>
                   {customError && <p className="savewarn" style={{ marginTop: 8 }}>{customError}</p>}
                   <p style={{ fontSize: 12, color: "#4A4A45", marginTop: 8 }}>
-                    One round covers your whole list (up to {CUSTOM_ROUND_CAP} words). List rounds pay real money but don&apos;t move your level or rank - Chip only ranks his own words.
+                    One round covers your whole list (up to {CUSTOM_ROUND_CAP} words). List rounds pay real money but don&apos;t move your level or rank - {theme.hostFull} only ranks their own words.
                   </p>
                 </>
               )}
@@ -1640,7 +985,7 @@ export default function SpellingShowdown() {
               ) : (
                 <>
                   <p style={{ fontWeight: 900, marginTop: 0 }}>
-                    Cash out ${save.bank} real money from Dad, and the bankroll resets to ${STARTING_BANK}. Chip keeps his notes on which words beat you. Sure?
+                    Cash out ${save.bank} real money from Dad, and the bankroll resets to ${STARTING_BANK}. {theme.hostFull} keeps notes on which words beat you. Sure?
                   </p>
                   <div className="btnrow">
                     <button className="btn red" onClick={cashOut}>Yes, pay me</button>
@@ -1699,8 +1044,8 @@ export default function SpellingShowdown() {
             {isBossRound && (
               <div className="lap">
                 {missedWords.length > BOSS_MISS_ALLOWED
-                  ? "BOSS BATTLE - the prize is gone, but finish the fight for pride."
-                  : "BOSS BATTLE - Chip's nastiest words. No hints. He's watching."}
+                  ? `${theme.bossLabel} - the prize is gone, but finish the fight for pride.`
+                  : `${theme.bossLabel} - the nastiest words in the book. No hints. You are being watched.`}
               </div>
             )}
             {isRedoLap && !isBossRound && <div className="lap">REVENGE ROUND - clear these to keep 1.5x alive.</div>}
@@ -1709,7 +1054,7 @@ export default function SpellingShowdown() {
             {customNote && <div className="lap" style={{ color: "#2B5FD9" }}>{customNote}</div>}
 
             <div className="row">
-              <Chip mood={phase === "right" ? "happy" : phase === "wrong" ? "sad" : "neutral"} />
+              <Chip mood={phase === "right" ? "happy" : phase === "wrong" ? "sad" : "neutral"} variant={theme.mascot} />
               <div className="bubble hand">
                 {phase === "ask" && (speechOk ? "Here it comes... listen close." : `No sound? Fine. Definition: ${safeHint(current.h, current.w)}`)}
                 {phase === "right" && flash}
@@ -1772,7 +1117,7 @@ export default function SpellingShowdown() {
               <>
                 <div style={{ marginTop: 10 }}><span className="stamp hand">SEE ME.</span></div>
                 <div className="cheat">
-                  <p className="cheatlabel">CHIP&apos;S CHEAT SHEET (Mrs. Godfrey hates this)</p>
+                  <p className="cheatlabel">{theme.cheatSheetLabel}</p>
                   <MarkedWord word={current.w} danger={current.d} />
                   {lastGuess && lastGuess.toLowerCase() !== current.w.toLowerCase() && (
                     <>
@@ -1780,8 +1125,8 @@ export default function SpellingShowdown() {
                       <DiffGuess guess={lastGuess} answer={current.w} />
                     </>
                   )}
-                  <p className="tricktext">{current.t || GENERIC_TRICK}</p>
-                  <p className="retypelabel">Now YOU write it. That&apos;s how you get out of detention:</p>
+                  <p className="tricktext">{current.t || theme.genericTrick}</p>
+                  <p className="retypelabel">{theme.retypeLabel}</p>
                   <input
                     ref={retypeRef}
                     className={`retypeinput ${retypeMatches ? "ok" : ""}`}
@@ -1792,7 +1137,7 @@ export default function SpellingShowdown() {
                     aria-label="Retype the correct spelling to continue"
                     placeholder="spell it right to escape..."
                   />
-                  {retypeMatches && <p className="escaped">Detention escaped. It comes back later for revenge, though.</p>}
+                  {retypeMatches && <p className="escaped">{theme.escapeLine}</p>}
                 </div>
                 <div className="btnrow">
                   <button className="btn ghost" onClick={() => speak(current, true)}>Hear It</button>
@@ -1806,7 +1151,7 @@ export default function SpellingShowdown() {
         {screen === "done" && payout && (
           <div className="card">
             <div className="row">
-              <Chip mood={payout.result === "bosswin" ? "sad" : payout.result === "bossloss" ? "happy" : payout.result === "bust" || payout.result === "rough" ? "sad" : "happy"} />
+              <Chip mood={payout.result === "bosswin" ? "sad" : payout.result === "bossloss" ? "happy" : payout.result === "bust" || payout.result === "rough" ? "sad" : "happy"} variant={theme.mascot} />
               <div className="bubble hand">
                 {payout.result === "bosswin" && `FINE. Take the $${BOSS_PRIZE}. Out of my own fund. I'm picking WORSE words next time.`}
                 {payout.result === "bossloss" && `HA! The boss remains undefeated. My money stays mine, and I'm drawing this moment for the fridge.`}
@@ -1817,7 +1162,7 @@ export default function SpellingShowdown() {
                 {payout.result === "graze" && `Three misses. You lose $${bet - payout.amount} of your $${bet}. Stings a little. Meant to.`}
                 {payout.result === "half" && `Four misses. Half your $${bet} is gone. The other half survived out of pity.`}
                 {payout.result === "rough" && `Five misses. You keep $${payout.amount} of $${bet}. Barely walked out of there.`}
-                {payout.result === "bust" && `${payout.misses} misses. Total blowout. The $${bet} is mine. The Cheez Doodle fund thanks you.`}
+                {payout.result === "bust" && `${payout.misses} misses. Total blowout. The $${bet} is mine. The ${theme.bailoutFund} thanks you.`}
               </div>
             </div>
 
@@ -1830,7 +1175,7 @@ export default function SpellingShowdown() {
                 )}
                 <p className="payline" style={{ fontWeight: 900, marginTop: 8 }}>
                   {payout.misses} {payout.misses === 1 ? "miss" : "misses"} of {BOSS_MISS_ALLOWED} allowed · free entry
-                  {payout.result === "bosswin" ? ` · Chip pays $${BOSS_PRIZE} · counts as a rank-ladder win` : " · nothing lost - he'll be back with a new challenge"}
+                  {payout.result === "bosswin" ? ` · ${theme.hostFull} pays $${BOSS_PRIZE} · counts as a rank-ladder win` : " · nothing lost - he'll be back with a new challenge"}
                 </p>
               </div>
             ) : isPractice ? (
@@ -1858,33 +1203,33 @@ export default function SpellingShowdown() {
             {extras?.rankUp && <p className="rankup hand">🏆 RANK UP: {extras.rankUp}</p>}
             {levelMsg && <p className="escaped" style={{ fontSize: 20 }}>{levelMsg}</p>}
             {extras && extras.leveledDown > 0 && (
-              <p className="leveldown hand">LEVEL DOWN. Chip dropped you to level {extras.leveledDown} words. Two hot rounds wins it back.</p>
+              <p className="leveldown hand">LEVEL DOWN. {theme.hostFull} dropped you to level {extras.leveledDown} words. Two hot rounds wins it back.</p>
             )}
             {extras?.newRecords.map((r) => (
               <p key={r} className="recordline hand">⭐ NEW RECORD - {r}</p>
             ))}
             {bonusWon && <p className="bonusline hand">🎯 Bonus word banked: +${BONUS_WORD_CASH}</p>}
             {extras && extras.respectBonus > 0 && (
-              <p className="escaped">Chip&apos;s respect bonus: +${extras.respectBonus}. Two hot rounds at max level. He hates paying this.</p>
+              <p className="escaped">{theme.hostFull}&apos;s respect bonus: +${extras.respectBonus}. Two hot rounds at max level. Paying it hurts.</p>
             )}
             {extras && extras.streakBonus > 0 && (
               <p className="escaped">Day streak bonus: +${extras.streakBonus} for day {save.dayStreak}. Showing up pays.</p>
             )}
             {extras && extras.streakBroken > 0 && (
-              <p className="warnline">Your {extras.streakBroken}-day streak ended. Chip noticed. New one starts today.</p>
+              <p className="warnline">Your {extras.streakBroken}-day streak ended. {theme.hostFull} noticed. New one starts today.</p>
             )}
             {bossTeaser && (
-              <p className="warnline" style={{ color: "#1D2A44" }}>⚔️ Chip just slapped a BOSS BATTLE on the betting desk. Free entry, ${BOSS_PRIZE} if you beat him.</p>
+              <p className="warnline" style={{ color: "#1D2A44" }}>⚔️ {theme.hostFull} just slapped a {theme.bossLabel} on the betting desk. Free entry, ${BOSS_PRIZE} if you win.</p>
             )}
             {extras?.doodleDrop && (() => {
-              const d = DOODLES.find((x) => x.id === extras.doodleDrop);
+              const d = theme.doodles.find((x) => x.id === extras.doodleDrop);
               return d ? (
                 <div className="doodledrop">
                   <span className="doodleicon" aria-hidden="true">{d.icon}</span>
                   <div>
-                    <p className="cheatlabel" style={{ color: "#B8860B", margin: 0 }}>DOODLE DROP{d.rare ? " - RARE!" : ""}</p>
+                    <p className="cheatlabel" style={{ color: "#B8860B", margin: 0 }}>{theme.dropLabel}{d.rare ? " - RARE!" : ""}</p>
                     <p style={{ margin: "2px 0", fontWeight: 900 }}>{d.name}</p>
-                    <p style={{ margin: 0, fontSize: 14 }}>{d.cap} · Collection: {ownedDoodles.length}/{DOODLES.length}</p>
+                    <p style={{ margin: 0, fontSize: 14 }}>{d.cap} · Collection: {ownedDoodles.length}/{theme.doodles.length}</p>
                   </div>
                 </div>
               ) : null;
@@ -1894,7 +1239,7 @@ export default function SpellingShowdown() {
             </p>
             {!isPractice && !isCustomRound && (
               <p className="payline" style={{ fontWeight: 900 }}>
-                YOU {chipRec.w} - {chipRec.l} CHIP · Rank: {rank.title}
+                YOU {chipRec.w} - {chipRec.l} {theme.hostName} · Rank: {rank.title}
                 {rank.next && <> · {rank.next.winsNeeded} {rank.next.winsNeeded === 1 ? "win" : "wins"} to {rank.next.title}</>}
               </p>
             )}
@@ -1912,13 +1257,13 @@ export default function SpellingShowdown() {
             )}
 
             <div className="coach">
-              <p className="cheatlabel" style={{ color: "#2B5FD9" }}>CHIP&apos;S CLIPBOARD</p>
+              <p className="cheatlabel" style={{ color: "#2B5FD9" }}>{theme.clipboardLabel}</p>
               {weak.length > 0 ? (
                 <p className="payline">
                   Wobbliest patterns: {weak.map((x) => `${x.pattern} (${Math.round(x.rate * 100)}% missed)`).join(", ")}. Tomorrow&apos;s round will lean on these.
                 </p>
               ) : (
-                <p className="payline">Not enough data yet. A few more rounds and Chip will know exactly where to attack.</p>
+                <p className="payline">Not enough data yet. A few more rounds and {theme.hostFull} will know exactly where to attack.</p>
               )}
               {struggles.length > 0 && (
                 <p className="payline">
@@ -1929,7 +1274,7 @@ export default function SpellingShowdown() {
 
             <div className="btnrow">
               {!isPractice && !isCustomRound && bet >= 1 && bet <= save.bank && (
-                <button className="btn blue" onClick={() => startRound("adaptive")}>REMATCH CHIP (bet ${bet})</button>
+                <button className="btn blue" onClick={() => startRound("adaptive")}>REMATCH {theme.hostName} (bet ${bet})</button>
               )}
               {isPractice && (
                 <button className="btn" onClick={() => startRound("adaptive", true)}>Run it back (practice)</button>
