@@ -178,7 +178,11 @@ const PAGE_CSS = `
         .mark { background: #FFE24A; border-radius: 4px; padding: 0 2px; box-shadow: 0 0 0 2px #FFE24A; }
         .diffline { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 22px; letter-spacing: 4px; margin: 0 0 8px; word-break: break-all; }
         .diffbad { color: #D63B2F; text-decoration: line-through; }
-        .diffmiss { background: #FFE24A; border-radius: 4px; padding: 0 2px; box-shadow: 0 0 0 2px #FFE24A; color: #1D2A44; }
+        .diffgap {
+          display: inline-block; min-width: 0.6em; background: #FFE24A; border-radius: 4px;
+          border-bottom: 3px solid #D63B2F; margin: 0 1px;
+        }
+        .diffnote { font-size: 14px; font-weight: 700; margin: 2px 0 6px; color: #4A4A45; }
         .tricktext { font-size: 16px; margin: 8px 0 0; line-height: 1.45; }
         .retypelabel { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 19px; margin: 14px 0 2px; }
         .retypeinput { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 26px; letter-spacing: 3px; width: 100%; box-sizing: border-box; border: none; border-bottom: 3px dashed #D63B2F; background: transparent; padding: 4px; color: #1D2A44; }
@@ -307,18 +311,33 @@ function MarkedWord({ word, danger }: { word: string; danger: string | null }) {
 }
 
 function DiffGuess({ guess, answer }: { guess: string; answer: string }) {
-  // Alignment-aware: a dropped letter shows as a yellow gap at the right
-  // spot instead of turning the whole tail of the word red.
+  // Alignment-aware: a dropped letter shows as a gap at the right spot instead
+  // of turning the whole tail of the word red.
+  //
+  // The gap is rendered as an empty slot, NEVER as the missing letter itself.
+  // Printing the letter here made this line read as the correct spelling, so a
+  // player who typed "fiend" saw "YOU WROTE: friend" and thought the game had
+  // marked a correct answer wrong.
   const ops = alignDiff(guess, answer);
+  const missing = ops.filter((o) => o.kind === "missing").map((o) => o.ch);
   return (
-    <div className="diffline" aria-label={`You wrote ${guess}`}>
-      {ops.map((op, i) => (
-        <span
-          key={i}
-          className={op.kind === "ok" ? "" : op.kind === "missing" ? "diffmiss" : "diffbad"}
-        >{op.ch}</span>
-      ))}
-    </div>
+    <>
+      <div className="diffline" aria-label={`You wrote ${guess}`}>
+        {ops.map((op, i) =>
+          op.kind === "missing" ? (
+            <span key={i} className="diffgap" aria-hidden="true">&nbsp;</span>
+          ) : (
+            <span key={i} className={op.kind === "ok" ? "" : "diffbad"}>{op.ch}</span>
+          )
+        )}
+      </div>
+      {missing.length > 0 && (
+        <p className="diffnote">
+          You left {missing.length === 1 ? "a letter" : `${missing.length} letters`} out, where the yellow gap
+          {missing.length === 1 ? " is" : "s are"}: <b>{missing.join(" ")}</b>
+        </p>
+      )}
+    </>
   );
 }
 
