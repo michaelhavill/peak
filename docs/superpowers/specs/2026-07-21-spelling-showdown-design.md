@@ -230,6 +230,39 @@ destroyed a sentence). A bug audit script checks both banks for misspellings,
 hidden characters, exact-answer acceptance and in-bank confusable pairs. Test
 coverage: 75 logic assertions, 40 misheard, 15 diff, plus the bank validator.
 
+## Battle types and study cards (2026-07-26, eighth pass)
+
+### Boss battles: guaranteed cadence, six dynamics, $2-$5
+A battle now appears on a **guaranteed 3 to 5 round cadence** (a target round is
+picked when the last one resolves), not a random drip. Six types differ in their
+RULES, not just their words, and every one is free to enter and pays $2-$5:
+
+| Battle | Words | Misses | Prize | Dynamic |
+|---|---|---|---|---|
+| The Gauntlet | 5 hard | 1 | $3 | the baseline |
+| The Flawless Four | 4 hard | 0 | $5 | biggest prize, zero margin |
+| Sudden Death | up to 12 | 0 | $2-$5 | ends at the first miss, prize climbs with each word survived (4 words $2, 6 $3, 8 $4, 10 $5) |
+| The Marathon | 8 hard | 2 | $4 | stamina |
+| The Revenge Match | 5 he has missed before | 1 | $4 | drills his own failures |
+| The Pattern Ambush | 5 sharing his weakest pattern | 1 | $3 | targets the wobbliest rule |
+
+Sudden death shows the banked prize and what the next word is worth, live, and
+ends the round the moment he misses. Types requiring history (revenge, pattern)
+are only offered once the save has the data. Millie gets friendlier labels
+where a type defines one (Sudden Death reads LAST ONE STANDING).
+
+No timed battle: this is an audio-first game, and a clock would punish slow
+audio or a replay, which is the same unfairness class as the misheard bug.
+
+### Study cards before every round
+Every round now opens with a self-paced flash-card sheet: the round's words
+plus **3 to 5 extras that are not in the round**, shuffled, so studying teaches
+more than the test asks and he cannot tell which words are coming. Each card
+shows the word with its danger zone highlighted, the meaning, and the trick,
+and tapping it speaks the word. No timer, nothing at stake until he taps "I'm
+ready". The sheet is included in the round snapshot, so a reload returns to the
+study screen rather than re-dealing the round.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,
