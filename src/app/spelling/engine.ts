@@ -23,7 +23,16 @@ export type HistoryEntry = {
   bank: number;
 };
 
-export type BossState = { pending: boolean; lastRound: number; wins: number; losses: number };
+export type BossState = {
+  pending: boolean;
+  lastRound: number;
+  wins: number;
+  losses: number;
+  /** rounds count at which the next battle appears */
+  nextAt?: number;
+  /** id of the pending battle type */
+  typeId?: string | null;
+};
 
 export type Records = {
   bestStreak: number;
@@ -76,6 +85,10 @@ export type RoundSnapshot = {
   answered: boolean; // current word already answered (phase was right/wrong)
   bonusWord: string | null;
   bonusWon: boolean;
+  /** true while the player is still on the study card */
+  studying?: boolean;
+  /** the study card's words, so a reload does not re-deal the round */
+  study?: Entry[];
 };
 
 export type Payout = {
@@ -181,11 +194,144 @@ export const DOODLE_DROP_CHANCE = 0.3;
 // Boss battles: semi-frequent free-entry challenges from Chip. Five of his
 // nastiest words, no hints, one miss allowed. Win: +$5 of Chip's own money
 // and a win on the rank ladder. Lose: nothing but Chip's gloating.
-export const BOSS_WORD_COUNT = 5;
-export const BOSS_MISS_ALLOWED = 1;
-export const BOSS_PRIZE = 5;
-export const BOSS_MIN_GAP = 4; // rounds since last battle before one can trigger
-export const BOSS_CHANCE = 0.45; // per eligible round
+// A battle is guaranteed every 3 to 5 rounds, never on a random drip, so the
+// next one is always close enough to look forward to.
+export const BOSS_GAP_MIN = 3;
+export const BOSS_GAP_MAX = 5;
+/** Rounds count at which the next battle should appear. */
+export function nextBossAt(rounds: number, roll: () => number = Math.random): number {
+  const span = BOSS_GAP_MAX - BOSS_GAP_MIN + 1;
+  return rounds + BOSS_GAP_MIN + Math.floor(roll() * span);
+}
+
+/**
+ * Battle types. Every one is free to enter and pays between $2 and $5, so the
+ * only thing at stake is pride. They differ in the RULES, not just the words:
+ * how many words, how many misses you get, where the words come from, and
+ * whether the prize is fixed or climbs while you survive.
+ */
+export type BossType = {
+  id: string;
+  name: string;
+  nameAlt?: string;         // friendlier label for the younger player
+  rule: string;             // shown on the challenge card
+  banner: string;           // shown during the round
+  words: number;
+  missesAllowed: number;
+  prize: number;            // fixed prize, or the max for a climbing one
+  select: "hard" | "missed" | "pattern" | "mixed";
+  suddenDeath?: boolean;    // ends at the first miss, and the prize climbs
+  minRounds?: number;       // needs some history before it can be picked
+};
+
+export const BOSS_TYPES: BossType[] = [
+  {
+    id: "gauntlet",
+    name: "THE GAUNTLET",
+    rule: "5 hard words. One miss allowed. No hints.",
+    banner: "THE GAUNTLET - five hard ones, one miss allowed.",
+    words: 5, missesAllowed: 1, prize: 3, select: "hard",
+  },
+  {
+    id: "flawless",
+    name: "THE FLAWLESS FOUR",
+    rule: "4 words. ZERO misses. The biggest free prize there is.",
+    banner: "FLAWLESS FOUR - one slip and it is over. $5 on the line.",
+    words: 4, missesAllowed: 0, prize: 5, select: "hard",
+  },
+  {
+    id: "sudden",
+    name: "SUDDEN DEATH",
+    nameAlt: "LAST ONE STANDING",
+    rule: "Words keep coming until you miss one. The longer you last, the more you win.",
+    banner: "SUDDEN DEATH - the prize climbs with every word. One miss ends it.",
+    words: 12, missesAllowed: 0, prize: 5, select: "mixed", suddenDeath: true,
+  },
+  {
+    id: "marathon",
+    name: "THE MARATHON",
+    rule: "8 words. Two misses allowed. Stamina, not luck.",
+    banner: "THE MARATHON - eight words, two misses, no hints.",
+    words: 8, missesAllowed: 2, prize: 4, select: "hard",
+  },
+  {
+    id: "revenge",
+    name: "THE REVENGE MATCH",
+    rule: "5 words that have beaten you before. One miss allowed.",
+    banner: "REVENGE MATCH - every one of these has beaten you before.",
+    words: 5, missesAllowed: 1, prize: 4, select: "missed", minRounds: 4,
+  },
+  {
+    id: "pattern",
+    name: "THE PATTERN AMBUSH",
+    rule: "5 words that all share your wobbliest spelling pattern. One miss allowed.",
+    banner: "PATTERN AMBUSH - these all use the pattern you keep missing.",
+    words: 5, missesAllowed: 1, prize: 3, select: "pattern", minRounds: 3,
+  },
+];
+
+/** The prize for a battle: fixed, or climbing with words cleared in sudden death. */
+export function bossPrizeFor(type: BossType, cleared: number): number {
+  if (!type.suddenDeath) return type.prize;
+  if (cleared >= 10) return 5;
+  if (cleared >= 8) return 4;
+  if (cleared >= 6) return 3;
+  if (cleared >= 4) return 2;
+  return 0; // survived fewer than four: nothing, but nothing lost either
+}
+
+/** What surviving one more word would be worth, for the live climb display. */
+export function bossNextPrize(type: BossType, cleared: number): number {
+  if (!type.suddenDeath) return type.prize;
+  for (let n = cleared + 1; n <= 12; n++) {
+    const p = bossPrizeFor(type, n);
+    if (p > bossPrizeFor(type, cleared)) return p;
+  }
+  return bossPrizeFor(type, cleared);
+}
+
+/**
+ * Extra words for the study card: a few near-neighbours that are NOT in the
+ * round, so studying teaches more than the test asks and he cannot tell which
+ * words are about to come up. Prefers words that have beaten him before.
+ */
+export function buildStudyExtras(round: Entry[], bank: Entry[], save: Save, count: number): Entry[] {
+  const inRound = new Set(round.map((e) => e.w));
+  const levels = new Set(round.map((e) => e.l));
+  const near = bank.filter((e) => !inRound.has(e.w) && (levels.has(e.l) || levels.has(e.l - 1) || levels.has(e.l + 1)));
+  const missed = shuffle(near.filter((e) => (save.stats[e.w]?.m ?? 0) > 0));
+  const unseen = shuffle(near.filter((e) => !save.stats[e.w]));
+  const rest = shuffle(near.filter((e) => !missed.includes(e) && !unseen.includes(e)));
+  const picked: Entry[] = [];
+  for (const e of [...missed, ...unseen, ...rest]) {
+    if (picked.length >= count) break;
+    picked.push(e);
+  }
+  return picked;
+}
+
+export const STUDY_EXTRA_MIN = 3;
+export const STUDY_EXTRA_MAX = 5;
+export function studyExtraCount(roll: () => number = Math.random): number {
+  return STUDY_EXTRA_MIN + Math.floor(roll() * (STUDY_EXTRA_MAX - STUDY_EXTRA_MIN + 1));
+}
+
+export function bossTypeById(id: string | null | undefined): BossType {
+  return BOSS_TYPES.find((t) => t.id === id) || BOSS_TYPES[0];
+}
+
+/** Picks a battle the player has the history to face. */
+export function pickBossType(save: Save, bank: Entry[], roll: () => number = Math.random): BossType {
+  const missedCount = bank.filter((e) => (save.stats[e.w]?.m ?? 0) > 0).length;
+  const eligible = BOSS_TYPES.filter((t) => {
+    if (t.minRounds && save.rounds < t.minRounds) return false;
+    if (t.select === "missed" && missedCount < t.words) return false;
+    if (t.select === "pattern" && weakestPatterns(save.stats, bank).length === 0) return false;
+    return true;
+  });
+  const pool = eligible.length > 0 ? eligible : [BOSS_TYPES[0]];
+  return pool[Math.floor(roll() * pool.length)];
+}
 
 export function rankFor(wins: number, ranks: Rank[]) {
   let current = ranks[0];
@@ -604,18 +750,46 @@ export function buildRound(save: Save, bank: Entry[]): Entry[] {
 
 // Boss battle round: Chip's nastiest words at his level or one above,
 // unmastered words first so the fight is real.
-export function buildBossRound(save: Save, bank: Entry[]): Entry[] {
+export function buildBossRound(save: Save, bank: Entry[], type: BossType = BOSS_TYPES[0]): Entry[] {
   const { stats, playerLevel } = save;
   const lvlMax = Math.min(MAX_LEVEL, playerLevel + 1);
-  const hard = bank.filter((e) => e.l >= playerLevel && e.l <= lvlMax);
-  const unmastered = shuffle(hard.filter((e) => (stats[e.w]?.cs ?? 0) < 3));
-  const mastered = shuffle(hard.filter((e) => (stats[e.w]?.cs ?? 0) >= 3));
-  const chosen = [...unmastered, ...mastered].slice(0, BOSS_WORD_COUNT);
-  for (const e of shuffle(bank)) {
-    if (chosen.length >= BOSS_WORD_COUNT) break;
-    if (!chosen.some((c) => c.w === e.w)) chosen.push(e);
+  const want = type.words;
+  let pool: Entry[] = [];
+
+  if (type.select === "missed") {
+    // words that have actually beaten him, worst first
+    pool = bank
+      .filter((e) => (stats[e.w]?.m ?? 0) > 0)
+      .sort((a, b) => (stats[b.w].m / stats[b.w].a) - (stats[a.w].m / stats[a.w].a));
+  } else if (type.select === "pattern") {
+    const weak = weakestPatterns(stats, bank).slice(0, 2).map((x) => x.pattern);
+    pool = shuffle(bank.filter((e) => weak.includes(e.p)));
+  } else if (type.select === "mixed") {
+    // sudden death starts gentle and gets harder, so the climb feels earned
+    const byLevel = [...bank].sort((a, b) => a.l - b.l);
+    const easy = shuffle(byLevel.filter((e) => e.l <= playerLevel));
+    const hard = shuffle(byLevel.filter((e) => e.l > playerLevel));
+    pool = [...easy.slice(0, Math.ceil(want / 2)), ...hard, ...easy.slice(Math.ceil(want / 2))];
+    return pool.slice(0, want);
+  } else {
+    const hard = bank.filter((e) => e.l >= playerLevel && e.l <= lvlMax);
+    const unmastered = shuffle(hard.filter((e) => (stats[e.w]?.cs ?? 0) < 3));
+    const mastered = shuffle(hard.filter((e) => (stats[e.w]?.cs ?? 0) >= 3));
+    pool = [...unmastered, ...mastered];
   }
-  return shuffle(chosen);
+
+  const chosen: Entry[] = [];
+  const used = new Set<string>();
+  for (const e of pool) {
+    if (chosen.length >= want) break;
+    if (!used.has(e.w)) { chosen.push(e); used.add(e.w); }
+  }
+  // top up from the whole bank if the strategy could not fill the round
+  for (const e of shuffle(bank)) {
+    if (chosen.length >= want) break;
+    if (!used.has(e.w)) { chosen.push(e); used.add(e.w); }
+  }
+  return type.suddenDeath ? chosen.slice(0, want) : shuffle(chosen.slice(0, want));
 }
 
 // Everything that happens when a round ends, as a pure function so it can be
@@ -624,7 +798,10 @@ export function buildBossRound(save: Save, bank: Entry[]): Entry[] {
 type SettleInput = {
   isPractice: boolean;
   isCustom: boolean; // custom school-list rounds never move rank, records, or the Chip record
-  isBoss: boolean; // free-entry challenge: prize on <= BOSS_MISS_ALLOWED misses, no rank/level effects except a ladder win
+  isBoss: boolean; // free-entry challenge: no rank/level effects except a ladder win
+  bossMissAllowed?: number; // misses this battle type permits
+  bossPrize?: number; // prize if won, already resolved by the caller ($2-$5)
+  bossLabel?: string; // battle name for the ledger
   bet: number;
   roundTotal: number;
   firstTryCorrect: number;
@@ -652,9 +829,11 @@ export type SettleResult = {
 
 export function settleRound(save: Save, p: SettleInput): SettleResult {
   const misses = p.missedWords.length;
-  const bossWon = p.isBoss && misses <= BOSS_MISS_ALLOWED;
+  const bossAllowed = p.bossMissAllowed ?? 1;
+  const bossPrize = p.bossPrize ?? 0;
+  const bossWon = p.isBoss && misses <= bossAllowed && bossPrize > 0;
   const pay = p.isBoss
-    ? { label: bossWon ? "bosswin" : "bossloss", amount: bossWon ? BOSS_PRIZE : 0, mult: 0 }
+    ? { label: bossWon ? "bosswin" : "bossloss", amount: bossWon ? bossPrize : 0, mult: 0 }
     : p.isPractice
       ? { label: "practice", amount: 0, mult: 0 }
       : payoutFor(misses, p.roundTotal, p.bet);
@@ -733,7 +912,9 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   const boss: BossState = { ...(save.boss || FRESH_SAVE.boss) };
   if (p.isBoss) {
     boss.pending = false;
+    boss.typeId = null;
     boss.lastRound = roundNum;
+    boss.nextAt = nextBossAt(roundNum);
     if (bossWon) boss.wins += 1;
     else boss.losses += 1;
   }
@@ -776,7 +957,9 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   if (p.isBoss) {
     history = withHistory(history, {
       d: today, type: "boss",
-      label: bossWon ? `BOSS BATTLE: beat Chip, ${misses} ${misses === 1 ? "miss" : "misses"}` : "BOSS BATTLE: Chip survives (free entry)",
+      label: bossWon
+        ? `${p.bossLabel || "BOSS BATTLE"}: won, ${misses} ${misses === 1 ? "miss" : "misses"}`
+        : `${p.bossLabel || "BOSS BATTLE"}: lost (free entry, nothing staked)`,
       net: pay.amount, bank,
     });
   } else if (p.isPractice) {

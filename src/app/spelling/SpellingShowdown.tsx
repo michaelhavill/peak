@@ -4,14 +4,15 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import {
   ROUND_SIZE, STARTING_BANK, BROKE_BAILOUT, MAX_LEVEL, PAYDAY_GOAL,
   CUSTOM_ROUND_CAP, BONUS_WORD_CASH, DOODLE_DROP_CHANCE,
-  BOSS_WORD_COUNT, BOSS_MISS_ALLOWED, BOSS_PRIZE, BOSS_MIN_GAP, BOSS_CHANCE,
+  BOSS_TYPES, bossTypeById, pickBossType, bossPrizeFor, bossNextPrize, nextBossAt,
+  buildStudyExtras, studyExtraCount,
   FRESH_SAVE, HOMOPHONE_HINTS,
   payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
   weakestPatterns, strugglingWords, buildRound, buildBossRound,
   settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits, nextStreakBonus, streakBonusFor,
 } from "./engine";
 import type {
-  Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot,
+  Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot, BossType,
 } from "./engine";
 import { THEMES, PROFILES, PROFILE_KEY, storeKey, roundKey, LEGACY_STORE_KEY, LEGACY_ROUND_KEY } from "./themes";
 import type { ProfileId, Theme } from "./themes";
@@ -182,6 +183,19 @@ const PAGE_CSS = `
           display: inline-block; min-width: 0.6em; background: #FFE24A; border-radius: 4px;
           border-bottom: 3px solid #D63B2F; margin: 0 1px;
         }
+        .studygrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+        @media (max-width: 520px) { .studygrid { grid-template-columns: 1fr; } }
+        .studycard {
+          text-align: left; background: #FFFDF0; border: 3px solid #1D2A44; border-radius: 10px;
+          padding: 10px 12px; cursor: pointer; font-family: 'Nunito', system-ui, sans-serif;
+          color: #1D2A44; display: flex; flex-direction: column; gap: 2px;
+          transition: transform 0.08s ease, box-shadow 0.08s ease;
+        }
+        .studycard:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 #1D2A44; }
+        .studycard:focus-visible { outline: 3px dashed #2B5FD9; outline-offset: 3px; }
+        .studycard .bigword { font-size: 26px; letter-spacing: 2px; margin: 0 0 2px; }
+        .studyhint { font-size: 13px; font-weight: 700; color: #4A4A45; }
+        .studytrick { font-size: 13px; line-height: 1.35; }
         .creditcard { background: #EAF7EE; border: 3px solid #2E8B57; border-radius: 10px; padding: 12px 14px; margin-top: 12px; }
         .diffnote { font-size: 14px; font-weight: 700; margin: 2px 0 6px; color: #4A4A45; }
         .tricktext { font-size: 16px; margin: 8px 0 0; line-height: 1.45; }
@@ -342,6 +356,11 @@ function DiffGuess({ guess, answer }: { guess: string; answer: string }) {
   );
 }
 
+/** The younger player gets the friendlier label where a type defines one. */
+function bossLabelFor(t: BossType, alt = false) {
+  return alt && t.nameAlt ? t.nameAlt : t.name;
+}
+
 export default function SpellingShowdown() {
   // Who is playing. Null shows the player picker. Each player has their own
   // save key, so bankrolls, ledgers, ranks and word stats never mix.
@@ -349,7 +368,8 @@ export default function SpellingShowdown() {
   const [lastPlayer, setLastPlayer] = useState<ProfileId | null>(null);
   const [save, setSave] = useState<Save | null>(null); // persistent state, null while loading
   const [storageOk, setStorageOk] = useState(true);
-  const [screen, setScreen] = useState<"start" | "play" | "done">("start");
+  const [screen, setScreen] = useState<"start" | "study" | "play" | "done">("start");
+  const [studyWords, setStudyWords] = useState<Entry[]>([]);
   const [bet, setBet] = useState(0);
   const [isPractice, setIsPractice] = useState(false);
   const [customText, setCustomText] = useState("");
@@ -379,7 +399,9 @@ export default function SpellingShowdown() {
   const [creditMsg, setCreditMsg] = useState("");
   const [isCustomRound, setIsCustomRound] = useState(false);
   const [isBossRound, setIsBossRound] = useState(false);
+  const [bossType, setBossType] = useState<BossType | null>(null);
   const [bossTeaser, setBossTeaser] = useState(false);
+  const [bossTeaserType, setBossTeaserType] = useState<BossType | null>(null);
   const [customError, setCustomError] = useState("");
   const [customNote, setCustomNote] = useState("");
   const [bonusWord, setBonusWord] = useState<string | null>(null);
@@ -494,6 +516,7 @@ export default function SpellingShowdown() {
         setIsPractice(!!sn.isPractice);
         setIsCustomRound(!!sn.isCustom);
         setIsBossRound(!!sn.isBoss);
+        if (sn.isBoss) setBossType(bossTypeById(loaded.boss?.typeId));
         setMissedWords(sn.missed || []);
         setFirstTryCorrect(sn.firstTryCorrect || 0);
         setBestStreak(sn.bestStreak || 0);
@@ -543,7 +566,12 @@ export default function SpellingShowdown() {
           setPhase("ask");
           setHintShown(loaded.playerLevel === 1);
           setResumed(true);
-          setScreen("play");
+          if (sn.studying && (sn.study || []).length > 0) {
+            setStudyWords(sn.study || []);
+            setScreen("study");
+          } else {
+            setScreen("play");
+          }
         }
       }
     } catch {
@@ -556,7 +584,7 @@ export default function SpellingShowdown() {
   // Snapshot the in-progress round on every change so nothing is lost if the
   // tab closes or reloads mid-round.
   useEffect(() => {
-    if (screen !== "play" || queue.length === 0) return;
+    if ((screen !== "play" && screen !== "study") || queue.length === 0) return;
     try {
       const sn: RoundSnapshot = {
         queue, idx, bet, isPractice, isCustom: isCustomRound, isBoss: isBossRound,
@@ -564,10 +592,12 @@ export default function SpellingShowdown() {
         roundTotal, roundWords: roundWordsRef.current,
         answered: phase !== "ask",
         bonusWord, bonusWon,
+        studying: screen === "study",
+        study: screen === "study" ? studyWords : [],
       };
       localStorage.setItem(keys.round, JSON.stringify(sn));
     } catch {}
-  }, [screen, queue, idx, phase, bet, isPractice, isCustomRound, isBossRound, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal, bonusWord, bonusWon]);
+  }, [screen, queue, idx, phase, bet, isPractice, isCustomRound, isBossRound, missedWords, redo, firstTryCorrect, streak, bestStreak, roundTotal, bonusWord, bonusWon, studyWords]);
 
   function persist(next: Save) {
     setSave(next);
@@ -641,13 +671,16 @@ export default function SpellingShowdown() {
         setCustomNote(`Big list! Playing ${CUSTOM_ROUND_CAP} of your ${words.length} words this round.`);
       }
     } else if (boss) {
-      round = buildBossRound(save, theme.bank);
+      const bt = bossTypeById(save.boss?.typeId);
+      setBossType(bt);
+      round = buildBossRound(save, theme.bank, bt);
       playSfx("boss", !!save.soundOn);
     } else {
       round = buildRound(save, theme.bank);
     }
     setIsCustomRound(mode === "custom");
     setIsBossRound(boss);
+    if (!boss) setBossType(null);
     setBossTeaser(false);
     // Secret bonus word: adaptive betting rounds only, revealed on a first-try hit
     setBonusWord(mode === "adaptive" && !practice ? pick(round).w : null);
@@ -667,7 +700,10 @@ export default function SpellingShowdown() {
     setBailoutMsg("");
     setLevelMsg("");
     setResumed(false);
-    setScreen("play");
+    // Every round opens with a flash-card study screen: the round's words plus
+    // a few extras, self-paced. Learning first, testing second.
+    setStudyWords(shuffle([...round, ...buildStudyExtras(round, theme.bank, save, studyExtraCount())]));
+    setScreen("study");
   }
 
   function submit() {
@@ -719,10 +755,15 @@ export default function SpellingShowdown() {
     const payPreview = isPractice || isBossRound ? { amount: 0 } : payoutFor(missedWords.length, roundTotal, bet);
     const wonBet = !isPractice && !isCustomRound && !isBossRound && payPreview.amount - bet > 0;
     const doodleDrop = wonBet && Math.random() < DOODLE_DROP_CHANCE ? pickDoodleDrop(save.doodles || [], theme.doodles) : null;
+    const activeBoss = isBossRound ? bossType || bossTypeById(save.boss?.typeId) : null;
+    const bossCleared = firstTryCorrect;
     const res = settleRound(save, {
       isPractice,
       isCustom: isCustomRound,
       isBoss: isBossRound,
+      bossMissAllowed: activeBoss ? activeBoss.missesAllowed : undefined,
+      bossPrize: activeBoss ? bossPrizeFor(activeBoss, bossCleared) : undefined,
+      bossLabel: activeBoss ? bossLabelFor(activeBoss) : undefined,
       bet,
       roundTotal,
       firstTryCorrect,
@@ -757,9 +798,12 @@ export default function SpellingShowdown() {
     let nextSave = res.next;
     if (!isBossRound && !isCustomRound) {
       const b: BossState = nextSave.boss || FRESH_SAVE.boss;
-      if (!b.pending && nextSave.rounds - b.lastRound >= BOSS_MIN_GAP && Math.random() < BOSS_CHANCE) {
-        nextSave = { ...nextSave, boss: { ...b, pending: true } };
+      const due = b.nextAt ?? (b.lastRound + 4);
+      if (!b.pending && nextSave.rounds >= due) {
+        const picked = pickBossType(nextSave, theme.bank);
+        nextSave = { ...nextSave, boss: { ...b, pending: true, typeId: picked.id } };
         setBossTeaser(true);
+        setBossTeaserType(picked);
         playSfx("boss", snd);
       }
     }
@@ -773,6 +817,13 @@ export default function SpellingShowdown() {
     setHintShown(!isBossRound && save?.playerLevel === 1);
     setRetype("");
     setLastGuess("");
+    // Sudden death: the first miss ends the battle right there
+    if (isBossRound && bossType?.suddenDeath && missedWords.length > 0) {
+      window.speechSynthesis?.cancel();
+      finishRound();
+      setScreen("done");
+      return;
+    }
     if (idx + 1 < queue.length) {
       setIdx(idx + 1);
       setPhase("ask");
@@ -893,16 +944,16 @@ export default function SpellingShowdown() {
             {save.boss?.pending && (
               <div className="card" style={{ borderColor: "#D63B2F", boxShadow: "4px 4px 0 #D63B2F" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ {theme.bossLabel}</span>
-                  <span className="tag">FREE ENTRY · WIN ${BOSS_PRIZE}</span>
+                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ {bossLabelFor(bossTypeById(save.boss?.typeId), theme.id === "millie")}</span>
+                  <span className="tag">FREE ENTRY · WIN ${bossTypeById(save.boss?.typeId).suddenDeath ? "2-5" : bossTypeById(save.boss?.typeId).prize}</span>
                 </div>
                 <div className="row" style={{ marginTop: 10 }}>
                   <Chip mood="neutral" variant={theme.mascot} />
                   <div className="bubble hand">{theme.bossTaunts[save.rounds % theme.bossTaunts.length]}</div>
                 </div>
                 <p className="payline" style={{ fontWeight: 900, marginTop: 10 }}>
-                  {BOSS_WORD_COUNT} of {theme.hostFull}&apos;s nastiest words · no hints · miss more than {BOSS_MISS_ALLOWED} and the cash stays theirs.
-                  You risk nothing, and a win counts on the rank ladder.
+                  {bossTypeById(save.boss?.typeId).rule} No hints, and you stake nothing.
+                  A win pays {theme.hostFull}&apos;s own money and counts on the rank ladder.
                 </p>
                 <div className="btnrow">
                   <button className="btn red" onClick={() => startRound("boss")}>ACCEPT THE CHALLENGE</button>
@@ -1106,20 +1157,75 @@ export default function SpellingShowdown() {
           </>
         )}
 
+        {screen === "study" && (
+          <div className="card">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+              <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20, color: "#2B5FD9" }}>STUDY CARDS</span>
+              <span className="tag">{studyWords.length} words · no timer</span>
+            </div>
+            <div className="row" style={{ marginTop: 10 }}>
+              <Chip mood="happy" variant={theme.mascot} />
+              <div className="bubble hand">
+                Here is your study sheet. Some of these are in the round, some are not, so learn the lot.
+                Tap any word to hear it. Take as long as you like: nothing is timed and nothing is at stake yet.
+              </div>
+            </div>
+            <div className="studygrid">
+              {studyWords.map((e) => (
+                <button
+                  key={e.w}
+                  className="studycard"
+                  onClick={() => speak(e, true)}
+                  title="Tap to hear this word"
+                >
+                  <MarkedWord word={e.w} danger={e.d} />
+                  <span className="studyhint">{safeHint(e.h, e.w)}</span>
+                  {e.t && <span className="studytrick">{e.t}</span>}
+                </button>
+              ))}
+            </div>
+            <div className="btnrow">
+              <button className="btn" onClick={() => { setScreen("play"); setPhase("ask"); }}>
+                {isBossRound ? "I'm ready. Bring the battle." : isPractice ? "I'm ready. Start practice." : `I'm ready. Start the round ($${bet} at stake)`}
+              </button>
+              <button className="btn ghost" onClick={() => { setScreen("start"); setStudyWords([]); setQueue([]); try { localStorage.removeItem(keys.round); } catch {} }}>
+                Back
+              </button>
+            </div>
+            <p style={{ fontSize: 13, color: "#4A4A45", marginTop: 10 }}>
+              The yellow highlight is the part of the word that trips people up. Read the trick underneath it once and it usually sticks.
+            </p>
+          </div>
+        )}
+
         {screen === "play" && current && (
           <div className="card">
             <div className="statbar">
               <span>Word {Math.min(idx + 1, queue.length)} / {queue.length}</span>
-              <span>{isBossRound ? `⚔️ BOSS · Prize $${BOSS_PRIZE}` : isPractice || !potential ? "Practice" : `Bet $${bet} · Pot $${potential.amount}`}</span>
+              <span>
+                {isBossRound && bossType
+                  ? bossType.suddenDeath
+                    ? `⚔️ Banked $${bossPrizeFor(bossType, firstTryCorrect)} · next word $${bossNextPrize(bossType, firstTryCorrect)}`
+                    : `⚔️ BOSS · Prize $${bossType.prize}`
+                  : isPractice || !potential ? "Practice" : `Bet $${bet} · Pot $${potential.amount}`}
+              </span>
               <span>Streak: {streak} {streak >= 3 ? "🔥" : ""}</span>
-              <span>{isBossRound ? `Misses: ${missedWords.length} / ${BOSS_MISS_ALLOWED} allowed` : `Misses: ${missedWords.length}`}</span>
+              <span>
+                {isBossRound && bossType
+                  ? bossType.suddenDeath
+                    ? `Survived: ${firstTryCorrect}`
+                    : `Misses: ${missedWords.length} / ${bossType.missesAllowed} allowed`
+                  : `Misses: ${missedWords.length}`}
+              </span>
             </div>
 
             {isBossRound && (
               <div className="lap">
-                {missedWords.length > BOSS_MISS_ALLOWED
-                  ? `${theme.bossLabel} - the prize is gone, but finish the fight for pride.`
-                  : `${theme.bossLabel} - the nastiest words in the book. No hints. You are being watched.`}
+                {bossType && missedWords.length > bossType.missesAllowed
+                  ? `${bossLabelFor(bossType, theme.id === "millie")} - the prize is gone, but finish the fight for pride.`
+                  : bossType
+                    ? bossType.banner
+                    : `${theme.bossLabel} - no hints. You are being watched.`}
               </div>
             )}
             {isRedoLap && !isBossRound && <div className="lap">REVENGE ROUND - clear these to keep 1.5x alive.</div>}
@@ -1227,7 +1333,9 @@ export default function SpellingShowdown() {
                 </div>
                 <div className="btnrow">
                   <button className="btn ghost" onClick={() => speak(current, true)}>Hear It</button>
-                  <button className="btn" onClick={next} disabled={!retypeMatches}>Keep Going →</button>
+                  <button className="btn" onClick={next} disabled={!retypeMatches}>
+                    {isBossRound && bossType?.suddenDeath ? "See the damage →" : "Keep Going →"}
+                  </button>
                 </div>
               </>
             )}
@@ -1239,7 +1347,7 @@ export default function SpellingShowdown() {
             <div className="row">
               <Chip mood={payout.result === "bosswin" ? "sad" : payout.result === "bossloss" ? "happy" : payout.result === "bust" || payout.result === "rough" ? "sad" : "happy"} variant={theme.mascot} />
               <div className="bubble hand">
-                {payout.result === "bosswin" && `FINE. Take the $${BOSS_PRIZE}. Out of my own fund. I'm picking WORSE words next time.`}
+                {payout.result === "bosswin" && `FINE. Take the $${payout.amount}. Out of my own fund. I'm picking WORSE words next time.`}
                 {payout.result === "bossloss" && `HA! The boss remains undefeated. My money stays mine, and I'm drawing this moment for the fridge.`}
                 {payout.result === "practice" && `Practice round done. ${payout.misses === 0 ? "Perfect, and it cost you nothing. Imagine if money had been on that." : "No money moved, but I took notes. Those words are marked."}`}
                 {payout.result === "clean" && `PERFECT ROUND. Your $${bet} just became $${payout.amount}. I want a rematch.`}
@@ -1255,13 +1363,17 @@ export default function SpellingShowdown() {
             {isBossRound ? (
               <div style={{ marginTop: 14 }}>
                 {payout.result === "bosswin" ? (
-                  <span className="stamp good hand" style={{ transform: "rotate(-3deg)" }}>BOSS BEATEN · +${BOSS_PRIZE} FREE</span>
+                  <span className="stamp good hand" style={{ transform: "rotate(-3deg)" }}>BOSS BEATEN · +${payout.amount} FREE</span>
                 ) : (
                   <span className="stamp hand">THE BOSS STANDS</span>
                 )}
                 <p className="payline" style={{ fontWeight: 900, marginTop: 8 }}>
-                  {payout.misses} {payout.misses === 1 ? "miss" : "misses"} of {BOSS_MISS_ALLOWED} allowed · free entry
-                  {payout.result === "bosswin" ? ` · ${theme.hostFull} pays $${BOSS_PRIZE} · counts as a rank-ladder win` : " · nothing lost - he'll be back with a new challenge"}
+                  {bossType?.suddenDeath
+                    ? `${firstTryCorrect} ${firstTryCorrect === 1 ? "word" : "words"} survived · free entry`
+                    : `${payout.misses} ${payout.misses === 1 ? "miss" : "misses"} of ${bossType?.missesAllowed ?? 1} allowed · free entry`}
+                  {payout.result === "bosswin"
+                    ? ` · ${theme.hostFull} pays $${payout.amount} · counts as a rank-ladder win`
+                    : " · nothing lost, and a new challenge is already coming"}
                 </p>
               </div>
             ) : isPractice ? (
@@ -1305,7 +1417,10 @@ export default function SpellingShowdown() {
               <p className="warnline">Your {extras.streakBroken}-day streak ended. {theme.hostFull} noticed. New one starts today.</p>
             )}
             {bossTeaser && (
-              <p className="warnline" style={{ color: "#1D2A44" }}>⚔️ {theme.hostFull} just slapped a {theme.bossLabel} on the betting desk. Free entry, ${BOSS_PRIZE} if you win.</p>
+              <p className="warnline" style={{ color: "#1D2A44" }}>
+                ⚔️ {theme.hostFull} just put a {bossTeaserType ? bossLabelFor(bossTeaserType, theme.id === "millie") : theme.bossLabel} on the betting desk.
+                {bossTeaserType ? ` ${bossTeaserType.rule}` : ""} Free entry.
+              </p>
             )}
             {extras?.doodleDrop && (() => {
               const d = theme.doodles.find((x) => x.id === extras.doodleDrop);
