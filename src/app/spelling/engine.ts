@@ -52,6 +52,7 @@ export type Save = {
   records: Records;
   chip: ChipRecord; // career record vs Chip (adaptive betting rounds only)
   doodles: string[]; // collected doodle-drop ids
+  credits?: string[]; // ids of one-off make-goods already paid
   soundOn: boolean;
   boss: BossState;
 };
@@ -86,6 +87,41 @@ export type Payout = {
   prevBank: number;
   newBank: number;
 };
+
+/**
+ * One-off make-goods, applied once per player and recorded in the save so a
+ * reload can never pay them twice. Each entry tops the bankroll UP to `toBank`
+ * and writes its own ledger line.
+ */
+export const CREDITS: { id: string; forPlayer: string; toBank: number; label: string; note: string }[] = [
+  {
+    id: "bugfix-2026-07-26",
+    forPlayer: "hunter",
+    toBank: 25,
+    label: "Bug refund from Dad (spelling checker was wrong, not you)",
+    note: "Two bugs cost you money you had actually earned: a correct word could be marked wrong, and the feedback line showed the letter you missed as if you had typed it. Both are fixed. Dad has topped your bankroll up to $25.",
+  },
+];
+
+/** Applies any credit this player is owed and has not been paid yet. */
+export function applyCredits(save: Save, playerId: string): { next: Save; messages: string[] } {
+  let next = save;
+  const messages: string[] = [];
+  const paid = new Set(save.credits || []);
+  for (const c of CREDITS) {
+    if (c.forPlayer !== playerId || paid.has(c.id)) continue;
+    const bank = Math.max(next.bank, c.toBank);
+    const gain = bank - next.bank;
+    next = {
+      ...next,
+      bank,
+      credits: [...(next.credits || []), c.id],
+      history: withHistory(next.history, { d: todayStr(), type: "bonus", label: c.label, net: gain, bank }),
+    };
+    messages.push(c.note);
+  }
+  return { next, messages };
+}
 
 export type Rank = { wins: number; title: string };
 export type Doodle = { id: string; icon: string; name: string; cap: string; rare: boolean };
@@ -429,6 +465,7 @@ export const FRESH_SAVE: Save = {
   records: { bestStreak: 0, biggestWin: 0, bestCashout: 0, perfectRounds: 0, bestDayStreak: 0 },
   chip: { w: 0, l: 0, d: 0 },
   doodles: [],
+  credits: [],
   soundOn: true,
   boss: { pending: false, lastRound: 0, wins: 0, losses: 0 },
 };

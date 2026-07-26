@@ -8,7 +8,7 @@ import {
   FRESH_SAVE, HOMOPHONE_HINTS,
   payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
   weakestPatterns, strugglingWords, buildRound, buildBossRound,
-  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes,
+  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits,
 } from "./engine";
 import type {
   Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot,
@@ -182,6 +182,7 @@ const PAGE_CSS = `
           display: inline-block; min-width: 0.6em; background: #FFE24A; border-radius: 4px;
           border-bottom: 3px solid #D63B2F; margin: 0 1px;
         }
+        .creditcard { background: #EAF7EE; border: 3px solid #2E8B57; border-radius: 10px; padding: 12px 14px; margin-top: 12px; }
         .diffnote { font-size: 14px; font-weight: 700; margin: 2px 0 6px; color: #4A4A45; }
         .tricktext { font-size: 16px; margin: 8px 0 0; line-height: 1.45; }
         .retypelabel { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 19px; margin: 14px 0 2px; }
@@ -375,6 +376,7 @@ export default function SpellingShowdown() {
   const [bailoutMsg, setBailoutMsg] = useState("");
   const [levelMsg, setLevelMsg] = useState("");
   const [resumed, setResumed] = useState(false);
+  const [creditMsg, setCreditMsg] = useState("");
   const [isCustomRound, setIsCustomRound] = useState(false);
   const [isBossRound, setIsBossRound] = useState(false);
   const [bossTeaser, setBossTeaser] = useState(false);
@@ -459,6 +461,13 @@ export default function SpellingShowdown() {
       ok = false;
     }
     setStorageOk(ok);
+    // Pay any one-off make-good owed to this player, once
+    const credited = applyCredits(loaded, profileId);
+    if (credited.messages.length > 0) {
+      loaded = credited.next;
+      setCreditMsg(credited.messages.join(" "));
+      try { localStorage.setItem(keys.store, JSON.stringify(loaded)); } catch {}
+    }
     if (loaded.bank < 1) {
       loaded.bank = BROKE_BAILOUT;
       loaded.history = withHistory(loaded.history, { d: todayStr(), type: "bailout", label: `${theme.bailoutFund} bailout`, net: BROKE_BAILOUT, bank: BROKE_BAILOUT });
@@ -919,6 +928,12 @@ export default function SpellingShowdown() {
               </p>
               {save.day && save.day !== todayStr() && save.dayStreak >= 2 && (
                 <p className="warnline">⚠️ Play a round today or your {save.dayStreak}-day streak resets.</p>
+              )}
+              {creditMsg && (
+                <div className="creditcard">
+                  <p className="cheatlabel" style={{ color: "#2E8B57", margin: 0 }}>MAKE-GOOD FROM DAD</p>
+                  <p style={{ margin: "4px 0 0", fontWeight: 700 }}>{creditMsg}</p>
+                </div>
               )}
               {bailoutMsg && <p className="bailout">{bailoutMsg}</p>}
               {!storageOk && <p className="savewarn">Heads up: saving isn&apos;t working on this device, so the bankroll resets when you close this.</p>}
