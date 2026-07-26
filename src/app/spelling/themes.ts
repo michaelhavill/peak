@@ -33,6 +33,8 @@ export type Theme = {
   genericTrick: string;
   bossTaunts: string[];
   bossLabel: string;
+  /** use the gentler battle names where a type defines one */
+  friendlyBossNames: boolean;
   ranks: Rank[];
   doodles: Doodle[];
   bailoutFund: string;
@@ -63,6 +65,7 @@ export const HUNTER: Theme = {
   genericTrick: HUNTER_GENERIC_TRICK,
   bossTaunts: HUNTER_BOSS_TAUNTS,
   bossLabel: "BOSS BATTLE",
+  friendlyBossNames: false,
   ranks: HUNTER_RANKS,
   doodles: HUNTER_DOODLES,
   bailoutFund: "Cheez Doodle fund",
@@ -92,7 +95,8 @@ export const MILLIE: Theme = {
   roasts: MILLIE_ROASTS,
   genericTrick: MILLIE_GENERIC_TRICK,
   bossTaunts: MILLIE_BOSS_TAUNTS,
-  bossLabel: "ROYAL FIVE",
+  bossLabel: "ROYAL CHALLENGE",
+  friendlyBossNames: true,
   ranks: MILLIE_RANKS,
   doodles: MILLIE_DOODLES,
   bailoutFund: "Emergency Sardine Fund",

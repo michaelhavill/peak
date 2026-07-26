@@ -243,7 +243,7 @@ RULES, not just their words, and every one is free to enter and pays $2-$7:
 | The Flawless Four | 4 hard | 0 | $5 | biggest prize, zero margin |
 | Sudden Death | up to 12 | 0 | $2-$5 | ends at the first miss, prize climbs with each word survived (4 words $2, 6 $3, 8 $4, 10 $5) |
 | The Marathon | 8 hard | 2 | $4 | stamina |
-| The Revenge Match | 5 he has missed before | 1 | **$7** | the biggest prize in the game, and the hardest list: every word has already beaten him |
+| The Revenge Match | 5 he has missed before | 1 | **$7** (top prize) | the biggest prize in the game, and the hardest list: every word has already beaten him |
 | The Pattern Ambush | 5 sharing his weakest pattern | 1 | $3 | targets the wobbliest rule |
 
 Sudden death shows the banked prize and what the next word is worth, live, and
@@ -253,6 +253,20 @@ where a type defines one (Sudden Death reads LAST ONE STANDING).
 
 No timed battle: this is an audio-first game, and a clock would punish slow
 audio or a replay, which is the same unfairness class as the misheard bug.
+
+### Both players, verified not assumed
+Everything above runs off the theme, so both players get the whole feature set:
+all six battle types, study cards, streak rewards, the misheard grace and the
+rank ladder. A parity block in the test suite loops over BOTH themes and
+asserts each one can play every battle type, draw a study sheet, win the $7
+rematch, reach the day 10 payday and have its own confusables covered. Millie
+sees gentler battle names through a `friendlyBossNames` theme flag (Sudden
+Death reads LAST ONE STANDING, the Revenge Match reads THE REMATCH).
+
+One content bug this caught: both players' boss taunts hardcoded "five words"
+and "$5", which contradicted an 8-word Marathon or the $7 rematch. Taunts are
+now type-agnostic and the battle card's rule line states the real terms, with a
+test asserting no taunt ever claims a word count or a prize.
 
 ### Study cards before every round
 Every round now opens with a self-paced flash-card sheet: the round's words

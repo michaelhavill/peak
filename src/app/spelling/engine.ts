@@ -184,6 +184,20 @@ export function nextStreakBonus(dayStreak: number): { day: number; amount: numbe
   const day = Math.max(0, Math.floor(dayStreak)) + 1;
   return { day, amount: streakBonusFor(day) };
 }
+
+/**
+ * The next day of the streak that actually pays. Some days on the ladder pay
+ * nothing, and telling a kid "tomorrow is worth $0" kills the reason to come
+ * back, so the nudge points at the next real payday instead.
+ */
+export function nextPayingStreakDay(dayStreak: number): { day: number; amount: number; daysAway: number } {
+  const from = Math.max(0, Math.floor(dayStreak));
+  for (let d = from + 1; d <= from + 12; d++) {
+    const amount = streakBonusFor(d);
+    if (amount > 0) return { day: d, amount, daysAway: d - from };
+  }
+  return { day: from + 1, amount: 0, daysAway: 1 };
+}
 // Secret bonus word: one word per adaptive betting round pays +$1 on a
 // first-try correct. Reward-side variability on top of the skill bet.
 export const BONUS_WORD_CASH = 1;
@@ -228,6 +242,7 @@ export const BOSS_TYPES: BossType[] = [
   {
     id: "gauntlet",
     name: "THE GAUNTLET",
+    nameAlt: "THE BIG FIVE",
     rule: "5 hard words. One miss allowed. No hints.",
     banner: "THE GAUNTLET - five hard ones, one miss allowed.",
     words: 5, missesAllowed: 1, prize: 3, select: "hard",
@@ -235,6 +250,7 @@ export const BOSS_TYPES: BossType[] = [
   {
     id: "flawless",
     name: "THE FLAWLESS FOUR",
+    nameAlt: "THE PERFECT FOUR",
     rule: "4 words. ZERO misses. The biggest free prize there is.",
     banner: "FLAWLESS FOUR - one slip and it is over. $5 on the line.",
     words: 4, missesAllowed: 0, prize: 5, select: "hard",
@@ -250,6 +266,7 @@ export const BOSS_TYPES: BossType[] = [
   {
     id: "marathon",
     name: "THE MARATHON",
+    nameAlt: "THE LONG WALK",
     rule: "8 words. Two misses allowed. Stamina, not luck.",
     banner: "THE MARATHON - eight words, two misses, no hints.",
     words: 8, missesAllowed: 2, prize: 4, select: "hard",
@@ -259,6 +276,7 @@ export const BOSS_TYPES: BossType[] = [
     // The biggest prize in the game, and the one that earns it: every word here
     // has already beaten him, so winning means beating his own worst list.
     name: "THE REVENGE MATCH",
+    nameAlt: "THE REMATCH",
     rule: "5 words that have beaten you before. One miss allowed. The biggest prize there is.",
     banner: "REVENGE MATCH - every one of these has beaten you before. $7 says it happens again.",
     words: 5, missesAllowed: 1, prize: 7, select: "missed", minRounds: 4,
@@ -266,6 +284,7 @@ export const BOSS_TYPES: BossType[] = [
   {
     id: "pattern",
     name: "THE PATTERN AMBUSH",
+    nameAlt: "THE TRICKY PATTERN TRAP",
     rule: "5 words that all share your wobbliest spelling pattern. One miss allowed.",
     banner: "PATTERN AMBUSH - these all use the pattern you keep missing.",
     words: 5, missesAllowed: 1, prize: 3, select: "pattern", minRounds: 3,

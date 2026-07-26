@@ -171,11 +171,12 @@ export const MILLIE_ROASTS = [
 export const MILLIE_GENERIC_TRICK = "No royal trick for this one. Stare hard at the letters and take a brain photo. Cats do this all day. We call it staring.";
 
 export const MILLIE_BOSS_TAUNTS = [
-  "Royal Five. Five hard words, no bet needed, and $5 of my own money if you win. I regret this already.",
-  "Feel brave? Five monster words, free to try. Beat them and I hand over $5 with a very sad little face.",
-  "The Royal Five are waiting. Costs you nothing. Could cost me five whole dollars.",
-  "Five words so tricky that Barley hid under the table. Win and the $5 is yours.",
-  "Step up to the Royal Five. Free entry, $5 prize, one extremely worried queen.",
+  "I have set you a royal challenge. Costs you nothing, and it could cost me actual money. I regret it already.",
+  "Feel brave? The rules are on the card, the prize is mine to lose, and I am not happy about it.",
+  "A royal challenge is waiting. Free to try. Beat it and I hand the money over with a very sad little face.",
+  "Words so tricky that Barley hid under the table. Read the rules and see if you dare.",
+  "Step up. Free entry, real money, one extremely worried queen.",
+  "The challenge stands. Norman says you will not manage it. Norman says that about everything.",
 ];
 
 export const MILLIE_RANKS: Rank[] = [
