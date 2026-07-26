@@ -235,7 +235,7 @@ coverage: 75 logic assertions, 40 misheard, 15 diff, plus the bank validator.
 ### Boss battles: guaranteed cadence, six dynamics, $2-$5
 A battle now appears on a **guaranteed 3 to 5 round cadence** (a target round is
 picked when the last one resolves), not a random drip. Six types differ in their
-RULES, not just their words, and every one is free to enter and pays $2-$5:
+RULES, not just their words, and every one is free to enter and pays $2-$7:
 
 | Battle | Words | Misses | Prize | Dynamic |
 |---|---|---|---|---|
@@ -243,7 +243,7 @@ RULES, not just their words, and every one is free to enter and pays $2-$5:
 | The Flawless Four | 4 hard | 0 | $5 | biggest prize, zero margin |
 | Sudden Death | up to 12 | 0 | $2-$5 | ends at the first miss, prize climbs with each word survived (4 words $2, 6 $3, 8 $4, 10 $5) |
 | The Marathon | 8 hard | 2 | $4 | stamina |
-| The Revenge Match | 5 he has missed before | 1 | $4 | drills his own failures |
+| The Revenge Match | 5 he has missed before | 1 | **$7** | the biggest prize in the game, and the hardest list: every word has already beaten him |
 | The Pattern Ambush | 5 sharing his weakest pattern | 1 | $3 | targets the wobbliest rule |
 
 Sudden death shows the banked prize and what the next word is worth, live, and

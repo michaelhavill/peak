@@ -205,7 +205,7 @@ export function nextBossAt(rounds: number, roll: () => number = Math.random): nu
 }
 
 /**
- * Battle types. Every one is free to enter and pays between $2 and $5, so the
+ * Battle types. Every one is free to enter and pays between $2 and $7, so the
  * only thing at stake is pride. They differ in the RULES, not just the words:
  * how many words, how many misses you get, where the words come from, and
  * whether the prize is fixed or climbs while you survive.
@@ -256,10 +256,12 @@ export const BOSS_TYPES: BossType[] = [
   },
   {
     id: "revenge",
+    // The biggest prize in the game, and the one that earns it: every word here
+    // has already beaten him, so winning means beating his own worst list.
     name: "THE REVENGE MATCH",
-    rule: "5 words that have beaten you before. One miss allowed.",
-    banner: "REVENGE MATCH - every one of these has beaten you before.",
-    words: 5, missesAllowed: 1, prize: 4, select: "missed", minRounds: 4,
+    rule: "5 words that have beaten you before. One miss allowed. The biggest prize there is.",
+    banner: "REVENGE MATCH - every one of these has beaten you before. $7 says it happens again.",
+    words: 5, missesAllowed: 1, prize: 7, select: "missed", minRounds: 4,
   },
   {
     id: "pattern",
