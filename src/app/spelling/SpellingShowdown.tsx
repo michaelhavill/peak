@@ -4,12 +4,12 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import {
   ROUND_SIZE, STARTING_BANK, BROKE_BAILOUT, MAX_LEVEL, PAYDAY_GOAL,
   CUSTOM_ROUND_CAP, BONUS_WORD_CASH, DOODLE_DROP_CHANCE,
-  BOSS_TYPES, bossTypeById, pickBossType, bossPrizeFor, bossNextPrize, nextBossAt,
+  BOSS_TYPES, bossTypeById, pickBossType, bossPrizeFor, bossNextPrize, nextBossAt, STREAK_MILESTONE,
   buildStudyExtras, studyExtraCount,
   FRESH_SAVE, HOMOPHONE_HINTS,
   payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
   weakestPatterns, strugglingWords, buildRound, buildBossRound,
-  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits, nextStreakBonus, streakBonusFor,
+  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits, nextStreakBonus, streakBonusFor, nextPayingStreakDay,
 } from "./engine";
 import type {
   Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot, BossType,
@@ -944,7 +944,7 @@ export default function SpellingShowdown() {
             {save.boss?.pending && (
               <div className="card" style={{ borderColor: "#D63B2F", boxShadow: "4px 4px 0 #D63B2F" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ {bossLabelFor(bossTypeById(save.boss?.typeId), theme.id === "millie")}</span>
+                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ {bossLabelFor(bossTypeById(save.boss?.typeId), theme.friendlyBossNames)}</span>
                   <span className="tag">FREE ENTRY · WIN ${bossTypeById(save.boss?.typeId).suddenDeath ? "2-5" : bossTypeById(save.boss?.typeId).prize}</span>
                 </div>
                 <div className="row" style={{ marginTop: 10 }}>
@@ -988,10 +988,20 @@ export default function SpellingShowdown() {
                 const paidToday = playedToday ? streakBonusFor(save.dayStreak) : 0;
                 return (
                   <p className="payline" style={{ fontWeight: 900 }}>
-                    {playedToday
-                      ? `Day ${save.dayStreak} of your streak is banked${paidToday > 0 ? ` (+$${paidToday} today)` : " (no reward on this day of the ladder)"}. Tomorrow's round is worth $${nextStreakBonus(save.dayStreak).amount}.`
-                      : `Finish a round today to claim day ${nxt.day} of your streak${nxt.amount > 0 ? ` and $${nxt.amount}` : ""}.`}
-                    {nextStreakBonus(playedToday ? save.dayStreak : save.dayStreak).day % 10 === 0 ? " That one is the 10 day $5 payday." : ""}
+                    {(() => {
+                      const pay = nextPayingStreakDay(playedToday ? save.dayStreak : save.dayStreak - 1);
+                      const soon = pay.amount >= STREAK_MILESTONE ? ` That one is the 10 day $${pay.amount} payday.` : "";
+                      if (playedToday) {
+                        const banked = `Day ${save.dayStreak} of your streak is banked${paidToday > 0 ? ` (+$${paidToday} today)` : ""}.`;
+                        const ahead = pay.daysAway === 1
+                          ? `Tomorrow pays $${pay.amount}.`
+                          : `Keep it going: day ${pay.day} pays $${pay.amount}, ${pay.daysAway} days away.`;
+                        return `${banked} ${ahead}${soon}`;
+                      }
+                      const claim = `Finish a round today to reach day ${nxt.day} of your streak${nxt.amount > 0 ? ` and take $${nxt.amount}` : ""}.`;
+                      const ahead = nxt.amount > 0 ? "" : ` Day ${pay.day} pays $${pay.amount}.`;
+                      return `${claim}${ahead}${soon}`;
+                    })()}
                   </p>
                 );
               })()}
@@ -1222,7 +1232,7 @@ export default function SpellingShowdown() {
             {isBossRound && (
               <div className="lap">
                 {bossType && missedWords.length > bossType.missesAllowed
-                  ? `${bossLabelFor(bossType, theme.id === "millie")} - the prize is gone, but finish the fight for pride.`
+                  ? `${bossLabelFor(bossType, theme.friendlyBossNames)} - the prize is gone, but finish the fight for pride.`
                   : bossType
                     ? bossType.banner
                     : `${theme.bossLabel} - no hints. You are being watched.`}
@@ -1418,7 +1428,7 @@ export default function SpellingShowdown() {
             )}
             {bossTeaser && (
               <p className="warnline" style={{ color: "#1D2A44" }}>
-                ⚔️ {theme.hostFull} just put a {bossTeaserType ? bossLabelFor(bossTeaserType, theme.id === "millie") : theme.bossLabel} on the betting desk.
+                ⚔️ {theme.hostFull} just put a {bossTeaserType ? bossLabelFor(bossTeaserType, theme.friendlyBossNames) : theme.bossLabel} on the betting desk.
                 {bossTeaserType ? ` ${bossTeaserType.rule}` : ""} Free entry.
               </p>
             )}

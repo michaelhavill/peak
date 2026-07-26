@@ -191,11 +191,12 @@ export const HUNTER_ROASTS = [
 export const HUNTER_GENERIC_TRICK = "No cheat sheet for this one. Stare at the letters. Take a brain photo. Nate calls that studying.";
 
 export const HUNTER_BOSS_TAUNTS = [
-  "I picked five words so nasty even Francis flinched. Free entry. Scared?",
-  "Beat my gauntlet and I'll pay you out of my own Cheez Doodle fund. That's how confident I am.",
-  "Five words. One miss allowed. My money says you choke on word three.",
-  "The boss battle stands. Every day you don't accept, I doodle you losing.",
-  "No bet, no excuses. Just you, me, and five words with detention energy.",
+  "I picked a set of words so nasty even Francis flinched. Free entry. Scared?",
+  "Beat my challenge and I pay you out of my own Cheez Doodle fund. That is how confident I am.",
+  "Read the rules, then lose to them. My money says you choke halfway through.",
+  "The boss battle stands. Every day you do not accept, I doodle you losing.",
+  "No bet, no excuses. Just you, me, and a pile of words with detention energy.",
+  "Rules are on the card. Courage is not included.",
 ];
 
 export const HUNTER_RANKS: Rank[] = [
