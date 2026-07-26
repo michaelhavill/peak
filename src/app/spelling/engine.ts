@@ -52,6 +52,7 @@ export type Save = {
   records: Records;
   chip: ChipRecord; // career record vs Chip (adaptive betting rounds only)
   doodles: string[]; // collected doodle-drop ids
+  credits?: string[]; // ids of one-off make-goods already paid
   soundOn: boolean;
   boss: BossState;
 };
@@ -87,6 +88,41 @@ export type Payout = {
   newBank: number;
 };
 
+/**
+ * One-off make-goods, applied once per player and recorded in the save so a
+ * reload can never pay them twice. Each entry tops the bankroll UP to `toBank`
+ * and writes its own ledger line.
+ */
+export const CREDITS: { id: string; forPlayer: string; toBank: number; label: string; note: string }[] = [
+  {
+    id: "bugfix-2026-07-26",
+    forPlayer: "hunter",
+    toBank: 25,
+    label: "Bug refund from Dad (spelling checker was wrong, not you)",
+    note: "Two bugs cost you money you had actually earned: a correct word could be marked wrong, and the feedback line showed the letter you missed as if you had typed it. Both are fixed. Dad has topped your bankroll up to $25.",
+  },
+];
+
+/** Applies any credit this player is owed and has not been paid yet. */
+export function applyCredits(save: Save, playerId: string): { next: Save; messages: string[] } {
+  let next = save;
+  const messages: string[] = [];
+  const paid = new Set(save.credits || []);
+  for (const c of CREDITS) {
+    if (c.forPlayer !== playerId || paid.has(c.id)) continue;
+    const bank = Math.max(next.bank, c.toBank);
+    const gain = bank - next.bank;
+    next = {
+      ...next,
+      bank,
+      credits: [...(next.credits || []), c.id],
+      history: withHistory(next.history, { d: todayStr(), type: "bonus", label: c.label, net: gain, bank }),
+    };
+    messages.push(c.note);
+  }
+  return { next, messages };
+}
+
 export type Rank = { wins: number; title: string };
 export type Doodle = { id: string; icon: string; name: string; cap: string; rare: boolean };
 
@@ -111,8 +147,30 @@ export const PAYDAY_GOAL = 40;
 // Custom school lists play as ONE round covering the whole list (no silent
 // 8-word truncation), capped for sanity.
 export const CUSTOM_ROUND_CAP = 20;
-// Day-streak milestone bonuses (real money - calendar-capped, so cheap for Dad)
-export const STREAK_BONUS: Record<number, number> = { 3: 1, 7: 3, 14: 5, 30: 10 };
+// Daily streak rewards, paid only for a day with a COMPLETED round, and only
+// once per calendar day. The rate decays as the streak grows, with a big
+// payday every tenth day, so showing up daily always beats restarting:
+//   days 1-3   $1 each day
+//   days 4-6   $1 every second day
+//   days 7-9   $1 every third day
+//   day 10     $5, and every tenth day after that
+//   past 10    $1 every fifth day between the big ones
+// A full ten-day run pays $11. Change these numbers here and nowhere else.
+export const STREAK_MILESTONE = 5;
+export function streakBonusFor(dayStreak: number): number {
+  const d = Math.floor(dayStreak);
+  if (d <= 0) return 0;
+  if (d % 10 === 0) return STREAK_MILESTONE;
+  if (d <= 3) return 1;
+  if (d <= 6) return d % 2 === 0 ? 1 : 0;
+  if (d <= 9) return d === 9 ? 1 : 0;
+  return d % 5 === 0 ? 1 : 0;
+}
+/** What the next day of the streak would pay, for the "come back tomorrow" nudge. */
+export function nextStreakBonus(dayStreak: number): { day: number; amount: number } {
+  const day = Math.max(0, Math.floor(dayStreak)) + 1;
+  return { day, amount: streakBonusFor(day) };
+}
 // Secret bonus word: one word per adaptive betting round pays +$1 on a
 // first-try correct. Reward-side variability on top of the skill bet.
 export const BONUS_WORD_CASH = 1;
@@ -187,6 +245,168 @@ export const HOMOPHONE_HINTS: Record<string, string> = {
   passed: "The one where you went past, or passed a test.",
   past: "The one about history, or beyond.",
 };
+
+// -------------------------------------------------------------
+// MISHEARD, NOT MISSPELLED
+// The game is audio-first, so a player can hear one word and spell
+// a different real word perfectly. Marking that "wrong" is unfair
+// and breaks trust in the money, so those answers get one free
+// retry with the meaning hint forced open instead of a miss.
+// -------------------------------------------------------------
+const CONFUSABLE_GROUPS: string[][] = [
+  ["through", "thorough", "threw"],
+  ["their", "there", "they're"],
+  ["to", "too", "two"],
+  ["your", "you're"],
+  ["its", "it's"],
+  ["hear", "here"],
+  ["weather", "whether"],
+  ["where", "wear", "were", "we're"],
+  ["knew", "new"],
+  ["know", "no"],
+  ["week", "weak"],
+  ["board", "bored"],
+  ["brake", "break"],
+  ["piece", "peace"],
+  ["plain", "plane"],
+  ["principal", "principle"],
+  ["aloud", "allowed"],
+  ["passed", "past"],
+  ["lead", "led"],
+  ["licence", "license"],
+  ["practice", "practise"],
+  ["advice", "advise"],
+  ["device", "devise"],
+  ["stationary", "stationery"],
+  ["affect", "effect"],
+  ["quiet", "quite"],
+  ["lose", "loose"],
+  ["desert", "dessert"],
+  ["whose", "who's"],
+  ["accept", "except"],
+  ["breath", "breathe"],
+  ["complement", "compliment"],
+  ["course", "coarse"],
+  ["whole", "hole"],
+  ["write", "right", "rite"],
+  ["night", "knight"],
+  ["thought", "taught"],
+  ["tail", "tale"],
+  ["paws", "pause"],
+  ["claws", "clause"],
+  ["male", "mail"],
+  ["meat", "meet"],
+  ["sight", "site", "cite"],
+  ["bean", "been"],
+  ["flour", "flower"],
+  ["grate", "great"],
+  ["hair", "hare"],
+  ["heal", "heel"],
+  ["mane", "main"],
+  ["pair", "pear", "pare"],
+  ["peel", "peal"],
+  ["rain", "reign", "rein"],
+  ["sale", "sail"],
+  ["scene", "seen"],
+  ["sea", "see"],
+  ["sew", "so", "sow"],
+  ["some", "sum"],
+  ["son", "sun"],
+  ["stair", "stare"],
+  ["steal", "steel"],
+  ["threw", "through"],
+  ["waist", "waste"],
+  ["wait", "weight"],
+  ["weigh", "way"],
+  ["wood", "would"],
+  ["allowed", "aloud"],
+  ["ate", "eight"],
+  ["bare", "bear"],
+  ["blew", "blue"],
+  ["buy", "by", "bye"],
+  ["cell", "sell"],
+  ["cent", "scent", "sent"],
+  ["cereal", "serial"],
+  ["chews", "choose"],
+  ["dear", "deer"],
+  ["die", "dye"],
+  ["fair", "fare"],
+  ["find", "fined"],
+  ["for", "four"],
+  ["hi", "high"],
+  ["hour", "our"],
+  ["made", "maid"],
+  ["missed", "mist"],
+  ["one", "won"],
+  ["peace", "piece"],
+  ["plum", "plumb"],
+  ["poor", "pour", "paw"],
+  ["read", "red", "reed"],
+  ["road", "rode", "rowed"],
+  ["role", "roll"],
+  ["root", "route"],
+  ["sauce", "source"],
+  ["shore", "sure"],
+  ["tea", "tee"],
+  ["there's", "theirs"],
+  ["tide", "tied"],
+  ["toe", "tow"],
+  ["vain", "vein"],
+  ["war", "wore"],
+  ["which", "witch"],
+  ["wine", "whine"],
+];
+
+/** A rough phonetic key, enough to spot words that sound alike out loud. */
+export function soundKey(word: string): string {
+  let s = word.toLowerCase();
+  const subs: [RegExp, string][] = [
+    [/ough/g, "U"], [/augh/g, "A"], [/aigh/g, "A"], [/eigh/g, "A"], [/igh/g, "I"],
+    [/tion|sion|cian/g, "SN"], [/cial|tial/g, "SL"],
+    [/ph/g, "F"], [/^wr/g, "R"], [/^kn/g, "N"], [/^gn/g, "N"], [/mb$/g, "M"],
+    [/ck/g, "K"], [/qu/g, "KW"], [/x/g, "KS"],
+    [/c(?=[eiy])/g, "S"], [/g(?=[eiy])/g, "J"], [/c/g, "K"],
+    [/ee|ea|ie|ei/g, "E"], [/ai|ay/g, "A"], [/oa|oe|ow/g, "O"],
+    [/oo|ou|ue/g, "U"], [/y/g, "I"], [/wh/g, "W"], [/h/g, ""], [/e$/g, ""],
+  ];
+  for (const [re, to] of subs) s = s.replace(re, to);
+  s = s.replace(/(.)\1+/g, "$1");
+  return s.toUpperCase();
+}
+
+/**
+ * Words the player could plausibly have heard instead of `answer`:
+ * curated homophone sets, plus any word in their own bank that
+ * sounds the same. Used to grant one retry instead of a miss.
+ */
+export function soundAlikes(answer: string, bank: Entry[]): string[] {
+  const a = answer.toLowerCase();
+  const out = new Set<string>();
+  for (const group of CONFUSABLE_GROUPS) {
+    if (group.includes(a)) for (const w of group) if (w !== a) out.add(w);
+  }
+  const key = soundKey(a);
+  for (const e of bank) {
+    const w = e.w.toLowerCase();
+    if (w !== a && soundKey(w) === key) out.add(w);
+  }
+  return [...out];
+}
+
+/**
+ * True when `guess` is a real word that sounds like the answer, not a
+ * misspelling. Apostrophes count too: a voice cannot tell "dogs", "dog's" and
+ * "dogs'" apart, so getting the apostrophe wrong on a heard word is an ear
+ * problem. The retry keeps the teaching without stealing his money.
+ */
+export function isMisheard(guess: string, answer: string, bank: Entry[]): boolean {
+  const g = guess.trim().toLowerCase();
+  const a = answer.toLowerCase();
+  if (!g || g === a) return false;
+  const bare = (w: string) => w.replace(/['’]/g, "");
+  if (bare(g) === bare(a) && bare(a) !== a) return true;
+  return soundAlikes(a, bank).includes(g);
+}
 
 export type DiffOp = { ch: string; kind: "ok" | "wrong" | "extra" | "missing" };
 export function alignDiff(guess: string, answer: string): DiffOp[] {
@@ -275,6 +495,7 @@ export const FRESH_SAVE: Save = {
   records: { bestStreak: 0, biggestWin: 0, bestCashout: 0, perfectRounds: 0, bestDayStreak: 0 },
   chip: { w: 0, l: 0, d: 0 },
   doodles: [],
+  credits: [],
   soundOn: true,
   boss: { pending: false, lastRound: 0, wins: 0, losses: 0 },
 };
@@ -525,11 +746,12 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   if (save.day !== today) {
     if (save.day === yesterdayStr()) {
       dayStreak = dayStreak + 1;
-      if (STREAK_BONUS[dayStreak]) streakBonus = STREAK_BONUS[dayStreak];
     } else {
       if (save.day !== null && save.dayStreak >= 3) streakBroken = save.dayStreak;
       dayStreak = 1;
     }
+    // Paid for finishing a round today, once per calendar day
+    streakBonus = streakBonusFor(dayStreak);
   }
 
   // Personal records (adaptive rounds only, so they can't be farmed).
@@ -573,7 +795,7 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   }
   if (streakBonus > 0) {
     bank += streakBonus;
-    history = withHistory(history, { d: today, type: "bonus", label: `Day streak bonus (day ${dayStreak})`, net: streakBonus, bank });
+    history = withHistory(history, { d: today, type: "bonus", label: `Day ${dayStreak} streak reward${streakBonus >= STREAK_MILESTONE ? " - 10 day milestone!" : ""}`, net: streakBonus, bank });
   }
   // Never leave him on $0: the bailout floors a busted bank at $5. It is a
   // floor only - assistance never lifts the bank above $10.

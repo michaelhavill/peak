@@ -8,7 +8,7 @@ import {
   FRESH_SAVE, HOMOPHONE_HINTS,
   payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
   weakestPatterns, strugglingWords, buildRound, buildBossRound,
-  settleRound, rankFor, pickDoodleDrop, alignDiff,
+  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits, nextStreakBonus, streakBonusFor,
 } from "./engine";
 import type {
   Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot,
@@ -178,7 +178,12 @@ const PAGE_CSS = `
         .mark { background: #FFE24A; border-radius: 4px; padding: 0 2px; box-shadow: 0 0 0 2px #FFE24A; }
         .diffline { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 22px; letter-spacing: 4px; margin: 0 0 8px; word-break: break-all; }
         .diffbad { color: #D63B2F; text-decoration: line-through; }
-        .diffmiss { background: #FFE24A; border-radius: 4px; padding: 0 2px; box-shadow: 0 0 0 2px #FFE24A; color: #1D2A44; }
+        .diffgap {
+          display: inline-block; min-width: 0.6em; background: #FFE24A; border-radius: 4px;
+          border-bottom: 3px solid #D63B2F; margin: 0 1px;
+        }
+        .creditcard { background: #EAF7EE; border: 3px solid #2E8B57; border-radius: 10px; padding: 12px 14px; margin-top: 12px; }
+        .diffnote { font-size: 14px; font-weight: 700; margin: 2px 0 6px; color: #4A4A45; }
         .tricktext { font-size: 16px; margin: 8px 0 0; line-height: 1.45; }
         .retypelabel { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 19px; margin: 14px 0 2px; }
         .retypeinput { font-family: 'Patrick Hand', 'Comic Sans MS', cursive; font-size: 26px; letter-spacing: 3px; width: 100%; box-sizing: border-box; border: none; border-bottom: 3px dashed #D63B2F; background: transparent; padding: 4px; color: #1D2A44; }
@@ -307,18 +312,33 @@ function MarkedWord({ word, danger }: { word: string; danger: string | null }) {
 }
 
 function DiffGuess({ guess, answer }: { guess: string; answer: string }) {
-  // Alignment-aware: a dropped letter shows as a yellow gap at the right
-  // spot instead of turning the whole tail of the word red.
+  // Alignment-aware: a dropped letter shows as a gap at the right spot instead
+  // of turning the whole tail of the word red.
+  //
+  // The gap is rendered as an empty slot, NEVER as the missing letter itself.
+  // Printing the letter here made this line read as the correct spelling, so a
+  // player who typed "fiend" saw "YOU WROTE: friend" and thought the game had
+  // marked a correct answer wrong.
   const ops = alignDiff(guess, answer);
+  const missing = ops.filter((o) => o.kind === "missing").map((o) => o.ch);
   return (
-    <div className="diffline" aria-label={`You wrote ${guess}`}>
-      {ops.map((op, i) => (
-        <span
-          key={i}
-          className={op.kind === "ok" ? "" : op.kind === "missing" ? "diffmiss" : "diffbad"}
-        >{op.ch}</span>
-      ))}
-    </div>
+    <>
+      <div className="diffline" aria-label={`You wrote ${guess}`}>
+        {ops.map((op, i) =>
+          op.kind === "missing" ? (
+            <span key={i} className="diffgap" aria-hidden="true">&nbsp;</span>
+          ) : (
+            <span key={i} className={op.kind === "ok" ? "" : "diffbad"}>{op.ch}</span>
+          )
+        )}
+      </div>
+      {missing.length > 0 && (
+        <p className="diffnote">
+          You left {missing.length === 1 ? "a letter" : `${missing.length} letters`} out, where the yellow gap
+          {missing.length === 1 ? " is" : "s are"}: <b>{missing.join(" ")}</b>
+        </p>
+      )}
+    </>
   );
 }
 
@@ -337,7 +357,9 @@ export default function SpellingShowdown() {
   const [queue, setQueue] = useState<Entry[]>([]);
   const [idx, setIdx] = useState(0);
   const [input, setInput] = useState("");
-  const [phase, setPhase] = useState<"ask" | "right" | "wrong">("ask");
+  const [phase, setPhase] = useState<"ask" | "right" | "wrong" | "misheard">("ask");
+  const [mishearWord, setMishearWord] = useState<string | null>(null);
+  const [mishearGuess, setMishearGuess] = useState("");
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
   const [firstTryCorrect, setFirstTryCorrect] = useState(0);
@@ -354,6 +376,7 @@ export default function SpellingShowdown() {
   const [bailoutMsg, setBailoutMsg] = useState("");
   const [levelMsg, setLevelMsg] = useState("");
   const [resumed, setResumed] = useState(false);
+  const [creditMsg, setCreditMsg] = useState("");
   const [isCustomRound, setIsCustomRound] = useState(false);
   const [isBossRound, setIsBossRound] = useState(false);
   const [bossTeaser, setBossTeaser] = useState(false);
@@ -438,6 +461,13 @@ export default function SpellingShowdown() {
       ok = false;
     }
     setStorageOk(ok);
+    // Pay any one-off make-good owed to this player, once
+    const credited = applyCredits(loaded, profileId);
+    if (credited.messages.length > 0) {
+      loaded = credited.next;
+      setCreditMsg(credited.messages.join(" "));
+      try { localStorage.setItem(keys.store, JSON.stringify(loaded)); } catch {}
+    }
     if (loaded.bank < 1) {
       loaded.bank = BROKE_BAILOUT;
       loaded.history = withHistory(loaded.history, { d: todayStr(), type: "bailout", label: `${theme.bailoutFund} bailout`, net: BROKE_BAILOUT, bank: BROKE_BAILOUT });
@@ -563,7 +593,7 @@ export default function SpellingShowdown() {
   const current = queue[idx];
 
   useEffect(() => {
-    if (screen === "play" && phase === "ask" && current) {
+    if (screen === "play" && (phase === "ask" || phase === "misheard") && current) {
       const t = setTimeout(() => speak(current), 350);
       inputRef.current?.focus();
       return () => clearTimeout(t);
@@ -641,9 +671,23 @@ export default function SpellingShowdown() {
   }
 
   function submit() {
-    if (!current || phase !== "ask" || !input.trim()) return;
+    if (!current || (phase !== "ask" && phase !== "misheard") || !input.trim()) return;
     const guess = input.trim().toLowerCase();
     const answer = current.w.toLowerCase();
+    // Misheard, not misspelled: he spelled a real sound-alike word correctly
+    // (through for thorough, their for there). That is an ear problem, not a
+    // spelling problem, so it costs nothing. One free retry per word, with the
+    // meaning hint forced open so the second attempt is fair.
+    if (guess !== answer && mishearWord !== current.w && isMisheard(guess, current.w, theme.bank)) {
+      setMishearWord(current.w);
+      setMishearGuess(guess);
+      setHintShown(true);
+      setInput("");
+      setPhase("misheard");
+      playSfx("wrong", !!save?.soundOn);
+      setTimeout(() => speak(current, true), 250);
+      return;
+    }
     if (guess === answer) {
       const wasMissed = missedWords.some((m) => m.w === current.w);
       const hitBonus = !wasMissed && !bonusWon && bonusWord === current.w;
@@ -724,6 +768,8 @@ export default function SpellingShowdown() {
 
   function next() {
     setInput("");
+    setMishearWord(null);
+    setMishearGuess("");
     setHintShown(!isBossRound && save?.playerLevel === 1);
     setRetype("");
     setLastGuess("");
@@ -746,7 +792,7 @@ export default function SpellingShowdown() {
 
   function handleKey(e: { key: string }) {
     if (e.key === "Enter") {
-      if (phase === "ask") submit();
+      if (phase === "ask" || phase === "misheard") submit();
       else if (phase === "right") next();
       else if (phase === "wrong" && retypeMatches) next();
     }
@@ -777,6 +823,14 @@ export default function SpellingShowdown() {
   const isRedoLap = current && queue.length < roundTotal;
   // What the round pays if he finishes at the current miss count
   const potential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
+  // Words with a sound-alike always show their meaning, in every mode: the
+  // voice cannot distinguish through from thorough, so the meaning must.
+  // Sound-alikes and any apostrophe word (dogs', couldn't) always show their
+  // meaning: the voice cannot convey an apostrophe at all.
+  const mustDisambiguate = current
+    ? soundAlikes(current.w, theme.bank).length > 0 || /['’]/.test(current.w)
+    : false;
+  const showHint = hintShown || mustDisambiguate;
   const chipRec: ChipRecord = save?.chip || { w: 0, l: 0, d: 0 };
   const rank = rankFor(chipRec.w, theme.ranks);
   const recs: Records = save?.records || FRESH_SAVE.records;
@@ -876,8 +930,28 @@ export default function SpellingShowdown() {
                   ? `PAYDAY READY: $${save.bank} in the bank. Cash out and make Dad pay up, or keep stacking.`
                   : `Payday goal: $${PAYDAY_GOAL} - you're $${PAYDAY_GOAL - save.bank} away.`}
               </p>
+              {(() => {
+                // Streak rewards are paid for finishing a round on a new day
+                const playedToday = save.day === todayStr();
+                const nxt = nextStreakBonus(playedToday ? save.dayStreak - 1 : save.dayStreak);
+                const paidToday = playedToday ? streakBonusFor(save.dayStreak) : 0;
+                return (
+                  <p className="payline" style={{ fontWeight: 900 }}>
+                    {playedToday
+                      ? `Day ${save.dayStreak} of your streak is banked${paidToday > 0 ? ` (+$${paidToday} today)` : " (no reward on this day of the ladder)"}. Tomorrow's round is worth $${nextStreakBonus(save.dayStreak).amount}.`
+                      : `Finish a round today to claim day ${nxt.day} of your streak${nxt.amount > 0 ? ` and $${nxt.amount}` : ""}.`}
+                    {nextStreakBonus(playedToday ? save.dayStreak : save.dayStreak).day % 10 === 0 ? " That one is the 10 day $5 payday." : ""}
+                  </p>
+                );
+              })()}
               {save.day && save.day !== todayStr() && save.dayStreak >= 2 && (
-                <p className="warnline">⚠️ Play a round today or your {save.dayStreak}-day streak resets.</p>
+                <p className="warnline">⚠️ Play a round today or your {save.dayStreak}-day streak resets to day 1.</p>
+              )}
+              {creditMsg && (
+                <div className="creditcard">
+                  <p className="cheatlabel" style={{ color: "#2E8B57", margin: 0 }}>MAKE-GOOD FROM DAD</p>
+                  <p style={{ margin: "4px 0 0", fontWeight: 700 }}>{creditMsg}</p>
+                </div>
               )}
               {bailoutMsg && <p className="bailout">{bailoutMsg}</p>}
               {!storageOk && <p className="savewarn">Heads up: saving isn&apos;t working on this device, so the bankroll resets when you close this.</p>}
@@ -1058,11 +1132,18 @@ export default function SpellingShowdown() {
               <div className="bubble hand">
                 {phase === "ask" && (speechOk ? "Here it comes... listen close." : `No sound? Fine. Definition: ${safeHint(current.h, current.w)}`)}
                 {phase === "right" && flash}
+                {phase === "misheard" && (
+                  <>
+                    Hold on. <b>{mishearGuess}</b> is spelled perfectly, but that is not the word I said.
+                    They sound almost the same, so that one is on me, not you. No miss, no money lost.
+                    <br />Listen again and read the meaning.
+                  </>
+                )}
                 {phase === "wrong" && (<>{flash}<br />Cheat sheet&apos;s out. Read the trick, then write it yourself.</>)}
               </div>
             </div>
 
-            {phase === "ask" && (
+            {(phase === "ask" || phase === "misheard") && (
               <>
                 <input
                   ref={inputRef}
@@ -1074,12 +1155,17 @@ export default function SpellingShowdown() {
                   aria-label="Type the spelling here"
                   placeholder="type it here..."
                 />
-                {hintShown && <p className="flash">Hint: {safeHint(current.h, current.w)}</p>}
+                {phase === "misheard" && (
+                  <p className="warnline" style={{ color: "#2B5FD9" }}>
+                    Not the sound-alike one. {soundAlikes(current.w, theme.bank).length > 0 ? "Use the meaning to work out which word it is." : ""}
+                  </p>
+                )}
+                {showHint && <p className="flash">Hint: {safeHint(current.h, current.w)}</p>}
                 <div className="btnrow">
                   <button className="btn" onClick={submit}>Check It</button>
                   <button className="btn ghost" onClick={() => speak(current)}>Hear Again</button>
                   <button className="btn ghost" onClick={() => speak(current, true)}>Just the Word</button>
-                  {!hintShown && !isBossRound && (
+                  {!showHint && !isBossRound && (
                     <button className="btn ghost" onClick={() => setHintShown(true)}>Hint</button>
                   )}
                 </div>
@@ -1213,7 +1299,7 @@ export default function SpellingShowdown() {
               <p className="escaped">{theme.hostFull}&apos;s respect bonus: +${extras.respectBonus}. Two hot rounds at max level. Paying it hurts.</p>
             )}
             {extras && extras.streakBonus > 0 && (
-              <p className="escaped">Day streak bonus: +${extras.streakBonus} for day {save.dayStreak}. Showing up pays.</p>
+              <p className="escaped">Streak reward: +${extras.streakBonus} for day {save.dayStreak} in a row{extras.streakBonus >= 5 ? " - the 10 day payday!" : ""}. Showing up pays.</p>
             )}
             {extras && extras.streakBroken > 0 && (
               <p className="warnline">Your {extras.streakBroken}-day streak ended. {theme.hostFull} noticed. New one starts today.</p>

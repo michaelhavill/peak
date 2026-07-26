@@ -179,6 +179,57 @@ average level at or below Hunter's. A few words (favourite, separate, tongue)
 appear in both banks; the tests assert each player always gets their own
 themed sentence and trick for those.
 
+## NZ curriculum alignment, two real bug fixes, streak rewards (2026-07-26, seventh pass)
+
+### Bugs found and fixed
+1. **The feedback line showed letters he never typed.** Reported with a photo:
+   the word was "friend", he typed "fiend", and the alignment diff rendered the
+   omitted r inline, so the line read "YOU WROTE: friend" - identical to the
+   answer above it. The game looked like it had marked a correct spelling wrong.
+   Missing letters now render as an empty highlighted slot and a note names the
+   letters left out. The line can only ever contain letters he actually typed.
+2. **Misheard words counted as misspellings.** Hunter's bank holds both
+   "through" and "thorough", which a browser voice cannot reliably distinguish.
+   A correctly spelled sound-alike now triggers a MISHEARD state: no miss, no
+   money, the word replays, the meaning hint opens, one grace per word. Real
+   misspellings are unaffected. Apostrophe words (dogs', couldn't) get the same
+   grace, since a voice cannot convey an apostrophe at all, and every word with
+   a sound-alike always shows its meaning in all modes.
+3. **A make-good credit** paid Hunter back to $25, once, recorded by id so a
+   reload cannot pay twice, capped so it never lowers a healthy bankroll.
+
+### Curriculum alignment
+Both banks were rebuilt from researched sources rather than invention.
+- **Millie (Year 5, age 9-10):** NZCER Essential Spelling Lists (mastery by end
+  of Year 4 is Lists 1-4; Lists 5-6 are the working range), the refreshed NZC
+  Phase 2 Year 5 spelling rows, real NZ school lists, NZCER Commonly Misspelt
+  Words. 120 words. Dropped 46 (infant vocabulary, 10 breed names, 7 surplus
+  cartoon characters), added 56 curriculum words, releveled 8. Proper nouns and
+  breeds fell from 31% to 11%.
+- **Hunter (Year 7-8, age 12):** Spell-Write Essential Lists 6-7, HNS Lists
+  8-10, UK Year 5/6 statutory, South Australian Spelling Test and Schonell
+  items with published spelling ages, NEMP error data, NZC Phase 3 Year 7-8
+  sequences, PAT/e-asTTle/STAR vocabulary. 142 words. Dropped 21 too-easy or
+  untestable words, added 36 (homophones and confusables, -able/-ible,
+  -ance/-ence, Greek and Latin roots, and NZ-versus-US spellings: centre,
+  defence, programme, jewellery, travelled, analyse, marvellous, catalogue,
+  skilful), releveled 15 against measured difficulty.
+
+### Daily streak rewards
+Paid for finishing a round on a new day, once per calendar day, on a decaying
+ladder with a milestone: $1 each on days 1-3, $1 every second day for 4-6, $1
+on day 9, **$5 on day 10 and every tenth day**, then $1 every fifth day. A full
+ten-day run pays $11, so daily play always beats restarting. The betting desk
+previews what today or tomorrow is worth; the numbers live in one place
+(streakBonusFor) if the rate needs tuning.
+
+### Tooling
+The rebuild pipeline now validates every reviewer fix by trial application and
+skips any that would break an entry (a checker returning prose advice once
+destroyed a sentence). A bug audit script checks both banks for misspellings,
+hidden characters, exact-answer acceptance and in-bank confusable pairs. Test
+coverage: 75 logic assertions, 40 misheard, 15 diff, plus the bank validator.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,
