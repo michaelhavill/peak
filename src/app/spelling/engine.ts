@@ -147,8 +147,30 @@ export const PAYDAY_GOAL = 40;
 // Custom school lists play as ONE round covering the whole list (no silent
 // 8-word truncation), capped for sanity.
 export const CUSTOM_ROUND_CAP = 20;
-// Day-streak milestone bonuses (real money - calendar-capped, so cheap for Dad)
-export const STREAK_BONUS: Record<number, number> = { 3: 1, 7: 3, 14: 5, 30: 10 };
+// Daily streak rewards, paid only for a day with a COMPLETED round, and only
+// once per calendar day. The rate decays as the streak grows, with a big
+// payday every tenth day, so showing up daily always beats restarting:
+//   days 1-3   $1 each day
+//   days 4-6   $1 every second day
+//   days 7-9   $1 every third day
+//   day 10     $5, and every tenth day after that
+//   past 10    $1 every fifth day between the big ones
+// A full ten-day run pays $11. Change these numbers here and nowhere else.
+export const STREAK_MILESTONE = 5;
+export function streakBonusFor(dayStreak: number): number {
+  const d = Math.floor(dayStreak);
+  if (d <= 0) return 0;
+  if (d % 10 === 0) return STREAK_MILESTONE;
+  if (d <= 3) return 1;
+  if (d <= 6) return d % 2 === 0 ? 1 : 0;
+  if (d <= 9) return d === 9 ? 1 : 0;
+  return d % 5 === 0 ? 1 : 0;
+}
+/** What the next day of the streak would pay, for the "come back tomorrow" nudge. */
+export function nextStreakBonus(dayStreak: number): { day: number; amount: number } {
+  const day = Math.max(0, Math.floor(dayStreak)) + 1;
+  return { day, amount: streakBonusFor(day) };
+}
 // Secret bonus word: one word per adaptive betting round pays +$1 on a
 // first-try correct. Reward-side variability on top of the skill bet.
 export const BONUS_WORD_CASH = 1;
@@ -371,11 +393,19 @@ export function soundAlikes(answer: string, bank: Entry[]): string[] {
   return [...out];
 }
 
-/** True when `guess` is a real word that sounds like the answer, not a misspelling. */
+/**
+ * True when `guess` is a real word that sounds like the answer, not a
+ * misspelling. Apostrophes count too: a voice cannot tell "dogs", "dog's" and
+ * "dogs'" apart, so getting the apostrophe wrong on a heard word is an ear
+ * problem. The retry keeps the teaching without stealing his money.
+ */
 export function isMisheard(guess: string, answer: string, bank: Entry[]): boolean {
   const g = guess.trim().toLowerCase();
-  if (!g || g === answer.toLowerCase()) return false;
-  return soundAlikes(answer, bank).includes(g);
+  const a = answer.toLowerCase();
+  if (!g || g === a) return false;
+  const bare = (w: string) => w.replace(/['’]/g, "");
+  if (bare(g) === bare(a) && bare(a) !== a) return true;
+  return soundAlikes(a, bank).includes(g);
 }
 
 export type DiffOp = { ch: string; kind: "ok" | "wrong" | "extra" | "missing" };
@@ -716,11 +746,12 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   if (save.day !== today) {
     if (save.day === yesterdayStr()) {
       dayStreak = dayStreak + 1;
-      if (STREAK_BONUS[dayStreak]) streakBonus = STREAK_BONUS[dayStreak];
     } else {
       if (save.day !== null && save.dayStreak >= 3) streakBroken = save.dayStreak;
       dayStreak = 1;
     }
+    // Paid for finishing a round today, once per calendar day
+    streakBonus = streakBonusFor(dayStreak);
   }
 
   // Personal records (adaptive rounds only, so they can't be farmed).
@@ -764,7 +795,7 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   }
   if (streakBonus > 0) {
     bank += streakBonus;
-    history = withHistory(history, { d: today, type: "bonus", label: `Day streak bonus (day ${dayStreak})`, net: streakBonus, bank });
+    history = withHistory(history, { d: today, type: "bonus", label: `Day ${dayStreak} streak reward${streakBonus >= STREAK_MILESTONE ? " - 10 day milestone!" : ""}`, net: streakBonus, bank });
   }
   // Never leave him on $0: the bailout floors a busted bank at $5. It is a
   // floor only - assistance never lifts the bank above $10.

@@ -8,7 +8,7 @@ import {
   FRESH_SAVE, HOMOPHONE_HINTS,
   payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
   weakestPatterns, strugglingWords, buildRound, buildBossRound,
-  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits,
+  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits, nextStreakBonus, streakBonusFor,
 } from "./engine";
 import type {
   Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot,
@@ -825,7 +825,11 @@ export default function SpellingShowdown() {
   const potential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
   // Words with a sound-alike always show their meaning, in every mode: the
   // voice cannot distinguish through from thorough, so the meaning must.
-  const mustDisambiguate = current ? soundAlikes(current.w, theme.bank).length > 0 : false;
+  // Sound-alikes and any apostrophe word (dogs', couldn't) always show their
+  // meaning: the voice cannot convey an apostrophe at all.
+  const mustDisambiguate = current
+    ? soundAlikes(current.w, theme.bank).length > 0 || /['’]/.test(current.w)
+    : false;
   const showHint = hintShown || mustDisambiguate;
   const chipRec: ChipRecord = save?.chip || { w: 0, l: 0, d: 0 };
   const rank = rankFor(chipRec.w, theme.ranks);
@@ -926,8 +930,22 @@ export default function SpellingShowdown() {
                   ? `PAYDAY READY: $${save.bank} in the bank. Cash out and make Dad pay up, or keep stacking.`
                   : `Payday goal: $${PAYDAY_GOAL} - you're $${PAYDAY_GOAL - save.bank} away.`}
               </p>
+              {(() => {
+                // Streak rewards are paid for finishing a round on a new day
+                const playedToday = save.day === todayStr();
+                const nxt = nextStreakBonus(playedToday ? save.dayStreak - 1 : save.dayStreak);
+                const paidToday = playedToday ? streakBonusFor(save.dayStreak) : 0;
+                return (
+                  <p className="payline" style={{ fontWeight: 900 }}>
+                    {playedToday
+                      ? `Day ${save.dayStreak} of your streak is banked${paidToday > 0 ? ` (+$${paidToday} today)` : " (no reward on this day of the ladder)"}. Tomorrow's round is worth $${nextStreakBonus(save.dayStreak).amount}.`
+                      : `Finish a round today to claim day ${nxt.day} of your streak${nxt.amount > 0 ? ` and $${nxt.amount}` : ""}.`}
+                    {nextStreakBonus(playedToday ? save.dayStreak : save.dayStreak).day % 10 === 0 ? " That one is the 10 day $5 payday." : ""}
+                  </p>
+                );
+              })()}
               {save.day && save.day !== todayStr() && save.dayStreak >= 2 && (
-                <p className="warnline">⚠️ Play a round today or your {save.dayStreak}-day streak resets.</p>
+                <p className="warnline">⚠️ Play a round today or your {save.dayStreak}-day streak resets to day 1.</p>
               )}
               {creditMsg && (
                 <div className="creditcard">
@@ -1281,7 +1299,7 @@ export default function SpellingShowdown() {
               <p className="escaped">{theme.hostFull}&apos;s respect bonus: +${extras.respectBonus}. Two hot rounds at max level. Paying it hurts.</p>
             )}
             {extras && extras.streakBonus > 0 && (
-              <p className="escaped">Day streak bonus: +${extras.streakBonus} for day {save.dayStreak}. Showing up pays.</p>
+              <p className="escaped">Streak reward: +${extras.streakBonus} for day {save.dayStreak} in a row{extras.streakBonus >= 5 ? " - the 10 day payday!" : ""}. Showing up pays.</p>
             )}
             {extras && extras.streakBroken > 0 && (
               <p className="warnline">Your {extras.streakBroken}-day streak ended. {theme.hostFull} noticed. New one starts today.</p>
