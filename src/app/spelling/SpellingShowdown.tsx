@@ -8,7 +8,7 @@ import {
   FRESH_SAVE, HOMOPHONE_HINTS,
   payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
   weakestPatterns, strugglingWords, buildRound, buildBossRound,
-  settleRound, rankFor, pickDoodleDrop, alignDiff,
+  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes,
 } from "./engine";
 import type {
   Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot,
@@ -337,7 +337,9 @@ export default function SpellingShowdown() {
   const [queue, setQueue] = useState<Entry[]>([]);
   const [idx, setIdx] = useState(0);
   const [input, setInput] = useState("");
-  const [phase, setPhase] = useState<"ask" | "right" | "wrong">("ask");
+  const [phase, setPhase] = useState<"ask" | "right" | "wrong" | "misheard">("ask");
+  const [mishearWord, setMishearWord] = useState<string | null>(null);
+  const [mishearGuess, setMishearGuess] = useState("");
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
   const [firstTryCorrect, setFirstTryCorrect] = useState(0);
@@ -563,7 +565,7 @@ export default function SpellingShowdown() {
   const current = queue[idx];
 
   useEffect(() => {
-    if (screen === "play" && phase === "ask" && current) {
+    if (screen === "play" && (phase === "ask" || phase === "misheard") && current) {
       const t = setTimeout(() => speak(current), 350);
       inputRef.current?.focus();
       return () => clearTimeout(t);
@@ -641,9 +643,23 @@ export default function SpellingShowdown() {
   }
 
   function submit() {
-    if (!current || phase !== "ask" || !input.trim()) return;
+    if (!current || (phase !== "ask" && phase !== "misheard") || !input.trim()) return;
     const guess = input.trim().toLowerCase();
     const answer = current.w.toLowerCase();
+    // Misheard, not misspelled: he spelled a real sound-alike word correctly
+    // (through for thorough, their for there). That is an ear problem, not a
+    // spelling problem, so it costs nothing. One free retry per word, with the
+    // meaning hint forced open so the second attempt is fair.
+    if (guess !== answer && mishearWord !== current.w && isMisheard(guess, current.w, theme.bank)) {
+      setMishearWord(current.w);
+      setMishearGuess(guess);
+      setHintShown(true);
+      setInput("");
+      setPhase("misheard");
+      playSfx("wrong", !!save?.soundOn);
+      setTimeout(() => speak(current, true), 250);
+      return;
+    }
     if (guess === answer) {
       const wasMissed = missedWords.some((m) => m.w === current.w);
       const hitBonus = !wasMissed && !bonusWon && bonusWord === current.w;
@@ -724,6 +740,8 @@ export default function SpellingShowdown() {
 
   function next() {
     setInput("");
+    setMishearWord(null);
+    setMishearGuess("");
     setHintShown(!isBossRound && save?.playerLevel === 1);
     setRetype("");
     setLastGuess("");
@@ -746,7 +764,7 @@ export default function SpellingShowdown() {
 
   function handleKey(e: { key: string }) {
     if (e.key === "Enter") {
-      if (phase === "ask") submit();
+      if (phase === "ask" || phase === "misheard") submit();
       else if (phase === "right") next();
       else if (phase === "wrong" && retypeMatches) next();
     }
@@ -777,6 +795,10 @@ export default function SpellingShowdown() {
   const isRedoLap = current && queue.length < roundTotal;
   // What the round pays if he finishes at the current miss count
   const potential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
+  // Words with a sound-alike always show their meaning, in every mode: the
+  // voice cannot distinguish through from thorough, so the meaning must.
+  const mustDisambiguate = current ? soundAlikes(current.w, theme.bank).length > 0 : false;
+  const showHint = hintShown || mustDisambiguate;
   const chipRec: ChipRecord = save?.chip || { w: 0, l: 0, d: 0 };
   const rank = rankFor(chipRec.w, theme.ranks);
   const recs: Records = save?.records || FRESH_SAVE.records;
@@ -1058,11 +1080,18 @@ export default function SpellingShowdown() {
               <div className="bubble hand">
                 {phase === "ask" && (speechOk ? "Here it comes... listen close." : `No sound? Fine. Definition: ${safeHint(current.h, current.w)}`)}
                 {phase === "right" && flash}
+                {phase === "misheard" && (
+                  <>
+                    Hold on. <b>{mishearGuess}</b> is spelled perfectly, but that is not the word I said.
+                    They sound almost the same, so that one is on me, not you. No miss, no money lost.
+                    <br />Listen again and read the meaning.
+                  </>
+                )}
                 {phase === "wrong" && (<>{flash}<br />Cheat sheet&apos;s out. Read the trick, then write it yourself.</>)}
               </div>
             </div>
 
-            {phase === "ask" && (
+            {(phase === "ask" || phase === "misheard") && (
               <>
                 <input
                   ref={inputRef}
@@ -1074,12 +1103,17 @@ export default function SpellingShowdown() {
                   aria-label="Type the spelling here"
                   placeholder="type it here..."
                 />
-                {hintShown && <p className="flash">Hint: {safeHint(current.h, current.w)}</p>}
+                {phase === "misheard" && (
+                  <p className="warnline" style={{ color: "#2B5FD9" }}>
+                    Not the sound-alike one. {soundAlikes(current.w, theme.bank).length > 0 ? "Use the meaning to work out which word it is." : ""}
+                  </p>
+                )}
+                {showHint && <p className="flash">Hint: {safeHint(current.h, current.w)}</p>}
                 <div className="btnrow">
                   <button className="btn" onClick={submit}>Check It</button>
                   <button className="btn ghost" onClick={() => speak(current)}>Hear Again</button>
                   <button className="btn ghost" onClick={() => speak(current, true)}>Just the Word</button>
-                  {!hintShown && !isBossRound && (
+                  {!showHint && !isBossRound && (
                     <button className="btn ghost" onClick={() => setHintShown(true)}>Hint</button>
                   )}
                 </div>

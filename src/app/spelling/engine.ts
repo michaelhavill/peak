@@ -188,6 +188,160 @@ export const HOMOPHONE_HINTS: Record<string, string> = {
   past: "The one about history, or beyond.",
 };
 
+// -------------------------------------------------------------
+// MISHEARD, NOT MISSPELLED
+// The game is audio-first, so a player can hear one word and spell
+// a different real word perfectly. Marking that "wrong" is unfair
+// and breaks trust in the money, so those answers get one free
+// retry with the meaning hint forced open instead of a miss.
+// -------------------------------------------------------------
+const CONFUSABLE_GROUPS: string[][] = [
+  ["through", "thorough", "threw"],
+  ["their", "there", "they're"],
+  ["to", "too", "two"],
+  ["your", "you're"],
+  ["its", "it's"],
+  ["hear", "here"],
+  ["weather", "whether"],
+  ["where", "wear", "were", "we're"],
+  ["knew", "new"],
+  ["know", "no"],
+  ["week", "weak"],
+  ["board", "bored"],
+  ["brake", "break"],
+  ["piece", "peace"],
+  ["plain", "plane"],
+  ["principal", "principle"],
+  ["aloud", "allowed"],
+  ["passed", "past"],
+  ["lead", "led"],
+  ["licence", "license"],
+  ["practice", "practise"],
+  ["advice", "advise"],
+  ["device", "devise"],
+  ["stationary", "stationery"],
+  ["affect", "effect"],
+  ["quiet", "quite"],
+  ["lose", "loose"],
+  ["desert", "dessert"],
+  ["whose", "who's"],
+  ["accept", "except"],
+  ["breath", "breathe"],
+  ["complement", "compliment"],
+  ["course", "coarse"],
+  ["whole", "hole"],
+  ["write", "right", "rite"],
+  ["night", "knight"],
+  ["thought", "taught"],
+  ["tail", "tale"],
+  ["paws", "pause"],
+  ["claws", "clause"],
+  ["male", "mail"],
+  ["meat", "meet"],
+  ["sight", "site", "cite"],
+  ["bean", "been"],
+  ["flour", "flower"],
+  ["grate", "great"],
+  ["hair", "hare"],
+  ["heal", "heel"],
+  ["mane", "main"],
+  ["pair", "pear", "pare"],
+  ["peel", "peal"],
+  ["rain", "reign", "rein"],
+  ["sale", "sail"],
+  ["scene", "seen"],
+  ["sea", "see"],
+  ["sew", "so", "sow"],
+  ["some", "sum"],
+  ["son", "sun"],
+  ["stair", "stare"],
+  ["steal", "steel"],
+  ["threw", "through"],
+  ["waist", "waste"],
+  ["wait", "weight"],
+  ["weigh", "way"],
+  ["wood", "would"],
+  ["allowed", "aloud"],
+  ["ate", "eight"],
+  ["bare", "bear"],
+  ["blew", "blue"],
+  ["buy", "by", "bye"],
+  ["cell", "sell"],
+  ["cent", "scent", "sent"],
+  ["cereal", "serial"],
+  ["chews", "choose"],
+  ["dear", "deer"],
+  ["die", "dye"],
+  ["fair", "fare"],
+  ["find", "fined"],
+  ["for", "four"],
+  ["hi", "high"],
+  ["hour", "our"],
+  ["made", "maid"],
+  ["missed", "mist"],
+  ["one", "won"],
+  ["peace", "piece"],
+  ["plum", "plumb"],
+  ["poor", "pour", "paw"],
+  ["read", "red", "reed"],
+  ["road", "rode", "rowed"],
+  ["role", "roll"],
+  ["root", "route"],
+  ["sauce", "source"],
+  ["shore", "sure"],
+  ["tea", "tee"],
+  ["there's", "theirs"],
+  ["tide", "tied"],
+  ["toe", "tow"],
+  ["vain", "vein"],
+  ["war", "wore"],
+  ["which", "witch"],
+  ["wine", "whine"],
+];
+
+/** A rough phonetic key, enough to spot words that sound alike out loud. */
+export function soundKey(word: string): string {
+  let s = word.toLowerCase();
+  const subs: [RegExp, string][] = [
+    [/ough/g, "U"], [/augh/g, "A"], [/aigh/g, "A"], [/eigh/g, "A"], [/igh/g, "I"],
+    [/tion|sion|cian/g, "SN"], [/cial|tial/g, "SL"],
+    [/ph/g, "F"], [/^wr/g, "R"], [/^kn/g, "N"], [/^gn/g, "N"], [/mb$/g, "M"],
+    [/ck/g, "K"], [/qu/g, "KW"], [/x/g, "KS"],
+    [/c(?=[eiy])/g, "S"], [/g(?=[eiy])/g, "J"], [/c/g, "K"],
+    [/ee|ea|ie|ei/g, "E"], [/ai|ay/g, "A"], [/oa|oe|ow/g, "O"],
+    [/oo|ou|ue/g, "U"], [/y/g, "I"], [/wh/g, "W"], [/h/g, ""], [/e$/g, ""],
+  ];
+  for (const [re, to] of subs) s = s.replace(re, to);
+  s = s.replace(/(.)\1+/g, "$1");
+  return s.toUpperCase();
+}
+
+/**
+ * Words the player could plausibly have heard instead of `answer`:
+ * curated homophone sets, plus any word in their own bank that
+ * sounds the same. Used to grant one retry instead of a miss.
+ */
+export function soundAlikes(answer: string, bank: Entry[]): string[] {
+  const a = answer.toLowerCase();
+  const out = new Set<string>();
+  for (const group of CONFUSABLE_GROUPS) {
+    if (group.includes(a)) for (const w of group) if (w !== a) out.add(w);
+  }
+  const key = soundKey(a);
+  for (const e of bank) {
+    const w = e.w.toLowerCase();
+    if (w !== a && soundKey(w) === key) out.add(w);
+  }
+  return [...out];
+}
+
+/** True when `guess` is a real word that sounds like the answer, not a misspelling. */
+export function isMisheard(guess: string, answer: string, bank: Entry[]): boolean {
+  const g = guess.trim().toLowerCase();
+  if (!g || g === answer.toLowerCase()) return false;
+  return soundAlikes(answer, bank).includes(g);
+}
+
 export type DiffOp = { ch: string; kind: "ok" | "wrong" | "extra" | "missing" };
 export function alignDiff(guess: string, answer: string): DiffOp[] {
   const g = guess.toLowerCase();
