@@ -277,6 +277,39 @@ and tapping it speaks the word. No timer, nothing at stake until he taps "I'm
 ready". The sheet is included in the round snapshot, so a reload returns to the
 study screen rather than re-dealing the round.
 
+## Motivation pass: AMP evaluation and response (2026-07-26, ninth pass)
+
+Evaluated against Pink's Autonomy / Mastery / Purpose model (the drive-motivation
+skill, 0-10 per pillar). Scored **Autonomy 8, Mastery 8, Purpose 3**.
+
+Autonomy and mastery were already strong: five ways into a round, an informed
+bet, self-paced study cards, spaced repetition, danger-zone teaching, two
+ladders. Purpose was the weak pillar by a distance: player-visible copy
+mentioned the real reason to spell almost never (2 mentions of "test", 1 of
+"learn") against 43 money figures, and nothing connected the effort to another
+person. The framework's central anti-pattern, if-then rewards crowding out
+intrinsic interest, is structurally present because the game is built on money.
+The response is to raise learning to the same volume as the money, NOT to
+remove the money, which is the family ritual that got them playing.
+
+Five features, in priority order:
+
+1. **Ready for the test** (purpose). He saves this week's school list; a meter
+   shows nailed / shaky / not yet, where a word is nailed at a correct streak
+   of 2. One button practises only the un-nailed words. This is the only place
+   the game measures itself against something outside itself.
+2. **Words you now own** (mastery). Round-end feedback was three deficit
+   signals to one growth signal. settleRound now returns `newlyOwned`: words he
+   used to miss and has now got right twice running, announced as his.
+3. **Show Dad my week** (purpose, relatedness). A card built from the real
+   ledger: rank, words owned, record vs the host, best streak, rounds and net
+   this week, school-list readiness. Copyable.
+4. **Pick your battle** (autonomy). Two battle types are offered and he chooses,
+   at the most exciting moment in the game.
+5. **Play up a level** (autonomy x mastery). Opt in to a round built one level
+   higher with no hints, for 1.5x on a win. A loss costs nothing extra, and the
+   multiplier never applies to practice, custom lists or boss battles.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,

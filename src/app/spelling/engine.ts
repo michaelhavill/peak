@@ -30,8 +30,10 @@ export type BossState = {
   losses: number;
   /** rounds count at which the next battle appears */
   nextAt?: number;
-  /** id of the pending battle type */
+  /** id of the pending battle type, once chosen */
   typeId?: string | null;
+  /** the two battles on offer, so the player picks the fight */
+  choices?: string[];
 };
 
 export type Records = {
@@ -62,6 +64,8 @@ export type Save = {
   chip: ChipRecord; // career record vs Chip (adaptive betting rounds only)
   doodles: string[]; // collected doodle-drop ids
   credits?: string[]; // ids of one-off make-goods already paid
+  /** the school list he is preparing for, so the game can show real readiness */
+  weekList?: { words: string[]; setOn: string; nailed?: string[] };
   soundOn: boolean;
   boss: BossState;
 };
@@ -85,6 +89,8 @@ export type RoundSnapshot = {
   answered: boolean; // current word already answered (phase was right/wrong)
   bonusWord: string | null;
   bonusWon: boolean;
+  /** played one level up for a bigger win */
+  stretch?: boolean;
   /** true while the player is still on the study card */
   studying?: boolean;
   /** the study card's words, so a reload does not re-deal the round */
@@ -135,6 +141,72 @@ export function applyCredits(save: Save, playerId: string): { next: Save; messag
   }
   return { next, messages };
 }
+
+/**
+ * How ready he is for the actual school test. A word counts as ready once he
+ * has spelled it right twice running, shaky after one, and not yet otherwise.
+ * This is the only place the game measures itself against something that
+ * matters outside the game.
+ */
+export type Readiness = { ready: string[]; shaky: string[]; notYet: string[]; total: number };
+export const READY_STREAK = 2;
+export function weekReadiness(save: Save): Readiness {
+  const words = save.weekList?.words || [];
+  const r: Readiness = { ready: [], shaky: [], notYet: [], total: words.length };
+  // Bank words keep their capitals (Wednesday, February, Scooby) while a pasted
+  // list is lowercased, so the lookup has to ignore case or those words could
+  // never be marked ready.
+  const byLower = new Map(Object.entries(save.stats).map(([k, v]) => [k.toLowerCase(), v]));
+  const everNailed = new Set((save.weekList?.nailed || []).map((w) => w.toLowerCase()));
+  for (const w of words) {
+    const key = w.toLowerCase();
+    const cs = byLower.get(key)?.cs ?? 0;
+    if (cs >= READY_STREAK) r.ready.push(w);
+    // A word he has nailed before never falls all the way back to "not yet" the
+    // night before a test. One later slip drops it to "nearly", no further.
+    else if (cs === 1 || everNailed.has(key)) r.shaky.push(w);
+    else r.notYet.push(w);
+  }
+  return r;
+}
+
+/** Records words that have reached the nailed threshold, so readiness cannot collapse. */
+export function recordNailed(save: Save): Save {
+  if (!save.weekList) return save;
+  const rd = weekReadiness(save);
+  const nailed = new Set([...(save.weekList.nailed || []), ...rd.ready]);
+  if (nailed.size === (save.weekList.nailed || []).length) return save;
+  return { ...save, weekList: { ...save.weekList, nailed: [...nailed] } };
+}
+
+/** A week's worth of the ledger, for the card he shows his dad. */
+export type WeekSummary = {
+  rounds: number; net: number; bossWins: number; bonuses: number;
+  ready: number; readyTotal: number; owned: number; bankTotal: number;
+};
+export function weekSummary(save: Save, bank: Entry[], today = todayStr()): WeekSummary {
+  const cutoff = new Date(today);
+  cutoff.setDate(cutoff.getDate() - 6);
+  const from = cutoff.toISOString().slice(0, 10);
+  const recent = (save.history || []).filter((h) => h.d >= from);
+  const rd = weekReadiness(save);
+  return {
+    // effort, not just wagering: a week of free practice is still a week of work
+    rounds: recent.filter((h) => h.type === "round" || h.type === "practice" || h.type === "boss").length,
+    // money he played for. Gifts from Dad are not earnings and must never be
+    // reported to Dad as if they were.
+    net: recent.filter((h) => h.type === "round" || h.type === "boss").reduce((n, h) => n + h.net, 0),
+    bossWins: recent.filter((h) => h.type === "boss" && h.net > 0).length,
+    bonuses: recent.filter((h) => h.type === "bonus").length,
+    ready: rd.ready.length,
+    readyTotal: rd.total,
+    owned: bank.filter((e) => (save.stats[e.w]?.cs ?? 0) >= READY_STREAK).length,
+    bankTotal: save.bank,
+  };
+}
+
+/** Opting into harder words for a bigger payout: the self-chosen challenge. */
+export const STRETCH_MULTIPLIER = 1.5;
 
 export type Rank = { wins: number; title: string };
 export type Doodle = { id: string; icon: string; name: string; cap: string; rare: boolean };
@@ -251,7 +323,7 @@ export const BOSS_TYPES: BossType[] = [
     id: "flawless",
     name: "THE FLAWLESS FOUR",
     nameAlt: "THE PERFECT FOUR",
-    rule: "4 words. ZERO misses. The biggest free prize there is.",
+    rule: "4 words. ZERO misses allowed.",
     banner: "FLAWLESS FOUR - one slip and it is over. $5 on the line.",
     words: 4, missesAllowed: 0, prize: 5, select: "hard",
   },
@@ -259,7 +331,7 @@ export const BOSS_TYPES: BossType[] = [
     id: "sudden",
     name: "SUDDEN DEATH",
     nameAlt: "LAST ONE STANDING",
-    rule: "Words keep coming until you miss one. The longer you last, the more you win.",
+    rule: "Words keep coming until you miss one. 4 words pays $2, 6 pays $3, 8 pays $4, 10 pays $5. Under 4 words pays nothing.",
     banner: "SUDDEN DEATH - the prize climbs with every word. One miss ends it.",
     words: 12, missesAllowed: 0, prize: 5, select: "mixed", suddenDeath: true,
   },
@@ -277,7 +349,7 @@ export const BOSS_TYPES: BossType[] = [
     // has already beaten him, so winning means beating his own worst list.
     name: "THE REVENGE MATCH",
     nameAlt: "THE REMATCH",
-    rule: "5 words that have beaten you before. One miss allowed. The biggest prize there is.",
+    rule: "5 words that have beaten you before. One miss allowed.",
     banner: "REVENGE MATCH - every one of these has beaten you before. $7 says it happens again.",
     words: 5, missesAllowed: 1, prize: 7, select: "missed", minRounds: 4,
   },
@@ -823,6 +895,7 @@ type SettleInput = {
   bossMissAllowed?: number; // misses this battle type permits
   bossPrize?: number; // prize if won, already resolved by the caller ($2-$5)
   bossLabel?: string; // battle name for the ledger
+  stretch?: boolean; // played one level up, with no hints, for a bigger payout
   bet: number;
   roundTotal: number;
   firstTryCorrect: number;
@@ -843,6 +916,8 @@ export type SettleResult = {
   leveledDown: boolean;
   rankUp: string | null;
   newRecords: string[];
+  /** words he used to miss and has now got right twice running */
+  newlyOwned: string[];
   streakBonus: number;
   streakBroken: number;
   respectBonus: number;
@@ -853,11 +928,18 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   const bossAllowed = p.bossMissAllowed ?? 1;
   const bossPrize = p.bossPrize ?? 0;
   const bossWon = p.isBoss && misses <= bossAllowed && bossPrize > 0;
-  const pay = p.isBoss
+  const pay: { label: string; amount: number; mult: number } = p.isBoss
     ? { label: bossWon ? "bosswin" : "bossloss", amount: bossWon ? bossPrize : 0, mult: 0 }
     : p.isPractice
       ? { label: "practice", amount: 0, mult: 0 }
       : payoutFor(misses, p.roundTotal, p.bet);
+  // A stretch round is harder by choice, so a win pays more. Losses are
+  // unchanged: choosing the hard road must never cost extra.
+  // The bonus applies to the WINNINGS, never the returned stake, so "1.5x the
+  // win" means exactly that. Multiplying the gross return paid up to 2.6x.
+  if (p.stretch && !p.isPractice && !p.isBoss && !p.isCustom && pay.amount > p.bet) {
+    pay.amount = p.bet + Math.round((pay.amount - p.bet) * STRETCH_MULTIPLIER);
+  }
   const newBank = p.isBoss
     ? save.bank + pay.amount
     : p.isPractice ? save.bank : Math.max(0, save.bank - p.bet + pay.amount);
@@ -865,9 +947,12 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   // Update word stats (first-try outcomes only; revenge laps are practice)
   const stats = { ...save.stats };
   const roundNum = save.rounds + 1;
+  const newlyOwned: string[] = [];
   for (const w of p.roundWords) {
     const st = stats[w] || { a: 0, m: 0, cs: 0, seen: 0 };
     const missed = p.missedWords.includes(w);
+    // a word he used to get wrong, now right twice running, is his
+    if (!missed && st.m > 0 && st.cs + 1 === READY_STREAK) newlyOwned.push(w);
     stats[w] = {
       a: st.a + 1,
       m: st.m + (missed ? 1 : 0),
@@ -1014,7 +1099,7 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
 
   const payout: Payout = { result: pay.label, amount: pay.amount, misses, net, betAmt: p.bet, prevBank: save.bank, newBank: bank };
   const next: Save = { ...save, bank, stats, rounds: roundNum, recentAcc, playerLevel, hotStreak, coldStreak, day: today, dayStreak, history, records, chip, doodles, boss };
-  return { next, payout, bailedOut, leveledUp, leveledDown, rankUp, newRecords, streakBonus, streakBroken, respectBonus };
+  return { next, payout, bailedOut, leveledUp, leveledDown, rankUp, newRecords, newlyOwned, streakBonus, streakBroken, respectBonus };
 }
 
 // Doodle-burst sparks for a correct answer: fixed fan-out so the animation
