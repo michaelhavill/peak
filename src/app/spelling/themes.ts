@@ -33,6 +33,9 @@ export type Theme = {
   genericTrick: string;
   bossTaunts: string[];
   bossLabel: string;
+  bossPickLabel: string;
+  bossPickLine: string;
+  bossPickLineOne: string;
   /** use the gentler battle names where a type defines one */
   friendlyBossNames: boolean;
   ranks: Rank[];
@@ -65,6 +68,9 @@ export const HUNTER: Theme = {
   genericTrick: HUNTER_GENERIC_TRICK,
   bossTaunts: HUNTER_BOSS_TAUNTS,
   bossLabel: "BOSS BATTLE",
+  bossPickLabel: "PICK YOUR BATTLE",
+  bossPickLine: "Two fights on the table. Take whichever one you fancy.",
+  bossPickLineOne: "One fight on the table.",
   friendlyBossNames: false,
   ranks: HUNTER_RANKS,
   doodles: HUNTER_DOODLES,
@@ -96,6 +102,9 @@ export const MILLIE: Theme = {
   genericTrick: MILLIE_GENERIC_TRICK,
   bossTaunts: MILLIE_BOSS_TAUNTS,
   bossLabel: "ROYAL CHALLENGE",
+  bossPickLabel: "CHOOSE YOUR CHALLENGE",
+  bossPickLine: "Two challenges, and you get to choose. I am being extremely generous today.",
+  bossPickLineOne: "One challenge, waiting for you.",
   friendlyBossNames: true,
   ranks: MILLIE_RANKS,
   doodles: MILLIE_DOODLES,

@@ -5,7 +5,8 @@ import {
   ROUND_SIZE, STARTING_BANK, BROKE_BAILOUT, MAX_LEVEL, PAYDAY_GOAL,
   CUSTOM_ROUND_CAP, BONUS_WORD_CASH, DOODLE_DROP_CHANCE,
   BOSS_TYPES, bossTypeById, pickBossType, bossPrizeFor, bossNextPrize, nextBossAt, STREAK_MILESTONE,
-  buildStudyExtras, studyExtraCount,
+  COLD_ROUNDS_FOR_COMFORT, COMFORT_BANK_CAP, recordNailed,
+  buildStudyExtras, studyExtraCount, weekReadiness, weekSummary, STRETCH_MULTIPLIER,
   FRESH_SAVE, HOMOPHONE_HINTS,
   payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
   weakestPatterns, strugglingWords, buildRound, buildBossRound,
@@ -196,6 +197,28 @@ const PAGE_CSS = `
         .studycard .bigword { font-size: 26px; letter-spacing: 2px; margin: 0 0 2px; }
         .studyhint { font-size: 13px; font-weight: 700; color: #4A4A45; }
         .studytrick { font-size: 13px; line-height: 1.35; }
+        .battlepick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+        @media (max-width: 520px) { .battlepick { grid-template-columns: 1fr; } }
+        .battlecard {
+          text-align: left; background: #fff; border: 3px solid #D63B2F; border-radius: 10px;
+          box-shadow: 3px 3px 0 #D63B2F; padding: 12px; cursor: pointer; color: #1D2A44;
+          font-family: 'Nunito', system-ui, sans-serif; display: flex; flex-direction: column; gap: 3px;
+          transition: transform 0.08s ease, box-shadow 0.08s ease;
+        }
+        .battlecard:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 #D63B2F; }
+        .battlecard:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 #D63B2F; }
+        .battlecard:focus-visible { outline: 3px dashed #2B5FD9; outline-offset: 3px; }
+        .battlename { font-size: 21px; color: #D63B2F; }
+        .battleprize { font-size: 15px; font-weight: 900; }
+        .battlerule { font-size: 13px; line-height: 1.35; }
+        .stretchrow {
+          display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; font-size: 14px;
+          background: #FFFDF0; border: 3px dashed #1D2A44; border-radius: 10px; padding: 10px 12px; cursor: pointer;
+        }
+        .stretchrow input { width: 20px; height: 20px; margin-top: 1px; flex: none; }
+        .ownedcard { background: #EAF7EE; border: 3px solid #2E8B57; border-radius: 10px; padding: 12px 14px; margin-top: 14px; }
+        .bragcard { background: #EEF3FF; border: 3px solid #2B5FD9; border-radius: 10px; padding: 12px 14px; margin-top: 10px; }
+        .bragline { font-size: 15px; margin: 4px 0 0; }
         .creditcard { background: #EAF7EE; border: 3px solid #2E8B57; border-radius: 10px; padding: 12px 14px; margin-top: 12px; }
         .diffnote { font-size: 14px; font-weight: 700; margin: 2px 0 6px; color: #4A4A45; }
         .tricktext { font-size: 16px; margin: 8px 0 0; line-height: 1.45; }
@@ -370,6 +393,11 @@ export default function SpellingShowdown() {
   const [storageOk, setStorageOk] = useState(true);
   const [screen, setScreen] = useState<"start" | "study" | "play" | "done">("start");
   const [studyWords, setStudyWords] = useState<Entry[]>([]);
+  const [stretch, setStretch] = useState(false);
+  const [stretchRound, setStretchRound] = useState(false);
+  const [showBrag, setShowBrag] = useState(false);
+  const [confirmClearList, setConfirmClearList] = useState(false);
+  const [bragCopied, setBragCopied] = useState(false);
   const [bet, setBet] = useState(0);
   const [isPractice, setIsPractice] = useState(false);
   const [customText, setCustomText] = useState("");
@@ -409,6 +437,7 @@ export default function SpellingShowdown() {
   const [extras, setExtras] = useState<{
     rankUp: string | null;
     newRecords: string[];
+    newlyOwned: string[];
     streakBonus: number;
     streakBroken: number;
     respectBonus: number;
@@ -462,6 +491,10 @@ export default function SpellingShowdown() {
     setBonusWon(false);
     setCustomText("");
     setShowCustom(false);
+    setStretch(false);
+    setStretchRound(false);
+    setShowBrag(false);
+    setBragCopied(false);
     setConfirmCashout(false);
     savedThisRound.current = false;
     try { localStorage.setItem(PROFILE_KEY, id); } catch {}
@@ -516,6 +549,7 @@ export default function SpellingShowdown() {
         setIsPractice(!!sn.isPractice);
         setIsCustomRound(!!sn.isCustom);
         setIsBossRound(!!sn.isBoss);
+        setStretchRound(!!sn.stretch);
         if (sn.isBoss) setBossType(bossTypeById(loaded.boss?.typeId));
         setMissedWords(sn.missed || []);
         setFirstTryCorrect(sn.firstTryCorrect || 0);
@@ -531,6 +565,7 @@ export default function SpellingShowdown() {
             isPractice: !!sn.isPractice,
             isCustom: !!sn.isCustom,
             isBoss: !!sn.isBoss,
+            stretch: !!sn.stretch,
             bet: sn.bet || 0,
             roundTotal: sn.roundTotal || q.length,
             firstTryCorrect: sn.firstTryCorrect || 0,
@@ -547,6 +582,7 @@ export default function SpellingShowdown() {
           setExtras({
             rankUp: res.rankUp,
             newRecords: res.newRecords,
+            newlyOwned: res.newlyOwned,
             streakBonus: res.streakBonus,
             streakBroken: res.streakBroken,
             respectBonus: res.respectBonus,
@@ -591,7 +627,7 @@ export default function SpellingShowdown() {
         missed: missedWords, redo, firstTryCorrect, streak, bestStreak,
         roundTotal, roundWords: roundWordsRef.current,
         answered: phase !== "ask",
-        bonusWord, bonusWon,
+        bonusWord, bonusWon, stretch: stretchRound,
         studying: screen === "study",
         study: screen === "study" ? studyWords : [],
       };
@@ -634,7 +670,7 @@ export default function SpellingShowdown() {
     }
   }, [screen, phase, idx, current, speak]);
 
-  function startRound(mode: "adaptive" | "custom" | "boss", practice = false) {
+  function startRound(mode: "adaptive" | "custom" | "boss", practice = false, chosenBossId?: string, wordsOverride?: string[]) {
     if (!save) return;
     const boss = mode === "boss";
     if (!boss && !practice && (bet < 1 || bet > save.bank)) return;
@@ -646,7 +682,7 @@ export default function SpellingShowdown() {
     if (mode === "custom") {
       // Tolerant of how school lists actually arrive: numbered lines,
       // bullets, tabs, spaces, commas - strip decoration, then split wide.
-      const words = [...new Set(
+      const words = wordsOverride && wordsOverride.length ? wordsOverride : [...new Set(
         customText
           .split(/\n+/)
           .map((line) => line.replace(/^\s*(?:\d+[.):]?|[-*•·])\s*/, ""))
@@ -671,15 +707,21 @@ export default function SpellingShowdown() {
         setCustomNote(`Big list! Playing ${CUSTOM_ROUND_CAP} of your ${words.length} words this round.`);
       }
     } else if (boss) {
-      const bt = bossTypeById(save.boss?.typeId);
+      const bt = bossTypeById(chosenBossId || save.boss?.typeId);
       setBossType(bt);
+      // lock it in on entry: peeking at the study card and backing out must not
+      // re-deal the words or hand back the choice
+      persist({ ...save, boss: { ...save.boss, pending: false, typeId: chosenBossId || save.boss?.typeId || bt.id, choices: [] } });
       round = buildBossRound(save, theme.bank, bt);
       playSfx("boss", !!save.soundOn);
     } else {
-      round = buildRound(save, theme.bank);
+      round = stretchOn
+        ? buildRound({ ...save, playerLevel: save.playerLevel + 1 }, theme.bank)
+        : buildRound(save, theme.bank);
     }
     setIsCustomRound(mode === "custom");
     setIsBossRound(boss);
+    setStretchRound(mode === "adaptive" && !practice && stretchOn);
     if (!boss) setBossType(null);
     setBossTeaser(false);
     // Secret bonus word: adaptive betting rounds only, revealed on a first-try hit
@@ -696,7 +738,7 @@ export default function SpellingShowdown() {
     setInput(""); setRetype(""); setLastGuess("");
     setPayout(null);
     setPhase("ask");
-    setHintShown(!boss && save.playerLevel === 1);
+    setHintShown(!boss && !stretchOn && save.playerLevel === 1);
     setBailoutMsg("");
     setLevelMsg("");
     setResumed(false);
@@ -755,6 +797,7 @@ export default function SpellingShowdown() {
     const payPreview = isPractice || isBossRound ? { amount: 0 } : payoutFor(missedWords.length, roundTotal, bet);
     const wonBet = !isPractice && !isCustomRound && !isBossRound && payPreview.amount - bet > 0;
     const doodleDrop = wonBet && Math.random() < DOODLE_DROP_CHANCE ? pickDoodleDrop(save.doodles || [], theme.doodles) : null;
+    const stretched = stretchRound && !isPractice && !isCustomRound && !isBossRound;
     const activeBoss = isBossRound ? bossType || bossTypeById(save.boss?.typeId) : null;
     const bossCleared = firstTryCorrect;
     const res = settleRound(save, {
@@ -764,6 +807,7 @@ export default function SpellingShowdown() {
       bossMissAllowed: activeBoss ? activeBoss.missesAllowed : undefined,
       bossPrize: activeBoss ? bossPrizeFor(activeBoss, bossCleared) : undefined,
       bossLabel: activeBoss ? bossLabelFor(activeBoss) : undefined,
+      stretch: stretched,
       bet,
       roundTotal,
       firstTryCorrect,
@@ -779,6 +823,7 @@ export default function SpellingShowdown() {
     setExtras({
       rankUp: res.rankUp,
       newRecords: res.newRecords,
+      newlyOwned: res.newlyOwned,
       streakBonus: res.streakBonus,
       streakBroken: res.streakBroken,
       respectBonus: res.respectBonus,
@@ -795,15 +840,18 @@ export default function SpellingShowdown() {
     // Semi-frequent boss battles: after a normal adaptive round, once the
     // cooldown has passed, the host has a chance of slapping a challenge on the
     // desk. It stays pending until accepted - a reason to come back.
-    let nextSave = res.next;
-    if (!isBossRound && !isCustomRound) {
+    let nextSave = recordNailed(res.next);
+    if (!isBossRound && !isCustomRound && !isPractice) {
       const b: BossState = nextSave.boss || FRESH_SAVE.boss;
       const due = b.nextAt ?? (b.lastRound + 4);
       if (!b.pending && nextSave.rounds >= due) {
-        const picked = pickBossType(nextSave, theme.bank);
-        nextSave = { ...nextSave, boss: { ...b, pending: true, typeId: picked.id } };
+        const first = pickBossType(nextSave, theme.bank);
+        let second = first;
+        for (let i = 0; i < 8 && second.id === first.id; i++) second = pickBossType(nextSave, theme.bank);
+        const choices = second.id === first.id ? [first.id] : [first.id, second.id];
+        nextSave = { ...nextSave, boss: { ...b, pending: true, typeId: null, choices } };
         setBossTeaser(true);
-        setBossTeaserType(picked);
+        setBossTeaserType(first);
         playSfx("boss", snd);
       }
     }
@@ -873,7 +921,13 @@ export default function SpellingShowdown() {
 
   const isRedoLap = current && queue.length < roundTotal;
   // What the round pays if he finishes at the current miss count
-  const potential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
+  const rawPotential = !isPractice && bet > 0 ? payoutFor(missedWords.length, roundTotal, bet) : null;
+  // one number for the whole screen: the status bar and the pot line must agree
+  const potential = rawPotential
+    ? { ...rawPotential, amount: stretchRound && rawPotential.amount > bet
+        ? bet + Math.round((rawPotential.amount - bet) * STRETCH_MULTIPLIER)
+        : rawPotential.amount }
+    : null;
   // Words with a sound-alike always show their meaning, in every mode: the
   // voice cannot distinguish through from thorough, so the meaning must.
   // Sound-alikes and any apostrophe word (dogs', couldn't) always show their
@@ -882,6 +936,13 @@ export default function SpellingShowdown() {
     ? soundAlikes(current.w, theme.bank).length > 0 || /['’]/.test(current.w)
     : false;
   const showHint = hintShown || mustDisambiguate;
+  // Playing up is only a real challenge when there is a level above, and it
+  // must not stack with the help given to a struggling player.
+  const assistanceOn = !!save && (save.coldStreak ?? 0) >= COLD_ROUNDS_FOR_COMFORT && save.bank <= COMFORT_BANK_CAP;
+  const canStretch = !!save && save.playerLevel < MAX_LEVEL && !assistanceOn;
+  const stretchOn = stretch && canStretch;
+  const readiness = save ? weekReadiness(save) : { ready: [], shaky: [], notYet: [], total: 0 };
+  const week = save ? weekSummary(save, theme.bank) : null;
   const chipRec: ChipRecord = save?.chip || { w: 0, l: 0, d: 0 };
   const rank = rankFor(chipRec.w, theme.ranks);
   const recs: Records = save?.records || FRESH_SAVE.records;
@@ -944,22 +1005,69 @@ export default function SpellingShowdown() {
             {save.boss?.pending && (
               <div className="card" style={{ borderColor: "#D63B2F", boxShadow: "4px 4px 0 #D63B2F" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
-                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ {bossLabelFor(bossTypeById(save.boss?.typeId), theme.friendlyBossNames)}</span>
-                  <span className="tag">FREE ENTRY · WIN ${bossTypeById(save.boss?.typeId).suddenDeath ? "2-5" : bossTypeById(save.boss?.typeId).prize}</span>
+                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20 }}>⚔️ {(save.boss?.choices?.length ?? 0) > 1 ? theme.bossPickLabel : bossLabelFor(bossTypeById(save.boss?.choices?.[0] || save.boss?.typeId), theme.friendlyBossNames)}</span>
+                  <span className="tag">FREE ENTRY · YOUR CHOICE</span>
                 </div>
                 <div className="row" style={{ marginTop: 10 }}>
                   <Chip mood="neutral" variant={theme.mascot} />
                   <div className="bubble hand">{theme.bossTaunts[save.rounds % theme.bossTaunts.length]}</div>
                 </div>
                 <p className="payline" style={{ fontWeight: 900, marginTop: 10 }}>
-                  {bossTypeById(save.boss?.typeId).rule} No hints, and you stake nothing.
-                  A win pays {theme.hostFull}&apos;s own money and counts on the rank ladder.
+                  {(save.boss?.choices?.length ?? 0) > 1 ? theme.bossPickLine : theme.bossPickLineOne}
+                  {" "}No hints, you stake nothing, and a win pays {theme.hostFull}&apos;s own money and counts on the rank ladder.
                 </p>
-                <div className="btnrow">
-                  <button className="btn red" onClick={() => startRound("boss")}>ACCEPT THE CHALLENGE</button>
+                <div className="battlepick">
+                  {(save.boss?.choices?.length ? save.boss.choices : [save.boss?.typeId || "gauntlet"]).map((id) => {
+                    const t = bossTypeById(id);
+                    return (
+                      <button key={id} className="battlecard" onClick={() => startRound("boss", false, id)}>
+                        <span className="battlename hand">{bossLabelFor(t, theme.friendlyBossNames)}</span>
+                        <span className="battleprize">{t.suddenDeath ? "$2 to $5" : `$${t.prize}`}</span>
+                        <span className="battlerule">{t.rule}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}
+            {readiness.total > 0 && (
+              <div className="card" style={{ borderColor: "#2E8B57", boxShadow: "4px 4px 0 #2E8B57" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20, color: "#2E8B57" }}>READY FOR THE TEST</span>
+                  <span className="tag">{readiness.ready.length} / {readiness.total} nailed</span>
+                </div>
+                <div className="goalwrap" aria-hidden="true">
+                  <div className="goalbar" style={{ width: `${(readiness.ready.length / readiness.total) * 100}%` }} />
+                </div>
+                <p className="payline" style={{ fontWeight: 900, marginTop: 8 }}>
+                  {readiness.notYet.length === 0 && readiness.shaky.length === 0
+                    ? "Every word on your list is nailed. You are ready."
+                    : `${readiness.ready.length} nailed, ${readiness.shaky.length} nearly, ${readiness.notYet.length} to go. A word counts as nailed once you spell it right twice in a row.`}
+                </p>
+                {(readiness.notYet.length > 0 || readiness.shaky.length > 0) && (
+                  <p className="payline">
+                    Still to nail: <b>{[...readiness.notYet, ...readiness.shaky].slice(0, 12).join(", ")}</b>
+                    {[...readiness.notYet, ...readiness.shaky].length > 12 && <> and {[...readiness.notYet, ...readiness.shaky].length - 12} more</>}
+                  </p>
+                )}
+                <div className="btnrow">
+                  {(readiness.notYet.length > 0 || readiness.shaky.length > 0) && (
+                    <button className="btn" onClick={() => startRound("custom", true, undefined, [...readiness.notYet, ...readiness.shaky])}>
+                      Practise the ones I have not nailed
+                    </button>
+                  )}
+                  {!confirmClearList ? (
+                    <button className="btn ghost" onClick={() => setConfirmClearList(true)}>Finished with this list</button>
+                  ) : (
+                    <>
+                      <button className="btn red" onClick={() => { persist({ ...save, weekList: undefined }); setConfirmClearList(false); }}>Yes, clear it</button>
+                      <button className="btn ghost" onClick={() => setConfirmClearList(false)}>Keep it</button>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="card">
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
                 <div>
@@ -1039,6 +1147,15 @@ export default function SpellingShowdown() {
                 <button className={`btn betpick ${bet === save.bank ? "on" : ""}`} onClick={() => setBet(save.bank)}>All in (${save.bank})</button>
               </div>
 
+              {canStretch && (
+                <label className="stretchrow">
+                  <input type="checkbox" checked={stretch} onChange={(e) => setStretch(e.target.checked)} />
+                  <span>
+                    <b>Play up a level</b>: words from level {save.playerLevel + 1}, no hints at all, and your winnings are
+                    multiplied by {STRETCH_MULTIPLIER}. Losing costs you exactly the same as a normal round.
+                  </span>
+                </label>
+              )}
               <div className="btnrow">
                 <button className="btn" disabled={bet < 1} onClick={() => startRound("adaptive")}>
                   {bet < 1 ? "Pick a bet first" : `Start today's round ($${bet} at stake)`}
@@ -1080,6 +1197,36 @@ export default function SpellingShowdown() {
                 {theme.doodles.map((d) => (ownedDoodles.includes(d.id) ? d.icon : "▢")).join(" ")}
               </p>
               <p style={{ fontSize: 12, color: "#4A4A45", margin: "4px 0 0" }}>Prizes drop from winning bet rounds. Two are rare. {theme.hostFull} won&apos;t say which.</p>
+              <div className="btnrow">
+                <button className="btn ghost" onClick={() => { setShowBrag(!showBrag); setBragCopied(false); }}>
+                  {showBrag ? "Hide my week" : "📣 Show Dad my week"}
+                </button>
+              </div>
+              {showBrag && week && (
+                <div className="bragcard">
+                  <p className="cheatlabel hand" style={{ margin: 0, fontSize: 20, color: "#2B5FD9" }}>{theme.playerName.toUpperCase()}&apos;S WEEK</p>
+                  <p className="bragline">🏅 Rank: <b>{rank.title}</b> · level {save.playerLevel}/{MAX_LEVEL}</p>
+                  <p className="bragline">🎯 Words owned: <b>{week.owned}</b> of {theme.bank.length}</p>
+                  <p className="bragline">⚔️ Record vs {theme.hostFull}: <b>{chipRec.w} - {chipRec.l}</b>{week.bossWins > 0 ? ` · ${week.bossWins} battle${week.bossWins === 1 ? "" : "s"} won this week` : ""}</p>
+                  <p className="bragline">🔥 Best streak ever: <b>{recs.bestStreak}</b> · day streak <b>{save.dayStreak}</b></p>
+                  <p className="bragline">📅 This week: <b>{week.rounds}</b> rounds, <b>{week.net >= 0 ? `+$${week.net}` : `-$${Math.abs(week.net)}`}</b></p>
+                  {week.readyTotal > 0 && <p className="bragline">📖 School list: <b>{week.ready}/{week.readyTotal}</b> nailed</p>}
+                  <div className="btnrow">
+                    <button className="btn ghost" onClick={() => {
+                      const lines = [
+                        `${theme.playerName}'s spelling week`,
+                        `Rank: ${rank.title} (level ${save.playerLevel}/${MAX_LEVEL})`,
+                        `Words owned: ${week.owned}/${theme.bank.length}`,
+                        `Record vs ${theme.hostFull}: ${chipRec.w}-${chipRec.l}`,
+                        `Best streak ever: ${recs.bestStreak}, day streak ${save.dayStreak}`,
+                        `This week: ${week.rounds} rounds, ${week.net >= 0 ? "+" : "-"}$${Math.abs(week.net)}`,
+                        week.readyTotal > 0 ? `School list: ${week.ready}/${week.readyTotal} nailed` : "",
+                      ].filter(Boolean).join("\n");
+                      navigator.clipboard?.writeText(lines).then(() => setBragCopied(true)).catch(() => setBragCopied(false));
+                    }}>{bragCopied ? "Copied ✓" : "Copy it"}</button>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="card">
@@ -1100,7 +1247,13 @@ export default function SpellingShowdown() {
                       {bet < 1 ? "Pick a bet first" : "Start: My List"}
                     </button>
                     <button className="btn ghost" onClick={() => startRound("custom", true)} disabled={!customText.trim()}>
-                      Practice My List (no bet)
+                      Practise My List (no bet)
+                    </button>
+                    <button className="btn ghost" onClick={() => {
+                      const words = [...new Set(customText.split(/\n+/).map((l) => l.replace(/^\s*(?:\d+[.):]?|[-*•·])\s*/, "")).join(" ").split(/[\s,;]+/).map((w) => w.trim().toLowerCase()).filter((w) => /^[a-z''-]{2,}$/i.test(w)))];
+                      if (words.length) persist({ ...save, weekList: { words, setOn: todayStr() } });
+                    }} disabled={!customText.trim()}>
+                      Save as this week&apos;s test list
                     </button>
                   </div>
                   {customError && <p className="savewarn" style={{ marginTop: 8 }}>{customError}</p>}
@@ -1196,7 +1349,7 @@ export default function SpellingShowdown() {
             </div>
             <div className="btnrow">
               <button className="btn" onClick={() => { setScreen("play"); setPhase("ask"); }}>
-                {isBossRound ? "I'm ready. Bring the battle." : isPractice ? "I'm ready. Start practice." : `I'm ready. Start the round ($${bet} at stake)`}
+                {isBossRound ? "I'm ready. Bring the battle." : isPractice ? "I'm ready. Start practising." : `I'm ready. Start the round ($${bet} at stake)`}
               </button>
               <button className="btn ghost" onClick={() => { setScreen("start"); setStudyWords([]); setQueue([]); try { localStorage.removeItem(keys.round); } catch {} }}>
                 Back
@@ -1217,7 +1370,7 @@ export default function SpellingShowdown() {
                   ? bossType.suddenDeath
                     ? `⚔️ Banked $${bossPrizeFor(bossType, firstTryCorrect)} · next word $${bossNextPrize(bossType, firstTryCorrect)}`
                     : `⚔️ BOSS · Prize $${bossType.prize}`
-                  : isPractice || !potential ? "Practice" : `Bet $${bet} · Pot $${potential.amount}`}
+                  : isPractice || !potential ? "Practice" : `Bet $${bet} · Pot $${potential.amount}${stretchRound ? " ⬆" : ""}`}
               </span>
               <span>Streak: {streak} {streak >= 3 ? "🔥" : ""}</span>
               <span>
@@ -1281,7 +1434,7 @@ export default function SpellingShowdown() {
                   <button className="btn" onClick={submit}>Check It</button>
                   <button className="btn ghost" onClick={() => speak(current)}>Hear Again</button>
                   <button className="btn ghost" onClick={() => speak(current, true)}>Just the Word</button>
-                  {!showHint && !isBossRound && (
+                  {!showHint && !isBossRound && !stretchRound && (
                     <button className="btn ghost" onClick={() => setHintShown(true)}>Hint</button>
                   )}
                 </div>
@@ -1428,8 +1581,8 @@ export default function SpellingShowdown() {
             )}
             {bossTeaser && (
               <p className="warnline" style={{ color: "#1D2A44" }}>
-                ⚔️ {theme.hostFull} just put a {bossTeaserType ? bossLabelFor(bossTeaserType, theme.friendlyBossNames) : theme.bossLabel} on the betting desk.
-                {bossTeaserType ? ` ${bossTeaserType.rule}` : ""} Free entry.
+                ⚔️ {theme.hostFull} just put {(save.boss?.choices?.length ?? 0) > 1 ? "two challenges" : "a challenge"} on the betting desk:{" "}
+                {(save.boss?.choices || []).map((id) => bossLabelFor(bossTypeById(id), theme.friendlyBossNames)).join(" or ")}. Free entry, your pick.
               </p>
             )}
             {extras?.doodleDrop && (() => {
@@ -1455,9 +1608,19 @@ export default function SpellingShowdown() {
               </p>
             )}
 
+            {extras && extras.newlyOwned.length > 0 && (
+              <div className="ownedcard">
+                <p className="cheatlabel" style={{ color: "#2E8B57", margin: 0 }}>WORDS YOU NOW OWN</p>
+                {extras.newlyOwned.map((w) => (
+                  <p key={w} className="payline" style={{ margin: "4px 0 0" }}>
+                    <b className="hand" style={{ fontSize: 20 }}>{w}</b> - you used to miss this one. Twice right in a row now. That one is yours.
+                  </p>
+                ))}
+              </div>
+            )}
             {missedWords.length > 0 && (
               <>
-                <p style={{ fontWeight: 900, marginBottom: 4 }}>Words that fought back:</p>
+                <p style={{ fontWeight: 900, marginBottom: 4 }}>Words that fought back (not yet, but soon):</p>
                 {missedWords.map((m) => (
                   <div className="missrow" key={m.w}>
                     <span className="hand" style={{ fontSize: 20 }}>{m.w}</span>
