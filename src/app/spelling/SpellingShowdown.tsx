@@ -10,7 +10,7 @@ import {
   FRESH_SAVE, HOMOPHONE_HINTS,
   payoutFor, shuffle, pick, safeHint, todayStr, withHistory,
   weakestPatterns, strugglingWords, buildRound, buildBossRound,
-  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits, nextStreakBonus, streakBonusFor, nextPayingStreakDay,
+  settleRound, rankFor, pickDoodleDrop, alignDiff, isMisheard, soundAlikes, applyCredits, tradeForReward, nextStreakBonus, streakBonusFor, nextPayingStreakDay,
 } from "./engine";
 import type {
   Entry, Save, Payout, Records, ChipRecord, BossState, RoundSnapshot, BossType,
@@ -117,6 +117,7 @@ const PAGE_CSS = `
         .btn.ghost { background: #fff; font-size: 17px; }
         .btn.blue { background: #2B5FD9; color: #fff; }
         .btn.red { background: #D63B2F; color: #fff; }
+        .btn.purple { background: #7A4FCF; color: #fff; }
         .btn:disabled { opacity: 0.4; cursor: not-allowed; }
         .btn.betpick { background: #fff; }
         .btn.betpick.on { background: #2E8B57; color: #fff; }
@@ -218,6 +219,7 @@ const PAGE_CSS = `
         .stretchrow input { width: 20px; height: 20px; margin-top: 1px; flex: none; }
         .ownedcard { background: #EAF7EE; border: 3px solid #2E8B57; border-radius: 10px; padding: 12px 14px; margin-top: 14px; }
         .bragcard { background: #EEF3FF; border: 3px solid #2B5FD9; border-radius: 10px; padding: 12px 14px; margin-top: 10px; }
+        .dropcount { font-size: 26px; letter-spacing: 3px; margin: 8px 0 4px; }
         .bragline { font-size: 15px; margin: 4px 0 0; }
         .creditcard { background: #EAF7EE; border: 3px solid #2E8B57; border-radius: 10px; padding: 12px 14px; margin-top: 12px; }
         .diffnote { font-size: 14px; font-weight: 700; margin: 2px 0 6px; color: #4A4A45; }
@@ -397,6 +399,8 @@ export default function SpellingShowdown() {
   const [stretchRound, setStretchRound] = useState(false);
   const [showBrag, setShowBrag] = useState(false);
   const [confirmClearList, setConfirmClearList] = useState(false);
+  const [confirmTrade, setConfirmTrade] = useState(false);
+  const [tradeMsg, setTradeMsg] = useState("");
   const [bragCopied, setBragCopied] = useState(false);
   const [bet, setBet] = useState(0);
   const [isPractice, setIsPractice] = useState(false);
@@ -493,6 +497,8 @@ export default function SpellingShowdown() {
     setShowCustom(false);
     setStretch(false);
     setStretchRound(false);
+    setConfirmTrade(false);
+    setTradeMsg("");
     setShowBrag(false);
     setBragCopied(false);
     setConfirmCashout(false);
@@ -523,10 +529,12 @@ export default function SpellingShowdown() {
       setCreditMsg(credited.messages.join(" "));
       try { localStorage.setItem(keys.store, JSON.stringify(loaded)); } catch {}
     }
+    // Spending your own money on a reward is a choice, not a bust, so there is
+    // no handout for it. Instead nobody is ever stuck: while the bankroll is
+    // too low to bet, a free challenge is always on the desk.
     if (loaded.bank < 1) {
-      loaded.bank = BROKE_BAILOUT;
-      loaded.history = withHistory(loaded.history, { d: todayStr(), type: "bailout", label: `${theme.bailoutFund} bailout`, net: BROKE_BAILOUT, bank: BROKE_BAILOUT });
-      setBailoutMsg(`You were broke, so ${theme.hostFull} fronted you $${BROKE_BAILOUT} from the ${theme.bailoutFund}.`);
+      loaded = { ...loaded, boss: { ...(loaded.boss || FRESH_SAVE.boss), pending: true, choices: (loaded.boss?.choices?.length ? loaded.boss.choices : [pickBossType(loaded, theme.bank).id]) } };
+      setBailoutMsg(`Bankroll empty. No handout for spending it, but there is a free challenge on the desk and practice is always free. Win your way back.`);
     }
 
     // Restore an unfinished round. Previously a reload or closed tab mid-round
@@ -716,10 +724,9 @@ export default function SpellingShowdown() {
       round = buildBossRound(save, theme.bank, bt, topLevel);
       playSfx("boss", !!save.soundOn);
     } else {
-      round = (stretchOn
-        ? buildRound({ ...save, playerLevel: save.playerLevel + 1 }, theme.bank, topLevel)
-        : buildRound(save, theme.bank, topLevel)
-      ).slice(0, roundSize);
+      round = stretchOn
+        ? buildRound({ ...save, playerLevel: save.playerLevel + 1 }, theme.bank, topLevel, roundSize)
+        : buildRound(save, theme.bank, topLevel, roundSize);
     }
     setIsCustomRound(mode === "custom");
     setIsBossRound(boss);
@@ -844,7 +851,8 @@ export default function SpellingShowdown() {
     // cooldown has passed, the host has a chance of slapping a challenge on the
     // desk. It stays pending until accepted - a reason to come back.
     let nextSave = recordNailed(res.next);
-    if (!isBossRound && !isCustomRound && !isPractice) {
+    const brokeRoute = nextSave.bank < 1;
+    if (!isBossRound && !isCustomRound && (!isPractice || brokeRoute)) {
       const b: BossState = nextSave.boss || FRESH_SAVE.boss;
       const due = b.nextAt ?? (b.lastRound + 4);
       if (!b.pending && nextSave.rounds >= due) {
@@ -1269,6 +1277,59 @@ export default function SpellingShowdown() {
                 </>
               )}
             </div>
+
+            {theme.tradeReward && (
+              <div className="card" style={{ borderColor: "#7A4FCF", boxShadow: "4px 4px 0 #7A4FCF" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 10 }}>
+                  <span className="cheatlabel hand" style={{ margin: 0, fontSize: 20, color: "#7A4FCF" }}>{theme.tradeReward.icon} {theme.tradeReward.vaultLabel}</span>
+                  <span className="tag">{save.rewards?.held ?? 0} banked</span>
+                </div>
+                <p className="dropcount">
+                  {theme.tradeReward.icon.repeat(Math.min(save.rewards?.held ?? 0, 12)) || "empty"}
+                </p>
+                <p className="payline" style={{ fontWeight: 900 }}>
+                  {(save.rewards?.held ?? 0) === 0
+                    ? theme.tradeReward.blurb
+                    : `${save.rewards?.held} ${(save.rewards?.held ?? 0) === 1 ? theme.tradeReward.noun : theme.tradeReward.nounPlural} banked and waiting. ${(save.rewards?.lifetime ?? 0) > (save.rewards?.held ?? 0) ? `${save.rewards?.lifetime} earned all up.` : ""}`}
+                </p>
+                {tradeMsg && <p className="escaped" style={{ fontSize: 19 }}>{tradeMsg}</p>}
+                {!confirmTrade ? (
+                  <div className="btnrow">
+                    <button
+                      className="btn purple"
+                      disabled={save.bank < theme.tradeReward.cost}
+                      onClick={() => { setConfirmTrade(true); setTradeMsg(""); }}
+                    >
+                      {save.bank < theme.tradeReward.cost
+                        ? `Need $${theme.tradeReward.cost} for a ${theme.tradeReward.noun}`
+                        : `Trade $${theme.tradeReward.cost} for a ${theme.tradeReward.noun}`}
+                    </button>
+                  </div>
+                ) : (
+                  <>
+                    <p style={{ fontWeight: 900, marginTop: 8 }}>
+                      Swap ${theme.tradeReward.cost} of your ${save.bank} for one {theme.tradeReward.noun}?
+                      {save.bank === theme.tradeReward.cost ? " That is your last $" + theme.tradeReward.cost + ", and there is no handout for spending it. Practice and challenges stay free." : ""}
+                    </p>
+                    <div className="btnrow">
+                      <button className="btn purple" onClick={() => {
+                        const res = tradeForReward(save, theme.tradeReward!.cost, `Traded $${theme.tradeReward!.cost} for a ${theme.tradeReward!.noun}`);
+                        if (res.ok) {
+                          persist(res.next);
+                          setTradeMsg(`${theme.tradeReward!.icon} ${theme.tradeReward!.noun} banked. That is ${res.next.rewards?.held} waiting for you. ${theme.tradeReward!.hostLine}`);
+                          playSfx("record", !!save.soundOn);
+                        }
+                        setConfirmTrade(false);
+                      }}>Yes, bank the {theme.tradeReward.noun}</button>
+                      <button className="btn ghost" onClick={() => setConfirmTrade(false)}>Keep the money</button>
+                    </div>
+                  </>
+                )}
+                <p style={{ fontSize: 12, color: "#4A4A45", marginTop: 8 }}>
+                  Every trade is written in the ledger, so Dad can see exactly what you swapped and when.
+                </p>
+              </div>
+            )}
 
             <div className="card">
               {!confirmCashout ? (

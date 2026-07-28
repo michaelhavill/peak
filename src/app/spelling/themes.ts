@@ -55,6 +55,16 @@ export type Theme = {
   dropLabel: string;
   shelfLabel: string;
   emptyShelf: string;
+  /** an optional real-world reward this player can trade bankroll for */
+  tradeReward?: {
+    cost: number;
+    icon: string;
+    noun: string;
+    nounPlural: string;
+    vaultLabel: string;
+    blurb: string;
+    hostLine: string;
+  };
 };
 
 export const HUNTER: Theme = {
@@ -92,6 +102,15 @@ export const HUNTER: Theme = {
   dropLabel: "DOODLE DROP",
   shelfLabel: "THE TROPHY SHELF",
   emptyShelf: "Empty shelf. Chip says that's embarrassing.",
+  tradeReward: {
+    cost: 10,
+    icon: "🎮",
+    noun: "Fortnite drop",
+    nounPlural: "Fortnite drops",
+    vaultLabel: "THE DROP VAULT",
+    blurb: "Trade $10 of your bankroll for one Fortnite drop. Stack up as many as you like: they bank here until you spend them.",
+    hostLine: "Ten dollars for one drop. Spend the lot if you want, it is your money. I am contractually obliged to hand them over.",
+  },
 };
 
 export const MILLIE: Theme = {
