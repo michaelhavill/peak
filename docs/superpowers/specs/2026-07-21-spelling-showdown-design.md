@@ -339,6 +339,37 @@ up as she gets it and meets exactly the same curriculum words at levels 2-5.
 Difficulty now rises monotonically by word length across every tier
 (4.7 / 5.9 / 6.5 / 8.1 / 9.9 letters), asserted in the bank check.
 
+## Drop vault, Millie's reset, and the stuck-words fix (2026-07-26, eleventh pass)
+
+**Millie back to level 1, keeping everything else.** One-off adjustments (the
+same idempotent mechanism as Hunter's bug refund) now support `setLevel` as
+well as `toBank`. Hers sets level 1 and clears the hot streak, and leaves the
+bankroll, ledger, cashouts, rank, records, prizes and word stats untouched, so
+spaced repetition keeps everything it has learned about her.
+
+**Fortnite drops for Hunter.** `theme.tradeReward` gives a player an optional
+real-world reward they can trade bankroll for: $10 buys one drop, they bank up
+with no cap, and every trade writes its own ledger row so Dad can see what was
+swapped and when. Held and lifetime counts show in a vault on the betting desk.
+Millie has no reward configured, so the card does not render for her.
+
+**Spending the last $10 is allowed.** MVH: he can spend down to zero if he
+wants. Losing a bet still floors the bankroll at $5, but a deliberate purchase
+does not, and the old load-time bailout had to go: with trading available it
+would have been a farm (spend to $0, reload, pocket $5). Instead, nobody is
+ever stuck: while the bankroll is too low to bet, a free challenge is always on
+the desk and free practice keeps the challenge cadence turning.
+
+**Stuck words (bug).** Reported: "Millie keeps getting the same words, like
+naughty and decision." Partly by design, since missed words return, but the
+review filter passed any word with a correct streak of 0 with NO cooldown, so
+words she could not get occupied the same slots every round forever, and at six
+words a round that was half of it. Now a missed word rests one round before
+returning, a recovering word rests two, the review bucket is capped at a third
+of the round rather than a flat three, and among eligible words the least
+recently seen goes first so a pool of tricky words rotates. Asserted by
+simulating ten rounds of a player who keeps missing her three worst words.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,

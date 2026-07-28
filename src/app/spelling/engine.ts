@@ -17,7 +17,7 @@ export type WordStat = { a: number; m: number; cs: number; seen: number };
 
 export type HistoryEntry = {
   d: string;
-  type: "round" | "practice" | "bailout" | "cashout" | "bonus" | "boss";
+  type: "round" | "practice" | "bailout" | "cashout" | "bonus" | "boss" | "reward";
   label: string;
   net: number;
   bank: number;
@@ -63,7 +63,9 @@ export type Save = {
   records: Records;
   chip: ChipRecord; // career record vs Chip (adaptive betting rounds only)
   doodles: string[]; // collected doodle-drop ids
-  credits?: string[]; // ids of one-off make-goods already paid
+  credits?: string[]; // ids of one-off make-goods and adjustments already applied
+  /** rewards traded for with bankroll, held and lifetime */
+  rewards?: { held: number; lifetime: number };
   /** the school list he is preparing for, so the game can show real readiness */
   weekList?: { words: string[]; setOn: string; nailed?: string[] };
   soundOn: boolean;
@@ -112,13 +114,31 @@ export type Payout = {
  * reload can never pay them twice. Each entry tops the bankroll UP to `toBank`
  * and writes its own ledger line.
  */
-export const CREDITS: { id: string; forPlayer: string; toBank: number; label: string; note: string }[] = [
+export type OneOff = {
+  id: string;
+  forPlayer: string;
+  /** tops the bankroll UP to this figure, never down */
+  toBank?: number;
+  /** puts the player back on this level, leaving money and history alone */
+  setLevel?: number;
+  label: string;
+  note: string;
+};
+
+export const CREDITS: OneOff[] = [
   {
     id: "bugfix-2026-07-26",
     forPlayer: "hunter",
     toBank: 25,
     label: "Bug refund from Dad (spelling checker was wrong, not you)",
     note: "Two bugs cost you money you had actually earned: a correct word could be marked wrong, and the feedback line showed the letter you missed as if you had typed it. Both are fixed. Dad has topped your bankroll up to $25.",
+  },
+  {
+    id: "millie-level-reset-2026-07-26",
+    forPlayer: "millie",
+    setLevel: 1,
+    label: "Fresh start on the new 5-level ladder (money and prizes kept)",
+    note: "The words were too hard, so you are starting again on level 1 of the new five-level ladder. Your money, your prizes, your rank and your records all stay exactly as they were. Two good rounds in a row moves you up, same as always.",
   },
 ];
 
@@ -129,11 +149,14 @@ export function applyCredits(save: Save, playerId: string): { next: Save; messag
   const paid = new Set(save.credits || []);
   for (const c of CREDITS) {
     if (c.forPlayer !== playerId || paid.has(c.id)) continue;
-    const bank = Math.max(next.bank, c.toBank);
+    const bank = c.toBank === undefined ? next.bank : Math.max(next.bank, c.toBank);
     const gain = bank - next.bank;
     next = {
       ...next,
       bank,
+      // a level reset leaves the bankroll, ledger, records and word stats alone,
+      // and clears the streak so the next promotion is earned from here
+      ...(c.setLevel === undefined ? {} : { playerLevel: c.setLevel, hotStreak: 0, recentAcc: 0.6 }),
       credits: [...(next.credits || []), c.id],
       history: withHistory(next.history, { d: todayStr(), type: "bonus", label: c.label, net: gain, bank }),
     };
@@ -202,6 +225,27 @@ export function weekSummary(save: Save, bank: Entry[], today = todayStr()): Week
     readyTotal: rd.total,
     owned: bank.filter((e) => (save.stats[e.w]?.cs ?? 0) >= READY_STREAK).length,
     bankTotal: save.bank,
+  };
+}
+
+/**
+ * Trading bankroll for a real-world reward. He can trade as often as he likes
+ * and the rewards bank up: this is a choice between money now and something
+ * else he wants, which is his to make.
+ */
+export function tradeForReward(save: Save, cost: number, label: string): { next: Save; ok: boolean } {
+  if (cost <= 0 || save.bank < cost) return { next: save, ok: false };
+  const bank = save.bank - cost;
+  const held = (save.rewards?.held ?? 0) + 1;
+  const lifetime = (save.rewards?.lifetime ?? 0) + 1;
+  return {
+    ok: true,
+    next: {
+      ...save,
+      bank,
+      rewards: { held, lifetime },
+      history: withHistory(save.history, { d: todayStr(), type: "reward", label, net: -cost, bank }),
+    },
   };
 }
 
@@ -773,7 +817,7 @@ export function strugglingWords(stats: Record<string, WordStat>, bank: Entry[]) 
     });
 }
 
-export function buildRound(save: Save, bank: Entry[], maxLevel: number = MAX_LEVEL): Entry[] {
+export function buildRound(save: Save, bank: Entry[], maxLevel: number = MAX_LEVEL, roundSize: number = ROUND_SIZE): Entry[] {
   const { stats, playerLevel, rounds, recentAcc } = save;
   const chosen: Entry[] = [];
   const used = new Set<string>();
@@ -785,16 +829,23 @@ export function buildRound(save: Save, bank: Entry[], maxLevel: number = MAX_LEV
   //    right (correct streak of 2+), to bank some wins and lift spirits.
   if ((save.coldStreak || 0) >= COLD_ROUNDS_FOR_COMFORT && save.bank <= COMFORT_BANK_CAP) {
     shuffle(bank.filter((e) => { const st = stats[e.w]; return !!st && st.cs >= 2; }))
-      .slice(0, Math.floor(ROUND_SIZE / 2))
+      .slice(0, Math.floor(roundSize / 2))
       .forEach(take);
   }
 
-  // 1. Struggle words, max 3, with spaced-repetition timing:
-  //    missed last attempt -> comes back next round;
-  //    recovering (got it right once) -> rests at least 2 rounds before its confirmation test.
+  // 1. Review words, capped at a third of the round, with a real cooldown.
+  //    A word he keeps missing used to have NO rest at all (cs === 0 passed
+  //    unconditionally), so three words he could not get would occupy the same
+  //    slots every round forever and the game felt stuck. Now:
+  //      missed last time      -> rests one round, then returns
+  //      recovering (one right)-> rests two rounds before its confirmation test
+  //    and among those eligible, the least recently seen goes first, so a pool
+  //    of tricky words rotates instead of the same few repeating.
+  const reviewCap = Math.max(1, Math.round(roundSize / 3));
   strugglingWords(stats, bank)
-    .filter((e) => stats[e.w].cs === 0 || seenAgo(e.w) >= 2)
-    .slice(0, 3)
+    .filter((e) => (stats[e.w].cs === 0 ? seenAgo(e.w) >= 1 : seenAgo(e.w) >= 2))
+    .sort((a, b) => (stats[a.w].seen || 0) - (stats[b.w].seen || 0))
+    .slice(0, reviewCap)
     .forEach(take);
 
   // 2. Up to 2 NEVER-SEEN words from his weakest patterns (teach the pattern via fresh words)
@@ -821,26 +872,26 @@ export function buildRound(save: Save, bank: Entry[], maxLevel: number = MAX_LEV
     const fresh = shuffle(bank.filter((e) => eligible(e) && e.l === lvl && seenAgo(e.w) === Infinity));
     const rested = shuffle(bank.filter((e) => eligible(e) && e.l === lvl && seenAgo(e.w) !== Infinity));
     for (const e of [...fresh, ...rested]) {
-      if (chosen.length >= ROUND_SIZE) break;
+      if (chosen.length >= roundSize) break;
       take(e);
     }
-    if (chosen.length >= ROUND_SIZE) break;
+    if (chosen.length >= roundSize) break;
   }
 
   // 5. Relax only if the bank is nearly exhausted: first allow 1-round rest, then anything
-  if (chosen.length < ROUND_SIZE) {
+  if (chosen.length < roundSize) {
     for (const e of shuffle(bank.filter((x) => !used.has(x.w) && seenAgo(x.w) >= 1))) {
-      if (chosen.length >= ROUND_SIZE) break;
+      if (chosen.length >= roundSize) break;
       take(e);
     }
   }
-  if (chosen.length < ROUND_SIZE) {
+  if (chosen.length < roundSize) {
     for (const e of shuffle(bank)) {
-      if (chosen.length >= ROUND_SIZE) break;
+      if (chosen.length >= roundSize) break;
       take(e);
     }
   }
-  return shuffle(chosen.slice(0, ROUND_SIZE));
+  return shuffle(chosen.slice(0, roundSize));
 }
 
 // Boss battle round: Chip's nastiest words at his level or one above,
