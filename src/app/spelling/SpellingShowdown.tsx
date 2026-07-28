@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import {
-  ROUND_SIZE, STARTING_BANK, BROKE_BAILOUT, MAX_LEVEL, PAYDAY_GOAL,
+  STARTING_BANK, BROKE_BAILOUT, MAX_LEVEL, PAYDAY_GOAL,
   CUSTOM_ROUND_CAP, BONUS_WORD_CASH, DOODLE_DROP_CHANCE,
   BOSS_TYPES, bossTypeById, pickBossType, bossPrizeFor, bossNextPrize, nextBossAt, STREAK_MILESTONE,
   COLD_ROUNDS_FOR_COMFORT, COMFORT_BANK_CAP, recordNailed,
@@ -417,7 +417,7 @@ export default function SpellingShowdown() {
   const [hintShown, setHintShown] = useState(false);
   const [retype, setRetype] = useState("");
   const [lastGuess, setLastGuess] = useState("");
-  const [roundTotal, setRoundTotal] = useState(ROUND_SIZE);
+  const [roundTotal, setRoundTotal] = useState(8);
   const [payout, setPayout] = useState<Payout | null>(null); // set when round finishes
   const [confirmCashout, setConfirmCashout] = useState(false);
   const [showLedger, setShowLedger] = useState(false);
@@ -572,6 +572,7 @@ export default function SpellingShowdown() {
             roundWords: sn.roundWords || [],
             missedWords: (sn.missed || []).map((m) => m.w),
             ranks: theme.ranks,
+            maxLevel: theme.maxLevel,
             bestStreakRound: sn.bestStreak || 0,
             bonusWon: !!sn.bonusWon,
             doodleDrop: null,
@@ -600,7 +601,7 @@ export default function SpellingShowdown() {
           setIdx(i);
           setStreak(sn.streak || 0);
           setPhase("ask");
-          setHintShown(loaded.playerLevel === 1);
+          setHintShown(loaded.playerLevel <= theme.autoHintUpToLevel);
           setResumed(true);
           if (sn.studying && (sn.study || []).length > 0) {
             setStudyWords(sn.study || []);
@@ -712,12 +713,13 @@ export default function SpellingShowdown() {
       // lock it in on entry: peeking at the study card and backing out must not
       // re-deal the words or hand back the choice
       persist({ ...save, boss: { ...save.boss, pending: false, typeId: chosenBossId || save.boss?.typeId || bt.id, choices: [] } });
-      round = buildBossRound(save, theme.bank, bt);
+      round = buildBossRound(save, theme.bank, bt, topLevel);
       playSfx("boss", !!save.soundOn);
     } else {
-      round = stretchOn
-        ? buildRound({ ...save, playerLevel: save.playerLevel + 1 }, theme.bank)
-        : buildRound(save, theme.bank);
+      round = (stretchOn
+        ? buildRound({ ...save, playerLevel: save.playerLevel + 1 }, theme.bank, topLevel)
+        : buildRound(save, theme.bank, topLevel)
+      ).slice(0, roundSize);
     }
     setIsCustomRound(mode === "custom");
     setIsBossRound(boss);
@@ -738,7 +740,7 @@ export default function SpellingShowdown() {
     setInput(""); setRetype(""); setLastGuess("");
     setPayout(null);
     setPhase("ask");
-    setHintShown(!boss && !stretchOn && save.playerLevel === 1);
+    setHintShown(!boss && !stretchOn && save.playerLevel <= theme.autoHintUpToLevel);
     setBailoutMsg("");
     setLevelMsg("");
     setResumed(false);
@@ -814,6 +816,7 @@ export default function SpellingShowdown() {
       roundWords: roundWordsRef.current,
       missedWords: missedWords.map((m) => m.w),
       ranks: theme.ranks,
+      maxLevel: theme.maxLevel,
       bestStreakRound: bestStreak,
       bonusWon,
       doodleDrop,
@@ -938,8 +941,11 @@ export default function SpellingShowdown() {
   const showHint = hintShown || mustDisambiguate;
   // Playing up is only a real challenge when there is a level above, and it
   // must not stack with the help given to a struggling player.
+  // this player's ladder, round length and hint policy
+  const topLevel = theme.maxLevel;
+  const roundSize = theme.roundSize;
   const assistanceOn = !!save && (save.coldStreak ?? 0) >= COLD_ROUNDS_FOR_COMFORT && save.bank <= COMFORT_BANK_CAP;
-  const canStretch = !!save && save.playerLevel < MAX_LEVEL && !assistanceOn;
+  const canStretch = !!save && save.playerLevel < topLevel && !assistanceOn;
   const stretchOn = stretch && canStretch;
   const readiness = save ? weekReadiness(save) : { ready: [], shaky: [], notYet: [], total: 0 };
   const week = save ? weekSummary(save, theme.bank) : null;
@@ -1075,9 +1081,9 @@ export default function SpellingShowdown() {
                   <div className="wallet">${save.bank}</div>
                 </div>
                 <div style={{ textAlign: "right", fontWeight: 900, fontSize: 14 }}>
-                  Spelling level: {save.playerLevel} / {MAX_LEVEL}
-                  {save.hotStreak > 0 && save.playerLevel < MAX_LEVEL ? " 🔥 one more hot round to level up" : ""}
-                  {save.hotStreak > 0 && save.playerLevel === MAX_LEVEL ? " 🔥 one more hot round = respect bonus" : ""}<br />
+                  Spelling level: {save.playerLevel} / {topLevel}
+                  {save.hotStreak > 0 && save.playerLevel < topLevel ? " 🔥 one more hot round to level up" : ""}
+                  {save.hotStreak > 0 && save.playerLevel >= topLevel ? " 🔥 one more hot round = respect bonus" : ""}<br />
                   Day streak: {save.dayStreak} {save.dayStreak >= 3 ? "🔥" : ""}<br />
                   Rounds played: {save.rounds}<br />
                   {save.cashouts.length > 0 && <>Cashed out so far: ${save.cashouts.reduce((s, c) => s + c.amount, 0)}</>}
@@ -1133,7 +1139,7 @@ export default function SpellingShowdown() {
               </div>
 
               <div className="coach" style={{ marginTop: 12 }}>
-                <p className="cheatlabel" style={{ color: "#2B5FD9" }}>THE PAYOUT LADDER (8-word round)</p>
+                <p className="cheatlabel" style={{ color: "#2B5FD9" }}>THE PAYOUT LADDER ({roundSize}-word round)</p>
                 <p className="payline">Perfect: <b>double your bet</b> · 1 miss: <b>×1.5</b> · 2 misses: <b>money back</b></p>
                 <p className="payline">3 misses: <b>lose a quarter</b> · 4: <b>lose half</b> · 5: <b>lose three-quarters</b> · 6+: <b>lose it all</b></p>
               </div>
@@ -1161,11 +1167,11 @@ export default function SpellingShowdown() {
                   {bet < 1 ? "Pick a bet first" : `Start today's round ($${bet} at stake)`}
                 </button>
                 <button className="btn ghost" onClick={() => startRound("adaptive", true)}>
-                  Practice (no bet)
+                  Practise (no bet)
                 </button>
               </div>
               <p style={{ fontSize: 13, color: "#4A4A45", marginTop: 10 }}>
-                Round mix: up to 3 review words he&apos;s missed before, and at least 5 that are brand new or haven&apos;t appeared for several rounds. Practice rounds still teach {theme.hostFull} what to drill next.
+                Round mix: a few review words you have missed before, and the rest brand new or not seen for several rounds. Practise rounds still teach {theme.hostFull} what to drill next.
               </p>
             </div>
 
@@ -1205,7 +1211,7 @@ export default function SpellingShowdown() {
               {showBrag && week && (
                 <div className="bragcard">
                   <p className="cheatlabel hand" style={{ margin: 0, fontSize: 20, color: "#2B5FD9" }}>{theme.playerName.toUpperCase()}&apos;S WEEK</p>
-                  <p className="bragline">🏅 Rank: <b>{rank.title}</b> · level {save.playerLevel}/{MAX_LEVEL}</p>
+                  <p className="bragline">🏅 Rank: <b>{rank.title}</b> · level {save.playerLevel}/{topLevel}</p>
                   <p className="bragline">🎯 Words owned: <b>{week.owned}</b> of {theme.bank.length}</p>
                   <p className="bragline">⚔️ Record vs {theme.hostFull}: <b>{chipRec.w} - {chipRec.l}</b>{week.bossWins > 0 ? ` · ${week.bossWins} battle${week.bossWins === 1 ? "" : "s"} won this week` : ""}</p>
                   <p className="bragline">🔥 Best streak ever: <b>{recs.bestStreak}</b> · day streak <b>{save.dayStreak}</b></p>
@@ -1215,7 +1221,7 @@ export default function SpellingShowdown() {
                     <button className="btn ghost" onClick={() => {
                       const lines = [
                         `${theme.playerName}'s spelling week`,
-                        `Rank: ${rank.title} (level ${save.playerLevel}/${MAX_LEVEL})`,
+                        `Rank: ${rank.title} (level ${save.playerLevel}/${topLevel})`,
                         `Words owned: ${week.owned}/${theme.bank.length}`,
                         `Record vs ${theme.hostFull}: ${chipRec.w}-${chipRec.l}`,
                         `Best streak ever: ${recs.bestStreak}, day streak ${save.dayStreak}`,
@@ -1370,7 +1376,7 @@ export default function SpellingShowdown() {
                   ? bossType.suddenDeath
                     ? `⚔️ Banked $${bossPrizeFor(bossType, firstTryCorrect)} · next word $${bossNextPrize(bossType, firstTryCorrect)}`
                     : `⚔️ BOSS · Prize $${bossType.prize}`
-                  : isPractice || !potential ? "Practice" : `Bet $${bet} · Pot $${potential.amount}${stretchRound ? " ⬆" : ""}`}
+                  : isPractice || !potential ? "Practise" : `Bet $${bet} · Pot $${potential.amount}${stretchRound ? " ⬆" : ""}`}
               </span>
               <span>Streak: {streak} {streak >= 3 ? "🔥" : ""}</span>
               <span>
@@ -1512,7 +1518,7 @@ export default function SpellingShowdown() {
               <div className="bubble hand">
                 {payout.result === "bosswin" && `FINE. Take the $${payout.amount}. Out of my own fund. I'm picking WORSE words next time.`}
                 {payout.result === "bossloss" && `HA! The boss remains undefeated. My money stays mine, and I'm drawing this moment for the fridge.`}
-                {payout.result === "practice" && `Practice round done. ${payout.misses === 0 ? "Perfect, and it cost you nothing. Imagine if money had been on that." : "No money moved, but I took notes. Those words are marked."}`}
+                {payout.result === "practice" && `Practise round done. ${payout.misses === 0 ? "Perfect, and it cost you nothing. Imagine if money had been on that." : "No money moved, but I took notes. Those words are marked."}`}
                 {payout.result === "clean" && `PERFECT ROUND. Your $${bet} just became $${payout.amount}. I want a rematch.`}
                 {payout.result === "good" && `One slip, cleaned up in the Revenge Round. $${bet} pays $${payout.amount}. Solid.`}
                 {payout.result === "even" && `Two misses. Money back, no more, no less. The house calls that a warning.`}
@@ -1541,7 +1547,7 @@ export default function SpellingShowdown() {
               </div>
             ) : isPractice ? (
               <div style={{ marginTop: 14 }}>
-                <span className="stamp good hand" style={{ transform: "rotate(-3deg)" }}>PRACTICE - NO MONEY MOVED</span>
+                <span className="stamp good hand" style={{ transform: "rotate(-3deg)" }}>PRACTISE - NO MONEY MOVED</span>
               </div>
             ) : (
               <div className="coach" style={{ marginTop: 14 }}>
@@ -1599,7 +1605,7 @@ export default function SpellingShowdown() {
               ) : null;
             })()}
             <p className="payline" style={{ fontWeight: 900, marginTop: 10 }}>
-              First-try: {firstTryCorrect}/{roundTotal} · Best streak: {bestStreak} · Day streak: {save.dayStreak} {save.dayStreak >= 3 ? "🔥" : ""} · Level: {save.playerLevel}/{MAX_LEVEL}
+              First-try: {firstTryCorrect}/{roundTotal} · Best streak: {bestStreak} · Day streak: {save.dayStreak} {save.dayStreak >= 3 ? "🔥" : ""} · Level: {save.playerLevel}/{topLevel}
             </p>
             {!isPractice && !isCustomRound && (
               <p className="payline" style={{ fontWeight: 900 }}>
