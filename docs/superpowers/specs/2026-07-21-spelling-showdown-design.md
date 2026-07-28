@@ -310,6 +310,35 @@ Five features, in priority order:
    higher with no hints, for 1.5x on a win. A loss costs nothing extra, and the
    multiplier never applies to practice, custom lists or boss battles.
 
+## Millie's difficulty, retuned (2026-07-26, tenth pass)
+
+MVH: her words were a little too hard for her current level, but she should
+keep progressing as she gets it.
+
+The NZ curriculum pass had optimised her level 1 for Year 3-4 content, which
+made her ENTRY tier brutal: it opened with through, thought, their, should,
+caught, children and remember. Correct as curriculum, wrong as a starting
+point for a 9-year-old.
+
+The fix gives her a longer, gentler ladder rather than throwing content away:
+
+- **Five levels instead of four** (`theme.maxLevel`), so nothing is lost and
+  there is more to climb. Her old level 1 is now level 2, old 2 -> 3, old 3 ->
+  4, old 4 -> 5. Hunter is unchanged at four.
+- **A new gentle level 1**: 26 short words (average 4.7 letters) that she can
+  win at, each still teaching one reusable pattern - double letters, ck and
+  tch after a short vowel, sh/ch/th/ng, aw/ai/ea/oa, simple plurals. Cat and
+  dog vocabulary, in Princess Donut's voice.
+- **Six-word rounds** for her instead of eight (`theme.roundSize`), so a round
+  is quicker and a win arrives sooner.
+- **Meanings stay on screen automatically through level 2**
+  (`theme.autoHintUpToLevel`), fading out as she climbs.
+
+Progression is untouched: two hot rounds at 80%+ still promotes, so she moves
+up as she gets it and meets exactly the same curriculum words at levels 2-5.
+Difficulty now rises monotonically by word length across every tier
+(4.7 / 5.9 / 6.5 / 8.1 / 9.9 letters), asserted in the bank check.
+
 ## Data flow
 
 Save shape is identical to the artifact (`spelling-showdown-v1` key): bankroll,

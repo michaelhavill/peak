@@ -214,6 +214,8 @@ export type Doodle = { id: string; icon: string; name: string; cap: string; rare
 export const ROUND_SIZE = 8;
 export const STARTING_BANK = 20;
 export const BROKE_BAILOUT = 5;
+/** Default top level. Each theme may set its own via `maxLevel`, so a younger
+ * player can have a longer, gentler ladder. */
 export const MAX_LEVEL = 4;
 // Promotion: two consecutive rounds at 80%+ first-try accuracy moves him up a
 // level. Blended accuracy under 55% moves him down. The level (and all word
@@ -771,7 +773,7 @@ export function strugglingWords(stats: Record<string, WordStat>, bank: Entry[]) 
     });
 }
 
-export function buildRound(save: Save, bank: Entry[]): Entry[] {
+export function buildRound(save: Save, bank: Entry[], maxLevel: number = MAX_LEVEL): Entry[] {
   const { stats, playerLevel, rounds, recentAcc } = save;
   const chosen: Entry[] = [];
   const used = new Set<string>();
@@ -811,10 +813,10 @@ export function buildRound(save: Save, bank: Entry[]): Entry[] {
   const eligible = (e: Entry) => !used.has(e.w) && (!stats[e.w] || stats[e.w].cs < 3) && seenAgo(e.w) >= 3;
   // When he's winning at 80%+, reach UP a level for fill words before reaching
   // down, so the next level gets tested while he's hot instead of coasting.
-  const stretching = recentAcc >= HOT_ROUND_ACC && playerLevel < MAX_LEVEL;
+  const stretching = recentAcc >= HOT_ROUND_ACC && playerLevel < maxLevel;
   const levelOrder = stretching
-    ? [playerLevel, Math.min(MAX_LEVEL, playerLevel + 1), Math.max(1, playerLevel - 1)]
-    : [playerLevel, Math.max(1, playerLevel - 1), Math.min(MAX_LEVEL, playerLevel + 1)];
+    ? [playerLevel, Math.min(maxLevel, playerLevel + 1), Math.max(1, playerLevel - 1)]
+    : [playerLevel, Math.max(1, playerLevel - 1), Math.min(maxLevel, playerLevel + 1)];
   for (const lvl of levelOrder) {
     const fresh = shuffle(bank.filter((e) => eligible(e) && e.l === lvl && seenAgo(e.w) === Infinity));
     const rested = shuffle(bank.filter((e) => eligible(e) && e.l === lvl && seenAgo(e.w) !== Infinity));
@@ -843,9 +845,9 @@ export function buildRound(save: Save, bank: Entry[]): Entry[] {
 
 // Boss battle round: Chip's nastiest words at his level or one above,
 // unmastered words first so the fight is real.
-export function buildBossRound(save: Save, bank: Entry[], type: BossType = BOSS_TYPES[0]): Entry[] {
+export function buildBossRound(save: Save, bank: Entry[], type: BossType = BOSS_TYPES[0], maxLevel: number = MAX_LEVEL): Entry[] {
   const { stats, playerLevel } = save;
-  const lvlMax = Math.min(MAX_LEVEL, playerLevel + 1);
+  const lvlMax = Math.min(maxLevel, playerLevel + 1);
   const want = type.words;
   let pool: Entry[] = [];
 
@@ -906,6 +908,8 @@ type SettleInput = {
   doodleDrop: string | null;
   /** The active player's rank ladder, so rank-up titles come from their theme */
   ranks: Rank[];
+  /** this player's top level, so a longer ladder promotes further */
+  maxLevel?: number;
 };
 
 export type SettleResult = {
@@ -974,11 +978,12 @@ export function settleRound(save: Save, p: SettleInput): SettleResult {
   let leveledDown = false;
   let respectBonus = 0;
   if (ranked) {
-    if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel < MAX_LEVEL) {
+    const top = p.maxLevel ?? MAX_LEVEL;
+    if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel < top) {
       playerLevel += 1;
       hotStreak = 0;
       leveledUp = true;
-    } else if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel === MAX_LEVEL) {
+    } else if (hotStreak >= HOT_ROUNDS_TO_LEVEL_UP && playerLevel >= top) {
       // Max level: the hot streak converts to cash so the counter never dies
       hotStreak = 0;
       respectBonus = RESPECT_BONUS;

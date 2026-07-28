@@ -38,6 +38,12 @@ export type Theme = {
   bossPickLineOne: string;
   /** use the gentler battle names where a type defines one */
   friendlyBossNames: boolean;
+  /** top level on this player's ladder */
+  maxLevel: number;
+  /** words per round: a shorter round suits a younger player */
+  roundSize: number;
+  /** meanings stay on screen automatically up to and including this level */
+  autoHintUpToLevel: number;
   ranks: Rank[];
   doodles: Doodle[];
   bailoutFund: string;
@@ -72,6 +78,9 @@ export const HUNTER: Theme = {
   bossPickLine: "Two fights on the table. Take whichever one you fancy.",
   bossPickLineOne: "One fight on the table.",
   friendlyBossNames: false,
+  maxLevel: 4,
+  roundSize: 8,
+  autoHintUpToLevel: 1,
   ranks: HUNTER_RANKS,
   doodles: HUNTER_DOODLES,
   bailoutFund: "Cheez Doodle fund",
@@ -106,6 +115,9 @@ export const MILLIE: Theme = {
   bossPickLine: "Two challenges, and you get to choose. I am being extremely generous today.",
   bossPickLineOne: "One challenge, waiting for you.",
   friendlyBossNames: true,
+  maxLevel: 5,
+  roundSize: 6,
+  autoHintUpToLevel: 2,
   ranks: MILLIE_RANKS,
   doodles: MILLIE_DOODLES,
   bailoutFund: "Emergency Sardine Fund",
